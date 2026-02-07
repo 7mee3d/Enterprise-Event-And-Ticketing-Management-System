@@ -12,27 +12,19 @@ namespace EETMS_Presentation
             InitializeComponent();
         }
 
-        private void frmLoginEETMS_Load(object sender, EventArgs e)
+        private void _LoginEETMS()
         {
+            string UserNameOrEmail = GTextBoxUserNameOrEmailUser.Text;
+            string Password = GTextBoxPassword.Text;
 
+            if (UserBL.IsUserExsitsByUsername(UserNameOrEmail, Password) || UserBL.IsUserExsitsByEmail(UserNameOrEmail, Password))
+                MessageBox.Show("Login Successfully");
+            else MessageBox.Show("Login Faild");
         }
 
-        private void IsExsitsUserByEmail ()
+        private void GGButtonLoginToEETMS_Click(object sender, EventArgs e)
         {
-            string Username = UsernameT.Text;
-            string Password = password.Text;
-
-            if (UserBL.IsUserExsitsByEmail(Username, Password) || UserBL.IsUserExsitsByUsername(Username , Password))
-                MessageBox.Show("Login Successfully ");
-            else MessageBox.Show("Login Faild ");
-
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            IsExsitsUserByEmail();
-
+            _LoginEETMS();
         }
     }
 }
