@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="MCustomer.cs" />
     <Compile Include="MEvent.cs" />
+    <Compile Include="MUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
