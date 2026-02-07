@@ -50,7 +50,7 @@
             // GBorderLessForm
             // 
             this.GBorderLessForm.AnimateWindow = true;
-            this.GBorderLessForm.BorderRadius = 25;
+            this.GBorderLessForm.BorderRadius = 35;
             this.GBorderLessForm.ContainerControl = this;
             this.GBorderLessForm.DockIndicatorTransparencyValue = 0.6D;
             this.GBorderLessForm.TransparentWhileDrag = true;
@@ -61,7 +61,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Britannic Bold", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(98, 314);
+            this.label1.Location = new System.Drawing.Point(98, 325);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(640, 89);
             this.label1.TabIndex = 0;
@@ -73,7 +73,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Britannic Bold", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(99, 421);
+            this.label2.Location = new System.Drawing.Point(99, 431);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(244, 80);
             this.label2.TabIndex = 0;
@@ -85,9 +85,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(109, 574);
+            this.label3.Location = new System.Drawing.Point(109, 563);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(665, 88);
+            this.label3.Size = new System.Drawing.Size(571, 88);
             this.label3.TabIndex = 0;
             this.label3.Text = resources.GetString("label3.Text");
             // 
@@ -95,7 +95,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(113, 226);
+            this.pictureBox1.Location = new System.Drawing.Point(113, 234);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(76, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -107,7 +107,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calisto MT", 69.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.label4.Location = new System.Drawing.Point(39, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(340, 104);
@@ -131,7 +131,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Calisto MT", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(21)))), ((int)(((byte)(25)))));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.label6.Location = new System.Drawing.Point(50, 178);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 20);
@@ -173,7 +173,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(955, 300);
+            this.panel1.Location = new System.Drawing.Point(858, 298);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(572, 525);
             this.panel1.TabIndex = 3;
@@ -182,7 +182,11 @@
             // 
             this.GGButtonLoginToEETMS.Animated = true;
             this.GGButtonLoginToEETMS.AnimatedGIF = true;
+            this.GGButtonLoginToEETMS.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonLoginToEETMS.BorderRadius = 7;
+            this.GGButtonLoginToEETMS.BorderThickness = 3;
+            this.GGButtonLoginToEETMS.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonLoginToEETMS.CustomBorderThickness = new System.Windows.Forms.Padding(2);
             this.GGButtonLoginToEETMS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GGButtonLoginToEETMS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GGButtonLoginToEETMS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -196,8 +200,9 @@
             this.GGButtonLoginToEETMS.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonLoginToEETMS.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonLoginToEETMS.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonLoginToEETMS.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonLoginToEETMS.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonLoginToEETMS.Image")));
-            this.GGButtonLoginToEETMS.ImageOffset = new System.Drawing.Point(65, 0);
+            this.GGButtonLoginToEETMS.ImageOffset = new System.Drawing.Point(75, 0);
             this.GGButtonLoginToEETMS.Location = new System.Drawing.Point(58, 398);
             this.GGButtonLoginToEETMS.Name = "GGButtonLoginToEETMS";
             this.GGButtonLoginToEETMS.Size = new System.Drawing.Size(509, 47);
@@ -238,7 +243,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Calisto MT", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(21)))), ((int)(((byte)(25)))));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.label7.Location = new System.Drawing.Point(54, 282);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 20);
@@ -249,10 +254,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.IndianRed;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1764, 993);
+            this.ClientSize = new System.Drawing.Size(1663, 935);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);

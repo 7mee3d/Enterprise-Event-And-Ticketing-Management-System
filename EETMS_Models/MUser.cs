@@ -16,6 +16,7 @@ namespace EETMS_Models
         public string EmailUser { get; set; }
         public bool IsActiveAccount { get; set; }
         public short PermissionUser { get; set; }
+        public short NumberAttempts { get; set; }
 
         public MUser()
         {
@@ -26,6 +27,7 @@ namespace EETMS_Models
             this.EmailUser = default(string);
             this.IsActiveAccount = default(bool);
             this.PermissionUser = default(short);
+            this.NumberAttempts = default(short);
         }
     }
 }
