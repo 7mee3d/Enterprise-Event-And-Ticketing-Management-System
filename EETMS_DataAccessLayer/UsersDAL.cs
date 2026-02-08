@@ -3,6 +3,7 @@ using System.Configuration;
 using System;
 using System.Data.SqlClient;
 using System.Data;
+using EETMS_Models;
 
 namespace EETMS_DataAccessLayer
 {
@@ -137,5 +138,129 @@ namespace EETMS_DataAccessLayer
             return _IsExsitsTheUserByUsername(Username, Password);
         }
 
+        private static int _InsertNewUser (MUser InformationNewUser)
+        {
+            int NewID = -1;
+
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+
+                    string Query = @"
+                                                        
+                                        INSERT INTO Users (UserFullName , UserName , PasswordUser , EmailUser , PermissionUser )
+                                        VALUES            (@UserFullName , @UserName , @PasswordUser , @EmailUser , @PermissionUser);
+
+
+
+                                        SELECT SCOPE_IDENTITY() ; 
+
+
+                                   ";
+
+                    using (SqlCommand command = new SqlCommand(Query , connection ))
+                    {
+
+                        command.Parameters.Add("UserFullName", SqlDbType.NVarChar, 400).Value = InformationNewUser.UserFullName;
+                        command.Parameters.Add("UserName", SqlDbType.NVarChar, 250).Value = InformationNewUser.Username;
+                        command.Parameters.Add("PasswordUser", SqlDbType.NVarChar, 350).Value = InformationNewUser.PasswordUser;
+                        command.Parameters.Add("EmailUser", SqlDbType.NVarChar, 400).Value = InformationNewUser.EmailUser;
+                        command.Parameters.Add("PermissionUser", SqlDbType.SmallInt).Value = InformationNewUser.PermissionUser;
+
+
+                        connection.Open();
+
+                        object resultInsertNewUser = command.ExecuteScalar();
+
+                        if (resultInsertNewUser != null && int.TryParse(resultInsertNewUser.ToString(), out int NewIDUser))
+                            NewID = NewIDUser;
+
+                        InformationNewUser.UserID = NewID;
+
+                    }
+
+                }
+ 
+
+            }catch(Exception Ex) { }
+
+
+            return NewID;
+
+        }
+   
+        public static int InsertNewUser(MUser InformationNewUser)
+        {
+            return _InsertNewUser(InformationNewUser);
+        }
+
+        private static int _UpdateInformationUser(MUser InformationNewUser)
+        {
+
+            int RowAfective = -1; 
+
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+
+                    string Query = @"
+                                                        
+                                        UPDATE Users 
+
+                                        SET     UserFullName = @UserFullName ,
+                                                UserName = @UserName ,
+                                                PasswordUser = @PasswordUser ,
+                                                EmailUser  = @EmailUser ,
+                                                PermissionUser  = @PermissionUser ,
+                                                NumberAttempt = @NumberAttempt 
+
+
+
+                                        WHERE UserID = @UserID ;
+
+
+                                   ";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        command.Parameters.Add("UserFullName", SqlDbType.NVarChar, 400).Value = InformationNewUser.UserFullName;
+                        command.Parameters.Add("UserName", SqlDbType.NVarChar, 250).Value = InformationNewUser.Username;
+                        command.Parameters.Add("PasswordUser", SqlDbType.NVarChar, 350).Value = InformationNewUser.PasswordUser;
+                        command.Parameters.Add("EmailUser", SqlDbType.NVarChar, 400).Value = InformationNewUser.EmailUser;
+                        command.Parameters.Add("PermissionUser", SqlDbType.SmallInt).Value = InformationNewUser.PermissionUser;
+                        command.Parameters.Add("NumberAttempt", SqlDbType.TinyInt).Value = InformationNewUser.NumberAttempts;
+
+
+                        connection.Open();
+
+                        RowAfective = command.ExecuteNonQuery();
+
+                    }
+
+                }
+
+
+            }
+            catch (Exception Ex) { }
+
+
+            return RowAfective;
+
+        }
+
+        public static int UpdateInformationUser(MUser InformationNewUser)
+        {
+           return  _UpdateInformationUser(InformationNewUser);
+        }
+   
     }
 }
