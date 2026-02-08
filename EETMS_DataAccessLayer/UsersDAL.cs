@@ -16,7 +16,92 @@ namespace EETMS_DataAccessLayer
         private static readonly string _ConneactionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         #endregion    
     
-    
+        private static MUser _FindTheUserByUserNameOrEmail (string UsernameOrEmail )
+        {
+
+            MUser InfoUser = null; 
+
+            try
+            {
+                //UserName = @EmailOrUsername OR
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+                    string Query = @"
+
+                                        SELECT  UserID
+                                                UserFullName ,
+                                                UserName ,
+                                                PasswordUser  ,
+                                                EmailUser   ,
+                                                ActiveAccount ,
+                                                PermissionUser   ,
+                                                NumberAttempt  
+
+                                        FROM Users 
+                                        WHERE (
+
+                                                 (UserName = @UsernameOrEmail)
+                                           OR    (EmailUser = @UsernameOrEmail)
+
+                                              ) ; 
+                                                    
+
+
+                                     ";
+
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        command.Parameters.Add("@UsernameOrEmail", SqlDbType.NVarChar, 400).Value = UsernameOrEmail;
+
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader() )
+                        {
+
+
+                            if (reader.Read () )
+                            {
+
+                                InfoUser = new MUser()
+                                {
+
+                                    UserID = reader["UserID"] != DBNull.Value ? (int)reader["UserID"] : 0,
+                                    UserFullName = reader["UserFullName"] != DBNull.Value ? (string)reader["UserFullName"] : null,
+                                    Username = reader["UserName"] != DBNull.Value ? (string)reader["UserName"] : null,
+                                    PasswordUser = reader["PasswordUser"] != DBNull.Value ? (string)reader["PasswordUser"] : null,
+                                    EmailUser = reader["EmailUser"] != DBNull.Value ? (string)reader["EmailUser"] : null,
+                                    IsActiveAccount = reader["ActiveAccount"] != DBNull.Value ? (bool)reader["ActiveAccount"] : false,
+                                    PermissionUser = reader["PermissionUser"] != DBNull.Value ? (int)reader["PermissionUser"] : 0,
+                                    NumberAttempts = reader["NumberAttempt"] != DBNull.Value ? (int)reader["NumberAttempt"] : 0,
+
+                                };
+
+                            }
+                        }
+
+
+
+                    }
+                }
+
+
+            }
+            catch (Exception Ex)
+            {
+
+            }
+
+            return InfoUser; 
+        }
+
+        public static MUser FindTheUserByUserNameOrEmail(string UsernameOrEmail)
+        {
+            return FindTheUserByUserNameOrEmail(UsernameOrEmail);
+        }
+
         private static bool _IsExsitsTheUserByEmail (string EmailUser , string Password )
         {
 
@@ -263,5 +348,7 @@ namespace EETMS_DataAccessLayer
            return  _UpdateInformationUser(InformationNewUser);
         }
    
+
+
     }
 }

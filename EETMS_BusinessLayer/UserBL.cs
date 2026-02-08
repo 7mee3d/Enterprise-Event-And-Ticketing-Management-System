@@ -1,5 +1,6 @@
 ﻿using EETMS_DataAccessLayer;
 using EETMS_Models;
+using static EETMS_Models.MUser;
 
 namespace EETMS_BusinessLayer
 {
@@ -32,6 +33,37 @@ namespace EETMS_BusinessLayer
 
         }
 
+        public static EnStatusLoginUser PassLoginTheUser (string UsernameOrEmail , string Password )
+        {
 
+            MUser InfoUser = UsersDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
+
+            if (InfoUser == null)
+                return EnStatusLoginUser._kUSER_NOT_FOUND;
+
+            if (InfoUser.NumberAttempts <= 0)
+                return EnStatusLoginUser._kBLOCKED_USER;
+
+            bool isValidAccountUser = (IsUserExsitsByEmail(UsernameOrEmail, Password) || IsUserExsitsByUsername(UsernameOrEmail, Password));
+
+            if(isValidAccountUser )
+            {
+
+                InfoUser.NumberAttempts = 3;
+                UpdateInformationUser(InfoUser);
+                return EnStatusLoginUser._kSUCCESS_LOGIN; 
+
+            }else
+            {
+
+                InfoUser.NumberAttempts -= 1;
+                UpdateInformationUser(InfoUser);
+                return (InfoUser.NumberAttempts > 0) ? EnStatusLoginUser._kFAILD_LOGIN : EnStatusLoginUser._kBLOCKED_USER;
+
+            }
+
+        }
+   
+    
     }
 }

@@ -15,6 +15,16 @@ namespace EETMS_Models
             _kUPDATE_INFORMATION_USER = 2 
         };
 
+
+        public enum EnStatusLoginUser
+        {
+            _kSUCCESS_LOGIN =  1,
+            _kFAILD_LOGIN = 2 , 
+            _kBLOCKED_USER = 3 , 
+            _kUSER_NOT_FOUND = 4
+
+        }
+
         #region All Properties Information User 
 
         public int UserID { get; set; }
@@ -23,8 +33,8 @@ namespace EETMS_Models
         public string PasswordUser { get; set; }
         public string EmailUser { get; set; }
         public bool IsActiveAccount { get; set; }
-        public short PermissionUser { get; set; }
-        public short NumberAttempts { get; set; }
+        public int PermissionUser { get; set; }
+        public int NumberAttempts { get; set; }
         public EnModeUser enMode { get; set;  } = EnModeUser._kADD_NEW_USER;
 
         #endregion
