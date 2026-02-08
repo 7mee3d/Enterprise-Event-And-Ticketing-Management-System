@@ -12,7 +12,7 @@ namespace EETMS_BusinessLayer
 
         public static bool IsUserExsitsByUsername(string Username, string Password) => UsersDAL.IsExsitsTheUserByUsername(Username, Password);
 
-       public static bool AddNewUser (MUser InformationNewUser ) => UsersDAL.InsertNewUser(InformationNewUser) > 0 ;
+        public static bool AddNewUser (MUser InformationNewUser ) => UsersDAL.InsertNewUser(InformationNewUser) > 0 ;
 
         public static bool UpdateInformationUser(MUser InformationNewUser) => UsersDAL.UpdateInformationUser(InformationNewUser.UserID , InformationNewUser) > 0;
 

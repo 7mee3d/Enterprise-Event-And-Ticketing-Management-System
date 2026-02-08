@@ -15,7 +15,6 @@ namespace EETMS_Models
             _kUPDATE_INFORMATION_USER = 2 
         };
 
-
         public enum EnStatusLoginUser
         {
             _kSUCCESS_LOGIN =  1,
@@ -25,6 +24,8 @@ namespace EETMS_Models
 
         }
 
+     
+        
         #region All Properties Information User 
 
         public int UserID { get; set; }

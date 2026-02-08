@@ -40,8 +40,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.GTextBoxUserNameOrEmailUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.GGButtonLoginToEETMS = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GTextBoxPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblShowMessageInLoginScreen = new System.Windows.Forms.Label();
+            this.GGButtonLoginToEETMS = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -152,8 +153,10 @@
             this.GTextBoxUserNameOrEmailUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.GTextBoxUserNameOrEmailUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             this.GTextBoxUserNameOrEmailUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxUserNameOrEmailUser.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.GTextBoxUserNameOrEmailUser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GTextBoxUserNameOrEmailUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxUserNameOrEmailUser.HoverState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.GTextBoxUserNameOrEmailUser.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxUserNameOrEmailUser.IconLeft")));
             this.GTextBoxUserNameOrEmailUser.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.GTextBoxUserNameOrEmailUser.Location = new System.Drawing.Point(53, 209);
@@ -161,13 +164,14 @@
             this.GTextBoxUserNameOrEmailUser.PlaceholderText = "admin@EETMS.com";
             this.GTextBoxUserNameOrEmailUser.SelectedText = "";
             this.GTextBoxUserNameOrEmailUser.Size = new System.Drawing.Size(510, 44);
-            this.GTextBoxUserNameOrEmailUser.TabIndex = 2;
+            this.GTextBoxUserNameOrEmailUser.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.GGButtonLoginToEETMS);
             this.panel1.Controls.Add(this.GTextBoxPassword);
+            this.panel1.Controls.Add(this.lblShowMessageInLoginScreen);
+            this.panel1.Controls.Add(this.GGButtonLoginToEETMS);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.GTextBoxUserNameOrEmailUser);
             this.panel1.Controls.Add(this.label5);
@@ -177,6 +181,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(572, 525);
             this.panel1.TabIndex = 3;
+            // 
+            // GTextBoxPassword
+            // 
+            this.GTextBoxPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.GTextBoxPassword.BorderRadius = 10;
+            this.GTextBoxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxPassword.DefaultText = "";
+            this.GTextBoxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.GTextBoxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GTextBoxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxPassword.IconLeft")));
+            this.GTextBoxPassword.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxPassword.Location = new System.Drawing.Point(57, 311);
+            this.GTextBoxPassword.Name = "GTextBoxPassword";
+            this.GTextBoxPassword.PasswordChar = '•';
+            this.GTextBoxPassword.PlaceholderText = "•••••••";
+            this.GTextBoxPassword.SelectedText = "";
+            this.GTextBoxPassword.Size = new System.Drawing.Size(506, 44);
+            this.GTextBoxPassword.TabIndex = 7;
+            // 
+            // lblShowMessageInLoginScreen
+            // 
+            this.lblShowMessageInLoginScreen.AutoSize = true;
+            this.lblShowMessageInLoginScreen.BackColor = System.Drawing.Color.Transparent;
+            this.lblShowMessageInLoginScreen.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowMessageInLoginScreen.ForeColor = System.Drawing.Color.White;
+            this.lblShowMessageInLoginScreen.Location = new System.Drawing.Point(81, 387);
+            this.lblShowMessageInLoginScreen.Name = "lblShowMessageInLoginScreen";
+            this.lblShowMessageInLoginScreen.Size = new System.Drawing.Size(28, 17);
+            this.lblShowMessageInLoginScreen.TabIndex = 6;
+            this.lblShowMessageInLoginScreen.Text = "----";
             // 
             // GGButtonLoginToEETMS
             // 
@@ -200,43 +240,15 @@
             this.GGButtonLoginToEETMS.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonLoginToEETMS.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonLoginToEETMS.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonLoginToEETMS.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonLoginToEETMS.HoverState.ForeColor = System.Drawing.Color.White;
             this.GGButtonLoginToEETMS.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonLoginToEETMS.Image")));
             this.GGButtonLoginToEETMS.ImageOffset = new System.Drawing.Point(75, 0);
-            this.GGButtonLoginToEETMS.Location = new System.Drawing.Point(58, 398);
+            this.GGButtonLoginToEETMS.Location = new System.Drawing.Point(58, 407);
             this.GGButtonLoginToEETMS.Name = "GGButtonLoginToEETMS";
             this.GGButtonLoginToEETMS.Size = new System.Drawing.Size(509, 47);
-            this.GGButtonLoginToEETMS.TabIndex = 5;
+            this.GGButtonLoginToEETMS.TabIndex = 2;
             this.GGButtonLoginToEETMS.Text = "Login To EETMS";
             this.GGButtonLoginToEETMS.Click += new System.EventHandler(this.GGButtonLoginToEETMS_Click);
-            // 
-            // GTextBoxPassword
-            // 
-            this.GTextBoxPassword.Animated = true;
-            this.GTextBoxPassword.BackColor = System.Drawing.Color.Transparent;
-            this.GTextBoxPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.GTextBoxPassword.BorderRadius = 10;
-            this.GTextBoxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxPassword.DefaultText = "";
-            this.GTextBoxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.GTextBoxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GTextBoxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxPassword.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.GTextBoxPassword.HoverState.ForeColor = System.Drawing.Color.Transparent;
-            this.GTextBoxPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxPassword.IconLeft")));
-            this.GTextBoxPassword.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxPassword.Location = new System.Drawing.Point(57, 311);
-            this.GTextBoxPassword.Name = "GTextBoxPassword";
-            this.GTextBoxPassword.PasswordChar = '●';
-            this.GTextBoxPassword.PlaceholderText = "●●●●●●●●●●●";
-            this.GTextBoxPassword.SelectedText = "";
-            this.GTextBoxPassword.Size = new System.Drawing.Size(506, 44);
-            this.GTextBoxPassword.TabIndex = 4;
             // 
             // label7
             // 
@@ -252,10 +264,11 @@
             // 
             // frmLoginEETMS
             // 
+            this.AcceptButton = this.GGButtonLoginToEETMS;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.IndianRed;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::EETMS_Presentation.Properties.Resources.EETMS_LoginScreen_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1663, 935);
             this.Controls.Add(this.panel1);
@@ -265,9 +278,13 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLoginEETMS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Move += new System.EventHandler(this.frmLoginEETMS_Move);
+            this.Resize += new System.EventHandler(this.frmLoginEETMS_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -287,9 +304,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2TextBox GTextBoxPassword;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonLoginToEETMS;
+        private System.Windows.Forms.Label lblShowMessageInLoginScreen;
+        private Guna.UI2.WinForms.Guna2TextBox GTextBoxPassword;
     }
 }
 

@@ -1,45 +1,92 @@
-﻿using System;
+﻿using EETMS_BusinessLayer;
+using System;
+using System.Drawing; 
+using System.Runtime.Remoting.Contexts;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using EETMS_BusinessLayer;
 
 namespace EETMS_Presentation
 {
     public partial class frmLoginEETMS : Form
     {
-        
+
+        private const short _kNUMBER_TOP_SHOW_KMESSAGE = 5; 
+        private const short _kORIGNIAL_TOP_LABLEL_SHOW_MESSAGE = 387;
+        bool _IsAnimating = false;
+
         public frmLoginEETMS()
         {
             InitializeComponent();
+
         }
 
-        private void _LoginEETMS()
+        private void _MakeTheLoginScreenCenterPosition ()
+        {
+
+            int X_Axis = ((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2); 
+            int Y_Axis = ((Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
+
+            this.Location = new Point(X_Axis, Y_Axis);
+            this.Size = new Size(1663, 935);
+
+        }
+
+        private async Task _AniMessageLoginScreen(Label ObjLabel, string Context, Color? ForeColor = null)
+        {
+            if (_IsAnimating) return;
+            _IsAnimating = true;
+
+            ObjLabel.Visible = true;
+            ObjLabel.ForeColor = ForeColor ?? Color.Black;
+            ObjLabel.Text = Context;
+
+            for (int i = 0; i <= _kNUMBER_TOP_SHOW_KMESSAGE; i++)
+            {
+                ObjLabel.Location = new Point(81, 374 - i);
+                await Task.Delay(5);
+            }
+
+            await Task.Delay(2000);
+            ObjLabel.Visible = false;
+            ObjLabel.Location = new Point(81, _kORIGNIAL_TOP_LABLEL_SHOW_MESSAGE);
+
+            _IsAnimating = false;
+        }
+
+        private async Task  _LoginEETMS()
         {
             string UserNameOrEmail = GTextBoxUserNameOrEmailUser.Text;
             string Password = GTextBoxPassword.Text;
+
             switch(UserBL.PassLoginTheUser(UserNameOrEmail , Password))
             {
                 case EETMS_Models.MUser.EnStatusLoginUser._kSUCCESS_LOGIN:
-                    MessageBox.Show("Login Successfully");
-                    break;
+                    await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "Login Sccessfully", Color.Green);   break;
 
                 case EETMS_Models.MUser.EnStatusLoginUser._kFAILD_LOGIN:
-                    MessageBox.Show("Login Faild");
-                    break;
+                    await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "Username or Password is incorrect", Color.Red); break;
 
                 case EETMS_Models.MUser.EnStatusLoginUser._kBLOCKED_USER:
-                    MessageBox.Show("Login Blocked");
-                    break;
+                    await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "User is blocked", Color.Red); break;
 
                 case EETMS_Models.MUser.EnStatusLoginUser._kUSER_NOT_FOUND:
-                    MessageBox.Show("User Not Found");
-                    break;
+                    await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "User not found", Color.Red); break;
             }
         }
 
-        private void GGButtonLoginToEETMS_Click(object sender, EventArgs e)
+        private async void GGButtonLoginToEETMS_Click(object sender, EventArgs e)
         {
-            _LoginEETMS();
+            await _LoginEETMS();
+        }
+
+        private void frmLoginEETMS_Move(object sender, EventArgs e)
+        {
+            _MakeTheLoginScreenCenterPosition();
+        }
+
+        private void frmLoginEETMS_Resize(object sender, EventArgs e)
+        {
+            _MakeTheLoginScreenCenterPosition();
         }
     }
 }
