@@ -63,7 +63,10 @@ namespace EETMS_BusinessLayer
             }
 
         }
-   
-    
+
+        public static MUser FindUser(string UsernameOrEmail)
+        {
+            return UsersDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
+        }
     }
 }

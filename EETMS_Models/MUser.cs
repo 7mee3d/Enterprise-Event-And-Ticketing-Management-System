@@ -8,6 +8,19 @@ namespace EETMS_Models
 {
     public  class MUser
     {
+     /*   public struct stRoleUser
+        {
+            int RoleID;
+            string RoleName;
+            int Permssions;
+
+            public stRoleUser (int parameter = 0)
+            {
+                RoleID = default;
+                RoleName = default;
+                Permssions = default; 
+            }
+        }*/
 
         public enum EnModeUser
         {
@@ -37,6 +50,8 @@ namespace EETMS_Models
         public int PermissionUser { get; set; }
         public int NumberAttempts { get; set; }
         public EnModeUser enMode { get; set;  } = EnModeUser._kADD_NEW_USER;
+        public string RoleName { get; set;  }
+
 
         #endregion
 

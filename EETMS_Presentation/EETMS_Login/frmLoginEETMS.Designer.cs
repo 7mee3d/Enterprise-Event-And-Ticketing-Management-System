@@ -214,9 +214,8 @@
             this.lblShowMessageInLoginScreen.ForeColor = System.Drawing.Color.White;
             this.lblShowMessageInLoginScreen.Location = new System.Drawing.Point(81, 387);
             this.lblShowMessageInLoginScreen.Name = "lblShowMessageInLoginScreen";
-            this.lblShowMessageInLoginScreen.Size = new System.Drawing.Size(28, 17);
+            this.lblShowMessageInLoginScreen.Size = new System.Drawing.Size(0, 17);
             this.lblShowMessageInLoginScreen.TabIndex = 6;
-            this.lblShowMessageInLoginScreen.Text = "----";
             // 
             // GGButtonLoginToEETMS
             // 
@@ -282,7 +281,7 @@
             this.MinimizeBox = false;
             this.Name = "frmLoginEETMS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "EETMS_Login";
             this.Move += new System.EventHandler(this.frmLoginEETMS_Move);
             this.Resize += new System.EventHandler(this.frmLoginEETMS_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

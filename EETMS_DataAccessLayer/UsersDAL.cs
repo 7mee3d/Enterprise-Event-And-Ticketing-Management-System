@@ -35,10 +35,13 @@ namespace EETMS_DataAccessLayer
                                                 PasswordUser  ,
                                                 EmailUser   ,
                                                 ActiveAccount ,
-                                                PermissionUser   ,
-                                                NumberAttempts  
-
+                                                NumberAttempts  ,
+                                                RoleName
+                                                
                                         FROM Users 
+                                        INNER JOIN Roles
+                                        ON Users.RoleID = Roles.RoleID
+
                                         WHERE (
 
                                                  (UserName = @UsernameOrEmail)
@@ -74,9 +77,8 @@ namespace EETMS_DataAccessLayer
                                     PasswordUser = reader["PasswordUser"] != DBNull.Value ? (string)reader["PasswordUser"] : null,
                                     EmailUser = reader["EmailUser"] != DBNull.Value ? (string)reader["EmailUser"] : null,
                                     IsActiveAccount = reader["ActiveAccount"] != DBNull.Value ? (bool)reader["ActiveAccount"] : false,
-                                    PermissionUser = reader["PermissionUser"] != DBNull.Value ? (int)reader["PermissionUser"] : 0,
                                     NumberAttempts = reader["NumberAttempts"] != DBNull.Value ? (int)reader["NumberAttempts"] : 0,
-
+                                    RoleName = reader["RoleName"] != DBNull.Value ? (string)reader["RoleName"] : null,
                                 };
 
                             }

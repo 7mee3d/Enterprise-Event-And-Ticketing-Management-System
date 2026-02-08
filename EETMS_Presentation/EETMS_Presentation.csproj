@@ -56,22 +56,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dashboard\USdashboard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Dashboard\USdashboard.Designer.cs">
-      <DependentUpon>USdashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLoginEETMS.cs">
+    <Compile Include="EETMS_Login\frmLoginEETMS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoginEETMS.Designer.cs">
+    <Compile Include="EETMS_Login\frmLoginEETMS.Designer.cs">
       <DependentUpon>frmLoginEETMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EETMS_Main\frmMainScreenEETMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EETMS_Main\frmMainScreenEETMS.Designer.cs">
+      <DependentUpon>frmMainScreenEETMS.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmLoginEETMS.resx">
+    <EmbeddedResource Include="EETMS_Login\frmLoginEETMS.resx">
       <DependentUpon>frmLoginEETMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Main\frmMainScreenEETMS.resx">
+      <DependentUpon>frmMainScreenEETMS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,7 +112,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EETMS_Login.jpg" />
+    <None Include="Resources\EETMS_LoginScreen_Background.jpg" />
+    <None Include="Resources\logout_EETMS.png" />
     <Content Include="Ticket_Icon_EETMSico.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

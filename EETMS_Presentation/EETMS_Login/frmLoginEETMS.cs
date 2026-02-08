@@ -1,7 +1,7 @@
 ﻿using EETMS_BusinessLayer;
+using EETMS_Presentation.EETMS_Main;
 using System;
 using System.Drawing; 
-using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -53,6 +53,14 @@ namespace EETMS_Presentation
             _IsAnimating = false;
         }
 
+        private void OpenMainScreenEETMS (string Username )
+        {
+
+            frmMainScreenEETMS frm_MS_EETMS = new frmMainScreenEETMS(Username);
+            frm_MS_EETMS.Show();
+            this.Hide();
+        }
+
         private async Task  _LoginEETMS()
         {
             string UserNameOrEmail = GTextBoxUserNameOrEmailUser.Text;
@@ -61,7 +69,9 @@ namespace EETMS_Presentation
             switch(UserBL.PassLoginTheUser(UserNameOrEmail , Password))
             {
                 case EETMS_Models.MUser.EnStatusLoginUser._kSUCCESS_LOGIN:
-                    await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "Login Sccessfully", Color.Green);   break;
+                    //await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "Login Sccessfully", Color.Green);
+                    OpenMainScreenEETMS(UserNameOrEmail);
+                    break;
 
                 case EETMS_Models.MUser.EnStatusLoginUser._kFAILD_LOGIN:
                     await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "Username or Password is incorrect", Color.Red); break;
