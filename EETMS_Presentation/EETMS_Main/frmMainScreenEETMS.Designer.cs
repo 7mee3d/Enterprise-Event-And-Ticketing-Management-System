@@ -32,11 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainScreenEETMS));
             this.GBorderLessForm = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.GGPanelButtonsEETMS_Main = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GPanelTopMainScreen = new Guna.UI2.WinForms.Guna2Panel();
-            this.GPanelMainScreens = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblNameUser = new System.Windows.Forms.Label();
-            this.lblRoleUser = new System.Windows.Forms.Label();
             this.GButtonPayment = new Guna.UI2.WinForms.Guna2Button();
             this.GButtonReport = new Guna.UI2.WinForms.Guna2Button();
             this.GButtonTickets = new Guna.UI2.WinForms.Guna2Button();
@@ -45,7 +40,11 @@
             this.GButtonCategory = new Guna.UI2.WinForms.Guna2Button();
             this.GButtonDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.PicLogoutEETMS = new System.Windows.Forms.PictureBox();
+            this.lblRoleUser = new System.Windows.Forms.Label();
+            this.lblNameUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.GPanelMainScreens = new Guna.UI2.WinForms.Guna2Panel();
             this.GGPanelButtonsEETMS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogoutEETMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,58 +82,6 @@
             this.GGPanelButtonsEETMS_Main.Size = new System.Drawing.Size(244, 935);
             this.GGPanelButtonsEETMS_Main.TabIndex = 0;
             // 
-            // GPanelTopMainScreen
-            // 
-            this.GPanelTopMainScreen.BackColor = System.Drawing.Color.White;
-            this.GPanelTopMainScreen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GPanelTopMainScreen.Location = new System.Drawing.Point(244, 0);
-            this.GPanelTopMainScreen.Name = "GPanelTopMainScreen";
-            this.GPanelTopMainScreen.Size = new System.Drawing.Size(1419, 73);
-            this.GPanelTopMainScreen.TabIndex = 1;
-            // 
-            // GPanelMainScreens
-            // 
-            this.GPanelMainScreens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.GPanelMainScreens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GPanelMainScreens.Location = new System.Drawing.Point(244, 73);
-            this.GPanelMainScreens.Name = "GPanelMainScreens";
-            this.GPanelMainScreens.Size = new System.Drawing.Size(1419, 862);
-            this.GPanelMainScreens.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(110, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "EETMS";
-            // 
-            // lblNameUser
-            // 
-            this.lblNameUser.AutoSize = true;
-            this.lblNameUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameUser.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameUser.ForeColor = System.Drawing.Color.White;
-            this.lblNameUser.Location = new System.Drawing.Point(66, 881);
-            this.lblNameUser.Name = "lblNameUser";
-            this.lblNameUser.Size = new System.Drawing.Size(0, 15);
-            this.lblNameUser.TabIndex = 3;
-            // 
-            // lblRoleUser
-            // 
-            this.lblRoleUser.AutoSize = true;
-            this.lblRoleUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblRoleUser.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoleUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(198)))), ((int)(((byte)(243)))));
-            this.lblRoleUser.Location = new System.Drawing.Point(68, 901);
-            this.lblRoleUser.Name = "lblRoleUser";
-            this.lblRoleUser.Size = new System.Drawing.Size(0, 12);
-            this.lblRoleUser.TabIndex = 3;
-            // 
             // GButtonPayment
             // 
             this.GButtonPayment.Animated = true;
@@ -157,7 +104,7 @@
             this.GButtonPayment.Location = new System.Drawing.Point(12, 470);
             this.GButtonPayment.Name = "GButtonPayment";
             this.GButtonPayment.Size = new System.Drawing.Size(220, 44);
-            this.GButtonPayment.TabIndex = 6;
+            this.GButtonPayment.TabIndex = 5;
             this.GButtonPayment.Text = "Payment";
             this.GButtonPayment.Click += new System.EventHandler(this.GButtonPayment_Click);
             // 
@@ -183,7 +130,7 @@
             this.GButtonReport.Location = new System.Drawing.Point(12, 536);
             this.GButtonReport.Name = "GButtonReport";
             this.GButtonReport.Size = new System.Drawing.Size(220, 44);
-            this.GButtonReport.TabIndex = 5;
+            this.GButtonReport.TabIndex = 6;
             this.GButtonReport.Text = "Report";
             this.GButtonReport.Click += new System.EventHandler(this.GButtonReport_Click);
             // 
@@ -209,7 +156,7 @@
             this.GButtonTickets.Location = new System.Drawing.Point(12, 404);
             this.GButtonTickets.Name = "GButtonTickets";
             this.GButtonTickets.Size = new System.Drawing.Size(220, 44);
-            this.GButtonTickets.TabIndex = 5;
+            this.GButtonTickets.TabIndex = 4;
             this.GButtonTickets.Text = "Tickets";
             this.GButtonTickets.Click += new System.EventHandler(this.GButtonTickets_Click);
             // 
@@ -235,7 +182,7 @@
             this.GButtonCustomers.Location = new System.Drawing.Point(12, 338);
             this.GButtonCustomers.Name = "GButtonCustomers";
             this.GButtonCustomers.Size = new System.Drawing.Size(220, 44);
-            this.GButtonCustomers.TabIndex = 5;
+            this.GButtonCustomers.TabIndex = 3;
             this.GButtonCustomers.Text = "Customers";
             this.GButtonCustomers.Click += new System.EventHandler(this.GButtonCustomers_Click);
             // 
@@ -261,7 +208,7 @@
             this.GButtonEvents.Location = new System.Drawing.Point(12, 272);
             this.GButtonEvents.Name = "GButtonEvents";
             this.GButtonEvents.Size = new System.Drawing.Size(220, 44);
-            this.GButtonEvents.TabIndex = 5;
+            this.GButtonEvents.TabIndex = 2;
             this.GButtonEvents.Text = "Events";
             this.GButtonEvents.Click += new System.EventHandler(this.GButtonEvents_Click);
             // 
@@ -287,7 +234,7 @@
             this.GButtonCategory.Location = new System.Drawing.Point(12, 206);
             this.GButtonCategory.Name = "GButtonCategory";
             this.GButtonCategory.Size = new System.Drawing.Size(220, 44);
-            this.GButtonCategory.TabIndex = 5;
+            this.GButtonCategory.TabIndex = 1;
             this.GButtonCategory.Text = "Category";
             this.GButtonCategory.Click += new System.EventHandler(this.GButtonCategory_Click);
             // 
@@ -313,7 +260,7 @@
             this.GButtonDashboard.Location = new System.Drawing.Point(12, 140);
             this.GButtonDashboard.Name = "GButtonDashboard";
             this.GButtonDashboard.Size = new System.Drawing.Size(220, 44);
-            this.GButtonDashboard.TabIndex = 5;
+            this.GButtonDashboard.TabIndex = 0;
             this.GButtonDashboard.Text = "DashBoard";
             this.GButtonDashboard.Click += new System.EventHandler(this.GButtonDashboard_Click);
             // 
@@ -330,6 +277,28 @@
             this.PicLogoutEETMS.TabStop = false;
             this.PicLogoutEETMS.Click += new System.EventHandler(this.PicLogoutEETMS_Click);
             // 
+            // lblRoleUser
+            // 
+            this.lblRoleUser.AutoSize = true;
+            this.lblRoleUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblRoleUser.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoleUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(198)))), ((int)(((byte)(243)))));
+            this.lblRoleUser.Location = new System.Drawing.Point(68, 901);
+            this.lblRoleUser.Name = "lblRoleUser";
+            this.lblRoleUser.Size = new System.Drawing.Size(0, 12);
+            this.lblRoleUser.TabIndex = 3;
+            // 
+            // lblNameUser
+            // 
+            this.lblNameUser.AutoSize = true;
+            this.lblNameUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameUser.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameUser.ForeColor = System.Drawing.Color.White;
+            this.lblNameUser.Location = new System.Drawing.Point(66, 881);
+            this.lblNameUser.Name = "lblNameUser";
+            this.lblNameUser.Size = new System.Drawing.Size(0, 15);
+            this.lblNameUser.TabIndex = 3;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -341,6 +310,27 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(110, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "EETMS";
+            // 
+            // GPanelMainScreens
+            // 
+            this.GPanelMainScreens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.GPanelMainScreens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GPanelMainScreens.Location = new System.Drawing.Point(244, 0);
+            this.GPanelMainScreens.Name = "GPanelMainScreens";
+            this.GPanelMainScreens.Size = new System.Drawing.Size(1419, 935);
+            this.GPanelMainScreens.TabIndex = 2;
+            // 
             // frmMainScreenEETMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,13 +338,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1663, 935);
             this.Controls.Add(this.GPanelMainScreens);
-            this.Controls.Add(this.GPanelTopMainScreen);
             this.Controls.Add(this.GGPanelButtonsEETMS_Main);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMainScreenEETMS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainScreenEETMS";
-            this.Load += new System.EventHandler(this.frmMainScreenEETMS_Load);
             this.GGPanelButtonsEETMS_Main.ResumeLayout(false);
             this.GGPanelButtonsEETMS_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogoutEETMS)).EndInit();
@@ -366,7 +354,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2BorderlessForm GBorderLessForm;
-        private Guna.UI2.WinForms.Guna2Panel GPanelTopMainScreen;
         private Guna.UI2.WinForms.Guna2GradientPanel GGPanelButtonsEETMS_Main;
         private Guna.UI2.WinForms.Guna2Panel GPanelMainScreens;
         private System.Windows.Forms.Label label1;
