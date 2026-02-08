@@ -165,11 +165,11 @@ namespace EETMS_DataAccessLayer
                     using (SqlCommand command = new SqlCommand(Query , connection ))
                     {
 
-                        command.Parameters.Add("UserFullName", SqlDbType.NVarChar, 400).Value = InformationNewUser.UserFullName;
-                        command.Parameters.Add("UserName", SqlDbType.NVarChar, 250).Value = InformationNewUser.Username;
-                        command.Parameters.Add("PasswordUser", SqlDbType.NVarChar, 350).Value = InformationNewUser.PasswordUser;
-                        command.Parameters.Add("EmailUser", SqlDbType.NVarChar, 400).Value = InformationNewUser.EmailUser;
-                        command.Parameters.Add("PermissionUser", SqlDbType.SmallInt).Value = InformationNewUser.PermissionUser;
+                        command.Parameters.Add("@UserFullName", SqlDbType.NVarChar, 400).Value = InformationNewUser.UserFullName;
+                        command.Parameters.Add("@UserName", SqlDbType.NVarChar, 250).Value = InformationNewUser.Username;
+                        command.Parameters.Add("@PasswordUser", SqlDbType.NVarChar, 350).Value = InformationNewUser.PasswordUser;
+                        command.Parameters.Add("@EmailUser", SqlDbType.NVarChar, 400).Value = InformationNewUser.EmailUser;
+                        command.Parameters.Add("@PermissionUser", SqlDbType.SmallInt).Value = InformationNewUser.PermissionUser;
 
 
                         connection.Open();
@@ -232,12 +232,13 @@ namespace EETMS_DataAccessLayer
                     using (SqlCommand command = new SqlCommand(Query, connection))
                     {
 
-                        command.Parameters.Add("UserFullName", SqlDbType.NVarChar, 400).Value = InformationNewUser.UserFullName;
-                        command.Parameters.Add("UserName", SqlDbType.NVarChar, 250).Value = InformationNewUser.Username;
-                        command.Parameters.Add("PasswordUser", SqlDbType.NVarChar, 350).Value = InformationNewUser.PasswordUser;
-                        command.Parameters.Add("EmailUser", SqlDbType.NVarChar, 400).Value = InformationNewUser.EmailUser;
-                        command.Parameters.Add("PermissionUser", SqlDbType.SmallInt).Value = InformationNewUser.PermissionUser;
-                        command.Parameters.Add("NumberAttempt", SqlDbType.TinyInt).Value = InformationNewUser.NumberAttempts;
+                        command.Parameters.Add("@UserID", SqlDbType.Int).Value = InformationNewUser.UserID;
+                        command.Parameters.Add("@UserFullName", SqlDbType.NVarChar, 400).Value = InformationNewUser.UserFullName;
+                        command.Parameters.Add("@UserName", SqlDbType.NVarChar, 250).Value = InformationNewUser.Username;
+                        command.Parameters.Add("@PasswordUser", SqlDbType.NVarChar, 350).Value = InformationNewUser.PasswordUser;
+                        command.Parameters.Add("@EmailUser", SqlDbType.NVarChar, 400).Value = InformationNewUser.EmailUser;
+                        command.Parameters.Add("@PermissionUser", SqlDbType.SmallInt).Value = InformationNewUser.PermissionUser;
+                        command.Parameters.Add("@NumberAttempt", SqlDbType.TinyInt).Value = InformationNewUser.NumberAttempts;
 
 
                         connection.Open();

@@ -25,8 +25,7 @@ namespace EETMS_Models
         public bool IsActiveAccount { get; set; }
         public short PermissionUser { get; set; }
         public short NumberAttempts { get; set; }
-
-        EnModeUser enMode = EnModeUser._kADD_NEW_USER;
+        public EnModeUser enMode { get; set;  } = EnModeUser._kADD_NEW_USER;
 
         #endregion
 
