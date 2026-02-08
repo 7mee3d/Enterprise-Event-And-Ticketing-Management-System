@@ -37,15 +37,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblNameUser = new System.Windows.Forms.Label();
             this.lblRoleUser = new System.Windows.Forms.Label();
+            this.GButtonPayment = new Guna.UI2.WinForms.Guna2Button();
+            this.GButtonReport = new Guna.UI2.WinForms.Guna2Button();
+            this.GButtonTickets = new Guna.UI2.WinForms.Guna2Button();
+            this.GButtonCustomers = new Guna.UI2.WinForms.Guna2Button();
+            this.GButtonEvents = new Guna.UI2.WinForms.Guna2Button();
+            this.GButtonCategory = new Guna.UI2.WinForms.Guna2Button();
+            this.GButtonDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.PicLogoutEETMS = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.GButtonEvents = new Guna.UI2.WinForms.Guna2Button();
-            this.GButtonCustomers = new Guna.UI2.WinForms.Guna2Button();
-            this.GButtonTickets = new Guna.UI2.WinForms.Guna2Button();
-            this.GButtonReport = new Guna.UI2.WinForms.Guna2Button();
-            this.GButtonCategory = new Guna.UI2.WinForms.Guna2Button();
-            this.GButtonPayment = new Guna.UI2.WinForms.Guna2Button();
             this.GGPanelButtonsEETMS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogoutEETMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +69,7 @@
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonCustomers);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonEvents);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonCategory);
-            this.GGPanelButtonsEETMS_Main.Controls.Add(this.guna2Button1);
+            this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonDashboard);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.PicLogoutEETMS);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.lblRoleUser);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.lblNameUser);
@@ -135,6 +135,188 @@
             this.lblRoleUser.Size = new System.Drawing.Size(0, 12);
             this.lblRoleUser.TabIndex = 3;
             // 
+            // GButtonPayment
+            // 
+            this.GButtonPayment.Animated = true;
+            this.GButtonPayment.AnimatedGIF = true;
+            this.GButtonPayment.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonPayment.BorderRadius = 5;
+            this.GButtonPayment.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonPayment.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonPayment.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GButtonPayment.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonPayment.ForeColor = System.Drawing.Color.White;
+            this.GButtonPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonPayment.Image = ((System.Drawing.Image)(resources.GetObject("GButtonPayment.Image")));
+            this.GButtonPayment.ImageOffset = new System.Drawing.Point(-9, 0);
+            this.GButtonPayment.Location = new System.Drawing.Point(12, 470);
+            this.GButtonPayment.Name = "GButtonPayment";
+            this.GButtonPayment.Size = new System.Drawing.Size(220, 44);
+            this.GButtonPayment.TabIndex = 6;
+            this.GButtonPayment.Text = "Payment";
+            this.GButtonPayment.Click += new System.EventHandler(this.GButtonPayment_Click);
+            // 
+            // GButtonReport
+            // 
+            this.GButtonReport.Animated = true;
+            this.GButtonReport.AnimatedGIF = true;
+            this.GButtonReport.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonReport.BorderRadius = 5;
+            this.GButtonReport.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonReport.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonReport.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GButtonReport.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonReport.ForeColor = System.Drawing.Color.White;
+            this.GButtonReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonReport.Image = ((System.Drawing.Image)(resources.GetObject("GButtonReport.Image")));
+            this.GButtonReport.ImageOffset = new System.Drawing.Point(-12, 0);
+            this.GButtonReport.Location = new System.Drawing.Point(12, 536);
+            this.GButtonReport.Name = "GButtonReport";
+            this.GButtonReport.Size = new System.Drawing.Size(220, 44);
+            this.GButtonReport.TabIndex = 5;
+            this.GButtonReport.Text = "Report";
+            this.GButtonReport.Click += new System.EventHandler(this.GButtonReport_Click);
+            // 
+            // GButtonTickets
+            // 
+            this.GButtonTickets.Animated = true;
+            this.GButtonTickets.AnimatedGIF = true;
+            this.GButtonTickets.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonTickets.BorderRadius = 5;
+            this.GButtonTickets.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonTickets.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonTickets.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonTickets.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonTickets.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonTickets.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonTickets.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonTickets.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GButtonTickets.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonTickets.ForeColor = System.Drawing.Color.White;
+            this.GButtonTickets.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonTickets.Image = ((System.Drawing.Image)(resources.GetObject("GButtonTickets.Image")));
+            this.GButtonTickets.ImageOffset = new System.Drawing.Point(-11, 0);
+            this.GButtonTickets.Location = new System.Drawing.Point(12, 404);
+            this.GButtonTickets.Name = "GButtonTickets";
+            this.GButtonTickets.Size = new System.Drawing.Size(220, 44);
+            this.GButtonTickets.TabIndex = 5;
+            this.GButtonTickets.Text = "Tickets";
+            this.GButtonTickets.Click += new System.EventHandler(this.GButtonTickets_Click);
+            // 
+            // GButtonCustomers
+            // 
+            this.GButtonCustomers.Animated = true;
+            this.GButtonCustomers.AnimatedGIF = true;
+            this.GButtonCustomers.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonCustomers.BorderRadius = 5;
+            this.GButtonCustomers.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonCustomers.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonCustomers.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonCustomers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCustomers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCustomers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonCustomers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonCustomers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GButtonCustomers.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonCustomers.ForeColor = System.Drawing.Color.White;
+            this.GButtonCustomers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonCustomers.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCustomers.Image")));
+            this.GButtonCustomers.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GButtonCustomers.Location = new System.Drawing.Point(12, 338);
+            this.GButtonCustomers.Name = "GButtonCustomers";
+            this.GButtonCustomers.Size = new System.Drawing.Size(220, 44);
+            this.GButtonCustomers.TabIndex = 5;
+            this.GButtonCustomers.Text = "Customers";
+            this.GButtonCustomers.Click += new System.EventHandler(this.GButtonCustomers_Click);
+            // 
+            // GButtonEvents
+            // 
+            this.GButtonEvents.Animated = true;
+            this.GButtonEvents.AnimatedGIF = true;
+            this.GButtonEvents.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonEvents.BorderRadius = 5;
+            this.GButtonEvents.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonEvents.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonEvents.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonEvents.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonEvents.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonEvents.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GButtonEvents.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonEvents.ForeColor = System.Drawing.Color.White;
+            this.GButtonEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonEvents.Image = ((System.Drawing.Image)(resources.GetObject("GButtonEvents.Image")));
+            this.GButtonEvents.ImageOffset = new System.Drawing.Point(-12, 0);
+            this.GButtonEvents.Location = new System.Drawing.Point(12, 272);
+            this.GButtonEvents.Name = "GButtonEvents";
+            this.GButtonEvents.Size = new System.Drawing.Size(220, 44);
+            this.GButtonEvents.TabIndex = 5;
+            this.GButtonEvents.Text = "Events";
+            this.GButtonEvents.Click += new System.EventHandler(this.GButtonEvents_Click);
+            // 
+            // GButtonCategory
+            // 
+            this.GButtonCategory.Animated = true;
+            this.GButtonCategory.AnimatedGIF = true;
+            this.GButtonCategory.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonCategory.BorderRadius = 5;
+            this.GButtonCategory.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonCategory.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GButtonCategory.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonCategory.ForeColor = System.Drawing.Color.White;
+            this.GButtonCategory.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonCategory.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCategory.Image")));
+            this.GButtonCategory.ImageOffset = new System.Drawing.Point(-9, 0);
+            this.GButtonCategory.Location = new System.Drawing.Point(12, 206);
+            this.GButtonCategory.Name = "GButtonCategory";
+            this.GButtonCategory.Size = new System.Drawing.Size(220, 44);
+            this.GButtonCategory.TabIndex = 5;
+            this.GButtonCategory.Text = "Category";
+            this.GButtonCategory.Click += new System.EventHandler(this.GButtonCategory_Click);
+            // 
+            // GButtonDashboard
+            // 
+            this.GButtonDashboard.Animated = true;
+            this.GButtonDashboard.AnimatedGIF = true;
+            this.GButtonDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonDashboard.BorderRadius = 5;
+            this.GButtonDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonDashboard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonDashboard.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonDashboard.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GButtonDashboard.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonDashboard.ForeColor = System.Drawing.Color.White;
+            this.GButtonDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonDashboard.Image = ((System.Drawing.Image)(resources.GetObject("GButtonDashboard.Image")));
+            this.GButtonDashboard.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GButtonDashboard.Location = new System.Drawing.Point(12, 140);
+            this.GButtonDashboard.Name = "GButtonDashboard";
+            this.GButtonDashboard.Size = new System.Drawing.Size(220, 44);
+            this.GButtonDashboard.TabIndex = 5;
+            this.GButtonDashboard.Text = "DashBoard";
+            this.GButtonDashboard.Click += new System.EventHandler(this.GButtonDashboard_Click);
+            // 
             // PicLogoutEETMS
             // 
             this.PicLogoutEETMS.BackColor = System.Drawing.Color.Transparent;
@@ -158,174 +340,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.AnimatedGIF = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.guna2Button1.Location = new System.Drawing.Point(12, 140);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(220, 44);
-            this.guna2Button1.TabIndex = 5;
-            this.guna2Button1.Text = "DashBoard";
-            // 
-            // GButtonEvents
-            // 
-            this.GButtonEvents.Animated = true;
-            this.GButtonEvents.AnimatedGIF = true;
-            this.GButtonEvents.BackColor = System.Drawing.Color.Transparent;
-            this.GButtonEvents.BorderRadius = 5;
-            this.GButtonEvents.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonEvents.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonEvents.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonEvents.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonEvents.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GButtonEvents.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold);
-            this.GButtonEvents.ForeColor = System.Drawing.Color.White;
-            this.GButtonEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonEvents.Image = ((System.Drawing.Image)(resources.GetObject("GButtonEvents.Image")));
-            this.GButtonEvents.ImageOffset = new System.Drawing.Point(-12, 0);
-            this.GButtonEvents.Location = new System.Drawing.Point(12, 272);
-            this.GButtonEvents.Name = "GButtonEvents";
-            this.GButtonEvents.Size = new System.Drawing.Size(220, 44);
-            this.GButtonEvents.TabIndex = 5;
-            this.GButtonEvents.Text = "Events";
-            // 
-            // GButtonCustomers
-            // 
-            this.GButtonCustomers.Animated = true;
-            this.GButtonCustomers.AnimatedGIF = true;
-            this.GButtonCustomers.BackColor = System.Drawing.Color.Transparent;
-            this.GButtonCustomers.BorderRadius = 5;
-            this.GButtonCustomers.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonCustomers.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonCustomers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonCustomers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonCustomers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonCustomers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonCustomers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GButtonCustomers.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonCustomers.ForeColor = System.Drawing.Color.White;
-            this.GButtonCustomers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonCustomers.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCustomers.Image")));
-            this.GButtonCustomers.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GButtonCustomers.Location = new System.Drawing.Point(12, 338);
-            this.GButtonCustomers.Name = "GButtonCustomers";
-            this.GButtonCustomers.Size = new System.Drawing.Size(220, 44);
-            this.GButtonCustomers.TabIndex = 5;
-            this.GButtonCustomers.Text = "Customers";
-            // 
-            // GButtonTickets
-            // 
-            this.GButtonTickets.Animated = true;
-            this.GButtonTickets.AnimatedGIF = true;
-            this.GButtonTickets.BackColor = System.Drawing.Color.Transparent;
-            this.GButtonTickets.BorderRadius = 5;
-            this.GButtonTickets.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonTickets.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonTickets.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonTickets.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonTickets.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonTickets.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonTickets.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GButtonTickets.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonTickets.ForeColor = System.Drawing.Color.White;
-            this.GButtonTickets.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonTickets.Image = ((System.Drawing.Image)(resources.GetObject("GButtonTickets.Image")));
-            this.GButtonTickets.ImageOffset = new System.Drawing.Point(-11, 0);
-            this.GButtonTickets.Location = new System.Drawing.Point(12, 404);
-            this.GButtonTickets.Name = "GButtonTickets";
-            this.GButtonTickets.Size = new System.Drawing.Size(220, 44);
-            this.GButtonTickets.TabIndex = 5;
-            this.GButtonTickets.Text = "Tickets";
-            // 
-            // GButtonReport
-            // 
-            this.GButtonReport.Animated = true;
-            this.GButtonReport.AnimatedGIF = true;
-            this.GButtonReport.BackColor = System.Drawing.Color.Transparent;
-            this.GButtonReport.BorderRadius = 5;
-            this.GButtonReport.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonReport.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GButtonReport.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonReport.ForeColor = System.Drawing.Color.White;
-            this.GButtonReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonReport.Image = ((System.Drawing.Image)(resources.GetObject("GButtonReport.Image")));
-            this.GButtonReport.ImageOffset = new System.Drawing.Point(-12, 0);
-            this.GButtonReport.Location = new System.Drawing.Point(12, 536);
-            this.GButtonReport.Name = "GButtonReport";
-            this.GButtonReport.Size = new System.Drawing.Size(220, 44);
-            this.GButtonReport.TabIndex = 5;
-            this.GButtonReport.Text = "Report";
-            // 
-            // GButtonCategory
-            // 
-            this.GButtonCategory.Animated = true;
-            this.GButtonCategory.AnimatedGIF = true;
-            this.GButtonCategory.BackColor = System.Drawing.Color.Transparent;
-            this.GButtonCategory.BorderRadius = 5;
-            this.GButtonCategory.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GButtonCategory.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonCategory.ForeColor = System.Drawing.Color.White;
-            this.GButtonCategory.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonCategory.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCategory.Image")));
-            this.GButtonCategory.ImageOffset = new System.Drawing.Point(-9, 0);
-            this.GButtonCategory.Location = new System.Drawing.Point(12, 206);
-            this.GButtonCategory.Name = "GButtonCategory";
-            this.GButtonCategory.Size = new System.Drawing.Size(220, 44);
-            this.GButtonCategory.TabIndex = 5;
-            this.GButtonCategory.Text = "Category";
-            // 
-            // GButtonPayment
-            // 
-            this.GButtonPayment.Animated = true;
-            this.GButtonPayment.AnimatedGIF = true;
-            this.GButtonPayment.BackColor = System.Drawing.Color.Transparent;
-            this.GButtonPayment.BorderRadius = 5;
-            this.GButtonPayment.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonPayment.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GButtonPayment.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonPayment.ForeColor = System.Drawing.Color.White;
-            this.GButtonPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
-            this.GButtonPayment.Image = ((System.Drawing.Image)(resources.GetObject("GButtonPayment.Image")));
-            this.GButtonPayment.ImageOffset = new System.Drawing.Point(-9, 0);
-            this.GButtonPayment.Location = new System.Drawing.Point(12, 470);
-            this.GButtonPayment.Name = "GButtonPayment";
-            this.GButtonPayment.Size = new System.Drawing.Size(220, 44);
-            this.GButtonPayment.TabIndex = 6;
-            this.GButtonPayment.Text = "Payment";
             // 
             // frmMainScreenEETMS
             // 
@@ -360,7 +374,7 @@
         private System.Windows.Forms.Label lblNameUser;
         private System.Windows.Forms.Label lblRoleUser;
         private System.Windows.Forms.PictureBox PicLogoutEETMS;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button GButtonDashboard;
         private Guna.UI2.WinForms.Guna2Button GButtonReport;
         private Guna.UI2.WinForms.Guna2Button GButtonTickets;
         private Guna.UI2.WinForms.Guna2Button GButtonCustomers;

@@ -56,6 +56,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EETMS_Category\USCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Category\USCategory.Designer.cs">
+      <DependentUpon>USCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EETMS_Customers\USCustomers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Customers\USCustomers.Designer.cs">
+      <DependentUpon>USCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EETMS_Dashboard\USDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Dashboard\USDashboard.Designer.cs">
+      <DependentUpon>USDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EETMS_Events\USEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Events\USEvents.Designer.cs">
+      <DependentUpon>USEvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="EETMS_Login\frmLoginEETMS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,13 +92,52 @@
     <Compile Include="EETMS_Main\frmMainScreenEETMS.Designer.cs">
       <DependentUpon>frmMainScreenEETMS.cs</DependentUpon>
     </Compile>
+    <Compile Include="EETMS_Payment\USPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Payment\USPayment.Designer.cs">
+      <DependentUpon>USPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EETMS_Report\USReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Report\USReport.Designer.cs">
+      <DependentUpon>USReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EETMS_Tickets\USTickets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Tickets\USTickets.Designer.cs">
+      <DependentUpon>USTickets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EETMS_Category\USCategory.resx">
+      <DependentUpon>USCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Customers\USCustomers.resx">
+      <DependentUpon>USCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Dashboard\USDashboard.resx">
+      <DependentUpon>USDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Events\USEvents.resx">
+      <DependentUpon>USEvents.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Login\frmLoginEETMS.resx">
       <DependentUpon>frmLoginEETMS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Main\frmMainScreenEETMS.resx">
       <DependentUpon>frmMainScreenEETMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Payment\USPayment.resx">
+      <DependentUpon>USPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Report\USReport.resx">
+      <DependentUpon>USReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Tickets\USTickets.resx">
+      <DependentUpon>USTickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
