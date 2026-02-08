@@ -14,7 +14,7 @@ namespace EETMS_BusinessLayer
 
        public static bool AddNewUser (MUser InformationNewUser ) => UsersDAL.InsertNewUser(InformationNewUser) > 0 ;
 
-        public static bool UpdateInformationUser(MUser InformationNewUser) => UsersDAL.UpdateInformationUser(InformationNewUser) > 0;
+        public static bool UpdateInformationUser(MUser InformationNewUser) => UsersDAL.UpdateInformationUser(InformationNewUser.UserID , InformationNewUser) > 0;
 
         public static bool SaveInformationUserMode (MUser InformationUser)
         {

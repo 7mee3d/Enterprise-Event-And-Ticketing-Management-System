@@ -7,6 +7,7 @@ namespace EETMS_Presentation
 {
     public partial class frmLoginEETMS : Form
     {
+        
         public frmLoginEETMS()
         {
             InitializeComponent();
@@ -16,10 +17,24 @@ namespace EETMS_Presentation
         {
             string UserNameOrEmail = GTextBoxUserNameOrEmailUser.Text;
             string Password = GTextBoxPassword.Text;
+            switch(UserBL.PassLoginTheUser(UserNameOrEmail , Password))
+            {
+                case EETMS_Models.MUser.EnStatusLoginUser._kSUCCESS_LOGIN:
+                    MessageBox.Show("Login Successfully");
+                    break;
 
-            if (UserBL.IsUserExsitsByUsername(UserNameOrEmail, Password) || UserBL.IsUserExsitsByEmail(UserNameOrEmail, Password))
-                MessageBox.Show("Login Successfully");
-            else MessageBox.Show("Login Faild");
+                case EETMS_Models.MUser.EnStatusLoginUser._kFAILD_LOGIN:
+                    MessageBox.Show("Login Faild");
+                    break;
+
+                case EETMS_Models.MUser.EnStatusLoginUser._kBLOCKED_USER:
+                    MessageBox.Show("Login Blocked");
+                    break;
+
+                case EETMS_Models.MUser.EnStatusLoginUser._kUSER_NOT_FOUND:
+                    MessageBox.Show("User Not Found");
+                    break;
+            }
         }
 
         private void GGButtonLoginToEETMS_Click(object sender, EventArgs e)

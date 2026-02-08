@@ -21,7 +21,7 @@ namespace EETMS_Models
             _kSUCCESS_LOGIN =  1,
             _kFAILD_LOGIN = 2 , 
             _kBLOCKED_USER = 3 , 
-            _kUSER_NOT_FOUND = 4
+            _kUSER_NOT_FOUND = 4,
 
         }
 

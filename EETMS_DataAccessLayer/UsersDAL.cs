@@ -29,14 +29,14 @@ namespace EETMS_DataAccessLayer
 
                     string Query = @"
 
-                                        SELECT  UserID
+                                        SELECT  UserID,
                                                 UserFullName ,
                                                 UserName ,
                                                 PasswordUser  ,
                                                 EmailUser   ,
                                                 ActiveAccount ,
                                                 PermissionUser   ,
-                                                NumberAttempt  
+                                                NumberAttempts  
 
                                         FROM Users 
                                         WHERE (
@@ -75,7 +75,7 @@ namespace EETMS_DataAccessLayer
                                     EmailUser = reader["EmailUser"] != DBNull.Value ? (string)reader["EmailUser"] : null,
                                     IsActiveAccount = reader["ActiveAccount"] != DBNull.Value ? (bool)reader["ActiveAccount"] : false,
                                     PermissionUser = reader["PermissionUser"] != DBNull.Value ? (int)reader["PermissionUser"] : 0,
-                                    NumberAttempts = reader["NumberAttempt"] != DBNull.Value ? (int)reader["NumberAttempt"] : 0,
+                                    NumberAttempts = reader["NumberAttempts"] != DBNull.Value ? (int)reader["NumberAttempts"] : 0,
 
                                 };
 
@@ -99,7 +99,7 @@ namespace EETMS_DataAccessLayer
 
         public static MUser FindTheUserByUserNameOrEmail(string UsernameOrEmail)
         {
-            return FindTheUserByUserNameOrEmail(UsernameOrEmail);
+            return _FindTheUserByUserNameOrEmail(UsernameOrEmail);
         }
 
         private static bool _IsExsitsTheUserByEmail (string EmailUser , string Password )
@@ -283,7 +283,7 @@ namespace EETMS_DataAccessLayer
             return _InsertNewUser(InformationNewUser);
         }
 
-        private static int _UpdateInformationUser(MUser InformationNewUser)
+        private static int _UpdateInformationUser(int IDUser , MUser InformationNewUser)
         {
 
             int RowAfective = -1; 
@@ -305,7 +305,7 @@ namespace EETMS_DataAccessLayer
                                                 PasswordUser = @PasswordUser ,
                                                 EmailUser  = @EmailUser ,
                                                 PermissionUser  = @PermissionUser ,
-                                                NumberAttempt = @NumberAttempt 
+                                                NumberAttempts = @NumberAttempts 
 
 
 
@@ -317,13 +317,13 @@ namespace EETMS_DataAccessLayer
                     using (SqlCommand command = new SqlCommand(Query, connection))
                     {
 
-                        command.Parameters.Add("@UserID", SqlDbType.Int).Value = InformationNewUser.UserID;
+                        command.Parameters.Add("@UserID", SqlDbType.Int).Value = IDUser;
                         command.Parameters.Add("@UserFullName", SqlDbType.NVarChar, 400).Value = InformationNewUser.UserFullName;
                         command.Parameters.Add("@UserName", SqlDbType.NVarChar, 250).Value = InformationNewUser.Username;
                         command.Parameters.Add("@PasswordUser", SqlDbType.NVarChar, 350).Value = InformationNewUser.PasswordUser;
                         command.Parameters.Add("@EmailUser", SqlDbType.NVarChar, 400).Value = InformationNewUser.EmailUser;
                         command.Parameters.Add("@PermissionUser", SqlDbType.SmallInt).Value = InformationNewUser.PermissionUser;
-                        command.Parameters.Add("@NumberAttempt", SqlDbType.TinyInt).Value = InformationNewUser.NumberAttempts;
+                        command.Parameters.Add("@NumberAttempts", SqlDbType.TinyInt).Value = InformationNewUser.NumberAttempts;
 
 
                         connection.Open();
@@ -343,9 +343,9 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        public static int UpdateInformationUser(MUser InformationNewUser)
+        public static int UpdateInformationUser(int IDUser, MUser InformationNewUser)
         {
-           return  _UpdateInformationUser(InformationNewUser);
+           return  _UpdateInformationUser(IDUser , InformationNewUser);
         }
    
 
