@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USEvents));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,11 +52,21 @@
             this.LocationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DurationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discripation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lblTotalLiveEvents = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.GGCButtonLiveEvents = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GGCButtonFollyBookedEvents = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblTotalFullyBookedEvents = new System.Windows.Forms.Label();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).BeginInit();
             this.PanelHeaderEvents.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2GradientPanel2.SuspendLayout();
+            this.guna2GradientPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -138,7 +148,7 @@
             this.GComboBoxAllCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.GComboBoxAllCategories.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
             this.GComboBoxAllCategories.ItemHeight = 30;
-            this.GComboBoxAllCategories.Location = new System.Drawing.Point(38, 344);
+            this.GComboBoxAllCategories.Location = new System.Drawing.Point(40, 319);
             this.GComboBoxAllCategories.Name = "GComboBoxAllCategories";
             this.GComboBoxAllCategories.Size = new System.Drawing.Size(319, 36);
             this.GComboBoxAllCategories.TabIndex = 3;
@@ -149,7 +159,7 @@
             this.GGPanelDataGridViewEvents.BorderRadius = 10;
             this.GGPanelDataGridViewEvents.BorderThickness = 2;
             this.GGPanelDataGridViewEvents.Controls.Add(this.GDataGridViewEventsInformation);
-            this.GGPanelDataGridViewEvents.Location = new System.Drawing.Point(38, 396);
+            this.GGPanelDataGridViewEvents.Location = new System.Drawing.Point(40, 375);
             this.GGPanelDataGridViewEvents.Name = "GGPanelDataGridViewEvents";
             this.GGPanelDataGridViewEvents.Size = new System.Drawing.Size(1327, 536);
             this.GGPanelDataGridViewEvents.TabIndex = 4;
@@ -159,21 +169,20 @@
             this.GDataGridViewEventsInformation.AllowUserToAddRows = false;
             this.GDataGridViewEventsInformation.AllowUserToDeleteRows = false;
             this.GDataGridViewEventsInformation.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.GDataGridViewEventsInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GDataGridViewEventsInformation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewEventsInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.GDataGridViewEventsInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewEventsInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GDataGridViewEventsInformation.ColumnHeadersHeight = 64;
             this.GDataGridViewEventsInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GDataGridViewEventsInformation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -184,14 +193,14 @@
             this.LocationEvent,
             this.DurationEvent,
             this.Discripation});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GDataGridViewEventsInformation.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GDataGridViewEventsInformation.DefaultCellStyle = dataGridViewCellStyle7;
             this.GDataGridViewEventsInformation.GridColor = System.Drawing.Color.White;
             this.GDataGridViewEventsInformation.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GDataGridViewEventsInformation.Location = new System.Drawing.Point(5, 6);
@@ -199,14 +208,14 @@
             this.GDataGridViewEventsInformation.Name = "GDataGridViewEventsInformation";
             this.GDataGridViewEventsInformation.ReadOnly = true;
             this.GDataGridViewEventsInformation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewEventsInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewEventsInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.GDataGridViewEventsInformation.RowHeadersVisible = false;
             this.GDataGridViewEventsInformation.RowTemplate.Height = 67;
             this.GDataGridViewEventsInformation.Size = new System.Drawing.Size(1319, 523);
@@ -239,7 +248,7 @@
             this.PanelHeaderEvents.Controls.Add(this.GTextBoxSearchTheEvent);
             this.PanelHeaderEvents.Controls.Add(this.label2);
             this.PanelHeaderEvents.Controls.Add(this.label1);
-            this.PanelHeaderEvents.Location = new System.Drawing.Point(27, 40);
+            this.PanelHeaderEvents.Location = new System.Drawing.Point(27, 34);
             this.PanelHeaderEvents.Name = "PanelHeaderEvents";
             this.PanelHeaderEvents.Size = new System.Drawing.Size(1361, 121);
             this.PanelHeaderEvents.TabIndex = 5;
@@ -252,18 +261,19 @@
             this.guna2GradientPanel1.Controls.Add(this.label3);
             this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
             this.guna2GradientPanel1.Controls.Add(this.lblTotalEvents);
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(43, 199);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(201, 170);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(229, 114);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(229, 118);
             this.guna2GradientPanel1.TabIndex = 6;
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.BorderRadius = 10;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(161, 41);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(163, 41);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(36, 40);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -339,11 +349,128 @@
             this.Discripation.Name = "Discripation";
             this.Discripation.ReadOnly = true;
             // 
+            // guna2GradientPanel2
+            // 
+            this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.guna2GradientPanel2.BorderRadius = 10;
+            this.guna2GradientPanel2.BorderThickness = 1;
+            this.guna2GradientPanel2.Controls.Add(this.GGCButtonLiveEvents);
+            this.guna2GradientPanel2.Controls.Add(this.label4);
+            this.guna2GradientPanel2.Controls.Add(this.lblTotalLiveEvents);
+            this.guna2GradientPanel2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(197)))), ((int)(((byte)(94)))));
+            this.guna2GradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(599, 170);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(229, 118);
+            this.guna2GradientPanel2.TabIndex = 6;
+            // 
+            // lblTotalLiveEvents
+            // 
+            this.lblTotalLiveEvents.AutoSize = true;
+            this.lblTotalLiveEvents.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalLiveEvents.Location = new System.Drawing.Point(23, 49);
+            this.lblTotalLiveEvents.Name = "lblTotalLiveEvents";
+            this.lblTotalLiveEvents.Size = new System.Drawing.Size(28, 32);
+            this.lblTotalLiveEvents.TabIndex = 0;
+            this.lblTotalLiveEvents.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label4.Location = new System.Drawing.Point(25, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 21);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Live Events";
+            // 
+            // GGCButtonLiveEvents
+            // 
+            this.GGCButtonLiveEvents.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(237)))), ((int)(((byte)(216)))));
+            this.GGCButtonLiveEvents.BorderThickness = 1;
+            this.GGCButtonLiveEvents.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(237)))), ((int)(((byte)(216)))));
+            this.GGCButtonLiveEvents.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(237)))), ((int)(((byte)(216)))));
+            this.GGCButtonLiveEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(244)))));
+            this.GGCButtonLiveEvents.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(244)))));
+            this.GGCButtonLiveEvents.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(133)))), ((int)(((byte)(68)))));
+            this.GGCButtonLiveEvents.Enabled = false;
+            this.GGCButtonLiveEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(244)))));
+            this.GGCButtonLiveEvents.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(253)))), ((int)(((byte)(244)))));
+            this.GGCButtonLiveEvents.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGCButtonLiveEvents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(133)))), ((int)(((byte)(68)))));
+            this.GGCButtonLiveEvents.Location = new System.Drawing.Point(162, 49);
+            this.GGCButtonLiveEvents.Name = "GGCButtonLiveEvents";
+            this.GGCButtonLiveEvents.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.GGCButtonLiveEvents.Size = new System.Drawing.Size(53, 32);
+            this.GGCButtonLiveEvents.TabIndex = 7;
+            this.GGCButtonLiveEvents.Text = "Live";
+            // 
+            // guna2GradientPanel3
+            // 
+            this.guna2GradientPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.guna2GradientPanel3.BorderRadius = 10;
+            this.guna2GradientPanel3.BorderThickness = 1;
+            this.guna2GradientPanel3.Controls.Add(this.GGCButtonFollyBookedEvents);
+            this.guna2GradientPanel3.Controls.Add(this.label5);
+            this.guna2GradientPanel3.Controls.Add(this.lblTotalFullyBookedEvents);
+            this.guna2GradientPanel3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.guna2GradientPanel3.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(997, 170);
+            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(229, 118);
+            this.guna2GradientPanel3.TabIndex = 6;
+            // 
+            // GGCButtonFollyBookedEvents
+            // 
+            this.GGCButtonFollyBookedEvents.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.GGCButtonFollyBookedEvents.BorderThickness = 1;
+            this.GGCButtonFollyBookedEvents.Cursor = System.Windows.Forms.Cursors.Default;
+            this.GGCButtonFollyBookedEvents.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.GGCButtonFollyBookedEvents.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
+            this.GGCButtonFollyBookedEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.GGCButtonFollyBookedEvents.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.GGCButtonFollyBookedEvents.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.GGCButtonFollyBookedEvents.Enabled = false;
+            this.GGCButtonFollyBookedEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.GGCButtonFollyBookedEvents.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.GGCButtonFollyBookedEvents.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGCButtonFollyBookedEvents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.GGCButtonFollyBookedEvents.Location = new System.Drawing.Point(143, 49);
+            this.GGCButtonFollyBookedEvents.Name = "GGCButtonFollyBookedEvents";
+            this.GGCButtonFollyBookedEvents.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.GGCButtonFollyBookedEvents.Size = new System.Drawing.Size(79, 32);
+            this.GGCButtonFollyBookedEvents.TabIndex = 7;
+            this.GGCButtonFollyBookedEvents.Text = "Sold Out";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label5.Location = new System.Drawing.Point(25, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 21);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Fully Booked";
+            // 
+            // lblTotalFullyBookedEvents
+            // 
+            this.lblTotalFullyBookedEvents.AutoSize = true;
+            this.lblTotalFullyBookedEvents.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFullyBookedEvents.Location = new System.Drawing.Point(23, 49);
+            this.lblTotalFullyBookedEvents.Name = "lblTotalFullyBookedEvents";
+            this.lblTotalFullyBookedEvents.Size = new System.Drawing.Size(28, 32);
+            this.lblTotalFullyBookedEvents.TabIndex = 0;
+            this.lblTotalFullyBookedEvents.Text = "0";
+            // 
             // USEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.guna2GradientPanel3);
+            this.Controls.Add(this.guna2GradientPanel2);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.PanelHeaderEvents);
             this.Controls.Add(this.GGPanelDataGridViewEvents);
@@ -358,6 +485,10 @@
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2GradientPanel2.PerformLayout();
+            this.guna2GradientPanel3.ResumeLayout(false);
+            this.guna2GradientPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -383,5 +514,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationEvent;
         private System.Windows.Forms.DataGridViewTextBoxColumn DurationEvent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discripation;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private System.Windows.Forms.Label lblTotalLiveEvents;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2GradientCircleButton GGCButtonLiveEvents;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
+        private Guna.UI2.WinForms.Guna2GradientCircleButton GGCButtonFollyBookedEvents;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTotalFullyBookedEvents;
     }
 }
