@@ -58,47 +58,42 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void GButtonDashboard_Click(object sender, EventArgs e)
         {
-            USDashboard US_Dashboard_EETMS = new USDashboard();
-            _ShowTheUserControlInThePanel(US_Dashboard_EETMS);
+            _ShowTheUserControlInThePanel(new USDashboard());
         }
 
         private void GButtonCategory_Click(object sender, EventArgs e)
         {
-            USCategory US_Category_EETMS = new USCategory();
-            _ShowTheUserControlInThePanel(US_Category_EETMS);
+            _ShowTheUserControlInThePanel(new USCategory());
         }
 
         private void GButtonEvents_Click(object sender, EventArgs e)
         {
-            USEvents US_Events_EETMS = new USEvents();
-            _ShowTheUserControlInThePanel(US_Events_EETMS);
+            _ShowTheUserControlInThePanel(new USEvents());
         }
 
         private void GButtonCustomers_Click(object sender, EventArgs e)
         {
-            USCustomers US_Customers_EETMS = new USCustomers();
-            _ShowTheUserControlInThePanel(US_Customers_EETMS);
+            _ShowTheUserControlInThePanel(new USCustomers());
 
         }
 
         private void GButtonTickets_Click(object sender, EventArgs e)
         {
-            USTickets US_Tickets_EETMS = new USTickets();
-            _ShowTheUserControlInThePanel(US_Tickets_EETMS);
+            _ShowTheUserControlInThePanel(new USTickets());
 
         }
 
         private void GButtonPayment_Click(object sender, EventArgs e)
         {
-            USPayment US_Payment_EETMS = new USPayment();
-            _ShowTheUserControlInThePanel(US_Payment_EETMS);
+            _ShowTheUserControlInThePanel(new USPayment());
         }
 
         private void GButtonReport_Click(object sender, EventArgs e)
         {
-            USReport US_Report_EETMS = new USReport();
-            _ShowTheUserControlInThePanel(US_Report_EETMS);
+            _ShowTheUserControlInThePanel(new USReport());
         }
    
+
+
     }
 }

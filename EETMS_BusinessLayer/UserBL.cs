@@ -55,8 +55,9 @@ namespace EETMS_BusinessLayer
 
             }else
             {
+                if(InfoUser.NumberAttempts > 0 )
+                    InfoUser.NumberAttempts -= 1;
 
-                InfoUser.NumberAttempts -= 1;
                 UpdateInformationUser(InfoUser);
                 return (InfoUser.NumberAttempts > 0) ? EnStatusLoginUser._kFAILD_LOGIN : EnStatusLoginUser._kBLOCKED_USER;
 
