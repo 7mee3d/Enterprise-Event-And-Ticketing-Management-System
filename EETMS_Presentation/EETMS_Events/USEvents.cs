@@ -15,6 +15,9 @@ namespace EETMS_Presentation.EETMS_Events
             InitializeComponent();
         }
 
+        public event EventHandler RequestOpenCreateNewEventUS; 
+
+
         private void _LoadAndFillDataGridViewONAllInformationEvent ()
         {
 
@@ -83,6 +86,11 @@ namespace EETMS_Presentation.EETMS_Events
         private void USEvents_Load(object sender, EventArgs e)
         {
             _InitalSettingAfterLoadTheUSEvents();
+        }
+
+        private void GGButtonCreateNewEvent_Click(object sender, EventArgs e)
+        {
+            RequestOpenCreateNewEventUS?.Invoke(this, EventArgs.Empty);
         }
     }
 }

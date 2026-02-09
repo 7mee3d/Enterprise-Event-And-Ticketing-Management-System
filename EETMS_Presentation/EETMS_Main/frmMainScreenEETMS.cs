@@ -69,7 +69,7 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void GButtonEvents_Click(object sender, EventArgs e)
         {
-            _ShowTheUserControlInThePanel(new USEvents());
+            _ShowTheEventUS();
         }
 
         private void GButtonCustomers_Click(object sender, EventArgs e)
@@ -94,7 +94,26 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheUserControlInThePanel(new USReport());
         }
    
+        private void _ShowTheCreateNewEventUS()
+        {
+            US_AddAndEditInformationEvent US_AddNewEvent = new US_AddAndEditInformationEvent();
 
+            US_AddNewEvent.RequestClose += (sender, e) => _ShowTheEventUS();
 
+            _ShowTheUserControlInThePanel(US_AddNewEvent);
+        }
+
+        private void _ShowTheEventUS()
+
+        {
+            USEvents US_Event = new USEvents();
+
+            US_Event.RequestOpenCreateNewEventUS += (sender, e) => _ShowTheCreateNewEventUS();
+
+            _ShowTheUserControlInThePanel(US_Event);
+        } 
+   
+    
+    
     }
 }

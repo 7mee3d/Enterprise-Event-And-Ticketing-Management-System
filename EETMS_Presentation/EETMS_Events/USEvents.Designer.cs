@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USEvents));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
@@ -40,11 +40,6 @@
             this.GComboBoxAllCategories = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GDataGridViewEventsInformation = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.PanelHeaderEvents = new System.Windows.Forms.Panel();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblTotalEvents = new System.Windows.Forms.Label();
             this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateTimeEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,10 +47,15 @@
             this.LocationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DurationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discripation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PanelHeaderEvents = new System.Windows.Forms.Panel();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblTotalEvents = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lblTotalLiveEvents = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.GGCButtonLiveEvents = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotalLiveEvents = new System.Windows.Forms.Label();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GGCButtonFollyBookedEvents = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -135,6 +135,7 @@
             this.GGButtonCreateNewEvent.Size = new System.Drawing.Size(215, 47);
             this.GGButtonCreateNewEvent.TabIndex = 2;
             this.GGButtonCreateNewEvent.Text = "Create New Event";
+            this.GGButtonCreateNewEvent.Click += new System.EventHandler(this.GGButtonCreateNewEvent_Click);
             // 
             // GComboBoxAllCategories
             // 
@@ -169,20 +170,20 @@
             this.GDataGridViewEventsInformation.AllowUserToAddRows = false;
             this.GDataGridViewEventsInformation.AllowUserToDeleteRows = false;
             this.GDataGridViewEventsInformation.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.GDataGridViewEventsInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewEventsInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.GDataGridViewEventsInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewEventsInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GDataGridViewEventsInformation.ColumnHeadersHeight = 64;
             this.GDataGridViewEventsInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GDataGridViewEventsInformation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -193,14 +194,14 @@
             this.LocationEvent,
             this.DurationEvent,
             this.Discripation});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GDataGridViewEventsInformation.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GDataGridViewEventsInformation.DefaultCellStyle = dataGridViewCellStyle3;
             this.GDataGridViewEventsInformation.GridColor = System.Drawing.Color.White;
             this.GDataGridViewEventsInformation.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GDataGridViewEventsInformation.Location = new System.Drawing.Point(5, 6);
@@ -208,14 +209,14 @@
             this.GDataGridViewEventsInformation.Name = "GDataGridViewEventsInformation";
             this.GDataGridViewEventsInformation.ReadOnly = true;
             this.GDataGridViewEventsInformation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewEventsInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewEventsInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GDataGridViewEventsInformation.RowHeadersVisible = false;
             this.GDataGridViewEventsInformation.RowTemplate.Height = 67;
             this.GDataGridViewEventsInformation.Size = new System.Drawing.Size(1319, 523);
@@ -241,63 +242,6 @@
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.Height = 67;
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // PanelHeaderEvents
-            // 
-            this.PanelHeaderEvents.Controls.Add(this.GGButtonCreateNewEvent);
-            this.PanelHeaderEvents.Controls.Add(this.GTextBoxSearchTheEvent);
-            this.PanelHeaderEvents.Controls.Add(this.label2);
-            this.PanelHeaderEvents.Controls.Add(this.label1);
-            this.PanelHeaderEvents.Location = new System.Drawing.Point(27, 34);
-            this.PanelHeaderEvents.Name = "PanelHeaderEvents";
-            this.PanelHeaderEvents.Size = new System.Drawing.Size(1361, 121);
-            this.PanelHeaderEvents.TabIndex = 5;
-            // 
-            // guna2GradientPanel1
-            // 
-            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.guna2GradientPanel1.BorderRadius = 10;
-            this.guna2GradientPanel1.BorderThickness = 2;
-            this.guna2GradientPanel1.Controls.Add(this.label3);
-            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
-            this.guna2GradientPanel1.Controls.Add(this.lblTotalEvents);
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(201, 170);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(229, 118);
-            this.guna2GradientPanel1.TabIndex = 6;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BorderRadius = 10;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(163, 41);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(36, 40);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
-            this.label3.Location = new System.Drawing.Point(25, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Total Events";
-            // 
-            // lblTotalEvents
-            // 
-            this.lblTotalEvents.AutoSize = true;
-            this.lblTotalEvents.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEvents.Location = new System.Drawing.Point(23, 49);
-            this.lblTotalEvents.Name = "lblTotalEvents";
-            this.lblTotalEvents.Size = new System.Drawing.Size(28, 32);
-            this.lblTotalEvents.TabIndex = 0;
-            this.lblTotalEvents.Text = "0";
             // 
             // EventName
             // 
@@ -349,6 +293,63 @@
             this.Discripation.Name = "Discripation";
             this.Discripation.ReadOnly = true;
             // 
+            // PanelHeaderEvents
+            // 
+            this.PanelHeaderEvents.Controls.Add(this.GGButtonCreateNewEvent);
+            this.PanelHeaderEvents.Controls.Add(this.GTextBoxSearchTheEvent);
+            this.PanelHeaderEvents.Controls.Add(this.label2);
+            this.PanelHeaderEvents.Controls.Add(this.label1);
+            this.PanelHeaderEvents.Location = new System.Drawing.Point(27, 34);
+            this.PanelHeaderEvents.Name = "PanelHeaderEvents";
+            this.PanelHeaderEvents.Size = new System.Drawing.Size(1361, 121);
+            this.PanelHeaderEvents.TabIndex = 5;
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.guna2GradientPanel1.BorderRadius = 10;
+            this.guna2GradientPanel1.BorderThickness = 2;
+            this.guna2GradientPanel1.Controls.Add(this.label3);
+            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
+            this.guna2GradientPanel1.Controls.Add(this.lblTotalEvents);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(201, 170);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(229, 118);
+            this.guna2GradientPanel1.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label3.Location = new System.Drawing.Point(25, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 21);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Total Events";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BorderRadius = 10;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(163, 41);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(36, 40);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // lblTotalEvents
+            // 
+            this.lblTotalEvents.AutoSize = true;
+            this.lblTotalEvents.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalEvents.Location = new System.Drawing.Point(23, 49);
+            this.lblTotalEvents.Name = "lblTotalEvents";
+            this.lblTotalEvents.Size = new System.Drawing.Size(28, 32);
+            this.lblTotalEvents.TabIndex = 0;
+            this.lblTotalEvents.Text = "0";
+            // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
@@ -363,27 +364,6 @@
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(229, 118);
             this.guna2GradientPanel2.TabIndex = 6;
-            // 
-            // lblTotalLiveEvents
-            // 
-            this.lblTotalLiveEvents.AutoSize = true;
-            this.lblTotalLiveEvents.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalLiveEvents.Location = new System.Drawing.Point(23, 49);
-            this.lblTotalLiveEvents.Name = "lblTotalLiveEvents";
-            this.lblTotalLiveEvents.Size = new System.Drawing.Size(28, 32);
-            this.lblTotalLiveEvents.TabIndex = 0;
-            this.lblTotalLiveEvents.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
-            this.label4.Location = new System.Drawing.Point(25, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 21);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Live Events";
             // 
             // GGCButtonLiveEvents
             // 
@@ -405,6 +385,27 @@
             this.GGCButtonLiveEvents.Size = new System.Drawing.Size(53, 32);
             this.GGCButtonLiveEvents.TabIndex = 7;
             this.GGCButtonLiveEvents.Text = "Live";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label4.Location = new System.Drawing.Point(25, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 21);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Live Events";
+            // 
+            // lblTotalLiveEvents
+            // 
+            this.lblTotalLiveEvents.AutoSize = true;
+            this.lblTotalLiveEvents.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalLiveEvents.Location = new System.Drawing.Point(23, 49);
+            this.lblTotalLiveEvents.Name = "lblTotalLiveEvents";
+            this.lblTotalLiveEvents.Size = new System.Drawing.Size(28, 32);
+            this.lblTotalLiveEvents.TabIndex = 0;
+            this.lblTotalLiveEvents.Text = "0";
             // 
             // guna2GradientPanel3
             // 
