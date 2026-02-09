@@ -42,7 +42,8 @@ namespace EETMS_DataAccessLayer
                                         Street,
                                         CountryID,
                                         CategoryID,
-                                        Discripation
+                                        Discripation,
+                                        AvailableInEvent
 
 
                                 FROM [Events] ;
@@ -81,6 +82,75 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetAllInformationEvents()
         {
             return _GetAllInformationEvents();
+        }
+
+        private static DataTable _GetAllInformationEventsWithOtherTable_Country_Category()
+        {
+
+            DataTable EventsDT = new DataTable();
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+
+                    string Query = @"
+
+                                 SELECT EV.EventID ,
+                                        EV.EventName,
+                                        CAT.CategoryName,
+                                        EV.DateTimeEvent,
+                                        EV.MaxCapacity,
+                                        CON.CountryName,
+                                        EV.Street,         
+                                        EV.Duration,
+                                        EV.Discripation,
+                                        EV.AvailableInEvent
+
+
+                                            FROM [Events] EV
+                                            INNER JOIN Countries CON
+                                            ON CON.CountryID = EV.CountryID 
+
+                                            INNER JOIN Categories CAT 
+                                            ON CAT.CategoryID = EV.CategoryID ;
+
+                                ";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+
+                            if (reader.HasRows)
+                                EventsDT.Load(reader);
+
+
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.Message);
+            }
+
+
+            return EventsDT;
+        }
+       
+        public static DataTable GetAllInformationEventsWithOtherTable_Country_Category()
+        {
+            return _GetAllInformationEventsWithOtherTable_Country_Category();
         }
 
         private static MEvent _FindTheEventByID(int EventID)

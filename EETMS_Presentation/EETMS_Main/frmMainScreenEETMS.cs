@@ -29,6 +29,7 @@ namespace EETMS_Presentation.EETMS_Main
         {
 
             GPanelMainScreens.Controls.Clear();
+            us.Dock = DockStyle.Fill;
             GPanelMainScreens.Controls.Add(us);
 
             us.BringToFront();
