@@ -13,5 +13,7 @@ namespace EETMS_BusinessLayer
             return EventsDAL.GetAllInformationEventsWithOtherTable_Country_Category();
         }
 
+        public static bool DeleteTheEvent(int IDEvent) => EventsDAL.DeleteTheEventByID(IDEvent) > 0 ;
+        
     }
 }

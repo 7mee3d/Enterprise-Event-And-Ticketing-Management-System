@@ -202,7 +202,6 @@
             this.label5.Size = new System.Drawing.Size(71, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Category";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // guna2ComboBox1
             // 
@@ -230,7 +229,6 @@
             this.label6.Size = new System.Drawing.Size(67, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "Location";
-            this.label6.Click += new System.EventHandler(this.label5_Click);
             // 
             // guna2TextBox3
             // 
@@ -333,7 +331,6 @@
             this.label9.Size = new System.Drawing.Size(101, 20);
             this.label9.TabIndex = 1;
             this.label9.Text = "Max Capacity";
-            this.label9.Click += new System.EventHandler(this.label5_Click);
             // 
             // guna2TextBox4
             // 

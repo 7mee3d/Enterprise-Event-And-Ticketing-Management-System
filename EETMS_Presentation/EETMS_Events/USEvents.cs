@@ -8,15 +8,15 @@ namespace EETMS_Presentation.EETMS_Events
     public partial class USEvents : UserControl
     {
 
-        private DataTable _EventDT = null; 
-       
+        
         public USEvents()
         {
             InitializeComponent();
         }
 
 
-        public event EventHandler RequestOpenCreateNewEventUS; 
+        private DataTable _EventDT = null;
+        public event EventHandler <int> RequestOpenCreateNewEventUS = null ; 
 
 
         private void _LoadAndFillDataGridViewONAllInformationEvent ()
@@ -29,6 +29,7 @@ namespace EETMS_Presentation.EETMS_Events
 
                 GDataGridViewEventsInformation.Rows.Add(
 
+                    DR_Event["EventID"],
                     DR_Event["EventName"],
                     DR_Event["CategoryName"],
                     DR_Event["DateTimeEvent"],
@@ -93,6 +94,7 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void _InitalSettingAfterLoadTheUSEvents()
         {
+            GDataGridViewEventsInformation.Rows.Clear();
             _LoadAndFillDataGridViewONAllInformationEvent();
             GDataGridViewEventsInformation.ClearSelection();
             lblTotalEvents.Text = _GetTheCountOfEvents().ToString();
@@ -108,8 +110,31 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void GGButtonCreateNewEvent_Click(object sender, EventArgs e)
         {
-            RequestOpenCreateNewEventUS?.Invoke(this, EventArgs.Empty);
+            RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
         }
-  
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
+        }
+
+        private int _GetTheEventID()
+        {
+
+            return (GDataGridViewEventsInformation.SelectedRows.Count > 0) ? Convert.ToInt32(GDataGridViewEventsInformation.SelectedRows[0].Cells["EventID"].Value) : -1; 
+            
+        }
+   
+        private void deleteEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure To Delete This Event ?", "Note For Delete Event", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                if (EventBL.DeleteTheEvent(_GetTheEventID()))
+                {
+                    MessageBox.Show("The Event Is Deleted Successfully", "Note For Delete Event");
+                    _InitalSettingAfterLoadTheUSEvents();
+                }
+
+        }
+    
     }
 }

@@ -94,9 +94,9 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheUserControlInThePanel(new USReport());
         }
    
-        private void _ShowTheCreateNewEventUS()
+        private void _ShowTheCreateNewEventUS(int id)
         {
-            US_AddAndEditInformationEvent US_AddNewEvent = new US_AddAndEditInformationEvent();
+            US_AddAndEditInformationEvent US_AddNewEvent = new US_AddAndEditInformationEvent(id);
 
             US_AddNewEvent.RequestClose += (sender, e) => _ShowTheEventUS();
 
@@ -108,7 +108,7 @@ namespace EETMS_Presentation.EETMS_Main
         {
             USEvents US_Event = new USEvents();
 
-            US_Event.RequestOpenCreateNewEventUS += (sender, e) => _ShowTheCreateNewEventUS();
+            US_Event.RequestOpenCreateNewEventUS += (sender, id) => _ShowTheCreateNewEventUS(id);
 
             _ShowTheUserControlInThePanel(US_Event);
         } 

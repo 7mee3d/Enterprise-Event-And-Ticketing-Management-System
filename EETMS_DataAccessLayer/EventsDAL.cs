@@ -424,7 +424,7 @@ namespace EETMS_DataAccessLayer
             return RowAffective;
         }
 
-        private static int DeleteTheEventByID(int IDEvent)
+        public static int DeleteTheEventByID(int IDEvent)
         {
             return _DeleteTheEventByID(IDEvent);
         }
