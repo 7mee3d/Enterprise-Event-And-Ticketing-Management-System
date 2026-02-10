@@ -15,6 +15,7 @@ namespace EETMS_Presentation.EETMS_Events
             InitializeComponent();
         }
 
+
         public event EventHandler RequestOpenCreateNewEventUS; 
 
 
@@ -43,13 +44,29 @@ namespace EETMS_Presentation.EETMS_Events
             }
         }
 
+        private int _GetCountTheDraftEvents()
+        {
+            int CountDraftEvents = 0;
+
+            foreach (DataRow DR_Event in _EventDT.Rows)
+            {
+           
+                if ((int)DR_Event["AvailableInEvent"] == 0 ) ++CountDraftEvents;
+
+            }
+
+            return CountDraftEvents;
+        }
+
         private int _GetCountTheLiveEvents()
         {
             int CountLiveEvents = 0; 
 
             foreach(DataRow DR_Event in _EventDT.Rows)
             {
-                if ((int)DR_Event["AvailableInEvent"] > 0) ++CountLiveEvents; 
+                int.TryParse(DR_Event["MaxCapacity"].ToString(), out int MaxCapacity);
+                if ((int)DR_Event["AvailableInEvent"] > 0 && (int)DR_Event["AvailableInEvent"] != MaxCapacity) ++CountLiveEvents;
+                
             }
 
             return CountLiveEvents; 
@@ -81,6 +98,7 @@ namespace EETMS_Presentation.EETMS_Events
             lblTotalEvents.Text = _GetTheCountOfEvents().ToString();
             lblTotalLiveEvents.Text = _GetCountTheLiveEvents().ToString();
             lblTotalFullyBookedEvents.Text = _GetCountTheFullyBookedEvents().ToString();
+            lblNumberDraftsEvents.Text = _GetCountTheDraftEvents().ToString();
         }
 
         private void USEvents_Load(object sender, EventArgs e)
@@ -92,5 +110,6 @@ namespace EETMS_Presentation.EETMS_Events
         {
             RequestOpenCreateNewEventUS?.Invoke(this, EventArgs.Empty);
         }
+  
     }
 }

@@ -60,6 +60,10 @@
             this.GGCButtonFollyBookedEvents = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.lblTotalFullyBookedEvents = new System.Windows.Forms.Label();
+            this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientCircleButton1 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblNumberDraftsEvents = new System.Windows.Forms.Label();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).BeginInit();
             this.PanelHeaderEvents.SuspendLayout();
@@ -67,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
+            this.guna2GradientPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -312,7 +317,7 @@
             this.guna2GradientPanel1.Controls.Add(this.label3);
             this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
             this.guna2GradientPanel1.Controls.Add(this.lblTotalEvents);
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(201, 170);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(128, 170);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(229, 118);
             this.guna2GradientPanel1.TabIndex = 6;
@@ -360,7 +365,7 @@
             this.guna2GradientPanel2.Controls.Add(this.lblTotalLiveEvents);
             this.guna2GradientPanel2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(197)))), ((int)(((byte)(94)))));
             this.guna2GradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(599, 170);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(439, 170);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(229, 118);
             this.guna2GradientPanel2.TabIndex = 6;
@@ -417,7 +422,7 @@
             this.guna2GradientPanel3.Controls.Add(this.lblTotalFullyBookedEvents);
             this.guna2GradientPanel3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.guna2GradientPanel3.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.guna2GradientPanel3.Location = new System.Drawing.Point(997, 170);
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(750, 170);
             this.guna2GradientPanel3.Name = "guna2GradientPanel3";
             this.guna2GradientPanel3.Size = new System.Drawing.Size(229, 118);
             this.guna2GradientPanel3.TabIndex = 6;
@@ -465,11 +470,70 @@
             this.lblTotalFullyBookedEvents.TabIndex = 0;
             this.lblTotalFullyBookedEvents.Text = "0";
             // 
+            // guna2GradientPanel4
+            // 
+            this.guna2GradientPanel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.guna2GradientPanel4.BorderRadius = 10;
+            this.guna2GradientPanel4.BorderThickness = 1;
+            this.guna2GradientPanel4.Controls.Add(this.guna2GradientCircleButton1);
+            this.guna2GradientPanel4.Controls.Add(this.label6);
+            this.guna2GradientPanel4.Controls.Add(this.lblNumberDraftsEvents);
+            this.guna2GradientPanel4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(163)))), ((int)(((byte)(184)))));
+            this.guna2GradientPanel4.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.guna2GradientPanel4.Location = new System.Drawing.Point(1061, 170);
+            this.guna2GradientPanel4.Name = "guna2GradientPanel4";
+            this.guna2GradientPanel4.Size = new System.Drawing.Size(229, 118);
+            this.guna2GradientPanel4.TabIndex = 6;
+            // 
+            // guna2GradientCircleButton1
+            // 
+            this.guna2GradientCircleButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(234)))), ((int)(((byte)(239)))));
+            this.guna2GradientCircleButton1.BorderThickness = 1;
+            this.guna2GradientCircleButton1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.guna2GradientCircleButton1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(234)))), ((int)(((byte)(239)))));
+            this.guna2GradientCircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(234)))), ((int)(((byte)(239)))));
+            this.guna2GradientCircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2GradientCircleButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2GradientCircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.guna2GradientCircleButton1.Enabled = false;
+            this.guna2GradientCircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2GradientCircleButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2GradientCircleButton1.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientCircleButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.guna2GradientCircleButton1.Location = new System.Drawing.Point(157, 49);
+            this.guna2GradientCircleButton1.Name = "guna2GradientCircleButton1";
+            this.guna2GradientCircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2GradientCircleButton1.Size = new System.Drawing.Size(69, 32);
+            this.guna2GradientCircleButton1.TabIndex = 7;
+            this.guna2GradientCircleButton1.Text = "Draft";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label6.Location = new System.Drawing.Point(25, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 21);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Drafts";
+            // 
+            // lblNumberDraftsEvents
+            // 
+            this.lblNumberDraftsEvents.AutoSize = true;
+            this.lblNumberDraftsEvents.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumberDraftsEvents.Location = new System.Drawing.Point(23, 49);
+            this.lblNumberDraftsEvents.Name = "lblNumberDraftsEvents";
+            this.lblNumberDraftsEvents.Size = new System.Drawing.Size(28, 32);
+            this.lblNumberDraftsEvents.TabIndex = 0;
+            this.lblNumberDraftsEvents.Text = "0";
+            // 
             // USEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.guna2GradientPanel4);
             this.Controls.Add(this.guna2GradientPanel3);
             this.Controls.Add(this.guna2GradientPanel2);
             this.Controls.Add(this.guna2GradientPanel1);
@@ -490,6 +554,8 @@
             this.guna2GradientPanel2.PerformLayout();
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel3.PerformLayout();
+            this.guna2GradientPanel4.ResumeLayout(false);
+            this.guna2GradientPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -523,5 +589,9 @@
         private Guna.UI2.WinForms.Guna2GradientCircleButton GGCButtonFollyBookedEvents;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblTotalFullyBookedEvents;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
+        private Guna.UI2.WinForms.Guna2GradientCircleButton guna2GradientCircleButton1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblNumberDraftsEvents;
     }
 }
