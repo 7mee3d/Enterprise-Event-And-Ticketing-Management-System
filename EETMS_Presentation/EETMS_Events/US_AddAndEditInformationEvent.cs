@@ -1,6 +1,7 @@
 ﻿using System;
-
+using System.Data;
 using System.Windows.Forms;
+using EETMS_BusinessLayer; 
 
 namespace EETMS_Presentation.EETMS_Events
 {
@@ -40,6 +41,32 @@ namespace EETMS_Presentation.EETMS_Events
             RequestClose?.Invoke(this, EventArgs.Empty);
         }
   
-    
+        private void _LoadAllInformationCountriesInComboBox()
+        {
+            DataTable CountriesDT = CountriesBL.AllInformationCountries();
+
+            GComboBoxCountries.DisplayMember = "CountryName";
+            GComboBoxCountries.ValueMember = "CountryID";
+
+            GComboBoxCountries.DataSource = CountriesDT; 
+        }
+        
+        private void _LoadAllInformationCategoriesInComboBox()
+        {
+            DataTable CategoriesDT = CategoriesBL.GetAllInformationCategories();
+
+            GComboBoxCategories.DisplayMember = "CategoryName";
+            GComboBoxCategories.ValueMember = "CategoryID";
+
+            GComboBoxCategories.DataSource = CategoriesDT;
+        }
+
+        private void US_AddAndEditInformationEvent_Load(object sender, EventArgs e)
+        {
+            _LoadAllInformationCountriesInComboBox();
+            _LoadAllInformationCategoriesInComboBox();
+        }
+
+   
     }
 }
