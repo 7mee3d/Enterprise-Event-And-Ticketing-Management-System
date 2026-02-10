@@ -6,6 +6,12 @@ namespace EETMS_Models
 {
     public class MEvent
     {
+        public enum EnModeEvent
+        {
+            _kADD_NEW_EVENT = 1 , 
+            _kUPDATE_INFORMATION_EVENT = 2 
+        }
+
 
         #region All Properties Event Information 
         public int EventID { get; set; }
@@ -17,6 +23,8 @@ namespace EETMS_Models
         public int CountryID { get; set; }
         public int CategoryID { get; set; }
         public string Discripation { get; set; }
+        public EnModeEvent EnMode { get; set; }
+
 
         public MEvent(int eventID, string eventName, DateTime? dateTimeEvent, int durationEvent, int maxCapacity, string street, int countryID, int categoryID, string discripation)
         {
@@ -29,6 +37,9 @@ namespace EETMS_Models
             this.CountryID = countryID;
             this.CategoryID = categoryID;
             this.Discripation = discripation;
+
+            this.EnMode = EnModeEvent._kUPDATE_INFORMATION_EVENT; 
+
         }
 
         public MEvent()
@@ -42,6 +53,8 @@ namespace EETMS_Models
             this.CountryID = default(int);
             this.CategoryID = default(int);
             this.Discripation = default(string);
+
+            this.EnMode = EnModeEvent._kADD_NEW_EVENT;
         }
 
         #endregion

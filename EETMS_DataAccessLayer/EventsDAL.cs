@@ -312,7 +312,7 @@ namespace EETMS_DataAccessLayer
             return _InsertNewEvent(InfoNewEvent);
         }
 
-        private static int _UpdateInformationEvent(MEvent NewInformationEvent)
+        private static int _UpdateInformationEvent(int IDEvent , MEvent NewInformationEvent)
         {
             int RowAffective = -1;
 
@@ -345,7 +345,7 @@ namespace EETMS_DataAccessLayer
                     using (SqlCommand command = new SqlCommand(Query, connection))
                     {
 
-                        command.Parameters.Add("EventID", SqlDbType.Int).Value = NewInformationEvent.EventID;
+                        command.Parameters.Add("EventID", SqlDbType.Int).Value = IDEvent;
                         command.Parameters.Add("EventName", SqlDbType.NVarChar, 300).Value = NewInformationEvent.EventName;
                         command.Parameters.Add("DateTimeEvent", SqlDbType.DateTime2).Value = NewInformationEvent.DateTimeEvent;
                         command.Parameters.Add("Duration", SqlDbType.Int).Value = NewInformationEvent.DurationEvent;
@@ -374,9 +374,9 @@ namespace EETMS_DataAccessLayer
             return RowAffective;
         }
 
-        public static int UpdateInformationEvent(MEvent NewInformationEvent)
+        public static int UpdateInformationEvent(int IDEvent,  MEvent NewInformationEvent)
         {
-            return _UpdateInformationEvent(NewInformationEvent);
+            return _UpdateInformationEvent(IDEvent , NewInformationEvent);
         }
 
         private static int _DeleteTheEventByID(int IDEvent)

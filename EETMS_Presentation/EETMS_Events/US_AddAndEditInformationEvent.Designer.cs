@@ -33,17 +33,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.GNumericUpDownMaxCapacity = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.GDateTimePickerEvent = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.GComboBoxCountries = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxCategories = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GTextBoxDiscripation = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GTextBoxDuration = new Guna.UI2.WinForms.Guna2TextBox();
             this.GTextBoxStreet = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GTextBoxEventName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,10 +55,8 @@
             this.GButtonCreateEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GButtonCansel = new Guna.UI2.WinForms.Guna2Button();
             this.GGButtonWarningDisable = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownMaxCapacity)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,15 +110,15 @@
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.guna2GradientPanel1.BorderRadius = 20;
             this.guna2GradientPanel1.BorderThickness = 1;
-            this.guna2GradientPanel1.Controls.Add(this.guna2NumericUpDown1);
-            this.guna2GradientPanel1.Controls.Add(this.guna2DateTimePicker1);
+            this.guna2GradientPanel1.Controls.Add(this.GNumericUpDownMaxCapacity);
+            this.guna2GradientPanel1.Controls.Add(this.GDateTimePickerEvent);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel1.Controls.Add(this.GComboBoxCountries);
             this.guna2GradientPanel1.Controls.Add(this.GComboBoxCategories);
-            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox2);
-            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox4);
+            this.guna2GradientPanel1.Controls.Add(this.GTextBoxDiscripation);
+            this.guna2GradientPanel1.Controls.Add(this.GTextBoxDuration);
             this.guna2GradientPanel1.Controls.Add(this.GTextBoxStreet);
-            this.guna2GradientPanel1.Controls.Add(this.guna2TextBox1);
+            this.guna2GradientPanel1.Controls.Add(this.GTextBoxEventName);
             this.guna2GradientPanel1.Controls.Add(this.label6);
             this.guna2GradientPanel1.Controls.Add(this.label9);
             this.guna2GradientPanel1.Controls.Add(this.label11);
@@ -136,34 +136,39 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(974, 566);
             this.guna2GradientPanel1.TabIndex = 2;
             // 
-            // guna2NumericUpDown1
+            // GNumericUpDownMaxCapacity
             // 
-            this.guna2NumericUpDown1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2NumericUpDown1.BorderRadius = 5;
-            this.guna2NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2NumericUpDown1.Location = new System.Drawing.Point(536, 357);
-            this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
-            this.guna2NumericUpDown1.Size = new System.Drawing.Size(123, 36);
-            this.guna2NumericUpDown1.TabIndex = 6;
-            this.guna2NumericUpDown1.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GNumericUpDownMaxCapacity.BackColor = System.Drawing.Color.Transparent;
+            this.GNumericUpDownMaxCapacity.BorderRadius = 5;
+            this.GNumericUpDownMaxCapacity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GNumericUpDownMaxCapacity.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GNumericUpDownMaxCapacity.Location = new System.Drawing.Point(536, 357);
+            this.GNumericUpDownMaxCapacity.Maximum = new decimal(new int[] {
+            3000,
+            0,
+            0,
+            0});
+            this.GNumericUpDownMaxCapacity.Name = "GNumericUpDownMaxCapacity";
+            this.GNumericUpDownMaxCapacity.Size = new System.Drawing.Size(123, 36);
+            this.GNumericUpDownMaxCapacity.TabIndex = 6;
+            this.GNumericUpDownMaxCapacity.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             // 
-            // guna2DateTimePicker1
+            // GDateTimePickerEvent
             // 
-            this.guna2DateTimePicker1.Animated = true;
-            this.guna2DateTimePicker1.BorderRadius = 5;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(533, 77);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(419, 42);
-            this.guna2DateTimePicker1.TabIndex = 5;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2026, 2, 10, 0, 14, 58, 732);
+            this.GDateTimePickerEvent.Animated = true;
+            this.GDateTimePickerEvent.BorderRadius = 5;
+            this.GDateTimePickerEvent.Checked = true;
+            this.GDateTimePickerEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GDateTimePickerEvent.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GDateTimePickerEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
+            this.GDateTimePickerEvent.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.GDateTimePickerEvent.Location = new System.Drawing.Point(533, 77);
+            this.GDateTimePickerEvent.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.GDateTimePickerEvent.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.GDateTimePickerEvent.Name = "GDateTimePickerEvent";
+            this.GDateTimePickerEvent.Size = new System.Drawing.Size(419, 42);
+            this.GDateTimePickerEvent.TabIndex = 5;
+            this.GDateTimePickerEvent.Value = new System.DateTime(2026, 2, 10, 0, 14, 58, 732);
             // 
             // guna2Button1
             // 
@@ -217,45 +222,45 @@
             this.GComboBoxCategories.Size = new System.Drawing.Size(420, 36);
             this.GComboBoxCategories.TabIndex = 3;
             // 
-            // guna2TextBox2
+            // GTextBoxDiscripation
             // 
-            this.guna2TextBox2.Animated = true;
-            this.guna2TextBox2.BorderRadius = 5;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(27, 178);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PlaceholderText = "e.g. Annual Tech Conference 2024";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(465, 106);
-            this.guna2TextBox2.TabIndex = 2;
+            this.GTextBoxDiscripation.Animated = true;
+            this.GTextBoxDiscripation.BorderRadius = 5;
+            this.GTextBoxDiscripation.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxDiscripation.DefaultText = "";
+            this.GTextBoxDiscripation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxDiscripation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxDiscripation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxDiscripation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxDiscripation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxDiscripation.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GTextBoxDiscripation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxDiscripation.Location = new System.Drawing.Point(27, 178);
+            this.GTextBoxDiscripation.Name = "GTextBoxDiscripation";
+            this.GTextBoxDiscripation.PlaceholderText = "e.g. Annual Tech Conference 2024";
+            this.GTextBoxDiscripation.SelectedText = "";
+            this.GTextBoxDiscripation.Size = new System.Drawing.Size(465, 106);
+            this.GTextBoxDiscripation.TabIndex = 2;
             // 
-            // guna2TextBox4
+            // GTextBoxDuration
             // 
-            this.guna2TextBox4.Animated = true;
-            this.guna2TextBox4.BorderRadius = 5;
-            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox4.DefaultText = "Duration....";
-            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Location = new System.Drawing.Point(533, 215);
-            this.guna2TextBox4.Name = "guna2TextBox4";
-            this.guna2TextBox4.PlaceholderText = "Enter venue address";
-            this.guna2TextBox4.SelectedText = "";
-            this.guna2TextBox4.Size = new System.Drawing.Size(177, 40);
-            this.guna2TextBox4.TabIndex = 2;
+            this.GTextBoxDuration.Animated = true;
+            this.GTextBoxDuration.BorderRadius = 5;
+            this.GTextBoxDuration.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxDuration.DefaultText = "";
+            this.GTextBoxDuration.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxDuration.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxDuration.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxDuration.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxDuration.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxDuration.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GTextBoxDuration.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxDuration.Location = new System.Drawing.Point(533, 215);
+            this.GTextBoxDuration.Name = "GTextBoxDuration";
+            this.GTextBoxDuration.PlaceholderText = "Duration....";
+            this.GTextBoxDuration.SelectedText = "";
+            this.GTextBoxDuration.Size = new System.Drawing.Size(177, 40);
+            this.GTextBoxDuration.TabIndex = 2;
             // 
             // GTextBoxStreet
             // 
@@ -277,25 +282,25 @@
             this.GTextBoxStreet.Size = new System.Drawing.Size(252, 40);
             this.GTextBoxStreet.TabIndex = 2;
             // 
-            // guna2TextBox1
+            // GTextBoxEventName
             // 
-            this.guna2TextBox1.Animated = true;
-            this.guna2TextBox1.BorderRadius = 5;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(27, 73);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "e.g. Annual Tech Conference 2024";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(465, 40);
-            this.guna2TextBox1.TabIndex = 2;
+            this.GTextBoxEventName.Animated = true;
+            this.GTextBoxEventName.BorderRadius = 5;
+            this.GTextBoxEventName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxEventName.DefaultText = "";
+            this.GTextBoxEventName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxEventName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxEventName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxEventName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxEventName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxEventName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GTextBoxEventName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxEventName.Location = new System.Drawing.Point(27, 73);
+            this.GTextBoxEventName.Name = "GTextBoxEventName";
+            this.GTextBoxEventName.PlaceholderText = "e.g. Annual Tech Conference 2024";
+            this.GTextBoxEventName.SelectedText = "";
+            this.GTextBoxEventName.Size = new System.Drawing.Size(465, 40);
+            this.GTextBoxEventName.TabIndex = 2;
             // 
             // label6
             // 
@@ -318,6 +323,28 @@
             this.label9.Size = new System.Drawing.Size(101, 20);
             this.label9.TabIndex = 1;
             this.label9.Text = "Max Capacity";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(204, 459);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 20);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Street";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(33, 459);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Country";
             // 
             // label5
             // 
@@ -413,6 +440,7 @@
             this.GButtonCreateEvent.Size = new System.Drawing.Size(164, 41);
             this.GButtonCreateEvent.TabIndex = 2;
             this.GButtonCreateEvent.Text = "Create Event";
+            this.GButtonCreateEvent.Click += new System.EventHandler(this.GButtonCreateEvent_Click);
             // 
             // GButtonCansel
             // 
@@ -460,28 +488,6 @@
             this.GGButtonWarningDisable.TabIndex = 0;
             this.GGButtonWarningDisable.Text = "Events with sold tickets cannot be deleted.";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(33, 459);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Country";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(204, 459);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 20);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Street";
-            // 
             // US_AddAndEditInformationEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,7 +503,7 @@
             this.Load += new System.EventHandler(this.US_AddAndEditInformationEvent_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownMaxCapacity)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -510,8 +516,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox GTextBoxDiscripation;
+        private Guna.UI2.WinForms.Guna2TextBox GTextBoxEventName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2ComboBox GComboBoxCategories;
@@ -519,9 +525,9 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxStreet;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2NumericUpDown GNumericUpDownMaxCapacity;
+        private Guna.UI2.WinForms.Guna2DateTimePicker GDateTimePickerEvent;
+        private Guna.UI2.WinForms.Guna2TextBox GTextBoxDuration;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
