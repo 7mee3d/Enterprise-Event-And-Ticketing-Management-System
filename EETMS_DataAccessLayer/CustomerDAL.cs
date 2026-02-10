@@ -56,6 +56,60 @@ namespace EETMS_DataAccessLayer
             return _GetAllCustomersInformation();
         }
 
+        private static DataTable _GetAllCustomersInformationJoinesPhoneAndEmail()
+        {
+          
+            DataTable DT_Customers = new DataTable();
+
+
+            using (SqlConnection connection = new SqlConnection(_ConnectionString))
+            {
+
+                string Query = @"
+                                            
+                                        SELECT 
+			                                    Customers.CusotmerID ,
+			                                    Customers.FirstName ,
+			                                    Customers.MidName ,
+			                                    Customers.LastName , 
+			                                    Customers.NationalID ,
+			                                    Emails.EmailAddress , 
+			                                    Phones.PhoneNumber 
+
+                                                                FROM Customers 
+                                                                INNER JOIN Emails 
+                                                                ON Emails.CusotmerID = Customers.CusotmerID 
+                                                                INNER JOIN Phones 
+                                                                ON Phones.CusotmerID = Customers.CusotmerID 
+                                
+                                ";
+
+
+                using (SqlCommand Command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+                    using (SqlDataReader Reader = Command.ExecuteReader())
+                    {
+                        if (Reader.HasRows)
+                            DT_Customers.Load(Reader);
+
+                    }
+
+                }
+
+
+            }
+
+            return DT_Customers;
+        }
+
+        public static DataTable GetAllCustomersInformationJoinesPhoneAndEmail()
+        {
+            return _GetAllCustomersInformationJoinesPhoneAndEmail();
+        }
+
         private static MCustomer _FindTheCustomerReturingAllInformation(int CustomerID)
         {
 

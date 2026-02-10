@@ -13,6 +13,11 @@ namespace EETMS_BusinessLayer
             return CustomerDAL.GetAllCustomersInformation();
         }
 
+        public static DataTable GetAllInformationCustomerWithPhoneAndEmail()
+        {
+            return CustomerDAL.GetAllCustomersInformationJoinesPhoneAndEmail();
+        }
+
         public static MCustomer FindCustomer(int CustomerID)
         {
             return CustomerDAL.FindTheCustomerReturingAllInformation(CustomerID);

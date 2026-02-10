@@ -21,6 +21,7 @@ namespace EETMS_Presentation.EETMS_Events
         private MEvent _InformationEvent = null;
         private int _IDEvent = 0; 
 
+
         public US_AddAndEditInformationEvent(int id )
         {
             InitializeComponent();
@@ -32,7 +33,6 @@ namespace EETMS_Presentation.EETMS_Events
 
             this._IDEvent = id;
 
-          //  MessageBox.Show(_Mode.ToString());
         }
 
         private void _LoadAllInformationEvent ()
@@ -45,13 +45,16 @@ namespace EETMS_Presentation.EETMS_Events
                 return; 
             }
 
+
             _InformationEvent = EventBL.FindTheEventBy(_IDEvent);
+
 
             if(_InformationEvent == null )
             {
                 MessageBox.Show("Connot Found The Event , Try Agian Later...", "Note Of The Find Event");
                 return;
             }
+
 
             _Mode = _EnMode._kEDIT_THE_INFORMATION_EVENT;
             _InformationEvent.EnMode = MEvent.EnModeEvent._kUPDATE_INFORMATION_EVENT; 
@@ -80,22 +83,26 @@ namespace EETMS_Presentation.EETMS_Events
   
         private void _LoadAllInformationCountriesInComboBox()
         {
+
             DataTable CountriesDT = CountriesBL.AllInformationCountries();
 
             GComboBoxCountries.DisplayMember = "CountryName";
             GComboBoxCountries.ValueMember = "CountryID";
 
             GComboBoxCountries.DataSource = CountriesDT; 
+
         }
         
         private void _LoadAllInformationCategoriesInComboBox()
         {
+
             DataTable CategoriesDT = CategoriesBL.GetAllInformationCategories();
 
             GComboBoxCategories.DisplayMember = "CategoryName";
             GComboBoxCategories.ValueMember = "CategoryID";
 
             GComboBoxCategories.DataSource = CategoriesDT;
+
         }
 
         private void _AddOrEditEventInformation ()
