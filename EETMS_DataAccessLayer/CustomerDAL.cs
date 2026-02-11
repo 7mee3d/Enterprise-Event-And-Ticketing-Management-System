@@ -77,9 +77,10 @@ namespace EETMS_DataAccessLayer
 			                                    Phones.PhoneNumber 
 
                                                                 FROM Customers 
-                                                                INNER JOIN Emails 
+                                                                LEFT OUTER JOIN Emails 
                                                                 ON Emails.CusotmerID = Customers.CusotmerID 
-                                                                INNER JOIN Phones 
+
+                                                                LEFT OUTER JOIN Phones 
                                                                 ON Phones.CusotmerID = Customers.CusotmerID 
                                 
                                 ";
@@ -122,10 +123,24 @@ namespace EETMS_DataAccessLayer
 
 
                     string Query = @"
+                                            SELECT 
+			                                    Customers.CusotmerID ,
+			                                    Customers.FirstName ,
+			                                    Customers.MidName ,
+			                                    Customers.LastName , 
+			                                    Customers.NationalID ,
+			                                    Emails.EmailAddress , 
+			                                    Phones.PhoneNumber 
 
-                                              SELECT CusotmerID,	FirstName,	MidName,	LastName,	NationalID
-                                              FROM Customers
-                                              WHERE CusotmerID = @CusotmerID ; 
+                                                                FROM Customers 
+                                                                LEFT OUTER JOIN Emails 
+                                                                ON Emails.CusotmerID = Customers.CusotmerID 
+
+                                                                LEFT OUTER JOIN Phones 
+                                                                ON Phones.CusotmerID = Customers.CusotmerID 
+
+
+                                                 WHERE Customers.CusotmerID = @CusotmerID ; 
 
                                     ";
 
@@ -149,6 +164,9 @@ namespace EETMS_DataAccessLayer
                                 InfoCustomer.FirstName = reader["FirstName"] != DBNull.Value ? (string)reader["FirstName"] : null;
                                 InfoCustomer.MidName = reader["MidName"] != DBNull.Value ? (string)reader["MidName"] : null;
                                 InfoCustomer.LastName = reader["LastName"] != DBNull.Value ? (string)reader["LastName"] : null;
+                                InfoCustomer.NationalID = reader["NationalID"] != DBNull.Value ? (string)reader["NationalID"] : null;
+                                InfoCustomer.EmailCustomer = reader["EmailAddress"] != DBNull.Value ? (string)reader["EmailAddress"] : null;
+                                InfoCustomer.PhoneCustomer = reader["PhoneNumber"] != DBNull.Value ? (string)reader["PhoneNumber"] : null;
                                 InfoCustomer.NationalID = reader["NationalID"] != DBNull.Value ? (string)reader["NationalID"] : null;
 
 
@@ -185,10 +203,23 @@ namespace EETMS_DataAccessLayer
                     string Query = @" 
 
 
-                                    INSERT INTO Customers (FirstName , MidName , LastName , NationalID )
+                                    INSERT INTO Customers ( FirstName , MidName , LastName , NationalID ) 
                                     VALUES (@FirstName , @MidName , @LastName , @NationalID ) ;
 
-                                    SELECT SCOPE_IDENTITY();
+
+                                        DECLARE @NEW_CUSTOMER_ID INT 
+                                        SET @NEW_CUSTOMER_ID  = SCOPE_IDENTITY(); 
+
+
+                                        
+                                    INSERT INTO Emails ( EmailAddress , CusotmerID ) 
+                                    VALUES (@EmailAddress, @NEW_CUSTOMER_ID) ;
+
+                                    INSERT INTO Phones( PhoneNumber , CusotmerID ) 
+                                    VALUES (@PhoneNumber, @NEW_CUSTOMER_ID ) ;
+
+
+                                    SELECT @NEW_CUSTOMER_ID;
 
 
 
@@ -203,6 +234,10 @@ namespace EETMS_DataAccessLayer
                         Command.Parameters.AddWithValue("@MidName", NewCsutomer.MidName);
                         Command.Parameters.AddWithValue("@LastName", NewCsutomer.LastName);
                         Command.Parameters.AddWithValue("@NationalID", NewCsutomer.NationalID);
+
+
+                        Command.Parameters.AddWithValue("@EmailAddress", NewCsutomer.EmailCustomer);
+                        Command.Parameters.AddWithValue("@PhoneNumber", NewCsutomer.PhoneCustomer);
 
 
                         object result = Command.ExecuteScalar();
@@ -222,6 +257,7 @@ namespace EETMS_DataAccessLayer
             catch (Exception Ex)
             {
 
+                throw;
             }
 
             return ID_NewCustomer;
@@ -267,7 +303,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception ex)
             {
-                //Exception Message 
+                throw;
             }
 
             return RowAffective > 0;
@@ -279,8 +315,10 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        private static int _UpdateInformationCustomer(MCustomer NewCsutomerInformation)
+        private static int _UpdateInformationCustomer(int IDCustomer , MCustomer NewCsutomerInformation)
         {
+
+
             int RowAffective = -1;
 
             try
@@ -296,23 +334,39 @@ namespace EETMS_DataAccessLayer
                                     SET FirstName = @FirstName  , MidName = @MidName , LastName = @LastName , NationalID  = @NationalID  
                                     WHERE CusotmerID = @CusotmerID ; 
 
+
+                                    UPDATE Emails 
+                                    SET EmailAddress = @EmailAddress  
+                                    WHERE CusotmerID = @CusotmerID ; 
+
+
+
+                                    UPDATE Phones 
+                                    SET PhoneNumber = @PhoneNumber  
+                                    WHERE CusotmerID = @CusotmerID ; 
+
+
+
+
                                     ";
+
 
                     using (SqlCommand Command = new SqlCommand(Query, connection))
                     {
 
                         connection.Open();
 
-                        Command.Parameters.AddWithValue("@CusotmerID", NewCsutomerInformation.CusotmerID);
+                        Command.Parameters.AddWithValue("@CusotmerID", IDCustomer);
                         Command.Parameters.AddWithValue("@FirstName", NewCsutomerInformation.FirstName);
                         Command.Parameters.AddWithValue("@MidName", NewCsutomerInformation.MidName);
                         Command.Parameters.AddWithValue("@LastName", NewCsutomerInformation.LastName);
                         Command.Parameters.AddWithValue("@NationalID", NewCsutomerInformation.NationalID);
 
+                        Command.Parameters.AddWithValue("@EmailAddress", NewCsutomerInformation.EmailCustomer);
+                        Command.Parameters.AddWithValue("@PhoneNumber", NewCsutomerInformation.PhoneCustomer);
+
 
                         RowAffective = Command.ExecuteNonQuery();
-
-
 
                     }
                 }
@@ -321,15 +375,15 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception Ex)
             {
-
+                throw;
             }
 
             return RowAffective;
         }
 
-        public static int UpdateInformationCustomer(MCustomer NewCsutomerInformation)
+        public static int UpdateInformationCustomer( int IDCustomer , MCustomer NewCsutomerInformation)
         {
-            return _UpdateInformationCustomer(NewCsutomerInformation);
+            return _UpdateInformationCustomer(IDCustomer , NewCsutomerInformation);
         }
 
 

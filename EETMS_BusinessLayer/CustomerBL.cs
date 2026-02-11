@@ -27,9 +27,9 @@ namespace EETMS_BusinessLayer
         {
             return CustomerDAL.InsertNewCustomer(NewCustomer) > 0;
         }
-        private static bool _UpdateInformationCustomer(MCustomer NewInfromationCustomer)
+        private static bool _UpdateInformationCustomer(int IDCustomer , MCustomer NewInfromationCustomer)
         {
-            return CustomerDAL.UpdateInformationCustomer(NewInfromationCustomer) > 0;
+            return CustomerDAL.UpdateInformationCustomer(IDCustomer , NewInfromationCustomer) > 0;
         }
 
         public static bool DeleteTheCustomer(int IDCustomer)
@@ -46,13 +46,18 @@ namespace EETMS_BusinessLayer
 
 
                 case MCustomer.EnMode._kADD_NEW_CUSTOMER:
-                    if (_AddNewCustomer(NewCustomer))
+                    if (_AddNewCustomer(NewCustomer : NewCustomer))
                         return true;
                     else return false;
 
 
                 case MCustomer.EnMode._kUPDATE_INFORMATION_CUSTOMER:
-                    return _UpdateInformationCustomer(NewCustomer);
+                    return _UpdateInformationCustomer(
+
+                                                      IDCustomer             : NewCustomer.CusotmerID ,
+                                                      NewInfromationCustomer : NewCustomer
+
+                                                      );
 
             }
 

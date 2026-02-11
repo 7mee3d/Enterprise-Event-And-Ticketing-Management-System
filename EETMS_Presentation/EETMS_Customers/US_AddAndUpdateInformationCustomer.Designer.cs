@@ -30,15 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(US_AddAndUpdateInformationCustomer));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GButtonAddNewCustomer = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GButtonCansel = new Guna.UI2.WinForms.Guna2Button();
             this.GGPanelInnerMainPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.GTextBoxNationalID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.GTextBoxLastName = new Guna.UI2.WinForms.Guna2TextBox();
             this.GTextBoxMidName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.GTextBoxPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.GTextBoxEmailAddress = new Guna.UI2.WinForms.Guna2TextBox();
-            this.GTextBoxFirestName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GTextBoxFirstName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,12 +54,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.GTextBoxNationalID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.GButtonAddNewCustomer = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel1.SuspendLayout();
             this.GGPanelInnerMainPanel.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
@@ -76,6 +76,32 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1335, 522);
             this.guna2GradientPanel1.TabIndex = 0;
+            // 
+            // GButtonAddNewCustomer
+            // 
+            this.GButtonAddNewCustomer.Animated = true;
+            this.GButtonAddNewCustomer.AnimatedGIF = true;
+            this.GButtonAddNewCustomer.BorderRadius = 6;
+            this.GButtonAddNewCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonAddNewCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonAddNewCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonAddNewCustomer.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonAddNewCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonAddNewCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonAddNewCustomer.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonAddNewCustomer.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonAddNewCustomer.ForeColor = System.Drawing.Color.White;
+            this.GButtonAddNewCustomer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
+            this.GButtonAddNewCustomer.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
+            this.GButtonAddNewCustomer.Image = ((System.Drawing.Image)(resources.GetObject("GButtonAddNewCustomer.Image")));
+            this.GButtonAddNewCustomer.ImageOffset = new System.Drawing.Point(-3, 0);
+            this.GButtonAddNewCustomer.Location = new System.Drawing.Point(1146, 460);
+            this.GButtonAddNewCustomer.Name = "GButtonAddNewCustomer";
+            this.GButtonAddNewCustomer.PressedColor = System.Drawing.Color.White;
+            this.GButtonAddNewCustomer.Size = new System.Drawing.Size(169, 45);
+            this.GButtonAddNewCustomer.TabIndex = 4;
+            this.GButtonAddNewCustomer.Text = "Save Customer";
+            this.GButtonAddNewCustomer.Click += new System.EventHandler(this.GButtonAddNewCustomer_Click);
             // 
             // GButtonCansel
             // 
@@ -112,7 +138,7 @@
             this.GGPanelInnerMainPanel.Controls.Add(this.label7);
             this.GGPanelInnerMainPanel.Controls.Add(this.GTextBoxPhoneNumber);
             this.GGPanelInnerMainPanel.Controls.Add(this.GTextBoxEmailAddress);
-            this.GGPanelInnerMainPanel.Controls.Add(this.GTextBoxFirestName);
+            this.GGPanelInnerMainPanel.Controls.Add(this.GTextBoxFirstName);
             this.GGPanelInnerMainPanel.Controls.Add(this.label6);
             this.GGPanelInnerMainPanel.Controls.Add(this.guna2Button1);
             this.GGPanelInnerMainPanel.Controls.Add(this.label9);
@@ -143,6 +169,96 @@
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(623, 328);
             this.guna2GradientPanel2.TabIndex = 1;
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.Animated = true;
+            this.guna2Button3.AnimatedGIF = true;
+            this.guna2Button3.BorderRadius = 10;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2Button3.DisabledState.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Bold);
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(86)))), ((int)(((byte)(106)))));
+            this.guna2Button3.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2Button3.Enabled = false;
+            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(86)))), ((int)(((byte)(106)))));
+            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2Button3.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
+            this.guna2Button3.ImageOffset = new System.Drawing.Point(-250, -9);
+            this.guna2Button3.Location = new System.Drawing.Point(57, 194);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(546, 95);
+            this.guna2Button3.TabIndex = 5;
+            this.guna2Button3.Text = "National ID National ID will be used for verification purposes during event check" +
+    "-ins. Please ensure the information is accurate.will be used for verification pu" +
+    "rposes \n";
+            this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button3.TextOffset = new System.Drawing.Point(25, -2);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.AnimatedGIF = true;
+            this.guna2Button2.BorderRadius = 5;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2Button2.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.guna2Button2.Enabled = false;
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2Button2.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
+            this.guna2Button2.Location = new System.Drawing.Point(21, 25);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(39, 40);
+            this.guna2Button2.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(62, 32);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(129, 26);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Identification";
+            // 
+            // GTextBoxNationalID
+            // 
+            this.GTextBoxNationalID.Animated = true;
+            this.GTextBoxNationalID.BorderRadius = 8;
+            this.GTextBoxNationalID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxNationalID.DefaultText = "";
+            this.GTextBoxNationalID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxNationalID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxNationalID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxNationalID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxNationalID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxNationalID.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxNationalID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxNationalID.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxNationalID.IconLeft")));
+            this.GTextBoxNationalID.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.GTextBoxNationalID.Location = new System.Drawing.Point(57, 123);
+            this.GTextBoxNationalID.Name = "GTextBoxNationalID";
+            this.GTextBoxNationalID.PlaceholderText = "00000000000000";
+            this.GTextBoxNationalID.SelectedText = "";
+            this.GTextBoxNationalID.Size = new System.Drawing.Size(546, 45);
+            this.GTextBoxNationalID.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
+            this.label11.Location = new System.Drawing.Point(53, 96);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(89, 20);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "National ID";
             // 
             // GTextBoxLastName
             // 
@@ -249,29 +365,29 @@
             this.GTextBoxEmailAddress.Size = new System.Drawing.Size(322, 41);
             this.GTextBoxEmailAddress.TabIndex = 6;
             // 
-            // GTextBoxFirestName
+            // GTextBoxFirstName
             // 
-            this.GTextBoxFirestName.Animated = true;
-            this.GTextBoxFirestName.BorderRadius = 8;
-            this.GTextBoxFirestName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxFirestName.DefaultText = "";
-            this.GTextBoxFirestName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxFirestName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxFirestName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxFirestName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxFirestName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxFirestName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxFirestName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxFirestName.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxFirestName.IconLeft")));
-            this.GTextBoxFirestName.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.GTextBoxFirestName.IconLeftSize = new System.Drawing.Size(15, 15);
-            this.GTextBoxFirestName.IconRightSize = new System.Drawing.Size(10, 10);
-            this.GTextBoxFirestName.Location = new System.Drawing.Point(130, 146);
-            this.GTextBoxFirestName.Name = "GTextBoxFirestName";
-            this.GTextBoxFirestName.PlaceholderText = "First Name..";
-            this.GTextBoxFirestName.SelectedText = "";
-            this.GTextBoxFirestName.Size = new System.Drawing.Size(136, 37);
-            this.GTextBoxFirestName.TabIndex = 6;
+            this.GTextBoxFirstName.Animated = true;
+            this.GTextBoxFirstName.BorderRadius = 8;
+            this.GTextBoxFirstName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxFirstName.DefaultText = "";
+            this.GTextBoxFirstName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxFirstName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxFirstName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxFirstName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxFirstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxFirstName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxFirstName.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxFirstName.IconLeft")));
+            this.GTextBoxFirstName.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.GTextBoxFirstName.IconLeftSize = new System.Drawing.Size(15, 15);
+            this.GTextBoxFirstName.IconRightSize = new System.Drawing.Size(10, 10);
+            this.GTextBoxFirstName.Location = new System.Drawing.Point(130, 146);
+            this.GTextBoxFirstName.Name = "GTextBoxFirstName";
+            this.GTextBoxFirstName.PlaceholderText = "First Name..";
+            this.GTextBoxFirstName.SelectedText = "";
+            this.GTextBoxFirstName.Size = new System.Drawing.Size(136, 37);
+            this.GTextBoxFirstName.TabIndex = 6;
             // 
             // label6
             // 
@@ -379,121 +495,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Add New Customer";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Variable Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(62, 32);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(129, 26);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Identification";
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.AnimatedGIF = true;
-            this.guna2Button2.BorderRadius = 5;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.guna2Button2.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.guna2Button2.Enabled = false;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.guna2Button2.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(21, 25);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(39, 40);
-            this.guna2Button2.TabIndex = 5;
-            // 
-            // GTextBoxNationalID
-            // 
-            this.GTextBoxNationalID.Animated = true;
-            this.GTextBoxNationalID.BorderRadius = 8;
-            this.GTextBoxNationalID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxNationalID.DefaultText = "";
-            this.GTextBoxNationalID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxNationalID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxNationalID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxNationalID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxNationalID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxNationalID.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxNationalID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxNationalID.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxNationalID.IconLeft")));
-            this.GTextBoxNationalID.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.GTextBoxNationalID.Location = new System.Drawing.Point(57, 123);
-            this.GTextBoxNationalID.Name = "GTextBoxNationalID";
-            this.GTextBoxNationalID.PlaceholderText = "00000000000000";
-            this.GTextBoxNationalID.SelectedText = "";
-            this.GTextBoxNationalID.Size = new System.Drawing.Size(546, 45);
-            this.GTextBoxNationalID.TabIndex = 6;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
-            this.label11.Location = new System.Drawing.Point(53, 96);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 20);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "National ID";
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.AnimatedGIF = true;
-            this.guna2Button3.BorderRadius = 10;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.guna2Button3.DisabledState.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Bold);
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(86)))), ((int)(((byte)(106)))));
-            this.guna2Button3.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.guna2Button3.Enabled = false;
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(86)))), ((int)(((byte)(106)))));
-            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.guna2Button3.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.ImageOffset = new System.Drawing.Point(-250, -9);
-            this.guna2Button3.Location = new System.Drawing.Point(57, 194);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(546, 95);
-            this.guna2Button3.TabIndex = 5;
-            this.guna2Button3.Text = "National ID National ID will be used for verification purposes during event check" +
-    "-ins. Please ensure the information is accurate.will be used for verification pu" +
-    "rposes \n";
-            this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button3.TextOffset = new System.Drawing.Point(25, -2);
-            // 
-            // GButtonAddNewCustomer
-            // 
-            this.GButtonAddNewCustomer.Animated = true;
-            this.GButtonAddNewCustomer.AnimatedGIF = true;
-            this.GButtonAddNewCustomer.BorderRadius = 6;
-            this.GButtonAddNewCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonAddNewCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonAddNewCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonAddNewCustomer.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonAddNewCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonAddNewCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonAddNewCustomer.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonAddNewCustomer.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonAddNewCustomer.ForeColor = System.Drawing.Color.White;
-            this.GButtonAddNewCustomer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GButtonAddNewCustomer.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GButtonAddNewCustomer.Image = ((System.Drawing.Image)(resources.GetObject("GButtonAddNewCustomer.Image")));
-            this.GButtonAddNewCustomer.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.GButtonAddNewCustomer.Location = new System.Drawing.Point(1146, 460);
-            this.GButtonAddNewCustomer.Name = "GButtonAddNewCustomer";
-            this.GButtonAddNewCustomer.PressedColor = System.Drawing.Color.White;
-            this.GButtonAddNewCustomer.Size = new System.Drawing.Size(169, 45);
-            this.GButtonAddNewCustomer.TabIndex = 4;
-            this.GButtonAddNewCustomer.Text = "Save Customer";
-            // 
             // US_AddAndUpdateInformationCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,6 +503,7 @@
             this.Controls.Add(this.guna2GradientPanel1);
             this.Name = "US_AddAndUpdateInformationCustomer";
             this.Size = new System.Drawing.Size(1419, 935);
+            this.Load += new System.EventHandler(this.US_AddAndUpdateInformationCustomer_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.GGPanelInnerMainPanel.ResumeLayout(false);
@@ -525,7 +527,7 @@
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxLastName;
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxMidName;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2TextBox GTextBoxFirestName;
+        private Guna.UI2.WinForms.Guna2TextBox GTextBoxFirstName;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxEmailAddress;
         private System.Windows.Forms.Label label8;
