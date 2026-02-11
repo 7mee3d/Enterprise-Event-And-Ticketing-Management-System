@@ -8,6 +8,9 @@ namespace EETMS_Presentation.EETMS_Customers
 {
     public partial class USCustomers : UserControl
     {
+
+        public event EventHandler RequestOpenTheAddNewCustomer = null; 
+
         public USCustomers()
         {
             InitializeComponent();
@@ -41,6 +44,11 @@ namespace EETMS_Presentation.EETMS_Customers
         private void USCustomers_Load(object sender, EventArgs e)
         {
             _LoadAllInformationCustomerToDataGridView();
+        }
+
+        private void GGButtonCreateNewEvent_Click(object sender, EventArgs e)
+        {
+            RequestOpenTheAddNewCustomer?.Invoke(this, EventArgs.Empty);
         }
     }
 }

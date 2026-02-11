@@ -72,9 +72,28 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheEventUS();
         }
 
+        private void _OpenTheAddNewCustomer (int IDCustomer )
+        {
+            US_AddAndUpdateInformationCustomer US_AddNewCustomer = new US_AddAndUpdateInformationCustomer(IDCustomer);
+
+            US_AddNewCustomer.RequestClose += (sender, e) => _OpenThe_US_Customer();
+
+            _ShowTheUserControlInThePanel(US_AddNewCustomer);
+        }
+
+        private void _OpenThe_US_Customer()
+        {
+            USCustomers US_Customer = new USCustomers();
+
+            US_Customer.RequestOpenTheAddNewCustomer += (sender, IDCustomer) => _OpenTheAddNewCustomer(IDCustomer);
+
+            _ShowTheUserControlInThePanel(US_Customer);
+        }
+
         private void GButtonCustomers_Click(object sender, EventArgs e)
         {
-            _ShowTheUserControlInThePanel(new USCustomers());
+
+            _OpenThe_US_Customer();
 
         }
 

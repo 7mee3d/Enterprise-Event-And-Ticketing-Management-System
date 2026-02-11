@@ -72,6 +72,12 @@
     <Compile Include="EETMS_Customers\USCustomers.Designer.cs">
       <DependentUpon>USCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="EETMS_Customers\US_AddAndUpdateInformationCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Customers\US_AddAndUpdateInformationCustomer.Designer.cs">
+      <DependentUpon>US_AddAndUpdateInformationCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="EETMS_Dashboard\USDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Customers\USCustomers.resx">
       <DependentUpon>USCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Customers\US_AddAndUpdateInformationCustomer.resx">
+      <DependentUpon>US_AddAndUpdateInformationCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Dashboard\USDashboard.resx">
       <DependentUpon>USDashboard.cs</DependentUpon>
