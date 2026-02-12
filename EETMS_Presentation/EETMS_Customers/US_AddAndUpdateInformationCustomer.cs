@@ -132,12 +132,13 @@ namespace EETMS_Presentation.EETMS_Customers
 
             return           (
 
-                         AllInformationCustomerInList[0] != "" &&
-                         AllInformationCustomerInList[1] != "" &&
-                         AllInformationCustomerInList[2] != "" &&
-                         AllInformationCustomerInList[3] != "" &&
-                       //  AllInformationCustomerInList[4] != "" &&
-                         AllInformationCustomerInList[5] != ""
+
+                         AllInformationCustomerInList[0] != "" &&   // The First Name 
+                                                                    //   AllInformationCustomerInList[1] != "" &&// The Mid Name 
+                         AllInformationCustomerInList[2] != "" &&   // The last Name
+                                                                    // AllInformationCustomerInList[3] != "" &&//The Email
+                                                                    //  AllInformationCustomerInList[4] != "" &&//The Phone
+                         AllInformationCustomerInList[5] != ""      //The National ID
 
                              );
 
