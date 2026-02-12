@@ -86,5 +86,32 @@ namespace EETMS_Presentation.EETMS_Customers
         {
             RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
         }
+
+        private void GTextBoxSearchTheEvent_TextChanged(object sender, EventArgs e)
+        {
+            string SearchStr = GTextBoxSearchTheCustomer.Text;
+
+            DataTable Customer_DT = CustomerBL.AllInformationCustomerAfterSearch(SearchStr);
+
+            GDataGridViewCustomerInformation.Rows.Clear();   // مهم جداً
+
+            foreach (DataRow CustomerInfoRow in Customer_DT.Rows)
+            {
+                string FullNameCustomer =
+                    CustomerInfoRow["FirstName"] + " " +
+                    CustomerInfoRow["MidName"] + " " +
+                    CustomerInfoRow["LastName"];
+
+                GDataGridViewCustomerInformation.Rows.Add(
+                    CustomerInfoRow["CusotmerID"],
+                    FullNameCustomer,
+                    (CustomerInfoRow["EmailAddress"].ToString() == "") ? "-" : CustomerInfoRow["EmailAddress"],
+                    (CustomerInfoRow["PhoneNumber"].ToString() == "") ? "-" : CustomerInfoRow["PhoneNumber"],
+                    CustomerInfoRow["NationalID"]
+                );
+            }
+        }
+
+
     }
 }

@@ -65,5 +65,11 @@ namespace EETMS_BusinessLayer
         }
 
 
+        public static DataTable AllInformationCustomerAfterSearch (string StrToBeSearch)
+        {
+            return CustomerDAL.SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(StrToBeSearch);
+        }
+
+
     }
 }

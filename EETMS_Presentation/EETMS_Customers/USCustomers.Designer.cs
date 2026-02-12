@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelHeaderEvents = new System.Windows.Forms.Panel();
-            this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GTextBoxSearchTheCustomer = new Guna.UI2.WinForms.Guna2TextBox();
             this.GGButtonCreateNewEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             // 
             // PanelHeaderEvents
             // 
-            this.PanelHeaderEvents.Controls.Add(this.GTextBoxSearchTheEvent);
+            this.PanelHeaderEvents.Controls.Add(this.GTextBoxSearchTheCustomer);
             this.PanelHeaderEvents.Controls.Add(this.GGButtonCreateNewEvent);
             this.PanelHeaderEvents.Controls.Add(this.label2);
             this.PanelHeaderEvents.Controls.Add(this.label3);
@@ -67,26 +67,27 @@
             this.PanelHeaderEvents.Size = new System.Drawing.Size(1361, 203);
             this.PanelHeaderEvents.TabIndex = 6;
             // 
-            // GTextBoxSearchTheEvent
+            // GTextBoxSearchTheCustomer
             // 
-            this.GTextBoxSearchTheEvent.BorderRadius = 8;
-            this.GTextBoxSearchTheEvent.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxSearchTheEvent.DefaultText = "";
-            this.GTextBoxSearchTheEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxSearchTheEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxSearchTheEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheEvent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheEvent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxSearchTheEvent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheEvent.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheEvent.IconLeft")));
-            this.GTextBoxSearchTheEvent.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxSearchTheEvent.Location = new System.Drawing.Point(13, 131);
-            this.GTextBoxSearchTheEvent.Name = "GTextBoxSearchTheEvent";
-            this.GTextBoxSearchTheEvent.PlaceholderText = "Search by name, email, or National ID...";
-            this.GTextBoxSearchTheEvent.SelectedText = "";
-            this.GTextBoxSearchTheEvent.Size = new System.Drawing.Size(782, 44);
-            this.GTextBoxSearchTheEvent.TabIndex = 3;
+            this.GTextBoxSearchTheCustomer.BorderRadius = 8;
+            this.GTextBoxSearchTheCustomer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxSearchTheCustomer.DefaultText = "";
+            this.GTextBoxSearchTheCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxSearchTheCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxSearchTheCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheCustomer.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxSearchTheCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheCustomer.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheCustomer.IconLeft")));
+            this.GTextBoxSearchTheCustomer.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxSearchTheCustomer.Location = new System.Drawing.Point(13, 131);
+            this.GTextBoxSearchTheCustomer.Name = "GTextBoxSearchTheCustomer";
+            this.GTextBoxSearchTheCustomer.PlaceholderText = "Search by name, National ID...";
+            this.GTextBoxSearchTheCustomer.SelectedText = "";
+            this.GTextBoxSearchTheCustomer.Size = new System.Drawing.Size(782, 44);
+            this.GTextBoxSearchTheCustomer.TabIndex = 3;
+            this.GTextBoxSearchTheCustomer.TextChanged += new System.EventHandler(this.GTextBoxSearchTheEvent_TextChanged);
             // 
             // GGButtonCreateNewEvent
             // 
@@ -271,7 +272,7 @@
             this.GContextMenuStripOperationCustomer.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.GContextMenuStripOperationCustomer.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.GContextMenuStripOperationCustomer.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripOperationCustomer.Size = new System.Drawing.Size(181, 94);
+            this.GContextMenuStripOperationCustomer.Size = new System.Drawing.Size(167, 72);
             // 
             // toolStripTextBox1
             // 
@@ -286,7 +287,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
             // 
             // DeleteCustomerlStripMenuItem
             // 
@@ -294,7 +295,7 @@
             this.DeleteCustomerlStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteCustomerlStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DeleteCustomerlStripMenuItem.Name = "DeleteCustomerlStripMenuItem";
-            this.DeleteCustomerlStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DeleteCustomerlStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.DeleteCustomerlStripMenuItem.Text = "Delete Customer";
             this.DeleteCustomerlStripMenuItem.Click += new System.EventHandler(this.DeleteCustomerlStripMenuItem_Click);
             // 
@@ -303,7 +304,7 @@
             this.updateCustomerToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.updateCustomerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateCustomerToolStripMenuItem.Name = "updateCustomerToolStripMenuItem";
-            this.updateCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateCustomerToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.updateCustomerToolStripMenuItem.Text = "Update Customer";
             this.updateCustomerToolStripMenuItem.Click += new System.EventHandler(this.updateCustomerToolStripMenuItem_Click);
             // 
@@ -333,7 +334,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonCreateNewEvent;
-        private Guna.UI2.WinForms.Guna2TextBox GTextBoxSearchTheEvent;
+        private Guna.UI2.WinForms.Guna2TextBox GTextBoxSearchTheCustomer;
         private Guna.UI2.WinForms.Guna2GradientPanel GGPanelDataGridViewEvents;
         private Guna.UI2.WinForms.Guna2DataGridView GDataGridViewCustomerInformation;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;

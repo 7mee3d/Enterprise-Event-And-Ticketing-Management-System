@@ -136,7 +136,7 @@ namespace EETMS_Presentation.EETMS_Customers
                          AllInformationCustomerInList[1] != "" &&
                          AllInformationCustomerInList[2] != "" &&
                          AllInformationCustomerInList[3] != "" &&
-                         AllInformationCustomerInList[4] != "" &&
+                       //  AllInformationCustomerInList[4] != "" &&
                          AllInformationCustomerInList[5] != ""
 
                              );
