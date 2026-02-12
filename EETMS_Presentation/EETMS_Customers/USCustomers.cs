@@ -9,12 +9,18 @@ namespace EETMS_Presentation.EETMS_Customers
     public partial class USCustomers : UserControl
     {
 
-        public event EventHandler<int> RequestOpenTheAddNewCustomer = null; 
+        public event EventHandler<int> RequestOpenTheAddNewCustomer = null;
+        private DataTable _CustomersDT = null;
 
         public USCustomers()
         {
             InitializeComponent();
         }
+
+        private int _GetTotalCustomer ()
+        {
+            return _CustomersDT.Rows.Count; 
+        } 
 
         private int _GetTheIDCustomerAfterSelectedInDataGridView()
         {
@@ -24,9 +30,9 @@ namespace EETMS_Presentation.EETMS_Customers
         private void _LoadAllInformationCustomerToDataGridView ()
         {
 
-            DataTable CustomersDT = CustomerBL.GetAllInformationCustomerWithPhoneAndEmail();
+            _CustomersDT = CustomerBL.GetAllInformationCustomerWithPhoneAndEmail();
 
-            foreach (DataRow CustomerInfoRow in CustomersDT.Rows)
+            foreach (DataRow CustomerInfoRow in _CustomersDT.Rows)
             {
 
                 string FullNameCustomer = CustomerInfoRow["FirstName"] + " " + CustomerInfoRow["MidName"] + " " + CustomerInfoRow["LastName"];
@@ -52,7 +58,9 @@ namespace EETMS_Presentation.EETMS_Customers
             GDataGridViewCustomerInformation.Rows.Clear();
             _LoadAllInformationCustomerToDataGridView();
             GDataGridViewCustomerInformation.ClearSelection();
-      
+            lblTotalCustomer.Text = _GetTotalCustomer().ToString();
+
+
         }
 
         private void USCustomers_Load(object sender, EventArgs e)
@@ -89,29 +97,34 @@ namespace EETMS_Presentation.EETMS_Customers
 
         private void GTextBoxSearchTheEvent_TextChanged(object sender, EventArgs e)
         {
+
             string SearchStr = GTextBoxSearchTheCustomer.Text;
 
-            DataTable Customer_DT = CustomerBL.AllInformationCustomerAfterSearch(SearchStr);
+             _CustomersDT = CustomerBL.AllInformationCustomerAfterSearch(SearchStr);
 
-            GDataGridViewCustomerInformation.Rows.Clear();   // مهم جداً
+            GDataGridViewCustomerInformation.Rows.Clear();  
 
-            foreach (DataRow CustomerInfoRow in Customer_DT.Rows)
+            foreach (DataRow CustomerInfoRow in _CustomersDT.Rows)
             {
                 string FullNameCustomer =
+
                     CustomerInfoRow["FirstName"] + " " +
                     CustomerInfoRow["MidName"] + " " +
                     CustomerInfoRow["LastName"];
 
                 GDataGridViewCustomerInformation.Rows.Add(
-                    CustomerInfoRow["CusotmerID"],
-                    FullNameCustomer,
-                    (CustomerInfoRow["EmailAddress"].ToString() == "") ? "-" : CustomerInfoRow["EmailAddress"],
-                    (CustomerInfoRow["PhoneNumber"].ToString() == "") ? "-" : CustomerInfoRow["PhoneNumber"],
-                    CustomerInfoRow["NationalID"]
+
+                                            CustomerInfoRow["CusotmerID"],
+                                            FullNameCustomer,
+                                            (CustomerInfoRow["EmailAddress"].ToString() == "") ? "-" : CustomerInfoRow["EmailAddress"],
+                                            (CustomerInfoRow["PhoneNumber"].ToString() == "") ? "-" : CustomerInfoRow["PhoneNumber"],
+                                            CustomerInfoRow["NationalID"]
+
+
                 );
             }
         }
 
-
+        
     }
 }

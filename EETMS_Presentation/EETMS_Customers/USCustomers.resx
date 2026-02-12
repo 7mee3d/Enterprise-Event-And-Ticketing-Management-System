@@ -118,6 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAYhJREFUWEft
+        VjFOxDAQvJKSJ6RCuRgkSkqewBN4Aj/gKiIuju4JlDzhyjzlypPgYpdXGm0SBXtsJ47OoSEjjRJF3p1Z
+        78rOarVgQQSkm2PCuJCMC8VKoZonF4c0Pya4dhawUuxbYamyVrx574woVog9xkQF4yL/rV43oVOqrJSv
+        GBsNRsUudq0hcxgbBbfF9yOK6dWjIVqPOS4GbTEKWdR2glqHOS5GPw/hjG/CaMcIaSdmaQfBFLPnQDeB
+        sdEQNBdcqLuy3mFsVNBhhKLACmNmwQ0/pdaxXdTnPzu2FxCSTXXFivqF+k4taA4l8/Sssu3XM8ZFAePi
+        0zGAAZQfmGsyaNj6hNZ9YYh53jtu6zPmHsX9Tl5biSyaV7n7WjdJeVHLCwxu6NsJx3fnz05H1PKiT6QL
+        mDfkADthhzkiajmxLuuHXsxKZFc2TNtQGnKx0SJa7DYxgZ7Y9dvpCTUttCZ8FeuVeX50XezWNybeg02Y
+        ScbnQN+5YUNhJnI0Yfd1MrXYoHYs+Pf4Aav1rccFzTbbAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="resource.Image1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAYhJREFUWEft
+        VjFOxDAQvJKSJ6RCuRgkSkqewBN4Aj/gKiIuju4JlDzhyjzlypPgYpdXGm0SBXtsJ47OoSEjjRJF3p1Z
+        78rOarVgQQSkm2PCuJCMC8VKoZonF4c0Pya4dhawUuxbYamyVrx574woVog9xkQF4yL/rV43oVOqrJSv
+        GBsNRsUudq0hcxgbBbfF9yOK6dWjIVqPOS4GbTEKWdR2glqHOS5GPw/hjG/CaMcIaSdmaQfBFLPnQDeB
+        sdEQNBdcqLuy3mFsVNBhhKLACmNmwQ0/pdaxXdTnPzu2FxCSTXXFivqF+k4taA4l8/Sssu3XM8ZFAePi
+        0zGAAZQfmGsyaNj6hNZ9YYh53jtu6zPmHsX9Tl5biSyaV7n7WjdJeVHLCwxu6NsJx3fnz05H1PKiT6QL
+        mDfkADthhzkiajmxLuuHXsxKZFc2TNtQGnKx0SJa7DYxgZ7Y9dvpCTUttCZ8FeuVeX50XezWNybeg02Y
+        ScbnQN+5YUNhJnI0Yfd1MrXYoHYs+Pf4Aav1rccFzTbbAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="GButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAYhJREFUWEft
+        VjFOxDAQvJKSJ6RCuRgkSkqewBN4Aj/gKiIuju4JlDzhyjzlypPgYpdXGm0SBXtsJ47OoSEjjRJF3p1Z
+        78rOarVgQQSkm2PCuJCMC8VKoZonF4c0Pya4dhawUuxbYamyVrx574woVog9xkQF4yL/rV43oVOqrJSv
+        GBsNRsUudq0hcxgbBbfF9yOK6dWjIVqPOS4GbTEKWdR2glqHOS5GPw/hjG/CaMcIaSdmaQfBFLPnQDeB
+        sdEQNBdcqLuy3mFsVNBhhKLACmNmwQ0/pdaxXdTnPzu2FxCSTXXFivqF+k4taA4l8/Sssu3XM8ZFAePi
+        0zGAAZQfmGsyaNj6hNZ9YYh53jtu6zPmHsX9Tl5biSyaV7n7WjdJeVHLCwxu6NsJx3fnz05H1PKiT6QL
+        mDfkADthhzkiajmxLuuHXsxKZFc2TNtQGnKx0SJa7DYxgZ7Y9dvpCTUttCZ8FeuVeX50XezWNybeg02Y
+        ScbnQN+5YUNhJnI0Yfd1MrXYoHYs+Pf4Aav1rccFzTbbAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="GTextBoxSearchTheCustomer.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAapJREFUWEft
@@ -155,5 +191,8 @@
   </metadata>
   <metadata name="GContextMenuStripOperationCustomer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>
