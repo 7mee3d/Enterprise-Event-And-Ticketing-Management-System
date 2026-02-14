@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MCategory.cs" />
     <Compile Include="MCustomer.cs" />
     <Compile Include="MEvent.cs" />
     <Compile Include="MUser.cs" />

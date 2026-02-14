@@ -1,4 +1,5 @@
 ﻿
+using EETMS_Models;
 using System;
 using System.Configuration;
 using System.Data;
@@ -34,7 +35,7 @@ namespace EETMS_DataAccessLayer
 
 
                                                                 FROM Events EVE
-                                                                INNER JOIN Categories CAT 
+                                                                RIGHT OUTER JOIN Categories CAT 
                                                                 ON EVE.CategoryID = CAT.CategoryID 
 
                                                                 GROUP BY CAT.CategoryName
@@ -133,6 +134,125 @@ namespace EETMS_DataAccessLayer
             return _GetAllInformationCategories();
         }
 
+        private static int _InsertTheNewCategory(MCategory NewInformationCategory )
+        {
 
+            int NewIDCategory = -1;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+                    string Query = @"
+
+
+                                    INSERT INTO Categories (CategoryName , Discripation)
+                                    VALUES (@CategoryName , @Descripation) ;
+    
+
+
+
+                                    SELECT SCOPE_IDENTITY();
+
+
+
+    
+
+                       ";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        command.Parameters.Add("@CategoryName", SqlDbType.NVarChar, 250).Value = NewInformationCategory.CategoryName;
+                        command.Parameters.AddWithValue("@Descripation", NewInformationCategory.DescripationCategory);
+
+                        connection.Open();
+
+
+                        object result = command.ExecuteNonQuery();
+
+                        if (result != null && int.TryParse(result.ToString(), out int NewID))
+                            NewIDCategory = NewID;
+
+
+                        NewInformationCategory.CategoryID = NewIDCategory;
+
+
+                    }
+
+                }
+
+            }catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.Message);
+            };
+
+
+            return NewIDCategory;
+
+        }
+
+        public static int InsertTheNewCategory(MCategory NewInformationCategory)
+        {
+            return _InsertTheNewCategory(NewInformationCategory);
+        }
+   
+        private static MCategory _FindTheCategoryBy(int IDCategory )
+        {
+
+            MCategory CategoryInfo = null; 
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString ))
+            {
+
+                string Query = @"
+                                             SELECT 
+
+                                                    CAT.CategoryID ,
+                                                    CAT.CategoryName ,
+                                                    CAT.Discripation 
+
+                                                                FROM Categories CAT 
+
+                                             WHERE   CAT.CategoryID = @CategoryID ; 
+
+
+                                    ";
+
+                using (SqlCommand command = new SqlCommand(Query , connection ))
+                {
+                    
+                    command.Parameters.Add("@CategoryID", SqlDbType.Int).Value = IDCategory;
+
+                    connection.Open(); 
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        if(reader.Read() )
+                        {
+                            CategoryInfo = new MCategory();
+
+                            CategoryInfo.CategoryID = reader["CategoryID"] != DBNull.Value ? (int)reader["CategoryID"] : 0;
+                            CategoryInfo.CategoryName = reader["CategoryName"] != DBNull.Value ? reader["CategoryName"].ToString() : null; 
+                            CategoryInfo.DescripationCategory = reader["Discripation"] != DBNull.Value ? reader["Discripation"].ToString() : null; 
+
+                        }
+                    }
+                }
+            }
+
+            return CategoryInfo; 
+        }
+
+        public static MCategory FindTheCategoryBy(int IDCategory)
+        {
+            return _FindTheCategoryBy(IDCategory);
+        }
+   
+    
     }
+
+
 }
