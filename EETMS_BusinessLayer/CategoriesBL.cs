@@ -9,6 +9,7 @@ namespace EETMS_BusinessLayer
 
         public static DataTable GetAllInformationCategories() => CategoriesDAL.GetAllInformationCategories();
 
+        public static DataTable GetAllInformationCategoriesGroupByNameForEvent() => CategoriesDAL.GetAllInformationCategoriesGroupByCategoryname();
 
     }
 }

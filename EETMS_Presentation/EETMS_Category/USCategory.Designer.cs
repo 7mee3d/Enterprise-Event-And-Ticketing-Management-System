@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USCategory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.GTextBoxCategoryName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.GTextBoxCategoryDescripation = new Guna.UI2.WinForms.Guna2TextBox();
             this.GGButtonAddNewCategory = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GTextBoxCategoryDescripation = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.GTextBoxCategoryName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GTextBoxSearchTheCategory = new Guna.UI2.WinForms.Guna2TextBox();
             this.GDataGridViewCategoriesInformation = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -82,85 +82,6 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1350, 207);
             this.guna2GradientPanel1.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(120)))), ((int)(((byte)(143)))));
-            this.label2.Location = new System.Drawing.Point(23, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 31);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Quick Add Category";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.label3.Location = new System.Drawing.Point(29, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "New Category Name";
-            // 
-            // GTextBoxCategoryName
-            // 
-            this.GTextBoxCategoryName.Animated = true;
-            this.GTextBoxCategoryName.BorderRadius = 8;
-            this.GTextBoxCategoryName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxCategoryName.DefaultText = "";
-            this.GTextBoxCategoryName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxCategoryName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxCategoryName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxCategoryName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxCategoryName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.GTextBoxCategoryName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxCategoryName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxCategoryName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxCategoryName.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxCategoryName.IconLeft")));
-            this.GTextBoxCategoryName.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.GTextBoxCategoryName.Location = new System.Drawing.Point(32, 116);
-            this.GTextBoxCategoryName.Name = "GTextBoxCategoryName";
-            this.GTextBoxCategoryName.PlaceholderText = "e.g. Festivals";
-            this.GTextBoxCategoryName.SelectedText = "";
-            this.GTextBoxCategoryName.Size = new System.Drawing.Size(445, 45);
-            this.GTextBoxCategoryName.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.label4.Location = new System.Drawing.Point(530, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Category Description";
-            // 
-            // GTextBoxCategoryDescripation
-            // 
-            this.GTextBoxCategoryDescripation.Animated = true;
-            this.GTextBoxCategoryDescripation.BorderRadius = 8;
-            this.GTextBoxCategoryDescripation.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxCategoryDescripation.DefaultText = "";
-            this.GTextBoxCategoryDescripation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxCategoryDescripation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxCategoryDescripation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxCategoryDescripation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxCategoryDescripation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.GTextBoxCategoryDescripation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxCategoryDescripation.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxCategoryDescripation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxCategoryDescripation.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxCategoryDescripation.IconLeft")));
-            this.GTextBoxCategoryDescripation.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.GTextBoxCategoryDescripation.Location = new System.Drawing.Point(533, 116);
-            this.GTextBoxCategoryDescripation.Name = "GTextBoxCategoryDescripation";
-            this.GTextBoxCategoryDescripation.PlaceholderText = "Brief description of event types in this category...";
-            this.GTextBoxCategoryDescripation.SelectedText = "";
-            this.GTextBoxCategoryDescripation.Size = new System.Drawing.Size(563, 45);
-            this.GTextBoxCategoryDescripation.TabIndex = 7;
-            // 
             // GGButtonAddNewCategory
             // 
             this.GGButtonAddNewCategory.Animated = true;
@@ -185,6 +106,85 @@
             this.GGButtonAddNewCategory.Size = new System.Drawing.Size(178, 47);
             this.GGButtonAddNewCategory.TabIndex = 3;
             this.GGButtonAddNewCategory.Text = "Add New Category";
+            // 
+            // GTextBoxCategoryDescripation
+            // 
+            this.GTextBoxCategoryDescripation.Animated = true;
+            this.GTextBoxCategoryDescripation.BorderRadius = 8;
+            this.GTextBoxCategoryDescripation.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxCategoryDescripation.DefaultText = "";
+            this.GTextBoxCategoryDescripation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxCategoryDescripation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxCategoryDescripation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxCategoryDescripation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxCategoryDescripation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.GTextBoxCategoryDescripation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxCategoryDescripation.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxCategoryDescripation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxCategoryDescripation.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxCategoryDescripation.IconLeft")));
+            this.GTextBoxCategoryDescripation.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.GTextBoxCategoryDescripation.Location = new System.Drawing.Point(533, 116);
+            this.GTextBoxCategoryDescripation.Name = "GTextBoxCategoryDescripation";
+            this.GTextBoxCategoryDescripation.PlaceholderText = "Brief description of event types in this category...";
+            this.GTextBoxCategoryDescripation.SelectedText = "";
+            this.GTextBoxCategoryDescripation.Size = new System.Drawing.Size(563, 45);
+            this.GTextBoxCategoryDescripation.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.label4.Location = new System.Drawing.Point(530, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Category Description";
+            // 
+            // GTextBoxCategoryName
+            // 
+            this.GTextBoxCategoryName.Animated = true;
+            this.GTextBoxCategoryName.BorderRadius = 8;
+            this.GTextBoxCategoryName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxCategoryName.DefaultText = "";
+            this.GTextBoxCategoryName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxCategoryName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxCategoryName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxCategoryName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxCategoryName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.GTextBoxCategoryName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxCategoryName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxCategoryName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxCategoryName.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxCategoryName.IconLeft")));
+            this.GTextBoxCategoryName.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.GTextBoxCategoryName.Location = new System.Drawing.Point(32, 116);
+            this.GTextBoxCategoryName.Name = "GTextBoxCategoryName";
+            this.GTextBoxCategoryName.PlaceholderText = "e.g. Festivals";
+            this.GTextBoxCategoryName.SelectedText = "";
+            this.GTextBoxCategoryName.Size = new System.Drawing.Size(445, 45);
+            this.GTextBoxCategoryName.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.label3.Location = new System.Drawing.Point(29, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "New Category Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(120)))), ((int)(((byte)(143)))));
+            this.label2.Location = new System.Drawing.Point(23, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(225, 31);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Quick Add Category";
             // 
             // GGPanelDataGridViewEvents
             // 
@@ -227,20 +227,20 @@
             this.GDataGridViewCategoriesInformation.AllowUserToAddRows = false;
             this.GDataGridViewCategoriesInformation.AllowUserToDeleteRows = false;
             this.GDataGridViewCategoriesInformation.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.GDataGridViewCategoriesInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewCategoriesInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.GDataGridViewCategoriesInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewCategoriesInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GDataGridViewCategoriesInformation.ColumnHeadersHeight = 64;
             this.GDataGridViewCategoriesInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GDataGridViewCategoriesInformation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -248,14 +248,14 @@
             this.CategoryName,
             this.CountEventForCategory,
             this.DescriptionCategory});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GDataGridViewCategoriesInformation.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GDataGridViewCategoriesInformation.DefaultCellStyle = dataGridViewCellStyle3;
             this.GDataGridViewCategoriesInformation.GridColor = System.Drawing.Color.White;
             this.GDataGridViewCategoriesInformation.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GDataGridViewCategoriesInformation.Location = new System.Drawing.Point(3, 105);
@@ -263,14 +263,14 @@
             this.GDataGridViewCategoriesInformation.Name = "GDataGridViewCategoriesInformation";
             this.GDataGridViewCategoriesInformation.ReadOnly = true;
             this.GDataGridViewCategoriesInformation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewCategoriesInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewCategoriesInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GDataGridViewCategoriesInformation.RowHeadersVisible = false;
             this.GDataGridViewCategoriesInformation.RowTemplate.Height = 67;
             this.GDataGridViewCategoriesInformation.Size = new System.Drawing.Size(1344, 461);
