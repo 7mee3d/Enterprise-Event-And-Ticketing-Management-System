@@ -23,7 +23,9 @@ namespace EETMS_Presentation.EETMS_Customers
         private _EnModeCustomer _EnMode = _EnModeCustomer._kNOTHING;
         private MCustomer _CustomerInformation = null;
         private int _IDCustomer = 0;
-        private List<string> _AllInformationCustomerInList = null; 
+        private List<string> _AllInformationCustomerInList = null;
+        public event EventHandler RequestClose = null;
+
         public US_AddAndUpdateInformationCustomer(int IDCustomer )
         {
             InitializeComponent();
@@ -36,11 +38,7 @@ namespace EETMS_Presentation.EETMS_Customers
 
             this._IDCustomer = IDCustomer; 
         }
-
-
-        public event EventHandler RequestClose = null; 
-
-       
+  
         private void _LoadAllInformationAndSettingAddNewCustomer ()
         {
 
@@ -163,5 +161,6 @@ namespace EETMS_Presentation.EETMS_Customers
             _LoadAllInformationAndSettingAddNewCustomer();
 
         }
+ 
     }
 }

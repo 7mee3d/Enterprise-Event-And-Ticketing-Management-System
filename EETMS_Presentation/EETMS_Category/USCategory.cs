@@ -16,5 +16,10 @@ namespace EETMS_Presentation.EETMS_Category
         {
             InitializeComponent();
         }
+
+        private void USCategory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
