@@ -1,9 +1,9 @@
-﻿
-using EETMS_Models;
+﻿using EETMS_Models;
 using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+
 
 namespace EETMS_DataAccessLayer
 {
@@ -13,6 +13,10 @@ namespace EETMS_DataAccessLayer
         #region Setting Data Access Events
         private static readonly string _ConneactionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         #endregion
+
+
+    
+        #region All Methods Operation CRUD ( Create , Read , Update , Delete ) The Category 
 
         private static DataTable _GetAllInformationCategoriesGroupByCategoryname()
         {
@@ -72,10 +76,8 @@ namespace EETMS_DataAccessLayer
         }
 
         public static DataTable GetAllInformationCategoriesGroupByCategoryname()
-        {
-            return _GetAllInformationCategoriesGroupByCategoryname();
-        }
-
+            => _GetAllInformationCategoriesGroupByCategoryname();
+        
         private static DataTable _GetAllInformationCategories()
         {
 
@@ -130,9 +132,7 @@ namespace EETMS_DataAccessLayer
         }
 
         public static DataTable GetAllInformationCategories()
-        {
-            return _GetAllInformationCategories();
-        }
+             => _GetAllInformationCategories();
 
         private static int _InsertTheNewCategory(MCategory NewInformationCategory )
         {
@@ -193,9 +193,7 @@ namespace EETMS_DataAccessLayer
         }
 
         public static int InsertTheNewCategory(MCategory NewInformationCategory)
-        {
-            return _InsertTheNewCategory(NewInformationCategory);
-        }
+             =>_InsertTheNewCategory(NewInformationCategory);
    
         private static MCategory _FindTheCategoryBy(int IDCategory )
         {
@@ -247,9 +245,7 @@ namespace EETMS_DataAccessLayer
         }
 
         public static MCategory FindTheCategoryBy(int IDCategory)
-        {
-            return _FindTheCategoryBy(IDCategory);
-        }
+            =>_FindTheCategoryBy(IDCategory);
    
         private static int _UpdateInformationCategoryBy (int IDCategory , MCategory NewInformationCategory )
         {
@@ -301,8 +297,46 @@ namespace EETMS_DataAccessLayer
         public static int UpdateInformationCategoryBy(int IDCategory, MCategory NewInformationCategory) 
             => _UpdateInformationCategoryBy(IDCategory, NewInformationCategory);
 
+        private static int _DeleteTheCategoryBy (int IDCategory )
+        {
+
+            int RowAffecive = -1; 
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString ))
+            {
+
+
+                string Query = @"           
+                                
+                                            DELETE FROM Categories 
+                                            WHERE CategoryID = @CategoryID ; 
+
+
+
+                              ";
+
+
+                using (SqlCommand command = new SqlCommand(Query , connection))
+                {
+
+                    command.Parameters.Add("@CategoryID", SqlDbType.Int).Value = IDCategory;
+
+                    connection.Open();
+
+                    RowAffecive = command.ExecuteNonQuery(); 
+                }
+            }
+
+            return RowAffecive; 
+        }
+
+        public static int DeleteTheCategoryBy(int IDCategory)
+            => _DeleteTheCategoryBy(IDCategory);
+
+
+        #endregion 
+
 
     }
-
 
 }

@@ -17,7 +17,9 @@ namespace EETMS_BusinessLayer
         private static bool _AddNewCategory(MCategory NewInformationCategory) => CategoriesDAL.InsertTheNewCategory(NewInformationCategory) > 0;
 
         private static bool _UpdateInformationCategory(int IDCategory, MCategory NewInformationCategory) => CategoriesDAL.UpdateInformationCategoryBy(IDCategory, NewInformationCategory) > 0 ;
-     
+
+        public static bool DeleteTheCategoryBy(int IDCategory) => CategoriesDAL.DeleteTheCategoryBy(IDCategory) > 0 ;
+
         public static bool SaveInformationCategory (MCategory NewInformationCategory)
         {
 
