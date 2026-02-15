@@ -45,6 +45,7 @@
     <Compile Include="CountriesBL.cs" />
     <Compile Include="CustomerBL.cs" />
     <Compile Include="EventBL.cs" />
+    <Compile Include="PaymentsBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserBL.cs" />
   </ItemGroup>

@@ -117,4 +117,54 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="guna2CircleButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAIKSURBVFhH7VY7bsMwDO0ReozGzpCxY47QsTfIMToWqC147JgxY8eMPU6BppbGji4kyxK/towu
+        GfKAhxg0yUeTtOK7uxuuHXXTn6vWDrWxQ926ofbXjGvtdqha+0G1RNBAnbrYLI0dqCbCtrUnFgSCqQ12
+        K1wv+AP7iWonZGeYdLUAIouNpNoJ1FFNJIjJ1EdGtROgExMWWLxoa0BFJKbiTN/B2Ifmsuf8Gn9fs63q
+        vncwjiGL4Z0YRXExIMbpbdfsdti0P09YPYI6SoxvxNn7V8YeuJh2zfNQ/QAWDJ8eHlzGhVHUrf1EyWcX
+        lhdE9QOgg7yYuIgtKIKNT2A+V0ZS/QAapFLoBCrauM7PfNyXyY7HVDAOnJR1hRWRBejC1U3/i2JBTuiX
+        kJ2E5YptHFvKxzGR53RHaVcKioiEwiCYdwLcN/YwmxMQ+iVkB325AmeKCLHGddvmsvc7wUYJSPUDqNOU
+        lG61WoTSdmqbSPUD5ETC6dnEIow9l4hppPoBfPZAGN1z4Y8rn5griig6J9gy8iJggvpNfgUX2dhnrB4R
+        bsanXyqiMu5litt17p7/g8rcmP4RqxLkIoT2sl0JPu80x78BOyELy12JBTGbyJifaifIAXBJtV3B36HM
+        hz2MspQe/nNtvhM6lzuRi178LOTBJQIa5fFRTRGhI0JwiYAnG8d0bdyRat1wdfgDSQDF7bfA1owAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="GTextBoxSearchThePayment.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAapJREFUWEft
+        l7FOwzAQhjsy8ggdOzIyMvIGMHYrI2/ACyBFNHE7WviCOmaiPpchI4/AIzAyMgYdjVPnmjYkMaFI/SRL
+        ke98/n0+2+1gcOS/MpXLcwGryVTpMX1z+68Rgr6IALPtZjKRf8+lHvJx3ogAP7Yn39lSPr4zFZNkIsa5
+        iM0VbYkATLg9AnzncVpTZEDlk8vnM+5jmarlbSFi7d89Iw+Al+7quL2KQCZDV7SU6Qn3aYQroMkJmMU4
+        97YtNhBVPrfV0TSDldDKi0AxSm6vgzLQXYTS400mVhNuryMC1HR/0PhAJqfc/iPo+HUSEWPaOROhNCOn
+        JjS31+GlJghHRONAPkV8WhFNtmRdD+2LukQg9frisRnZc1taQoU33rJgicBsVkVNYcB9LHRNl3zBNK6l
+        nbhn3mn0pqQhmNcKmytkweO1prTPebO/Iex94PTnr2rerzwKoccoUvjGxTiCivSLR3NX2L8fM49CXEjU
+        vldSwMtGCJhsBphwn14Q4GSEZatXDkoIK+S/E1IqZHUAQujU0N8I7tMLhZAnfc1tvXIvzYj3HTk4vgDQ
+        tlcxPJ/K9AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="PaymentID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="BookingID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TotalAmount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PaidAmount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PaymentMethod.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PaymentDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Status.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

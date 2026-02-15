@@ -44,6 +44,7 @@
     <Compile Include="MCategory.cs" />
     <Compile Include="MCustomer.cs" />
     <Compile Include="MEvent.cs" />
+    <Compile Include="MPayment.cs" />
     <Compile Include="MUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

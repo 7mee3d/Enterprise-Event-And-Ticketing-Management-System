@@ -300,13 +300,14 @@ namespace EETMS_DataAccessLayer
         private static int _DeleteTheCategoryBy (int IDCategory )
         {
 
-            int RowAffecive = -1; 
-
-            using (SqlConnection connection = new SqlConnection(_ConneactionString ))
+            int RowAffecive = -1;
+            try
             {
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
 
 
-                string Query = @"           
+                    string Query = @"           
                                 
                                             DELETE FROM Categories 
                                             WHERE CategoryID = @CategoryID ; 
@@ -316,15 +317,19 @@ namespace EETMS_DataAccessLayer
                               ";
 
 
-                using (SqlCommand command = new SqlCommand(Query , connection))
-                {
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
 
-                    command.Parameters.Add("@CategoryID", SqlDbType.Int).Value = IDCategory;
+                        command.Parameters.Add("@CategoryID", SqlDbType.Int).Value = IDCategory;
 
-                    connection.Open();
+                        connection.Open();
 
-                    RowAffecive = command.ExecuteNonQuery(); 
+                        RowAffecive = command.ExecuteNonQuery();
+                    }
                 }
+            }catch(Exception ex )
+            {
+                Console.WriteLine(ex.Message);
             }
 
             return RowAffecive; 

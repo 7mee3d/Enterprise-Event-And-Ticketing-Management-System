@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing.Text;
 using System.Windows.Forms;
-
 using EETMS_BusinessLayer;
 using EETMS_Models;
 using EETMS_Presentation.Properties;
@@ -17,19 +13,17 @@ namespace EETMS_Presentation.EETMS_Category
     {
 
 
-        private MCategory _CategoryInfo ;
-
-        private int IDCategory ;
-
+        private MCategory _CategoryInfo;
+        private int IDCategory;
         private _EnModeCategory _ModeCategory;
 
         private enum _EnModeCategory
         {
-            _ADD_NEW_CATEGORY = 1 , 
-            _UPDATE_INFORMATION_CATEGORY = 2 
+            _ADD_NEW_CATEGORY = 1,
+            _UPDATE_INFORMATION_CATEGORY = 2
         };
 
-     
+
         public USCategory()
         {
             InitializeComponent();
@@ -39,26 +33,27 @@ namespace EETMS_Presentation.EETMS_Category
 
         }
 
-        private void _ClearTheTextBoxies ()
+        private void _ClearTheTextBoxies()
         {
 
-            foreach(Control outterControl  in this.Controls ){
+            foreach (Control outterControl in this.Controls)
+            {
 
                 foreach (Control innerControl in outterControl.Controls)
                 {
                     if (innerControl is Guna2TextBox G2TB)
-                        G2TB.Text = ""; 
+                        G2TB.Text = "";
 
                 }
             }
         }
-     
+
         private bool _CheckTheTextBoxFiledOrNot()
             => (String.IsNullOrEmpty(GTextBoxCategoryName.Text));
-        
-        private int _GetTheIDCategoryAfterSelectedDGV ()
+
+        private int _GetTheIDCategoryAfterSelectedDGV()
             => (GDataGridViewCategoriesInformation.SelectedRows.Count > 0) ?
-            _SplitTheCategoryIDString ( GDataGridViewCategoriesInformation.SelectedRows[0].Cells[0].Value.ToString() ) 
+            _SplitTheCategoryIDString(GDataGridViewCategoriesInformation.SelectedRows[0].Cells[0].Value.ToString())
             : -1;
 
         private void _AddNewCategoryOrUpdate()
@@ -85,12 +80,13 @@ namespace EETMS_Presentation.EETMS_Category
                     _ClearTheTextBoxies();
                     return;
                 }
-            else { 
+            else
+            {
 
-                 MessageBox.Show("Must Fill The Category Name To Be Add", "Note Add New Category ");
-                 return; 
+                MessageBox.Show("Must Fill The Category Name To Be Add", "Note Add New Category ");
+                return;
 
-                }
+            }
 
 
             _InitalSettingUpdateMode();
@@ -101,7 +97,7 @@ namespace EETMS_Presentation.EETMS_Category
         private void _InitalSettingUpdateMode()
         {
             _CategoryInfo.EnMode = MCategory._EnModeCategory._kUPDATE_INFORMATION_CATEGORY;
-            GTextBoxCategoryName.Text = _CategoryInfo.CategoryName; 
+            GTextBoxCategoryName.Text = _CategoryInfo.CategoryName;
             GTextBoxCategoryDescripation.Text = _CategoryInfo.DescripationCategory;
             _ModeCategory = _EnModeCategory._UPDATE_INFORMATION_CATEGORY;
             GGButtonAddNewCategory.Text = "Update Information Category";
@@ -113,23 +109,23 @@ namespace EETMS_Presentation.EETMS_Category
 
             IDCategory = _GetTheIDCategoryAfterSelectedDGV();
 
-            if (_ModeCategory == _EnModeCategory._ADD_NEW_CATEGORY && IDCategory == -1 )
+            if (_ModeCategory == _EnModeCategory._ADD_NEW_CATEGORY && IDCategory == -1)
             {
                 GGButtonAddNewCategory.Text = "Add New Category";
                 _CategoryInfo = new MCategory();
                 _CategoryInfo.EnMode = MCategory._EnModeCategory._kAADD_NEW_CATEGORY;
 
-                return; 
+                return;
             }
 
 
             _CategoryInfo = CategoriesBL.FindTheCategoryBy(IDCategory);
 
 
-            if(_CategoryInfo == null )
+            if (_CategoryInfo == null)
             {
                 MessageBox.Show("Sorry The Category is Not Exsits ", "note Of Add/Update New Category");
-                return; 
+                return;
             }
 
 
@@ -137,18 +133,18 @@ namespace EETMS_Presentation.EETMS_Category
 
 
         }
-        
-        private int _SplitTheCategoryIDString(string CategoryIDString )
-            => Convert.ToInt32(CategoryIDString.Split( '-' )[1]); 
-        
-        private void _LoadAllInformationCategoriesInTheDataGridView ()
+
+        private int _SplitTheCategoryIDString(string CategoryIDString)
+            => Convert.ToInt32(CategoryIDString.Split('-')[1]);
+
+        private void _LoadAllInformationCategoriesInTheDataGridView()
         {
 
             DataTable CategoriesGroupByName_DT = CategoriesBL.GetAllInformationCategoriesGroupByNameForEvent();
             DataTable Categories_DT = CategoriesBL.GetAllInformationCategories();
 
 
-            int MinCount = Math.Max(CategoriesGroupByName_DT.Rows.Count, Categories_DT.Rows.Count); 
+            int MinCount = Math.Max(CategoriesGroupByName_DT.Rows.Count, Categories_DT.Rows.Count);
 
             for (int counter = 0; counter < MinCount; counter += 1)
             {
@@ -162,14 +158,14 @@ namespace EETMS_Presentation.EETMS_Category
                     CategoryID,
                     CategoriesGroupByName_DT.Rows[counter]["CategoryName"].ToString(),
                     CategoriesGroupByName_DT.Rows[counter]["CountEventForCategory"].ToString(),
-                    Categories_DT.Rows[counter]["Discripation"].ToString() 
+                    Categories_DT.Rows[counter]["Discripation"].ToString()
 
 
                               );
 
             }
         }
-      
+
         private void USCategory_Load(object sender, EventArgs e)
         {
             _IntialSettingsAfterLoadTheSection();
@@ -178,17 +174,17 @@ namespace EETMS_Presentation.EETMS_Category
 
         private void GGButtonAddNewCategory_Click(object sender, EventArgs e)
             => _AddNewCategoryOrUpdate();
-          
+
         private void _IntialSettingsAfterLoadTheSection()
         {
             GDataGridViewCategoriesInformation.Rows.Clear();
             _LoadAllInformationCategoriesInTheDataGridView();
             GDataGridViewCategoriesInformation.ClearSelection();
 
-            
+
         }
-    
-        private void _ResetAllSettingAfterClickTheUSCategory ()
+
+        private void _ResetAllSettingAfterClickTheUSCategory()
         {
             _ModeCategory = _EnModeCategory._ADD_NEW_CATEGORY;
             IDCategory = -1;
@@ -199,22 +195,26 @@ namespace EETMS_Presentation.EETMS_Category
         }
 
         private void USCategory_Click(object sender, EventArgs e)
-           =>  _ResetAllSettingAfterClickTheUSCategory();
-        
+           => _ResetAllSettingAfterClickTheUSCategory();
+
         private void EditCategoryToolStripMenuItem_Click(object sender, EventArgs e)
             => _LoadAllInformationCategoryAfterLoadTheSectionUpdateMode();
-          
+
         private void _DeleteTheCategoryByID()
         {
-            if(MessageBox.Show ("Are You Sure To Be Delete This Category ?? " , "Note For Delete The Category" , MessageBoxButtons.OKCancel , MessageBoxIcon.Exclamation) == DialogResult.OK)
+            if (MessageBox.Show("Are You Sure To Be Delete This Category ?? ", "Note For Delete The Category", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
                 if (CategoriesBL.DeleteTheCategoryBy(_GetTheIDCategoryAfterSelectedDGV()))
                     MessageBox.Show("The Category deleted Successfully ", "note For Delete Category");
                 else MessageBox.Show("The Category deleted Faild ", "note For Delete Category");
             }
+            else
+            {
+                MessageBox.Show("The Category Connot deleted Becouse The Category Referance Events", "note For Delete Category", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             _IntialSettingsAfterLoadTheSection();
-            _ResetAllSettingAfterClickTheUSCategory(); 
+            _ResetAllSettingAfterClickTheUSCategory();
         }
 
         private void deleteCategoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,14 +224,14 @@ namespace EETMS_Presentation.EETMS_Category
         {
 
             DataTable CategoriesGroupByName_DT = CategoriesBL.GetAllInformationCategoryFullInformation(GTextBoxSearchTheCategory.Text.Trim().ToLower());
-    
 
-           foreach(DataRow DR_Category in CategoriesGroupByName_DT.Rows)
+
+            foreach (DataRow DR_Category in CategoriesGroupByName_DT.Rows)
             {
                 string CategoryID = "";
 
                 CategoryID = "#CAT-" + DR_Category["CategoryID"].ToString();
-              
+
                 GDataGridViewCategoriesInformation.Rows.Add(
 
                      CategoryID,
@@ -250,5 +250,7 @@ namespace EETMS_Presentation.EETMS_Category
             GDataGridViewCategoriesInformation.Rows.Clear();
             _LoadAllInformationCategoriesInTheDataGridViewAfterSearchTextBox();
         }
+
+
     }
 }
