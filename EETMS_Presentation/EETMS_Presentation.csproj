@@ -196,6 +196,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Add_Icon_EETMS.png" />
     <None Include="Resources\Update_Icon_EETMS.png" />
     <None Include="Resources\EETMS_Login.jpg" />
     <None Include="Resources\EETMS_LoginScreen_Background.jpg" />

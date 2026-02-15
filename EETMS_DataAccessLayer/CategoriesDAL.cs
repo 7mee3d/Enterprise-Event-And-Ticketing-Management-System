@@ -169,7 +169,7 @@ namespace EETMS_DataAccessLayer
                         connection.Open();
 
 
-                        object result = command.ExecuteNonQuery();
+                        object result = command.ExecuteScalar();
 
                         if (result != null && int.TryParse(result.ToString(), out int NewID))
                             NewIDCategory = NewID;
@@ -251,7 +251,57 @@ namespace EETMS_DataAccessLayer
             return _FindTheCategoryBy(IDCategory);
         }
    
-    
+        private static int _UpdateInformationCategoryBy (int IDCategory , MCategory NewInformationCategory )
+        {
+            int RowAffective = -1; 
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+                    string Query = @" 
+                                                    
+                                                UPDATE Categories   
+                                                SET CategoryName = @CategoryName , Discripation = @Descripation 
+                                                WHERE CategoryID = @CategoryID ; 
+
+
+
+                                 ";
+
+
+
+                    using (SqlCommand command = new SqlCommand(Query , connection))
+                    {
+
+                        command.Parameters.AddWithValue("@CategoryID", IDCategory);
+                        command.Parameters.AddWithValue("@CategoryName", NewInformationCategory.CategoryName);
+                        command.Parameters.AddWithValue("@Descripation", NewInformationCategory.DescripationCategory);
+
+                        connection.Open();
+
+                        RowAffective = command.ExecuteNonQuery();
+
+                    }
+
+                }
+
+
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+            return RowAffective; 
+        }
+
+        public static int UpdateInformationCategoryBy(int IDCategory, MCategory NewInformationCategory) 
+            => _UpdateInformationCategoryBy(IDCategory, NewInformationCategory);
+
+
     }
 
 

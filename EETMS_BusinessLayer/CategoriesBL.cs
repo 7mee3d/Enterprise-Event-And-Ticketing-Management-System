@@ -14,8 +14,10 @@ namespace EETMS_BusinessLayer
 
         public static MCategory FindTheCategoryBy(int IDCategory) => CategoriesDAL.FindTheCategoryBy(IDCategory);
 
-        private static bool _AddNewCategory(MCategory NewInformationCategory) => CategoriesDAL.InsertTheNewCategory(NewInformationCategory) > 0; 
+        private static bool _AddNewCategory(MCategory NewInformationCategory) => CategoriesDAL.InsertTheNewCategory(NewInformationCategory) > 0;
 
+        private static bool _UpdateInformationCategory(int IDCategory, MCategory NewInformationCategory) => CategoriesDAL.UpdateInformationCategoryBy(IDCategory, NewInformationCategory) > 0 ;
+     
         public static bool SaveInformationCategory (MCategory NewInformationCategory)
         {
 
@@ -24,6 +26,10 @@ namespace EETMS_BusinessLayer
 
                 case MCategory._EnModeCategory._kAADD_NEW_CATEGORY:
                     return (_AddNewCategory(NewInformationCategory));
+
+                case MCategory._EnModeCategory._kUPDATE_INFORMATION_CATEGORY:
+                    return (_UpdateInformationCategory(NewInformationCategory.CategoryID, NewInformationCategory));
+
             }
 
             return false; 

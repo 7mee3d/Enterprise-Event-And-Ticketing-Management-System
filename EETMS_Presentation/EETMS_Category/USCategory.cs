@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 using EETMS_BusinessLayer;
@@ -16,9 +17,11 @@ namespace EETMS_Presentation.EETMS_Category
     {
 
 
-        private MCategory _CategoryInfo = null;
+        private MCategory _CategoryInfo ;
 
-        private int IDCategory ; 
+        private int IDCategory ;
+
+        private _EnModeCategory _ModeCategory;
 
         private enum _EnModeCategory
         {
@@ -26,11 +29,11 @@ namespace EETMS_Presentation.EETMS_Category
             _UPDATE_INFORMATION_CATEGORY = 2 
         };
 
-        private _EnModeCategory _ModeCategory ;
-
+     
         public USCategory()
         {
             InitializeComponent();
+            _CategoryInfo = null;
             _ModeCategory = _EnModeCategory._ADD_NEW_CATEGORY;
             IDCategory = 0;
 
@@ -58,32 +61,46 @@ namespace EETMS_Presentation.EETMS_Category
         private void _AddNewCategoryOrUpdate ()
         {
 
+          
 
             _CategoryInfo.CategoryName = GTextBoxCategoryName.Text; 
             _CategoryInfo.DescripationCategory = GTextBoxCategoryDescripation.Text;
 
+    
+
             if (CategoriesBL.SaveInformationCategory(_CategoryInfo))
-                if (_CategoryInfo.EnMode == MCategory._EnModeCategory._kAADD_NEW_CATEGORY) MessageBox.Show("The Category Addedd Successfully", "Note of Add new Category");
+                if (_CategoryInfo.EnMode == MCategory._EnModeCategory._kAADD_NEW_CATEGORY) {
+
+                    IDCategory = _CategoryInfo.CategoryID;
+                    MessageBox.Show("The Category Addedd Successfully", "Note of Add new Category");
+                 
+                }
                 else MessageBox.Show("The Category Updated Successfully", "Note of Update Category");
             else
-            { 
+            {
                 MessageBox.Show("Connot Be Added This Category Becouse The Category Already Exsits", "Note of Add/Update Category");
                 _ClearTheTextBoxies();
                 return;
             }
 
 
-            GTextBoxCategoryName.Text = _CategoryInfo.CategoryName;
-            GTextBoxCategoryDescripation.Text = _CategoryInfo.DescripationCategory;
-            _ModeCategory = _EnModeCategory._UPDATE_INFORMATION_CATEGORY;
-            _CategoryInfo.EnMode = MCategory._EnModeCategory._kUPDATE_INFORMATION_CATEGORY;
-            GGButtonAddNewCategory.Text = "Update Information Category";
-            GGButtonAddNewCategory.Image = Resources.Update_Icon_EETMS;
+
+            _InitalSettingUpdateMode();
 
             _IntialSettingsAfterLoadTheSection();
         }
 
-        private void _LoadAllInformationCategoryAfterLoadTheSection()
+        private void _InitalSettingUpdateMode()
+        {
+             _CategoryInfo.EnMode = MCategory._EnModeCategory._kUPDATE_INFORMATION_CATEGORY;
+            GTextBoxCategoryName.Text = _CategoryInfo.CategoryName; 
+            GTextBoxCategoryDescripation.Text = _CategoryInfo.DescripationCategory;
+            _ModeCategory = _EnModeCategory._UPDATE_INFORMATION_CATEGORY;
+            GGButtonAddNewCategory.Text = "Update Information Category";
+            GGButtonAddNewCategory.Image = Resources.Update_Icon_EETMS;
+        }
+
+        private void _LoadAllInformationCategoryAfterLoadTheSectionUpdateMode()
         {
 
             IDCategory = _GetTheIDCategoryAfterSelectedDGV();
@@ -108,12 +125,8 @@ namespace EETMS_Presentation.EETMS_Category
             }
 
 
-            _CategoryInfo.EnMode = MCategory._EnModeCategory._kUPDATE_INFORMATION_CATEGORY;
-            GTextBoxCategoryName.Text = _CategoryInfo.CategoryName; 
-            GTextBoxCategoryDescripation.Text = _CategoryInfo.DescripationCategory;
-            _ModeCategory = _EnModeCategory._UPDATE_INFORMATION_CATEGORY;
-            GGButtonAddNewCategory.Text = "Update Information Category";
-            GGButtonAddNewCategory.Image = Resources.Update_Icon_EETMS;
+            _InitalSettingUpdateMode();
+
 
         }
         
@@ -155,7 +168,7 @@ namespace EETMS_Presentation.EETMS_Category
         {
 
             _IntialSettingsAfterLoadTheSection();
-            _LoadAllInformationCategoryAfterLoadTheSection();
+            _LoadAllInformationCategoryAfterLoadTheSectionUpdateMode();
         }
 
         private void GGButtonAddNewCategory_Click(object sender, EventArgs e)
@@ -171,6 +184,27 @@ namespace EETMS_Presentation.EETMS_Category
 
             
         }
+    
+        private void _ResetAllSettingAfterClickTheUSCategory ()
+        {
+            _ModeCategory = _EnModeCategory._ADD_NEW_CATEGORY;
+            IDCategory = -1;
+            GGButtonAddNewCategory.Text = "Add New Category";
+            GGButtonAddNewCategory.Image = Resources.Add_Icon_EETMS;
+
+            _ClearTheTextBoxies();
+        }
+
+        private void USCategory_Click(object sender, EventArgs e)
+        {
+            _ResetAllSettingAfterClickTheUSCategory();
+        }
+
+        private void EditCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _LoadAllInformationCategoryAfterLoadTheSectionUpdateMode();
+        }
+   
     
     }
 }
