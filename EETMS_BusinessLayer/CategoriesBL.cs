@@ -37,6 +37,9 @@ namespace EETMS_BusinessLayer
             return false; 
         }
 
+        public static DataTable GetAllInformationCategoryAfterSearch (string CategoryNameToBeSearch ) => CategoriesDAL. SearchTheCategoryNameBy(CategoryNameToBeSearch);
 
+        public static DataTable GetAllInformationCategoryFullInformation(string CategoryNameToBeSearch) => CategoriesDAL.SearchCategoryFullInfo(CategoryNameToBeSearch);
+   
     } 
 }

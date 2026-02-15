@@ -219,7 +219,36 @@ namespace EETMS_Presentation.EETMS_Category
 
         private void deleteCategoryToolStripMenuItem_Click(object sender, EventArgs e)
             => _DeleteTheCategoryByID();
-   
+
+        private void _LoadAllInformationCategoriesInTheDataGridViewAfterSearchTextBox()
+        {
+
+            DataTable CategoriesGroupByName_DT = CategoriesBL.GetAllInformationCategoryFullInformation(GTextBoxSearchTheCategory.Text.Trim().ToLower());
     
+
+           foreach(DataRow DR_Category in CategoriesGroupByName_DT.Rows)
+            {
+                string CategoryID = "";
+
+                CategoryID = "#CAT-" + DR_Category["CategoryID"].ToString();
+              
+                GDataGridViewCategoriesInformation.Rows.Add(
+
+                     CategoryID,
+                     DR_Category["CategoryName"] != null ? DR_Category["CategoryName"].ToString() : "",
+                     DR_Category["CountEventForCategory"] != null ? DR_Category["CountEventForCategory"].ToString() : "",
+                     DR_Category["Discripation"].ToString()
+
+
+                              );
+
+            }
+        }
+
+        private void GTextBoxSearchTheCategory_TextChanged(object sender, EventArgs e)
+        {
+            GDataGridViewCategoriesInformation.Rows.Clear();
+            _LoadAllInformationCategoriesInTheDataGridViewAfterSearchTextBox();
+        }
     }
 }

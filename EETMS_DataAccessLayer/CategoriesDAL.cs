@@ -333,8 +333,61 @@ namespace EETMS_DataAccessLayer
         public static int DeleteTheCategoryBy(int IDCategory)
             => _DeleteTheCategoryBy(IDCategory);
 
+        private static DataTable _SearchCategoryFullInfo(string NameCategory)
+        {
 
-        #endregion 
+            DataTable dt = new DataTable();
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+                string Query = @"
+
+
+                                                 SELECT 
+                                                                  CAT.CategoryID,
+                                                                  CAT.CategoryName,
+                                                                  CAT.Discripation,
+                                                                  COUNT(EVE.EventID) AS CountEventForCategory
+
+
+                                                                          FROM Categories CAT
+                                                                          LEFT JOIN Events EVE
+                                                                          ON CAT.CategoryID = EVE.CategoryID
+
+                                                                                 WHERE LOWER ( CAT.CategoryName ) LIKE '%' + LOWER ( @CategoryName ) + '%'
+
+                                                                   GROUP BY 
+                                                                       CAT.CategoryID,
+                                                                       CAT.CategoryName,
+                                                                       CAT.Discripation
+
+
+
+                                  ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+                    command.Parameters.AddWithValue("@CategoryName", NameCategory);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                            dt.Load(reader);
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+        public static DataTable SearchCategoryFullInfo(string NameCategory)
+            => _SearchCategoryFullInfo(NameCategory);
+
+      
+        #endregion
 
 
     }
