@@ -48,6 +48,7 @@
     <Compile Include="EventsDAL.cs" />
     <Compile Include="PaymentsDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicketsDAL.cs" />
     <Compile Include="UsersDAL.cs" />
   </ItemGroup>
   <ItemGroup>
