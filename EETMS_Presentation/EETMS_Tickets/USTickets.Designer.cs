@@ -67,6 +67,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.GGButtonSearchTheCustomerByIDorName = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GGButtonRegularTicketStatus = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GGButtonVIPTicketStatus = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GGButtonPremiumTicketStatus = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGPnaelMainPanelComponetNewTicketSale.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.GGPanelPermiumTicket.SuspendLayout();
@@ -76,6 +81,7 @@
             this.GGPanelRegularTicket.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownRegularTicket)).BeginInit();
             this.GGPanelPaymentAndTransactions.SuspendLayout();
+            this.guna2GradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -101,6 +107,7 @@
             // 
             // GGPnaelMainPanelComponetNewTicketSale
             // 
+            this.GGPnaelMainPanelComponetNewTicketSale.Controls.Add(this.guna2GradientPanel2);
             this.GGPnaelMainPanelComponetNewTicketSale.Controls.Add(this.guna2GradientPanel1);
             this.GGPnaelMainPanelComponetNewTicketSale.Controls.Add(this.GGPanelPaymentAndTransactions);
             this.GGPnaelMainPanelComponetNewTicketSale.Location = new System.Drawing.Point(12, 119);
@@ -131,6 +138,7 @@
             this.GGPanelPermiumTicket.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.GGPanelPermiumTicket.BorderRadius = 10;
             this.GGPanelPermiumTicket.BorderThickness = 1;
+            this.GGPanelPermiumTicket.Controls.Add(this.GGButtonPremiumTicketStatus);
             this.GGPanelPermiumTicket.Controls.Add(this.GNumericUpDownPremium);
             this.GGPanelPermiumTicket.Controls.Add(this.lblQLeftPermium);
             this.GGPanelPermiumTicket.Controls.Add(this.label18);
@@ -165,8 +173,8 @@
             // lblQLeftPermium
             // 
             this.lblQLeftPermium.AutoSize = true;
-            this.lblQLeftPermium.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQLeftPermium.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.lblQLeftPermium.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQLeftPermium.ForeColor = System.Drawing.Color.Black;
             this.lblQLeftPermium.Location = new System.Drawing.Point(204, 174);
             this.lblQLeftPermium.Name = "lblQLeftPermium";
             this.lblQLeftPermium.Size = new System.Drawing.Size(12, 16);
@@ -232,6 +240,7 @@
             this.GGPanelVIPTicket.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.GGPanelVIPTicket.BorderRadius = 10;
             this.GGPanelVIPTicket.BorderThickness = 1;
+            this.GGPanelVIPTicket.Controls.Add(this.GGButtonVIPTicketStatus);
             this.GGPanelVIPTicket.Controls.Add(this.GNumericUpDownVIPTicket);
             this.GGPanelVIPTicket.Controls.Add(this.lblQLeftVIP);
             this.GGPanelVIPTicket.Controls.Add(this.label7);
@@ -266,8 +275,8 @@
             // lblQLeftVIP
             // 
             this.lblQLeftVIP.AutoSize = true;
-            this.lblQLeftVIP.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQLeftVIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.lblQLeftVIP.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQLeftVIP.ForeColor = System.Drawing.Color.Black;
             this.lblQLeftVIP.Location = new System.Drawing.Point(204, 174);
             this.lblQLeftVIP.Name = "lblQLeftVIP";
             this.lblQLeftVIP.Size = new System.Drawing.Size(12, 16);
@@ -333,6 +342,7 @@
             this.GGPanelRegularTicket.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.GGPanelRegularTicket.BorderRadius = 10;
             this.GGPanelRegularTicket.BorderThickness = 1;
+            this.GGPanelRegularTicket.Controls.Add(this.GGButtonRegularTicketStatus);
             this.GGPanelRegularTicket.Controls.Add(this.GNumericUpDownRegularTicket);
             this.GGPanelRegularTicket.Controls.Add(this.lblQLeftRegular);
             this.GGPanelRegularTicket.Controls.Add(this.label13);
@@ -366,8 +376,8 @@
             // lblQLeftRegular
             // 
             this.lblQLeftRegular.AutoSize = true;
-            this.lblQLeftRegular.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQLeftRegular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.lblQLeftRegular.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQLeftRegular.ForeColor = System.Drawing.Color.Black;
             this.lblQLeftRegular.Location = new System.Drawing.Point(204, 174);
             this.lblQLeftRegular.Name = "lblQLeftRegular";
             this.lblQLeftRegular.Size = new System.Drawing.Size(12, 16);
@@ -590,6 +600,99 @@
             this.GGButtonSearchTheCustomerByIDorName.TabIndex = 13;
             this.GGButtonSearchTheCustomerByIDorName.Text = "Search The Customer";
             // 
+            // guna2GradientPanel2
+            // 
+            this.guna2GradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(236)))), ((int)(((byte)(243)))));
+            this.guna2GradientPanel2.BorderRadius = 10;
+            this.guna2GradientPanel2.BorderThickness = 1;
+            this.guna2GradientPanel2.Controls.Add(this.guna2GradientPanel3);
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(1004, 35);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(381, 672);
+            this.guna2GradientPanel2.TabIndex = 5;
+            // 
+            // guna2GradientPanel3
+            // 
+            this.guna2GradientPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(236)))), ((int)(((byte)(243)))));
+            this.guna2GradientPanel3.BorderRadius = 10;
+            this.guna2GradientPanel3.BorderThickness = 1;
+            this.guna2GradientPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(0, 3);
+            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(381, 75);
+            this.guna2GradientPanel3.TabIndex = 6;
+            // 
+            // GGButtonRegularTicketStatus
+            // 
+            this.GGButtonRegularTicketStatus.Animated = true;
+            this.GGButtonRegularTicketStatus.AnimatedGIF = true;
+            this.GGButtonRegularTicketStatus.BorderRadius = 5;
+            this.GGButtonRegularTicketStatus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonRegularTicketStatus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonRegularTicketStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonRegularTicketStatus.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonRegularTicketStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonRegularTicketStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonRegularTicketStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonRegularTicketStatus.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonRegularTicketStatus.ForeColor = System.Drawing.Color.White;
+            this.GGButtonRegularTicketStatus.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonRegularTicketStatus.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonRegularTicketStatus.Location = new System.Drawing.Point(164, 27);
+            this.GGButtonRegularTicketStatus.Name = "GGButtonRegularTicketStatus";
+            this.GGButtonRegularTicketStatus.PressedColor = System.Drawing.Color.White;
+            this.GGButtonRegularTicketStatus.Size = new System.Drawing.Size(94, 25);
+            this.GGButtonRegularTicketStatus.TabIndex = 14;
+            // 
+            // GGButtonVIPTicketStatus
+            // 
+            this.GGButtonVIPTicketStatus.Animated = true;
+            this.GGButtonVIPTicketStatus.AnimatedGIF = true;
+            this.GGButtonVIPTicketStatus.BorderRadius = 5;
+            this.GGButtonVIPTicketStatus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonVIPTicketStatus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonVIPTicketStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonVIPTicketStatus.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonVIPTicketStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonVIPTicketStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonVIPTicketStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonVIPTicketStatus.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonVIPTicketStatus.ForeColor = System.Drawing.Color.White;
+            this.GGButtonVIPTicketStatus.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonVIPTicketStatus.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonVIPTicketStatus.Location = new System.Drawing.Point(164, 27);
+            this.GGButtonVIPTicketStatus.Name = "GGButtonVIPTicketStatus";
+            this.GGButtonVIPTicketStatus.PressedColor = System.Drawing.Color.White;
+            this.GGButtonVIPTicketStatus.Size = new System.Drawing.Size(94, 25);
+            this.GGButtonVIPTicketStatus.TabIndex = 14;
+            // 
+            // GGButtonPremiumTicketStatus
+            // 
+            this.GGButtonPremiumTicketStatus.Animated = true;
+            this.GGButtonPremiumTicketStatus.AnimatedGIF = true;
+            this.GGButtonPremiumTicketStatus.BorderRadius = 5;
+            this.GGButtonPremiumTicketStatus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonPremiumTicketStatus.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonPremiumTicketStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonPremiumTicketStatus.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonPremiumTicketStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonPremiumTicketStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonPremiumTicketStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonPremiumTicketStatus.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonPremiumTicketStatus.ForeColor = System.Drawing.Color.White;
+            this.GGButtonPremiumTicketStatus.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonPremiumTicketStatus.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonPremiumTicketStatus.Location = new System.Drawing.Point(164, 27);
+            this.GGButtonPremiumTicketStatus.Name = "GGButtonPremiumTicketStatus";
+            this.GGButtonPremiumTicketStatus.PressedColor = System.Drawing.Color.White;
+            this.GGButtonPremiumTicketStatus.Size = new System.Drawing.Size(94, 25);
+            this.GGButtonPremiumTicketStatus.TabIndex = 14;
+            // 
             // USTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -615,6 +718,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownRegularTicket)).EndInit();
             this.GGPanelPaymentAndTransactions.ResumeLayout(false);
             this.GGPanelPaymentAndTransactions.PerformLayout();
+            this.guna2GradientPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,5 +764,10 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonSearchTheCustomerByIDorName;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
+        private Guna.UI2.WinForms.Guna2GradientButton GGButtonRegularTicketStatus;
+        private Guna.UI2.WinForms.Guna2GradientButton GGButtonPremiumTicketStatus;
+        private Guna.UI2.WinForms.Guna2GradientButton GGButtonVIPTicketStatus;
     }
 }
