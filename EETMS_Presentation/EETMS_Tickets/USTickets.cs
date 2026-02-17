@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using EETMS_BusinessLayer;
+using EETMS_Models;
 using Guna.UI2.WinForms;
 
 
@@ -26,6 +27,14 @@ namespace EETMS_Presentation.EETMS_Tickets
         private double _Tax = 0;
         private double _TotalAmount = 0;
 
+
+        private int _CustomerID = -1;
+
+        private MReservations _MReservations = null;
+
+
+
+        private int _EventID;
 
         public USTickets()
         {
@@ -107,6 +116,10 @@ namespace EETMS_Presentation.EETMS_Tickets
             lblQLeftVIP.Text = "0 LEFT";
             lblQLeftPermium.Text = "0 LEFT";
 
+            lblQLeftRegular.ForeColor = Color.Black;
+            lblQLeftVIP.ForeColor = Color.Black;
+            lblQLeftPermium.ForeColor = Color.Black;
+
             lblTotalPriceOneTicketPermium.Text = "$0";
             lblTotalPriceOneTicketVIP.Text = "$0";
             lblTotalPriceOneTicketRegular.Text = "$0";
@@ -115,16 +128,17 @@ namespace EETMS_Presentation.EETMS_Tickets
             PanelVIPTicket.Visible = false;
             PanelPremiumTicket.Visible = false;
 
+            //_EventID = 0;
         }
 
         private void _LoadAllInformationTicketTypeForEventAfterSelectComboBox()
         {
 
+            // _ResetAllSettingCardsTickets();
+            _EventID = (int)GComboBoxSelectEvents.SelectedValue;
 
-            int EventIDValue = (int)GComboBoxSelectEvents.SelectedValue;
-            //  _ResetAllSettingCardsTickets();
 
-            DataTable TicketType_DT = TicketBL.GetInformationTicketForEvent(EventIDValue);
+            DataTable TicketType_DT = TicketBL.GetInformationTicketForEvent(_EventID);
 
             if (TicketType_DT != null)
                 foreach (DataRow DR_Tickets in TicketType_DT.Rows)
@@ -133,35 +147,50 @@ namespace EETMS_Presentation.EETMS_Tickets
 
                     switch (ticketType)
                     {
-                        case "Standard":
-                            GGPanelRegularTicket.Enabled = true;
+                        case "Regular":
+
                             lblQLeftRegular.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketRegular.Text = "$" + DR_Tickets["Price"].ToString();
+
+                            if (Convert.ToInt32(DR_Tickets["Available"]) > 0)
+                                GGPanelRegularTicket.Enabled = true;
+
+
                             _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonRegularTicketStatus);
                             GNumericUpDownRegularTicket.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceTheRegularTicket = Convert.ToInt32(DR_Tickets["Price"]);
+
                             break;
 
+
                         case "VIP":
-                            GGPanelVIPTicket.Enabled = true;
                             lblQLeftVIP.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketVIP.Text = "$" + DR_Tickets["Price"].ToString();
+
+                            if (Convert.ToInt32(DR_Tickets["Available"]) > 0)
+                                GGPanelVIPTicket.Enabled = true;
+
                             _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonVIPTicketStatus);
                             GNumericUpDownVIPTicket.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceTheVIPTicket = Convert.ToInt32(DR_Tickets["Price"]);
                             break;
 
+
                         case "Premium":
-                            GGPanelPermiumTicket.Enabled = true;
                             lblQLeftPermium.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketPermium.Text = "$" + DR_Tickets["Price"].ToString();
+
+                            if (Convert.ToInt32(DR_Tickets["Available"]) > 0)
+                                GGPanelPermiumTicket.Enabled = true;
+
                             _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonPremiumTicketStatus);
                             GNumericUpDownPremium.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceThePreimumTicket = Convert.ToInt32(DR_Tickets["Price"]);
                             break;
+
                     }
                 }
 
@@ -208,7 +237,7 @@ namespace EETMS_Presentation.EETMS_Tickets
         private void GGPanelRegularTicket_MouseClick(object sender, MouseEventArgs e)
         {
 
-            _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
+            //_LoadAllInformationTicketTypeForEventAfterSelectComboBox();
             _CheckTheStackTickes(0, true, GGButtonRegularTicketStatus);
             _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelRegularTicket, GNumericUpDownRegularTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
@@ -218,12 +247,12 @@ namespace EETMS_Presentation.EETMS_Tickets
 
         private void GComboBoxSelectEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
+            //   _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
         }
 
         private void GGPanelVIPTicket_MouseClick(object sender, MouseEventArgs e)
         {
-            _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
+            //   _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
             _CheckTheStackTickes(0, true, GGButtonVIPTicketStatus);
             _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelVIPTicket, GNumericUpDownVIPTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
@@ -234,7 +263,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
         private void GGPanelPermiumTicket_MouseClick(object sender, MouseEventArgs e)
         {
-            _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
+            //  _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
             _CheckTheStackTickes(0, true, GGButtonPremiumTicketStatus);
             _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelPermiumTicket, GNumericUpDownPremium);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
@@ -250,6 +279,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelRegularTicket.Visible = true;
                 PanelPremiumTicket.Visible = false;
                 PanelVIPTicket.Visible = false;
+                GGButtonConfirmBooking.Visible = true;
+                lblNoteBooking.Visible = true;
 
                 GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
 
@@ -261,6 +292,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelRegularTicket.Visible = false;
                 PanelVIPTicket.Visible = true;
                 PanelPremiumTicket.Visible = false;
+                GGButtonConfirmBooking.Visible = true;
+                lblNoteBooking.Visible = true;
 
                 GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
 
@@ -273,6 +306,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelVIPTicket.Visible = false;
                 PanelPremiumTicket.Visible = true;
                 GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
+                GGButtonConfirmBooking.Visible = true;
+                lblNoteBooking.Visible = true;
 
                 PanelPremiumTicket.Location = new Point(4, 91);
                 GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 158);
@@ -283,6 +318,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelVIPTicket.Visible = true;
                 PanelPremiumTicket.Visible = false;
                 GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
+                GGButtonConfirmBooking.Visible = true;
+                lblNoteBooking.Visible = true;
 
                 PanelRegularTicket.Location = new Point(4, 91);
                 PanelVIPTicket.Location = new Point(4, 158);
@@ -294,6 +331,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelVIPTicket.Visible = false;
                 PanelPremiumTicket.Visible = true;
                 GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
+                GGButtonConfirmBooking.Visible = true;
+                lblNoteBooking.Visible = true;
 
                 PanelRegularTicket.Location = new Point(4, 91);
                 PanelPremiumTicket.Location = new Point(4, 158);
@@ -305,6 +344,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelVIPTicket.Visible = true;
                 PanelPremiumTicket.Visible = true;
                 GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
+                GGButtonConfirmBooking.Visible = true;
+                lblNoteBooking.Visible = true;
 
                 PanelVIPTicket.Location = new Point(4, 91);
                 PanelPremiumTicket.Location = new Point(4, 158);
@@ -317,6 +358,9 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelVIPTicket.Visible = true;
                 PanelPremiumTicket.Visible = true;
                 GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
+                GGButtonConfirmBooking.Visible = true;
+                lblNoteBooking.Visible = true;
+
 
                 PanelRegularTicket.Location = new Point(4, 91);
                 PanelVIPTicket.Location = new Point(4, 158);
@@ -329,6 +373,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelVIPTicket.Visible = false;
                 PanelPremiumTicket.Visible = false;
                 GPanelSubTotalAndTaxTicketBookingSummary.Visible = false;
+                GGButtonConfirmBooking.Visible = false;
+                lblNoteBooking.Visible = false;
             }
 
         }
@@ -403,6 +449,112 @@ namespace EETMS_Presentation.EETMS_Tickets
 
         }
 
+        private void _SearchTheCustoemrByIDOrName()
+        {
 
+            string ToBeSearch = GTextBoxCustomerIDorName.Text;
+
+            DataTable DT = CustomerBL.AllInformationCustomerAfterSearch(ToBeSearch);
+
+            if (DT.Rows.Count > 0)
+                _CustomerID = Convert.ToInt32(DT.Rows[0]["CusotmerID"]);
+
+            if (_CustomerID > 0) MessageBox.Show("The Customer Founded", "note For Search The Customer ");
+            else MessageBox.Show("The Customer Not Founded", "note For Search The Customer ");
+        }
+
+        private void _BookingTheNewTickets()
+        {
+            if (_CustomerID > 0)
+            {
+                if (_NumberOfTicketRegular > 0)
+                {
+
+                    _MReservations = new MReservations()
+                    {
+
+                        Quantity = _NumberOfTicketRegular,
+                        TicketTypeID = 1,
+                        CustomerID = _CustomerID
+
+
+                    };
+
+                    ReservationBL.SaveTheReservatio(_MReservations);
+
+                }
+
+                if (_NumberOfTicketVIP > 0)
+                {
+
+                    _MReservations = new MReservations()
+                    {
+
+                        Quantity = _NumberOfTicketVIP,
+                        TicketTypeID = 2,
+                        CustomerID = _CustomerID
+
+
+                    };
+
+
+                    ReservationBL.SaveTheReservatio(_MReservations);
+
+                }
+                if (_NumberOfTicketPreimum > 0)
+                {
+
+                    _MReservations = new MReservations()
+                    {
+
+                        Quantity = _NumberOfTicketPreimum,
+                        TicketTypeID = 3,
+                        CustomerID = _CustomerID
+
+
+                    };
+
+
+                    ReservationBL.SaveTheReservatio(_MReservations);
+
+                }
+
+
+            }
+            else
+            {
+
+                MessageBox.Show("Must Search The Customer To Be Booking", "Note OF Booking New Tickets ");
+                return;
+            }
+
+            MessageBox.Show("The Booking Is Successfully", "Note For Add New Reservations");
+            ;
+
+            _EventID = (int)GComboBoxSelectEvents.SelectedValue;
+
+            ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "Regular", _NumberOfTicketRegular);
+            ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "VIP", _NumberOfTicketVIP);
+            ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "Premium", _NumberOfTicketPreimum);
+
+            _ResetAllSettingCardsTickets();
+            _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
+        }
+
+        private void GGButtonSearchTheCustomerByIDorName_Click(object sender, EventArgs e)
+        {
+            _SearchTheCustoemrByIDOrName();
+        }
+
+        private void GGButtonConfirmBooking_Click(object sender, EventArgs e)
+        {
+            _BookingTheNewTickets();
+        }
+
+        private void GComboBoxSelectEvents_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            _ResetAllSettingCardsTickets();
+            _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
+        }
     }
 }
