@@ -141,7 +141,7 @@
             this.GGPnaelMainPanelComponetNewTicketSale.Controls.Add(this.guna2GradientPanel2);
             this.GGPnaelMainPanelComponetNewTicketSale.Controls.Add(this.guna2GradientPanel1);
             this.GGPnaelMainPanelComponetNewTicketSale.Controls.Add(this.GGPanelPaymentAndTransactions);
-            this.GGPnaelMainPanelComponetNewTicketSale.Location = new System.Drawing.Point(12, 119);
+            this.GGPnaelMainPanelComponetNewTicketSale.Location = new System.Drawing.Point(13, 119);
             this.GGPnaelMainPanelComponetNewTicketSale.Name = "GGPnaelMainPanelComponetNewTicketSale";
             this.GGPnaelMainPanelComponetNewTicketSale.Size = new System.Drawing.Size(1396, 804);
             this.GGPnaelMainPanelComponetNewTicketSale.TabIndex = 7;
@@ -269,9 +269,9 @@
             this.lblQLeftPermium.ForeColor = System.Drawing.Color.Black;
             this.lblQLeftPermium.Location = new System.Drawing.Point(204, 174);
             this.lblQLeftPermium.Name = "lblQLeftPermium";
-            this.lblQLeftPermium.Size = new System.Drawing.Size(12, 16);
+            this.lblQLeftPermium.Size = new System.Drawing.Size(42, 16);
             this.lblQLeftPermium.TabIndex = 9;
-            this.lblQLeftPermium.Text = "-";
+            this.lblQLeftPermium.Text = "0 LEFT";
             // 
             // label18
             // 
@@ -397,9 +397,9 @@
             this.lblQLeftVIP.ForeColor = System.Drawing.Color.Black;
             this.lblQLeftVIP.Location = new System.Drawing.Point(204, 174);
             this.lblQLeftVIP.Name = "lblQLeftVIP";
-            this.lblQLeftVIP.Size = new System.Drawing.Size(12, 16);
+            this.lblQLeftVIP.Size = new System.Drawing.Size(42, 16);
             this.lblQLeftVIP.TabIndex = 9;
-            this.lblQLeftVIP.Text = "-";
+            this.lblQLeftVIP.Text = "0 LEFT";
             // 
             // label7
             // 
@@ -524,9 +524,9 @@
             this.lblQLeftRegular.ForeColor = System.Drawing.Color.Black;
             this.lblQLeftRegular.Location = new System.Drawing.Point(204, 174);
             this.lblQLeftRegular.Name = "lblQLeftRegular";
-            this.lblQLeftRegular.Size = new System.Drawing.Size(12, 16);
+            this.lblQLeftRegular.Size = new System.Drawing.Size(42, 16);
             this.lblQLeftRegular.TabIndex = 9;
-            this.lblQLeftRegular.Text = "-";
+            this.lblQLeftRegular.Text = "0 LEFT";
             // 
             // label13
             // 

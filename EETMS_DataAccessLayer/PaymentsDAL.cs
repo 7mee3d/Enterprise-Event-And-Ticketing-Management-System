@@ -26,11 +26,8 @@ namespace EETMS_DataAccessLayer
 
                 string Query = @"
 
-                                            SELECT SUM ( R.Quantity * T.Price ) AS [TotalRevenue] 
-                                            FROM Reservations R 
-                                            INNER JOIN TicketTypes T 
-                                            ON R.TicketTypeID = T.TicketTypeID 
-
+                                              SELECT SUM(P.Amount)
+                                                FROM Payments P
 
                               ";
 
