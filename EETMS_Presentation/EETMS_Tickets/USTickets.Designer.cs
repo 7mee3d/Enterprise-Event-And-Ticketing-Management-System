@@ -86,6 +86,14 @@
             this.lblTotalPriceAfterBookingSummaryPreimumTickets = new System.Windows.Forms.Label();
             this.lblTotalTicketPremiumBookingSummary = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.GPanelInner = new Guna.UI2.WinForms.Guna2Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblTaxLabelTitle = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
+            this.lblTax = new System.Windows.Forms.Label();
+            this.GPanelSubTotalAndTaxTicketBookingSummary = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.GGPnaelMainPanelComponetNewTicketSale.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
@@ -101,6 +109,8 @@
             this.PanelRegularTicket.SuspendLayout();
             this.PanelVIPTicket.SuspendLayout();
             this.PanelPremiumTicket.SuspendLayout();
+            this.GPanelInner.SuspendLayout();
+            this.GPanelSubTotalAndTaxTicketBookingSummary.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -140,6 +150,7 @@
             this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(236)))), ((int)(((byte)(243)))));
             this.guna2GradientPanel2.BorderRadius = 10;
             this.guna2GradientPanel2.BorderThickness = 1;
+            this.guna2GradientPanel2.Controls.Add(this.GPanelSubTotalAndTaxTicketBookingSummary);
             this.guna2GradientPanel2.Controls.Add(this.PanelPremiumTicket);
             this.guna2GradientPanel2.Controls.Add(this.PanelVIPTicket);
             this.guna2GradientPanel2.Controls.Add(this.PanelRegularTicket);
@@ -148,7 +159,7 @@
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientPanel2.Location = new System.Drawing.Point(1004, 35);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(381, 672);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(381, 542);
             this.guna2GradientPanel2.TabIndex = 5;
             // 
             // guna2GradientPanel3
@@ -787,7 +798,7 @@
             // lblTotalPriceAfterBookingSummaryRegularTickets
             // 
             this.lblTotalPriceAfterBookingSummaryRegularTickets.AutoSize = true;
-            this.lblTotalPriceAfterBookingSummaryRegularTickets.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPriceAfterBookingSummaryRegularTickets.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPriceAfterBookingSummaryRegularTickets.ForeColor = System.Drawing.Color.Black;
             this.lblTotalPriceAfterBookingSummaryRegularTickets.Location = new System.Drawing.Point(302, 16);
             this.lblTotalPriceAfterBookingSummaryRegularTickets.Name = "lblTotalPriceAfterBookingSummaryRegularTickets";
@@ -809,7 +820,7 @@
             // lblTotalPriceAfterBookingSummaryVIPTickets
             // 
             this.lblTotalPriceAfterBookingSummaryVIPTickets.AutoSize = true;
-            this.lblTotalPriceAfterBookingSummaryVIPTickets.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPriceAfterBookingSummaryVIPTickets.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPriceAfterBookingSummaryVIPTickets.ForeColor = System.Drawing.Color.Black;
             this.lblTotalPriceAfterBookingSummaryVIPTickets.Location = new System.Drawing.Point(302, 16);
             this.lblTotalPriceAfterBookingSummaryVIPTickets.Name = "lblTotalPriceAfterBookingSummaryVIPTickets";
@@ -853,7 +864,7 @@
             // lblTotalPriceAfterBookingSummaryPreimumTickets
             // 
             this.lblTotalPriceAfterBookingSummaryPreimumTickets.AutoSize = true;
-            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPriceAfterBookingSummaryPreimumTickets.ForeColor = System.Drawing.Color.Black;
             this.lblTotalPriceAfterBookingSummaryPreimumTickets.Location = new System.Drawing.Point(302, 16);
             this.lblTotalPriceAfterBookingSummaryPreimumTickets.Name = "lblTotalPriceAfterBookingSummaryPreimumTickets";
@@ -882,6 +893,98 @@
             this.label24.Size = new System.Drawing.Size(94, 16);
             this.label24.TabIndex = 7;
             this.label24.Text = "Premium Ticket";
+            // 
+            // GPanelInner
+            // 
+            this.GPanelInner.Controls.Add(this.lblTax);
+            this.GPanelInner.Controls.Add(this.lblSubTotal);
+            this.GPanelInner.Controls.Add(this.lblTaxLabelTitle);
+            this.GPanelInner.Controls.Add(this.label17);
+            this.GPanelInner.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GPanelInner.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.GPanelInner.Location = new System.Drawing.Point(3, 12);
+            this.GPanelInner.Name = "GPanelInner";
+            this.GPanelInner.Size = new System.Drawing.Size(372, 82);
+            this.GPanelInner.TabIndex = 8;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
+            this.label17.Location = new System.Drawing.Point(10, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(52, 16);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "Subtotal";
+            // 
+            // lblTaxLabelTitle
+            // 
+            this.lblTaxLabelTitle.AutoSize = true;
+            this.lblTaxLabelTitle.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxLabelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
+            this.lblTaxLabelTitle.Location = new System.Drawing.Point(10, 48);
+            this.lblTaxLabelTitle.Name = "lblTaxLabelTitle";
+            this.lblTaxLabelTitle.Size = new System.Drawing.Size(36, 16);
+            this.lblTaxLabelTitle.TabIndex = 7;
+            this.lblTaxLabelTitle.Text = "Tax ()";
+            // 
+            // lblSubTotal
+            // 
+            this.lblSubTotal.AutoSize = true;
+            this.lblSubTotal.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.ForeColor = System.Drawing.Color.Black;
+            this.lblSubTotal.Location = new System.Drawing.Point(307, 17);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(15, 17);
+            this.lblSubTotal.TabIndex = 7;
+            this.lblSubTotal.Text = "0";
+            // 
+            // lblTax
+            // 
+            this.lblTax.AutoSize = true;
+            this.lblTax.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTax.ForeColor = System.Drawing.Color.Black;
+            this.lblTax.Location = new System.Drawing.Point(307, 47);
+            this.lblTax.Name = "lblTax";
+            this.lblTax.Size = new System.Drawing.Size(15, 17);
+            this.lblTax.TabIndex = 7;
+            this.lblTax.Text = "0";
+            // 
+            // GPanelSubTotalAndTaxTicketBookingSummary
+            // 
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Controls.Add(this.lblTotalAmount);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Controls.Add(this.GPanelInner);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Controls.Add(this.label27);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GPanelSubTotalAndTaxTicketBookingSummary.CustomBorderThickness = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Location = new System.Drawing.Point(2, 293);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Name = "GPanelSubTotalAndTaxTicketBookingSummary";
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Size = new System.Drawing.Size(379, 167);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.TabIndex = 6;
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Visible = false;
+            // 
+            // lblTotalAmount
+            // 
+            this.lblTotalAmount.AutoSize = true;
+            this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI Variable Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.lblTotalAmount.Location = new System.Drawing.Point(280, 110);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(28, 32);
+            this.lblTotalAmount.TabIndex = 8;
+            this.lblTotalAmount.Text = "0";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(13, 119);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(113, 21);
+            this.label27.TabIndex = 9;
+            this.label27.Text = "Total Amount";
             // 
             // USTickets
             // 
@@ -918,6 +1021,10 @@
             this.PanelVIPTicket.PerformLayout();
             this.PanelPremiumTicket.ResumeLayout(false);
             this.PanelPremiumTicket.PerformLayout();
+            this.GPanelInner.ResumeLayout(false);
+            this.GPanelInner.PerformLayout();
+            this.GPanelSubTotalAndTaxTicketBookingSummary.ResumeLayout(false);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -982,5 +1089,13 @@
         private System.Windows.Forms.Label lblTotalPriceAfterBookingSummaryPreimumTickets;
         private System.Windows.Forms.Label lblTotalTicketPremiumBookingSummary;
         private System.Windows.Forms.Label label24;
+        private Guna.UI2.WinForms.Guna2Panel GPanelInner;
+        private System.Windows.Forms.Label lblTaxLabelTitle;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblTax;
+        private System.Windows.Forms.Label lblSubTotal;
+        private Guna.UI2.WinForms.Guna2Panel GPanelSubTotalAndTaxTicketBookingSummary;
+        private System.Windows.Forms.Label lblTotalAmount;
+        private System.Windows.Forms.Label label27;
     }
 }

@@ -21,6 +21,12 @@ namespace EETMS_Presentation.EETMS_Tickets
         private int _PriceTheVIPTicket = 0;
         private int _PriceThePreimumTicket = 0;
 
+
+        private double _SubTotalAmount = 0;
+        private double _Tax = 0;
+        private double _TotalAmount = 0;
+
+
         public USTickets()
         {
             InitializeComponent();
@@ -167,6 +173,7 @@ namespace EETMS_Presentation.EETMS_Tickets
         private void USTickets_Load(object sender, EventArgs e)
         {
             _LoadInformationEventToComboBox();
+            lblTaxLabelTitle.Text = "Tax(" + _Tax.ToString() + "%)";
         }
 
         private void _ChangeTheColorBackAndFrontMouseClickTheCardTicket(Guna2GradientPanel G2GP, Guna2NumericUpDown G2NUD = null)
@@ -244,7 +251,10 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelPremiumTicket.Visible = false;
                 PanelVIPTicket.Visible = false;
 
+                GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
+
                 PanelRegularTicket.Location = new Point(4, 91);
+                GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 158);
             }
             else if (_NumberOfTicketRegular == 0 && _NumberOfTicketVIP > 0 && _NumberOfTicketPreimum == 0)
             {
@@ -252,65 +262,104 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelVIPTicket.Visible = true;
                 PanelPremiumTicket.Visible = false;
 
+                GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
+
                 PanelVIPTicket.Location = new Point(4, 91);
+                GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 158);
             }
             else if (_NumberOfTicketRegular == 0 && _NumberOfTicketVIP == 0 && _NumberOfTicketPreimum > 0)
             {
                 PanelRegularTicket.Visible = false;
                 PanelVIPTicket.Visible = false;
                 PanelPremiumTicket.Visible = true;
+                GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
 
                 PanelPremiumTicket.Location = new Point(4, 91);
+                GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 158);
             }
             else if (_NumberOfTicketRegular > 0 && _NumberOfTicketVIP > 0 && _NumberOfTicketPreimum == 0)
             {
                 PanelRegularTicket.Visible = true;
                 PanelVIPTicket.Visible = true;
                 PanelPremiumTicket.Visible = false;
+                GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
 
                 PanelRegularTicket.Location = new Point(4, 91);
                 PanelVIPTicket.Location = new Point(4, 158);
+                GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 225);
             }
             else if (_NumberOfTicketRegular > 0 && _NumberOfTicketVIP == 0 && _NumberOfTicketPreimum > 0)
             {
                 PanelRegularTicket.Visible = true;
                 PanelVIPTicket.Visible = false;
                 PanelPremiumTicket.Visible = true;
+                GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
 
                 PanelRegularTicket.Location = new Point(4, 91);
                 PanelPremiumTicket.Location = new Point(4, 158);
+                GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 225);
             }
             else if (_NumberOfTicketRegular == 0 && _NumberOfTicketVIP > 0 && _NumberOfTicketPreimum > 0)
             {
                 PanelRegularTicket.Visible = false;
                 PanelVIPTicket.Visible = true;
                 PanelPremiumTicket.Visible = true;
+                GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
 
                 PanelVIPTicket.Location = new Point(4, 91);
                 PanelPremiumTicket.Location = new Point(4, 158);
+
+                GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 225);
             }
             else if (_NumberOfTicketRegular > 0 && _NumberOfTicketVIP > 0 && _NumberOfTicketPreimum > 0)
             {
                 PanelRegularTicket.Visible = true;
                 PanelVIPTicket.Visible = true;
                 PanelPremiumTicket.Visible = true;
+                GPanelSubTotalAndTaxTicketBookingSummary.Visible = true;
 
                 PanelRegularTicket.Location = new Point(4, 91);
                 PanelVIPTicket.Location = new Point(4, 158);
                 PanelPremiumTicket.Location = new Point(4, 225);
+                GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(2, 293);
             }
             else
             {
                 PanelRegularTicket.Visible = false;
                 PanelVIPTicket.Visible = false;
                 PanelPremiumTicket.Visible = false;
+                GPanelSubTotalAndTaxTicketBookingSummary.Visible = false;
             }
 
         }
 
-        private void GNumericUpDownRegularTicket_ValueChanged(object sender, EventArgs e)
-
+        private void _CalcTheTotalAmountAndSubAmount()
         {
+
+            _SubTotalAmount = 0;
+            _TotalAmount = 0;
+
+
+            _SubTotalAmount += _Tax + _NumberOfTicketRegular * _PriceTheRegularTicket;
+            _TotalAmount = _SubTotalAmount;
+
+            _SubTotalAmount += _Tax + _NumberOfTicketVIP * _PriceTheVIPTicket;
+            _TotalAmount = _SubTotalAmount;
+
+            _SubTotalAmount += _Tax + _NumberOfTicketPreimum * _PriceThePreimumTicket;
+            _TotalAmount = _SubTotalAmount;
+        }
+
+        private void _LoadTheAmountSubTotalToLabel_ConvertNumberToString()
+        {
+            lblTotalAmount.Text = "$" + _TotalAmount.ToString();
+            lblSubTotal.Text = "$" + _SubTotalAmount.ToString();
+            lblTax.Text = "$" + _Tax.ToString();
+        }
+
+        private void GNumericUpDownRegularTicket_ValueChanged(object sender, EventArgs e)
+        {
+
             _NumberOfTicketRegular = Convert.ToInt32(GNumericUpDownRegularTicket.Value);
 
 
@@ -318,10 +367,14 @@ namespace EETMS_Presentation.EETMS_Tickets
 
             lblTotalTicketRegularBookingSummary.Text = (_NumberOfTicketRegular.ToString() + " x " + _PriceTheRegularTicket.ToString());
             lblTotalPriceAfterBookingSummaryRegularTickets.Text = "$" + (_NumberOfTicketRegular * _PriceTheRegularTicket).ToString();
+
+            _CalcTheTotalAmountAndSubAmount();
+            _LoadTheAmountSubTotalToLabel_ConvertNumberToString();
         }
 
         private void GNumericUpDownVIPTicket_ValueChanged(object sender, EventArgs e)
         {
+
 
             _NumberOfTicketVIP = Convert.ToInt32(GNumericUpDownVIPTicket.Value);
 
@@ -329,6 +382,9 @@ namespace EETMS_Presentation.EETMS_Tickets
 
             lblTotalTicketVIPBookingSummary.Text = (_NumberOfTicketVIP.ToString() + " x " + _PriceTheVIPTicket.ToString());
             lblTotalPriceAfterBookingSummaryVIPTickets.Text = "$" + (_NumberOfTicketVIP * _PriceTheVIPTicket).ToString();
+
+            _CalcTheTotalAmountAndSubAmount();
+            _LoadTheAmountSubTotalToLabel_ConvertNumberToString();
         }
 
         private void GNumericUpDownPremium_ValueChanged(object sender, EventArgs e)
@@ -340,6 +396,13 @@ namespace EETMS_Presentation.EETMS_Tickets
 
             lblTotalTicketPremiumBookingSummary.Text = (_NumberOfTicketPreimum.ToString() + " x " + _PriceThePreimumTicket.ToString());
             lblTotalPriceAfterBookingSummaryPreimumTickets.Text = "$" + (_NumberOfTicketPreimum * _PriceThePreimumTicket).ToString();
+
+            _CalcTheTotalAmountAndSubAmount();
+            _LoadTheAmountSubTotalToLabel_ConvertNumberToString();
+
+
         }
+
+
     }
 }
