@@ -33,7 +33,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.GGPnaelMainPanelComponetNewTicketSale = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GGButtonConfirmBooking = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GPanelSubTotalAndTaxTicketBookingSummary = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.GPanelInner = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTax = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
+            this.lblTaxLabelTitle = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.lblNoteBooking = new System.Windows.Forms.Label();
+            this.PanelPremiumTicket = new System.Windows.Forms.Panel();
+            this.lblTotalPriceAfterBookingSummaryPreimumTickets = new System.Windows.Forms.Label();
+            this.lblTotalTicketPremiumBookingSummary = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.PanelVIPTicket = new System.Windows.Forms.Panel();
+            this.lblTotalPriceAfterBookingSummaryVIPTickets = new System.Windows.Forms.Label();
+            this.lblTotalTicketVIPBookingSummary = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.PanelRegularTicket = new System.Windows.Forms.Panel();
+            this.lblTotalPriceAfterBookingSummaryRegularTickets = new System.Windows.Forms.Label();
+            this.lblTotalTicketRegularBookingSummary = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GPictureBoxIconBookingSummary = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GGPanelPermiumTicket = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GGButtonPremiumTicketStatus = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -72,33 +96,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.GPictureBoxIconBookingSummary = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.PanelRegularTicket = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblTotalTicketRegularBookingSummary = new System.Windows.Forms.Label();
-            this.lblTotalPriceAfterBookingSummaryRegularTickets = new System.Windows.Forms.Label();
-            this.PanelVIPTicket = new System.Windows.Forms.Panel();
-            this.lblTotalPriceAfterBookingSummaryVIPTickets = new System.Windows.Forms.Label();
-            this.lblTotalTicketVIPBookingSummary = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.PanelPremiumTicket = new System.Windows.Forms.Panel();
-            this.lblTotalPriceAfterBookingSummaryPreimumTickets = new System.Windows.Forms.Label();
-            this.lblTotalTicketPremiumBookingSummary = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.GPanelInner = new Guna.UI2.WinForms.Guna2Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lblTaxLabelTitle = new System.Windows.Forms.Label();
-            this.lblSubTotal = new System.Windows.Forms.Label();
-            this.lblTax = new System.Windows.Forms.Label();
-            this.GPanelSubTotalAndTaxTicketBookingSummary = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTotalAmount = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.GGButtonConfirmBooking = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.lblNoteBooking = new System.Windows.Forms.Label();
             this.GGPnaelMainPanelComponetNewTicketSale.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
+            this.GPanelSubTotalAndTaxTicketBookingSummary.SuspendLayout();
+            this.GPanelInner.SuspendLayout();
+            this.PanelPremiumTicket.SuspendLayout();
+            this.PanelVIPTicket.SuspendLayout();
+            this.PanelRegularTicket.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GPictureBoxIconBookingSummary)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.GGPanelPermiumTicket.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownPremium)).BeginInit();
@@ -107,12 +113,6 @@
             this.GGPanelRegularTicket.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownRegularTicket)).BeginInit();
             this.GGPanelPaymentAndTransactions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GPictureBoxIconBookingSummary)).BeginInit();
-            this.PanelRegularTicket.SuspendLayout();
-            this.PanelVIPTicket.SuspendLayout();
-            this.PanelPremiumTicket.SuspendLayout();
-            this.GPanelInner.SuspendLayout();
-            this.GPanelSubTotalAndTaxTicketBookingSummary.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -166,6 +166,270 @@
             this.guna2GradientPanel2.Size = new System.Drawing.Size(381, 620);
             this.guna2GradientPanel2.TabIndex = 5;
             // 
+            // GGButtonConfirmBooking
+            // 
+            this.GGButtonConfirmBooking.Animated = true;
+            this.GGButtonConfirmBooking.AnimatedGIF = true;
+            this.GGButtonConfirmBooking.BorderRadius = 5;
+            this.GGButtonConfirmBooking.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonConfirmBooking.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonConfirmBooking.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonConfirmBooking.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonConfirmBooking.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GGButtonConfirmBooking.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonConfirmBooking.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonConfirmBooking.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonConfirmBooking.ForeColor = System.Drawing.Color.White;
+            this.GGButtonConfirmBooking.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonConfirmBooking.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonConfirmBooking.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonConfirmBooking.Image")));
+            this.GGButtonConfirmBooking.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.GGButtonConfirmBooking.ImageOffset = new System.Drawing.Point(35, 1);
+            this.GGButtonConfirmBooking.ImageSize = new System.Drawing.Size(25, 25);
+            this.GGButtonConfirmBooking.Location = new System.Drawing.Point(49, 484);
+            this.GGButtonConfirmBooking.Name = "GGButtonConfirmBooking";
+            this.GGButtonConfirmBooking.PressedColor = System.Drawing.Color.White;
+            this.GGButtonConfirmBooking.Size = new System.Drawing.Size(289, 50);
+            this.GGButtonConfirmBooking.TabIndex = 13;
+            this.GGButtonConfirmBooking.Text = "Confirm Booking";
+            this.GGButtonConfirmBooking.Visible = false;
+            this.GGButtonConfirmBooking.Click += new System.EventHandler(this.GGButtonConfirmBooking_Click);
+            // 
+            // GPanelSubTotalAndTaxTicketBookingSummary
+            // 
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Controls.Add(this.lblTotalAmount);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Controls.Add(this.GPanelInner);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Controls.Add(this.label27);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GPanelSubTotalAndTaxTicketBookingSummary.CustomBorderThickness = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Location = new System.Drawing.Point(2, 293);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Name = "GPanelSubTotalAndTaxTicketBookingSummary";
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Size = new System.Drawing.Size(379, 167);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.TabIndex = 6;
+            this.GPanelSubTotalAndTaxTicketBookingSummary.Visible = false;
+            // 
+            // lblTotalAmount
+            // 
+            this.lblTotalAmount.AutoSize = true;
+            this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI Variable Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.lblTotalAmount.Location = new System.Drawing.Point(280, 110);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(28, 32);
+            this.lblTotalAmount.TabIndex = 8;
+            this.lblTotalAmount.Text = "0";
+            // 
+            // GPanelInner
+            // 
+            this.GPanelInner.Controls.Add(this.lblTax);
+            this.GPanelInner.Controls.Add(this.lblSubTotal);
+            this.GPanelInner.Controls.Add(this.lblTaxLabelTitle);
+            this.GPanelInner.Controls.Add(this.label17);
+            this.GPanelInner.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GPanelInner.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.GPanelInner.Location = new System.Drawing.Point(3, 12);
+            this.GPanelInner.Name = "GPanelInner";
+            this.GPanelInner.Size = new System.Drawing.Size(372, 82);
+            this.GPanelInner.TabIndex = 8;
+            // 
+            // lblTax
+            // 
+            this.lblTax.AutoSize = true;
+            this.lblTax.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTax.ForeColor = System.Drawing.Color.Black;
+            this.lblTax.Location = new System.Drawing.Point(307, 47);
+            this.lblTax.Name = "lblTax";
+            this.lblTax.Size = new System.Drawing.Size(15, 17);
+            this.lblTax.TabIndex = 7;
+            this.lblTax.Text = "0";
+            // 
+            // lblSubTotal
+            // 
+            this.lblSubTotal.AutoSize = true;
+            this.lblSubTotal.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.ForeColor = System.Drawing.Color.Black;
+            this.lblSubTotal.Location = new System.Drawing.Point(307, 17);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(15, 17);
+            this.lblSubTotal.TabIndex = 7;
+            this.lblSubTotal.Text = "0";
+            // 
+            // lblTaxLabelTitle
+            // 
+            this.lblTaxLabelTitle.AutoSize = true;
+            this.lblTaxLabelTitle.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxLabelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
+            this.lblTaxLabelTitle.Location = new System.Drawing.Point(10, 48);
+            this.lblTaxLabelTitle.Name = "lblTaxLabelTitle";
+            this.lblTaxLabelTitle.Size = new System.Drawing.Size(36, 16);
+            this.lblTaxLabelTitle.TabIndex = 7;
+            this.lblTaxLabelTitle.Text = "Tax ()";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
+            this.label17.Location = new System.Drawing.Point(10, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(52, 16);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "Subtotal";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(13, 119);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(113, 21);
+            this.label27.TabIndex = 9;
+            this.label27.Text = "Total Amount";
+            // 
+            // lblNoteBooking
+            // 
+            this.lblNoteBooking.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoteBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
+            this.lblNoteBooking.Location = new System.Drawing.Point(26, 553);
+            this.lblNoteBooking.Name = "lblNoteBooking";
+            this.lblNoteBooking.Size = new System.Drawing.Size(329, 57);
+            this.lblNoteBooking.TabIndex = 9;
+            this.lblNoteBooking.Text = "* Available tickets will be decreased automatically upon confirmation.";
+            this.lblNoteBooking.Visible = false;
+            // 
+            // PanelPremiumTicket
+            // 
+            this.PanelPremiumTicket.Controls.Add(this.lblTotalPriceAfterBookingSummaryPreimumTickets);
+            this.PanelPremiumTicket.Controls.Add(this.lblTotalTicketPremiumBookingSummary);
+            this.PanelPremiumTicket.Controls.Add(this.label24);
+            this.PanelPremiumTicket.Location = new System.Drawing.Point(4, 225);
+            this.PanelPremiumTicket.Name = "PanelPremiumTicket";
+            this.PanelPremiumTicket.Size = new System.Drawing.Size(373, 53);
+            this.PanelPremiumTicket.TabIndex = 7;
+            this.PanelPremiumTicket.Visible = false;
+            // 
+            // lblTotalPriceAfterBookingSummaryPreimumTickets
+            // 
+            this.lblTotalPriceAfterBookingSummaryPreimumTickets.AutoSize = true;
+            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPriceAfterBookingSummaryPreimumTickets.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Location = new System.Drawing.Point(302, 16);
+            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Name = "lblTotalPriceAfterBookingSummaryPreimumTickets";
+            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Size = new System.Drawing.Size(48, 17);
+            this.lblTotalPriceAfterBookingSummaryPreimumTickets.TabIndex = 7;
+            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Text = "-00000";
+            // 
+            // lblTotalTicketPremiumBookingSummary
+            // 
+            this.lblTotalTicketPremiumBookingSummary.AutoSize = true;
+            this.lblTotalTicketPremiumBookingSummary.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTicketPremiumBookingSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
+            this.lblTotalTicketPremiumBookingSummary.Location = new System.Drawing.Point(12, 28);
+            this.lblTotalTicketPremiumBookingSummary.Name = "lblTotalTicketPremiumBookingSummary";
+            this.lblTotalTicketPremiumBookingSummary.Size = new System.Drawing.Size(12, 16);
+            this.lblTotalTicketPremiumBookingSummary.TabIndex = 7;
+            this.lblTotalTicketPremiumBookingSummary.Text = "-";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(6, 10);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(94, 16);
+            this.label24.TabIndex = 7;
+            this.label24.Text = "Premium Ticket";
+            // 
+            // PanelVIPTicket
+            // 
+            this.PanelVIPTicket.Controls.Add(this.lblTotalPriceAfterBookingSummaryVIPTickets);
+            this.PanelVIPTicket.Controls.Add(this.lblTotalTicketVIPBookingSummary);
+            this.PanelVIPTicket.Controls.Add(this.label23);
+            this.PanelVIPTicket.Location = new System.Drawing.Point(4, 158);
+            this.PanelVIPTicket.Name = "PanelVIPTicket";
+            this.PanelVIPTicket.Size = new System.Drawing.Size(373, 53);
+            this.PanelVIPTicket.TabIndex = 7;
+            this.PanelVIPTicket.Visible = false;
+            // 
+            // lblTotalPriceAfterBookingSummaryVIPTickets
+            // 
+            this.lblTotalPriceAfterBookingSummaryVIPTickets.AutoSize = true;
+            this.lblTotalPriceAfterBookingSummaryVIPTickets.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPriceAfterBookingSummaryVIPTickets.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalPriceAfterBookingSummaryVIPTickets.Location = new System.Drawing.Point(302, 16);
+            this.lblTotalPriceAfterBookingSummaryVIPTickets.Name = "lblTotalPriceAfterBookingSummaryVIPTickets";
+            this.lblTotalPriceAfterBookingSummaryVIPTickets.Size = new System.Drawing.Size(48, 17);
+            this.lblTotalPriceAfterBookingSummaryVIPTickets.TabIndex = 7;
+            this.lblTotalPriceAfterBookingSummaryVIPTickets.Text = "-00000";
+            // 
+            // lblTotalTicketVIPBookingSummary
+            // 
+            this.lblTotalTicketVIPBookingSummary.AutoSize = true;
+            this.lblTotalTicketVIPBookingSummary.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTicketVIPBookingSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
+            this.lblTotalTicketVIPBookingSummary.Location = new System.Drawing.Point(12, 28);
+            this.lblTotalTicketVIPBookingSummary.Name = "lblTotalTicketVIPBookingSummary";
+            this.lblTotalTicketVIPBookingSummary.Size = new System.Drawing.Size(12, 16);
+            this.lblTotalTicketVIPBookingSummary.TabIndex = 7;
+            this.lblTotalTicketVIPBookingSummary.Text = "-";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(6, 10);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(63, 16);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "VIP Ticket";
+            // 
+            // PanelRegularTicket
+            // 
+            this.PanelRegularTicket.Controls.Add(this.lblTotalPriceAfterBookingSummaryRegularTickets);
+            this.PanelRegularTicket.Controls.Add(this.lblTotalTicketRegularBookingSummary);
+            this.PanelRegularTicket.Controls.Add(this.label14);
+            this.PanelRegularTicket.Location = new System.Drawing.Point(4, 91);
+            this.PanelRegularTicket.Name = "PanelRegularTicket";
+            this.PanelRegularTicket.Size = new System.Drawing.Size(373, 53);
+            this.PanelRegularTicket.TabIndex = 7;
+            this.PanelRegularTicket.Visible = false;
+            // 
+            // lblTotalPriceAfterBookingSummaryRegularTickets
+            // 
+            this.lblTotalPriceAfterBookingSummaryRegularTickets.AutoSize = true;
+            this.lblTotalPriceAfterBookingSummaryRegularTickets.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPriceAfterBookingSummaryRegularTickets.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalPriceAfterBookingSummaryRegularTickets.Location = new System.Drawing.Point(302, 16);
+            this.lblTotalPriceAfterBookingSummaryRegularTickets.Name = "lblTotalPriceAfterBookingSummaryRegularTickets";
+            this.lblTotalPriceAfterBookingSummaryRegularTickets.Size = new System.Drawing.Size(48, 17);
+            this.lblTotalPriceAfterBookingSummaryRegularTickets.TabIndex = 7;
+            this.lblTotalPriceAfterBookingSummaryRegularTickets.Text = "-00000";
+            // 
+            // lblTotalTicketRegularBookingSummary
+            // 
+            this.lblTotalTicketRegularBookingSummary.AutoSize = true;
+            this.lblTotalTicketRegularBookingSummary.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTicketRegularBookingSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
+            this.lblTotalTicketRegularBookingSummary.Location = new System.Drawing.Point(12, 28);
+            this.lblTotalTicketRegularBookingSummary.Name = "lblTotalTicketRegularBookingSummary";
+            this.lblTotalTicketRegularBookingSummary.Size = new System.Drawing.Size(12, 16);
+            this.lblTotalTicketRegularBookingSummary.TabIndex = 7;
+            this.lblTotalTicketRegularBookingSummary.Text = "-";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(6, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(86, 16);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Regular Ticket";
+            // 
             // guna2GradientPanel3
             // 
             this.guna2GradientPanel3.BackColor = System.Drawing.Color.Transparent;
@@ -180,6 +444,28 @@
             this.guna2GradientPanel3.Name = "guna2GradientPanel3";
             this.guna2GradientPanel3.Size = new System.Drawing.Size(381, 78);
             this.guna2GradientPanel3.TabIndex = 6;
+            // 
+            // GPictureBoxIconBookingSummary
+            // 
+            this.GPictureBoxIconBookingSummary.Image = ((System.Drawing.Image)(resources.GetObject("GPictureBoxIconBookingSummary.Image")));
+            this.GPictureBoxIconBookingSummary.ImageRotate = 0F;
+            this.GPictureBoxIconBookingSummary.Location = new System.Drawing.Point(80, 28);
+            this.GPictureBoxIconBookingSummary.Name = "GPictureBoxIconBookingSummary";
+            this.GPictureBoxIconBookingSummary.Size = new System.Drawing.Size(30, 27);
+            this.GPictureBoxIconBookingSummary.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.GPictureBoxIconBookingSummary.TabIndex = 8;
+            this.GPictureBoxIconBookingSummary.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Text", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(116, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(185, 27);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Booking Summary";
             // 
             // guna2GradientPanel1
             // 
@@ -302,9 +588,9 @@
             this.lblTotalPriceOneTicketPermium.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.lblTotalPriceOneTicketPermium.Location = new System.Drawing.Point(25, 111);
             this.lblTotalPriceOneTicketPermium.Name = "lblTotalPriceOneTicketPermium";
-            this.lblTotalPriceOneTicketPermium.Size = new System.Drawing.Size(28, 32);
+            this.lblTotalPriceOneTicketPermium.Size = new System.Drawing.Size(43, 32);
             this.lblTotalPriceOneTicketPermium.TabIndex = 5;
-            this.lblTotalPriceOneTicketPermium.Text = "0";
+            this.lblTotalPriceOneTicketPermium.Text = "$0";
             // 
             // label21
             // 
@@ -430,9 +716,9 @@
             this.lblTotalPriceOneTicketVIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.lblTotalPriceOneTicketVIP.Location = new System.Drawing.Point(25, 111);
             this.lblTotalPriceOneTicketVIP.Name = "lblTotalPriceOneTicketVIP";
-            this.lblTotalPriceOneTicketVIP.Size = new System.Drawing.Size(28, 32);
+            this.lblTotalPriceOneTicketVIP.Size = new System.Drawing.Size(43, 32);
             this.lblTotalPriceOneTicketVIP.TabIndex = 5;
-            this.lblTotalPriceOneTicketVIP.Text = "0";
+            this.lblTotalPriceOneTicketVIP.Text = "$0";
             // 
             // label15
             // 
@@ -468,6 +754,7 @@
             this.GGPanelRegularTicket.Controls.Add(this.lblTotalPriceOneTicketRegular);
             this.GGPanelRegularTicket.Controls.Add(this.label9);
             this.GGPanelRegularTicket.Controls.Add(this.label10);
+            this.GGPanelRegularTicket.Enabled = false;
             this.GGPanelRegularTicket.Location = new System.Drawing.Point(40, 121);
             this.GGPanelRegularTicket.Name = "GGPanelRegularTicket";
             this.GGPanelRegularTicket.Size = new System.Drawing.Size(269, 264);
@@ -557,9 +844,9 @@
             this.lblTotalPriceOneTicketRegular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.lblTotalPriceOneTicketRegular.Location = new System.Drawing.Point(25, 111);
             this.lblTotalPriceOneTicketRegular.Name = "lblTotalPriceOneTicketRegular";
-            this.lblTotalPriceOneTicketRegular.Size = new System.Drawing.Size(28, 32);
+            this.lblTotalPriceOneTicketRegular.Size = new System.Drawing.Size(43, 32);
             this.lblTotalPriceOneTicketRegular.TabIndex = 5;
-            this.lblTotalPriceOneTicketRegular.Text = "0";
+            this.lblTotalPriceOneTicketRegular.Text = "$0";
             // 
             // label9
             // 
@@ -746,292 +1033,6 @@
             this.guna2CircleButton1.TabIndex = 6;
             this.guna2CircleButton1.Text = "1";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Text", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(116, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(185, 27);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Booking Summary";
-            // 
-            // GPictureBoxIconBookingSummary
-            // 
-            this.GPictureBoxIconBookingSummary.Image = ((System.Drawing.Image)(resources.GetObject("GPictureBoxIconBookingSummary.Image")));
-            this.GPictureBoxIconBookingSummary.ImageRotate = 0F;
-            this.GPictureBoxIconBookingSummary.Location = new System.Drawing.Point(80, 28);
-            this.GPictureBoxIconBookingSummary.Name = "GPictureBoxIconBookingSummary";
-            this.GPictureBoxIconBookingSummary.Size = new System.Drawing.Size(30, 27);
-            this.GPictureBoxIconBookingSummary.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.GPictureBoxIconBookingSummary.TabIndex = 8;
-            this.GPictureBoxIconBookingSummary.TabStop = false;
-            // 
-            // PanelRegularTicket
-            // 
-            this.PanelRegularTicket.Controls.Add(this.lblTotalPriceAfterBookingSummaryRegularTickets);
-            this.PanelRegularTicket.Controls.Add(this.lblTotalTicketRegularBookingSummary);
-            this.PanelRegularTicket.Controls.Add(this.label14);
-            this.PanelRegularTicket.Location = new System.Drawing.Point(4, 91);
-            this.PanelRegularTicket.Name = "PanelRegularTicket";
-            this.PanelRegularTicket.Size = new System.Drawing.Size(373, 53);
-            this.PanelRegularTicket.TabIndex = 7;
-            this.PanelRegularTicket.Visible = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(6, 10);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(86, 16);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Regular Ticket";
-            // 
-            // lblTotalTicketRegularBookingSummary
-            // 
-            this.lblTotalTicketRegularBookingSummary.AutoSize = true;
-            this.lblTotalTicketRegularBookingSummary.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTicketRegularBookingSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
-            this.lblTotalTicketRegularBookingSummary.Location = new System.Drawing.Point(12, 28);
-            this.lblTotalTicketRegularBookingSummary.Name = "lblTotalTicketRegularBookingSummary";
-            this.lblTotalTicketRegularBookingSummary.Size = new System.Drawing.Size(12, 16);
-            this.lblTotalTicketRegularBookingSummary.TabIndex = 7;
-            this.lblTotalTicketRegularBookingSummary.Text = "-";
-            // 
-            // lblTotalPriceAfterBookingSummaryRegularTickets
-            // 
-            this.lblTotalPriceAfterBookingSummaryRegularTickets.AutoSize = true;
-            this.lblTotalPriceAfterBookingSummaryRegularTickets.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPriceAfterBookingSummaryRegularTickets.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalPriceAfterBookingSummaryRegularTickets.Location = new System.Drawing.Point(302, 16);
-            this.lblTotalPriceAfterBookingSummaryRegularTickets.Name = "lblTotalPriceAfterBookingSummaryRegularTickets";
-            this.lblTotalPriceAfterBookingSummaryRegularTickets.Size = new System.Drawing.Size(48, 17);
-            this.lblTotalPriceAfterBookingSummaryRegularTickets.TabIndex = 7;
-            this.lblTotalPriceAfterBookingSummaryRegularTickets.Text = "-00000";
-            // 
-            // PanelVIPTicket
-            // 
-            this.PanelVIPTicket.Controls.Add(this.lblTotalPriceAfterBookingSummaryVIPTickets);
-            this.PanelVIPTicket.Controls.Add(this.lblTotalTicketVIPBookingSummary);
-            this.PanelVIPTicket.Controls.Add(this.label23);
-            this.PanelVIPTicket.Location = new System.Drawing.Point(4, 158);
-            this.PanelVIPTicket.Name = "PanelVIPTicket";
-            this.PanelVIPTicket.Size = new System.Drawing.Size(373, 53);
-            this.PanelVIPTicket.TabIndex = 7;
-            this.PanelVIPTicket.Visible = false;
-            // 
-            // lblTotalPriceAfterBookingSummaryVIPTickets
-            // 
-            this.lblTotalPriceAfterBookingSummaryVIPTickets.AutoSize = true;
-            this.lblTotalPriceAfterBookingSummaryVIPTickets.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPriceAfterBookingSummaryVIPTickets.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalPriceAfterBookingSummaryVIPTickets.Location = new System.Drawing.Point(302, 16);
-            this.lblTotalPriceAfterBookingSummaryVIPTickets.Name = "lblTotalPriceAfterBookingSummaryVIPTickets";
-            this.lblTotalPriceAfterBookingSummaryVIPTickets.Size = new System.Drawing.Size(48, 17);
-            this.lblTotalPriceAfterBookingSummaryVIPTickets.TabIndex = 7;
-            this.lblTotalPriceAfterBookingSummaryVIPTickets.Text = "-00000";
-            // 
-            // lblTotalTicketVIPBookingSummary
-            // 
-            this.lblTotalTicketVIPBookingSummary.AutoSize = true;
-            this.lblTotalTicketVIPBookingSummary.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTicketVIPBookingSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
-            this.lblTotalTicketVIPBookingSummary.Location = new System.Drawing.Point(12, 28);
-            this.lblTotalTicketVIPBookingSummary.Name = "lblTotalTicketVIPBookingSummary";
-            this.lblTotalTicketVIPBookingSummary.Size = new System.Drawing.Size(12, 16);
-            this.lblTotalTicketVIPBookingSummary.TabIndex = 7;
-            this.lblTotalTicketVIPBookingSummary.Text = "-";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(6, 10);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(63, 16);
-            this.label23.TabIndex = 7;
-            this.label23.Text = "VIP Ticket";
-            // 
-            // PanelPremiumTicket
-            // 
-            this.PanelPremiumTicket.Controls.Add(this.lblTotalPriceAfterBookingSummaryPreimumTickets);
-            this.PanelPremiumTicket.Controls.Add(this.lblTotalTicketPremiumBookingSummary);
-            this.PanelPremiumTicket.Controls.Add(this.label24);
-            this.PanelPremiumTicket.Location = new System.Drawing.Point(4, 225);
-            this.PanelPremiumTicket.Name = "PanelPremiumTicket";
-            this.PanelPremiumTicket.Size = new System.Drawing.Size(373, 53);
-            this.PanelPremiumTicket.TabIndex = 7;
-            this.PanelPremiumTicket.Visible = false;
-            // 
-            // lblTotalPriceAfterBookingSummaryPreimumTickets
-            // 
-            this.lblTotalPriceAfterBookingSummaryPreimumTickets.AutoSize = true;
-            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPriceAfterBookingSummaryPreimumTickets.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Location = new System.Drawing.Point(302, 16);
-            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Name = "lblTotalPriceAfterBookingSummaryPreimumTickets";
-            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Size = new System.Drawing.Size(48, 17);
-            this.lblTotalPriceAfterBookingSummaryPreimumTickets.TabIndex = 7;
-            this.lblTotalPriceAfterBookingSummaryPreimumTickets.Text = "-00000";
-            // 
-            // lblTotalTicketPremiumBookingSummary
-            // 
-            this.lblTotalTicketPremiumBookingSummary.AutoSize = true;
-            this.lblTotalTicketPremiumBookingSummary.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTicketPremiumBookingSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
-            this.lblTotalTicketPremiumBookingSummary.Location = new System.Drawing.Point(12, 28);
-            this.lblTotalTicketPremiumBookingSummary.Name = "lblTotalTicketPremiumBookingSummary";
-            this.lblTotalTicketPremiumBookingSummary.Size = new System.Drawing.Size(12, 16);
-            this.lblTotalTicketPremiumBookingSummary.TabIndex = 7;
-            this.lblTotalTicketPremiumBookingSummary.Text = "-";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(6, 10);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(94, 16);
-            this.label24.TabIndex = 7;
-            this.label24.Text = "Premium Ticket";
-            // 
-            // GPanelInner
-            // 
-            this.GPanelInner.Controls.Add(this.lblTax);
-            this.GPanelInner.Controls.Add(this.lblSubTotal);
-            this.GPanelInner.Controls.Add(this.lblTaxLabelTitle);
-            this.GPanelInner.Controls.Add(this.label17);
-            this.GPanelInner.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.GPanelInner.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.GPanelInner.Location = new System.Drawing.Point(3, 12);
-            this.GPanelInner.Name = "GPanelInner";
-            this.GPanelInner.Size = new System.Drawing.Size(372, 82);
-            this.GPanelInner.TabIndex = 8;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
-            this.label17.Location = new System.Drawing.Point(10, 18);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(52, 16);
-            this.label17.TabIndex = 7;
-            this.label17.Text = "Subtotal";
-            // 
-            // lblTaxLabelTitle
-            // 
-            this.lblTaxLabelTitle.AutoSize = true;
-            this.lblTaxLabelTitle.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaxLabelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
-            this.lblTaxLabelTitle.Location = new System.Drawing.Point(10, 48);
-            this.lblTaxLabelTitle.Name = "lblTaxLabelTitle";
-            this.lblTaxLabelTitle.Size = new System.Drawing.Size(36, 16);
-            this.lblTaxLabelTitle.TabIndex = 7;
-            this.lblTaxLabelTitle.Text = "Tax ()";
-            // 
-            // lblSubTotal
-            // 
-            this.lblSubTotal.AutoSize = true;
-            this.lblSubTotal.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotal.ForeColor = System.Drawing.Color.Black;
-            this.lblSubTotal.Location = new System.Drawing.Point(307, 17);
-            this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(15, 17);
-            this.lblSubTotal.TabIndex = 7;
-            this.lblSubTotal.Text = "0";
-            // 
-            // lblTax
-            // 
-            this.lblTax.AutoSize = true;
-            this.lblTax.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTax.ForeColor = System.Drawing.Color.Black;
-            this.lblTax.Location = new System.Drawing.Point(307, 47);
-            this.lblTax.Name = "lblTax";
-            this.lblTax.Size = new System.Drawing.Size(15, 17);
-            this.lblTax.TabIndex = 7;
-            this.lblTax.Text = "0";
-            // 
-            // GPanelSubTotalAndTaxTicketBookingSummary
-            // 
-            this.GPanelSubTotalAndTaxTicketBookingSummary.Controls.Add(this.lblTotalAmount);
-            this.GPanelSubTotalAndTaxTicketBookingSummary.Controls.Add(this.GPanelInner);
-            this.GPanelSubTotalAndTaxTicketBookingSummary.Controls.Add(this.label27);
-            this.GPanelSubTotalAndTaxTicketBookingSummary.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.GPanelSubTotalAndTaxTicketBookingSummary.CustomBorderThickness = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.GPanelSubTotalAndTaxTicketBookingSummary.Location = new System.Drawing.Point(2, 293);
-            this.GPanelSubTotalAndTaxTicketBookingSummary.Name = "GPanelSubTotalAndTaxTicketBookingSummary";
-            this.GPanelSubTotalAndTaxTicketBookingSummary.Size = new System.Drawing.Size(379, 167);
-            this.GPanelSubTotalAndTaxTicketBookingSummary.TabIndex = 6;
-            this.GPanelSubTotalAndTaxTicketBookingSummary.Visible = false;
-            // 
-            // lblTotalAmount
-            // 
-            this.lblTotalAmount.AutoSize = true;
-            this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI Variable Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.lblTotalAmount.Location = new System.Drawing.Point(280, 110);
-            this.lblTotalAmount.Name = "lblTotalAmount";
-            this.lblTotalAmount.Size = new System.Drawing.Size(28, 32);
-            this.lblTotalAmount.TabIndex = 8;
-            this.lblTotalAmount.Text = "0";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(13, 119);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(113, 21);
-            this.label27.TabIndex = 9;
-            this.label27.Text = "Total Amount";
-            // 
-            // GGButtonConfirmBooking
-            // 
-            this.GGButtonConfirmBooking.Animated = true;
-            this.GGButtonConfirmBooking.AnimatedGIF = true;
-            this.GGButtonConfirmBooking.BorderRadius = 5;
-            this.GGButtonConfirmBooking.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonConfirmBooking.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonConfirmBooking.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonConfirmBooking.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonConfirmBooking.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonConfirmBooking.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonConfirmBooking.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonConfirmBooking.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GGButtonConfirmBooking.ForeColor = System.Drawing.Color.White;
-            this.GGButtonConfirmBooking.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonConfirmBooking.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonConfirmBooking.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonConfirmBooking.Image")));
-            this.GGButtonConfirmBooking.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.GGButtonConfirmBooking.ImageOffset = new System.Drawing.Point(35, 1);
-            this.GGButtonConfirmBooking.ImageSize = new System.Drawing.Size(25, 25);
-            this.GGButtonConfirmBooking.Location = new System.Drawing.Point(49, 484);
-            this.GGButtonConfirmBooking.Name = "GGButtonConfirmBooking";
-            this.GGButtonConfirmBooking.PressedColor = System.Drawing.Color.White;
-            this.GGButtonConfirmBooking.Size = new System.Drawing.Size(289, 50);
-            this.GGButtonConfirmBooking.TabIndex = 13;
-            this.GGButtonConfirmBooking.Text = "Confirm Booking";
-            this.GGButtonConfirmBooking.Visible = false;
-            this.GGButtonConfirmBooking.Click += new System.EventHandler(this.GGButtonConfirmBooking_Click);
-            // 
-            // lblNoteBooking
-            // 
-            this.lblNoteBooking.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoteBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
-            this.lblNoteBooking.Location = new System.Drawing.Point(26, 553);
-            this.lblNoteBooking.Name = "lblNoteBooking";
-            this.lblNoteBooking.Size = new System.Drawing.Size(329, 57);
-            this.lblNoteBooking.TabIndex = 9;
-            this.lblNoteBooking.Text = "* Available tickets will be decreased automatically upon confirmation.";
-            this.lblNoteBooking.Visible = false;
-            // 
             // USTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1045,8 +1046,19 @@
             this.Load += new System.EventHandler(this.USTickets_Load);
             this.GGPnaelMainPanelComponetNewTicketSale.ResumeLayout(false);
             this.guna2GradientPanel2.ResumeLayout(false);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.ResumeLayout(false);
+            this.GPanelSubTotalAndTaxTicketBookingSummary.PerformLayout();
+            this.GPanelInner.ResumeLayout(false);
+            this.GPanelInner.PerformLayout();
+            this.PanelPremiumTicket.ResumeLayout(false);
+            this.PanelPremiumTicket.PerformLayout();
+            this.PanelVIPTicket.ResumeLayout(false);
+            this.PanelVIPTicket.PerformLayout();
+            this.PanelRegularTicket.ResumeLayout(false);
+            this.PanelRegularTicket.PerformLayout();
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GPictureBoxIconBookingSummary)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.GGPanelPermiumTicket.ResumeLayout(false);
@@ -1060,17 +1072,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownRegularTicket)).EndInit();
             this.GGPanelPaymentAndTransactions.ResumeLayout(false);
             this.GGPanelPaymentAndTransactions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GPictureBoxIconBookingSummary)).EndInit();
-            this.PanelRegularTicket.ResumeLayout(false);
-            this.PanelRegularTicket.PerformLayout();
-            this.PanelVIPTicket.ResumeLayout(false);
-            this.PanelVIPTicket.PerformLayout();
-            this.PanelPremiumTicket.ResumeLayout(false);
-            this.PanelPremiumTicket.PerformLayout();
-            this.GPanelInner.ResumeLayout(false);
-            this.GPanelInner.PerformLayout();
-            this.GPanelSubTotalAndTaxTicketBookingSummary.ResumeLayout(false);
-            this.GPanelSubTotalAndTaxTicketBookingSummary.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

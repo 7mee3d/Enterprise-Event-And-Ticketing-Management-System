@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,7 +23,7 @@ namespace EETMS_Presentation.EETMS_Main
     public partial class frmMainScreenEETMS : Form
     {
 
-        MUser _InformationUser = null; 
+        MUser _InformationUser = null;
 
 
         private void _ShowTheUserControlInThePanel(UserControl us)
@@ -37,7 +38,7 @@ namespace EETMS_Presentation.EETMS_Main
 
 
 
-        public frmMainScreenEETMS(string UsernameOrEmail  )
+        public frmMainScreenEETMS(string UsernameOrEmail)
         {
             InitializeComponent();
 
@@ -72,7 +73,7 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheEventUS();
         }
 
-        private void _OpenTheAddNewCustomer (int IDCustomer )
+        private void _OpenTheAddNewCustomer(int IDCustomer)
         {
             US_AddAndUpdateInformationCustomer US_AddNewCustomer = new US_AddAndUpdateInformationCustomer(IDCustomer);
 
@@ -90,6 +91,25 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheUserControlInThePanel(US_Customer);
         }
 
+        private void _OpenThePaymentUS()
+        {
+            USPayment US_Payment = new USPayment();
+
+            US_Payment.ERequestTheOpenAddPaymentBooking += (sender, e) => _OpenTheAddNewPaymentBooking();
+
+            _ShowTheUserControlInThePanel(US_Payment);
+
+        }
+
+        private void _OpenTheAddNewPaymentBooking()
+        {
+            USAddPaymentReservations US_APR = new USAddPaymentReservations();
+
+            US_APR.ERequestTheClosePaymentBooking += (sender, e) => _OpenThePaymentUS();
+            _ShowTheUserControlInThePanel(US_APR);
+
+        }
+
         private void GButtonCustomers_Click(object sender, EventArgs e)
         {
 
@@ -105,14 +125,14 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void GButtonPayment_Click(object sender, EventArgs e)
         {
-            _ShowTheUserControlInThePanel(new USPayment());
+            _OpenThePaymentUS();
         }
 
         private void GButtonReport_Click(object sender, EventArgs e)
         {
             _ShowTheUserControlInThePanel(new USReport());
         }
-   
+
         private void _ShowTheCreateNewEventUS(int id)
         {
             US_AddAndEditInformationEvent US_AddNewEvent = new US_AddAndEditInformationEvent(id);
@@ -130,9 +150,9 @@ namespace EETMS_Presentation.EETMS_Main
             US_Event.RequestOpenCreateNewEventUS += (sender, id) => _ShowTheCreateNewEventUS(id);
 
             _ShowTheUserControlInThePanel(US_Event);
-        } 
-   
-    
-    
+        }
+
+
+
     }
 }

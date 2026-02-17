@@ -120,17 +120,16 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAIKSURBVFhH7VY7bsMwDO0ReozGzpCxY47QsTfIMToWqC147JgxY8eMPU6BppbGji4kyxK/towu
-        GfKAhxg0yUeTtOK7uxuuHXXTn6vWDrWxQ926ofbXjGvtdqha+0G1RNBAnbrYLI0dqCbCtrUnFgSCqQ12
-        K1wv+AP7iWonZGeYdLUAIouNpNoJ1FFNJIjJ1EdGtROgExMWWLxoa0BFJKbiTN/B2Ifmsuf8Gn9fs63q
-        vncwjiGL4Z0YRXExIMbpbdfsdti0P09YPYI6SoxvxNn7V8YeuJh2zfNQ/QAWDJ8eHlzGhVHUrf1EyWcX
-        lhdE9QOgg7yYuIgtKIKNT2A+V0ZS/QAapFLoBCrauM7PfNyXyY7HVDAOnJR1hRWRBejC1U3/i2JBTuiX
-        kJ2E5YptHFvKxzGR53RHaVcKioiEwiCYdwLcN/YwmxMQ+iVkB325AmeKCLHGddvmsvc7wUYJSPUDqNOU
-        lG61WoTSdmqbSPUD5ETC6dnEIow9l4hppPoBfPZAGN1z4Y8rn5griig6J9gy8iJggvpNfgUX2dhnrB4R
-        bsanXyqiMu5litt17p7/g8rcmP4RqxLkIoT2sl0JPu80x78BOyELy12JBTGbyJifaifIAXBJtV3B36HM
-        hz2MspQe/nNtvhM6lzuRi178LOTBJQIa5fFRTRGhI0JwiYAnG8d0bdyRat1wdfgDSQDF7bfA1owAAAAA
-        SUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAgpJREFUWEft
+        VjtuwzAM7RF6jMbOkLFjjtCxN8gxOhaoLXjsmDFjx4w9ToGmlsaOLiTLEr+2jC4Z8oCHGDTJR5O04ru7
+        G64dddOfq9YOtbFD3bqh9teMa+12qFr7QbVE0ECdutgsjR2oJsK2tScWBIKpDXYrXC/4A/uJaidkZ5h0
+        tQAii42k2gnUUU0kiMnUR0a1E6ATExZYvGhrQEUkpuJM38HYh+ay5/waf1+zreq+dzCOIYvhnRhFcTEg
+        xult1+x22LQ/T1g9gjpKjG/E2ftXxh64mHbN81D9ABYMnx4eXMaFUdSt/UTJZxeWF0T1A6CDvJi4iC0o
+        go1PYD5XRlL9ABqkUugEKtq4zs983JfJjsdUMA6clHWFFZEF6MLVTf+LYkFO6JeQnYTlim0cW8rHMZHn
+        dEdpVwqKiITCIJh3Atw39jCbExD6JWQHfbkCZ4oIscZ12+ay9zvBRglI9QOo05SUbrVahNJ2aptI9QPk
+        RMLp2cQijD2XiGmk+gF89kAY3XPhjyufmCuKKDon2DLyImCC+k1+BRfZ2GesHhFuxqdfKqIy7mWK23Xu
+        nv+DytyY/hGrEuQihPayXQk+7zTHvwE7IQvLXYkFMZvImJ9qJ8gBcEm1XcHfocyHPYyylB7+c22+EzqX
+        O5GLXvws5MElAhrl8VFNEaEjQnCJgCcbx3Rt3JFq3XB1+ANJAMXtt8DWjAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="guna2CircleButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

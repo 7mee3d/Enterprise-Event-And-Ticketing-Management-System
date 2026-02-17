@@ -14,7 +14,6 @@ namespace EETMS_DataAccessLayer
         private static readonly string _ConneactionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         #endregion
 
-
         private static decimal _GetTotalRevenue()
         {
 
@@ -175,5 +174,7 @@ namespace EETMS_DataAccessLayer
 
         public static DataTable GetAllInformationPaymentBy(string BookingID)
             => _GetAllInformationPaymentBy(BookingID);
+ 
+    
     }
 }

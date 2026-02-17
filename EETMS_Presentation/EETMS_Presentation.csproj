@@ -108,6 +108,12 @@
     <Compile Include="EETMS_Main\frmMainScreenEETMS.Designer.cs">
       <DependentUpon>frmMainScreenEETMS.cs</DependentUpon>
     </Compile>
+    <Compile Include="EETMS_Payment\USAddPaymentReservations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Payment\USAddPaymentReservations.Designer.cs">
+      <DependentUpon>USAddPaymentReservations.cs</DependentUpon>
+    </Compile>
     <Compile Include="EETMS_Payment\USPayment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Main\frmMainScreenEETMS.resx">
       <DependentUpon>frmMainScreenEETMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Payment\USAddPaymentReservations.resx">
+      <DependentUpon>USAddPaymentReservations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Payment\USPayment.resx">
       <DependentUpon>USPayment.cs</DependentUpon>

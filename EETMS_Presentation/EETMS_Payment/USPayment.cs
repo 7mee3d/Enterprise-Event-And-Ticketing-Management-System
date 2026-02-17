@@ -14,7 +14,10 @@ namespace EETMS_Presentation.EETMS_Payment
             InitializeComponent();
         }
 
+        public event EventHandler ERequestTheOpenAddPaymentBooking = null;
+
         private void _LoadAllInformationPayments(DataTable DT)
+
         {
             // DataTable Payments_DT = PaymentsBL.GetAllInformationPayments();
             string BookingIDSTR = "";
@@ -93,6 +96,12 @@ namespace EETMS_Presentation.EETMS_Payment
             }
 
             _LoadAllInformationPayments(Payments_DT);
+        }
+
+
+        private void GGButtonPaymentBooking_Click(object sender, EventArgs e)
+        {
+            ERequestTheOpenAddPaymentBooking?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -41,7 +41,7 @@ namespace EETMS_Presentation.EETMS_Tickets
             InitializeComponent();
         }
 
-        private void _CheckTheStackTickes(int CountOfTicketsAvailable = 0, bool IsSelected = false, Guna2GradientButton G2DB = null)
+        private void _CheckTheStackTickes(int CountOfTicketsAvailable = 0, bool IsSelected = false, Guna2GradientButton G2DB = null, Label lblLeftTikets = null)
         {
 
             if (IsSelected)
@@ -56,6 +56,15 @@ namespace EETMS_Presentation.EETMS_Tickets
                 return;
             }
 
+            if (CountOfTicketsAvailable == 0)
+            {
+                G2DB.Text = "";
+                G2DB.DisabledState.FillColor = Color.FromArgb(43, 140, 238);
+                G2DB.DisabledState.FillColor2 = Color.FromArgb(43, 140, 238);
+                lblLeftTikets.ForeColor = Color.Black;
+
+                return;
+            }
 
             if (CountOfTicketsAvailable > 10)
             {
@@ -64,7 +73,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
                 G2DB.DisabledState.FillColor = Color.FromArgb(220, 252, 231);
                 G2DB.DisabledState.FillColor2 = Color.FromArgb(220, 252, 231);
-
+                lblLeftTikets.ForeColor = Color.Black;
             }
             else
             {
@@ -75,9 +84,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 G2DB.DisabledState.FillColor = Color.FromArgb(254, 243, 199);
                 G2DB.DisabledState.FillColor2 = Color.FromArgb(254, 243, 199);
 
-                lblQLeftPermium.ForeColor = Color.FromArgb(180, 83, 9);
-                lblQLeftRegular.ForeColor = Color.FromArgb(180, 83, 9);
-                lblQLeftVIP.ForeColor = Color.FromArgb(180, 83, 9);
+                lblLeftTikets.ForeColor = Color.FromArgb(180, 83, 9);
 
             }
 
@@ -156,7 +163,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                                 GGPanelRegularTicket.Enabled = true;
 
 
-                            _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonRegularTicketStatus);
+                            _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonRegularTicketStatus, lblQLeftRegular);
                             GNumericUpDownRegularTicket.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceTheRegularTicket = Convert.ToInt32(DR_Tickets["Price"]);
@@ -171,7 +178,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                             if (Convert.ToInt32(DR_Tickets["Available"]) > 0)
                                 GGPanelVIPTicket.Enabled = true;
 
-                            _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonVIPTicketStatus);
+                            _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonVIPTicketStatus, lblQLeftVIP);
                             GNumericUpDownVIPTicket.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceTheVIPTicket = Convert.ToInt32(DR_Tickets["Price"]);
@@ -185,7 +192,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                             if (Convert.ToInt32(DR_Tickets["Available"]) > 0)
                                 GGPanelPermiumTicket.Enabled = true;
 
-                            _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonPremiumTicketStatus);
+                            _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonPremiumTicketStatus, lblQLeftPermium);
                             GNumericUpDownPremium.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceThePreimumTicket = Convert.ToInt32(DR_Tickets["Price"]);
@@ -238,7 +245,7 @@ namespace EETMS_Presentation.EETMS_Tickets
         {
 
             //_LoadAllInformationTicketTypeForEventAfterSelectComboBox();
-            _CheckTheStackTickes(0, true, GGButtonRegularTicketStatus);
+            _CheckTheStackTickes(0, true, GGButtonRegularTicketStatus, lblQLeftRegular);
             _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelRegularTicket, GNumericUpDownRegularTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
@@ -253,7 +260,7 @@ namespace EETMS_Presentation.EETMS_Tickets
         private void GGPanelVIPTicket_MouseClick(object sender, MouseEventArgs e)
         {
             //   _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
-            _CheckTheStackTickes(0, true, GGButtonVIPTicketStatus);
+            _CheckTheStackTickes(0, true, GGButtonVIPTicketStatus, lblQLeftVIP);
             _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelVIPTicket, GNumericUpDownVIPTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
@@ -264,7 +271,7 @@ namespace EETMS_Presentation.EETMS_Tickets
         private void GGPanelPermiumTicket_MouseClick(object sender, MouseEventArgs e)
         {
             //  _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
-            _CheckTheStackTickes(0, true, GGButtonPremiumTicketStatus);
+            _CheckTheStackTickes(0, true, GGButtonPremiumTicketStatus, lblQLeftPermium);
             _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelPermiumTicket, GNumericUpDownPremium);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
