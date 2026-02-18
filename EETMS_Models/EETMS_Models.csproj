@@ -45,6 +45,7 @@
     <Compile Include="MCustomer.cs" />
     <Compile Include="MEvent.cs" />
     <Compile Include="MPayment.cs" />
+    <Compile Include="MReservationPayment.cs" />
     <Compile Include="MReservations.cs" />
     <Compile Include="MUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

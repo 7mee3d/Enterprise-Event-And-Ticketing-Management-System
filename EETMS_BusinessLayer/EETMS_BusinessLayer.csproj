@@ -48,6 +48,7 @@
     <Compile Include="PaymentsBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservationBL.cs" />
+    <Compile Include="ReservationPaymentBL.cs" />
     <Compile Include="TicketBL.cs" />
     <Compile Include="UserBL.cs" />
   </ItemGroup>

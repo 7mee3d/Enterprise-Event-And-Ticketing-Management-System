@@ -1,5 +1,6 @@
 ﻿
 
+using EETMS_Models;
 using System;
 using System.Configuration;
 using System.Data;
@@ -174,7 +175,54 @@ namespace EETMS_DataAccessLayer
 
         public static DataTable GetAllInformationPaymentBy(string BookingID)
             => _GetAllInformationPaymentBy(BookingID);
- 
-    
+
+        private static int _InsertNewPayment(MPayment mPayment)
+        {
+
+            int NewIDReservationPayment = -1;
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+                                            INSERT INTO Payments ( Amount , PaymentMethodID , PaymentStatusID , ReservationID )
+                                            VALUES (@Amount , @PaymentMethodID , @PaymentStatusID , @ReservationID ) ;
+
+
+                                            SELECT SCOPE_IDENTITY();
+
+                                 ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+
+                    command.Parameters.AddWithValue("@Amount", mPayment.PaidAmount);
+                    command.Parameters.AddWithValue("@PaymentMethodID", Convert.ToInt32(mPayment.PaymentMethod));
+                    command.Parameters.AddWithValue("@PaymentStatusID", Convert.ToInt32(mPayment.PaymentStatus));
+                    command.Parameters.AddWithValue("@ReservationID", mPayment.BookingID);
+
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int NewID))
+                        NewIDReservationPayment = NewID;
+
+                    mPayment.PaymentID = NewIDReservationPayment;
+
+                }
+            }
+
+            return NewIDReservationPayment;
+        }
+
+        public static int InsertNewPayment(MPayment mPayment)
+            => _InsertNewPayment(mPayment);
+
+
     }
 }
