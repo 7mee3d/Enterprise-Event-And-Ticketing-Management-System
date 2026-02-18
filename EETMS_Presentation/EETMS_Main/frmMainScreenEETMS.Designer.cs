@@ -330,6 +330,9 @@
             this.GPanelMainScreens.Name = "GPanelMainScreens";
             this.GPanelMainScreens.Size = new System.Drawing.Size(1419, 935);
             this.GPanelMainScreens.TabIndex = 2;
+            this.GPanelMainScreens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseDown);
+            this.GPanelMainScreens.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseMove);
+            this.GPanelMainScreens.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseUp);
             // 
             // frmMainScreenEETMS
             // 

@@ -8,20 +8,23 @@ using EETMS_Presentation.EETMS_Payment;
 using EETMS_Presentation.EETMS_Report;
 using EETMS_Presentation.EETMS_Tickets;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting.Channels;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 
 namespace EETMS_Presentation.EETMS_Main
 {
     public partial class frmMainScreenEETMS : Form
     {
+        private struct _stInfoMovePanel
+        {
+            public Point _NewLocation;
+            public bool IsMouseDown;
+
+        }
+
+        private _stInfoMovePanel _StInfoMovePanel;
 
         MUser _InformationUser = null;
 
@@ -152,7 +155,26 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheUserControlInThePanel(US_Event);
         }
 
+        private void GPanelMainScreens_MouseDown(object sender, MouseEventArgs e)
+        {
+            _StInfoMovePanel.IsMouseDown = true;
+            _StInfoMovePanel._NewLocation = e.Location;
+        }
 
+        private void GPanelMainScreens_MouseUp(object sender, MouseEventArgs e)
+        {
+            _StInfoMovePanel.IsMouseDown = false;
+        }
 
+        private void GPanelMainScreens_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_StInfoMovePanel.IsMouseDown)
+            {
+                int NewX = (this.Location.X - _StInfoMovePanel._NewLocation.X) + e.X;
+                int NewY = (this.Location.Y - _StInfoMovePanel._NewLocation.Y) + e.Y;
+
+                this.Location = new Point(NewX, NewY);
+            }
+        }
     }
 }
