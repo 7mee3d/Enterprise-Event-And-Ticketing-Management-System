@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using EETMS_BusinessLayer;
+using Guna.Charts.WinForms;
 
 namespace EETMS_Presentation.EETMS_Dashboard
 {
@@ -17,9 +14,88 @@ namespace EETMS_Presentation.EETMS_Dashboard
             InitializeComponent();
         }
 
+        private void _LoadTheStatisticsTicketsByCategoryInCharts()
+        {
+
+            DataTable TicketsByCategory_DT = DashboardBL.GetTheStatisticsTicketsByCategoryBL();
+
+            GDoughnutDatasetTicketsByCategory.DataPoints.Clear();
+
+            foreach (DataRow DR_TicketsByCategory in TicketsByCategory_DT.Rows)
+            {
+
+                GDoughnutDatasetTicketsByCategory.DataPoints.Add(
+
+                    DR_TicketsByCategory["CategoryName"].ToString(),
+                    Convert.ToInt32(DR_TicketsByCategory["CountTicketForCategory"])
+
+                    );
+
+                GDoughnutDatasetTicketsByCategory.Label = "Category Name";
+
+            }
+
+            GChartTicketByCategory.Update();
+
+        }
+
+        private void _LoadAllYearsToComboBoxAndInitalSettingTheComboBox()
+        {
+            List<int> LAllYearsPayments = DashboardBL.GetTheAllYearsPaymentTotalRevenue();
+
+            GComboBoxYearsPayments.DataSource = LAllYearsPayments;
+            GComboBoxYearsPayments.DisplayMember = "Year";
+        }
+
+        private void _LoadTheDataToChartsTotalRevenueForMonth()
+        {
+
+            int SelectedYear = ((int)GComboBoxYearsPayments.SelectedItem);
+
+            DataTable DT_TotalRevenueForMpnth = DashboardBL.GetTheTotalReveneForMonthBL_By(SelectedYear);
+
+
+            GChartsTotalRevenueForMonth.Datasets.Clear();
+            GSplineDatasetTotalRevenueByMonth.DataPoints.Clear();
+
+            var DataSet = new GunaSplineDataset();
+
+            DataSet.Label = "Revenue " + SelectedYear.ToString();
+
+
+            foreach (DataRow DR_TotalRevenueForMonth in DT_TotalRevenueForMpnth.Rows)
+            {
+
+                if ((int)DR_TotalRevenueForMonth["Year"] == SelectedYear)
+                {
+                    GSplineDatasetTotalRevenueByMonth.Label = "Month";
+                    double TotalRevenue = Convert.ToDouble(DR_TotalRevenueForMonth["TotalRevenue"] != DBNull.Value ? DR_TotalRevenueForMonth["TotalRevenue"] : 0.0);
+
+                    DataSet.DataPoints.Add(DR_TotalRevenueForMonth["Month"].ToString(), TotalRevenue);
+                }
+
+
+            }
+
+            GChartsTotalRevenueForMonth.Datasets.Add(DataSet);
+            GChartsTotalRevenueForMonth.Update();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void USDashboard_Load(object sender, EventArgs e)
+        {
+            _LoadTheStatisticsTicketsByCategoryInCharts();
+            _LoadAllYearsToComboBoxAndInitalSettingTheComboBox();
+            _LoadTheDataToChartsTotalRevenueForMonth();
+        }
+
+        private void GComboBoxYearsPayments_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            _LoadTheDataToChartsTotalRevenueForMonth();
         }
     }
 }

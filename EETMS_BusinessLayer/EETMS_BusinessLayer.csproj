@@ -44,6 +44,7 @@
     <Compile Include="CategoriesBL.cs" />
     <Compile Include="CountriesBL.cs" />
     <Compile Include="CustomerBL.cs" />
+    <Compile Include="DashboardBL.cs" />
     <Compile Include="EventBL.cs" />
     <Compile Include="PaymentsBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

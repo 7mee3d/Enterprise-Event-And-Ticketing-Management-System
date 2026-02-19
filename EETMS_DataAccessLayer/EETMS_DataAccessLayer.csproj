@@ -45,6 +45,7 @@
     <Compile Include="CategoriesDAL.cs" />
     <Compile Include="CountriesDAL.cs" />
     <Compile Include="CustomerDAL.cs" />
+    <Compile Include="DashboardDAL.cs" />
     <Compile Include="EventsDAL.cs" />
     <Compile Include="PaymentsDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
