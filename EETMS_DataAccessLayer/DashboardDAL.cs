@@ -184,6 +184,133 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetTheTotalReveneForMonthBy(int Year)
             => _GetTheTotalReveneForMonthBy(Year);
 
+        private static double _GetTheTotalRevenue()
+        {
+
+
+            double TotalRevenue = 0.0;
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+                                    SELECT
+                                              ISNULL ( SUM ( P.Amount ) , 0 ) AS [Total Revenue]
+                                    FROM Payments P
+
+
+
+
+                       ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null & Double.TryParse(result.ToString(), out double ResultTotalRevenue))
+                        TotalRevenue = ResultTotalRevenue;
+
+
+                }
+            }
+
+            return TotalRevenue;
+
+        }
+
+        public static double GetTheTotalRevenue()
+            => _GetTheTotalRevenue();
+
+        private static int _GetTheSoldTickets()
+        {
+
+            int TicketSold = 0;
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+                                    SELECT ISNULL ( SUM (TT.Quantity - Available) , 0 )  AS [Total Sold Ticket]
+                                    FROM TicketTypes TT  
+
+
+
+                            ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int TotalSoldTicket))
+                        TicketSold = TotalSoldTicket;
+
+
+                }
+            }
+
+            return TicketSold;
+        }
+
+        public static int GetTheSoldTickets()
+            => _GetTheSoldTickets();
+
+        private static int _GetTheActiveEvents()
+        {
+
+            int CountActiveEvents = 0;
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+                                    SELECT COUNT(E.EventID) AS [CountActiveEvents]
+                                        FROM [Events] E
+                                    WHERE E.IsActiveEvent = 1 ;
+
+
+
+                            ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int TotalActiveEvents))
+                        CountActiveEvents = TotalActiveEvents;
+
+
+                }
+            }
+
+            return CountActiveEvents;
+        }
+
+        public static int GetTheActiveEvents()
+            => _GetTheActiveEvents();
 
     }
 }

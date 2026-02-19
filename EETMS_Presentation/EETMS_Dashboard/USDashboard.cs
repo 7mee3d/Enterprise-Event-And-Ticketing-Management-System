@@ -9,6 +9,9 @@ namespace EETMS_Presentation.EETMS_Dashboard
 {
     public partial class USDashboard : UserControl
     {
+
+
+
         public USDashboard()
         {
             InitializeComponent();
@@ -16,27 +19,26 @@ namespace EETMS_Presentation.EETMS_Dashboard
 
         private void _LoadTheStatisticsTicketsByCategoryInCharts()
         {
-
             DataTable TicketsByCategory_DT = DashboardBL.GetTheStatisticsTicketsByCategoryBL();
 
-            GDoughnutDatasetTicketsByCategory.DataPoints.Clear();
+
+            GChartTicketByCategory.Datasets.Clear();
+
+            var DataSet = new GunaPolarAreaDataset();
+            DataSet.Label = "Category Name";
 
             foreach (DataRow DR_TicketsByCategory in TicketsByCategory_DT.Rows)
             {
-
-                GDoughnutDatasetTicketsByCategory.DataPoints.Add(
-
+                DataSet.DataPoints.Add(
                     DR_TicketsByCategory["CategoryName"].ToString(),
                     Convert.ToInt32(DR_TicketsByCategory["CountTicketForCategory"])
-
-                    );
-
-                GDoughnutDatasetTicketsByCategory.Label = "Category Name";
-
+                );
             }
 
-            GChartTicketByCategory.Update();
 
+            GChartTicketByCategory.Datasets.Add(DataSet);
+
+            GChartTicketByCategory.Update();
         }
 
         private void _LoadAllYearsToComboBoxAndInitalSettingTheComboBox()
@@ -91,11 +93,23 @@ namespace EETMS_Presentation.EETMS_Dashboard
             _LoadTheStatisticsTicketsByCategoryInCharts();
             _LoadAllYearsToComboBoxAndInitalSettingTheComboBox();
             _LoadTheDataToChartsTotalRevenueForMonth();
+            _InitalSettingAfterLoadTheDashboard();
         }
 
         private void GComboBoxYearsPayments_SelectionChangeCommitted(object sender, EventArgs e)
         {
             _LoadTheDataToChartsTotalRevenueForMonth();
         }
+
+        private void _InitalSettingAfterLoadTheDashboard()
+        {
+
+            lblTotalRevenue.Text = "$" + DashboardBL.GetTheTotalRevenueBL().ToString();
+            lblTicketSold.Text = DashboardBL.GetTheSoldTickets().ToString();
+            lblActiveEvents.Text = DashboardBL.GetTheTotalActiveEvents().ToString();
+
+        }
+
+
     }
 }
