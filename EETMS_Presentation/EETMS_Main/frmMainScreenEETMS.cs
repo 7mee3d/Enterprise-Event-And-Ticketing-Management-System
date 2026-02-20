@@ -76,6 +76,7 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheEventUS();
         }
 
+
         private void _OpenTheAddNewCustomer(int IDCustomer)
         {
             US_AddAndUpdateInformationCustomer US_AddNewCustomer = new US_AddAndUpdateInformationCustomer(IDCustomer);
@@ -136,14 +137,35 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheUserControlInThePanel(new USReport());
         }
 
+        private void _ShowTicketEvent(int id)
+        {
+
+            var us = new US_AddAndUpdateTheTicketsToTheEvents(id);
+
+            us.ERequestTheClose_AddAndUpdateTheTicketsEvents += (sender, eventId) =>
+            {
+                _ShowTheCreateNewEventUS(eventId);
+            };
+
+            _ShowTheUserControlInThePanel(us);
+        }
+
         private void _ShowTheCreateNewEventUS(int id)
         {
+
             US_AddAndEditInformationEvent US_AddNewEvent = new US_AddAndEditInformationEvent(id);
+
+
+            US_AddNewEvent.ERequestTheOpen_AddAndUpdateTheTicketsEvents += (sender, eventId) =>
+            {
+                _ShowTicketEvent(eventId);
+            };
 
             US_AddNewEvent.RequestClose += (sender, e) => _ShowTheEventUS();
 
             _ShowTheUserControlInThePanel(US_AddNewEvent);
         }
+
 
         private void _ShowTheEventUS()
 

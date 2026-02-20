@@ -96,6 +96,12 @@
     <Compile Include="EETMS_Events\US_AddAndEditInformationEvent.Designer.cs">
       <DependentUpon>US_AddAndEditInformationEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="EETMS_Events\US_AddAndUpdateTheTicketsToTheEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Events\US_AddAndUpdateTheTicketsToTheEvents.Designer.cs">
+      <DependentUpon>US_AddAndUpdateTheTicketsToTheEvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="EETMS_Login\frmLoginEETMS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Events\US_AddAndEditInformationEvent.resx">
       <DependentUpon>US_AddAndEditInformationEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Events\US_AddAndUpdateTheTicketsToTheEvents.resx">
+      <DependentUpon>US_AddAndUpdateTheTicketsToTheEvents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Login\frmLoginEETMS.resx">
       <DependentUpon>frmLoginEETMS.cs</DependentUpon>
