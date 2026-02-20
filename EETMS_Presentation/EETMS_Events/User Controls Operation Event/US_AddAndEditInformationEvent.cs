@@ -79,6 +79,11 @@ namespace EETMS_Presentation.EETMS_Events
 
             GButtonCreateEvent.Text = "Update Event";
 
+            if (_InformationEvent.EventID > 0)
+                GGButtonManageTheTicketsEvents.Enabled = true;
+            else
+                GGButtonManageTheTicketsEvents.Enabled = false;
+
         }
 
         private void GButtonBackTheEvents_Click(object sender, EventArgs e)

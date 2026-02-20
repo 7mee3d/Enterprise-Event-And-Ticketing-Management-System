@@ -42,17 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoriesDAL.cs" />
-    <Compile Include="CountriesDAL.cs" />
-    <Compile Include="CustomerDAL.cs" />
-    <Compile Include="DashboardDAL.cs" />
-    <Compile Include="EventsDAL.cs" />
-    <Compile Include="PaymentsDAL.cs" />
+    <Compile Include="Category Data Access Layer\CategoriesDAL.cs" />
+    <Compile Include="Country Data Access Layer\CountriesDAL.cs" />
+    <Compile Include="Customer Data Access Layer\CustomerDAL.cs" />
+    <Compile Include="Dashboard Data Access Layer\DashboardDAL.cs" />
+    <Compile Include="Event Data Access Layer\EventsDAL.cs" />
+    <Compile Include="Payment Data Access Layer\PaymentsDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReservationDAL.cs" />
-    <Compile Include="ReservationPaymentDAL.cs" />
-    <Compile Include="TicketsDAL.cs" />
-    <Compile Include="UsersDAL.cs" />
+    <Compile Include="Reservation Data Access Layer\ReservationDAL.cs" />
+    <Compile Include="Reservation Payment Data Access Layer\ReservationPaymentDAL.cs" />
+    <Compile Include="Ticket Data Access Layer\TicketsDAL.cs" />
+    <Compile Include="User Data Access Layer\UsersDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EETMS_Models\EETMS_Models.csproj">
@@ -60,5 +60,6 @@
       <Name>EETMS_Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

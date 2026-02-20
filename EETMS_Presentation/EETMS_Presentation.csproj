@@ -60,123 +60,123 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EETMS_Category\USCategory.cs">
+    <Compile Include="EETMS_Category\Main user Control Category\USCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Category\USCategory.Designer.cs">
+    <Compile Include="EETMS_Category\Main user Control Category\USCategory.Designer.cs">
       <DependentUpon>USCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Customers\USCustomers.cs">
+    <Compile Include="EETMS_Customers\Main User Control Customer\USCustomers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Customers\USCustomers.Designer.cs">
+    <Compile Include="EETMS_Customers\Main User Control Customer\USCustomers.Designer.cs">
       <DependentUpon>USCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Customers\US_AddAndUpdateInformationCustomer.cs">
+    <Compile Include="EETMS_Customers\User Controls Operation Customer\US_AddAndUpdateInformationCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Customers\US_AddAndUpdateInformationCustomer.Designer.cs">
+    <Compile Include="EETMS_Customers\User Controls Operation Customer\US_AddAndUpdateInformationCustomer.Designer.cs">
       <DependentUpon>US_AddAndUpdateInformationCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Dashboard\USDashboard.cs">
+    <Compile Include="EETMS_Dashboard\Main User Control Dashboard\USDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Dashboard\USDashboard.Designer.cs">
+    <Compile Include="EETMS_Dashboard\Main User Control Dashboard\USDashboard.Designer.cs">
       <DependentUpon>USDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Events\USEvents.cs">
+    <Compile Include="EETMS_Events\Main User Control Event\USEvents.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Events\USEvents.Designer.cs">
+    <Compile Include="EETMS_Events\Main User Control Event\USEvents.Designer.cs">
       <DependentUpon>USEvents.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Events\US_AddAndEditInformationEvent.cs">
+    <Compile Include="EETMS_Events\User Controls Operation Event\US_AddAndEditInformationEvent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Events\US_AddAndEditInformationEvent.Designer.cs">
+    <Compile Include="EETMS_Events\User Controls Operation Event\US_AddAndEditInformationEvent.Designer.cs">
       <DependentUpon>US_AddAndEditInformationEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Events\US_AddAndUpdateTheTicketsToTheEvents.cs">
+    <Compile Include="EETMS_Events\User Controls Operation Event\US_AddAndUpdateTheTicketsToTheEvents.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Events\US_AddAndUpdateTheTicketsToTheEvents.Designer.cs">
+    <Compile Include="EETMS_Events\User Controls Operation Event\US_AddAndUpdateTheTicketsToTheEvents.Designer.cs">
       <DependentUpon>US_AddAndUpdateTheTicketsToTheEvents.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Login\frmLoginEETMS.cs">
+    <Compile Include="EETMS_Login\Main Form Login EETMS\frmLoginEETMS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EETMS_Login\frmLoginEETMS.Designer.cs">
+    <Compile Include="EETMS_Login\Main Form Login EETMS\frmLoginEETMS.Designer.cs">
       <DependentUpon>frmLoginEETMS.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Main\frmMainScreenEETMS.cs">
+    <Compile Include="EETMS_Main\Main Form EETMS Startup\frmMainScreenEETMS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EETMS_Main\frmMainScreenEETMS.Designer.cs">
+    <Compile Include="EETMS_Main\Main Form EETMS Startup\frmMainScreenEETMS.Designer.cs">
       <DependentUpon>frmMainScreenEETMS.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Payment\USAddPaymentReservations.cs">
+    <Compile Include="EETMS_Payment\User Controls Operation Payment\USAddPaymentReservations.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Payment\USAddPaymentReservations.Designer.cs">
+    <Compile Include="EETMS_Payment\User Controls Operation Payment\USAddPaymentReservations.Designer.cs">
       <DependentUpon>USAddPaymentReservations.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Payment\USPayment.cs">
+    <Compile Include="EETMS_Payment\Main User Control Payment\USPayment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Payment\USPayment.Designer.cs">
+    <Compile Include="EETMS_Payment\Main User Control Payment\USPayment.Designer.cs">
       <DependentUpon>USPayment.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Report\USReport.cs">
+    <Compile Include="EETMS_Report\Main User Control Report\USReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Report\USReport.Designer.cs">
+    <Compile Include="EETMS_Report\Main User Control Report\USReport.Designer.cs">
       <DependentUpon>USReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Tickets\USTickets.cs">
+    <Compile Include="EETMS_Tickets\Main User Control Tickets\USTickets.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Tickets\USTickets.Designer.cs">
+    <Compile Include="EETMS_Tickets\Main User Control Tickets\USTickets.Designer.cs">
       <DependentUpon>USTickets.cs</DependentUpon>
     </Compile>
     <Compile Include="EETMS_Main_Files_System\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EETMS_Category\USCategory.resx">
+    <EmbeddedResource Include="EETMS_Category\Main user Control Category\USCategory.resx">
       <DependentUpon>USCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Customers\USCustomers.resx">
+    <EmbeddedResource Include="EETMS_Customers\Main User Control Customer\USCustomers.resx">
       <DependentUpon>USCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Customers\US_AddAndUpdateInformationCustomer.resx">
+    <EmbeddedResource Include="EETMS_Customers\User Controls Operation Customer\US_AddAndUpdateInformationCustomer.resx">
       <DependentUpon>US_AddAndUpdateInformationCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Dashboard\USDashboard.resx">
+    <EmbeddedResource Include="EETMS_Dashboard\Main User Control Dashboard\USDashboard.resx">
       <DependentUpon>USDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Events\USEvents.resx">
+    <EmbeddedResource Include="EETMS_Events\Main User Control Event\USEvents.resx">
       <DependentUpon>USEvents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Events\US_AddAndEditInformationEvent.resx">
+    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\US_AddAndEditInformationEvent.resx">
       <DependentUpon>US_AddAndEditInformationEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Events\US_AddAndUpdateTheTicketsToTheEvents.resx">
+    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\US_AddAndUpdateTheTicketsToTheEvents.resx">
       <DependentUpon>US_AddAndUpdateTheTicketsToTheEvents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Login\frmLoginEETMS.resx">
+    <EmbeddedResource Include="EETMS_Login\Main Form Login EETMS\frmLoginEETMS.resx">
       <DependentUpon>frmLoginEETMS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Main\frmMainScreenEETMS.resx">
+    <EmbeddedResource Include="EETMS_Main\Main Form EETMS Startup\frmMainScreenEETMS.resx">
       <DependentUpon>frmMainScreenEETMS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Payment\USAddPaymentReservations.resx">
+    <EmbeddedResource Include="EETMS_Payment\User Controls Operation Payment\USAddPaymentReservations.resx">
       <DependentUpon>USAddPaymentReservations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Payment\USPayment.resx">
+    <EmbeddedResource Include="EETMS_Payment\Main User Control Payment\USPayment.resx">
       <DependentUpon>USPayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Report\USReport.resx">
+    <EmbeddedResource Include="EETMS_Report\Main User Control Report\USReport.resx">
       <DependentUpon>USReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Tickets\USTickets.resx">
+    <EmbeddedResource Include="EETMS_Tickets\Main User Control Tickets\USTickets.resx">
       <DependentUpon>USTickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

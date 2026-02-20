@@ -111,7 +111,6 @@
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.guna2GradientPanel1.BorderRadius = 20;
             this.guna2GradientPanel1.BorderThickness = 1;
-            this.guna2GradientPanel1.Controls.Add(this.GGButtonManageTheTicketsEvents);
             this.guna2GradientPanel1.Controls.Add(this.GNumericUpDownMaxCapacity);
             this.guna2GradientPanel1.Controls.Add(this.GDateTimePickerEvent);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
@@ -147,7 +146,7 @@
             this.GGButtonManageTheTicketsEvents.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonManageTheTicketsEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonManageTheTicketsEvents.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.ForeColor = System.Drawing.Color.White;
             this.GGButtonManageTheTicketsEvents.Enabled = false;
             this.GGButtonManageTheTicketsEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonManageTheTicketsEvents.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
@@ -155,10 +154,10 @@
             this.GGButtonManageTheTicketsEvents.ForeColor = System.Drawing.Color.White;
             this.GGButtonManageTheTicketsEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
             this.GGButtonManageTheTicketsEvents.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GGButtonManageTheTicketsEvents.Location = new System.Drawing.Point(536, 472);
+            this.GGButtonManageTheTicketsEvents.Location = new System.Drawing.Point(1212, 24);
             this.GGButtonManageTheTicketsEvents.Name = "GGButtonManageTheTicketsEvents";
             this.GGButtonManageTheTicketsEvents.PressedColor = System.Drawing.Color.White;
-            this.GGButtonManageTheTicketsEvents.Size = new System.Drawing.Size(188, 41);
+            this.GGButtonManageTheTicketsEvents.Size = new System.Drawing.Size(164, 41);
             this.GGButtonManageTheTicketsEvents.TabIndex = 7;
             this.GGButtonManageTheTicketsEvents.Text = "Manage Ticket Events";
             this.GGButtonManageTheTicketsEvents.Click += new System.EventHandler(this.GGButtonManageTheTicketsEvents_Click);
@@ -434,6 +433,7 @@
             this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.guna2GradientPanel2.BorderRadius = 20;
             this.guna2GradientPanel2.BorderThickness = 1;
+            this.guna2GradientPanel2.Controls.Add(this.GGButtonManageTheTicketsEvents);
             this.guna2GradientPanel2.Controls.Add(this.GButtonCreateEvent);
             this.guna2GradientPanel2.Controls.Add(this.GButtonCansel);
             this.guna2GradientPanel2.Controls.Add(this.GGButtonWarningDisable);
@@ -461,7 +461,7 @@
             this.GButtonCreateEvent.ForeColor = System.Drawing.Color.White;
             this.GButtonCreateEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
             this.GButtonCreateEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GButtonCreateEvent.Location = new System.Drawing.Point(1216, 26);
+            this.GButtonCreateEvent.Location = new System.Drawing.Point(1022, 25);
             this.GButtonCreateEvent.Name = "GButtonCreateEvent";
             this.GButtonCreateEvent.PressedColor = System.Drawing.Color.White;
             this.GButtonCreateEvent.Size = new System.Drawing.Size(164, 41);
@@ -485,7 +485,7 @@
             this.GButtonCansel.HoverState.FillColor = System.Drawing.Color.White;
             this.GButtonCansel.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(141)))), ((int)(((byte)(238)))));
             this.GButtonCansel.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GButtonCansel.Location = new System.Drawing.Point(1084, 26);
+            this.GButtonCansel.Location = new System.Drawing.Point(892, 25);
             this.GButtonCansel.Name = "GButtonCansel";
             this.GButtonCansel.PressedColor = System.Drawing.Color.White;
             this.GButtonCansel.Size = new System.Drawing.Size(104, 42);

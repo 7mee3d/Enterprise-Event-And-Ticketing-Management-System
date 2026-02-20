@@ -74,8 +74,10 @@ namespace EETMS_DataAccessLayer
                                                     T.TicketTypeName ,
                                                     T.Quantity ,
                                                     T.Available ,
-                                                    T.Price 
+                                                    T.Price ,
 
+                                                    ( T.Quantity -  T.Available ) AS [CurrentSales]
+                                                    
                                         FROM Events E
                                         INNER JOIN TicketTypes T
                                         ON T.EventID = E.EventID
@@ -112,6 +114,7 @@ namespace EETMS_DataAccessLayer
 
         public static DataTable GetInformationTicketForEventBy(int EventID)
             => _GetInformationTicketForEventBy(EventID);
+
 
 
     }
