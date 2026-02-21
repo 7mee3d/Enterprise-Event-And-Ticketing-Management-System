@@ -26,8 +26,10 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
             _kUPDATE_INFOMRATION_TICKETTYPE = 2
         }
 
+
         private _EnModeTicketType _MTicketType;
         private MTicketType _ObjTicketTypeInformation;
+
 
         public USAddTheTicketsTypeToTheEvent(int IDEvent, int IDTicketType)
         {
@@ -172,10 +174,16 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
         private void _AddUpdateInformatioNTicketType()
         {
+            int AvailableBeforeUpdate = _ObjTicketTypeInformation.Available;
+            int QuantityBeforeUpdated = _ObjTicketTypeInformation.Quantity;
 
             _ObjTicketTypeInformation.TicketTypeName = GComboBoxAllTicketTypeNotIncludeEvent.SelectedItem.ToString();
             _ObjTicketTypeInformation.Quantity = Convert.ToInt32(GTextBoxAvailableQuantity.Text);
-            _ObjTicketTypeInformation.Available = _ObjTicketTypeInformation.Quantity;
+
+            int HowIncrementQuantity = _ObjTicketTypeInformation.Quantity - QuantityBeforeUpdated;
+
+            _ObjTicketTypeInformation.Available = (AvailableBeforeUpdate + HowIncrementQuantity);
+
             _ObjTicketTypeInformation.Price = Convert.ToDecimal(GTextBoxAvailableQuantity.Text);
             _ObjTicketTypeInformation.EventID = _IDEvent;
 
@@ -196,9 +204,12 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             //  _ObjTicketTypeInformation.EventID = _IDEvent;
         }
+
         private void GButtonSaveChanges_Click(object sender, EventArgs e)
         {
             _AddUpdateInformatioNTicketType();
         }
+
+
     }
 }

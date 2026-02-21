@@ -206,7 +206,7 @@ namespace EETMS_DataAccessLayer
                 {
 
                     command.Parameters.Add("@Quantity", SqlDbType.Int).Value = mTicketType.Quantity;
-                    command.Parameters.Add("@Available", SqlDbType.Int).Value = mTicketType.Quantity;
+                    command.Parameters.Add("@Available", SqlDbType.Int).Value = mTicketType.Available;
                     command.Parameters.Add("@Price", SqlDbType.Decimal).Value = mTicketType.Price;
                     command.Parameters.Add("@EventID", SqlDbType.Int).Value = mTicketType.EventID;
                     command.Parameters.Add("@TicketTypeID", SqlDbType.Int).Value = mTicketType.TicketTypeID;
@@ -284,6 +284,7 @@ namespace EETMS_DataAccessLayer
                                 TicketTypeID = TicketID,
                                 TicketTypeName = reader["TicketTypeName"] != DBNull.Value ? reader["TicketTypeName"].ToString() : null,
                                 Quantity = reader["Quantity"] != DBNull.Value ? Convert.ToInt32(reader["Quantity"]) : 0,
+                                Available = reader["Available"] != DBNull.Value ? Convert.ToInt32(reader["Available"]) : 0,
                                 Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : 0.0M,
                                 EventID = EventID,
 
