@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USShowAllInformationTicketTypeForEvent));
             this.lblBackEvents = new System.Windows.Forms.Label();
             this.GButtonDiscardChanges = new Guna.UI2.WinForms.Guna2Button();
@@ -40,19 +40,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GDataGridViewTicketsEvents = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GGButtonWarningFullTheTicketTypeEvent = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.GGButtonAddTicketType = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.GButtonSaveChanges = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.TicketTypeID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentSales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GGButtonWarningFullTheTicketTypeEvent = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GGButtonAddTicketType = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewTicketsEvents)).BeginInit();
             this.guna2ContextMenuStrip1.SuspendLayout();
@@ -147,20 +146,20 @@
             this.GDataGridViewTicketsEvents.AllowUserToAddRows = false;
             this.GDataGridViewTicketsEvents.AllowUserToDeleteRows = false;
             this.GDataGridViewTicketsEvents.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.GDataGridViewTicketsEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewTicketsEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.GDataGridViewTicketsEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewTicketsEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GDataGridViewTicketsEvents.ColumnHeadersHeight = 72;
             this.GDataGridViewTicketsEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GDataGridViewTicketsEvents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -171,27 +170,27 @@
             this.TotalAvailable,
             this.CurrentSales});
             this.GDataGridViewTicketsEvents.ContextMenuStrip = this.guna2ContextMenuStrip1;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GDataGridViewTicketsEvents.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GDataGridViewTicketsEvents.DefaultCellStyle = dataGridViewCellStyle3;
             this.GDataGridViewTicketsEvents.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GDataGridViewTicketsEvents.Location = new System.Drawing.Point(3, 3);
             this.GDataGridViewTicketsEvents.Name = "GDataGridViewTicketsEvents";
             this.GDataGridViewTicketsEvents.ReadOnly = true;
             this.GDataGridViewTicketsEvents.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewTicketsEvents.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewTicketsEvents.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GDataGridViewTicketsEvents.RowHeadersVisible = false;
             this.GDataGridViewTicketsEvents.RowTemplate.Height = 89;
             this.GDataGridViewTicketsEvents.Size = new System.Drawing.Size(1336, 415);
@@ -217,6 +216,47 @@
             this.GDataGridViewTicketsEvents.ThemeStyle.RowsStyle.Height = 89;
             this.GDataGridViewTicketsEvents.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.White;
             this.GDataGridViewTicketsEvents.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // TicketTypeID2
+            // 
+            this.TicketTypeID2.HeaderText = "TICKET TYPE ID";
+            this.TicketTypeID2.Name = "TicketTypeID2";
+            this.TicketTypeID2.ReadOnly = true;
+            this.TicketTypeID2.Visible = false;
+            // 
+            // TicketType
+            // 
+            this.TicketType.FillWeight = 93.27411F;
+            this.TicketType.HeaderText = "TICKET TYPE";
+            this.TicketType.Name = "TicketType";
+            this.TicketType.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.FillWeight = 93.27411F;
+            this.Price.HeaderText = "PRICE ($)";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "QUANTITY";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // TotalAvailable
+            // 
+            this.TotalAvailable.FillWeight = 93.27411F;
+            this.TotalAvailable.HeaderText = "TOTAL AVAILABLE";
+            this.TotalAvailable.Name = "TotalAvailable";
+            this.TotalAvailable.ReadOnly = true;
+            // 
+            // CurrentSales
+            // 
+            this.CurrentSales.FillWeight = 93.27411F;
+            this.CurrentSales.HeaderText = "CURRENT SALES";
+            this.CurrentSales.Name = "CurrentSales";
+            this.CurrentSales.ReadOnly = true;
             // 
             // guna2ContextMenuStrip1
             // 
@@ -314,32 +354,6 @@
             this.GGButtonAddTicketType.Text = "Add Ticket Type";
             this.GGButtonAddTicketType.Click += new System.EventHandler(this.GGButtonAddTicketType_Click);
             // 
-            // GButtonSaveChanges
-            // 
-            this.GButtonSaveChanges.Animated = true;
-            this.GButtonSaveChanges.AnimatedGIF = true;
-            this.GButtonSaveChanges.BorderRadius = 6;
-            this.GButtonSaveChanges.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonSaveChanges.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonSaveChanges.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonSaveChanges.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonSaveChanges.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonSaveChanges.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonSaveChanges.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonSaveChanges.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonSaveChanges.ForeColor = System.Drawing.Color.White;
-            this.GButtonSaveChanges.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GButtonSaveChanges.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GButtonSaveChanges.Image = ((System.Drawing.Image)(resources.GetObject("GButtonSaveChanges.Image")));
-            this.GButtonSaveChanges.ImageSize = new System.Drawing.Size(19, 19);
-            this.GButtonSaveChanges.Location = new System.Drawing.Point(930, 837);
-            this.GButtonSaveChanges.Name = "GButtonSaveChanges";
-            this.GButtonSaveChanges.PressedColor = System.Drawing.Color.White;
-            this.GButtonSaveChanges.Size = new System.Drawing.Size(192, 46);
-            this.GButtonSaveChanges.TabIndex = 6;
-            this.GButtonSaveChanges.Text = "Save Changes";
-            this.GButtonSaveChanges.Click += new System.EventHandler(this.GButtonSaveChanges_Click);
-            // 
             // guna2GradientButton1
             // 
             this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
@@ -361,54 +375,12 @@
             this.guna2GradientButton1.TabIndex = 5;
             this.guna2GradientButton1.Text = "Unsaved changes detected in 3 tiers.";
             // 
-            // TicketTypeID2
-            // 
-            this.TicketTypeID2.HeaderText = "TICKET TYPE ID";
-            this.TicketTypeID2.Name = "TicketTypeID2";
-            this.TicketTypeID2.ReadOnly = true;
-            this.TicketTypeID2.Visible = false;
-            // 
-            // TicketType
-            // 
-            this.TicketType.FillWeight = 93.27411F;
-            this.TicketType.HeaderText = "TICKET TYPE";
-            this.TicketType.Name = "TicketType";
-            this.TicketType.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.FillWeight = 93.27411F;
-            this.Price.HeaderText = "PRICE ($)";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "QUANTITY";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // TotalAvailable
-            // 
-            this.TotalAvailable.FillWeight = 93.27411F;
-            this.TotalAvailable.HeaderText = "TOTAL AVAILABLE";
-            this.TotalAvailable.Name = "TotalAvailable";
-            this.TotalAvailable.ReadOnly = true;
-            // 
-            // CurrentSales
-            // 
-            this.CurrentSales.FillWeight = 93.27411F;
-            this.CurrentSales.HeaderText = "CURRENT SALES";
-            this.CurrentSales.Name = "CurrentSales";
-            this.CurrentSales.ReadOnly = true;
-            // 
             // USShowAllInformationTicketTypeForEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.guna2GradientPanel2);
-            this.Controls.Add(this.GButtonSaveChanges);
             this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.GButtonDiscardChanges);
@@ -438,7 +410,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2DataGridView GDataGridViewTicketsEvents;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
-        private Guna.UI2.WinForms.Guna2GradientButton GButtonSaveChanges;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonAddTicketType;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonWarningFullTheTicketTypeEvent;

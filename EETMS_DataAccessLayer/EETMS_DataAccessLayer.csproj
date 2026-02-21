@@ -49,6 +49,7 @@
     <Compile Include="Event Data Access Layer\EventsDAL.cs" />
     <Compile Include="Payment Data Access Layer\PaymentsDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report Data Access Layer\ReportDAL.cs" />
     <Compile Include="Reservation Data Access Layer\ReservationDAL.cs" />
     <Compile Include="Reservation Payment Data Access Layer\ReservationPaymentDAL.cs" />
     <Compile Include="Ticket Data Access Layer\TicketsDAL.cs" />
