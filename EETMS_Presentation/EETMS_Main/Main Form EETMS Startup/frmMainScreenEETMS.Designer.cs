@@ -245,6 +245,7 @@
             this.GButtonDashboard.BackColor = System.Drawing.Color.Transparent;
             this.GButtonDashboard.BorderRadius = 5;
             this.GButtonDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonDashboard.Checked = true;
             this.GButtonDashboard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonDashboard.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GButtonDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -346,6 +347,7 @@
             this.Name = "frmMainScreenEETMS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMainScreenEETMS";
+            this.Load += new System.EventHandler(this.frmMainScreenEETMS_Load);
             this.GGPanelButtonsEETMS_Main.ResumeLayout(false);
             this.GGPanelButtonsEETMS_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogoutEETMS)).EndInit();

@@ -84,11 +84,18 @@
     <Compile Include="EETMS_Dashboard\Main User Control Dashboard\USDashboard.Designer.cs">
       <DependentUpon>USDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="EETMS_Events\Main User Control Event\TicketEventArgs.cs" />
     <Compile Include="EETMS_Events\Main User Control Event\USEvents.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="EETMS_Events\Main User Control Event\USEvents.Designer.cs">
       <DependentUpon>USEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EETMS_Events\User Controls Operation Event\USAddTheTicketsTypeToTheEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Events\User Controls Operation Event\USAddTheTicketsTypeToTheEvent.Designer.cs">
+      <DependentUpon>USAddTheTicketsTypeToTheEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="EETMS_Events\User Controls Operation Event\US_AddAndEditInformationEvent.cs">
       <SubType>UserControl</SubType>
@@ -96,11 +103,11 @@
     <Compile Include="EETMS_Events\User Controls Operation Event\US_AddAndEditInformationEvent.Designer.cs">
       <DependentUpon>US_AddAndEditInformationEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Events\User Controls Operation Event\US_AddAndUpdateTheTicketsToTheEvents.cs">
+    <Compile Include="EETMS_Events\User Controls Operation Event\USShowAllInformationTicketTypeForEvent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Events\User Controls Operation Event\US_AddAndUpdateTheTicketsToTheEvents.Designer.cs">
-      <DependentUpon>US_AddAndUpdateTheTicketsToTheEvents.cs</DependentUpon>
+    <Compile Include="EETMS_Events\User Controls Operation Event\USShowAllInformationTicketTypeForEvent.Designer.cs">
+      <DependentUpon>USShowAllInformationTicketTypeForEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="EETMS_Login\Main Form Login EETMS\frmLoginEETMS.cs">
       <SubType>Form</SubType>
@@ -155,11 +162,14 @@
     <EmbeddedResource Include="EETMS_Events\Main User Control Event\USEvents.resx">
       <DependentUpon>USEvents.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\USAddTheTicketsTypeToTheEvent.resx">
+      <DependentUpon>USAddTheTicketsTypeToTheEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\US_AddAndEditInformationEvent.resx">
       <DependentUpon>US_AddAndEditInformationEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\US_AddAndUpdateTheTicketsToTheEvents.resx">
-      <DependentUpon>US_AddAndUpdateTheTicketsToTheEvents.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\USShowAllInformationTicketTypeForEvent.resx">
+      <DependentUpon>USShowAllInformationTicketTypeForEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Login\Main Form Login EETMS\frmLoginEETMS.resx">
       <DependentUpon>frmLoginEETMS.cs</DependentUpon>

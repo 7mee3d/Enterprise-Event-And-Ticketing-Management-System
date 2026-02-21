@@ -44,6 +44,7 @@
     <Compile Include="Category Model\MCategory.cs" />
     <Compile Include="Customer Model\MCustomer.cs" />
     <Compile Include="Event Model\MEvent.cs" />
+    <Compile Include="MTicketType.cs" />
     <Compile Include="Payment Model\MPayment.cs" />
     <Compile Include="Reservation Payment Model\MReservationPayment.cs" />
     <Compile Include="Reservation Model\MReservations.cs" />

@@ -4,6 +4,7 @@ using EETMS_Presentation.EETMS_Category;
 using EETMS_Presentation.EETMS_Customers;
 using EETMS_Presentation.EETMS_Dashboard;
 using EETMS_Presentation.EETMS_Events;
+using EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event;
 using EETMS_Presentation.EETMS_Payment;
 using EETMS_Presentation.EETMS_Report;
 using EETMS_Presentation.EETMS_Tickets;
@@ -137,31 +138,46 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheUserControlInThePanel(new USReport());
         }
 
-        private void _ShowTicketEvent(int id)
+        private void _OpenTheAddNewTicketTypeToTheEvent(int IDEvent, int IDTicketType)
+        {
+            var US_AddNewTicketTypeToTheEvent = new USAddTheTicketsTypeToTheEvent(IDEvent, IDTicketType);
+
+            US_AddNewTicketTypeToTheEvent.ERequestToTheClose_USAddNewTicketTypeToTheEvent += (sender, e) =>
+            _ShowTicketEvent(IDEvent, IDTicketType);
+
+            _ShowTheUserControlInThePanel(US_AddNewTicketTypeToTheEvent);
+        }
+
+        private void _ShowTicketEvent(int id, int IDTicketType)
         {
 
-            var us = new US_AddAndUpdateTheTicketsToTheEvents(id);
+            var us = new USShowAllInformationTicketTypeForEvent(id);
 
             us.ERequestTheClose_AddAndUpdateTheTicketsEvents += (sender, eventId) =>
             {
                 _ShowTheCreateNewEventUS(eventId);
             };
 
+            us.ERequestToOpenThe_USAddNewTicketTypeToTheEvent += (sender, DataAddNewTicketToRvent) =>
+            _OpenTheAddNewTicketTypeToTheEvent(DataAddNewTicketToRvent.EventID, DataAddNewTicketToRvent.TicketTypeID);
+
             _ShowTheUserControlInThePanel(us);
         }
 
         private void _ShowTheCreateNewEventUS(int id)
         {
+            int IDTicketType = -1;
 
             US_AddAndEditInformationEvent US_AddNewEvent = new US_AddAndEditInformationEvent(id);
 
 
             US_AddNewEvent.ERequestTheOpen_AddAndUpdateTheTicketsEvents += (sender, eventId) =>
             {
-                _ShowTicketEvent(eventId);
+                _ShowTicketEvent(eventId, IDTicketType);
             };
 
             US_AddNewEvent.RequestClose += (sender, e) => _ShowTheEventUS();
+
 
             _ShowTheUserControlInThePanel(US_AddNewEvent);
         }
@@ -197,6 +213,11 @@ namespace EETMS_Presentation.EETMS_Main
 
                 this.Location = new Point(NewX, NewY);
             }
+        }
+
+        private void frmMainScreenEETMS_Load(object sender, EventArgs e)
+        {
+            _ShowTheUserControlInThePanel(new USDashboard());
         }
     }
 }

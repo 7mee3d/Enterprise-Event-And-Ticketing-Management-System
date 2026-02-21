@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GGButtonManageTheTicketsEvents = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GNumericUpDownMaxCapacity = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.GDateTimePickerEvent = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -52,6 +51,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.GGButtonManageTheTicketsEvents = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GButtonCreateEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GButtonCansel = new Guna.UI2.WinForms.Guna2Button();
@@ -136,31 +136,6 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(974, 566);
             this.guna2GradientPanel1.TabIndex = 2;
-            // 
-            // GGButtonManageTheTicketsEvents
-            // 
-            this.GGButtonManageTheTicketsEvents.Animated = true;
-            this.GGButtonManageTheTicketsEvents.AnimatedGIF = true;
-            this.GGButtonManageTheTicketsEvents.BorderRadius = 6;
-            this.GGButtonManageTheTicketsEvents.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.GGButtonManageTheTicketsEvents.Enabled = false;
-            this.GGButtonManageTheTicketsEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonManageTheTicketsEvents.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonManageTheTicketsEvents.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GGButtonManageTheTicketsEvents.ForeColor = System.Drawing.Color.White;
-            this.GGButtonManageTheTicketsEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GGButtonManageTheTicketsEvents.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GGButtonManageTheTicketsEvents.Location = new System.Drawing.Point(1212, 24);
-            this.GGButtonManageTheTicketsEvents.Name = "GGButtonManageTheTicketsEvents";
-            this.GGButtonManageTheTicketsEvents.PressedColor = System.Drawing.Color.White;
-            this.GGButtonManageTheTicketsEvents.Size = new System.Drawing.Size(164, 41);
-            this.GGButtonManageTheTicketsEvents.TabIndex = 7;
-            this.GGButtonManageTheTicketsEvents.Text = "Manage Ticket Events";
-            this.GGButtonManageTheTicketsEvents.Click += new System.EventHandler(this.GGButtonManageTheTicketsEvents_Click);
             // 
             // GNumericUpDownMaxCapacity
             // 
@@ -427,6 +402,31 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Event Name ";
             // 
+            // GGButtonManageTheTicketsEvents
+            // 
+            this.GGButtonManageTheTicketsEvents.Animated = true;
+            this.GGButtonManageTheTicketsEvents.AnimatedGIF = true;
+            this.GGButtonManageTheTicketsEvents.BorderRadius = 6;
+            this.GGButtonManageTheTicketsEvents.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.ForeColor = System.Drawing.Color.White;
+            this.GGButtonManageTheTicketsEvents.Enabled = false;
+            this.GGButtonManageTheTicketsEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonManageTheTicketsEvents.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonManageTheTicketsEvents.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonManageTheTicketsEvents.ForeColor = System.Drawing.Color.White;
+            this.GGButtonManageTheTicketsEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
+            this.GGButtonManageTheTicketsEvents.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
+            this.GGButtonManageTheTicketsEvents.Location = new System.Drawing.Point(999, 22);
+            this.GGButtonManageTheTicketsEvents.Name = "GGButtonManageTheTicketsEvents";
+            this.GGButtonManageTheTicketsEvents.PressedColor = System.Drawing.Color.White;
+            this.GGButtonManageTheTicketsEvents.Size = new System.Drawing.Size(189, 43);
+            this.GGButtonManageTheTicketsEvents.TabIndex = 7;
+            this.GGButtonManageTheTicketsEvents.Text = "Manage/Add Ticket Events";
+            this.GGButtonManageTheTicketsEvents.Click += new System.EventHandler(this.GGButtonManageTheTicketsEvents_Click);
+            // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.Transparent;
@@ -461,7 +461,8 @@
             this.GButtonCreateEvent.ForeColor = System.Drawing.Color.White;
             this.GButtonCreateEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
             this.GButtonCreateEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GButtonCreateEvent.Location = new System.Drawing.Point(1022, 25);
+            this.GButtonCreateEvent.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCreateEvent.Image")));
+            this.GButtonCreateEvent.Location = new System.Drawing.Point(1212, 24);
             this.GButtonCreateEvent.Name = "GButtonCreateEvent";
             this.GButtonCreateEvent.PressedColor = System.Drawing.Color.White;
             this.GButtonCreateEvent.Size = new System.Drawing.Size(164, 41);
@@ -485,7 +486,7 @@
             this.GButtonCansel.HoverState.FillColor = System.Drawing.Color.White;
             this.GButtonCansel.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(141)))), ((int)(((byte)(238)))));
             this.GButtonCansel.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GButtonCansel.Location = new System.Drawing.Point(892, 25);
+            this.GButtonCansel.Location = new System.Drawing.Point(874, 24);
             this.GButtonCansel.Name = "GButtonCansel";
             this.GButtonCansel.PressedColor = System.Drawing.Color.White;
             this.GButtonCansel.Size = new System.Drawing.Size(104, 42);

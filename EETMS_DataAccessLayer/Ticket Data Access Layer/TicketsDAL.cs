@@ -1,4 +1,6 @@
 ﻿
+using EETMS_Models;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -70,6 +72,8 @@ namespace EETMS_DataAccessLayer
                 string Query = @"
 
                                         SELECT
+
+                                                    T.TicketTypeID ,
                                                     E.EventName ,
                                                     T.TicketTypeName ,
                                                     T.Quantity ,
@@ -115,6 +119,190 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetInformationTicketForEventBy(int EventID)
             => _GetInformationTicketForEventBy(EventID);
 
+        private static int _InsertNewTicketToTheEventBy(MTicketType mTicketType)
+        {
+
+            int NewIDTicket = -1;
+
+
+            using (SqlConnection connection = new SqlConnection(_ConnectionString))
+            {
+
+
+
+                string Query = @"
+
+
+                                    INSERT INTO TicketTypes ( TicketTypeName , Quantity , Available , Price , EventID )
+                                    VALUES (@TicketTypeName , @Quantity ,@Available ,  @Price , @EventID);
+
+
+                                    SELECT SCOPE_IDENTITY(); 
+
+
+
+                             ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.Add("@TicketTypeName", SqlDbType.NVarChar, 250).Value = mTicketType.TicketTypeName;
+                    command.Parameters.Add("@Quantity", SqlDbType.Int).Value = mTicketType.Quantity;
+                    command.Parameters.Add("@Available", SqlDbType.Int).Value = mTicketType.Quantity;
+                    command.Parameters.Add("@Price", SqlDbType.Decimal).Value = mTicketType.Price;
+                    command.Parameters.Add("@EventID", SqlDbType.Int).Value = mTicketType.EventID;
+
+                    connection.Open();
+
+
+                    object result = command.ExecuteScalar();
+
+
+                    if (result != null && int.TryParse(result.ToString(), out int NewID))
+                        NewIDTicket = NewID;
+
+
+                    mTicketType.TicketTypeID = NewIDTicket;
+
+                }
+
+
+            }
+
+            return NewIDTicket;
+
+        }
+
+        public static int InsertNewTicketToTheEventBy(MTicketType mTicketType)
+            => _InsertNewTicketToTheEventBy(mTicketType);
+
+        private static int _UpdateInformationTicketToTheEventBy(MTicketType mTicketType)
+        {
+
+            int RowAffective = -1;
+
+
+            using (SqlConnection connection = new SqlConnection(_ConnectionString))
+            {
+
+
+
+                string Query = @"
+
+
+                                    UPDATE TicketTypes
+
+                                            SET Quantity = @Quantity , Available = @Available ,  Price = @Price 
+
+                                            WHERE  EventID = @EventID AND TicketTypeID = @TicketTypeID
+
+
+
+                             ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.Add("@Quantity", SqlDbType.Int).Value = mTicketType.Quantity;
+                    command.Parameters.Add("@Available", SqlDbType.Int).Value = mTicketType.Quantity;
+                    command.Parameters.Add("@Price", SqlDbType.Decimal).Value = mTicketType.Price;
+                    command.Parameters.Add("@EventID", SqlDbType.Int).Value = mTicketType.EventID;
+                    command.Parameters.Add("@TicketTypeID", SqlDbType.Int).Value = mTicketType.TicketTypeID;
+
+
+                    connection.Open();
+
+
+                    RowAffective = command.ExecuteNonQuery();
+
+
+
+                }
+
+
+            }
+
+            return RowAffective;
+
+        }
+
+        public static int UpdateInformationTicketToTheEventBy(MTicketType mTicketType)
+            => _UpdateInformationTicketToTheEventBy(mTicketType);
+
+        private static MTicketType _FindTheTicketTypeBy(int EventID, int TicketID)
+        {
+
+            MTicketType mTicketType = null;
+
+
+            using (SqlConnection connection = new SqlConnection(_ConnectionString))
+            {
+
+
+                string Query = @"
+
+                                            SELECT
+                                                         TT.TicketTypeID ,
+                                                         TT.TicketTypeName ,
+                                                         TT.Quantity , 
+                                                         TT.Available , 
+                                                         TT.Price ,
+                                                         TT.EventID 
+
+
+                                            FROM TicketTypes TT
+                                            WHERE TT.EventID = @EventID AND TT.TicketTypeID = @TicketID
+
+
+
+
+
+                        ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.Add("@EventID", SqlDbType.Int).Value = EventID;
+                    command.Parameters.Add("@TicketID", SqlDbType.Int).Value = TicketID;
+
+
+                    connection.Open();
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+
+                        if (reader.Read())
+                        {
+
+                            mTicketType = new MTicketType()
+                            {
+
+                                TicketTypeID = TicketID,
+                                TicketTypeName = reader["TicketTypeName"] != DBNull.Value ? reader["TicketTypeName"].ToString() : null,
+                                Quantity = reader["Quantity"] != DBNull.Value ? Convert.ToInt32(reader["Quantity"]) : 0,
+                                Price = reader["Price"] != DBNull.Value ? Convert.ToDecimal(reader["Price"]) : 0.0M,
+                                EventID = EventID,
+
+
+
+                            };
+                        }
+
+                    }
+                }
+
+
+            }
+
+            return mTicketType;
+        }
+
+        public static MTicketType FindTheTicketTypeBy(int EventID, int TicketID)
+            => _FindTheTicketTypeBy(EventID, TicketID);
 
 
     }

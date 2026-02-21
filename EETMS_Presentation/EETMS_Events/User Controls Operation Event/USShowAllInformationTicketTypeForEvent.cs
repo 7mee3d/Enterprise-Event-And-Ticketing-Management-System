@@ -6,14 +6,19 @@ using System.Windows.Forms;
 
 namespace EETMS_Presentation.EETMS_Events
 {
-    public partial class US_AddAndUpdateTheTicketsToTheEvents : UserControl
+    public partial class USShowAllInformationTicketTypeForEvent : UserControl
     {
 
         private int _EventID = 0;
+        //  private int _IDTicketType = 0;
+
         public event EventHandler<int> ERequestTheClose_AddAndUpdateTheTicketsEvents;
+
+        public event EventHandler<TicketEventArgs> ERequestToOpenThe_USAddNewTicketTypeToTheEvent;
+
         DataTable _DT_AllTicketsEvent;
 
-        public US_AddAndUpdateTheTicketsToTheEvents(int id)
+        public USShowAllInformationTicketTypeForEvent(int id)
         {
             InitializeComponent();
 
@@ -33,8 +38,10 @@ namespace EETMS_Presentation.EETMS_Events
 
                 GDataGridViewTicketsEvents.Rows.Add(
 
+                                DR_TicketsForEvent["TicketTypeID"].ToString(),
                                  DR_TicketsForEvent["TicketTypeName"].ToString(),
                                 "$" + DR_TicketsForEvent["Price"].ToString(),
+                                DR_TicketsForEvent["Quantity"].ToString(),
                                  DR_TicketsForEvent["Available"].ToString(),
                                  DR_TicketsForEvent["CurrentSales"].ToString()
 
@@ -46,6 +53,11 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
+        private int _GetTheIDTicketTypeFromDGV()
+        {
+
+            return (Convert.ToInt32(GDataGridViewTicketsEvents.SelectedRows[0].Cells["TicketTypeID2"].Value));
+        }
         private void GButtonDiscardChanges_Click(object sender, EventArgs e)
         {
             ERequestTheClose_AddAndUpdateTheTicketsEvents?.Invoke(this, _EventID);
@@ -95,5 +107,19 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
+        private void GGButtonAddTicketType_Click(object sender, EventArgs e)
+        {
+            ERequestToOpenThe_USAddNewTicketTypeToTheEvent?.Invoke(this, new TicketEventArgs(_EventID, -1));
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ERequestToOpenThe_USAddNewTicketTypeToTheEvent?.Invoke(this, new TicketEventArgs(_EventID, _GetTheIDTicketTypeFromDGV()));
+        }
+
+        private void GButtonSaveChanges_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

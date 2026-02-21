@@ -129,7 +129,12 @@ namespace EETMS_Presentation.EETMS_Events
             _InformationEvent.CategoryID = Convert.ToInt32(GComboBoxCategories.SelectedValue);
             _InformationEvent.CountryID = Convert.ToInt32(GComboBoxCountries.SelectedValue);
             _InformationEvent.Street = GTextBoxStreet.Text;
-            _InformationEvent.DurationEvent = Convert.ToInt32(GTextBoxDuration.Text);
+
+            if (GTextBoxDuration.Text != null)
+                _InformationEvent.DurationEvent = Convert.ToInt32(GTextBoxDuration.Text);
+            else
+                _InformationEvent.DurationEvent = 0;
+
             _InformationEvent.MaxCapacity = Convert.ToInt32(GNumericUpDownMaxCapacity.Value);
 
 

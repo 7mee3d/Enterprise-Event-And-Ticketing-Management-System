@@ -28,26 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USEvents));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USEvents));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
-            this.GGButtonCreateNewEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GComboBoxAllCategories = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GDataGridViewEventsInformation = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTimeEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapacityEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DurationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discripation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GContextMenuStripEvents = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -56,7 +46,6 @@
             this.PanelHeaderEvents = new System.Windows.Forms.Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblTotalEvents = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GGCButtonLiveEvents = new Guna.UI2.WinForms.Guna2GradientCircleButton();
@@ -70,15 +59,26 @@
             this.guna2GradientCircleButton1 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.label6 = new System.Windows.Forms.Label();
             this.lblNumberDraftsEvents = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.GGButtonCreateNewEvent = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
+            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTimeEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapacityEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DurationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discripation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).BeginInit();
             this.GContextMenuStripEvents.SuspendLayout();
             this.PanelHeaderEvents.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,53 +101,6 @@
             this.label2.Size = new System.Drawing.Size(322, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Manage and track all your upcoming and past events.";
-            // 
-            // GTextBoxSearchTheEvent
-            // 
-            this.GTextBoxSearchTheEvent.BorderRadius = 8;
-            this.GTextBoxSearchTheEvent.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxSearchTheEvent.DefaultText = "";
-            this.GTextBoxSearchTheEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxSearchTheEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxSearchTheEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheEvent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheEvent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxSearchTheEvent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheEvent.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheEvent.IconLeft")));
-            this.GTextBoxSearchTheEvent.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxSearchTheEvent.Location = new System.Drawing.Point(650, 46);
-            this.GTextBoxSearchTheEvent.Name = "GTextBoxSearchTheEvent";
-            this.GTextBoxSearchTheEvent.PlaceholderText = "Search Events ....";
-            this.GTextBoxSearchTheEvent.SelectedText = "";
-            this.GTextBoxSearchTheEvent.Size = new System.Drawing.Size(439, 44);
-            this.GTextBoxSearchTheEvent.TabIndex = 1;
-            // 
-            // GGButtonCreateNewEvent
-            // 
-            this.GGButtonCreateNewEvent.Animated = true;
-            this.GGButtonCreateNewEvent.AnimatedGIF = true;
-            this.GGButtonCreateNewEvent.BorderRadius = 5;
-            this.GGButtonCreateNewEvent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonCreateNewEvent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonCreateNewEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonCreateNewEvent.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonCreateNewEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonCreateNewEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonCreateNewEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonCreateNewEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GGButtonCreateNewEvent.ForeColor = System.Drawing.Color.White;
-            this.GGButtonCreateNewEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonCreateNewEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonCreateNewEvent.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonCreateNewEvent.Image")));
-            this.GGButtonCreateNewEvent.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GGButtonCreateNewEvent.Location = new System.Drawing.Point(1123, 46);
-            this.GGButtonCreateNewEvent.Name = "GGButtonCreateNewEvent";
-            this.GGButtonCreateNewEvent.PressedColor = System.Drawing.Color.White;
-            this.GGButtonCreateNewEvent.Size = new System.Drawing.Size(215, 47);
-            this.GGButtonCreateNewEvent.TabIndex = 2;
-            this.GGButtonCreateNewEvent.Text = "Create New Event";
-            this.GGButtonCreateNewEvent.Click += new System.EventHandler(this.GGButtonCreateNewEvent_Click);
             // 
             // GComboBoxAllCategories
             // 
@@ -257,63 +210,6 @@
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // EventID
-            // 
-            this.EventID.HeaderText = "EventID";
-            this.EventID.Name = "EventID";
-            this.EventID.ReadOnly = true;
-            this.EventID.Visible = false;
-            // 
-            // EventName
-            // 
-            this.EventName.FillWeight = 30.401F;
-            this.EventName.HeaderText = "Event Name";
-            this.EventName.MinimumWidth = 20;
-            this.EventName.Name = "EventName";
-            this.EventName.ReadOnly = true;
-            // 
-            // Category
-            // 
-            this.Category.FillWeight = 12.7665F;
-            this.Category.HeaderText = "Category";
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            // 
-            // DateTimeEvent
-            // 
-            this.DateTimeEvent.FillWeight = 17.7665F;
-            this.DateTimeEvent.HeaderText = "Date & Time";
-            this.DateTimeEvent.Name = "DateTimeEvent";
-            this.DateTimeEvent.ReadOnly = true;
-            // 
-            // CapacityEvent
-            // 
-            this.CapacityEvent.FillWeight = 12.7665F;
-            this.CapacityEvent.HeaderText = "Capacity";
-            this.CapacityEvent.Name = "CapacityEvent";
-            this.CapacityEvent.ReadOnly = true;
-            // 
-            // LocationEvent
-            // 
-            this.LocationEvent.FillWeight = 22.7665F;
-            this.LocationEvent.HeaderText = "Location Event";
-            this.LocationEvent.Name = "LocationEvent";
-            this.LocationEvent.ReadOnly = true;
-            // 
-            // DurationEvent
-            // 
-            this.DurationEvent.FillWeight = 10.7665F;
-            this.DurationEvent.HeaderText = "Duration Event";
-            this.DurationEvent.Name = "DurationEvent";
-            this.DurationEvent.ReadOnly = true;
-            // 
-            // Discripation
-            // 
-            this.Discripation.FillWeight = 17.7665F;
-            this.Discripation.HeaderText = "Discripation";
-            this.Discripation.Name = "Discripation";
-            this.Discripation.ReadOnly = true;
-            // 
             // GContextMenuStripEvents
             // 
             this.GContextMenuStripEvents.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -332,7 +228,7 @@
             this.GContextMenuStripEvents.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.GContextMenuStripEvents.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.GContextMenuStripEvents.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripEvents.Size = new System.Drawing.Size(181, 103);
+            this.GContextMenuStripEvents.Size = new System.Drawing.Size(161, 81);
             // 
             // toolStripTextBox1
             // 
@@ -346,7 +242,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
             // 
             // EditToolStripMenuItem
             // 
@@ -354,7 +250,7 @@
             this.EditToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.EditToolStripMenuItem.Text = "Edit Event";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -363,7 +259,7 @@
             this.deleteEventToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteEventToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
             this.deleteEventToolStripMenuItem.Name = "deleteEventToolStripMenuItem";
-            this.deleteEventToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteEventToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.deleteEventToolStripMenuItem.Text = "Delete Event";
             this.deleteEventToolStripMenuItem.Click += new System.EventHandler(this.deleteEventToolStripMenuItem_Click);
             // 
@@ -401,18 +297,6 @@
             this.label3.Size = new System.Drawing.Size(96, 21);
             this.label3.TabIndex = 1;
             this.label3.Text = "Total Events";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BorderRadius = 10;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(163, 41);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(36, 40);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // lblTotalEvents
             // 
@@ -597,6 +481,122 @@
             this.lblNumberDraftsEvents.TabIndex = 0;
             this.lblNumberDraftsEvents.Text = "0";
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BorderRadius = 10;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(163, 41);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(36, 40);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // GGButtonCreateNewEvent
+            // 
+            this.GGButtonCreateNewEvent.Animated = true;
+            this.GGButtonCreateNewEvent.AnimatedGIF = true;
+            this.GGButtonCreateNewEvent.BorderRadius = 5;
+            this.GGButtonCreateNewEvent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonCreateNewEvent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonCreateNewEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonCreateNewEvent.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonCreateNewEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GGButtonCreateNewEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonCreateNewEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonCreateNewEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonCreateNewEvent.ForeColor = System.Drawing.Color.White;
+            this.GGButtonCreateNewEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonCreateNewEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonCreateNewEvent.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonCreateNewEvent.Image")));
+            this.GGButtonCreateNewEvent.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GGButtonCreateNewEvent.Location = new System.Drawing.Point(1123, 46);
+            this.GGButtonCreateNewEvent.Name = "GGButtonCreateNewEvent";
+            this.GGButtonCreateNewEvent.PressedColor = System.Drawing.Color.White;
+            this.GGButtonCreateNewEvent.Size = new System.Drawing.Size(215, 47);
+            this.GGButtonCreateNewEvent.TabIndex = 2;
+            this.GGButtonCreateNewEvent.Text = "Create New Event";
+            this.GGButtonCreateNewEvent.Click += new System.EventHandler(this.GGButtonCreateNewEvent_Click);
+            // 
+            // GTextBoxSearchTheEvent
+            // 
+            this.GTextBoxSearchTheEvent.BorderRadius = 8;
+            this.GTextBoxSearchTheEvent.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxSearchTheEvent.DefaultText = "";
+            this.GTextBoxSearchTheEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxSearchTheEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxSearchTheEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheEvent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheEvent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxSearchTheEvent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheEvent.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheEvent.IconLeft")));
+            this.GTextBoxSearchTheEvent.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxSearchTheEvent.Location = new System.Drawing.Point(650, 46);
+            this.GTextBoxSearchTheEvent.Name = "GTextBoxSearchTheEvent";
+            this.GTextBoxSearchTheEvent.PlaceholderText = "Search Events ....";
+            this.GTextBoxSearchTheEvent.SelectedText = "";
+            this.GTextBoxSearchTheEvent.Size = new System.Drawing.Size(439, 44);
+            this.GTextBoxSearchTheEvent.TabIndex = 1;
+            // 
+            // EventID
+            // 
+            this.EventID.HeaderText = "EventID";
+            this.EventID.Name = "EventID";
+            this.EventID.ReadOnly = true;
+            this.EventID.Visible = false;
+            // 
+            // EventName
+            // 
+            this.EventName.FillWeight = 30.401F;
+            this.EventName.HeaderText = "EVENT NAME";
+            this.EventName.MinimumWidth = 20;
+            this.EventName.Name = "EventName";
+            this.EventName.ReadOnly = true;
+            // 
+            // Category
+            // 
+            this.Category.FillWeight = 12.7665F;
+            this.Category.HeaderText = "CATEGORY";
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            // 
+            // DateTimeEvent
+            // 
+            this.DateTimeEvent.FillWeight = 17.7665F;
+            this.DateTimeEvent.HeaderText = "DATE & TIME";
+            this.DateTimeEvent.Name = "DateTimeEvent";
+            this.DateTimeEvent.ReadOnly = true;
+            // 
+            // CapacityEvent
+            // 
+            this.CapacityEvent.FillWeight = 12.7665F;
+            this.CapacityEvent.HeaderText = "CAPACITY";
+            this.CapacityEvent.Name = "CapacityEvent";
+            this.CapacityEvent.ReadOnly = true;
+            // 
+            // LocationEvent
+            // 
+            this.LocationEvent.FillWeight = 22.7665F;
+            this.LocationEvent.HeaderText = "LOCATION EVENT";
+            this.LocationEvent.Name = "LocationEvent";
+            this.LocationEvent.ReadOnly = true;
+            // 
+            // DurationEvent
+            // 
+            this.DurationEvent.FillWeight = 10.7665F;
+            this.DurationEvent.HeaderText = "DURATION EVENT";
+            this.DurationEvent.Name = "DurationEvent";
+            this.DurationEvent.ReadOnly = true;
+            // 
+            // Discripation
+            // 
+            this.Discripation.FillWeight = 17.7665F;
+            this.Discripation.HeaderText = "DESCRIPATION";
+            this.Discripation.Name = "Discripation";
+            this.Discripation.ReadOnly = true;
+            // 
             // USEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,13 +620,13 @@
             this.PanelHeaderEvents.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel3.PerformLayout();
             this.guna2GradientPanel4.ResumeLayout(false);
             this.guna2GradientPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
