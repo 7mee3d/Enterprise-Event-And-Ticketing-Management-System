@@ -110,6 +110,37 @@ namespace EETMS_Presentation.EETMS_Report
             }
         }
 
+        private void _FillTheDataGridViewRemainingCapacity()
+        {
+
+            DataTable DT_InformatioNEvents = ReportBL.GetAllInformationEvent();
+
+            foreach (DataRow DR_InfoEvent in DT_InformatioNEvents.Rows)
+            {
+
+
+                int.TryParse(DR_InfoEvent["MaxCapacity"].ToString(), out int MaxCapacity);
+
+                if ((int)DR_InfoEvent["SoldTickets"] < MaxCapacity)
+                {
+                    int rowIndex = GDataGridViewRemainingCapacity.Rows.Add(
+
+                                                               DR_InfoEvent["EventName"].ToString(),
+                                                               DR_InfoEvent["RemainingCapacity"].ToString()
+
+
+
+                                                 );
+
+                    DataGridViewRow GDVR = GDataGridViewRemainingCapacity.Rows[rowIndex];
+                    DataGridViewCell DGVC = GDVR.Cells[1];
+
+                    DGVC.Style.ForeColor = Color.Green;
+                }
+
+            }
+        }
+
         private void _ClaerSelectionGDV()
         {
 
@@ -117,6 +148,7 @@ namespace EETMS_Presentation.EETMS_Report
             GDataGridViewRevenuePerEvent.ClearSelection();
             GDataGridViewTopSpenders.ClearSelection();
             GDataGridViewFullyBookedEvents.ClearSelection();
+            GDataGridViewRemainingCapacity.ClearSelection();
 
         }
 
@@ -126,6 +158,7 @@ namespace EETMS_Presentation.EETMS_Report
             _FillTheDataGridViewCategorySalesToData();
             _FillTheDataGridViewTopSpendersToData();
             _FillTheDataGridViewFullyBookedEvents();
+            _FillTheDataGridViewRemainingCapacity();
             _ClaerSelectionGDV();
 
         }

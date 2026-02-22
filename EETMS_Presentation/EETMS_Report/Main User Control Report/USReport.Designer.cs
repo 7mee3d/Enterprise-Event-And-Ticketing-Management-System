@@ -41,14 +41,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GDataGridViewRevenuePerEvent = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -67,15 +67,15 @@
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmountPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientButton5 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2DataGridView4 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.CEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seats = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GDataGridViewFullyBookedEvents = new Guna.UI2.WinForms.Guna2DataGridView();
             this.EventNameV2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientButton5 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GDataGridViewRemainingCapacity = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.CEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seats = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewRevenuePerEvent)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
@@ -83,9 +83,9 @@
             this.guna2GradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewTopSpenders)).BeginInit();
             this.guna2GradientPanel4.SuspendLayout();
-            this.guna2GradientPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewFullyBookedEvents)).BeginInit();
+            this.guna2GradientPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewRemainingCapacity)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -490,150 +490,6 @@
             this.guna2GradientPanel4.Size = new System.Drawing.Size(454, 314);
             this.guna2GradientPanel4.TabIndex = 5;
             // 
-            // guna2GradientButton4
-            // 
-            this.guna2GradientButton4.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.DisabledState.CustomBorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.DisabledState.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.DisabledState.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(136)))), ((int)(((byte)(238)))));
-            this.guna2GradientButton4.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.guna2GradientButton4.Enabled = false;
-            this.guna2GradientButton4.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(136)))), ((int)(((byte)(238)))));
-            this.guna2GradientButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton4.Image")));
-            this.guna2GradientButton4.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2GradientButton4.Location = new System.Drawing.Point(3, 20);
-            this.guna2GradientButton4.Name = "guna2GradientButton4";
-            this.guna2GradientButton4.Size = new System.Drawing.Size(172, 37);
-            this.guna2GradientButton4.TabIndex = 6;
-            this.guna2GradientButton4.Text = "Fully Booked";
-            // 
-            // guna2GradientPanel5
-            // 
-            this.guna2GradientPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
-            this.guna2GradientPanel5.BorderRadius = 8;
-            this.guna2GradientPanel5.BorderThickness = 1;
-            this.guna2GradientPanel5.Controls.Add(this.guna2GradientButton5);
-            this.guna2GradientPanel5.Controls.Add(this.guna2DataGridView4);
-            this.guna2GradientPanel5.FillColor = System.Drawing.Color.White;
-            this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientPanel5.Location = new System.Drawing.Point(937, 518);
-            this.guna2GradientPanel5.Name = "guna2GradientPanel5";
-            this.guna2GradientPanel5.Size = new System.Drawing.Size(454, 369);
-            this.guna2GradientPanel5.TabIndex = 5;
-            // 
-            // guna2GradientButton5
-            // 
-            this.guna2GradientButton5.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.DisabledState.CustomBorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.DisabledState.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.DisabledState.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(136)))), ((int)(((byte)(238)))));
-            this.guna2GradientButton5.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.guna2GradientButton5.Enabled = false;
-            this.guna2GradientButton5.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton5.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(136)))), ((int)(((byte)(238)))));
-            this.guna2GradientButton5.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton5.Image")));
-            this.guna2GradientButton5.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2GradientButton5.Location = new System.Drawing.Point(3, 18);
-            this.guna2GradientButton5.Name = "guna2GradientButton5";
-            this.guna2GradientButton5.Size = new System.Drawing.Size(227, 37);
-            this.guna2GradientButton5.TabIndex = 6;
-            this.guna2GradientButton5.Text = "Remaining Capacity";
-            // 
-            // guna2DataGridView4
-            // 
-            this.guna2DataGridView4.AllowUserToAddRows = false;
-            this.guna2DataGridView4.AllowUserToDeleteRows = false;
-            this.guna2DataGridView4.AllowUserToResizeRows = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            this.guna2DataGridView4.ColumnHeadersHeight = 50;
-            this.guna2DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CEventName,
-            this.Seats});
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView4.DefaultCellStyle = dataGridViewCellStyle19;
-            this.guna2DataGridView4.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView4.Location = new System.Drawing.Point(3, 61);
-            this.guna2DataGridView4.Name = "guna2DataGridView4";
-            this.guna2DataGridView4.ReadOnly = true;
-            this.guna2DataGridView4.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView4.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            this.guna2DataGridView4.RowHeadersVisible = false;
-            this.guna2DataGridView4.RowTemplate.Height = 57;
-            this.guna2DataGridView4.Size = new System.Drawing.Size(448, 305);
-            this.guna2DataGridView4.TabIndex = 0;
-            this.guna2DataGridView4.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView4.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView4.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.guna2DataGridView4.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.White;
-            this.guna2DataGridView4.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView4.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView4.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView4.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.guna2DataGridView4.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView4.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView4.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.guna2DataGridView4.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView4.ThemeStyle.HeaderStyle.Height = 50;
-            this.guna2DataGridView4.ThemeStyle.ReadOnly = true;
-            this.guna2DataGridView4.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView4.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView4.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView4.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView4.ThemeStyle.RowsStyle.Height = 57;
-            this.guna2DataGridView4.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.White;
-            this.guna2DataGridView4.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // CEventName
-            // 
-            this.CEventName.FillWeight = 47.92386F;
-            this.CEventName.HeaderText = "EVENT NAME";
-            this.CEventName.Name = "CEventName";
-            this.CEventName.ReadOnly = true;
-            // 
-            // Seats
-            // 
-            this.Seats.FillWeight = 15.07614F;
-            this.Seats.HeaderText = "SEATS";
-            this.Seats.Name = "Seats";
-            this.Seats.ReadOnly = true;
-            // 
             // GDataGridViewFullyBookedEvents
             // 
             this.GDataGridViewFullyBookedEvents.AllowUserToAddRows = false;
@@ -719,6 +575,150 @@
             this.StatusEvent.Name = "StatusEvent";
             this.StatusEvent.ReadOnly = true;
             // 
+            // guna2GradientButton4
+            // 
+            this.guna2GradientButton4.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.DisabledState.CustomBorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.DisabledState.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.DisabledState.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(136)))), ((int)(((byte)(238)))));
+            this.guna2GradientButton4.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.guna2GradientButton4.Enabled = false;
+            this.guna2GradientButton4.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(136)))), ((int)(((byte)(238)))));
+            this.guna2GradientButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton4.Image")));
+            this.guna2GradientButton4.ImageSize = new System.Drawing.Size(22, 22);
+            this.guna2GradientButton4.Location = new System.Drawing.Point(3, 20);
+            this.guna2GradientButton4.Name = "guna2GradientButton4";
+            this.guna2GradientButton4.Size = new System.Drawing.Size(172, 37);
+            this.guna2GradientButton4.TabIndex = 6;
+            this.guna2GradientButton4.Text = "Fully Booked";
+            // 
+            // guna2GradientPanel5
+            // 
+            this.guna2GradientPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
+            this.guna2GradientPanel5.BorderRadius = 8;
+            this.guna2GradientPanel5.BorderThickness = 1;
+            this.guna2GradientPanel5.Controls.Add(this.guna2GradientButton5);
+            this.guna2GradientPanel5.Controls.Add(this.GDataGridViewRemainingCapacity);
+            this.guna2GradientPanel5.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientPanel5.Location = new System.Drawing.Point(937, 518);
+            this.guna2GradientPanel5.Name = "guna2GradientPanel5";
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(454, 369);
+            this.guna2GradientPanel5.TabIndex = 5;
+            // 
+            // guna2GradientButton5
+            // 
+            this.guna2GradientButton5.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.DisabledState.CustomBorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.DisabledState.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.DisabledState.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(136)))), ((int)(((byte)(238)))));
+            this.guna2GradientButton5.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.guna2GradientButton5.Enabled = false;
+            this.guna2GradientButton5.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton5.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(136)))), ((int)(((byte)(238)))));
+            this.guna2GradientButton5.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton5.Image")));
+            this.guna2GradientButton5.ImageSize = new System.Drawing.Size(22, 22);
+            this.guna2GradientButton5.Location = new System.Drawing.Point(3, 18);
+            this.guna2GradientButton5.Name = "guna2GradientButton5";
+            this.guna2GradientButton5.Size = new System.Drawing.Size(227, 37);
+            this.guna2GradientButton5.TabIndex = 6;
+            this.guna2GradientButton5.Text = "Remaining Capacity";
+            // 
+            // GDataGridViewRemainingCapacity
+            // 
+            this.GDataGridViewRemainingCapacity.AllowUserToAddRows = false;
+            this.GDataGridViewRemainingCapacity.AllowUserToDeleteRows = false;
+            this.GDataGridViewRemainingCapacity.AllowUserToResizeRows = false;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.GDataGridViewRemainingCapacity.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewRemainingCapacity.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            this.GDataGridViewRemainingCapacity.ColumnHeadersHeight = 50;
+            this.GDataGridViewRemainingCapacity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.GDataGridViewRemainingCapacity.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CEventName,
+            this.Seats});
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GDataGridViewRemainingCapacity.DefaultCellStyle = dataGridViewCellStyle19;
+            this.GDataGridViewRemainingCapacity.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.GDataGridViewRemainingCapacity.Location = new System.Drawing.Point(3, 61);
+            this.GDataGridViewRemainingCapacity.Name = "GDataGridViewRemainingCapacity";
+            this.GDataGridViewRemainingCapacity.ReadOnly = true;
+            this.GDataGridViewRemainingCapacity.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewRemainingCapacity.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.GDataGridViewRemainingCapacity.RowHeadersVisible = false;
+            this.GDataGridViewRemainingCapacity.RowTemplate.Height = 57;
+            this.GDataGridViewRemainingCapacity.Size = new System.Drawing.Size(448, 305);
+            this.GDataGridViewRemainingCapacity.TabIndex = 0;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GDataGridViewRemainingCapacity.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.GDataGridViewRemainingCapacity.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.GDataGridViewRemainingCapacity.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.GDataGridViewRemainingCapacity.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GDataGridViewRemainingCapacity.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            this.GDataGridViewRemainingCapacity.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.HeaderStyle.Height = 50;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.ReadOnly = true;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GDataGridViewRemainingCapacity.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.GDataGridViewRemainingCapacity.ThemeStyle.RowsStyle.Height = 57;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.GDataGridViewRemainingCapacity.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // CEventName
+            // 
+            this.CEventName.FillWeight = 47.92386F;
+            this.CEventName.HeaderText = "EVENT NAME";
+            this.CEventName.Name = "CEventName";
+            this.CEventName.ReadOnly = true;
+            // 
+            // Seats
+            // 
+            this.Seats.FillWeight = 15.07614F;
+            this.Seats.HeaderText = "SEATS";
+            this.Seats.Name = "Seats";
+            this.Seats.ReadOnly = true;
+            // 
             // USReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,9 +741,9 @@
             this.guna2GradientPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewTopSpenders)).EndInit();
             this.guna2GradientPanel4.ResumeLayout(false);
-            this.guna2GradientPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewFullyBookedEvents)).EndInit();
+            this.guna2GradientPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewRemainingCapacity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -772,7 +772,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton4;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton5;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView4;
+        private Guna.UI2.WinForms.Guna2DataGridView GDataGridViewRemainingCapacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn CEventName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Seats;
         private Guna.UI2.WinForms.Guna2DataGridView GDataGridViewFullyBookedEvents;
