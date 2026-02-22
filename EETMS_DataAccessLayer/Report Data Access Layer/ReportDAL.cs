@@ -1,9 +1,7 @@
-﻿
-
+﻿using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Runtime.ConstrainedExecution;
 
 namespace EETMS_DataAccessLayer
 {
@@ -209,6 +207,106 @@ namespace EETMS_DataAccessLayer
 
         public static DataTable GetTopSpenders()
             => _GetTopSpenders();
+
+        private static DataTable _GetAllInformationEvents()
+        {
+
+            DataTable EventsDT = new DataTable();
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConnectionString))
+                {
+
+
+                    string Query = @"
+
+
+
+                                   SELECT
+						                        E.EventID,
+						                        E.EventName,
+
+						                        ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
+
+						                        ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
+
+						                        ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
+
+						                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
+
+						                        E.Duration,
+						                        E.MaxCapacity,
+						                        E.DateTimeEvent,
+						                        CAT.CategoryName,
+						                        COUN.CountryName,
+						                        E.Street,	
+                                                E.Discripation ,
+						                        E.IsActiveEvent
+
+
+                                                                        FROM Events E
+                                                                        LEFT JOIN TicketTypes TT
+                                                                            ON E.EventID = TT.EventID
+                                                                        INNER JOIN Categories CAT
+                                                                            ON CAT.CategoryID = E.CategoryID
+                                                                        INNER JOIN Countries COUN
+                                                                            ON COUN.CountryID = E.CountryID
+
+                                     GROUP BY
+                                     				E.EventID,
+                                     				E.EventName,
+                                     				E.Duration,
+                                     				E.MaxCapacity,
+                                     				E.DateTimeEvent,
+                                     				CAT.CategoryName,
+                                     				COUN.CountryName,
+                                     				E.Street,
+                                                    E.Discripation,
+                                     				E.IsActiveEvent;
+
+
+
+
+
+                                ";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+
+                            if (reader.HasRows)
+                                EventsDT.Load(reader);
+
+
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.Message);
+            }
+
+
+            return EventsDT;
+        }
+
+        public static DataTable GetAllInformationEvents()
+        {
+            return _GetAllInformationEvents();
+        }
+
+
 
     }
 }
