@@ -11,10 +11,8 @@ namespace EETMS_BusinessLayer
         public static DataTable GetTheStatisticsTicketsByCategoryBL()
             => DashboardDAL.GetTheStatisticsTicketsByCategory();
 
-
         public static List<int> GetTheAllYearsPaymentTotalRevenue()
             => DashboardDAL.GetAllYearsPayments();
-
 
         public static DataTable GetTheTotalReveneForMonthBL_By(int Year)
             => DashboardDAL.GetTheTotalReveneForMonthBy(Year);
@@ -27,5 +25,10 @@ namespace EETMS_BusinessLayer
 
         public static double GetTheTotalActiveEvents()
             => DashboardDAL.GetTheActiveEvents();
+
+        public static int GetTheTotalCustomers()
+            => DashboardDAL.GetTheTotalCustomers();
+
+
     }
 }

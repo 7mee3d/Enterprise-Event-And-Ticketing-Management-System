@@ -107,6 +107,7 @@ namespace EETMS_Presentation.EETMS_Dashboard
             lblTotalRevenue.Text = "$" + DashboardBL.GetTheTotalRevenueBL().ToString();
             lblTicketSold.Text = DashboardBL.GetTheSoldTickets().ToString();
             lblActiveEvents.Text = DashboardBL.GetTheTotalActiveEvents().ToString();
+            lblTotalCustomers.Text = DashboardBL.GetTheTotalCustomers().ToString();
 
         }
 

@@ -312,5 +312,50 @@ namespace EETMS_DataAccessLayer
         public static int GetTheActiveEvents()
             => _GetTheActiveEvents();
 
+        private static int _GetTheTotalCustomers()
+        {
+
+            int TotalCustomers = 0;
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+                                    SELECT 
+
+	                                    	ISNULL ( COUNT ( C.CusotmerID ) , 0 ) AS [TotalCountCustomers]
+
+                                   FROM Customers C
+
+
+
+                            ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int CountTotalCustomer))
+                        TotalCustomers = CountTotalCustomer;
+
+
+                }
+            }
+
+            return TotalCustomers;
+
+        }
+
+        public static int GetTheTotalCustomers()
+            => _GetTheTotalCustomers();
     }
 }
