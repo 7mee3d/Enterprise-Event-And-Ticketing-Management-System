@@ -20,7 +20,7 @@ namespace EETMS_DataAccessLayer
         #region All Method CRUD Event Result-Set
 
 
-        private static DataTable _GetAllInformationEvents()
+        private static DataTable _GetAllBasicInformationEvents()
         {
 
             DataTable EventsDT = new DataTable();
@@ -79,12 +79,12 @@ namespace EETMS_DataAccessLayer
             return EventsDT;
         }
 
-        public static DataTable GetAllInformationEvents()
+        public static DataTable GetAllBasicInformationEvents()
         {
-            return _GetAllInformationEvents();
+            return _GetAllBasicInformationEvents();
         }
 
-        private static DataTable _GetAllInformationEventsWithOtherTable_Country_Category()
+        private static DataTable _GetAllInformationEvents()
         {
 
             DataTable EventsDT = new DataTable();
@@ -98,24 +98,53 @@ namespace EETMS_DataAccessLayer
 
                     string Query = @"
 
-                                 SELECT EV.EventID ,
-                                        EV.EventName,
-                                        CAT.CategoryName,
-                                        EV.DateTimeEvent,
-                                        EV.MaxCapacity,
-                                        CON.CountryName,
-                                        EV.Street,         
-                                        EV.Duration,
-                                        EV.Discripation,
-                                        EV.AvailableInEvent
 
 
-                                            FROM [Events] EV
-                                            INNER JOIN Countries CON
-                                            ON CON.CountryID = EV.CountryID 
+                                   SELECT
+						                        E.EventID,
+						                        E.EventName,
 
-                                            INNER JOIN Categories CAT 
-                                            ON CAT.CategoryID = EV.CategoryID ;
+						                        ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
+
+						                        ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
+
+						                        ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
+
+						                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
+
+						                        E.Duration,
+						                        E.MaxCapacity,
+						                        E.DateTimeEvent,
+						                        CAT.CategoryName,
+						                        COUN.CountryName,
+						                        E.Street,	
+                                                E.Discripation ,
+						                        E.IsActiveEvent
+
+
+                                                                        FROM Events E
+                                                                        LEFT JOIN TicketTypes TT
+                                                                            ON E.EventID = TT.EventID
+                                                                        INNER JOIN Categories CAT
+                                                                            ON CAT.CategoryID = E.CategoryID
+                                                                        INNER JOIN Countries COUN
+                                                                            ON COUN.CountryID = E.CountryID
+
+                                     GROUP BY
+                                     				E.EventID,
+                                     				E.EventName,
+                                     				E.Duration,
+                                     				E.MaxCapacity,
+                                     				E.DateTimeEvent,
+                                     				CAT.CategoryName,
+                                     				COUN.CountryName,
+                                     				E.Street,
+                                                    E.Discripation,
+                                     				E.IsActiveEvent;
+
+
+
+
 
                                 ";
 
@@ -147,10 +176,10 @@ namespace EETMS_DataAccessLayer
 
             return EventsDT;
         }
-       
-        public static DataTable GetAllInformationEventsWithOtherTable_Country_Category()
+
+        public static DataTable GetAllInformationEvents()
         {
-            return _GetAllInformationEventsWithOtherTable_Country_Category();
+            return _GetAllInformationEvents();
         }
 
         private static MEvent _FindTheEventByID(int EventID)
@@ -312,7 +341,7 @@ namespace EETMS_DataAccessLayer
             return _InsertNewEvent(InfoNewEvent);
         }
 
-        private static int _UpdateInformationEvent(int IDEvent , MEvent NewInformationEvent)
+        private static int _UpdateInformationEvent(int IDEvent, MEvent NewInformationEvent)
         {
             int RowAffective = -1;
 
@@ -374,9 +403,9 @@ namespace EETMS_DataAccessLayer
             return RowAffective;
         }
 
-        public static int UpdateInformationEvent(int IDEvent,  MEvent NewInformationEvent)
+        public static int UpdateInformationEvent(int IDEvent, MEvent NewInformationEvent)
         {
-            return _UpdateInformationEvent(IDEvent , NewInformationEvent);
+            return _UpdateInformationEvent(IDEvent, NewInformationEvent);
         }
 
         private static int _DeleteTheEventByID(int IDEvent)

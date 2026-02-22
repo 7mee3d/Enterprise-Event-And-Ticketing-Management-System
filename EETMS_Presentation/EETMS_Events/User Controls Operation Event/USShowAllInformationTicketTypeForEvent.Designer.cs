@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USShowAllInformationTicketTypeForEvent));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USShowAllInformationTicketTypeForEvent));
             this.lblBackEvents = new System.Windows.Forms.Label();
             this.GButtonDiscardChanges = new Guna.UI2.WinForms.Guna2Button();
             this.lblNameTheEventAfterAdded = new System.Windows.Forms.Label();
@@ -88,13 +88,16 @@
             this.GButtonDiscardChanges.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.GButtonDiscardChanges.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GButtonDiscardChanges.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.GButtonDiscardChanges.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GButtonDiscardChanges.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.GButtonDiscardChanges.Image = ((System.Drawing.Image)(resources.GetObject("GButtonDiscardChanges.Image")));
+            this.GButtonDiscardChanges.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.GButtonDiscardChanges.ImageOffset = new System.Drawing.Point(20, 0);
             this.GButtonDiscardChanges.Location = new System.Drawing.Point(1144, 837);
             this.GButtonDiscardChanges.Name = "GButtonDiscardChanges";
             this.GButtonDiscardChanges.PressedColor = System.Drawing.Color.White;
             this.GButtonDiscardChanges.Size = new System.Drawing.Size(227, 46);
             this.GButtonDiscardChanges.TabIndex = 3;
-            this.GButtonDiscardChanges.Text = "Discard Changes";
+            this.GButtonDiscardChanges.Text = "Back Add Event";
             this.GButtonDiscardChanges.Click += new System.EventHandler(this.GButtonDiscardChanges_Click);
             // 
             // lblNameTheEventAfterAdded
@@ -304,7 +307,7 @@
             this.GGButtonWarningFullTheTicketTypeEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.GGButtonWarningFullTheTicketTypeEvent.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.GGButtonWarningFullTheTicketTypeEvent.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.GGButtonWarningFullTheTicketTypeEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
@@ -314,7 +317,7 @@
             this.GGButtonWarningFullTheTicketTypeEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.GGButtonWarningFullTheTicketTypeEvent.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.GGButtonWarningFullTheTicketTypeEvent.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.GGButtonWarningFullTheTicketTypeEvent.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonWarningFullTheTicketTypeEvent.Image")));
             this.GGButtonWarningFullTheTicketTypeEvent.ImageOffset = new System.Drawing.Point(-7, 0);
             this.GGButtonWarningFullTheTicketTypeEvent.Location = new System.Drawing.Point(12, 13);
@@ -334,7 +337,7 @@
             this.GGButtonAddTicketType.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonAddTicketType.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonAddTicketType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonAddTicketType.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.GGButtonAddTicketType.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.GGButtonAddTicketType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonAddTicketType.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonAddTicketType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
@@ -361,7 +364,7 @@
             this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(117)))), ((int)(((byte)(140)))));
-            this.guna2GradientButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.guna2GradientButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.guna2GradientButton1.Enabled = false;
             this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));

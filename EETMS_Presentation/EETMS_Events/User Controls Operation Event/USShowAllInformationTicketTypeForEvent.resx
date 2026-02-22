@@ -117,6 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADASURBVFhH7ZRdCsMgEIRzpByj94s+F+oZAnqyPqb4F3ViSkMxuwkODARZ4ufo7jB0dd1RQuk3
+        rp0qofQiXnohA5FKP6SFSKYDiRABiBLE8ErEeqIHWVOhBmFwNe6RutZ1qdCB/N01a5x+EG0d1mFOBBed
+        kvsYSOUHFeebGQ+0B538O8j+acrNvn5XjPs0lXzOIw+A7Gqwpql4JAAPE2uaikcCsZtCEljTVCwSwHmA
+        NafITkAPYGgAog6N4q6uK+kDkr65a+LKk2EAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="GButtonDiscardChanges.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADASURBVFhH7ZRdCsMgEIRzpByj94s+F+oZAnqyPqb4F3ViSkMxuwkODARZ4ufo7jB0dd1RQuk3
+        rp0qofQiXnohA5FKP6SFSKYDiRABiBLE8ErEeqIHWVOhBmFwNe6RutZ1qdCB/N01a5x+EG0d1mFOBBed
+        kvsYSOUHFeebGQ+0B538O8j+acrNvn5XjPs0lXzOIw+A7Gqwpql4JAAPE2uaikcCsZtCEljTVCwSwHmA
+        NafITkAPYGgAog6N4q6uK+kDkr65a+LKk2EAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="TicketTypeID2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -138,8 +157,7 @@
   <metadata name="guna2ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAiZJREFUWEft
         V7FuAjEMZezIJzBVcMfA2JGxY/+ma7dKXBCf0LEjI2PHfgZjpXIk3TpSOUdyzovvLgGpE0+yTsKO82I7
@@ -154,7 +172,7 @@
         Kv4ANQrsI/xoFEAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="resource.Image1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image2" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAdVJREFUWEft
         VjtuwzAMzdgxY8ceIWNHAaSA3CRH6JgjdOzYY3TMETJ2zFigQEJ36uhC/sTioyS4sZMpD3iwIJF6lCjJ
@@ -182,7 +200,7 @@
         YII=
 </value>
   </data>
-  <data name="resource.Image2" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image3" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAiZJREFUWEft
         V7FuAjEMZezIJzBVcMfA2JGxY/+ma7dKXBCf0LEjI2PHfgZjpXIk3TpSOUdyzovvLgGpE0+yTsKO82I7
@@ -212,7 +230,7 @@
         Kv4ANQrsI/xoFEAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="resource.Image3" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image4" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAhhJREFUWEft
         VztygzAQpcrYyAVHcJkyZcqUKXMb3yU2qExJ6TJljpETZJjYQEplVgK0PAsh+dP5zWiwrcdq9bTaXSfJ

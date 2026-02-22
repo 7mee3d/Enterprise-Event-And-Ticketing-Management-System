@@ -11,16 +11,16 @@ namespace EETMS_BusinessLayer
 
         public static DataTable GetAllInformationEvents()
         {
-            return EventsDAL.GetAllInformationEventsWithOtherTable_Country_Category();
+            return EventsDAL.GetAllInformationEvents();
         }
 
-        public static bool DeleteTheEvent(int IDEvent) => EventsDAL.DeleteTheEventByID(IDEvent) > 0 ;
+        public static bool DeleteTheEvent(int IDEvent) => EventsDAL.DeleteTheEventByID(IDEvent) > 0;
 
         public static MEvent FindTheEventBy(int IDEvent) => EventsDAL.FindTheEventByID(IDEvent);
 
-        private static bool AddNewEvent(MEvent NewInformationEvent) => EventsDAL.InsertNewEvent(NewInformationEvent) > 0 ;
+        private static bool AddNewEvent(MEvent NewInformationEvent) => EventsDAL.InsertNewEvent(NewInformationEvent) > 0;
 
-        private static bool UpdateInformationEvent (int IDEvent , MEvent NewInformationEvent) => EventsDAL.UpdateInformationEvent(IDEvent , NewInformationEvent) > 0 ;
+        private static bool UpdateInformationEvent(int IDEvent, MEvent NewInformationEvent) => EventsDAL.UpdateInformationEvent(IDEvent, NewInformationEvent) > 0;
 
 
         public static bool SaveTheMode(MEvent InformationEvent)
@@ -32,12 +32,12 @@ namespace EETMS_BusinessLayer
                     return (AddNewEvent(InformationEvent));
 
                 case MEvent.EnModeEvent._kUPDATE_INFORMATION_EVENT:
-                    return UpdateInformationEvent(InformationEvent.EventID , InformationEvent);
+                    return UpdateInformationEvent(InformationEvent.EventID, InformationEvent);
             }
 
-            return false; 
+            return false;
         }
 
-        
+
     }
 }
