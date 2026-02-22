@@ -22,6 +22,8 @@ namespace EETMS_BusinessLayer
 
         private static bool UpdateInformationEvent(int IDEvent, MEvent NewInformationEvent) => EventsDAL.UpdateInformationEvent(IDEvent, NewInformationEvent) > 0;
 
+        public static DataTable GetEventTicketCapacityInfoBy(int EventID)
+            => EventsDAL.GetEventTicketCapacityInfoBy(EventID);
 
         public static bool SaveTheMode(MEvent InformationEvent)
         {

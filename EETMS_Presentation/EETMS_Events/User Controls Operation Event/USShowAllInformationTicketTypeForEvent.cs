@@ -32,11 +32,13 @@ namespace EETMS_Presentation.EETMS_Events
 
             _DT_AllTicketsEvent = TicketBL.GetInformationTicketForEvent(_EventID);
 
+
             foreach (DataRow DR_TicketsForEvent in _DT_AllTicketsEvent.Rows)
             {
 
 
                 GDataGridViewTicketsEvents.Rows.Add(
+
 
                                 DR_TicketsForEvent["TicketTypeID"].ToString(),
                                  DR_TicketsForEvent["TicketTypeName"].ToString(),
@@ -58,6 +60,7 @@ namespace EETMS_Presentation.EETMS_Events
 
             return (Convert.ToInt32(GDataGridViewTicketsEvents.SelectedRows[0].Cells["TicketTypeID2"].Value));
         }
+
         private void GButtonDiscardChanges_Click(object sender, EventArgs e)
         {
             ERequestTheClose_AddAndUpdateTheTicketsEvents?.Invoke(this, _EventID);

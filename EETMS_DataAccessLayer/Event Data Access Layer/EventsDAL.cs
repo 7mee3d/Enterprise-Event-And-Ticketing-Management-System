@@ -458,6 +458,72 @@ namespace EETMS_DataAccessLayer
             return _DeleteTheEventByID(IDEvent);
         }
 
+        private static DataTable _GetEventTicketCapacityInfoBy(int EventID)
+        {
+
+            DataTable DT_EventTicketCapacityInfo = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+
+                string Query = @"
+
+
+                                    SELECT
+
+                                                  E.EventID,
+                                                  E.EventName,
+                                                  E.MaxCapacity,
+                                                  ISNULL(SUM(T.Quantity), 0) AS TotalQuantityTickets,
+                                                  (E.MaxCapacity - ISNULL(SUM(T.Quantity), 0)) AS RemainingCapacity
+
+                                        FROM Events E
+                                        LEFT JOIN TicketTypes T
+                                            ON T.EventID = E.EventID
+
+                                        WHERE E.EventID = @EventID
+
+                                        GROUP BY 
+                                                    E.EventID, 
+                                                    E.EventName, 
+                                                    E.MaxCapacity;
+
+
+
+                                ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+
+                    command.Parameters.Add("@EventID", SqlDbType.Int).Value = EventID;
+
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        if (reader.HasRows)
+                            DT_EventTicketCapacityInfo.Load(reader);
+
+
+                    }
+
+
+
+                }
+            }
+
+            return DT_EventTicketCapacityInfo;
+
+        }
+
+        public static DataTable GetEventTicketCapacityInfoBy(int EventID)
+            => _GetEventTicketCapacityInfoBy(EventID);
 
 
         #endregion

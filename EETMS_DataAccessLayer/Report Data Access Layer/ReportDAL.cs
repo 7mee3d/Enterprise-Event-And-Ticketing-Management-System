@@ -82,6 +82,7 @@ namespace EETMS_DataAccessLayer
 
         private static DataTable _GetTotalCategorySales()
         {
+
             DataTable DT_InformationTotalCategorySales = new DataTable();
 
 

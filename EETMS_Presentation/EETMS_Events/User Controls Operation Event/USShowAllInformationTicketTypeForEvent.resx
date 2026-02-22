@@ -120,20 +120,20 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAADASURBVFhH7ZRdCsMgEIRzpByj94s+F+oZAnqyPqb4F3ViSkMxuwkODARZ4ufo7jB0dd1RQuk3
-        rp0qofQiXnohA5FKP6SFSKYDiRABiBLE8ErEeqIHWVOhBmFwNe6RutZ1qdCB/N01a5x+EG0d1mFOBBed
-        kvsYSOUHFeebGQ+0B538O8j+acrNvn5XjPs0lXzOIw+A7Gqwpql4JAAPE2uaikcCsZtCEljTVCwSwHmA
-        NafITkAPYGgAog6N4q6uK+kDkr65a+LKk2EAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAMBJREFUWEft
+        lF0KwyAQhHOkHKP3iz4X6hkCerI+pvgXdWJKQzG7CQ4MBFni5+juMHR13VFC6TeunSqh9CJeeiEDkUo/
+        pIVIpgOJEAGIEsTwSsR6ogdZU6EGYXA17pG61nWp0IH83TVrnH4QbR3WYU4EF52S+xhI5QcV55sZD7QH
+        nfw7yP5pys2+fleM+zSVfM4jD4DsarCmqXgkAA8Ta5qKRwKxm0ISWNNULBLAeYA1p8hOQA9gaACiDo3i
+        rq4r6QOSvrlr4sqTYQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="GButtonDiscardChanges.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAADASURBVFhH7ZRdCsMgEIRzpByj94s+F+oZAnqyPqb4F3ViSkMxuwkODARZ4ufo7jB0dd1RQuk3
-        rp0qofQiXnohA5FKP6SFSKYDiRABiBLE8ErEeqIHWVOhBmFwNe6RutZ1qdCB/N01a5x+EG0d1mFOBBed
-        kvsYSOUHFeebGQ+0B538O8j+acrNvn5XjPs0lXzOIw+A7Gqwpql4JAAPE2uaikcCsZtCEljTVCwSwHmA
-        NafITkAPYGgAog6N4q6uK+kDkr65a+LKk2EAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAMBJREFUWEft
+        lF0KwyAQhHOkHKP3iz4X6hkCerI+pvgXdWJKQzG7CQ4MBFni5+juMHR13VFC6TeunSqh9CJeeiEDkUo/
+        pIVIpgOJEAGIEsTwSsR6ogdZU6EGYXA17pG61nWp0IH83TVrnH4QbR3WYU4EF52S+xhI5QcV55sZD7QH
+        nfw7yP5pys2+fleM+zSVfM4jD4DsarCmqXgkAA8Ta5qKRwKxm0ISWNNULBLAeYA1p8hOQA9gaACiDo3i
+        rq4r6QOSvrlr4sqTYQAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="TicketTypeID2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -260,6 +260,9 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <metadata name="guna2MessageDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>206, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

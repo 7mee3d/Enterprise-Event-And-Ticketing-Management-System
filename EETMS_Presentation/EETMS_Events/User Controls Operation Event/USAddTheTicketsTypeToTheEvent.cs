@@ -174,11 +174,25 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
         private void _AddUpdateInformatioNTicketType()
         {
+
+            DataTable DT_EventTicketCapacityInfo = EventBL.GetEventTicketCapacityInfoBy(_IDEvent);
+
+            int MaxCapacity = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[0]["MaxCapacity"]);
+            int RemainingCapacity = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[0]["RemainingCapacity"]);
+
+
             int AvailableBeforeUpdate = _ObjTicketTypeInformation.Available;
             int QuantityBeforeUpdated = _ObjTicketTypeInformation.Quantity;
 
             _ObjTicketTypeInformation.TicketTypeName = GComboBoxAllTicketTypeNotIncludeEvent.SelectedItem.ToString();
-            _ObjTicketTypeInformation.Quantity = Convert.ToInt32(GTextBoxAvailableQuantity.Text);
+
+            if (MaxCapacity >= Convert.ToInt32(GTextBoxAvailableQuantity.Text) && (RemainingCapacity >= (Convert.ToInt32(GTextBoxAvailableQuantity.Text) - AvailableBeforeUpdate)))
+                _ObjTicketTypeInformation.Quantity = Convert.ToInt32(GTextBoxAvailableQuantity.Text);
+            else
+            {
+                MessageBox.Show("Connot Added This Ticket Type Because The Qunatity Ticket Type Grther Than Max Capacity", "Note The Add new Ticket Type");
+                return;
+            }
 
             int HowIncrementQuantity = _ObjTicketTypeInformation.Quantity - QuantityBeforeUpdated;
 

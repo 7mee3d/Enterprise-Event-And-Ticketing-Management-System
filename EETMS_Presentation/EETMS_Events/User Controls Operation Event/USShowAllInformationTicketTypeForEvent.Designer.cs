@@ -52,6 +52,7 @@
             this.GGButtonWarningFullTheTicketTypeEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGButtonAddTicketType = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewTicketsEvents)).BeginInit();
             this.guna2ContextMenuStrip1.SuspendLayout();
@@ -378,6 +379,15 @@
             this.guna2GradientButton1.TabIndex = 5;
             this.guna2GradientButton1.Text = "Unsaved changes detected in 3 tiers.";
             // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialog1.Caption = null;
+            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.guna2MessageDialog1.Parent = null;
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.guna2MessageDialog1.Text = null;
+            // 
             // USShowAllInformationTicketTypeForEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,5 +434,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAvailable;
         private System.Windows.Forms.DataGridViewTextBoxColumn CurrentSales;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
     }
 }

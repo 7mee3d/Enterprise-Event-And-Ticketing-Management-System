@@ -44,15 +44,15 @@
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GTextBoxSearchTheCategory = new Guna.UI2.WinForms.Guna2TextBox();
             this.GDataGridViewCategoriesInformation = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CountEventForCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GContextMenuStripCategory = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.EditCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CountEventForCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescriptionCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GGPanelAuickAddCategory.SuspendLayout();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewCategoriesInformation)).BeginInit();
@@ -306,59 +306,6 @@
             this.GDataGridViewCategoriesInformation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GDataGridViewCategoriesInformation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // GContextMenuStripCategory
-            // 
-            this.GContextMenuStripCategory.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GContextMenuStripCategory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
-            this.toolStripSeparator1,
-            this.EditCategoryToolStripMenuItem,
-            this.deleteCategoryToolStripMenuItem});
-            this.GContextMenuStripCategory.Name = "GContextMenuStripEvents";
-            this.GContextMenuStripCategory.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripCategory.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripCategory.RenderStyle.ColorTable = null;
-            this.GContextMenuStripCategory.RenderStyle.RoundedEdges = true;
-            this.GContextMenuStripCategory.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.GContextMenuStripCategory.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripCategory.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.GContextMenuStripCategory.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripCategory.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripCategory.Size = new System.Drawing.Size(163, 81);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.ReadOnly = true;
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
-            this.toolStripTextBox1.Text = "Main Operation";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
-            // 
-            // EditCategoryToolStripMenuItem
-            // 
-            this.EditCategoryToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.EditCategoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditCategoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.EditCategoryToolStripMenuItem.Name = "EditCategoryToolStripMenuItem";
-            this.EditCategoryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.EditCategoryToolStripMenuItem.Text = "Edit Category";
-            this.EditCategoryToolStripMenuItem.Click += new System.EventHandler(this.EditCategoryToolStripMenuItem_Click);
-            // 
-            // deleteCategoryToolStripMenuItem
-            // 
-            this.deleteCategoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteCategoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.deleteCategoryToolStripMenuItem.Name = "deleteCategoryToolStripMenuItem";
-            this.deleteCategoryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.deleteCategoryToolStripMenuItem.Text = "Delete Category";
-            this.deleteCategoryToolStripMenuItem.Click += new System.EventHandler(this.deleteCategoryToolStripMenuItem_Click);
-            // 
             // CategoryID
             // 
             this.CategoryID.FillWeight = 10.52925F;
@@ -386,6 +333,62 @@
             this.DescriptionCategory.HeaderText = "DESCRIPATION CATEGORY ";
             this.DescriptionCategory.Name = "DescriptionCategory";
             this.DescriptionCategory.ReadOnly = true;
+            // 
+            // GContextMenuStripCategory
+            // 
+            this.GContextMenuStripCategory.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GContextMenuStripCategory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
+            this.toolStripSeparator1,
+            this.EditCategoryToolStripMenuItem,
+            this.deleteCategoryToolStripMenuItem});
+            this.GContextMenuStripCategory.Name = "GContextMenuStripEvents";
+            this.GContextMenuStripCategory.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.GContextMenuStripCategory.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.GContextMenuStripCategory.RenderStyle.ColorTable = null;
+            this.GContextMenuStripCategory.RenderStyle.RoundedEdges = true;
+            this.GContextMenuStripCategory.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.GContextMenuStripCategory.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.GContextMenuStripCategory.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.GContextMenuStripCategory.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.GContextMenuStripCategory.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.GContextMenuStripCategory.Size = new System.Drawing.Size(163, 74);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
+            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.toolStripTextBox1.Enabled = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.ReadOnly = true;
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 18);
+            this.toolStripTextBox1.Text = "Main Operation";
+            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
+            // 
+            // EditCategoryToolStripMenuItem
+            // 
+            this.EditCategoryToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.EditCategoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditCategoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.EditCategoryToolStripMenuItem.Name = "EditCategoryToolStripMenuItem";
+            this.EditCategoryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.EditCategoryToolStripMenuItem.Text = "Edit Category";
+            this.EditCategoryToolStripMenuItem.Click += new System.EventHandler(this.EditCategoryToolStripMenuItem_Click);
+            // 
+            // deleteCategoryToolStripMenuItem
+            // 
+            this.deleteCategoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteCategoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.deleteCategoryToolStripMenuItem.Name = "deleteCategoryToolStripMenuItem";
+            this.deleteCategoryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.deleteCategoryToolStripMenuItem.Text = "Delete Category";
+            this.deleteCategoryToolStripMenuItem.Click += new System.EventHandler(this.deleteCategoryToolStripMenuItem_Click);
             // 
             // USCategory
             // 
