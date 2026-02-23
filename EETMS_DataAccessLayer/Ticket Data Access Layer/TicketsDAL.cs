@@ -1,6 +1,7 @@
 ﻿
 using EETMS_Models;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -304,6 +305,63 @@ namespace EETMS_DataAccessLayer
 
         public static MTicketType FindTheTicketTypeBy(int EventID, int TicketID)
             => _FindTheTicketTypeBy(EventID, TicketID);
+
+
+        private static Dictionary<int, string> _GetTheAllTicketTypeBy(int IDEvent)
+        {
+            Dictionary<int, string> Dic_AllTicketTypes = new Dictionary<int, string>();
+
+
+            using (SqlConnection connection = new SqlConnection(_ConnectionString))
+            {
+
+                string Query = @"
+
+
+
+                                            SELECT TT.TicketTypeID , TT.TicketTypeName
+                                            FROM TicketTypes TT
+
+                                            INNER JOIN [Events] E
+                                            ON E.EventID = TT.EventID
+
+                                            WHERE E.EventID = @IDEvent
+
+
+
+                            ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.Add("@IDEvent", SqlDbType.Int).Value = IDEvent;
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+
+                            int TicketTypeID = reader["TicketTypeID"] != DBNull.Value ? Convert.ToInt32(reader["TicketTypeID"]) : 0;
+                            string TicketTypeName = reader["TicketTypeName"] != DBNull.Value ? reader["TicketTypeName"].ToString() : null;
+
+                            Dic_AllTicketTypes.Add(TicketTypeID, TicketTypeName);
+                        }
+
+                    }
+
+                }
+
+            }
+
+            return Dic_AllTicketTypes;
+
+        }
+
+        public static Dictionary<int, string> GetTheAllTicketTypeBy(int IDEvent)
+            => _GetTheAllTicketTypeBy(IDEvent);
 
 
     }

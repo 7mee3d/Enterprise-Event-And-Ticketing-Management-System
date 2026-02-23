@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 using EETMS_BusinessLayer;
 using EETMS_Models;
@@ -152,7 +153,7 @@ namespace EETMS_Presentation.EETMS_Category
 
                 CategoryID = "#CAT-" + Categories_DT.Rows[counter]["CategoryID"].ToString();
 
-                GDataGridViewCategoriesInformation.Rows.Add(
+                int rowIndexCategory = GDataGridViewCategoriesInformation.Rows.Add(
 
 
                     CategoryID,
@@ -162,6 +163,12 @@ namespace EETMS_Presentation.EETMS_Category
 
 
                               );
+
+
+                DataGridViewRow DataGridViewRowCategory = GDataGridViewCategoriesInformation.Rows[rowIndexCategory];
+                DataGridViewCell DataGridViewCellCategory = DataGridViewRowCategory.Cells[0];
+
+                DataGridViewCellCategory.Style.ForeColor = Color.FromArgb(39, 83, 227);
 
             }
         }

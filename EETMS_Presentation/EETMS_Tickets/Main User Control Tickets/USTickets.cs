@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -472,8 +473,27 @@ namespace EETMS_Presentation.EETMS_Tickets
 
         private void _BookingTheNewTickets()
         {
+            _EventID = (int)GComboBoxSelectEvents.SelectedValue;
+
+            Dictionary<int, string> Dic_AllTicketTypeEvents = TicketBL.GetTheAllTicketTypeBy(_EventID);
+
+
+
             if (_CustomerID > 0)
             {
+                int TicketTypeIDRegular = 0;
+                int TicketTypeIDVIP = 0;
+                int TicketTypeIDPremium = 0;
+
+                foreach (var ItemDic in Dic_AllTicketTypeEvents)
+                {
+
+                    if (ItemDic.Value == "Regular") TicketTypeIDRegular = ItemDic.Key;
+                    else if (ItemDic.Value == "VIP") TicketTypeIDVIP = ItemDic.Key;
+                    else if (ItemDic.Value == "Premium") TicketTypeIDPremium = ItemDic.Key;
+
+                }
+
                 if (_NumberOfTicketRegular > 0)
                 {
 
@@ -481,7 +501,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                     {
 
                         Quantity = _NumberOfTicketRegular,
-                        TicketTypeID = 1,
+                        TicketTypeID = TicketTypeIDRegular,
                         CustomerID = _CustomerID
 
 
@@ -498,7 +518,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                     {
 
                         Quantity = _NumberOfTicketVIP,
-                        TicketTypeID = 2,
+                        TicketTypeID = TicketTypeIDVIP,
                         CustomerID = _CustomerID
 
 
@@ -515,7 +535,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                     {
 
                         Quantity = _NumberOfTicketPreimum,
-                        TicketTypeID = 3,
+                        TicketTypeID = TicketTypeIDPremium,
                         CustomerID = _CustomerID
 
 
@@ -538,7 +558,7 @@ namespace EETMS_Presentation.EETMS_Tickets
             MessageBox.Show("The Booking Is Successfully", "Note For Add New Reservations");
             ;
 
-            _EventID = (int)GComboBoxSelectEvents.SelectedValue;
+
 
             ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "Regular", _NumberOfTicketRegular);
             ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "VIP", _NumberOfTicketVIP);

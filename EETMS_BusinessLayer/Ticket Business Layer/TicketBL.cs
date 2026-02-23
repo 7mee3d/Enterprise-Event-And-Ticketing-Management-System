@@ -1,5 +1,6 @@
 ﻿using EETMS_DataAccessLayer;
 using EETMS_Models;
+using System.Collections.Generic;
 using System.Data;
 
 
@@ -18,10 +19,13 @@ namespace EETMS_BusinessLayer
             => TicketsDAL.InsertNewTicketToTheEventBy(mTicketType) > 0;
 
         private static bool _UpdateInformationTicketType(MTicketType mTicketType)
-       => TicketsDAL.UpdateInformationTicketToTheEventBy(mTicketType) > 0;
+            => TicketsDAL.UpdateInformationTicketToTheEventBy(mTicketType) > 0;
 
         public static MTicketType FindTheTicketTypeBy(int EventID, int TicketTypeID)
             => TicketsDAL.FindTheTicketTypeBy(EventID, TicketTypeID);
+
+        public static Dictionary<int, string> GetTheAllTicketTypeBy(int IDEvent)
+            => TicketsDAL.GetTheAllTicketTypeBy(IDEvent);
 
         public static bool SaveModeTicketType(MTicketType mTicketType)
         {
