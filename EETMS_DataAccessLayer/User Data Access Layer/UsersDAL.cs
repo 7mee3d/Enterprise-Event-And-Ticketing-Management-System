@@ -478,6 +478,67 @@ namespace EETMS_DataAccessLayer
         public static int GetTheTotalBlockedUsers()
             => _GetTheTotalBlockedUsers();
 
+        private static DataTable _GetAllInformationUsers()
+        {
+
+
+            DataTable DT_AllInofrmationUser = new DataTable();
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+
+
+                                         SELECT 
+                                        
+                                        					US.UserID ,
+                                        					US.UserFullName ,
+                                        					US.UserName ,
+                                        					US.PasswordUser ,
+                                        					US.EmailUser ,
+                                        					US.ActiveAccount ,
+                                        					RO.RoleName ,
+                                        					US.LastLoginAccountDate
+                                        
+
+                                         FROM Users US 
+                                         INNER JOIN Roles RO
+
+                                         ON US.RoleID = RO.RoleID 
+
+
+
+
+                           ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+
+                    connection.Open();
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                        if (reader.HasRows) DT_AllInofrmationUser.Load(reader);
+
+
+
+                }
+            }
+
+            return DT_AllInofrmationUser;
+
+        }
+
+        public static DataTable GetAllInformationUsers()
+            => _GetAllInformationUsers();
+
 
     }
 }

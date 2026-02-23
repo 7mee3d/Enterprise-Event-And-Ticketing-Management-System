@@ -1,6 +1,6 @@
 ﻿using EETMS_DataAccessLayer;
 using EETMS_Models;
-using static EETMS_Models.MUser;
+using System.Data;
 
 namespace EETMS_BusinessLayer
 {
@@ -37,16 +37,16 @@ namespace EETMS_BusinessLayer
 
         }
 
-        public static EnStatusLoginUser PassLoginTheUser(string UsernameOrEmail, string Password)
+        public static MUser.EnStatusLoginUser PassLoginTheUser(string UsernameOrEmail, string Password)
         {
 
             MUser InfoUser = UsersDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
 
             if (InfoUser == null)
-                return EnStatusLoginUser._kUSER_NOT_FOUND;
+                return MUser.EnStatusLoginUser._kUSER_NOT_FOUND;
 
             if (InfoUser.NumberAttempts <= 0)
-                return EnStatusLoginUser._kBLOCKED_USER;
+                return MUser.EnStatusLoginUser._kBLOCKED_USER;
 
             bool isValidAccountUser = (IsUserExsitsByEmail(UsernameOrEmail, Password) || IsUserExsitsByUsername(UsernameOrEmail, Password));
 
@@ -55,7 +55,7 @@ namespace EETMS_BusinessLayer
 
                 InfoUser.NumberAttempts = 3;
                 UpdateInformationUser(InfoUser);
-                return EnStatusLoginUser._kSUCCESS_LOGIN;
+                return MUser.EnStatusLoginUser._kSUCCESS_LOGIN;
 
             }
             else
@@ -64,7 +64,7 @@ namespace EETMS_BusinessLayer
                     InfoUser.NumberAttempts -= 1;
 
                 UpdateInformationUser(InfoUser);
-                return (InfoUser.NumberAttempts > 0) ? EnStatusLoginUser._kFAILD_LOGIN : EnStatusLoginUser._kBLOCKED_USER;
+                return (InfoUser.NumberAttempts > 0) ? MUser.EnStatusLoginUser._kFAILD_LOGIN : MUser.EnStatusLoginUser._kBLOCKED_USER;
 
             }
 
@@ -83,6 +83,11 @@ namespace EETMS_BusinessLayer
 
         public static int GetTheBlockedUser()
             => UsersDAL.GetTheTotalBlockedUsers();
+
+        public static DataTable GetAllInformationUsers()
+            => UsersDAL.GetAllInformationUsers();
+
+
 
     }
 }
