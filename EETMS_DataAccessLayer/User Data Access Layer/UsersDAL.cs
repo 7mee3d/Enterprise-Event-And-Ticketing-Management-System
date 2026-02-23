@@ -14,12 +14,12 @@ namespace EETMS_DataAccessLayer
 
         #region Setting Data Access Events
         private static readonly string _ConneactionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-        #endregion    
-    
-        private static MUser _FindTheUserByUserNameOrEmail (string UsernameOrEmail )
+        #endregion
+
+        private static MUser _FindTheUserByUserNameOrEmail(string UsernameOrEmail)
         {
 
-            MUser InfoUser = null; 
+            MUser InfoUser = null;
 
             try
             {
@@ -61,11 +61,11 @@ namespace EETMS_DataAccessLayer
 
                         connection.Open();
 
-                        using (SqlDataReader reader = command.ExecuteReader() )
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
 
 
-                            if (reader.Read () )
+                            if (reader.Read())
                             {
 
                                 InfoUser = new MUser()
@@ -96,7 +96,7 @@ namespace EETMS_DataAccessLayer
 
             }
 
-            return InfoUser; 
+            return InfoUser;
         }
 
         public static MUser FindTheUserByUserNameOrEmail(string UsernameOrEmail)
@@ -104,11 +104,11 @@ namespace EETMS_DataAccessLayer
             return _FindTheUserByUserNameOrEmail(UsernameOrEmail);
         }
 
-        private static bool _IsExsitsTheUserByEmail (string EmailUser , string Password )
+        private static bool _IsExsitsTheUserByEmail(string EmailUser, string Password)
         {
 
 
-            int FinialResult  = -1; 
+            int FinialResult = -1;
 
             try
             {
@@ -132,7 +132,7 @@ namespace EETMS_DataAccessLayer
                                      ";
 
 
-                    using (SqlCommand command = new SqlCommand(Query , connection ))
+                    using (SqlCommand command = new SqlCommand(Query, connection))
                     {
 
                         command.Parameters.Add("@EmailUser", SqlDbType.NVarChar, 400).Value = EmailUser;
@@ -151,14 +151,15 @@ namespace EETMS_DataAccessLayer
                 }
 
 
-            }catch (Exception Ex )
+            }
+            catch (Exception Ex)
             {
 
             }
 
-            return FinialResult > 0; 
+            return FinialResult > 0;
         }
-        
+
         public static bool IsExsitsTheUserByEmail(string EmailUser, string Password)
         {
             return _IsExsitsTheUserByEmail(EmailUser, Password);
@@ -172,7 +173,7 @@ namespace EETMS_DataAccessLayer
 
             try
             {
-               
+
                 using (SqlConnection connection = new SqlConnection(_ConneactionString))
                 {
 
@@ -225,7 +226,7 @@ namespace EETMS_DataAccessLayer
             return _IsExsitsTheUserByUsername(Username, Password);
         }
 
-        private static int _InsertNewUser (MUser InformationNewUser)
+        private static int _InsertNewUser(MUser InformationNewUser)
         {
             int NewID = -1;
 
@@ -249,7 +250,7 @@ namespace EETMS_DataAccessLayer
 
                                    ";
 
-                    using (SqlCommand command = new SqlCommand(Query , connection ))
+                    using (SqlCommand command = new SqlCommand(Query, connection))
                     {
 
                         command.Parameters.Add("@UserFullName", SqlDbType.NVarChar, 400).Value = InformationNewUser.UserFullName;
@@ -271,24 +272,25 @@ namespace EETMS_DataAccessLayer
                     }
 
                 }
- 
 
-            }catch(Exception Ex) { }
+
+            }
+            catch (Exception Ex) { }
 
 
             return NewID;
 
         }
-   
+
         public static int InsertNewUser(MUser InformationNewUser)
         {
             return _InsertNewUser(InformationNewUser);
         }
 
-        private static int _UpdateInformationUser(int IDUser , MUser InformationNewUser)
+        private static int _UpdateInformationUser(int IDUser, MUser InformationNewUser)
         {
 
-            int RowAfective = -1; 
+            int RowAfective = -1;
 
 
             try
@@ -347,9 +349,134 @@ namespace EETMS_DataAccessLayer
 
         public static int UpdateInformationUser(int IDUser, MUser InformationNewUser)
         {
-           return  _UpdateInformationUser(IDUser , InformationNewUser);
+            return _UpdateInformationUser(IDUser, InformationNewUser);
         }
-   
+
+        private static int _GetTheTotalUsers()
+        {
+
+            int TotalUsers = 0;
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+                                                 SELECT 
+		                                                     ISNULL ( COUNT ( US.UserID ) , 0 )  
+                                                 FROM Users US
+
+                        ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int CTotalUsers))
+                        TotalUsers = CTotalUsers;
+
+                }
+
+            }
+
+
+            return TotalUsers;
+        }
+
+        public static int GetTheTotalUsers()
+            => _GetTheTotalUsers();
+
+        private static int _GetTheTotalActiveAdmin()
+        {
+
+            int TotalActiveAdmin = 0;
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+                                                 SELECT 
+		                                                ISNULL (COUNT(US.UserID) , 0 )  AS [TotalActiveAdmin]
+
+                                                FROM Users US
+
+                                                INNER JOIN Roles RO
+                                                ON RO.RoleID = US.RoleID 
+
+                                                WHERE US.ActiveAccount = 1 AND RO.RoleID = 1 
+
+                        ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int CTotalActiveAdmin))
+                        TotalActiveAdmin = CTotalActiveAdmin;
+
+                }
+
+            }
+
+
+            return TotalActiveAdmin;
+        }
+
+        public static int GetTheTotalActiveAdmin()
+            => _GetTheTotalActiveAdmin();
+
+        private static int _GetTheTotalBlockedUsers()
+        {
+
+            int TotalBlockedUsers = 0;
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+                                                 SELECT 
+		                                                 ISNULL (COUNT(US.UserID) , 0 )  AS [TotalBlockedUsers]
+
+                                                 FROM Users US
+
+                                                 WHERE US.ActiveAccount = 0 
+
+                        ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int CTotalBlockedUserAccounts))
+                        TotalBlockedUsers = CTotalBlockedUserAccounts;
+
+                }
+
+            }
+
+
+            return TotalBlockedUsers;
+        }
+
+        public static int GetTheTotalBlockedUsers()
+            => _GetTheTotalBlockedUsers();
 
 
     }

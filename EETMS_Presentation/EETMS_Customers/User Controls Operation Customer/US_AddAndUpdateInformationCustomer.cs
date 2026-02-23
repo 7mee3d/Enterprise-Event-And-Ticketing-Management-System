@@ -14,9 +14,9 @@ namespace EETMS_Presentation.EETMS_Customers
 
         private enum _EnModeCustomer
         {
-            _kADD_NEW_CUSTOMER = 1 , 
-            _kUPDATE_INFORMATION_CUSTOMER = 2 ,
-            _kNOTHING = 3 
+            _kADD_NEW_CUSTOMER = 1,
+            _kUPDATE_INFORMATION_CUSTOMER = 2,
+            _kNOTHING = 3
         }
 
 
@@ -26,47 +26,47 @@ namespace EETMS_Presentation.EETMS_Customers
         private List<string> _AllInformationCustomerInList = null;
         public event EventHandler RequestClose = null;
 
-        public US_AddAndUpdateInformationCustomer(int IDCustomer )
+        public US_AddAndUpdateInformationCustomer(int IDCustomer)
         {
             InitializeComponent();
 
 
-            if(IDCustomer != -1 )
+            if (IDCustomer != -1)
                 _EnMode = _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER;
 
             else _EnMode = _EnModeCustomer._kADD_NEW_CUSTOMER;
 
-            this._IDCustomer = IDCustomer; 
+            this._IDCustomer = IDCustomer;
         }
-  
-        private void _LoadAllInformationAndSettingAddNewCustomer ()
+
+        private void _LoadAllInformationAndSettingAddNewCustomer()
         {
 
-            if(_EnMode == _EnModeCustomer._kADD_NEW_CUSTOMER )
+            if (_EnMode == _EnModeCustomer._kADD_NEW_CUSTOMER)
             {
 
-                _EnMode = _EnModeCustomer._kADD_NEW_CUSTOMER; 
+                _EnMode = _EnModeCustomer._kADD_NEW_CUSTOMER;
                 _CustomerInformation = new MCustomer();
                 _CustomerInformation.Emode = MCustomer.EnMode._kADD_NEW_CUSTOMER;
-                return; 
+                return;
             }
 
             _CustomerInformation = CustomerBL.FindCustomer(_IDCustomer);
 
 
-            if(_CustomerInformation == null)
+            if (_CustomerInformation == null)
             {
                 MessageBox.Show($"The Customer ID [{_IDCustomer}] Not Found ..", "Note Of Search The Customer By ID");
-                return; 
+                return;
             }
 
 
-            GTextBoxFirstName.Text = _CustomerInformation.FirstName; 
-            GTextBoxMidName.Text = _CustomerInformation.MidName; 
-            GTextBoxLastName.Text = _CustomerInformation.LastName; 
-            GTextBoxEmailAddress.Text = _CustomerInformation.EmailCustomer; 
+            GTextBoxFirstName.Text = _CustomerInformation.FirstName;
+            GTextBoxMidName.Text = _CustomerInformation.MidName;
+            GTextBoxLastName.Text = _CustomerInformation.LastName;
+            GTextBoxEmailAddress.Text = _CustomerInformation.EmailCustomer;
             GTextBoxPhoneNumber.Text = _CustomerInformation.PhoneCustomer;
-            if (_EnMode == _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER) GTextBoxNationalID.Enabled = false; 
+            if (_EnMode == _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER) GTextBoxNationalID.Enabled = false;
             GTextBoxNationalID.Text = _CustomerInformation.NationalID;
             _CustomerInformation.Emode = MCustomer.EnMode._kUPDATE_INFORMATION_CUSTOMER;
 
@@ -75,14 +75,15 @@ namespace EETMS_Presentation.EETMS_Customers
             GButtonAddNewCustomer.Image = Resources.Update_Icon_EETMS;
         }
 
-        private void _AddOrUpdateInformationCustomer ()
+        private void _AddOrUpdateInformationCustomer()
         {
 
-            _CustomerInformation.FirstName     =   GTextBoxFirstName.Text;
-            _CustomerInformation.MidName       =  GTextBoxMidName.Text  ;
-            _CustomerInformation.LastName      = GTextBoxLastName.Text  ;
-            _CustomerInformation.EmailCustomer =  GTextBoxEmailAddress.Text  ;
-            _CustomerInformation.PhoneCustomer = GTextBoxPhoneNumber.Text ;
+            _CustomerInformation.FirstName = GTextBoxFirstName.Text;
+            _CustomerInformation.MidName = GTextBoxMidName.Text;
+            _CustomerInformation.LastName = GTextBoxLastName.Text;
+            _CustomerInformation.EmailCustomer = GTextBoxEmailAddress.Text;
+            _CustomerInformation.PhoneCustomer = GTextBoxPhoneNumber.Text;
+
             if (_EnMode == _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER) GTextBoxNationalID.Enabled = false;
             else
                 _CustomerInformation.NationalID = GTextBoxNationalID.Text;
@@ -100,16 +101,16 @@ namespace EETMS_Presentation.EETMS_Customers
             GButtonAddNewCustomer.Image = Resources.Update_Icon_EETMS;
 
             _CustomerInformation.Emode = MCustomer.EnMode._kUPDATE_INFORMATION_CUSTOMER;
-            _EnMode = _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER; 
+            _EnMode = _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER;
 
         }
-       
+
         private void GButtonCansel_Click(object sender, EventArgs e)
         {
-            RequestClose?.Invoke(this, EventArgs.Empty); 
+            RequestClose?.Invoke(this, EventArgs.Empty);
         }
 
-        private void _FillAllInformationCustomerAfterFillToList ()
+        private void _FillAllInformationCustomerAfterFillToList()
         {
 
             _AllInformationCustomerInList = new List<string>();
@@ -128,7 +129,7 @@ namespace EETMS_Presentation.EETMS_Customers
         private bool _CheckTheAllTextBoxiesAllFilledOrNot(List<string> AllInformationCustomerInList)
         {
 
-            return           (
+            return (
 
 
                          AllInformationCustomerInList[0] != "" &&   // The First Name 
@@ -140,17 +141,17 @@ namespace EETMS_Presentation.EETMS_Customers
 
                              );
 
-        } 
-   
+        }
+
         private void GButtonAddNewCustomer_Click(object sender, EventArgs e)
         {
             _FillAllInformationCustomerAfterFillToList();
 
             if (_CheckTheAllTextBoxiesAllFilledOrNot(_AllInformationCustomerInList))
-            
+
                 _AddOrUpdateInformationCustomer();
 
-            
+
             else MessageBox.Show("Please Fill All Text Boxies Customer To Be Added / Update .. ", "Note The Add / Update Information Customer ");
 
         }
@@ -161,6 +162,6 @@ namespace EETMS_Presentation.EETMS_Customers
             _LoadAllInformationAndSettingAddNewCustomer();
 
         }
- 
+
     }
 }

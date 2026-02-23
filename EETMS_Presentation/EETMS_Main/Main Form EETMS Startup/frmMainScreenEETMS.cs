@@ -8,6 +8,7 @@ using EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event;
 using EETMS_Presentation.EETMS_Payment;
 using EETMS_Presentation.EETMS_Report;
 using EETMS_Presentation.EETMS_Tickets;
+using EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Roles;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -218,6 +219,11 @@ namespace EETMS_Presentation.EETMS_Main
         private void frmMainScreenEETMS_Load(object sender, EventArgs e)
         {
             _ShowTheUserControlInThePanel(new USDashboard());
+        }
+
+        private void GButtonUsersAndRoles_Click(object sender, EventArgs e)
+        {
+            _ShowTheUserControlInThePanel(new USUsersManagmentAndRoles());  
         }
     }
 }

@@ -45,6 +45,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GPanelMainScreens = new Guna.UI2.WinForms.Guna2Panel();
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GButtonUsersAndRoles = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.GGPanelButtonsEETMS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogoutEETMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +65,10 @@
             // 
             // GGPanelButtonsEETMS_Main
             // 
+            this.GGPanelButtonsEETMS_Main.Controls.Add(this.label2);
+            this.GGPanelButtonsEETMS_Main.Controls.Add(this.GGPanelSeparatorBetweenManagmentAndMainOperation);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonPayment);
+            this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonUsersAndRoles);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonReport);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonTickets);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonCustomers);
@@ -101,7 +107,7 @@
             this.GButtonPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonPayment.Image = ((System.Drawing.Image)(resources.GetObject("GButtonPayment.Image")));
             this.GButtonPayment.ImageOffset = new System.Drawing.Point(-9, 0);
-            this.GButtonPayment.Location = new System.Drawing.Point(12, 470);
+            this.GButtonPayment.Location = new System.Drawing.Point(12, 477);
             this.GButtonPayment.Name = "GButtonPayment";
             this.GButtonPayment.Size = new System.Drawing.Size(220, 44);
             this.GButtonPayment.TabIndex = 5;
@@ -127,7 +133,7 @@
             this.GButtonReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonReport.Image = ((System.Drawing.Image)(resources.GetObject("GButtonReport.Image")));
             this.GButtonReport.ImageOffset = new System.Drawing.Point(-12, 0);
-            this.GButtonReport.Location = new System.Drawing.Point(12, 536);
+            this.GButtonReport.Location = new System.Drawing.Point(12, 543);
             this.GButtonReport.Name = "GButtonReport";
             this.GButtonReport.Size = new System.Drawing.Size(220, 44);
             this.GButtonReport.TabIndex = 6;
@@ -153,7 +159,7 @@
             this.GButtonTickets.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonTickets.Image = ((System.Drawing.Image)(resources.GetObject("GButtonTickets.Image")));
             this.GButtonTickets.ImageOffset = new System.Drawing.Point(-11, 0);
-            this.GButtonTickets.Location = new System.Drawing.Point(12, 404);
+            this.GButtonTickets.Location = new System.Drawing.Point(12, 411);
             this.GButtonTickets.Name = "GButtonTickets";
             this.GButtonTickets.Size = new System.Drawing.Size(220, 44);
             this.GButtonTickets.TabIndex = 4;
@@ -179,7 +185,7 @@
             this.GButtonCustomers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonCustomers.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCustomers.Image")));
             this.GButtonCustomers.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GButtonCustomers.Location = new System.Drawing.Point(12, 338);
+            this.GButtonCustomers.Location = new System.Drawing.Point(12, 345);
             this.GButtonCustomers.Name = "GButtonCustomers";
             this.GButtonCustomers.Size = new System.Drawing.Size(220, 44);
             this.GButtonCustomers.TabIndex = 3;
@@ -205,7 +211,7 @@
             this.GButtonEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonEvents.Image = ((System.Drawing.Image)(resources.GetObject("GButtonEvents.Image")));
             this.GButtonEvents.ImageOffset = new System.Drawing.Point(-12, 0);
-            this.GButtonEvents.Location = new System.Drawing.Point(12, 272);
+            this.GButtonEvents.Location = new System.Drawing.Point(12, 279);
             this.GButtonEvents.Name = "GButtonEvents";
             this.GButtonEvents.Size = new System.Drawing.Size(220, 44);
             this.GButtonEvents.TabIndex = 2;
@@ -231,7 +237,7 @@
             this.GButtonCategory.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonCategory.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCategory.Image")));
             this.GButtonCategory.ImageOffset = new System.Drawing.Point(-9, 0);
-            this.GButtonCategory.Location = new System.Drawing.Point(12, 206);
+            this.GButtonCategory.Location = new System.Drawing.Point(12, 213);
             this.GButtonCategory.Name = "GButtonCategory";
             this.GButtonCategory.Size = new System.Drawing.Size(220, 44);
             this.GButtonCategory.TabIndex = 1;
@@ -258,7 +264,7 @@
             this.GButtonDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonDashboard.Image = ((System.Drawing.Image)(resources.GetObject("GButtonDashboard.Image")));
             this.GButtonDashboard.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GButtonDashboard.Location = new System.Drawing.Point(12, 140);
+            this.GButtonDashboard.Location = new System.Drawing.Point(12, 147);
             this.GButtonDashboard.Name = "GButtonDashboard";
             this.GButtonDashboard.Size = new System.Drawing.Size(220, 44);
             this.GButtonDashboard.TabIndex = 0;
@@ -335,6 +341,59 @@
             this.GPanelMainScreens.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseMove);
             this.GPanelMainScreens.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseUp);
             // 
+            // GGPanelSeparatorBetweenManagmentAndMainOperation
+            // 
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.BackColor = System.Drawing.Color.Transparent;
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.BorderRadius = 8;
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.BorderThickness = 1;
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.CustomBorderThickness = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.Location = new System.Drawing.Point(8, 666);
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.Name = "GGPanelSeparatorBetweenManagmentAndMainOperation";
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.Size = new System.Drawing.Size(224, 10);
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.TabIndex = 7;
+            // 
+            // GButtonUsersAndRoles
+            // 
+            this.GButtonUsersAndRoles.Animated = true;
+            this.GButtonUsersAndRoles.AnimatedGIF = true;
+            this.GButtonUsersAndRoles.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonUsersAndRoles.BorderRadius = 5;
+            this.GButtonUsersAndRoles.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonUsersAndRoles.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonUsersAndRoles.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonUsersAndRoles.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonUsersAndRoles.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonUsersAndRoles.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonUsersAndRoles.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonUsersAndRoles.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GButtonUsersAndRoles.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonUsersAndRoles.ForeColor = System.Drawing.Color.White;
+            this.GButtonUsersAndRoles.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonUsersAndRoles.Image = ((System.Drawing.Image)(resources.GetObject("GButtonUsersAndRoles.Image")));
+            this.GButtonUsersAndRoles.ImageOffset = new System.Drawing.Point(2, 0);
+            this.GButtonUsersAndRoles.Location = new System.Drawing.Point(12, 696);
+            this.GButtonUsersAndRoles.Name = "GButtonUsersAndRoles";
+            this.GButtonUsersAndRoles.Size = new System.Drawing.Size(220, 44);
+            this.GButtonUsersAndRoles.TabIndex = 6;
+            this.GButtonUsersAndRoles.Text = "User and Roles";
+            this.GButtonUsersAndRoles.TextOffset = new System.Drawing.Point(4, 0);
+            this.GButtonUsersAndRoles.Click += new System.EventHandler(this.GButtonUsersAndRoles_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Copperplate Gothic Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label2.Location = new System.Drawing.Point(12, 647);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 12);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "MANAGMENT";
+            // 
             // frmMainScreenEETMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,5 +432,8 @@
         private Guna.UI2.WinForms.Guna2Button GButtonEvents;
         private Guna.UI2.WinForms.Guna2Button GButtonCategory;
         private Guna.UI2.WinForms.Guna2Button GButtonPayment;
+        private Guna.UI2.WinForms.Guna2GradientPanel GGPanelSeparatorBetweenManagmentAndMainOperation;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Button GButtonUsersAndRoles;
     }
 }

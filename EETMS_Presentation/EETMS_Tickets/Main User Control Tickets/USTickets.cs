@@ -11,35 +11,51 @@ using Guna.UI2.WinForms;
 namespace EETMS_Presentation.EETMS_Tickets
 {
 
-
     public partial class USTickets : UserControl
     {
 
-        private int _NumberOfTicketRegular = 0;
-        private int _NumberOfTicketVIP = 0;
-        private int _NumberOfTicketPreimum = 0;
 
-        private int _PriceTheRegularTicket = 0;
-        private int _PriceTheVIPTicket = 0;
-        private int _PriceThePreimumTicket = 0;
+        private int _NumberOfTicketRegular;
+        private int _NumberOfTicketVIP;
+        private int _NumberOfTicketPreimum;
 
-
-        private double _SubTotalAmount = 0;
-        private double _Tax = 0;
-        private double _TotalAmount = 0;
+        private int _PriceTheRegularTicket;
+        private int _PriceTheVIPTicket;
+        private int _PriceThePreimumTicket;
 
 
-        private int _CustomerID = -1;
+        private double _SubTotalAmount;
+        private double _Tax;
+        private double _TotalAmount;
 
-        private MReservations _MReservations = null;
 
-
-
+        private int _CustomerID;
+        private MReservations _MReservations;
         private int _EventID;
+
+
 
         public USTickets()
         {
             InitializeComponent();
+            _NumberOfTicketRegular = 0;
+            _NumberOfTicketVIP = 0;
+            _NumberOfTicketPreimum = 0;
+
+            _PriceTheRegularTicket = 0;
+            _PriceTheVIPTicket = 0;
+            _PriceThePreimumTicket = 0;
+
+            _SubTotalAmount = 0;
+            _Tax = 0;
+            _TotalAmount = 0;
+
+
+            _CustomerID = -1;
+
+            _MReservations = null;
+
+            _EventID = 0;
         }
 
         private void _CheckTheStackTickes(int CountOfTicketsAvailable = 0, bool IsSelected = false, Guna2GradientButton G2DB = null, Label lblLeftTikets = null)
@@ -478,7 +494,6 @@ namespace EETMS_Presentation.EETMS_Tickets
             Dictionary<int, string> Dic_AllTicketTypeEvents = TicketBL.GetTheAllTicketTypeBy(_EventID);
 
 
-
             if (_CustomerID > 0)
             {
                 int TicketTypeIDRegular = 0;
@@ -583,5 +598,7 @@ namespace EETMS_Presentation.EETMS_Tickets
             _ResetAllSettingCardsTickets();
             _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
         }
+
+
     }
 }

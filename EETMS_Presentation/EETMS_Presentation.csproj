@@ -146,6 +146,12 @@
       <DependentUpon>USTickets.cs</DependentUpon>
     </Compile>
     <Compile Include="EETMS_Main_Files_System\Program.cs" />
+    <Compile Include="EETMS_UsersAndRoles\Main User Control Users And Roles\USUsersManagmentAndRoles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_UsersAndRoles\Main User Control Users And Roles\USUsersManagmentAndRoles.Designer.cs">
+      <DependentUpon>USUsersManagmentAndRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EETMS_Category\Main user Control Category\USCategory.resx">
       <DependentUpon>USCategory.cs</DependentUpon>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Tickets\Main User Control Tickets\USTickets.resx">
       <DependentUpon>USTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_UsersAndRoles\Main User Control Users And Roles\USUsersManagmentAndRoles.resx">
+      <DependentUpon>USUsersManagmentAndRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
