@@ -152,6 +152,12 @@
     <Compile Include="EETMS_UsersAndRoles\Main User Control Users And Roles\USUsersManagmentAndRoles.Designer.cs">
       <DependentUpon>USUsersManagmentAndRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="EETMS_UsersAndRoles\User Controls Operation User And Roles\USAddNewUserAndUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_UsersAndRoles\User Controls Operation User And Roles\USAddNewUserAndUpdate.Designer.cs">
+      <DependentUpon>USAddNewUserAndUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EETMS_Category\Main user Control Category\USCategory.resx">
       <DependentUpon>USCategory.cs</DependentUpon>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_UsersAndRoles\Main User Control Users And Roles\USUsersManagmentAndRoles.resx">
       <DependentUpon>USUsersManagmentAndRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_UsersAndRoles\User Controls Operation User And Roles\USAddNewUserAndUpdate.resx">
+      <DependentUpon>USAddNewUserAndUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

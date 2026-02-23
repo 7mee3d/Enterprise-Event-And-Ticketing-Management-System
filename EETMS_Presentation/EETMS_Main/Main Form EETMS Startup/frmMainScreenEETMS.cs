@@ -9,6 +9,7 @@ using EETMS_Presentation.EETMS_Payment;
 using EETMS_Presentation.EETMS_Report;
 using EETMS_Presentation.EETMS_Tickets;
 using EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Roles;
+using EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_And_Roles;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -221,9 +222,31 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheUserControlInThePanel(new USDashboard());
         }
 
+        private void _OpenTheAddNewUser (int IDUser)
+        {
+            USAddNewUserAndUpdate USANUAU = new USAddNewUserAndUpdate(IDUser);
+            USANUAU.ERequestToTheCloseAddNewUser += (sender, e) =>
+            _ShowTheUserAndRoleUS();
+
+            _ShowTheUserControlInThePanel(USANUAU);
+        }
+    
+        private void _ShowTheUserAndRoleUS()
+        {
+
+            USUsersManagmentAndRoles USUMAR = new USUsersManagmentAndRoles();
+
+            USUMAR.ERequestToOpenTheAddNewUserUS += (sender, UserID) =>
+            _OpenTheAddNewUser(UserID);
+
+             _ShowTheUserControlInThePanel(USUMAR);
+        }
+
         private void GButtonUsersAndRoles_Click(object sender, EventArgs e)
         {
-            _ShowTheUserControlInThePanel(new USUsersManagmentAndRoles());  
+            _ShowTheUserAndRoleUS();
         }
+   
+    
     }
 }

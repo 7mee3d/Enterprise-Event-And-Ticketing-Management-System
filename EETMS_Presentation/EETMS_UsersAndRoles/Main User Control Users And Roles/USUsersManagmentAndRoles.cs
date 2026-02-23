@@ -13,6 +13,9 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             InitializeComponent();
         }
 
+        public event EventHandler<int> ERequestToOpenTheAddNewUserUS = null;
+        int IDUser = 0;
+
         private void _InitalSettingTheUserManagmentCountsUsers()
         {
             lblTotalUsers.Text = UserBL.GetTotalUsers().ToString();
@@ -62,9 +65,12 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         }
 
         private void USUsersManagmentAndRoles_Load(object sender, EventArgs e)
-           =>  _InitalSettingTheUserManagmentCountsUsers();
+           => _InitalSettingTheUserManagmentCountsUsers();
 
-
+        private void GGButtonAddNewUser_Click(object sender, EventArgs e)
+        {
+            ERequestToOpenTheAddNewUserUS?.Invoke(this, IDUser);
+        }
 
 
     }

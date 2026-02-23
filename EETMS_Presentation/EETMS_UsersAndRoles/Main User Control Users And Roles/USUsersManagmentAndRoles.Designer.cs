@@ -303,6 +303,7 @@
             this.GGButtonAddNewUser.Size = new System.Drawing.Size(197, 47);
             this.GGButtonAddNewUser.TabIndex = 3;
             this.GGButtonAddNewUser.Text = "Add New User";
+            this.GGButtonAddNewUser.Click += new System.EventHandler(this.GGButtonAddNewUser_Click);
             // 
             // GTextBoxSearchTheEvent
             // 
