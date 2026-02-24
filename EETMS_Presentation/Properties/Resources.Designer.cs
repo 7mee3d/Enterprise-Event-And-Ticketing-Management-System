@@ -73,6 +73,16 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_New_Photo_NoFill_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Add_New_Photo_NoFill_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EETMS_Login {
             get {
                 object obj = ResourceManager.GetObject("EETMS_Login", resourceCulture);
@@ -103,9 +113,29 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Remove_Image_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Remove_Image_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Update_Icon_EETMS {
             get {
                 object obj = ResourceManager.GetObject("Update_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Upload_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Upload_Icon_EETMS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

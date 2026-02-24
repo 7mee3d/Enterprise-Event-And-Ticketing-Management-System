@@ -59,12 +59,18 @@
             this.RoleUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActiveUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastLoginUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GContextMenuStripUsers = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewUsersInformation)).BeginInit();
+            this.GContextMenuStripUsers.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -355,6 +361,7 @@
             this.RoleUser,
             this.ActiveUser,
             this.LastLoginUser});
+            this.GDataGridViewUsersInformation.ContextMenuStrip = this.GContextMenuStripUsers;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -454,6 +461,61 @@
             this.LastLoginUser.Name = "LastLoginUser";
             this.LastLoginUser.ReadOnly = true;
             // 
+            // GContextMenuStripUsers
+            // 
+            this.GContextMenuStripUsers.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GContextMenuStripUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
+            this.toolStripSeparator1,
+            this.EditToolStripMenuItem,
+            this.deleteEventToolStripMenuItem});
+            this.GContextMenuStripUsers.Name = "GContextMenuStripEvents";
+            this.GContextMenuStripUsers.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.GContextMenuStripUsers.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.GContextMenuStripUsers.RenderStyle.ColorTable = null;
+            this.GContextMenuStripUsers.RenderStyle.RoundedEdges = true;
+            this.GContextMenuStripUsers.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.GContextMenuStripUsers.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.GContextMenuStripUsers.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.GContextMenuStripUsers.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.GContextMenuStripUsers.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.GContextMenuStripUsers.Size = new System.Drawing.Size(181, 96);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
+            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.toolStripTextBox1.Enabled = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.ReadOnly = true;
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 18);
+            this.toolStripTextBox1.Text = "Main Operation";
+            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // EditToolStripMenuItem
+            // 
+            this.EditToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.EditToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.EditToolStripMenuItem.Text = "Edit User";
+            this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
+            // 
+            // deleteEventToolStripMenuItem
+            // 
+            this.deleteEventToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteEventToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.deleteEventToolStripMenuItem.Name = "deleteEventToolStripMenuItem";
+            this.deleteEventToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteEventToolStripMenuItem.Text = "Delete User";
+            // 
             // USUsersManagmentAndRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,6 +537,8 @@
             this.guna2GradientPanel2.PerformLayout();
             this.GGPanelDataGridViewEvents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewUsersInformation)).EndInit();
+            this.GContextMenuStripUsers.ResumeLayout(false);
+            this.GContextMenuStripUsers.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,5 +572,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn ActiveUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastLoginUser;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip GContextMenuStripUsers;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem EditToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteEventToolStripMenuItem;
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Data.SqlClient;
 using System.Data;
 using EETMS_Models;
+using System.Security.Cryptography;
 
 namespace EETMS_DataAccessLayer
 {
@@ -103,6 +104,94 @@ namespace EETMS_DataAccessLayer
         {
             return _FindTheUserByUserNameOrEmail(UsernameOrEmail);
         }
+
+        private static MUser _FindTheUserBy(int IDUser)
+        {
+
+            MUser InfoUser = null;
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+                    string Query = @"
+
+                                         SELECT   
+                                                    US.UserID,
+                                                    US.UserFullName ,
+                                                    US.UserName ,
+                                                    US.PasswordUser  ,
+                                                    US.EmailUser   ,
+                                                    US.ActiveAccount ,
+                                                    US.NumberAttempts  ,
+                                                    RO.RoleID,
+                                                    RO.RoleName ,
+                                                    US.ImagePath
+         
+
+                                                                FROM Users US
+                                                                INNER JOIN Roles RO
+
+                                        ON US.RoleID = RO.RoleID
+
+                                        WHERE UserID = @UserID ;
+                                                    
+
+
+                                     ";
+
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        command.Parameters.Add("@UserID", SqlDbType.Int).Value = IDUser;
+
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+
+                            if (reader.Read())
+                            {
+
+                                InfoUser = new MUser()
+                                {
+
+                                    UserID = reader["UserID"] != DBNull.Value ? (int)reader["UserID"] : 0,
+                                    UserFullName = reader["UserFullName"] != DBNull.Value ? (string)reader["UserFullName"] : null,
+                                    Username = reader["UserName"] != DBNull.Value ? (string)reader["UserName"] : null,
+                                    PasswordUser = reader["PasswordUser"] != DBNull.Value ? (string)reader["PasswordUser"] : null,
+                                    EmailUser = reader["EmailUser"] != DBNull.Value ? (string)reader["EmailUser"] : null,
+                                    IsActiveAccount = reader["ActiveAccount"] != DBNull.Value ? (bool)reader["ActiveAccount"] : false,
+                                    NumberAttempts = reader["NumberAttempts"] != DBNull.Value ? (int)reader["NumberAttempts"] : 0,
+                                    RoleID = reader["RoleID"] != DBNull.Value ? (int)reader["RoleID"] : 0,
+                                    RoleName = reader["RoleName"] != DBNull.Value ? (string)reader["RoleName"] : null,
+                                    ImagePath = reader["ImagePath"] != DBNull.Value ? (string)reader["ImagePath"] : null
+                                };
+
+                            }
+                        }
+
+
+
+                    }
+                }
+
+
+            }
+            catch (Exception Ex)
+            {
+                throw;
+            }
+
+            return InfoUser;
+        }
+
+        public static MUser FindTheUserBy(int IDUser)
+            => _FindTheUserBy(IDUser);
 
         private static bool _IsExsitsTheUserByEmail(string EmailUser, string Password)
         {
@@ -240,8 +329,8 @@ namespace EETMS_DataAccessLayer
 
                     string Query = @"
                                                         
-                                        INSERT INTO Users (UserFullName , UserName , PasswordUser , EmailUser , PermissionUser )
-                                        VALUES            (@UserFullName , @UserName , @PasswordUser , @EmailUser , @PermissionUser);
+                                        INSERT INTO Users (UserFullName , UserName , PasswordUser , EmailUser , RoleID , ImagePath )
+                                        VALUES            (@UserFullName , @UserName , @PasswordUser , @EmailUser , @RoleID , @ImagePath);
 
 
 
@@ -257,7 +346,12 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.Add("@UserName", SqlDbType.NVarChar, 250).Value = InformationNewUser.Username;
                         command.Parameters.Add("@PasswordUser", SqlDbType.NVarChar, 350).Value = InformationNewUser.PasswordUser;
                         command.Parameters.Add("@EmailUser", SqlDbType.NVarChar, 400).Value = InformationNewUser.EmailUser;
-                        command.Parameters.Add("@PermissionUser", SqlDbType.SmallInt).Value = InformationNewUser.PermissionUser;
+                        command.Parameters.Add("@RoleID", SqlDbType.Int).Value = InformationNewUser.RoleID;
+
+                        if (string.IsNullOrEmpty(InformationNewUser.ImagePath))
+                            command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
+                        else
+                            command.Parameters.AddWithValue("@ImagePath", InformationNewUser.ImagePath);
 
 
                         connection.Open();
@@ -275,7 +369,7 @@ namespace EETMS_DataAccessLayer
 
 
             }
-            catch (Exception Ex) { }
+            catch (Exception Ex) { throw; }
 
 
             return NewID;
@@ -308,8 +402,9 @@ namespace EETMS_DataAccessLayer
                                                 UserName = @UserName ,
                                                 PasswordUser = @PasswordUser ,
                                                 EmailUser  = @EmailUser ,
-                                                PermissionUser  = @PermissionUser ,
-                                                NumberAttempts = @NumberAttempts 
+                                                RoleID  = @RoleID ,
+                                                NumberAttempts = @NumberAttempts ,
+                                                ImagePath = @ImagePath
 
 
 
@@ -326,8 +421,13 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.Add("@UserName", SqlDbType.NVarChar, 250).Value = InformationNewUser.Username;
                         command.Parameters.Add("@PasswordUser", SqlDbType.NVarChar, 350).Value = InformationNewUser.PasswordUser;
                         command.Parameters.Add("@EmailUser", SqlDbType.NVarChar, 400).Value = InformationNewUser.EmailUser;
-                        command.Parameters.Add("@PermissionUser", SqlDbType.SmallInt).Value = InformationNewUser.PermissionUser;
+                        command.Parameters.Add("@RoleID", SqlDbType.SmallInt).Value = InformationNewUser.RoleID;
                         command.Parameters.Add("@NumberAttempts", SqlDbType.TinyInt).Value = InformationNewUser.NumberAttempts;
+
+                        if (InformationNewUser.ImagePath != null)
+                            command.Parameters.AddWithValue("@ImagePath", InformationNewUser.ImagePath);
+                        else
+                            command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
 
 
                         connection.Open();
@@ -340,7 +440,7 @@ namespace EETMS_DataAccessLayer
 
 
             }
-            catch (Exception Ex) { }
+            catch (Exception Ex) { throw; }
 
 
             return RowAfective;

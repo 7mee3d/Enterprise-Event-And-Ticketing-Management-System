@@ -75,6 +75,9 @@ namespace EETMS_BusinessLayer
             return UsersDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
         }
 
+        public static MUser FindUserBy(int IDUser)
+            => UsersDAL.FindTheUserBy(IDUser);
+
         public static int GetTotalUsers()
             => UsersDAL.GetTheTotalUsers();
 

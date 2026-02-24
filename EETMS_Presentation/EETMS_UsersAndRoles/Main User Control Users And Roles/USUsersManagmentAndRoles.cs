@@ -16,6 +16,9 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         public event EventHandler<int> ERequestToOpenTheAddNewUserUS = null;
         int IDUser = 0;
 
+        private int _GetTheIDUserAfterSelectionUserFromDGV()
+           => (GDataGridViewUsersInformation.SelectedRows.Count > 0 ? Convert.ToInt32(GDataGridViewUsersInformation.SelectedRows[0].Cells[0].Value) : -1);
+
         private void _InitalSettingTheUserManagmentCountsUsers()
         {
             lblTotalUsers.Text = UserBL.GetTotalUsers().ToString();
@@ -41,8 +44,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
 
                                                                   DR_InformationOneUser["UserID"].ToString(),
+                                                                  DR_InformationOneUser["UserFullName"].ToString(),
                                                                   DR_InformationOneUser["UserName"].ToString(),
-                                                                  DR_InformationOneUser["PasswordUser"].ToString(),
                                                                   DR_InformationOneUser["EmailUser"].ToString(),
                                                                   StrActiveOrInActive,
                                                                   DR_InformationOneUser["RoleName"].ToString(),
@@ -69,9 +72,12 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
         private void GGButtonAddNewUser_Click(object sender, EventArgs e)
         {
-            ERequestToOpenTheAddNewUserUS?.Invoke(this, IDUser);
+            ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
         }
 
-
+        private void EditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
+        }
     }
 }
