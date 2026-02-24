@@ -52,6 +52,7 @@
     <Compile Include="Report Data Access Layer\ReportDAL.cs" />
     <Compile Include="Reservation Data Access Layer\ReservationDAL.cs" />
     <Compile Include="Reservation Payment Data Access Layer\ReservationPaymentDAL.cs" />
+    <Compile Include="Roles Data Access Layer\RoleDAL.cs" />
     <Compile Include="Ticket Data Access Layer\TicketsDAL.cs" />
     <Compile Include="User Data Access Layer\UsersDAL.cs" />
   </ItemGroup>

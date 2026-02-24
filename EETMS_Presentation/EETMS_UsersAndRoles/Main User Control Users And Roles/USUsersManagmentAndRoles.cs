@@ -8,13 +8,18 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 {
     public partial class USUsersManagmentAndRoles : UserControl
     {
+
+
+        public event EventHandler<int> ERequestToOpenTheAddNewUserUS;
+        private int _IDUser;
+
         public USUsersManagmentAndRoles()
         {
             InitializeComponent();
+            ERequestToOpenTheAddNewUserUS = null;
+            _IDUser = 0;
         }
 
-        public event EventHandler<int> ERequestToOpenTheAddNewUserUS = null;
-        int IDUser = 0;
 
         private int _GetTheIDUserAfterSelectionUserFromDGV()
            => (GDataGridViewUsersInformation.SelectedRows.Count > 0 ? Convert.ToInt32(GDataGridViewUsersInformation.SelectedRows[0].Cells[0].Value) : -1);
@@ -69,15 +74,15 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             }
         }
 
-        private void USUsersManagmentAndRoles_Load(object sender, EventArgs e)
+        private void _USUsersManagmentAndRoles_Load(object sender, EventArgs e)
            => _InitalSettingTheUserManagmentCountsUsers();
 
-        private void GGButtonAddNewUser_Click(object sender, EventArgs e)
+        private void _GGButtonAddNewUser_Click(object sender, EventArgs e)
         {
             ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
         }
 
-        private void EditToolStripMenuItem_Click(object sender, EventArgs e)
+        private void _EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
         }

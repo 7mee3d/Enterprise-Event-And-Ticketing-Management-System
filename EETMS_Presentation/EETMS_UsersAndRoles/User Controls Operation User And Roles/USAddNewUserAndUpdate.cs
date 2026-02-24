@@ -1,7 +1,9 @@
 ﻿using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.Roles_Business_Layer;
 using EETMS_Models;
 using EETMS_Presentation.Properties;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -11,24 +13,29 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
     {
 
 
-        public event EventHandler ERequestToTheCloseAddNewUser = null;
-        int _IDUser = 0;
-        private string _ImagePathUser = null;
+        public event EventHandler ERequestToTheCloseAddNewUser;
+        private int _IDUser;
+        private string _ImagePathUser;
+        private _EnModeUser _EnMode;
+        private MUser _InformationUser;
 
         private enum _EnModeUser
         {
             _kADD_NEW_USER = 1,
-            _kUPDATE_INFORMATION_USER = 2
+            _kUPDATE_INFORMATION_USER = 2,
+            _kNOTHING = 3
         };
-
-        private _EnModeUser _EnMode;
-        private MUser _InformationUser = null;
-
 
 
         public USAddNewUserAndUpdate(int id)
         {
             InitializeComponent();
+
+            _EnMode = _EnModeUser._kNOTHING;
+            _IDUser = 0;
+            ERequestToTheCloseAddNewUser = null;
+            _ImagePathUser = null;
+
 
             if (id != -1)
                 this._EnMode = _EnModeUser._kUPDATE_INFORMATION_USER;
@@ -36,8 +43,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
                 this._EnMode = _EnModeUser._kADD_NEW_USER;
 
             this._IDUser = id;
+            _InformationUser = null;
         }
-
 
 
 
@@ -46,6 +53,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             if (_EnMode == _EnModeUser._kADD_NEW_USER)
             {
+                lblTiteTheUS.Text = "Create Account";
                 _InformationUser = new MUser();
                 return;
 
@@ -65,7 +73,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             GTextBoxFullName.Text = _InformationUser.UserFullName;
             GTextBoxUsername.Text = _InformationUser.Username;
             GTextBoxProfessionalEmail.Text = _InformationUser.EmailUser;
-            GComboBoxRoleUser.SelectedItem = _InformationUser.RoleID;
+            GComboBoxRoleUser.SelectedValue = _InformationUser.RoleID;
             GTextBoxPassword.Text = _InformationUser.PasswordUser;
 
             if (_InformationUser.ImagePath != null)
@@ -84,6 +92,18 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             _InformationUser.enMode = MUser.EnModeUser._kUPDATE_INFORMATION_USER;
             _EnMode = _EnModeUser._kUPDATE_INFORMATION_USER;
             GButtonCreateTheNewUser.Text = "Update Information User";
+            lblTiteTheUS.Text = "Update Account";
+
+        }
+
+        private void _LoadAllInformationRolesToomboBox()
+        {
+            DataTable DT_AllInformationRoles = RolesBL.GetAllInformationRoles();
+
+            GComboBoxRoleUser.DataSource = DT_AllInformationRoles;
+
+            GComboBoxRoleUser.DisplayMember = "RoleName";
+            GComboBoxRoleUser.ValueMember = "RoleID";
 
 
         }
@@ -95,7 +115,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             _InformationUser.Username = GTextBoxUsername.Text;
             _InformationUser.EmailUser = GTextBoxProfessionalEmail.Text;
             _InformationUser.PasswordUser = GTextBoxPassword.Text;
-            _InformationUser.RoleID =/* Convert.ToInt32(GComboBoxRoleUser.SelectedItem)*/ 2;
+            _InformationUser.RoleID = Convert.ToInt32(GComboBoxRoleUser.SelectedValue);
             _InformationUser.ImagePath = _ImagePathUser != null ? _ImagePathUser : null;
 
             if (UserBL.SaveInformationUserMode(_InformationUser))
@@ -120,7 +140,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             _InformationUser.enMode = MUser.EnModeUser._kUPDATE_INFORMATION_USER;
             _EnMode = _EnModeUser._kUPDATE_INFORMATION_USER;
             GButtonCreateTheNewUser.Text = "Update Information User";
-
+            lblTiteTheUS.Text = "Update Account";
         }
 
         private void _GetTheImageUser()
@@ -154,7 +174,12 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
            => ERequestToTheCloseAddNewUser?.Invoke(this, EventArgs.Empty);
 
         private void USAddNewUserAndUpdate_Load(object sender, EventArgs e)
-           => _LoadAllInformationUserAfterLoadTheUS();
+        {
+            _LoadAllInformationRolesToomboBox();
+            _LoadAllInformationUserAfterLoadTheUS();
+
+
+        }
 
         private void GGCButtonAddImageUser_Click(object sender, EventArgs e)
         {

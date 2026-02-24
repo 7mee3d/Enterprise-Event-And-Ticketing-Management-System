@@ -45,7 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.GGCButtonAddImageUser = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTiteTheUS = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.GCGPanelAddNewUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GCPictureBoxImageUser)).BeginInit();
@@ -72,7 +72,7 @@
             this.GCGPanelAddNewUser.Controls.Add(this.label2);
             this.GCGPanelAddNewUser.Controls.Add(this.GGCButtonAddImageUser);
             this.GCGPanelAddNewUser.Controls.Add(this.label5);
-            this.GCGPanelAddNewUser.Controls.Add(this.label1);
+            this.GCGPanelAddNewUser.Controls.Add(this.lblTiteTheUS);
             this.GCGPanelAddNewUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(253)))));
             this.GCGPanelAddNewUser.CustomBorderThickness = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.GCGPanelAddNewUser.Location = new System.Drawing.Point(463, 93);
@@ -319,6 +319,7 @@
             this.GGCButtonAddImageUser.ImageSize = new System.Drawing.Size(40, 40);
             this.GGCButtonAddImageUser.Location = new System.Drawing.Point(187, 142);
             this.GGCButtonAddImageUser.Name = "GGCButtonAddImageUser";
+            this.GGCButtonAddImageUser.PressedColor = System.Drawing.Color.White;
             this.GGCButtonAddImageUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GGCButtonAddImageUser.Size = new System.Drawing.Size(118, 114);
             this.GGCButtonAddImageUser.TabIndex = 12;
@@ -337,15 +338,15 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Add a new user to the EETMS";
             // 
-            // label1
+            // lblTiteTheUS
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 47);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Create Account";
+            this.lblTiteTheUS.AutoSize = true;
+            this.lblTiteTheUS.Font = new System.Drawing.Font("Segoe UI Variable Text", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiteTheUS.Location = new System.Drawing.Point(110, 48);
+            this.lblTiteTheUS.Name = "lblTiteTheUS";
+            this.lblTiteTheUS.Size = new System.Drawing.Size(273, 47);
+            this.lblTiteTheUS.TabIndex = 0;
+            this.lblTiteTheUS.Text = "Create Account";
             // 
             // label3
             // 
@@ -378,7 +379,7 @@
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel GCGPanelAddNewUser;
         private Guna.UI2.WinForms.Guna2Button GButtonClose;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTiteTheUS;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2GradientCircleButton GGCButtonAddImageUser;
         private System.Windows.Forms.Label label6;

@@ -396,7 +396,7 @@
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
             this.EditToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.EditToolStripMenuItem.Text = "Edit User";
-            this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
+            this.EditToolStripMenuItem.Click += new System.EventHandler(this._EditToolStripMenuItem_Click);
             // 
             // _DeleteUserToolStripMenuItem
             // 
@@ -431,7 +431,7 @@
             this.GGButtonAddNewUser.Size = new System.Drawing.Size(197, 47);
             this.GGButtonAddNewUser.TabIndex = 3;
             this.GGButtonAddNewUser.Text = "Add New User";
-            this.GGButtonAddNewUser.Click += new System.EventHandler(this.GGButtonAddNewUser_Click);
+            this.GGButtonAddNewUser.Click += new System.EventHandler(this._GGButtonAddNewUser_Click);
             // 
             // GTextBoxSearchTheEvent
             // 
@@ -528,7 +528,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "USUsersManagmentAndRoles";
             this.Size = new System.Drawing.Size(1419, 935);
-            this.Load += new System.EventHandler(this.USUsersManagmentAndRoles_Load);
+            this.Load += new System.EventHandler(this._USUsersManagmentAndRoles_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
