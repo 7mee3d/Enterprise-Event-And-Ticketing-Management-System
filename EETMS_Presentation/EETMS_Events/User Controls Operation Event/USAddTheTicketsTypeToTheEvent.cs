@@ -198,7 +198,7 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             _ObjTicketTypeInformation.Available = (AvailableBeforeUpdate + HowIncrementQuantity);
 
-            _ObjTicketTypeInformation.Price = Convert.ToDecimal(GTextBoxAvailableQuantity.Text);
+            _ObjTicketTypeInformation.Price = Convert.ToDecimal(GTextBoxPriceTheTicketType.Text);
             _ObjTicketTypeInformation.EventID = _IDEvent;
 
             if (TicketBL.SaveModeTicketType(_ObjTicketTypeInformation))
