@@ -242,6 +242,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Image_hide_White_Icon_EETMS.png" />
     <None Include="Resources\Add_New_Photo_NoFill_Icon_EETMS.png" />
     <None Include="Resources\Remove_Image_Icon_EETMS.png" />
     <None Include="Resources\Upload_Icon_EETMS.png" />

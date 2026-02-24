@@ -30,25 +30,30 @@ namespace EETMS_DataAccessLayer
 
                     string Query = @"
 
-                                        SELECT  UserID,
-                                                UserFullName ,
-                                                UserName ,
-                                                PasswordUser  ,
-                                                EmailUser   ,
-                                                ActiveAccount ,
-                                                NumberAttempts  ,
-                                                RoleName
-                                                
-                                        FROM Users 
-                                        INNER JOIN Roles
-                                        ON Users.RoleID = Roles.RoleID
+                                     
+                                                       SELECT  US.UserID,
+                                                               US.UserFullName ,
+                                                               US.UserName ,
+                                                               US.PasswordUser  ,
+                                                               US.EmailUser   ,
+                                                               US.ActiveAccount ,
+                                                               US.NumberAttempts  ,
+                                                               RO.RoleName ,
+                                                    		   RO.RoleID , 
+                                                    		   US.ImagePath 
+           
 
-                                        WHERE (
+                                                                                     FROM Users US
+                                                                                     INNER JOIN Roles RO
+                                                                                     ON US.RoleID = RO.RoleID
 
-                                                 (UserName = @UsernameOrEmail)
-                                           OR    (EmailUser = @UsernameOrEmail)
 
-                                              ) ; 
+                                                         WHERE (
+
+                                                                  (UserName = @UsernameOrEmail)
+                                                            OR    (EmailUser = @UsernameOrEmail)
+
+                                                               ) ; 
                                                     
 
 
@@ -80,6 +85,8 @@ namespace EETMS_DataAccessLayer
                                     IsActiveAccount = reader["ActiveAccount"] != DBNull.Value ? (bool)reader["ActiveAccount"] : false,
                                     NumberAttempts = reader["NumberAttempts"] != DBNull.Value ? (int)reader["NumberAttempts"] : 0,
                                     RoleName = reader["RoleName"] != DBNull.Value ? (string)reader["RoleName"] : null,
+                                    RoleID = reader["RoleID"] != DBNull.Value ? Convert.ToInt32(reader["RoleID"]) : 0,
+                                    ImagePath = reader["ImagePath"] != DBNull.Value ? (string)reader["ImagePath"] : null,
                                 };
 
                             }

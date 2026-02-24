@@ -103,6 +103,16 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Image_hide_White_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Image_hide_White_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout_EETMS {
             get {
                 object obj = ResourceManager.GetObject("logout_EETMS", resourceCulture);

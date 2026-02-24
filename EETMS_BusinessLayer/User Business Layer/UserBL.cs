@@ -1,10 +1,11 @@
 ﻿using EETMS_DataAccessLayer;
 using EETMS_Models;
+using System;
 using System.Data;
 
 namespace EETMS_BusinessLayer
 {
-    public class UserBL
+    public sealed class UserBL
     {
 
 
@@ -92,6 +93,7 @@ namespace EETMS_BusinessLayer
 
         public static bool DeleteTheUserBy(int IDUser)
             => UsersDAL.DeleteTheUserBy(IDUser) > 0;
+
 
 
     }

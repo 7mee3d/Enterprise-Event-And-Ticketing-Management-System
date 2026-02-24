@@ -54,6 +54,7 @@
     <Compile Include="Roles Business Layer\RolesBL.cs" />
     <Compile Include="Ticket Business Layer\TicketBL.cs" />
     <Compile Include="User Business Layer\UserBL.cs" />
+    <Compile Include="Validation\clsValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EETMS_DataAccessLayer\EETMS_DataAccessLayer.csproj">

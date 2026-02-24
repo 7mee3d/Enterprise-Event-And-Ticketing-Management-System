@@ -1,0 +1,92 @@
+﻿
+using System;
+
+namespace EETMS_BusinessLayer.Validation
+{
+    public class clsValidation
+    {
+
+        private static bool _IsThePasswordCountGratherThanEight(string Password)
+       => Password.Length >= 8;
+
+        private static bool _IsThePasswordHasTheSymbolGratherThanTwo(string Password)
+        {
+            int countTheSymbolInThePassword = 0;
+
+            foreach (char CharacterPass in Password)
+                if (char.IsSymbol(CharacterPass) || char.IsPunctuation(CharacterPass)) ++countTheSymbolInThePassword;
+
+            return countTheSymbolInThePassword >= 2;
+        }
+
+        private static bool _IsThePasswordHasTheLowerLetterGratherThanTwo(string Password)
+        {
+            int countTheLetterInThePassword = 0;
+
+            foreach (char CharacterPass in Password)
+                if (Char.IsLower(CharacterPass)) ++countTheLetterInThePassword;
+
+            return countTheLetterInThePassword >= 2;
+        }
+
+        private static bool _IsThePasswordHasTheUpperLetterGratherThanTwo(string Password)
+        {
+            int countTheLetterUpperInThePassword = 0;
+
+            foreach (char CharacterPass in Password)
+                if (Char.IsUpper(CharacterPass)) ++countTheLetterUpperInThePassword;
+
+            return countTheLetterUpperInThePassword >= 2;
+        }
+
+        private static bool _IsThePasswordHasTheDigitsGratherThanThree(string Password)
+        {
+            int countTheDigitsInThePassword = 0;
+
+            foreach (char CharacterPass in Password)
+                if (Char.IsDigit(CharacterPass)) ++countTheDigitsInThePassword;
+
+            return countTheDigitsInThePassword >= 3;
+        }
+
+        public static bool IsHasTheSymbolAndNumberAndLetters(string Password)
+        {
+            if (!String.IsNullOrEmpty(Password))
+                if (_IsThePasswordCountGratherThanEight(Password))
+                {
+
+                    return (
+
+                        _IsThePasswordHasTheSymbolGratherThanTwo(Password) &&
+                        _IsThePasswordHasTheLowerLetterGratherThanTwo(Password) &&
+                        _IsThePasswordHasTheUpperLetterGratherThanTwo(Password) &&
+                        _IsThePasswordHasTheDigitsGratherThanThree(Password)
+                        );
+                }
+
+
+            return false;
+        }
+
+        private static bool _IsValidEmailAddress(string EmailAddress)
+        {
+
+            if (string.IsNullOrEmpty(EmailAddress))
+                return false;
+
+            try
+            {
+                var Email = new System.Net.Mail.MailAddress(EmailAddress);
+                return Email.Address == EmailAddress;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
+        public static bool IsValidEmailAddress(string EmailAddress)
+            => _IsValidEmailAddress(EmailAddress);
+    }
+}

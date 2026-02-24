@@ -10,6 +10,7 @@ using EETMS_Presentation.EETMS_Report;
 using EETMS_Presentation.EETMS_Tickets;
 using EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Roles;
 using EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_And_Roles;
+using EETMS_Presentation.Properties;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -20,6 +21,7 @@ namespace EETMS_Presentation.EETMS_Main
 {
     public partial class frmMainScreenEETMS : Form
     {
+
         private struct _stInfoMovePanel
         {
             public Point _NewLocation;
@@ -29,8 +31,28 @@ namespace EETMS_Presentation.EETMS_Main
 
         private _stInfoMovePanel _StInfoMovePanel;
 
-        MUser _InformationUser = null;
+        MUser _InformationUser;
 
+        public frmMainScreenEETMS(string UsernameOrEmail)
+        {
+            InitializeComponent();
+
+            _InformationUser = null;
+
+
+            _InformationUser = UserBL.FindUser(UsernameOrEmail);
+
+            if (_InformationUser != null)
+            {
+                lblNameUser.Text = _InformationUser.UserFullName;
+                lblRoleUser.Text = _InformationUser.RoleName;
+                if (_InformationUser.ImagePath != null)
+                    GCPictureBoxImageUser.Load(_InformationUser.ImagePath);
+                else
+                    GCPictureBoxImageUser.Image = Resources.Image_hide_White_Icon_EETMS;
+            }
+
+        }
 
         private void _ShowTheUserControlInThePanel(UserControl us)
         {
@@ -40,21 +62,6 @@ namespace EETMS_Presentation.EETMS_Main
             GPanelMainScreens.Controls.Add(us);
 
             us.BringToFront();
-        }
-
-
-
-        public frmMainScreenEETMS(string UsernameOrEmail)
-        {
-            InitializeComponent();
-
-            _InformationUser = UserBL.FindUser(UsernameOrEmail);
-            if (_InformationUser != null)
-            {
-                lblNameUser.Text = _InformationUser.UserFullName;
-                lblRoleUser.Text = _InformationUser.RoleName;
-            }
-
         }
 
         private void PicLogoutEETMS_Click(object sender, EventArgs e)
@@ -78,7 +85,6 @@ namespace EETMS_Presentation.EETMS_Main
         {
             _ShowTheEventUS();
         }
-
 
         private void _OpenTheAddNewCustomer(int IDCustomer)
         {
@@ -184,7 +190,6 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheUserControlInThePanel(US_AddNewEvent);
         }
 
-
         private void _ShowTheEventUS()
 
         {
@@ -222,7 +227,7 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheUserControlInThePanel(new USDashboard());
         }
 
-        private void _OpenTheAddNewUser (int IDUser)
+        private void _OpenTheAddNewUser(int IDUser)
         {
             USAddNewUserAndUpdate USANUAU = new USAddNewUserAndUpdate(IDUser);
             USANUAU.ERequestToTheCloseAddNewUser += (sender, e) =>
@@ -230,7 +235,7 @@ namespace EETMS_Presentation.EETMS_Main
 
             _ShowTheUserControlInThePanel(USANUAU);
         }
-    
+
         private void _ShowTheUserAndRoleUS()
         {
 
@@ -239,14 +244,15 @@ namespace EETMS_Presentation.EETMS_Main
             USUMAR.ERequestToOpenTheAddNewUserUS += (sender, UserID) =>
             _OpenTheAddNewUser(UserID);
 
-             _ShowTheUserControlInThePanel(USUMAR);
+            _ShowTheUserControlInThePanel(USUMAR);
         }
 
         private void GButtonUsersAndRoles_Click(object sender, EventArgs e)
         {
             _ShowTheUserAndRoleUS();
         }
-   
-    
+
+
+
     }
 }

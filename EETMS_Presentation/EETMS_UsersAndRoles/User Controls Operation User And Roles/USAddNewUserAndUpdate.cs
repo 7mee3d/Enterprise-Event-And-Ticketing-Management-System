@@ -1,7 +1,9 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.Roles_Business_Layer;
+using EETMS_BusinessLayer.Validation;
 using EETMS_Models;
 using EETMS_Presentation.Properties;
+using Guna.UI2.WinForms;
 using System;
 using System.Data;
 using System.Drawing;
@@ -110,13 +112,78 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
         private void _AddNewUser()
         {
+            Guna2MessageDialog guna2MessageDialog = new Guna2MessageDialog();
 
-            _InformationUser.UserFullName = GTextBoxFullName.Text;
-            _InformationUser.Username = GTextBoxUsername.Text;
-            _InformationUser.EmailUser = GTextBoxProfessionalEmail.Text;
-            _InformationUser.PasswordUser = GTextBoxPassword.Text;
+            bool FlagIsFillFullName = true;
+            bool FlagIsFillUsername = true;
+            bool FlagIsFillEmail = true;
+            bool FlagIsFillPassword = true;
+            string TextMessageDialog = "";
+
+
+            if (!string.IsNullOrEmpty(GTextBoxFullName.Text))
+
+                _InformationUser.UserFullName = GTextBoxFullName.Text;
+            else
+            {
+                TextMessageDialog += "\nPlease enter a Full Name User\n";
+                FlagIsFillFullName = false;
+            }
+
+
+            if (!string.IsNullOrEmpty(GTextBoxUsername.Text))
+                _InformationUser.Username = GTextBoxUsername.Text;
+            else
+            {
+                TextMessageDialog += "\nPlease enter a Username Without the Space \n";
+                FlagIsFillUsername = false;
+            }
+
+
+
+            if (clsValidation.IsValidEmailAddress(GTextBoxProfessionalEmail.Text))
+
+                _InformationUser.EmailUser = GTextBoxProfessionalEmail.Text;
+            else
+            {
+
+                TextMessageDialog += "\nPlease enter a valid email address\n";
+                FlagIsFillEmail = false;
+            }
+
+
+
+            if (clsValidation.IsHasTheSymbolAndNumberAndLetters(GTextBoxPassword.Text))
+            {
+                _InformationUser.PasswordUser = GTextBoxPassword.Text;
+            }
+            else
+            {
+                FlagIsFillPassword = false;
+                TextMessageDialog += "\n\nPassword must contain:\n" +
+                    "• Uppercase letter\n" +
+                    "• Lowercase letter\n" +
+                    "• Digit\n" +
+                    "• Symbol\n";
+            }
+
+
+            if (!FlagIsFillFullName || !FlagIsFillUsername || !FlagIsFillEmail || !FlagIsFillPassword)
+            {
+
+                guna2MessageDialog.Icon = MessageDialogIcon.Error;
+                guna2MessageDialog.Buttons = MessageDialogButtons.OK;
+                guna2MessageDialog.Caption = "Invalid Data!";
+                guna2MessageDialog.Text = TextMessageDialog;
+                guna2MessageDialog.Show();
+
+                return;
+            }
+
+
             _InformationUser.RoleID = Convert.ToInt32(GComboBoxRoleUser.SelectedValue);
             _InformationUser.ImagePath = _ImagePathUser != null ? _ImagePathUser : null;
+
 
             if (UserBL.SaveInformationUserMode(_InformationUser))
             {
@@ -141,6 +208,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             _EnMode = _EnModeUser._kUPDATE_INFORMATION_USER;
             GButtonCreateTheNewUser.Text = "Update Information User";
             lblTiteTheUS.Text = "Update Account";
+
         }
 
         private void _GetTheImageUser()
@@ -245,8 +313,6 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
                 GGCButtonAddImageUser.Image = (NotHasImage) ? Resources.Add_New_Photo_NoFill_Icon_EETMS : Resources.Remove_Image_Icon_EETMS;
             }
         }
-
-
 
     }
 }
