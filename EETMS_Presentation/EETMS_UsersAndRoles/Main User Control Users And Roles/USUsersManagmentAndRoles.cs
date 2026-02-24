@@ -21,6 +21,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
         private void _InitalSettingTheUserManagmentCountsUsers()
         {
+            GDataGridViewUsersInformation.Rows.Clear();
+
             lblTotalUsers.Text = UserBL.GetTotalUsers().ToString();
             lblTotalActiveAdmin.Text = UserBL.GetTheAvtiveAdmin().ToString();
             lblTotalBlockedAccountsUser.Text = UserBL.GetTheBlockedUser().ToString();
@@ -79,5 +81,19 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         {
             ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
         }
+
+        private void _DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to be delete This User ..?? ", "Note For the delete user", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                if (UserBL.DeleteTheUserBy(_GetTheIDUserAfterSelectionUserFromDGV()))
+                    MessageBox.Show("The User is Deleted Successfully", "Note For Delete The User");
+                else MessageBox.Show("The User is Deleted Faild", "Note For Delete The User");
+
+
+            _InitalSettingTheUserManagmentCountsUsers();
+        }
+
+
+
     }
 }

@@ -90,6 +90,8 @@ namespace EETMS_BusinessLayer
         public static DataTable GetAllInformationUsers()
             => UsersDAL.GetAllInformationUsers();
 
+        public static bool DeleteTheUserBy(int IDUser)
+            => UsersDAL.DeleteTheUserBy(IDUser) > 0;
 
 
     }

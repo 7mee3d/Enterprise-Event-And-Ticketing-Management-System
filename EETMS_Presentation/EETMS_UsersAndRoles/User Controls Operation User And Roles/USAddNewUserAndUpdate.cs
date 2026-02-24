@@ -9,6 +9,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 {
     public partial class USAddNewUserAndUpdate : UserControl
     {
+
+
         public event EventHandler ERequestToTheCloseAddNewUser = null;
         int _IDUser = 0;
         private string _ImagePathUser = null;
@@ -22,6 +24,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
         private _EnModeUser _EnMode;
         private MUser _InformationUser = null;
 
+
+
         public USAddNewUserAndUpdate(int id)
         {
             InitializeComponent();
@@ -33,6 +37,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             this._IDUser = id;
         }
+
 
 
 
@@ -146,15 +151,10 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
         }
 
         private void GButtonClose_Click(object sender, EventArgs e)
-        {
-            ERequestToTheCloseAddNewUser?.Invoke(this, EventArgs.Empty);
-
-        }
+           => ERequestToTheCloseAddNewUser?.Invoke(this, EventArgs.Empty);
 
         private void USAddNewUserAndUpdate_Load(object sender, EventArgs e)
-        {
-            _LoadAllInformationUserAfterLoadTheUS();
-        }
+           => _LoadAllInformationUserAfterLoadTheUS();
 
         private void GGCButtonAddImageUser_Click(object sender, EventArgs e)
         {
@@ -177,27 +177,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
         }
 
         private void GButtonCreateTheNewUser_Click(object sender, EventArgs e)
-        {
-            _AddNewUser();
-        }
-
-        /*   private void GCPictureBoxImageUser_MouseLeave(object sender, EventArgs e)
-           {
-               string Path =
-                   _ImagePathUser ?? _InformationUser.ImagePath;
-
-               if (Path != null)
-               {
-                   GGCButtonAddImageUser.Visible = false;
-                   GCPictureBoxImageUser.Visible = true;
-
-                   using (var imgTemp = Image.FromFile(Path))
-                   {
-                       GCPictureBoxImageUser.Image = new Bitmap(imgTemp);
-                   }
-               }
-           }
-           */
+            => _AddNewUser();
 
         private void GCPictureBoxImageUser_MouseEnter(object sender, EventArgs e)
         {
@@ -220,9 +200,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
         }
 
         private void GGCButtonAddImageUser_MouseEnter(object sender, EventArgs e)
-        {
-            GCPictureBoxImageUser.Visible = false;
-        }
+            => GCPictureBoxImageUser.Visible = false;
 
         private void GGCButtonAddImageUser_MouseLeave(object sender, EventArgs e)
         {
@@ -242,6 +220,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
                 GGCButtonAddImageUser.Image = (NotHasImage) ? Resources.Add_New_Photo_NoFill_Icon_EETMS : Resources.Remove_Image_Icon_EETMS;
             }
         }
+
+
 
     }
 }

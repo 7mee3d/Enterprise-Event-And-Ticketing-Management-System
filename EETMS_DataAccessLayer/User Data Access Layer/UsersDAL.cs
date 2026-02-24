@@ -452,6 +452,55 @@ namespace EETMS_DataAccessLayer
             return _UpdateInformationUser(IDUser, InformationNewUser);
         }
 
+        private static int _DeleteTheUserBy(int IDUser)
+        {
+
+            int RowAffective = -1;
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+                                    DELETE FROM Users 
+                                    WHERE 
+                                                Users.UserID = @IDUser 
+                                                        AND 
+                                                    RoleID <> 1 
+
+
+
+                        ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.Add("@IDUser", SqlDbType.Int).Value = IDUser;
+
+
+                    connection.Open();
+
+
+                    RowAffective = command.ExecuteNonQuery();
+
+
+
+
+                }
+
+
+            }
+
+            return RowAffective;
+
+
+        }
+
+        public static int DeleteTheUserBy(int IDUser)
+            => _DeleteTheUserBy(IDUser);
+
         private static int _GetTheTotalUsers()
         {
 
