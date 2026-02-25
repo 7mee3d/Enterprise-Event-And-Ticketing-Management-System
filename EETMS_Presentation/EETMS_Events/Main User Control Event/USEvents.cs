@@ -1,5 +1,6 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_Presentation.EETMS_Settings;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
@@ -11,15 +12,15 @@ namespace EETMS_Presentation.EETMS_Events
     public partial class USEvents : UserControl
     {
 
-        private DataTable _EventDT ;
-        public event EventHandler<int> RequestOpenCreateNewEventUS ;
+        private DataTable _EventDT;
+        public event EventHandler<int> RequestOpenCreateNewEventUS;
 
 
         public USEvents()
         {
             InitializeComponent();
             _EventDT = null;
-            RequestOpenCreateNewEventUS = null; 
+            RequestOpenCreateNewEventUS = null;
         }
 
 
@@ -69,7 +70,7 @@ namespace EETMS_Presentation.EETMS_Events
             foreach (DataRow DR_Event in _EventDT.Rows)
             {
                 int.TryParse(DR_Event["MaxCapacity"].ToString(), out int MaxCapacity);
-                if ((int)DR_Event["SoldTickets"] > clsEETMS_Constants.kZERO  && (int)DR_Event["SoldTickets"] != MaxCapacity) ++CountLiveEvents;
+                if ((int)DR_Event["SoldTickets"] > clsEETMS_Constants.kZERO && (int)DR_Event["SoldTickets"] != MaxCapacity) ++CountLiveEvents;
 
             }
 
@@ -98,21 +99,23 @@ namespace EETMS_Presentation.EETMS_Events
             GDataGridViewEventsInformation.Rows.Clear();
             _LoadAndFillDataGridViewONAllInformationEvent();
             GDataGridViewEventsInformation.ClearSelection();
-            lblTotalEvents.Text = _GetTheCountOfEvents().ToString();
-            lblTotalLiveEvents.Text = _GetCountTheLiveEvents().ToString();
-            lblTotalFullyBookedEvents.Text = _GetCountTheFullyBookedEvents().ToString();
-            lblNumberDraftsEvents.Text = _GetCountTheDraftEvents().ToString();
+
+            clsEETMS_SettingPresentation._AnimationLables(_GetTheCountOfEvents(), lblTotalEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
+            clsEETMS_SettingPresentation._AnimationLables(_GetCountTheLiveEvents(), lblTotalLiveEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
+            clsEETMS_SettingPresentation._AnimationLables(_GetCountTheFullyBookedEvents(), lblTotalFullyBookedEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
+            clsEETMS_SettingPresentation._AnimationLables(_GetCountTheDraftEvents(), lblNumberDraftsEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
+
         }
 
         private void USEvents_Load(object sender, EventArgs e)
            => _InitalSettingAfterLoadTheUSEvents();
-        
-        private void GGButtonCreateNewEvent_Click(object sender, EventArgs e) 
+
+        private void GGButtonCreateNewEvent_Click(object sender, EventArgs e)
            => RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
-        
+
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
-            =>RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
-        
+            => RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
+
         private int _GetTheEventID()
             => (GDataGridViewEventsInformation.SelectedRows.Count > clsEETMS_Constants.kZERO) ?
             Convert.ToInt32(GDataGridViewEventsInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells["EventID"].Value) :

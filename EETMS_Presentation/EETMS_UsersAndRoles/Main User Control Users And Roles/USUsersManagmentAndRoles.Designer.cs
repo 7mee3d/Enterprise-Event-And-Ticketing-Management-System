@@ -28,24 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USUsersManagmentAndRoles));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USUsersManagmentAndRoles));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotalUsers = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotalBlockedAccountsUser = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalActiveAdmin = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GGButtonAddNewUser = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
             this.GDataGridViewUsersInformation = new Guna.UI2.WinForms.Guna2DataGridView();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,11 +64,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._DeleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.GGButtonAddNewUser = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
@@ -75,16 +75,40 @@
             // 
             // guna2GradientPanel1
             // 
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(243)))));
             this.guna2GradientPanel1.BorderRadius = 10;
             this.guna2GradientPanel1.BorderThickness = 2;
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientButton1);
             this.guna2GradientPanel1.Controls.Add(this.label3);
             this.guna2GradientPanel1.Controls.Add(this.lblTotalUsers);
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(196, 22);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(300, 144);
             this.guna2GradientPanel1.TabIndex = 7;
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.BorderRadius = 8;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2GradientButton1.Enabled = false;
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton1.Image")));
+            this.guna2GradientButton1.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(213, 45);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(57, 59);
+            this.guna2GradientButton1.TabIndex = 2;
             // 
             // label3
             // 
@@ -119,16 +143,40 @@
             // 
             // guna2GradientPanel4
             // 
+            this.guna2GradientPanel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(243)))));
             this.guna2GradientPanel4.BorderRadius = 10;
             this.guna2GradientPanel4.BorderThickness = 2;
             this.guna2GradientPanel4.Controls.Add(this.guna2GradientButton4);
             this.guna2GradientPanel4.Controls.Add(this.label6);
             this.guna2GradientPanel4.Controls.Add(this.lblTotalBlockedAccountsUser);
+            this.guna2GradientPanel4.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientPanel4.Location = new System.Drawing.Point(880, 22);
             this.guna2GradientPanel4.Name = "guna2GradientPanel4";
             this.guna2GradientPanel4.Size = new System.Drawing.Size(300, 144);
             this.guna2GradientPanel4.TabIndex = 7;
+            // 
+            // guna2GradientButton4
+            // 
+            this.guna2GradientButton4.BorderRadius = 8;
+            this.guna2GradientButton4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2GradientButton4.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2GradientButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2GradientButton4.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2GradientButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2GradientButton4.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2GradientButton4.Enabled = false;
+            this.guna2GradientButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2GradientButton4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton4.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton4.Image")));
+            this.guna2GradientButton4.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2GradientButton4.Location = new System.Drawing.Point(213, 45);
+            this.guna2GradientButton4.Name = "guna2GradientButton4";
+            this.guna2GradientButton4.Size = new System.Drawing.Size(54, 52);
+            this.guna2GradientButton4.TabIndex = 2;
             // 
             // label6
             // 
@@ -153,16 +201,40 @@
             // 
             // guna2GradientPanel2
             // 
+            this.guna2GradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(237)))), ((int)(((byte)(243)))));
             this.guna2GradientPanel2.BorderRadius = 10;
             this.guna2GradientPanel2.BorderThickness = 2;
             this.guna2GradientPanel2.Controls.Add(this.guna2GradientButton2);
             this.guna2GradientPanel2.Controls.Add(this.label1);
             this.guna2GradientPanel2.Controls.Add(this.lblTotalActiveAdmin);
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientPanel2.Location = new System.Drawing.Point(538, 22);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(300, 144);
             this.guna2GradientPanel2.TabIndex = 7;
+            // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.BorderRadius = 8;
+            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.guna2GradientButton2.Enabled = false;
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
+            this.guna2GradientButton2.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(213, 45);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.Size = new System.Drawing.Size(54, 52);
+            this.guna2GradientButton2.TabIndex = 2;
             // 
             // label1
             // 
@@ -221,6 +293,53 @@
             this.GGPanelDataGridViewEvents.Name = "GGPanelDataGridViewEvents";
             this.GGPanelDataGridViewEvents.Size = new System.Drawing.Size(1376, 584);
             this.GGPanelDataGridViewEvents.TabIndex = 11;
+            // 
+            // GGButtonAddNewUser
+            // 
+            this.GGButtonAddNewUser.Animated = true;
+            this.GGButtonAddNewUser.AnimatedGIF = true;
+            this.GGButtonAddNewUser.BorderRadius = 10;
+            this.GGButtonAddNewUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonAddNewUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonAddNewUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonAddNewUser.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonAddNewUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GGButtonAddNewUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonAddNewUser.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonAddNewUser.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonAddNewUser.ForeColor = System.Drawing.Color.White;
+            this.GGButtonAddNewUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonAddNewUser.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonAddNewUser.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonAddNewUser.Image")));
+            this.GGButtonAddNewUser.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GGButtonAddNewUser.Location = new System.Drawing.Point(1139, 30);
+            this.GGButtonAddNewUser.Name = "GGButtonAddNewUser";
+            this.GGButtonAddNewUser.PressedColor = System.Drawing.Color.White;
+            this.GGButtonAddNewUser.Size = new System.Drawing.Size(197, 47);
+            this.GGButtonAddNewUser.TabIndex = 3;
+            this.GGButtonAddNewUser.Text = "Add New User";
+            this.GGButtonAddNewUser.Click += new System.EventHandler(this._GGButtonAddNewUser_Click);
+            // 
+            // GTextBoxSearchTheEvent
+            // 
+            this.GTextBoxSearchTheEvent.BorderRadius = 10;
+            this.GTextBoxSearchTheEvent.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxSearchTheEvent.DefaultText = "";
+            this.GTextBoxSearchTheEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxSearchTheEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxSearchTheEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheEvent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheEvent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxSearchTheEvent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheEvent.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheEvent.IconLeft")));
+            this.GTextBoxSearchTheEvent.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxSearchTheEvent.Location = new System.Drawing.Point(17, 30);
+            this.GTextBoxSearchTheEvent.Name = "GTextBoxSearchTheEvent";
+            this.GTextBoxSearchTheEvent.PlaceholderText = "Search Users";
+            this.GTextBoxSearchTheEvent.SelectedText = "";
+            this.GTextBoxSearchTheEvent.Size = new System.Drawing.Size(461, 44);
+            this.GTextBoxSearchTheEvent.TabIndex = 2;
             // 
             // GDataGridViewUsersInformation
             // 
@@ -369,7 +488,7 @@
             this.GContextMenuStripUsers.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.GContextMenuStripUsers.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.GContextMenuStripUsers.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripUsers.Size = new System.Drawing.Size(181, 96);
+            this.GContextMenuStripUsers.Size = new System.Drawing.Size(161, 74);
             // 
             // toolStripTextBox1
             // 
@@ -386,7 +505,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
             // 
             // EditToolStripMenuItem
             // 
@@ -394,7 +513,7 @@
             this.EditToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.EditToolStripMenuItem.Text = "Edit User";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this._EditToolStripMenuItem_Click);
             // 
@@ -403,119 +522,9 @@
             this._DeleteUserToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._DeleteUserToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
             this._DeleteUserToolStripMenuItem.Name = "_DeleteUserToolStripMenuItem";
-            this._DeleteUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this._DeleteUserToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this._DeleteUserToolStripMenuItem.Text = "Delete User";
             this._DeleteUserToolStripMenuItem.Click += new System.EventHandler(this._DeleteUserToolStripMenuItem_Click);
-            // 
-            // GGButtonAddNewUser
-            // 
-            this.GGButtonAddNewUser.Animated = true;
-            this.GGButtonAddNewUser.AnimatedGIF = true;
-            this.GGButtonAddNewUser.BorderRadius = 10;
-            this.GGButtonAddNewUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonAddNewUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonAddNewUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonAddNewUser.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonAddNewUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonAddNewUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonAddNewUser.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonAddNewUser.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GGButtonAddNewUser.ForeColor = System.Drawing.Color.White;
-            this.GGButtonAddNewUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonAddNewUser.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonAddNewUser.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonAddNewUser.Image")));
-            this.GGButtonAddNewUser.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GGButtonAddNewUser.Location = new System.Drawing.Point(1139, 30);
-            this.GGButtonAddNewUser.Name = "GGButtonAddNewUser";
-            this.GGButtonAddNewUser.PressedColor = System.Drawing.Color.White;
-            this.GGButtonAddNewUser.Size = new System.Drawing.Size(197, 47);
-            this.GGButtonAddNewUser.TabIndex = 3;
-            this.GGButtonAddNewUser.Text = "Add New User";
-            this.GGButtonAddNewUser.Click += new System.EventHandler(this._GGButtonAddNewUser_Click);
-            // 
-            // GTextBoxSearchTheEvent
-            // 
-            this.GTextBoxSearchTheEvent.BorderRadius = 10;
-            this.GTextBoxSearchTheEvent.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxSearchTheEvent.DefaultText = "";
-            this.GTextBoxSearchTheEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxSearchTheEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxSearchTheEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheEvent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheEvent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxSearchTheEvent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheEvent.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheEvent.IconLeft")));
-            this.GTextBoxSearchTheEvent.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxSearchTheEvent.Location = new System.Drawing.Point(17, 30);
-            this.GTextBoxSearchTheEvent.Name = "GTextBoxSearchTheEvent";
-            this.GTextBoxSearchTheEvent.PlaceholderText = "Search Users";
-            this.GTextBoxSearchTheEvent.SelectedText = "";
-            this.GTextBoxSearchTheEvent.Size = new System.Drawing.Size(461, 44);
-            this.GTextBoxSearchTheEvent.TabIndex = 2;
-            // 
-            // guna2GradientButton1
-            // 
-            this.guna2GradientButton1.BorderRadius = 8;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.guna2GradientButton1.Enabled = false;
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton1.Image")));
-            this.guna2GradientButton1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2GradientButton1.Location = new System.Drawing.Point(213, 45);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(57, 59);
-            this.guna2GradientButton1.TabIndex = 2;
-            // 
-            // guna2GradientButton4
-            // 
-            this.guna2GradientButton4.BorderRadius = 8;
-            this.guna2GradientButton4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2GradientButton4.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2GradientButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2GradientButton4.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2GradientButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2GradientButton4.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.guna2GradientButton4.Enabled = false;
-            this.guna2GradientButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2GradientButton4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton4.Image")));
-            this.guna2GradientButton4.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2GradientButton4.Location = new System.Drawing.Point(213, 45);
-            this.guna2GradientButton4.Name = "guna2GradientButton4";
-            this.guna2GradientButton4.Size = new System.Drawing.Size(54, 52);
-            this.guna2GradientButton4.TabIndex = 2;
-            // 
-            // guna2GradientButton2
-            // 
-            this.guna2GradientButton2.BorderRadius = 8;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton2.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.guna2GradientButton2.Enabled = false;
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
-            this.guna2GradientButton2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2GradientButton2.Location = new System.Drawing.Point(213, 45);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(54, 52);
-            this.guna2GradientButton2.TabIndex = 2;
             // 
             // USUsersManagmentAndRoles
             // 

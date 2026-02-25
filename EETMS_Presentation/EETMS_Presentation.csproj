@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EETMS Settings Presentation\clsEETMS_SettingPresentation.cs" />
     <Compile Include="EETMS_Category\Main user Control Category\USCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>

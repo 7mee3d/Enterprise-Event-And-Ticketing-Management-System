@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_Presentation.EETMS_Settings;
 using Guna.Charts.WinForms;
 
 namespace EETMS_Presentation.EETMS_Dashboard
@@ -16,6 +18,7 @@ namespace EETMS_Presentation.EETMS_Dashboard
         {
             InitializeComponent();
         }
+
 
         private void _LoadTheStatisticsTicketsByCategoryInCharts()
         {
@@ -91,19 +94,20 @@ namespace EETMS_Presentation.EETMS_Dashboard
             _LoadTheStatisticsTicketsByCategoryInCharts();
             _LoadAllYearsToComboBoxAndInitalSettingTheComboBox();
             _LoadTheDataToChartsTotalRevenueForMonth();
-            _InitalSettingAfterLoadTheDashboard();
+            _InitalSettingAfterLoadTheDashboardAsync();
         }
 
         private void GComboBoxYearsPayments_SelectionChangeCommitted(object sender, EventArgs e)
             => _LoadTheDataToChartsTotalRevenueForMonth();
 
-        private void _InitalSettingAfterLoadTheDashboard()
+        private async Task _InitalSettingAfterLoadTheDashboardAsync()
         {
 
-            lblTotalRevenue.Text = "$" + DashboardBL.GetTheTotalRevenueBL().ToString();
-            lblTicketSold.Text = DashboardBL.GetTheSoldTickets().ToString();
-            lblActiveEvents.Text = DashboardBL.GetTheTotalActiveEvents().ToString();
-            lblTotalCustomers.Text = DashboardBL.GetTheTotalCustomers().ToString();
+            clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheTotalRevenueBL(), lblTotalRevenue, 1, true);
+            clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheSoldTickets(), lblTicketSold, 2);
+            clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheTotalActiveEvents(), lblActiveEvents, 5);
+            clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheTotalCustomers(), lblTotalCustomers, 2);
+
 
         }
 

@@ -15,10 +15,10 @@ namespace EETMS_DataAccessLayer
         private static readonly string _ConneactionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         #endregion
 
-        private static decimal _GetTotalRevenue()
+        private static double _GetTotalRevenue()
         {
 
-            decimal TotalRevenue = 0.0M;
+            double TotalRevenue = 0.0;
 
             using (SqlConnection connection = new SqlConnection(_ConneactionString))
             {
@@ -39,7 +39,7 @@ namespace EETMS_DataAccessLayer
 
                     object result = command.ExecuteScalar();
 
-                    if (result != null && Decimal.TryParse(result.ToString(), out decimal TotalRev))
+                    if (result != null && Double.TryParse(result.ToString(), out double TotalRev))
                         TotalRevenue = TotalRev;
                 }
 
@@ -50,7 +50,7 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        public static decimal GetTotalRevenue()
+        public static double GetTotalRevenue()
             => _GetTotalRevenue();
 
         private static DataTable _GetAllInformationPayment()

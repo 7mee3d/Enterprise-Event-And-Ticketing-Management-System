@@ -1,5 +1,6 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_Presentation.EETMS_Settings;
 using System;
 using System.Data;
 using System.Drawing;
@@ -23,17 +24,18 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
 
         private int _GetTheIDUserAfterSelectionUserFromDGV()
-           => (GDataGridViewUsersInformation.SelectedRows.Count > clsEETMS_Constants.kZERO ? 
-            Convert.ToInt32(GDataGridViewUsersInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells[clsEETMS_Constants.kZERO].Value) : 
+           => (GDataGridViewUsersInformation.SelectedRows.Count > clsEETMS_Constants.kZERO ?
+            Convert.ToInt32(GDataGridViewUsersInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells[clsEETMS_Constants.kZERO].Value) :
             clsEETMS_Constants.kNEGATIVE_ONE);
 
         private void _InitalSettingTheUserManagmentCountsUsers()
         {
             GDataGridViewUsersInformation.Rows.Clear();
 
-            lblTotalUsers.Text = UserBL.GetTotalUsers().ToString();
-            lblTotalActiveAdmin.Text = UserBL.GetTheAvtiveAdmin().ToString();
-            lblTotalBlockedAccountsUser.Text = UserBL.GetTheBlockedUser().ToString();
+            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTotalUsers(), lblTotalUsers, 5, false);
+            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheAvtiveAdmin(), lblTotalActiveAdmin, 5, false);
+            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheBlockedUser(), lblTotalBlockedAccountsUser, 5, false);
+
             _LoadAllDataToTheDataGridViewUsers();
             GDataGridViewUsersInformation.ClearSelection();
 
@@ -82,11 +84,11 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
            => _InitalSettingTheUserManagmentCountsUsers();
 
         private void _GGButtonAddNewUser_Click(object sender, EventArgs e)
-            =>  ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
-        
+            => ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
+
         private void _EditToolStripMenuItem_Click(object sender, EventArgs e)
-            =>  ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
-        
+            => ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
+
         private void _DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure to be delete This User ..?? ", "Note For the delete user", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)

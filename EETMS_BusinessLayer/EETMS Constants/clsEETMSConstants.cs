@@ -24,5 +24,11 @@ namespace EETMS_BusinessLayer.EETMS_Constants
         public const short kORIGNIAL_TOP_LABLEL_SHOW_MESSAGE = 387;
         public const short kMAX_NUMBER_ATTEMPT_LOGIN_EETMS = 3;
 
+
+        //Animation 
+
+        public const short kMAX_NUMBER_DELAY_EVENT_US = 6;
+
+
     }
 }

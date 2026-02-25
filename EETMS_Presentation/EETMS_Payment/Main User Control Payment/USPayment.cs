@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_Presentation.EETMS_Settings;
 
 
 namespace EETMS_Presentation.EETMS_Payment
@@ -76,8 +77,10 @@ namespace EETMS_Presentation.EETMS_Payment
         {
             DataTable Payments_DT = PaymentsBL.GetAllInformationPayments();
 
-            lblTotalRevenue.Text = '$' + PaymentsBL.GetTheTotalRevenue().ToString();
+            clsEETMS_SettingPresentation._AnimationLables(PaymentsBL.GetTheTotalRevenue(), lblTotalRevenue, 5, true);
+
             _LoadAllInformationPayments(Payments_DT);
+
             GDataGridViewCategoriesInformation.ClearSelection();
         }
 

@@ -9,7 +9,7 @@ namespace EETMS_BusinessLayer
     public class PaymentsBL
     {
 
-        public static decimal GetTheTotalRevenue()
+        public static double GetTheTotalRevenue()
             => PaymentsDAL.GetTotalRevenue();
 
         public static DataTable GetAllInformationPayments()
