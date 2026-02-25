@@ -179,7 +179,35 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAddJREFUWEft
+        Vj1uQjEMZqQxSIwde4SOHTv2JhyhI71Bp6pSKfExGDkCY0fGjgiRwPiqvN/YTh4BHnThkz4RBdufX+Ik
+        7vVu6AhWQ8bnrgqL6tMlYWeA/L+rwbgEcqr/WQ2rB79FAkUSVsOK21wU5gPuS2HCNfYfuO3FwMUdy63Z
+        c9uLYKvVmCdAqcbcp3P4xdiMKblPp7Cz4TwXwiIJLl5zBnPu2xm4WL4SeUJyPnvr9bn/2TAa1rVQQJjP
+        O3se4yxspndPIWGj4cdqWFqtls18UyvmCx55rJPBhOuxfy/wBKuEaKQTYbE/kcFTk3BbpCY04gngQf0j
+        Gk6CnhpnTyMeCYtuv/1T4AuobB9MIsgljZyINY5G/tdUhdlaEwGbytfFowoJcO8A+Rr/dJRjkYQgWbnj
+        3pXtdPAsAxZMWQkxLrn5hheq1ALqTOugEWi5tlvItYKoW7agsOA+v8i0Wvnz/gkSPimtYMhZFFrJDJv3
+        IWYviAdWY6fBa9kqBrajEkN4d37uem4VFr7DcCto0LVs3FHysFjJQJHGLroa3OFsHohjeCvoWrJU51bG
+        fGPzfisYdRDLSBkrWBEnxqpIdwivRsPC6MGi+D2SmO67re0bdvLK3tAl/gBs95l4XqMFwgAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="GGButtonWarningDisable.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAddJREFUWEft
+        Vj1uQjEMZqQxSIwde4SOHTv2JhyhI71Bp6pSKfExGDkCY0fGjgiRwPiqvN/YTh4BHnThkz4RBdufX+Ik
+        7vVu6AhWQ8bnrgqL6tMlYWeA/L+rwbgEcqr/WQ2rB79FAkUSVsOK21wU5gPuS2HCNfYfuO3FwMUdy63Z
+        c9uLYKvVmCdAqcbcp3P4xdiMKblPp7Cz4TwXwiIJLl5zBnPu2xm4WL4SeUJyPnvr9bn/2TAa1rVQQJjP
+        O3se4yxspndPIWGj4cdqWFqtls18UyvmCx55rJPBhOuxfy/wBKuEaKQTYbE/kcFTk3BbpCY04gngQf0j
+        Gk6CnhpnTyMeCYtuv/1T4AuobB9MIsgljZyINY5G/tdUhdlaEwGbytfFowoJcO8A+Rr/dJRjkYQgWbnj
+        3pXtdPAsAxZMWQkxLrn5hheq1ALqTOugEWi5tlvItYKoW7agsOA+v8i0Wvnz/gkSPimtYMhZFFrJDJv3
+        IWYviAdWY6fBa9kqBrajEkN4d37uem4VFr7DcCto0LVs3FHysFjJQJHGLroa3OFsHohjeCvoWrJU51bG
+        fGPzfisYdRDLSBkrWBEnxqpIdwivRsPC6MGi+D2SmO67re0bdvLK3tAl/gBs95l4XqMFwgAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>92</value>
+    <value>43</value>
   </metadata>
 </root>

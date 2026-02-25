@@ -1,4 +1,5 @@
-﻿using EETMS_DataAccessLayer;
+﻿using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_DataAccessLayer;
 using EETMS_Models;
 using System;
 using System.Data;
@@ -16,10 +17,10 @@ namespace EETMS_BusinessLayer
             => UsersDAL.IsExsitsTheUserByUsername(Username, Password);
 
         public static bool AddNewUser(MUser InformationNewUser)
-            => UsersDAL.InsertNewUser(InformationNewUser) > 0;
+            => UsersDAL.InsertNewUser(InformationNewUser) > clsEETMS_Constants.kZERO;
 
         public static bool UpdateInformationUser(MUser InformationNewUser)
-            => UsersDAL.UpdateInformationUser(InformationNewUser.UserID, InformationNewUser) > 0;
+            => UsersDAL.UpdateInformationUser(InformationNewUser.UserID, InformationNewUser) > clsEETMS_Constants.kZERO;
 
         public static bool SaveInformationUserMode(MUser InformationUser)
         {
@@ -46,7 +47,7 @@ namespace EETMS_BusinessLayer
             if (InfoUser == null)
                 return MUser.EnStatusLoginUser._kUSER_NOT_FOUND;
 
-            if (InfoUser.NumberAttempts <= 0)
+            if (InfoUser.NumberAttempts <= clsEETMS_Constants.kZERO)
                 return MUser.EnStatusLoginUser._kBLOCKED_USER;
 
             bool isValidAccountUser = (IsUserExsitsByEmail(UsernameOrEmail, Password) || IsUserExsitsByUsername(UsernameOrEmail, Password));
@@ -54,18 +55,18 @@ namespace EETMS_BusinessLayer
             if (isValidAccountUser)
             {
 
-                InfoUser.NumberAttempts = 3;
+                InfoUser.NumberAttempts = clsEETMS_Constants.kMAX_NUMBER_ATTEMPT_LOGIN_EETMS;
                 UpdateInformationUser(InfoUser);
                 return MUser.EnStatusLoginUser._kSUCCESS_LOGIN;
 
             }
             else
             {
-                if (InfoUser.NumberAttempts > 0)
-                    InfoUser.NumberAttempts -= 1;
+                if (InfoUser.NumberAttempts > clsEETMS_Constants.kZERO)
+                    InfoUser.NumberAttempts -= clsEETMS_Constants.kONE;
 
                 UpdateInformationUser(InfoUser);
-                return (InfoUser.NumberAttempts > 0) ? MUser.EnStatusLoginUser._kFAILD_LOGIN : MUser.EnStatusLoginUser._kBLOCKED_USER;
+                return (InfoUser.NumberAttempts > clsEETMS_Constants.kZERO) ? MUser.EnStatusLoginUser._kFAILD_LOGIN : MUser.EnStatusLoginUser._kBLOCKED_USER;
 
             }
 
@@ -92,7 +93,7 @@ namespace EETMS_BusinessLayer
             => UsersDAL.GetAllInformationUsers();
 
         public static bool DeleteTheUserBy(int IDUser)
-            => UsersDAL.DeleteTheUserBy(IDUser) > 0;
+            => UsersDAL.DeleteTheUserBy(IDUser) > clsEETMS_Constants.kZERO;
 
 
 

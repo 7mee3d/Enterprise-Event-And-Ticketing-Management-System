@@ -4,6 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_Models;
 using Guna.UI2.WinForms;
 
@@ -38,27 +39,27 @@ namespace EETMS_Presentation.EETMS_Tickets
         public USTickets()
         {
             InitializeComponent();
-            _NumberOfTicketRegular = 0;
-            _NumberOfTicketVIP = 0;
-            _NumberOfTicketPreimum = 0;
+            _NumberOfTicketRegular = clsEETMS_Constants.kZERO;
+            _NumberOfTicketVIP = clsEETMS_Constants.kZERO;
+            _NumberOfTicketPreimum = clsEETMS_Constants.kZERO;
 
-            _PriceTheRegularTicket = 0;
-            _PriceTheVIPTicket = 0;
-            _PriceThePreimumTicket = 0;
+            _PriceTheRegularTicket = clsEETMS_Constants.kZERO;
+            _PriceTheVIPTicket = clsEETMS_Constants.kZERO;
+            _PriceThePreimumTicket = clsEETMS_Constants.kZERO;
 
-            _SubTotalAmount = 0;
-            _Tax = 0;
-            _TotalAmount = 0;
+            _SubTotalAmount = clsEETMS_Constants.kZERO;
+            _Tax = clsEETMS_Constants.kZERO;
+            _TotalAmount = clsEETMS_Constants.kZERO;
 
 
-            _CustomerID = -1;
+            _CustomerID = clsEETMS_Constants.kNEGATIVE_ONE;
 
             _MReservations = null;
 
-            _EventID = 0;
+            _EventID = clsEETMS_Constants.kZERO;
         }
 
-        private void _CheckTheStackTickes(int CountOfTicketsAvailable = 0, bool IsSelected = false, Guna2GradientButton G2DB = null, Label lblLeftTikets = null)
+        private void _CheckTheStackTickes(int CountOfTicketsAvailable = clsEETMS_Constants.kZERO, bool IsSelected = false, Guna2GradientButton G2DB = null, Label lblLeftTikets = null)
         {
 
             if (IsSelected)
@@ -73,7 +74,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 return;
             }
 
-            if (CountOfTicketsAvailable == 0)
+            if (CountOfTicketsAvailable == clsEETMS_Constants.kZERO)
             {
                 G2DB.Text = "";
                 G2DB.DisabledState.FillColor = Color.FromArgb(43, 140, 238);
@@ -128,9 +129,9 @@ namespace EETMS_Presentation.EETMS_Tickets
             GNumericUpDownRegularTicket.Enabled = false;
             GNumericUpDownVIPTicket.Enabled = false;
 
-            GNumericUpDownPremium.Value = 0;
-            GNumericUpDownRegularTicket.Value = 0;
-            GNumericUpDownVIPTicket.Value = 0;
+            GNumericUpDownPremium.Value = clsEETMS_Constants.kZERO;
+            GNumericUpDownRegularTicket.Value = clsEETMS_Constants.kZERO;
+            GNumericUpDownVIPTicket.Value = clsEETMS_Constants.kZERO;
 
             GGPanelRegularTicket.Enabled = false;
             GGPanelVIPTicket.Enabled = false;
@@ -152,14 +153,13 @@ namespace EETMS_Presentation.EETMS_Tickets
             PanelVIPTicket.Visible = false;
             PanelPremiumTicket.Visible = false;
 
-            //_EventID = 0;
         }
 
         private void _LoadAllInformationTicketTypeForEventAfterSelectComboBox()
         {
 
-            // _ResetAllSettingCardsTickets();
-            _EventID = (int)GComboBoxSelectEvents.SelectedValue;
+            if (GComboBoxSelectEvents.Items.Count > clsEETMS_Constants.kZERO)
+                _EventID = (int)GComboBoxSelectEvents.SelectedValue;
 
 
             DataTable TicketType_DT = TicketBL.GetInformationTicketForEvent(_EventID);
@@ -176,7 +176,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                             lblQLeftRegular.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketRegular.Text = "$" + DR_Tickets["Price"].ToString();
 
-                            if (Convert.ToInt32(DR_Tickets["Available"]) > 0)
+                            if (Convert.ToInt32(DR_Tickets["Available"]) > clsEETMS_Constants.kZERO)
                                 GGPanelRegularTicket.Enabled = true;
 
 
@@ -192,7 +192,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                             lblQLeftVIP.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketVIP.Text = "$" + DR_Tickets["Price"].ToString();
 
-                            if (Convert.ToInt32(DR_Tickets["Available"]) > 0)
+                            if (Convert.ToInt32(DR_Tickets["Available"]) > clsEETMS_Constants.kZERO)
                                 GGPanelVIPTicket.Enabled = true;
 
                             _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonVIPTicketStatus, lblQLeftVIP);
@@ -206,7 +206,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                             lblQLeftPermium.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketPermium.Text = "$" + DR_Tickets["Price"].ToString();
 
-                            if (Convert.ToInt32(DR_Tickets["Available"]) > 0)
+                            if (Convert.ToInt32(DR_Tickets["Available"]) > clsEETMS_Constants.kZERO)
                                 GGPanelPermiumTicket.Enabled = true;
 
                             _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonPremiumTicketStatus, lblQLeftPermium);
@@ -261,23 +261,16 @@ namespace EETMS_Presentation.EETMS_Tickets
         private void GGPanelRegularTicket_MouseClick(object sender, MouseEventArgs e)
         {
 
-            //_LoadAllInformationTicketTypeForEventAfterSelectComboBox();
-            _CheckTheStackTickes(0, true, GGButtonRegularTicketStatus, lblQLeftRegular);
+            _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonRegularTicketStatus, lblQLeftRegular);
             _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelRegularTicket, GNumericUpDownRegularTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
 
         }
 
-        private void GComboBoxSelectEvents_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //   _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
-        }
-
         private void GGPanelVIPTicket_MouseClick(object sender, MouseEventArgs e)
         {
-            //   _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
-            _CheckTheStackTickes(0, true, GGButtonVIPTicketStatus, lblQLeftVIP);
+            _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonVIPTicketStatus, lblQLeftVIP);
             _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelVIPTicket, GNumericUpDownVIPTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
@@ -287,8 +280,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
         private void GGPanelPermiumTicket_MouseClick(object sender, MouseEventArgs e)
         {
-            //  _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
-            _CheckTheStackTickes(0, true, GGButtonPremiumTicketStatus, lblQLeftPermium);
+            _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonPremiumTicketStatus, lblQLeftPermium);
             _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelPermiumTicket, GNumericUpDownPremium);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
@@ -298,7 +290,7 @@ namespace EETMS_Presentation.EETMS_Tickets
         private void _UpdateThePanelsAndThePricesAndCountTickets()
         {
 
-            if (_NumberOfTicketRegular > 0 && _NumberOfTicketVIP == 0 && _NumberOfTicketPreimum == 0)
+            if (_NumberOfTicketRegular > clsEETMS_Constants.kZERO && _NumberOfTicketVIP == clsEETMS_Constants.kZERO && _NumberOfTicketPreimum == clsEETMS_Constants.kZERO)
             {
                 PanelRegularTicket.Visible = true;
                 PanelPremiumTicket.Visible = false;
@@ -311,7 +303,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelRegularTicket.Location = new Point(4, 91);
                 GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 158);
             }
-            else if (_NumberOfTicketRegular == 0 && _NumberOfTicketVIP > 0 && _NumberOfTicketPreimum == 0)
+            else if (_NumberOfTicketRegular == clsEETMS_Constants.kZERO && _NumberOfTicketVIP > clsEETMS_Constants.kZERO && _NumberOfTicketPreimum == clsEETMS_Constants.kZERO)
             {
                 PanelRegularTicket.Visible = false;
                 PanelVIPTicket.Visible = true;
@@ -324,7 +316,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelVIPTicket.Location = new Point(4, 91);
                 GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 158);
             }
-            else if (_NumberOfTicketRegular == 0 && _NumberOfTicketVIP == 0 && _NumberOfTicketPreimum > 0)
+            else if (_NumberOfTicketRegular == clsEETMS_Constants.kZERO && _NumberOfTicketVIP == clsEETMS_Constants.kZERO && _NumberOfTicketPreimum > clsEETMS_Constants.kZERO)
             {
                 PanelRegularTicket.Visible = false;
                 PanelVIPTicket.Visible = false;
@@ -336,7 +328,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelPremiumTicket.Location = new Point(4, 91);
                 GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 158);
             }
-            else if (_NumberOfTicketRegular > 0 && _NumberOfTicketVIP > 0 && _NumberOfTicketPreimum == 0)
+            else if (_NumberOfTicketRegular > clsEETMS_Constants.kZERO && _NumberOfTicketVIP > clsEETMS_Constants.kZERO && _NumberOfTicketPreimum == clsEETMS_Constants.kZERO)
             {
                 PanelRegularTicket.Visible = true;
                 PanelVIPTicket.Visible = true;
@@ -349,7 +341,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelVIPTicket.Location = new Point(4, 158);
                 GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 225);
             }
-            else if (_NumberOfTicketRegular > 0 && _NumberOfTicketVIP == 0 && _NumberOfTicketPreimum > 0)
+            else if (_NumberOfTicketRegular > clsEETMS_Constants.kZERO && _NumberOfTicketVIP == clsEETMS_Constants.kZERO && _NumberOfTicketPreimum > clsEETMS_Constants.kZERO)
             {
                 PanelRegularTicket.Visible = true;
                 PanelVIPTicket.Visible = false;
@@ -362,7 +354,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 PanelPremiumTicket.Location = new Point(4, 158);
                 GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 225);
             }
-            else if (_NumberOfTicketRegular == 0 && _NumberOfTicketVIP > 0 && _NumberOfTicketPreimum > 0)
+            else if (_NumberOfTicketRegular == clsEETMS_Constants.kZERO && _NumberOfTicketVIP > clsEETMS_Constants.kZERO && _NumberOfTicketPreimum > clsEETMS_Constants.kZERO)
             {
                 PanelRegularTicket.Visible = false;
                 PanelVIPTicket.Visible = true;
@@ -376,7 +368,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
                 GPanelSubTotalAndTaxTicketBookingSummary.Location = new Point(4, 225);
             }
-            else if (_NumberOfTicketRegular > 0 && _NumberOfTicketVIP > 0 && _NumberOfTicketPreimum > 0)
+            else if (_NumberOfTicketRegular > clsEETMS_Constants.kZERO && _NumberOfTicketVIP > clsEETMS_Constants.kZERO && _NumberOfTicketPreimum > clsEETMS_Constants.kZERO)
             {
                 PanelRegularTicket.Visible = true;
                 PanelVIPTicket.Visible = true;
@@ -406,8 +398,8 @@ namespace EETMS_Presentation.EETMS_Tickets
         private void _CalcTheTotalAmountAndSubAmount()
         {
 
-            _SubTotalAmount = 0;
-            _TotalAmount = 0;
+            _SubTotalAmount = clsEETMS_Constants.kZERO;
+            _TotalAmount = clsEETMS_Constants.kZERO;
 
 
             _SubTotalAmount += _Tax + _NumberOfTicketRegular * _PriceTheRegularTicket;
@@ -445,7 +437,6 @@ namespace EETMS_Presentation.EETMS_Tickets
         private void GNumericUpDownVIPTicket_ValueChanged(object sender, EventArgs e)
         {
 
-
             _NumberOfTicketVIP = Convert.ToInt32(GNumericUpDownVIPTicket.Value);
 
             _UpdateThePanelsAndThePricesAndCountTickets();
@@ -480,10 +471,10 @@ namespace EETMS_Presentation.EETMS_Tickets
 
             DataTable DT = CustomerBL.AllInformationCustomerAfterSearch(ToBeSearch);
 
-            if (DT.Rows.Count > 0)
-                _CustomerID = Convert.ToInt32(DT.Rows[0]["CusotmerID"]);
+            if (DT.Rows.Count > clsEETMS_Constants.kZERO)
+                _CustomerID = Convert.ToInt32(DT.Rows[clsEETMS_Constants.kZERO]["CusotmerID"]);
 
-            if (_CustomerID > 0) MessageBox.Show("The Customer Founded", "note For Search The Customer ");
+            if (_CustomerID > clsEETMS_Constants.kZERO) MessageBox.Show("The Customer Founded", "note For Search The Customer ");
             else MessageBox.Show("The Customer Not Founded", "note For Search The Customer ");
         }
 
@@ -494,11 +485,11 @@ namespace EETMS_Presentation.EETMS_Tickets
             Dictionary<int, string> Dic_AllTicketTypeEvents = TicketBL.GetTheAllTicketTypeBy(_EventID);
 
 
-            if (_CustomerID > 0)
+            if (_CustomerID > clsEETMS_Constants.kZERO)
             {
-                int TicketTypeIDRegular = 0;
-                int TicketTypeIDVIP = 0;
-                int TicketTypeIDPremium = 0;
+                int TicketTypeIDRegular = clsEETMS_Constants.kZERO;
+                int TicketTypeIDVIP = clsEETMS_Constants.kZERO;
+                int TicketTypeIDPremium = clsEETMS_Constants.kZERO;
 
                 foreach (var ItemDic in Dic_AllTicketTypeEvents)
                 {
@@ -509,7 +500,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
                 }
 
-                if (_NumberOfTicketRegular > 0)
+                if (_NumberOfTicketRegular > clsEETMS_Constants.kZERO)
                 {
 
                     _MReservations = new MReservations()
@@ -526,7 +517,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
                 }
 
-                if (_NumberOfTicketVIP > 0)
+                if (_NumberOfTicketVIP > clsEETMS_Constants.kZERO)
                 {
 
                     _MReservations = new MReservations()
@@ -543,7 +534,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                     ReservationBL.SaveTheReservatio(_MReservations);
 
                 }
-                if (_NumberOfTicketPreimum > 0)
+                if (_NumberOfTicketPreimum > clsEETMS_Constants.kZERO)
                 {
 
                     _MReservations = new MReservations()
@@ -584,14 +575,10 @@ namespace EETMS_Presentation.EETMS_Tickets
         }
 
         private void GGButtonSearchTheCustomerByIDorName_Click(object sender, EventArgs e)
-        {
-            _SearchTheCustoemrByIDOrName();
-        }
+            => _SearchTheCustoemrByIDOrName();
 
         private void GGButtonConfirmBooking_Click(object sender, EventArgs e)
-        {
-            _BookingTheNewTickets();
-        }
+            => _BookingTheNewTickets();
 
         private void GComboBoxSelectEvents_SelectionChangeCommitted(object sender, EventArgs e)
         {

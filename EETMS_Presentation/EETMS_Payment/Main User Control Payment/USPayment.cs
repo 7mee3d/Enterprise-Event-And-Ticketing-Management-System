@@ -3,26 +3,31 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 
 
 namespace EETMS_Presentation.EETMS_Payment
 {
     public partial class USPayment : UserControl
     {
+
+
+        public event EventHandler ERequestTheOpenAddPaymentBooking;
+
         public USPayment()
         {
             InitializeComponent();
+            ERequestTheOpenAddPaymentBooking = null;
         }
 
-        public event EventHandler ERequestTheOpenAddPaymentBooking = null;
-
         private void _LoadAllInformationPayments(DataTable DT)
-
         {
-            // DataTable Payments_DT = PaymentsBL.GetAllInformationPayments();
-            string BookingIDSTR = "";
 
-            int counter = 0;
+
+            string BookingIDSTR = clsEETMS_Constants.kEMPTY_STRING;
+
+            int counter = clsEETMS_Constants.kZERO;
+
             foreach (DataRow DR_Payment in DT.Rows)
             {
 
@@ -42,7 +47,7 @@ namespace EETMS_Presentation.EETMS_Payment
 
                 DataGridViewRow DGVR = GDataGridViewCategoriesInformation.Rows[counter++];
 
-                DataGridViewCell DGVC_BookingID = DGVR.Cells[1];
+                DataGridViewCell DGVC_BookingID = DGVR.Cells[clsEETMS_Constants.kONE];
                 DataGridViewCell DGVC_Status = DGVR.Cells[6];
 
                 switch (DGVC_Status.Value.ToString())
@@ -78,7 +83,7 @@ namespace EETMS_Presentation.EETMS_Payment
 
         private void GTextBoxSearchTheCategory_TextChanged(object sender, EventArgs e)
         {
-            string BookingID = "";
+            string BookingID = clsEETMS_Constants.kEMPTY_STRING;
 
             if (!String.IsNullOrEmpty(GTextBoxSearchThePayment.Text))
                 BookingID = GTextBoxSearchThePayment.Text;
@@ -86,7 +91,7 @@ namespace EETMS_Presentation.EETMS_Payment
             DataTable Payments_DT = null;
             GDataGridViewCategoriesInformation.Rows.Clear();
 
-            if (BookingID != "")
+            if (BookingID != clsEETMS_Constants.kEMPTY_STRING)
             {
                 Payments_DT = PaymentsBL.GetAllInformationPaymentBy(BookingID);
             }
@@ -98,10 +103,9 @@ namespace EETMS_Presentation.EETMS_Payment
             _LoadAllInformationPayments(Payments_DT);
         }
 
-
         private void GGButtonPaymentBooking_Click(object sender, EventArgs e)
-        {
-            ERequestTheOpenAddPaymentBooking?.Invoke(this, EventArgs.Empty);
-        }
+           => ERequestTheOpenAddPaymentBooking?.Invoke(this, EventArgs.Empty);
+
+
     }
 }

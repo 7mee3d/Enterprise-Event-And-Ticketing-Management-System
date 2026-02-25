@@ -1,5 +1,7 @@
 ﻿using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_Models;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,8 +19,13 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
         public event EventHandler<int> ERequestToTheClose_USAddNewTicketTypeToTheEvent;
 
-        int _IDEvent = 0;
-        int _IDTicketType = -1;
+        private int _IDEvent;
+        private int _IDTicketType;
+
+        private _EnModeTicketType _MTicketType;
+        private MTicketType _ObjTicketTypeInformation;
+        Guna2MessageDialog _G2MD = new Guna2MessageDialog();
+
 
         private enum _EnModeTicketType
         {
@@ -27,18 +34,47 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
         }
 
 
-        private _EnModeTicketType _MTicketType;
-        private MTicketType _ObjTicketTypeInformation;
 
+        private void _ShowTheMessageBox(string Text, string Caption, string IconMessageBox)
+        {
+            _G2MD.Text = Text;
+            _G2MD.Caption = Caption;
+
+            switch (IconMessageBox)
+            {
+
+                case "Warning":
+                    _G2MD.Icon = MessageDialogIcon.Warning;
+                    break;
+                case "Error":
+                    _G2MD.Icon = MessageDialogIcon.Error;
+                    break;
+                case "Question":
+                    _G2MD.Icon = MessageDialogIcon.Question;
+                    break;
+                case "Information":
+                    _G2MD.Icon = MessageDialogIcon.Information;
+                    break;
+                default:
+                    _G2MD.Icon = MessageDialogIcon.None;
+                    break;
+            }
+
+            _G2MD.Show();
+        }
 
         public USAddTheTicketsTypeToTheEvent(int IDEvent, int IDTicketType)
         {
             InitializeComponent();
 
+            ERequestToTheClose_USAddNewTicketTypeToTheEvent = null;
+            _IDTicketType = clsEETMS_Constants.kNEGATIVE_ONE;
+            _IDEvent = clsEETMS_Constants.kZERO;
+
             _IDEvent = IDEvent;
             _IDTicketType = IDTicketType;
 
-            if (IDTicketType != -1) _MTicketType = _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
+            if (IDTicketType != clsEETMS_Constants.kNEGATIVE_ONE) _MTicketType = _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
             else _MTicketType = _EnModeTicketType._kADD_NEW_TICKETTYPE;
         }
 
@@ -48,28 +84,29 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             DataTable DT_TicketsType = TicketBL.GetInformationTicketForEvent(_IDEvent);
 
-            bool activeReguler = false;
-            bool activeVIP = false;
-            bool activePremium = false;
+            bool ActiveReguler = false;
+            bool ActiveVIP = false;
+            bool ActivePremium = false;
+
             foreach (DataRow DR_TicketType in DT_TicketsType.Rows)
             {
                 if (DR_TicketType["TicketTypeName"].ToString() == "Regular")
-                    activeReguler = true;
+                    ActiveReguler = true;
 
                 if (DR_TicketType["TicketTypeName"].ToString() == "VIP")
-                    activeVIP = true;
+                    ActiveVIP = true;
 
                 if (DR_TicketType["TicketTypeName"].ToString() == "Premium")
-                    activePremium = true;
+                    ActivePremium = true;
 
 
             }
 
-            if (!activeReguler) AllTicketsTypeNotIndludeEvents.Add("Regular");
+            if (!ActiveReguler) AllTicketsTypeNotIndludeEvents.Add("Regular");
 
-            if (!activeVIP) AllTicketsTypeNotIndludeEvents.Add("VIP");
+            if (!ActiveVIP) AllTicketsTypeNotIndludeEvents.Add("VIP");
 
-            if (!activePremium) AllTicketsTypeNotIndludeEvents.Add("Premium");
+            if (!ActivePremium) AllTicketsTypeNotIndludeEvents.Add("Premium");
 
             return AllTicketsTypeNotIndludeEvents;
         }
@@ -80,29 +117,29 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             DataTable DT_TicketsType = TicketBL.GetInformationTicketForEvent(_IDEvent);
 
-            bool activeReguler = false;
-            bool activeVIP = false;
-            bool activePremium = false;
+            bool ActiveReguler = false;
+            bool ActiveVIP = false;
+            bool ActivePremium = false;
 
             foreach (DataRow DR_TicketType in DT_TicketsType.Rows)
             {
                 if (DR_TicketType["TicketTypeName"].ToString() == "Regular")
-                    activeReguler = true;
+                    ActiveReguler = true;
 
                 if (DR_TicketType["TicketTypeName"].ToString() == "VIP")
-                    activeVIP = true;
+                    ActiveVIP = true;
 
                 if (DR_TicketType["TicketTypeName"].ToString() == "Premium")
-                    activePremium = true;
+                    ActivePremium = true;
 
 
             }
 
-            if (activeReguler) AllTicketsTypeNotIndludeEvents.Add("Regular");
+            if (ActiveReguler) AllTicketsTypeNotIndludeEvents.Add("Regular");
 
-            if (activeVIP) AllTicketsTypeNotIndludeEvents.Add("VIP");
+            if (ActiveVIP) AllTicketsTypeNotIndludeEvents.Add("VIP");
 
-            if (activePremium) AllTicketsTypeNotIndludeEvents.Add("Premium");
+            if (ActivePremium) AllTicketsTypeNotIndludeEvents.Add("Premium");
 
 
             return AllTicketsTypeNotIndludeEvents;
@@ -125,17 +162,10 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
         }
 
         private void GButtonBack_Click(object sender, EventArgs e)
-        {
-            ERequestToTheClose_USAddNewTicketTypeToTheEvent?.Invoke(this, _IDEvent);
-        }
+           => ERequestToTheClose_USAddNewTicketTypeToTheEvent?.Invoke(this, _IDEvent);
 
         private void USAddTheTicketsTypeToTheEvent_Load(object sender, EventArgs e)
-        {
-            MessageBox.Show(_MTicketType.ToString());
-
-            _LoadAllInformationTicketTypeAfterLoadTheUS();
-
-        }
+            => _LoadAllInformationTicketTypeAfterLoadTheUS();
 
         private void _LoadAllInformationTicketTypeAfterLoadTheUS()
         {
@@ -155,7 +185,7 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             if (_ObjTicketTypeInformation == null)
             {
-                MessageBox.Show("The Ticket Type Not Found , Try Agian", "Note Of Find The Ticket Type ");
+                _ShowTheMessageBox("\nThe Ticket Type Not Found, Try Agian", "Note Of Find The Ticket Type ", "Error");
                 return;
 
             }
@@ -165,9 +195,10 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
             GTextBoxPriceTheTicketType.Text = _ObjTicketTypeInformation.Price.ToString();
 
             GTextBoxAvailableQuantity.Text = _ObjTicketTypeInformation.Quantity.ToString();
+
             _MTicketType = _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
             _ObjTicketTypeInformation.EnMode = MTicketType.EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
-            _ObjTicketTypeInformation.EnMode = MTicketType.EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
+
             GButtonAddTicketAndSave.Text = "Save Changes";
 
         }
@@ -186,11 +217,19 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             _ObjTicketTypeInformation.TicketTypeName = GComboBoxAllTicketTypeNotIncludeEvent.SelectedItem.ToString();
 
-            if (MaxCapacity >= Convert.ToInt32(GTextBoxAvailableQuantity.Text) && (RemainingCapacity >= (Convert.ToInt32(GTextBoxAvailableQuantity.Text) - AvailableBeforeUpdate)))
-                _ObjTicketTypeInformation.Quantity = Convert.ToInt32(GTextBoxAvailableQuantity.Text);
+            if (Convert.ToInt32(GTextBoxAvailableQuantity.Text) > 0)
+            {
+                if (MaxCapacity >= Convert.ToInt32(GTextBoxAvailableQuantity.Text) && (RemainingCapacity >= (Convert.ToInt32(GTextBoxAvailableQuantity.Text) - AvailableBeforeUpdate)))
+                    _ObjTicketTypeInformation.Quantity = Convert.ToInt32(GTextBoxAvailableQuantity.Text);
+                else
+                {
+                    _ShowTheMessageBox("\nConnot Added This Ticket Type Because The Qunatity Ticket Type Grther Than Max Capacity", "Note The Add new Ticket Type", "Warning");
+                    return;
+                }
+            }
             else
             {
-                MessageBox.Show("Connot Added This Ticket Type Because The Qunatity Ticket Type Grther Than Max Capacity", "Note The Add new Ticket Type");
+                _ShowTheMessageBox("\nConnot Added This Ticket Type Because The Qunatity Ticket Type is Zero", "Note The Add new Ticket Type", "Error");
                 return;
             }
 
@@ -203,26 +242,28 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             if (TicketBL.SaveModeTicketType(_ObjTicketTypeInformation))
             {
-                if (_MTicketType == _EnModeTicketType._kADD_NEW_TICKETTYPE) MessageBox.Show("Add The Ticket Type Successfully ", "Note For Add New Ticket Type");
-                else if (_MTicketType == _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE) MessageBox.Show("Update The Ticket Type Successfully ", "Note For Update Ticket Type");
+
+                if (_MTicketType == _EnModeTicketType._kADD_NEW_TICKETTYPE)
+                    _ShowTheMessageBox("\nAdd The Ticket Type Successfully", "Note For Add New Ticket Type", "Information");
+                else if (_MTicketType == _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE)
+                    _ShowTheMessageBox("\nUpdate The Ticket Type Successfully", "Note For Update Ticket Type", "Information");
             }
 
 
             GComboBoxAllTicketTypeNotIncludeEvent.SelectedItem = _ObjTicketTypeInformation.TicketTypeName;
             GTextBoxAvailableQuantity.Text = _ObjTicketTypeInformation.Quantity.ToString();
-            GTextBoxAvailableQuantity.Text = _ObjTicketTypeInformation.Price.ToString();
+            GTextBoxPriceTheTicketType.Text = _ObjTicketTypeInformation.Price.ToString();
+
             _MTicketType = _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
             _ObjTicketTypeInformation.EnMode = MTicketType.EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
+
             GButtonAddTicketAndSave.Text = "Save Changes";
 
-
-            //  _ObjTicketTypeInformation.EventID = _IDEvent;
         }
 
         private void GButtonSaveChanges_Click(object sender, EventArgs e)
-        {
-            _AddUpdateInformatioNTicketType();
-        }
+          => _AddUpdateInformatioNTicketType();
+
 
 
     }

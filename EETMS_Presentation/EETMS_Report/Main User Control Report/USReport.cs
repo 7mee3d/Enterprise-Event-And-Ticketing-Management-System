@@ -1,4 +1,5 @@
 ﻿using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 using System;
 using System.Data;
 using System.Drawing;
@@ -83,7 +84,7 @@ namespace EETMS_Presentation.EETMS_Report
 
             DataTable DT_InformatioNEvents = ReportBL.GetAllInformationEvent();
 
-            for (int counter = 0; counter < DT_InformatioNEvents.Rows.Count; counter += 1)
+            for (int counter = clsEETMS_Constants.kZERO; counter < DT_InformatioNEvents.Rows.Count; counter += clsEETMS_Constants.kONE)
             {
 
                 DataRow DR_InfoEvent = DT_InformatioNEvents.Rows[counter];
@@ -164,9 +165,8 @@ namespace EETMS_Presentation.EETMS_Report
         }
 
         private void USReport_Load(object sender, EventArgs e)
-        {
-            _InitalTheSettingAfterLoadTheReportUSFillAllDataToGDV();
-        }
+            => _InitalTheSettingAfterLoadTheReportUSFillAllDataToGDV();
+
 
 
     }

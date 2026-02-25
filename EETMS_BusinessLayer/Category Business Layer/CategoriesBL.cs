@@ -1,4 +1,5 @@
 ﻿
+using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_DataAccessLayer;
 using EETMS_Models;
 using System.Data;
@@ -14,16 +15,16 @@ namespace EETMS_BusinessLayer
 
         public static MCategory FindTheCategoryBy(int IDCategory) => CategoriesDAL.FindTheCategoryBy(IDCategory);
 
-        private static bool _AddNewCategory(MCategory NewInformationCategory) => CategoriesDAL.InsertTheNewCategory(NewInformationCategory) > 0;
+        private static bool _AddNewCategory(MCategory NewInformationCategory) => CategoriesDAL.InsertTheNewCategory(NewInformationCategory) > clsEETMS_Constants.kZERO;
 
-        private static bool _UpdateInformationCategory(int IDCategory, MCategory NewInformationCategory) => CategoriesDAL.UpdateInformationCategoryBy(IDCategory, NewInformationCategory) > 0 ;
+        private static bool _UpdateInformationCategory(int IDCategory, MCategory NewInformationCategory) => CategoriesDAL.UpdateInformationCategoryBy(IDCategory, NewInformationCategory) > clsEETMS_Constants.kZERO;
 
-        public static bool DeleteTheCategoryBy(int IDCategory) => CategoriesDAL.DeleteTheCategoryBy(IDCategory) > 0 ;
+        public static bool DeleteTheCategoryBy(int IDCategory) => CategoriesDAL.DeleteTheCategoryBy(IDCategory) > clsEETMS_Constants.kZERO;
 
-        public static bool SaveInformationCategory (MCategory NewInformationCategory)
+        public static bool SaveInformationCategory(MCategory NewInformationCategory)
         {
 
-            switch (NewInformationCategory.EnMode )
+            switch (NewInformationCategory.EnMode)
             {
 
                 case MCategory._EnModeCategory._kAADD_NEW_CATEGORY:
@@ -34,10 +35,10 @@ namespace EETMS_BusinessLayer
 
             }
 
-            return false; 
+            return false;
         }
 
         public static DataTable GetAllInformationCategoryFullInformation(string CategoryNameToBeSearch) => CategoriesDAL.SearchCategoryFullInfo(CategoryNameToBeSearch);
-   
-    } 
+
+    }
 }

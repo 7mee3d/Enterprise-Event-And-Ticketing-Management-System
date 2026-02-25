@@ -70,6 +70,7 @@
             this.guna2GradientCircleButton1 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.label6 = new System.Windows.Forms.Label();
             this.lblNumberDraftsEvents = new System.Windows.Forms.Label();
+            this.GGButtonWarningDisable = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).BeginInit();
             this.GContextMenuStripEvents.SuspendLayout();
@@ -171,7 +172,7 @@
             this.GDataGridViewEventsInformation.DefaultCellStyle = dataGridViewCellStyle3;
             this.GDataGridViewEventsInformation.GridColor = System.Drawing.Color.White;
             this.GDataGridViewEventsInformation.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.GDataGridViewEventsInformation.Location = new System.Drawing.Point(5, 3);
+            this.GDataGridViewEventsInformation.Location = new System.Drawing.Point(5, 4);
             this.GDataGridViewEventsInformation.MultiSelect = false;
             this.GDataGridViewEventsInformation.Name = "GDataGridViewEventsInformation";
             this.GDataGridViewEventsInformation.ReadOnly = true;
@@ -362,6 +363,7 @@
             // 
             // GTextBoxSearchTheEvent
             // 
+            this.GTextBoxSearchTheEvent.Animated = true;
             this.GTextBoxSearchTheEvent.BorderRadius = 8;
             this.GTextBoxSearchTheEvent.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.GTextBoxSearchTheEvent.DefaultText = "";
@@ -374,7 +376,7 @@
             this.GTextBoxSearchTheEvent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GTextBoxSearchTheEvent.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheEvent.IconLeft")));
             this.GTextBoxSearchTheEvent.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxSearchTheEvent.Location = new System.Drawing.Point(650, 46);
+            this.GTextBoxSearchTheEvent.Location = new System.Drawing.Point(663, 46);
             this.GTextBoxSearchTheEvent.Name = "GTextBoxSearchTheEvent";
             this.GTextBoxSearchTheEvent.PlaceholderText = "Search Events ....";
             this.GTextBoxSearchTheEvent.SelectedText = "";
@@ -600,11 +602,34 @@
             this.lblNumberDraftsEvents.TabIndex = 0;
             this.lblNumberDraftsEvents.Text = "0";
             // 
+            // GGButtonWarningDisable
+            // 
+            this.GGButtonWarningDisable.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
+            this.GGButtonWarningDisable.BorderRadius = 5;
+            this.GGButtonWarningDisable.BorderThickness = 1;
+            this.GGButtonWarningDisable.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
+            this.GGButtonWarningDisable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningDisable.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningDisable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
+            this.GGButtonWarningDisable.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.GGButtonWarningDisable.Enabled = false;
+            this.GGButtonWarningDisable.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningDisable.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningDisable.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold);
+            this.GGButtonWarningDisable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
+            this.GGButtonWarningDisable.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonWarningDisable.Image")));
+            this.GGButtonWarningDisable.Location = new System.Drawing.Point(1059, 319);
+            this.GGButtonWarningDisable.Name = "GGButtonWarningDisable";
+            this.GGButtonWarningDisable.Size = new System.Drawing.Size(305, 42);
+            this.GGButtonWarningDisable.TabIndex = 7;
+            this.GGButtonWarningDisable.Text = "Events with sold tickets cannot be deleted.";
+            // 
             // USEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.GGButtonWarningDisable);
             this.Controls.Add(this.guna2GradientPanel4);
             this.Controls.Add(this.guna2GradientPanel3);
             this.Controls.Add(this.guna2GradientPanel2);
@@ -673,5 +698,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LocationEvent;
         private System.Windows.Forms.DataGridViewTextBoxColumn DurationEvent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discripation;
+        private Guna.UI2.WinForms.Guna2GradientButton GGButtonWarningDisable;
     }
 }

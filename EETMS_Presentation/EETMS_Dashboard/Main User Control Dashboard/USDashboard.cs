@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 using Guna.Charts.WinForms;
 
 namespace EETMS_Presentation.EETMS_Dashboard
@@ -47,14 +48,13 @@ namespace EETMS_Presentation.EETMS_Dashboard
             GComboBoxYearsPayments.DataSource = LAllYearsPayments;
             GComboBoxYearsPayments.DisplayMember = "Year";
 
-
         }
 
         private void _LoadTheDataToChartsTotalRevenueForMonth()
         {
-            int SelectedYear = 0;
+            int SelectedYear = clsEETMS_Constants.kZERO;
 
-            if (GComboBoxYearsPayments.Items.Count > 0)
+            if (GComboBoxYearsPayments.Items.Count > clsEETMS_Constants.kZERO)
                 SelectedYear = (int)GComboBoxYearsPayments.SelectedItem;
 
             DataTable DT_TotalRevenueForMpnth = DashboardBL.GetTheTotalReveneForMonthBL_By(SelectedYear);
@@ -74,7 +74,7 @@ namespace EETMS_Presentation.EETMS_Dashboard
                 if ((int)DR_TotalRevenueForMonth["Year"] == SelectedYear)
                 {
                     GSplineDatasetTotalRevenueByMonth.Label = "Month";
-                    double TotalRevenue = Convert.ToDouble(DR_TotalRevenueForMonth["TotalRevenue"] != DBNull.Value ? DR_TotalRevenueForMonth["TotalRevenue"] : 0.0);
+                    double TotalRevenue = Convert.ToDouble(DR_TotalRevenueForMonth["TotalRevenue"] != DBNull.Value ? DR_TotalRevenueForMonth["TotalRevenue"] : clsEETMS_Constants.kZERO);
 
                     DataSet.DataPoints.Add(DR_TotalRevenueForMonth["Month"].ToString(), TotalRevenue);
                 }
@@ -86,11 +86,6 @@ namespace EETMS_Presentation.EETMS_Dashboard
             GChartsTotalRevenueForMonth.Update();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void USDashboard_Load(object sender, EventArgs e)
         {
             _LoadTheStatisticsTicketsByCategoryInCharts();
@@ -100,9 +95,7 @@ namespace EETMS_Presentation.EETMS_Dashboard
         }
 
         private void GComboBoxYearsPayments_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            _LoadTheDataToChartsTotalRevenueForMonth();
-        }
+            => _LoadTheDataToChartsTotalRevenueForMonth();
 
         private void _InitalSettingAfterLoadTheDashboard()
         {

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using EETMS_BusinessLayer; 
+using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 
 
 namespace EETMS_Presentation.EETMS_Customers
@@ -9,22 +10,23 @@ namespace EETMS_Presentation.EETMS_Customers
     public partial class USCustomers : UserControl
     {
 
-        public event EventHandler<int> RequestOpenTheAddNewCustomer = null;
-        private DataTable _CustomersDT = null;
+        public event EventHandler<int> RequestOpenTheAddNewCustomer;
+        private DataTable _CustomersDT ;
+
 
         public USCustomers()
         {
             InitializeComponent();
+            RequestOpenTheAddNewCustomer = null; 
+            _CustomersDT = null; 
         }
 
         private int _GetTotalCustomer ()
-        {
-            return _CustomersDT.Rows.Count; 
-        } 
-
+            =>_CustomersDT.Rows.Count; 
+        
         private int _GetTheIDCustomerAfterSelectedInDataGridView()
         {
-            return ( (GDataGridViewCustomerInformation.SelectedRows.Count > 0) ? Convert.ToInt32(GDataGridViewCustomerInformation.SelectedRows[0].Cells["CustomerID"].Value) : -1); 
+            return ( (GDataGridViewCustomerInformation.SelectedRows.Count > clsEETMS_Constants.kZERO) ? Convert.ToInt32(GDataGridViewCustomerInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells["CustomerID"].Value) : clsEETMS_Constants.kNEGATIVE_ONE); 
         }
 
         private void _LoadAllInformationCustomerToDataGridView ()
@@ -64,17 +66,11 @@ namespace EETMS_Presentation.EETMS_Customers
         }
 
         private void USCustomers_Load(object sender, EventArgs e)
-        {
-
-            _InitalSettingAfterLoadingTheCustomerUS();
-
-        }
-
+            => _InitalSettingAfterLoadingTheCustomerUS();
+     
         private void GGButtonCreateNewEvent_Click(object sender, EventArgs e)
-        {
-            RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
-        }
-
+            =>RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
+        
         private void DeleteCustomerlStripMenuItem_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("Are You Sure to be Delete This Customer?" , "Note For Delete Customer operation" , MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -91,10 +87,8 @@ namespace EETMS_Presentation.EETMS_Customers
         }
 
         private void updateCustomerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
-        }
-
+            =>RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
+        
         private void GTextBoxSearchTheEvent_TextChanged(object sender, EventArgs e)
         {
 

@@ -1,4 +1,5 @@
-﻿using EETMS_DataAccessLayer;
+﻿using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_DataAccessLayer;
 using EETMS_Models;
 using System.Collections.Generic;
 using System.Data;
@@ -16,10 +17,10 @@ namespace EETMS_BusinessLayer
             => TicketsDAL.GetInformationTicketForEventBy(EventID);
 
         private static bool _AddNewTicketType(MTicketType mTicketType)
-            => TicketsDAL.InsertNewTicketToTheEventBy(mTicketType) > 0;
+            => TicketsDAL.InsertNewTicketToTheEventBy(mTicketType) > clsEETMS_Constants.kZERO;
 
         private static bool _UpdateInformationTicketType(MTicketType mTicketType)
-            => TicketsDAL.UpdateInformationTicketToTheEventBy(mTicketType) > 0;
+            => TicketsDAL.UpdateInformationTicketToTheEventBy(mTicketType) > clsEETMS_Constants.kZERO;
 
         public static MTicketType FindTheTicketTypeBy(int EventID, int TicketTypeID)
             => TicketsDAL.FindTheTicketTypeBy(EventID, TicketTypeID);

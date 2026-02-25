@@ -957,7 +957,6 @@
             this.GComboBoxSelectEvents.Name = "GComboBoxSelectEvents";
             this.GComboBoxSelectEvents.Size = new System.Drawing.Size(359, 36);
             this.GComboBoxSelectEvents.TabIndex = 11;
-            this.GComboBoxSelectEvents.SelectedIndexChanged += new System.EventHandler(this.GComboBoxSelectEvents_SelectedIndexChanged);
             this.GComboBoxSelectEvents.SelectionChangeCommitted += new System.EventHandler(this.GComboBoxSelectEvents_SelectionChangeCommitted);
             // 
             // GTextBoxCustomerIDorName

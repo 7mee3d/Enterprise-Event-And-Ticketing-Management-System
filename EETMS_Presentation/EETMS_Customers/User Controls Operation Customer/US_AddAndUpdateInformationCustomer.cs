@@ -7,6 +7,7 @@ using System.Reflection;
 using EETMS_Presentation.Properties;
 using EETMS_BusinessLayer.Validation;
 using Guna.UI2.WinForms;
+using EETMS_BusinessLayer.EETMS_Constants;
 
 namespace EETMS_Presentation.EETMS_Customers
 {
@@ -22,21 +23,27 @@ namespace EETMS_Presentation.EETMS_Customers
         }
 
 
-        private _EnModeCustomer _EnMode = _EnModeCustomer._kNOTHING;
-        private MCustomer _CustomerInformation = null;
-        private int _IDCustomer = 0;
-        private List<string> _AllInformationCustomerInList = null;
-        public event EventHandler RequestClose = null;
+        private _EnModeCustomer _EnMode ;
+        private MCustomer _CustomerInformation ;
+        private int _IDCustomer ;
+        private List<string> _AllInformationCustomerInList ;
+        public event EventHandler RequestClose ;
+
 
         public US_AddAndUpdateInformationCustomer(int IDCustomer)
         {
             InitializeComponent();
+            _EnMode = _EnModeCustomer._kNOTHING;
+            _CustomerInformation = null;
+            _IDCustomer = clsEETMS_Constants.kZERO;
+            _AllInformationCustomerInList = null;
+            RequestClose = null; 
 
-
-            if (IDCustomer != -1)
+            if (IDCustomer != clsEETMS_Constants.kNEGATIVE_ONE)
                 _EnMode = _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER;
 
             else _EnMode = _EnModeCustomer._kADD_NEW_CUSTOMER;
+
 
             this._IDCustomer = IDCustomer;
         }
@@ -129,10 +136,8 @@ namespace EETMS_Presentation.EETMS_Customers
         }
 
         private void GButtonCansel_Click(object sender, EventArgs e)
-        {
-            RequestClose?.Invoke(this, EventArgs.Empty);
-        }
-
+            => RequestClose?.Invoke(this, EventArgs.Empty);
+        
         private void _FillAllInformationCustomerAfterFillToList()
         {
 
@@ -155,7 +160,7 @@ namespace EETMS_Presentation.EETMS_Customers
             return (
 
 
-                         AllInformationCustomerInList[0] != "" &&   // The First Name 
+                         AllInformationCustomerInList[clsEETMS_Constants.kZERO] != "" &&   // The First Name 
                                                                     //   AllInformationCustomerInList[1] != "" &&// The Mid Name 
                          AllInformationCustomerInList[2] != "" &&   // The last Name
                                                                     // AllInformationCustomerInList[3] != "" &&//The Email
@@ -180,11 +185,9 @@ namespace EETMS_Presentation.EETMS_Customers
         }
 
         private void US_AddAndUpdateInformationCustomer_Load(object sender, EventArgs e)
-        {
+            =>_LoadAllInformationAndSettingAddNewCustomer();
 
-            _LoadAllInformationAndSettingAddNewCustomer();
-
-        }
+        
 
     }
 }

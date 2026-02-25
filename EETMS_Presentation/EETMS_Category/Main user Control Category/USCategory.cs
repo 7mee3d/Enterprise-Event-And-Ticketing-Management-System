@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_BusinessLayer.Validation;
 using EETMS_Models;
 using EETMS_Presentation.Properties;
@@ -31,7 +32,7 @@ namespace EETMS_Presentation.EETMS_Category
             InitializeComponent();
             _CategoryInfo = null;
             _ModeCategory = _EnModeCategory._ADD_NEW_CATEGORY;
-            IDCategory = 0;
+            IDCategory = clsEETMS_Constants.kZERO;
 
         }
 
@@ -54,9 +55,9 @@ namespace EETMS_Presentation.EETMS_Category
             => (String.IsNullOrEmpty(GTextBoxCategoryName.Text));
 
         private int _GetTheIDCategoryAfterSelectedDGV()
-            => (GDataGridViewCategoriesInformation.SelectedRows.Count > 0) ?
-            _SplitTheCategoryIDString(GDataGridViewCategoriesInformation.SelectedRows[0].Cells[0].Value.ToString())
-            : -1;
+            => (GDataGridViewCategoriesInformation.SelectedRows.Count > clsEETMS_Constants.kZERO) ?
+            _SplitTheCategoryIDString(GDataGridViewCategoriesInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells[clsEETMS_Constants.kZERO].Value.ToString())
+            : clsEETMS_Constants.kNEGATIVE_ONE;
 
         private void _AddNewCategoryOrUpdate()
         {
@@ -127,7 +128,7 @@ namespace EETMS_Presentation.EETMS_Category
 
             IDCategory = _GetTheIDCategoryAfterSelectedDGV();
 
-            if (_ModeCategory == _EnModeCategory._ADD_NEW_CATEGORY && IDCategory == -1)
+            if (_ModeCategory == _EnModeCategory._ADD_NEW_CATEGORY && IDCategory == clsEETMS_Constants.kNEGATIVE_ONE)
             {
                 GGButtonAddNewCategory.Text = "Add New Category";
                 _CategoryInfo = new MCategory();
@@ -153,7 +154,7 @@ namespace EETMS_Presentation.EETMS_Category
         }
 
         private int _SplitTheCategoryIDString(string CategoryIDString)
-            => Convert.ToInt32(CategoryIDString.Split('-')[1]);
+            => Convert.ToInt32(CategoryIDString.Split('-')[clsEETMS_Constants.kONE]);
 
         private void _LoadAllInformationCategoriesInTheDataGridView()
         {
@@ -162,9 +163,9 @@ namespace EETMS_Presentation.EETMS_Category
             DataTable Categories_DT = CategoriesBL.GetAllInformationCategories();
 
 
-            int MinCount = Math.Max(CategoriesGroupByName_DT.Rows.Count, Categories_DT.Rows.Count);
+            int MaxCount = Math.Max(CategoriesGroupByName_DT.Rows.Count, Categories_DT.Rows.Count);
 
-            for (int counter = 0; counter < MinCount; counter += 1)
+            for (int counter = clsEETMS_Constants.kZERO; counter < MaxCount; counter += clsEETMS_Constants.kONE)
             {
                 string CategoryID = "";
 
@@ -183,7 +184,7 @@ namespace EETMS_Presentation.EETMS_Category
 
 
                 DataGridViewRow DataGridViewRowCategory = GDataGridViewCategoriesInformation.Rows[rowIndexCategory];
-                DataGridViewCell DataGridViewCellCategory = DataGridViewRowCategory.Cells[0];
+                DataGridViewCell DataGridViewCellCategory = DataGridViewRowCategory.Cells[clsEETMS_Constants.kZERO];
 
                 DataGridViewCellCategory.Style.ForeColor = Color.FromArgb(39, 83, 227);
 
@@ -211,7 +212,7 @@ namespace EETMS_Presentation.EETMS_Category
         private void _ResetAllSettingAfterClickTheUSCategory()
         {
             _ModeCategory = _EnModeCategory._ADD_NEW_CATEGORY;
-            IDCategory = -1;
+            IDCategory = clsEETMS_Constants.kNEGATIVE_ONE;
             GGButtonAddNewCategory.Text = "Add New Category";
             GGButtonAddNewCategory.Image = Resources.Add_Icon_EETMS;
 

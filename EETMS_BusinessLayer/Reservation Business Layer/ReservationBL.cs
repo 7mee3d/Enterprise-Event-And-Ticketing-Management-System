@@ -1,4 +1,5 @@
-﻿using EETMS_DataAccessLayer;
+﻿using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_DataAccessLayer;
 using EETMS_Models;
 
 
@@ -9,8 +10,7 @@ namespace EETMS_BusinessLayer
 
 
         private static bool _AddNewReservation(MReservations mReservations)
-            => ReservationDAL.InsertTheNewReservation(mReservations) > 0;
-
+            => ReservationDAL.InsertTheNewReservation(mReservations) > clsEETMS_Constants.kZERO;
 
         public static bool SaveTheReservatio(MReservations mReservations)
         {
@@ -27,7 +27,7 @@ namespace EETMS_BusinessLayer
         }
 
         public static bool UpdateTheInformationTicketTypesBy(int EventID, string TicketTypeName, int NewAvailableTicket)
-            => ReservationDAL.UpdateTheQuntityTicketsBy(EventID, TicketTypeName, NewAvailableTicket) > 0;
+            => ReservationDAL.UpdateTheQuntityTicketsBy(EventID, TicketTypeName, NewAvailableTicket) > clsEETMS_Constants.kZERO;
 
 
     }

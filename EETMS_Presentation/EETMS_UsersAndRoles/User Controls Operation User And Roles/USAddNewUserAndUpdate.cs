@@ -1,4 +1,5 @@
 ﻿using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_BusinessLayer.Roles_Business_Layer;
 using EETMS_BusinessLayer.Validation;
 using EETMS_Models;
@@ -28,18 +29,17 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             _kNOTHING = 3
         };
 
-
         public USAddNewUserAndUpdate(int id)
         {
             InitializeComponent();
 
             _EnMode = _EnModeUser._kNOTHING;
-            _IDUser = 0;
+            _IDUser = clsEETMS_Constants.kZERO;
             ERequestToTheCloseAddNewUser = null;
             _ImagePathUser = null;
 
 
-            if (id != -1)
+            if (id != clsEETMS_Constants.kNEGATIVE_ONE)
                 this._EnMode = _EnModeUser._kUPDATE_INFORMATION_USER;
             else
                 this._EnMode = _EnModeUser._kADD_NEW_USER;
@@ -47,8 +47,6 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             this._IDUser = id;
             _InformationUser = null;
         }
-
-
 
         private void _LoadAllInformationUserAfterLoadTheUS()
         {
@@ -118,7 +116,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             bool FlagIsFillUsername = true;
             bool FlagIsFillEmail = true;
             bool FlagIsFillPassword = true;
-            string TextMessageDialog = "";
+            string TextMessageDialog = clsEETMS_Constants.kEMPTY_STRING;
 
 
             if (!string.IsNullOrEmpty(GTextBoxFullName.Text))
@@ -297,7 +295,6 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
         private void GGCButtonAddImageUser_MouseLeave(object sender, EventArgs e)
         {
-
 
             bool NotHasImage = _InformationUser.ImagePath == null && _ImagePathUser == null;
 

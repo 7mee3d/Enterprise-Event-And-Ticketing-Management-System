@@ -1,4 +1,5 @@
 ﻿using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_Models;
 using System;
 using System.Data;
@@ -10,12 +11,8 @@ namespace EETMS_Presentation.EETMS_Events
     {
 
         private int _EventID = 0;
-        //  private int _IDTicketType = 0;
-
         public event EventHandler<int> ERequestTheClose_AddAndUpdateTheTicketsEvents;
-
         public event EventHandler<TicketEventArgs> ERequestToOpenThe_USAddNewTicketTypeToTheEvent;
-
         DataTable _DT_AllTicketsEvent;
 
         public USShowAllInformationTicketTypeForEvent(int id)
@@ -23,6 +20,7 @@ namespace EETMS_Presentation.EETMS_Events
             InitializeComponent();
 
             ERequestTheClose_AddAndUpdateTheTicketsEvents = null;
+            ERequestToOpenThe_USAddNewTicketTypeToTheEvent = null;
             _DT_AllTicketsEvent = null;
             _EventID = id;
         }
@@ -40,10 +38,10 @@ namespace EETMS_Presentation.EETMS_Events
                 GDataGridViewTicketsEvents.Rows.Add(
 
 
-                                DR_TicketsForEvent["TicketTypeID"].ToString(),
+                                 DR_TicketsForEvent["TicketTypeID"].ToString(),
                                  DR_TicketsForEvent["TicketTypeName"].ToString(),
-                                "$" + DR_TicketsForEvent["Price"].ToString(),
-                                DR_TicketsForEvent["Quantity"].ToString(),
+                                 "$" + DR_TicketsForEvent["Price"].ToString(),
+                                 DR_TicketsForEvent["Quantity"].ToString(),
                                  DR_TicketsForEvent["Available"].ToString(),
                                  DR_TicketsForEvent["CurrentSales"].ToString()
 
@@ -56,15 +54,10 @@ namespace EETMS_Presentation.EETMS_Events
         }
 
         private int _GetTheIDTicketTypeFromDGV()
-        {
-
-            return (Convert.ToInt32(GDataGridViewTicketsEvents.SelectedRows[0].Cells["TicketTypeID2"].Value));
-        }
+            => (Convert.ToInt32(GDataGridViewTicketsEvents.SelectedRows[clsEETMS_Constants.kZERO].Cells["TicketTypeID2"].Value));
 
         private void GButtonDiscardChanges_Click(object sender, EventArgs e)
-        {
-            ERequestTheClose_AddAndUpdateTheTicketsEvents?.Invoke(this, _EventID);
-        }
+           => ERequestTheClose_AddAndUpdateTheTicketsEvents?.Invoke(this, _EventID);
 
         private void _InitalSettingLabelsTitleEvents()
         {
@@ -85,18 +78,14 @@ namespace EETMS_Presentation.EETMS_Events
         }
 
         private void US_AddAndUpdateTheTicketsToTheEvents_Load(object sender, EventArgs e)
-        {
-            _InitalSettingAfterLoadingTheManagmentTicketForEvent();
-        }
+            => _InitalSettingAfterLoadingTheManagmentTicketForEvent();
 
         private void lblBackEvents_Click(object sender, EventArgs e)
-        {
-            ERequestTheClose_AddAndUpdateTheTicketsEvents?.Invoke(this, _EventID);
-        }
+           => ERequestTheClose_AddAndUpdateTheTicketsEvents?.Invoke(this, _EventID);
 
         private void _CheckTheEventHaveTheFullTicketOrNotVisiableAddTicket()
         {
-            if (_DT_AllTicketsEvent.Rows.Count >= 3)
+            if (_DT_AllTicketsEvent.Rows.Count >= clsEETMS_Constants.kMAX_NUMBER_TICKET_EVERY_EVENT)
             {
                 GGButtonAddTicketType.Visible = false;
                 GGButtonWarningFullTheTicketTypeEvent.Visible = true;
@@ -112,7 +101,7 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void GGButtonAddTicketType_Click(object sender, EventArgs e)
         {
-            ERequestToOpenThe_USAddNewTicketTypeToTheEvent?.Invoke(this, new TicketEventArgs(_EventID, -1));
+            ERequestToOpenThe_USAddNewTicketTypeToTheEvent?.Invoke(this, new TicketEventArgs(_EventID, clsEETMS_Constants.kNEGATIVE_ONE));
         }
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)

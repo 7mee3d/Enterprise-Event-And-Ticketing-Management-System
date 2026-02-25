@@ -1,7 +1,8 @@
-﻿using System.Data;
-using System.Data.SqlClient;
+﻿using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_DataAccessLayer;
 using EETMS_Models;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace EETMS_BusinessLayer
 {
@@ -25,11 +26,11 @@ namespace EETMS_BusinessLayer
 
         private static bool _AddNewCustomer(MCustomer NewCustomer)
         {
-            return CustomerDAL.InsertNewCustomer(NewCustomer) > 0;
+            return CustomerDAL.InsertNewCustomer(NewCustomer) > clsEETMS_Constants.kZERO;
         }
-        private static bool _UpdateInformationCustomer(int IDCustomer , MCustomer NewInfromationCustomer)
+        private static bool _UpdateInformationCustomer(int IDCustomer, MCustomer NewInfromationCustomer)
         {
-            return CustomerDAL.UpdateInformationCustomer(IDCustomer , NewInfromationCustomer) > 0;
+            return CustomerDAL.UpdateInformationCustomer(IDCustomer, NewInfromationCustomer) > clsEETMS_Constants.kZERO;
         }
 
         public static bool DeleteTheCustomer(int IDCustomer)
@@ -46,7 +47,7 @@ namespace EETMS_BusinessLayer
 
 
                 case MCustomer.EnMode._kADD_NEW_CUSTOMER:
-                    if (_AddNewCustomer(NewCustomer : NewCustomer))
+                    if (_AddNewCustomer(NewCustomer: NewCustomer))
                         return true;
                     else return false;
 
@@ -54,8 +55,8 @@ namespace EETMS_BusinessLayer
                 case MCustomer.EnMode._kUPDATE_INFORMATION_CUSTOMER:
                     return _UpdateInformationCustomer(
 
-                                                      IDCustomer             : NewCustomer.CusotmerID ,
-                                                      NewInfromationCustomer : NewCustomer
+                                                      IDCustomer: NewCustomer.CusotmerID,
+                                                      NewInfromationCustomer: NewCustomer
 
                                                       );
 
@@ -65,7 +66,7 @@ namespace EETMS_BusinessLayer
         }
 
 
-        public static DataTable AllInformationCustomerAfterSearch (string StrToBeSearch)
+        public static DataTable AllInformationCustomerAfterSearch(string StrToBeSearch)
         {
             return CustomerDAL.SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(StrToBeSearch);
         }

@@ -1,8 +1,9 @@
-﻿using System;
+﻿using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_Models;
+using System;
 using System.Data;
 using System.Windows.Forms;
-using EETMS_BusinessLayer;
-using EETMS_Models;
 
 namespace EETMS_Presentation.EETMS_Events
 {
@@ -30,13 +31,13 @@ namespace EETMS_Presentation.EETMS_Events
 
 
             _InformationEvent = null;
-            _IDEvent = 0;
+            _IDEvent = clsEETMS_Constants.kZERO;
             ERequestTheOpen_AddAndUpdateTheTicketsEvents = null;
             RequestClose = null;
             _Mode = _EnMode._kNOTHING_MODE;
 
 
-            if (id != -1)
+            if (id != clsEETMS_Constants.kNEGATIVE_ONE)
                 _Mode = _EnMode._kEDIT_THE_INFORMATION_EVENT;
             else
                 _Mode = _EnMode._kADD_NEW_EVENT;
@@ -79,7 +80,7 @@ namespace EETMS_Presentation.EETMS_Events
 
             GButtonCreateEvent.Text = "Update Event";
 
-            if (_InformationEvent.EventID > 0)
+            if (_InformationEvent.EventID > clsEETMS_Constants.kZERO)
                 GGButtonManageTheTicketsEvents.Enabled = true;
             else
                 GGButtonManageTheTicketsEvents.Enabled = false;
@@ -133,7 +134,7 @@ namespace EETMS_Presentation.EETMS_Events
             if (GTextBoxDuration.Text != null)
                 _InformationEvent.DurationEvent = Convert.ToInt32(GTextBoxDuration.Text);
             else
-                _InformationEvent.DurationEvent = 0;
+                _InformationEvent.DurationEvent = clsEETMS_Constants.kZERO;
 
             _InformationEvent.MaxCapacity = Convert.ToInt32(GNumericUpDownMaxCapacity.Value);
 
@@ -150,7 +151,7 @@ namespace EETMS_Presentation.EETMS_Events
             _InformationEvent.EnMode = MEvent.EnModeEvent._kUPDATE_INFORMATION_EVENT;
             _Mode = _EnMode._kEDIT_THE_INFORMATION_EVENT;
 
-            if (_IDEvent > 0)
+            if (_IDEvent > clsEETMS_Constants.kZERO)
                 GGButtonManageTheTicketsEvents.Enabled = true;
             else
                 GGButtonManageTheTicketsEvents.Enabled = false;
@@ -159,7 +160,6 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void US_AddAndEditInformationEvent_Load(object sender, EventArgs e)
         {
-
 
             _LoadAllInformationCountriesInComboBox();
             _LoadAllInformationCategoriesInComboBox();

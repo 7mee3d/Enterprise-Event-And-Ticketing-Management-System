@@ -1,30 +1,28 @@
 ﻿using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EETMS_Presentation.EETMS_Payment
 {
     public partial class USAddPaymentReservations : UserControl
     {
+
+        public event EventHandler ERequestTheClosePaymentBooking;
+        private MReservationPayment _MReservationPayment;
+        private MPayment mPayment;
+
+
         public USAddPaymentReservations()
         {
             InitializeComponent();
+            ERequestTheClosePaymentBooking = null;
+            _MReservationPayment = null;
+            mPayment = null;
+
         }
-
-        public event EventHandler ERequestTheClosePaymentBooking = null;
-
-        private MReservationPayment _MReservationPayment = null;
-
-        private MPayment mPayment = null;
-
 
         private void _LoadThReservationPaymentIDandNameCustomer()
         {
@@ -41,7 +39,6 @@ namespace EETMS_Presentation.EETMS_Payment
 
         private void _LoadAndInitalSettingAfterTheLoadingPayment()
         {
-
 
             if (GComboBoxBookingIDAndCustomerName.SelectedValue != null)
             {
@@ -60,19 +57,13 @@ namespace EETMS_Presentation.EETMS_Payment
         }
 
         private void Close_Click(object sender, EventArgs e)
-        {
-            ERequestTheClosePaymentBooking?.Invoke(this, EventArgs.Empty);
-        }
+            => ERequestTheClosePaymentBooking?.Invoke(this, EventArgs.Empty);
 
         private void USAddPaymentReservations_Load(object sender, EventArgs e)
-        {
-            _LoadThReservationPaymentIDandNameCustomer();
-        }
+            => _LoadThReservationPaymentIDandNameCustomer();
 
         private void GComboBoxBookingIDAndCustomerName_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            _LoadAndInitalSettingAfterTheLoadingPayment();
-        }
+            => _LoadAndInitalSettingAfterTheLoadingPayment();
 
         private void _ResetAllSettingAfterConfirmThePayment()
         {
@@ -81,10 +72,10 @@ namespace EETMS_Presentation.EETMS_Payment
             GButtonCash.Checked = false;
             GButtonBankTransfer.Checked = false;
 
-            GNumericUpDownAmountToPay.Value = 0;
-            GNumericUpDownAmountToPay.Maximum = 0;
+            GNumericUpDownAmountToPay.Value = clsEETMS_Constants.kZERO;
+            GNumericUpDownAmountToPay.Maximum = clsEETMS_Constants.kZERO;
 
-            GComboBoxBookingIDAndCustomerName.SelectedValue = 1;
+            GComboBoxBookingIDAndCustomerName.SelectedValue = clsEETMS_Constants.kONE;
             lblRemainingBalance.Text = "$0";
 
         }
@@ -92,12 +83,11 @@ namespace EETMS_Presentation.EETMS_Payment
         private void _AddNewPayment()
         {
 
-
             mPayment = new MPayment();
 
 
-            int StatusPaymentNumber = 0;
-            int PaymentMethodNumebr = 0;
+            int StatusPaymentNumber = clsEETMS_Constants.kZERO;
+            int PaymentMethodNumebr = clsEETMS_Constants.kZERO;
 
             int ResevationID = _MReservationPayment.ReservationID;
 
@@ -109,7 +99,7 @@ namespace EETMS_Presentation.EETMS_Payment
 
 
             if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == MPayment.EnPaymentStatus._kPAID)
-                StatusPaymentNumber = 1;
+                StatusPaymentNumber = clsEETMS_Constants.kONE;
             else if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == MPayment.EnPaymentStatus._kPARTIALLY_PAID)
                 StatusPaymentNumber = 2;
             else
@@ -149,8 +139,8 @@ namespace EETMS_Presentation.EETMS_Payment
         }
 
         private void GButtonConfirmPayment_Click(object sender, EventArgs e)
-        {
-            _AddNewPayment();
-        }
+            => _AddNewPayment();
+
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
@@ -10,15 +11,16 @@ namespace EETMS_Presentation.EETMS_Events
     public partial class USEvents : UserControl
     {
 
+        private DataTable _EventDT ;
+        public event EventHandler<int> RequestOpenCreateNewEventUS ;
+
 
         public USEvents()
         {
             InitializeComponent();
+            _EventDT = null;
+            RequestOpenCreateNewEventUS = null; 
         }
-
-
-        private DataTable _EventDT = null;
-        public event EventHandler<int> RequestOpenCreateNewEventUS = null;
 
 
         private void _LoadAndFillDataGridViewONAllInformationEvent()
@@ -48,12 +50,12 @@ namespace EETMS_Presentation.EETMS_Events
 
         private int _GetCountTheDraftEvents()
         {
-            int CountDraftEvents = 0;
+            int CountDraftEvents = clsEETMS_Constants.kZERO;
 
             foreach (DataRow DR_Event in _EventDT.Rows)
             {
                 int.TryParse(DR_Event["MaxCapacity"].ToString(), out int MaxCapacity);
-                if ((int)DR_Event["SoldTickets"] == 0 && (int)DR_Event["SoldTickets"] != MaxCapacity) ++CountDraftEvents;
+                if ((int)DR_Event["SoldTickets"] == clsEETMS_Constants.kZERO && (int)DR_Event["SoldTickets"] != MaxCapacity) ++CountDraftEvents;
 
             }
 
@@ -62,12 +64,12 @@ namespace EETMS_Presentation.EETMS_Events
 
         private int _GetCountTheLiveEvents()
         {
-            int CountLiveEvents = 0;
+            int CountLiveEvents = clsEETMS_Constants.kZERO;
 
             foreach (DataRow DR_Event in _EventDT.Rows)
             {
                 int.TryParse(DR_Event["MaxCapacity"].ToString(), out int MaxCapacity);
-                if ((int)DR_Event["SoldTickets"] > 0 && (int)DR_Event["SoldTickets"] != MaxCapacity) ++CountLiveEvents;
+                if ((int)DR_Event["SoldTickets"] > clsEETMS_Constants.kZERO  && (int)DR_Event["SoldTickets"] != MaxCapacity) ++CountLiveEvents;
 
             }
 
@@ -76,7 +78,7 @@ namespace EETMS_Presentation.EETMS_Events
 
         private int _GetCountTheFullyBookedEvents()
         {
-            int CountFullyBookedEvents = 0;
+            int CountFullyBookedEvents = clsEETMS_Constants.kZERO;
 
             foreach (DataRow DR_Event in _EventDT.Rows)
             {
@@ -89,9 +91,7 @@ namespace EETMS_Presentation.EETMS_Events
         }
 
         private int _GetTheCountOfEvents()
-        {
-            return _EventDT.Rows.Count;
-        }
+            => _EventDT.Rows.Count;
 
         private void _InitalSettingAfterLoadTheUSEvents()
         {
@@ -105,26 +105,18 @@ namespace EETMS_Presentation.EETMS_Events
         }
 
         private void USEvents_Load(object sender, EventArgs e)
-        {
-            _InitalSettingAfterLoadTheUSEvents();
-        }
-
-        private void GGButtonCreateNewEvent_Click(object sender, EventArgs e)
-        {
-            RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
-        }
-
+           => _InitalSettingAfterLoadTheUSEvents();
+        
+        private void GGButtonCreateNewEvent_Click(object sender, EventArgs e) 
+           => RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
+        
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
-        }
-
+            =>RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
+        
         private int _GetTheEventID()
-        {
-
-            return (GDataGridViewEventsInformation.SelectedRows.Count > 0) ? Convert.ToInt32(GDataGridViewEventsInformation.SelectedRows[0].Cells["EventID"].Value) : -1;
-
-        }
+            => (GDataGridViewEventsInformation.SelectedRows.Count > clsEETMS_Constants.kZERO) ?
+            Convert.ToInt32(GDataGridViewEventsInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells["EventID"].Value) :
+            clsEETMS_Constants.kNEGATIVE_ONE;
 
         private void deleteEventToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -136,6 +128,8 @@ namespace EETMS_Presentation.EETMS_Events
                 }
 
         }
+
+
 
     }
 }

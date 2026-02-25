@@ -1,4 +1,5 @@
 ﻿using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.EETMS_Constants;
 using System;
 using System.Data;
 using System.Drawing;
@@ -17,12 +18,14 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         {
             InitializeComponent();
             ERequestToOpenTheAddNewUserUS = null;
-            _IDUser = 0;
+            _IDUser = clsEETMS_Constants.kZERO;
         }
 
 
         private int _GetTheIDUserAfterSelectionUserFromDGV()
-           => (GDataGridViewUsersInformation.SelectedRows.Count > 0 ? Convert.ToInt32(GDataGridViewUsersInformation.SelectedRows[0].Cells[0].Value) : -1);
+           => (GDataGridViewUsersInformation.SelectedRows.Count > clsEETMS_Constants.kZERO ? 
+            Convert.ToInt32(GDataGridViewUsersInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells[clsEETMS_Constants.kZERO].Value) : 
+            clsEETMS_Constants.kNEGATIVE_ONE);
 
         private void _InitalSettingTheUserManagmentCountsUsers()
         {
@@ -38,13 +41,14 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
         private void _LoadAllDataToTheDataGridViewUsers()
         {
+
             DataTable DT_AllInformationUser = UserBL.GetAllInformationUsers();
 
             foreach (DataRow DR_InformationOneUser in DT_AllInformationUser.Rows)
             {
 
 
-                string StrActiveOrInActive = (Convert.ToInt32(DR_InformationOneUser["ActiveAccount"]) == 1) ? "Active" : "Inactive";
+                string StrActiveOrInActive = (Convert.ToInt32(DR_InformationOneUser["ActiveAccount"]) == clsEETMS_Constants.kONE) ? "Active" : "Inactive";
 
                 int rowIndex = GDataGridViewUsersInformation.Rows.Add(
 
@@ -67,7 +71,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                 DataGridViewRow DGVR = GDataGridViewUsersInformation.Rows[rowIndex];
                 DataGridViewCell DGVC = DGVR.Cells[4];
 
-                if (Convert.ToInt32(DR_InformationOneUser["ActiveAccount"]) == 1)
+                if (Convert.ToInt32(DR_InformationOneUser["ActiveAccount"]) == clsEETMS_Constants.kONE)
                     DGVC.Style.ForeColor = Color.Green;
                 else DGVC.Style.ForeColor = Color.Red;
 
@@ -78,15 +82,11 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
            => _InitalSettingTheUserManagmentCountsUsers();
 
         private void _GGButtonAddNewUser_Click(object sender, EventArgs e)
-        {
-            ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
-        }
-
+            =>  ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
+        
         private void _EditToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
-        }
-
+            =>  ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
+        
         private void _DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure to be delete This User ..?? ", "Note For the delete user", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
