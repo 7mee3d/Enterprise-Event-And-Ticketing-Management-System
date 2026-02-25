@@ -416,7 +416,8 @@ namespace EETMS_DataAccessLayer
                                                    CustomerTableSubQuery.NationalID ,
                                                    CustomerTableSubQuery.EmailAddress , 
                                                    CustomerTableSubQuery.PhoneNumber ,
-                                                   CustomerTableSubQuery.FullName
+                                                   CustomerTableSubQuery.FullName , 
+                                                   CustomerTableSubQuery.FullNameWithOutMidName
 
 
                                                          FROM
@@ -429,8 +430,8 @@ namespace EETMS_DataAccessLayer
                                                                                 Customers.NationalID ,
                                                                                 Emails.EmailAddress , 
                                                                                 Phones.PhoneNumber ,
-                                                                                CONCAT(Customers.FirstName, ' ', Customers.MidName, ' ', Customers.LastName) AS FullName
-
+                                                                                CONCAT(Customers.FirstName, ' ', Customers.MidName, ' ', Customers.LastName) AS FullName,
+                                                                                CONCAT(Customers.FirstName, ' ', Customers.LastName) AS FullNameWithOutMidName
 
                                                                                                  FROM Customers 
                                                                                                  LEFT JOIN Emails ON Emails.CusotmerID = Customers.CusotmerID 
@@ -441,8 +442,15 @@ namespace EETMS_DataAccessLayer
 
 
                                                             WHERE 
+                                                                       ( 
+
                                                                         CustomerTableSubQuery.FullName LIKE '%' + @Search + '%'
-                                                                        OR CustomerTableSubQuery.NationalID LIKE '%' + @Search + '%';
+                                                                        OR CustomerTableSubQuery.NationalID LIKE '%' + @Search + '%'
+
+                                                                        ) 
+
+                                                                        OR ( CustomerTableSubQuery.FullNameWithOutMidName LIKE '%' + @Search + '%' ) ;
+
                                     
                                 ";
 

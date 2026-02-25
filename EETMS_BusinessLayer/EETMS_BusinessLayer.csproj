@@ -45,6 +45,7 @@
     <Compile Include="Country Business Layer\CountriesBL.cs" />
     <Compile Include="Customer Business Layer\CustomerBL.cs" />
     <Compile Include="Dashboard Business Layer\DashboardBL.cs" />
+    <Compile Include="EETMS Constants\clsEETMSConstants.cs" />
     <Compile Include="Event Business Layer\EventBL.cs" />
     <Compile Include="Payment Business Layer\PaymentsBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
