@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USCustomers));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USCustomers));
             this.PanelHeaderEvents = new System.Windows.Forms.Panel();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GButton = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblTotalCustomer = new System.Windows.Forms.Label();
             this.GTextBoxSearchTheCustomer = new Guna.UI2.WinForms.Guna2TextBox();
             this.GGButtonCreateNewEvent = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -44,87 +41,42 @@
             this.label3 = new System.Windows.Forms.Label();
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GDataGridViewCustomerInformation = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.GContextMenuStripOperationCustomer = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.DeleteCustomerlStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhoneCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NationalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GContextMenuStripOperationCustomer = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.DeleteCustomerlStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.PanelHeaderEvents.SuspendLayout();
-            this.guna2GradientPanel1.SuspendLayout();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewCustomerInformation)).BeginInit();
             this.GContextMenuStripOperationCustomer.SuspendLayout();
+            this.guna2GradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeaderEvents
             // 
-            this.PanelHeaderEvents.Controls.Add(this.guna2GradientPanel1);
-            this.PanelHeaderEvents.Location = new System.Drawing.Point(27, 15);
+            this.PanelHeaderEvents.Controls.Add(this.guna2GradientPanel2);
+            this.PanelHeaderEvents.Location = new System.Drawing.Point(27, 25);
             this.PanelHeaderEvents.Name = "PanelHeaderEvents";
-            this.PanelHeaderEvents.Size = new System.Drawing.Size(1361, 204);
+            this.PanelHeaderEvents.Size = new System.Drawing.Size(1361, 194);
             this.PanelHeaderEvents.TabIndex = 6;
-            // 
-            // guna2GradientPanel1
-            // 
-            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.guna2GradientPanel1.BorderRadius = 10;
-            this.guna2GradientPanel1.BorderThickness = 2;
-            this.guna2GradientPanel1.Controls.Add(this.GButton);
-            this.guna2GradientPanel1.Controls.Add(this.label1);
-            this.guna2GradientPanel1.Controls.Add(this.lblTotalCustomer);
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(29, 36);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(296, 155);
-            this.guna2GradientPanel1.TabIndex = 7;
-            // 
-            // GButton
-            // 
-            this.GButton.Animated = true;
-            this.GButton.AnimatedGIF = true;
-            this.GButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.GButton.BorderRadius = 50;
-            this.GButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.GButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.GButton.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.GButton.Enabled = false;
-            this.GButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.GButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GButton.ForeColor = System.Drawing.Color.White;
-            this.GButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.GButton.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.GButton.Image = ((System.Drawing.Image)(resources.GetObject("GButton.Image")));
-            this.GButton.Location = new System.Drawing.Point(15, 13);
-            this.GButton.Name = "GButton";
-            this.GButton.Size = new System.Drawing.Size(46, 44);
-            this.GButton.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Cascadia Mono SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.label1.Location = new System.Drawing.Point(23, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Total Customers";
             // 
             // lblTotalCustomer
             // 
             this.lblTotalCustomer.AutoSize = true;
             this.lblTotalCustomer.BackColor = System.Drawing.Color.White;
-            this.lblTotalCustomer.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCustomer.Location = new System.Drawing.Point(21, 103);
+            this.lblTotalCustomer.Font = new System.Drawing.Font("Segoe UI Variable Display", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblTotalCustomer.Location = new System.Drawing.Point(22, 77);
             this.lblTotalCustomer.Name = "lblTotalCustomer";
-            this.lblTotalCustomer.Size = new System.Drawing.Size(28, 32);
+            this.lblTotalCustomer.Size = new System.Drawing.Size(31, 36);
             this.lblTotalCustomer.TabIndex = 0;
             this.lblTotalCustomer.Text = "0";
             // 
@@ -290,6 +242,37 @@
             this.GDataGridViewCustomerInformation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GDataGridViewCustomerInformation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
+            // CustomerID
+            // 
+            this.CustomerID.HeaderText = "CustomerID";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.ReadOnly = true;
+            this.CustomerID.Visible = false;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.HeaderText = "CUSTOMER NAME";
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
+            // 
+            // EmailCustomer
+            // 
+            this.EmailCustomer.HeaderText = "EMAIL";
+            this.EmailCustomer.Name = "EmailCustomer";
+            this.EmailCustomer.ReadOnly = true;
+            // 
+            // PhoneCustomer
+            // 
+            this.PhoneCustomer.HeaderText = "PHONE";
+            this.PhoneCustomer.Name = "PhoneCustomer";
+            this.PhoneCustomer.ReadOnly = true;
+            // 
+            // NationalID
+            // 
+            this.NationalID.HeaderText = "NATIONAL ID";
+            this.NationalID.Name = "NationalID";
+            this.NationalID.ReadOnly = true;
+            // 
             // GContextMenuStripOperationCustomer
             // 
             this.GContextMenuStripOperationCustomer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -343,36 +326,56 @@
             this.updateCustomerToolStripMenuItem.Text = "Update Customer";
             this.updateCustomerToolStripMenuItem.Click += new System.EventHandler(this.updateCustomerToolStripMenuItem_Click);
             // 
-            // CustomerID
+            // guna2GradientPanel2
             // 
-            this.CustomerID.HeaderText = "CustomerID";
-            this.CustomerID.Name = "CustomerID";
-            this.CustomerID.ReadOnly = true;
-            this.CustomerID.Visible = false;
+            this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.guna2GradientPanel2.BorderRadius = 10;
+            this.guna2GradientPanel2.BorderThickness = 1;
+            this.guna2GradientPanel2.Controls.Add(this.guna2GradientButton2);
+            this.guna2GradientPanel2.Controls.Add(this.lblTotalCustomer);
+            this.guna2GradientPanel2.Controls.Add(this.label4);
+            this.guna2GradientPanel2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.guna2GradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(29, 36);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(300, 144);
+            this.guna2GradientPanel2.TabIndex = 13;
             // 
-            // CustomerName
+            // guna2GradientButton2
             // 
-            this.CustomerName.HeaderText = "CUSTOMER NAME";
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.ReadOnly = true;
+            this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton2.BorderRadius = 8;
+            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2GradientButton2.Enabled = false;
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
+            this.guna2GradientButton2.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(213, 45);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.Size = new System.Drawing.Size(54, 52);
+            this.guna2GradientButton2.TabIndex = 2;
             // 
-            // EmailCustomer
+            // label4
             // 
-            this.EmailCustomer.HeaderText = "EMAIL";
-            this.EmailCustomer.Name = "EmailCustomer";
-            this.EmailCustomer.ReadOnly = true;
-            // 
-            // PhoneCustomer
-            // 
-            this.PhoneCustomer.HeaderText = "PHONE";
-            this.PhoneCustomer.Name = "PhoneCustomer";
-            this.PhoneCustomer.ReadOnly = true;
-            // 
-            // NationalID
-            // 
-            this.NationalID.HeaderText = "NATIONAL ID";
-            this.NationalID.Name = "NationalID";
-            this.NationalID.ReadOnly = true;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Small", 14.25F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label4.Location = new System.Drawing.Point(23, 41);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(151, 26);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Total Customers";
             // 
             // USCustomers
             // 
@@ -385,13 +388,13 @@
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.USCustomers_Load);
             this.PanelHeaderEvents.ResumeLayout(false);
-            this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel1.PerformLayout();
             this.GGPanelDataGridViewEvents.ResumeLayout(false);
             this.GGPanelDataGridViewEvents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewCustomerInformation)).EndInit();
             this.GContextMenuStripOperationCustomer.ResumeLayout(false);
             this.GContextMenuStripOperationCustomer.PerformLayout();
+            this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2GradientPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -410,14 +413,14 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem DeleteCustomerlStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateCustomerToolStripMenuItem;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotalCustomer;
-        private Guna.UI2.WinForms.Guna2Button GButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhoneCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn NationalID;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
+        private System.Windows.Forms.Label label4;
     }
 }
