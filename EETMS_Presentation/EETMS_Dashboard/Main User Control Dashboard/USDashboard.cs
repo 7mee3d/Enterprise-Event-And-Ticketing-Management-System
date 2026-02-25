@@ -11,7 +11,6 @@ namespace EETMS_Presentation.EETMS_Dashboard
     {
 
 
-
         public USDashboard()
         {
             InitializeComponent();
@@ -47,12 +46,16 @@ namespace EETMS_Presentation.EETMS_Dashboard
 
             GComboBoxYearsPayments.DataSource = LAllYearsPayments;
             GComboBoxYearsPayments.DisplayMember = "Year";
+
+
         }
 
         private void _LoadTheDataToChartsTotalRevenueForMonth()
         {
+            int SelectedYear = 0;
 
-            int SelectedYear = ((int)GComboBoxYearsPayments.SelectedItem);
+            if (GComboBoxYearsPayments.Items.Count > 0)
+                SelectedYear = (int)GComboBoxYearsPayments.SelectedItem;
 
             DataTable DT_TotalRevenueForMpnth = DashboardBL.GetTheTotalReveneForMonthBL_By(SelectedYear);
 

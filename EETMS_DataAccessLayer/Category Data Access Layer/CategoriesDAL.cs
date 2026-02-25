@@ -15,7 +15,7 @@ namespace EETMS_DataAccessLayer
         #endregion
 
 
-    
+
         #region All Methods Operation CRUD ( Create , Read , Update , Delete ) The Category 
 
         private static DataTable _GetAllInformationCategoriesGroupByCategoryname()
@@ -77,7 +77,7 @@ namespace EETMS_DataAccessLayer
 
         public static DataTable GetAllInformationCategoriesGroupByCategoryname()
             => _GetAllInformationCategoriesGroupByCategoryname();
-        
+
         private static DataTable _GetAllInformationCategories()
         {
 
@@ -134,7 +134,7 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetAllInformationCategories()
              => _GetAllInformationCategories();
 
-        private static int _InsertTheNewCategory(MCategory NewInformationCategory )
+        private static int _InsertTheNewCategory(MCategory NewInformationCategory)
         {
 
             int NewIDCategory = -1;
@@ -164,7 +164,11 @@ namespace EETMS_DataAccessLayer
                     {
 
                         command.Parameters.Add("@CategoryName", SqlDbType.NVarChar, 250).Value = NewInformationCategory.CategoryName;
-                        command.Parameters.AddWithValue("@Descripation", NewInformationCategory.DescripationCategory);
+
+                        if (string.IsNullOrEmpty(NewInformationCategory.DescripationCategory))
+                            command.Parameters.AddWithValue("@Descripation", DBNull.Value);
+                        else
+                            command.Parameters.AddWithValue("@Descripation", NewInformationCategory.DescripationCategory);
 
                         connection.Open();
 
@@ -182,10 +186,12 @@ namespace EETMS_DataAccessLayer
 
                 }
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 System.Console.WriteLine(ex.Message);
-            };
+            }
+            ;
 
 
             return NewIDCategory;
@@ -193,15 +199,15 @@ namespace EETMS_DataAccessLayer
         }
 
         public static int InsertTheNewCategory(MCategory NewInformationCategory)
-             =>_InsertTheNewCategory(NewInformationCategory);
-   
-        private static MCategory _FindTheCategoryBy(int IDCategory )
+             => _InsertTheNewCategory(NewInformationCategory);
+
+        private static MCategory _FindTheCategoryBy(int IDCategory)
         {
 
-            MCategory CategoryInfo = null; 
+            MCategory CategoryInfo = null;
 
 
-            using (SqlConnection connection = new SqlConnection(_ConneactionString ))
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
             {
 
                 string Query = @"
@@ -218,38 +224,38 @@ namespace EETMS_DataAccessLayer
 
                                     ";
 
-                using (SqlCommand command = new SqlCommand(Query , connection ))
+                using (SqlCommand command = new SqlCommand(Query, connection))
                 {
-                    
+
                     command.Parameters.Add("@CategoryID", SqlDbType.Int).Value = IDCategory;
 
-                    connection.Open(); 
+                    connection.Open();
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
 
-                        if(reader.Read() )
+                        if (reader.Read())
                         {
                             CategoryInfo = new MCategory();
 
                             CategoryInfo.CategoryID = reader["CategoryID"] != DBNull.Value ? (int)reader["CategoryID"] : 0;
-                            CategoryInfo.CategoryName = reader["CategoryName"] != DBNull.Value ? reader["CategoryName"].ToString() : null; 
-                            CategoryInfo.DescripationCategory = reader["Discripation"] != DBNull.Value ? reader["Discripation"].ToString() : null; 
+                            CategoryInfo.CategoryName = reader["CategoryName"] != DBNull.Value ? reader["CategoryName"].ToString() : null;
+                            CategoryInfo.DescripationCategory = reader["Discripation"] != DBNull.Value ? reader["Discripation"].ToString() : null;
 
                         }
                     }
                 }
             }
 
-            return CategoryInfo; 
+            return CategoryInfo;
         }
 
         public static MCategory FindTheCategoryBy(int IDCategory)
-            =>_FindTheCategoryBy(IDCategory);
-   
-        private static int _UpdateInformationCategoryBy (int IDCategory , MCategory NewInformationCategory )
+            => _FindTheCategoryBy(IDCategory);
+
+        private static int _UpdateInformationCategoryBy(int IDCategory, MCategory NewInformationCategory)
         {
-            int RowAffective = -1; 
+            int RowAffective = -1;
 
             try
             {
@@ -269,7 +275,7 @@ namespace EETMS_DataAccessLayer
 
 
 
-                    using (SqlCommand command = new SqlCommand(Query , connection))
+                    using (SqlCommand command = new SqlCommand(Query, connection))
                     {
 
                         command.Parameters.AddWithValue("@CategoryID", IDCategory);
@@ -285,19 +291,20 @@ namespace EETMS_DataAccessLayer
                 }
 
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
 
 
-            return RowAffective; 
+            return RowAffective;
         }
 
-        public static int UpdateInformationCategoryBy(int IDCategory, MCategory NewInformationCategory) 
+        public static int UpdateInformationCategoryBy(int IDCategory, MCategory NewInformationCategory)
             => _UpdateInformationCategoryBy(IDCategory, NewInformationCategory);
 
-        private static int _DeleteTheCategoryBy (int IDCategory )
+        private static int _DeleteTheCategoryBy(int IDCategory)
         {
 
             int RowAffecive = -1;
@@ -327,12 +334,13 @@ namespace EETMS_DataAccessLayer
                         RowAffecive = command.ExecuteNonQuery();
                     }
                 }
-            }catch(Exception ex )
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
 
-            return RowAffecive; 
+            return RowAffecive;
         }
 
         public static int DeleteTheCategoryBy(int IDCategory)
@@ -391,7 +399,7 @@ namespace EETMS_DataAccessLayer
         public static DataTable SearchCategoryFullInfo(string NameCategory)
             => _SearchCategoryFullInfo(NameCategory);
 
-      
+
         #endregion
 
 

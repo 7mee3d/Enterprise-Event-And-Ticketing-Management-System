@@ -3,7 +3,7 @@ using System;
 
 namespace EETMS_BusinessLayer.Validation
 {
-    public class clsValidation
+    public sealed class clsValidation
     {
 
         private static bool _IsThePasswordCountGratherThanEight(string Password)
@@ -88,5 +88,19 @@ namespace EETMS_BusinessLayer.Validation
 
         public static bool IsValidEmailAddress(string EmailAddress)
             => _IsValidEmailAddress(EmailAddress);
+
+        private static bool _CheckTheNameHaveDigit_SymbolOrPunctuation(string Text)
+        {
+            if (string.IsNullOrEmpty(Text))
+                return true;
+
+            foreach (char Character in Text)
+                if (Char.IsDigit(Character) || Char.IsSymbol(Character) || Char.IsPunctuation(Character) || Char.IsWhiteSpace(Character)) return true;
+
+            return false;
+        }
+
+        public static bool CheckTheNameHaveDigit_SymbolOrPunctuation(string Text)
+            => _CheckTheNameHaveDigit_SymbolOrPunctuation(Text);
     }
 }

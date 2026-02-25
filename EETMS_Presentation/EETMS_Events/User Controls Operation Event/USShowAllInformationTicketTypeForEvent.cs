@@ -120,9 +120,6 @@ namespace EETMS_Presentation.EETMS_Events
             ERequestToOpenThe_USAddNewTicketTypeToTheEvent?.Invoke(this, new TicketEventArgs(_EventID, _GetTheIDTicketTypeFromDGV()));
         }
 
-        private void GButtonSaveChanges_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

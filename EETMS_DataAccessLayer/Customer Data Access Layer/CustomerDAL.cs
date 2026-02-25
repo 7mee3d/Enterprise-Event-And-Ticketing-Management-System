@@ -58,7 +58,7 @@ namespace EETMS_DataAccessLayer
 
         private static DataTable _GetAllCustomersInformationJoinesPhoneAndEmail()
         {
-          
+
             DataTable DT_Customers = new DataTable();
 
 
@@ -231,13 +231,24 @@ namespace EETMS_DataAccessLayer
                         connection.Open();
 
                         Command.Parameters.AddWithValue("@FirstName", NewCsutomer.FirstName);
-                        Command.Parameters.AddWithValue("@MidName", NewCsutomer.MidName);
+
+                        if (string.IsNullOrEmpty(NewCsutomer.MidName))
+                            Command.Parameters.AddWithValue("@MidName", DBNull.Value);
+                        else
+                            Command.Parameters.AddWithValue("@MidName", NewCsutomer.MidName);
+
                         Command.Parameters.AddWithValue("@LastName", NewCsutomer.LastName);
                         Command.Parameters.AddWithValue("@NationalID", NewCsutomer.NationalID);
 
+                        if (string.IsNullOrEmpty(NewCsutomer.EmailCustomer))
+                            Command.Parameters.AddWithValue("@EmailAddress", DBNull.Value);
+                        else
+                            Command.Parameters.AddWithValue("@EmailAddress", NewCsutomer.EmailCustomer);
 
-                        Command.Parameters.AddWithValue("@EmailAddress", NewCsutomer.EmailCustomer);
-                        Command.Parameters.AddWithValue("@PhoneNumber", NewCsutomer.PhoneCustomer);
+                        if (string.IsNullOrEmpty(NewCsutomer.PhoneCustomer))
+                            Command.Parameters.AddWithValue("@PhoneNumber", DBNull.Value);
+                        else
+                            Command.Parameters.AddWithValue("@PhoneNumber", NewCsutomer.PhoneCustomer);
 
 
                         object result = Command.ExecuteScalar();
@@ -315,7 +326,7 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        private static int _UpdateInformationCustomer(int IDCustomer , MCustomer NewCsutomerInformation)
+        private static int _UpdateInformationCustomer(int IDCustomer, MCustomer NewCsutomerInformation)
         {
 
 
@@ -381,14 +392,14 @@ namespace EETMS_DataAccessLayer
             return RowAffective;
         }
 
-        public static int UpdateInformationCustomer( int IDCustomer , MCustomer NewCsutomerInformation)
+        public static int UpdateInformationCustomer(int IDCustomer, MCustomer NewCsutomerInformation)
         {
-            return _UpdateInformationCustomer(IDCustomer , NewCsutomerInformation);
+            return _UpdateInformationCustomer(IDCustomer, NewCsutomerInformation);
         }
 
-        private static DataTable _SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID (string ToBySearch )
+        private static DataTable _SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(string ToBySearch)
         {
-            
+
             DataTable DT_Customer = new DataTable();
 
             using (SqlConnection connection = new SqlConnection(_ConnectionString))
@@ -435,8 +446,8 @@ namespace EETMS_DataAccessLayer
                                     
                                 ";
 
-                
-                using (SqlCommand command = new SqlCommand(Query , connection))
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
                 {
                     command.Parameters.AddWithValue("@Search", ToBySearch);
 
@@ -445,8 +456,8 @@ namespace EETMS_DataAccessLayer
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
 
-                        if(reader.HasRows)
-                        DT_Customer.Load(reader);
+                        if (reader.HasRows)
+                            DT_Customer.Load(reader);
 
 
                     }

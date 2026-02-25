@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.Validation;
 using EETMS_Models;
 using EETMS_Presentation.Properties;
 using Guna.UI2.WinForms;
@@ -59,8 +60,24 @@ namespace EETMS_Presentation.EETMS_Category
 
         private void _AddNewCategoryOrUpdate()
         {
+            Guna2MessageDialog G2MD = new Guna2MessageDialog();
 
-            _CategoryInfo.CategoryName = GTextBoxCategoryName.Text;
+            if (clsValidation.CheckTheNameHaveDigit_SymbolOrPunctuation(GTextBoxCategoryName.Text))
+            {
+
+                G2MD.Icon = MessageDialogIcon.Error;
+                G2MD.Buttons = MessageDialogButtons.OK;
+                G2MD.Caption = "Invaild Input Data !!";
+                G2MD.Text = "Please Enter The Category Name is Vaild" +
+                    "\nWithout The Symbol , Digits And Punctuation";
+
+                G2MD.Show();
+                return;
+            }
+            else
+                _CategoryInfo.CategoryName = GTextBoxCategoryName.Text;
+
+
             _CategoryInfo.DescripationCategory = GTextBoxCategoryDescripation.Text;
 
 

@@ -35,7 +35,7 @@ namespace EETMS_Presentation.EETMS_Payment
             GComboBoxBookingIDAndCustomerName.DisplayMember = "DisplayComboBox";
             GComboBoxBookingIDAndCustomerName.ValueMember = "ReservationID";
 
-            GComboBoxBookingIDAndCustomerName.SelectedIndex = 0;
+
 
         }
 
@@ -98,6 +98,7 @@ namespace EETMS_Presentation.EETMS_Payment
 
             int StatusPaymentNumber = 0;
             int PaymentMethodNumebr = 0;
+
             int ResevationID = _MReservationPayment.ReservationID;
 
             decimal AmountToPay = GNumericUpDownAmountToPay.Value;

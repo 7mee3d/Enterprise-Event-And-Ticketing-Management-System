@@ -5,6 +5,8 @@ using EETMS_BusinessLayer;
 using System.Collections.Generic;
 using System.Reflection;
 using EETMS_Presentation.Properties;
+using EETMS_BusinessLayer.Validation;
+using Guna.UI2.WinForms;
 
 namespace EETMS_Presentation.EETMS_Customers
 {
@@ -78,10 +80,31 @@ namespace EETMS_Presentation.EETMS_Customers
         private void _AddOrUpdateInformationCustomer()
         {
 
+            Guna2MessageDialog G2MD = new Guna2MessageDialog();
+
+
             _CustomerInformation.FirstName = GTextBoxFirstName.Text;
             _CustomerInformation.MidName = GTextBoxMidName.Text;
             _CustomerInformation.LastName = GTextBoxLastName.Text;
-            _CustomerInformation.EmailCustomer = GTextBoxEmailAddress.Text;
+            if (!string.IsNullOrEmpty(GTextBoxEmailAddress.Text))
+            {
+                if (clsValidation.IsValidEmailAddress(GTextBoxEmailAddress.Text))
+                    _CustomerInformation.EmailCustomer = GTextBoxEmailAddress.Text;
+                else
+                {
+                    G2MD.Icon = MessageDialogIcon.Error;
+                    G2MD.Buttons = MessageDialogButtons.OK;
+                    G2MD.Style = MessageDialogStyle.Light;
+                    G2MD.Caption = "Invalid Email Address !!";
+                    G2MD.Text = "\nPlease enter a valid email address\n";
+
+                    G2MD.Show();
+                    return;
+                }
+            }
+            else
+                _CustomerInformation.EmailCustomer = null;
+
             _CustomerInformation.PhoneCustomer = GTextBoxPhoneNumber.Text;
 
             if (_EnMode == _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER) GTextBoxNationalID.Enabled = false;
