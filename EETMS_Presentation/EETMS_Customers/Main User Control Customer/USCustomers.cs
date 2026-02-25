@@ -1,9 +1,10 @@
-﻿using System;
-using System.Data;
-using System.Windows.Forms;
-using EETMS_BusinessLayer;
+﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_Presentation.EETMS_Settings;
+using Guna.UI2.WinForms;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 
 namespace EETMS_Presentation.EETMS_Customers
@@ -13,6 +14,7 @@ namespace EETMS_Presentation.EETMS_Customers
 
         public event EventHandler<int> RequestOpenTheAddNewCustomer;
         private DataTable _CustomersDT;
+        private Guna2MessageDialog _G2MD;
 
 
         public USCustomers()
@@ -20,15 +22,16 @@ namespace EETMS_Presentation.EETMS_Customers
             InitializeComponent();
             RequestOpenTheAddNewCustomer = null;
             _CustomersDT = null;
+            _G2MD = null;
         }
 
         private int _GetTotalCustomer()
             => _CustomersDT.Rows.Count;
 
         private int _GetTheIDCustomerAfterSelectedInDataGridView()
-        {
-            return ((GDataGridViewCustomerInformation.SelectedRows.Count > clsEETMS_Constants.kZERO) ? Convert.ToInt32(GDataGridViewCustomerInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells["CustomerID"].Value) : clsEETMS_Constants.kNEGATIVE_ONE);
-        }
+            => ((GDataGridViewCustomerInformation.SelectedRows.Count > clsEETMS_Constants.kZERO) ?
+            Convert.ToInt32(GDataGridViewCustomerInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells["CustomerID"].Value) :
+            clsEETMS_Constants.kNEGATIVE_ONE);
 
         private void _LoadAllInformationCustomerToDataGridView()
         {
@@ -70,26 +73,53 @@ namespace EETMS_Presentation.EETMS_Customers
         private void USCustomers_Load(object sender, EventArgs e)
             => _InitalSettingAfterLoadingTheCustomerUS();
 
-        private void GGButtonCreateNewEvent_Click(object sender, EventArgs e)
-            => RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
-
         private void DeleteCustomerlStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are You Sure to be Delete This Customer?", "Note For Delete Customer operation", MessageBoxButtons.OKCancel) == DialogResult.OK)
+
+            int CustomerID = _GetTheIDCustomerAfterSelectedInDataGridView();
+
+            if (CustomerID != clsEETMS_Constants.kNEGATIVE_ONE)
             {
-                if (CustomerBL.DeleteTheCustomer(_GetTheIDCustomerAfterSelectedInDataGridView()))
-                    MessageBox.Show("Customer is Deleteed Sccuessfully", "Note For Delete Customer operation");
-                else MessageBox.Show("Customer is Delete Failed", "Note For Delete Customer operation");
+                if (MessageBox.Show("Are You Sure to be Delete This Customer?", "Note For Delete Customer operation", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    if (CustomerBL.DeleteTheCustomer(CustomerID))
+                        MessageBox.Show("Customer is Deleteed Sccuessfully", "Note For Delete Customer operation");
+                    else MessageBox.Show("Customer is Delete Failed", "Note For Delete Customer operation");
 
-                _InitalSettingAfterLoadingTheCustomerUS();
+                    _InitalSettingAfterLoadingTheCustomerUS();
+                }
             }
+            else
+            {
+                _G2MD = new Guna2MessageDialog();
+                _G2MD.Icon = MessageDialogIcon.Warning;
+                _G2MD.Caption = "Important Note ...";
+                _G2MD.Text = "You Must Selected The Customer From List To Be Delete.";
 
+                _G2MD.Show();
+            }
 
 
         }
 
         private void updateCustomerToolStripMenuItem_Click(object sender, EventArgs e)
-            => RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
+        {
+
+            int CustomerID = _GetTheIDCustomerAfterSelectedInDataGridView();
+
+
+            if (CustomerID != clsEETMS_Constants.kNEGATIVE_ONE)
+                RequestOpenTheAddNewCustomer?.Invoke(this, CustomerID);
+            else
+            {
+                _G2MD = new Guna2MessageDialog();
+                _G2MD.Icon = MessageDialogIcon.Warning;
+                _G2MD.Caption = "Important Note ...";
+                _G2MD.Text = "You Must Selected The Customer From List To Be Updated information.";
+
+                _G2MD.Show();
+            }
+        }
 
         private void GTextBoxSearchTheEvent_TextChanged(object sender, EventArgs e)
         {
@@ -121,6 +151,8 @@ namespace EETMS_Presentation.EETMS_Customers
             }
         }
 
+        private void GGButtonAddNewCustomer_Click(object sender, EventArgs e)
+         => RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
 
     }
 }
