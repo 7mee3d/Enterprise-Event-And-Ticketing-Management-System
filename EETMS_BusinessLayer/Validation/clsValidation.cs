@@ -102,5 +102,12 @@ namespace EETMS_BusinessLayer.Validation
 
         public static bool CheckTheNameHaveDigit_SymbolOrPunctuation(string Text)
             => _CheckTheNameHaveDigit_SymbolOrPunctuation(Text);
+
+        private static bool _IsTheUsernameStartedDigits(char FirstCharacterUsername)
+        => Char.IsDigit(FirstCharacterUsername);
+
+        public static bool IsTheUsernameStartedDigits(char FirstCharacterUsername)
+            => _IsTheUsernameStartedDigits(FirstCharacterUsername);
+
     }
 }

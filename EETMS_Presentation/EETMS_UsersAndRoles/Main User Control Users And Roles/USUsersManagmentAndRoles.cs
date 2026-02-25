@@ -1,6 +1,7 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_Presentation.EETMS_Settings;
+using Guna.UI2.WinForms;
 using System;
 using System.Data;
 using System.Drawing;
@@ -14,12 +15,14 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
         public event EventHandler<int> ERequestToOpenTheAddNewUserUS;
         private int _IDUser;
-
+        private Guna2MessageDialog _G2MD;
+    
         public USUsersManagmentAndRoles()
         {
             InitializeComponent();
             ERequestToOpenTheAddNewUserUS = null;
             _IDUser = clsEETMS_Constants.kZERO;
+            _G2MD = null;
         }
 
 
@@ -87,17 +90,47 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             => ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
 
         private void _EditToolStripMenuItem_Click(object sender, EventArgs e)
-            => ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
+        {
+            int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
+
+            if (UserID != clsEETMS_Constants.kNEGATIVE_ONE)
+                ERequestToOpenTheAddNewUserUS?.Invoke(this, UserID);
+            else
+            {
+                _G2MD = new Guna2MessageDialog();
+                _G2MD.Icon = MessageDialogIcon.Warning;
+                _G2MD.Caption = "Important Note ...";
+                _G2MD.Text = "You Must Selected The User From List To Be Updated information.";
+
+                _G2MD.Show();
+            }
+        }
 
         private void _DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to be delete This User ..?? ", "Note For the delete user", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                if (UserBL.DeleteTheUserBy(_GetTheIDUserAfterSelectionUserFromDGV()))
-                    MessageBox.Show("The User is Deleted Successfully", "Note For Delete The User");
-                else MessageBox.Show("The User is Deleted Faild", "Note For Delete The User");
+            int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
+
+            if (UserID != clsEETMS_Constants.kNEGATIVE_ONE)
+            {
+                if (MessageBox.Show("Are you sure to be delete This User ..?? ", "Note For the delete user", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    if (UserBL.DeleteTheUserBy(_GetTheIDUserAfterSelectionUserFromDGV()))
+                    {
+                        MessageBox.Show("The User is Deleted Successfully", "Note For Delete The User");
+                        _InitalSettingTheUserManagmentCountsUsers();
+                    }
+                    else MessageBox.Show("The User is Deleted Faild", "Note For Delete The User");
+            }
+            else
+            {
+                _G2MD = new Guna2MessageDialog();
+                _G2MD.Icon = MessageDialogIcon.Warning;
+                _G2MD.Caption = "Important Note ...";
+                _G2MD.Text = "You Must Selected The User From List To Be Delete.";
+
+                _G2MD.Show();
+            }
 
 
-            _InitalSettingTheUserManagmentCountsUsers();
         }
 
 

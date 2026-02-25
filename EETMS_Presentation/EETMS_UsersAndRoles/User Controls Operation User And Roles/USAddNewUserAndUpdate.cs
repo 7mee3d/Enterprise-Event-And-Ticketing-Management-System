@@ -129,11 +129,11 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             }
 
 
-            if (!string.IsNullOrEmpty(GTextBoxUsername.Text))
+            if (!string.IsNullOrEmpty(GTextBoxUsername.Text) && !clsValidation.IsTheUsernameStartedDigits((GTextBoxUsername.Text)[0]))
                 _InformationUser.Username = GTextBoxUsername.Text;
             else
             {
-                TextMessageDialog += "\nPlease enter a Username Without the Space \n";
+                TextMessageDialog += "\nPlease enter a Username Without the Space , Without Start Any Digits\n";
                 FlagIsFillUsername = false;
             }
 
@@ -259,8 +259,6 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
                 GGCButtonAddImageUser.Image = null;
                 _InformationUser.ImagePath = null;
                 _ImagePathUser = null;
-
-                MessageBox.Show("Remove Mode");
 
                 GGCButtonAddImageUser.Image = Resources.Add_New_Photo_NoFill_Icon_EETMS;
 
