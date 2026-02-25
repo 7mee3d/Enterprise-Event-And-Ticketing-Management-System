@@ -177,6 +177,7 @@
             this.GGButtonAddNewCustomer.Size = new System.Drawing.Size(192, 44);
             this.GGButtonAddNewCustomer.TabIndex = 2;
             this.GGButtonAddNewCustomer.Text = "Add New Customer";
+            this.GGButtonAddNewCustomer.Click += new System.EventHandler(this.GGButtonAddNewCustomer_Click_1);
             // 
             // label2
             // 

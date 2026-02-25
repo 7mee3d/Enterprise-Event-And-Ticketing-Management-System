@@ -444,12 +444,12 @@ namespace EETMS_DataAccessLayer
                                                             WHERE 
                                                                        ( 
 
-                                                                        CustomerTableSubQuery.FullName LIKE '%' + @Search + '%'
-                                                                        OR CustomerTableSubQuery.NationalID LIKE '%' + @Search + '%'
+                                                                        CustomerTableSubQuery.FullName =  @Search 
+                                                                        OR CustomerTableSubQuery.NationalID = @Search 
 
                                                                         ) 
 
-                                                                        OR ( CustomerTableSubQuery.FullNameWithOutMidName LIKE '%' + @Search + '%' ) ;
+                                                                        OR ( CustomerTableSubQuery.FullNameWithOutMidName = @Search  ) ;
 
                                     
                                 ";

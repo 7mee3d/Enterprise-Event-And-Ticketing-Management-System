@@ -467,7 +467,12 @@ namespace EETMS_Presentation.EETMS_Tickets
         private void _SearchTheCustoemrByIDOrName()
         {
 
-            string ToBeSearch = GTextBoxCustomerIDorName.Text;
+            string ToBeSearch = clsEETMS_Constants.kEMPTY_STRING;
+
+            if (!string.IsNullOrEmpty(GTextBoxCustomerIDorName.Text))
+                ToBeSearch = GTextBoxCustomerIDorName.Text;
+            else
+                return;
 
             DataTable DT = CustomerBL.AllInformationCustomerAfterSearch(ToBeSearch);
 

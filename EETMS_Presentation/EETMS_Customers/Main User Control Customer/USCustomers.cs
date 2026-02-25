@@ -154,5 +154,8 @@ namespace EETMS_Presentation.EETMS_Customers
         private void GGButtonAddNewCustomer_Click(object sender, EventArgs e)
          => RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
 
+        private void GGButtonAddNewCustomer_Click_1(object sender, EventArgs e)
+         => RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
+
     }
 }
