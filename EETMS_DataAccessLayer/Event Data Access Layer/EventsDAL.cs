@@ -363,8 +363,9 @@ namespace EETMS_DataAccessLayer
                                             Street = @Street ,
                                             CountryID = @CountryID ,
                                             CategoryID = @CategoryID ,
-                                            Discripation = @Discripation
-
+                                            Discripation = @Discripation,
+                                            IsActiveEvent = @IsActiveEvent
+                                            
 
                                 WHERE EventID = @EventID ;
 
@@ -383,6 +384,7 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.Add("CountryID", SqlDbType.Int).Value = NewInformationEvent.CountryID;
                         command.Parameters.Add("CategoryID", SqlDbType.Int).Value = NewInformationEvent.CategoryID;
                         command.Parameters.Add("Discripation", SqlDbType.NVarChar).Value = NewInformationEvent.Discripation;
+                        command.Parameters.Add("IsActiveEvent", SqlDbType.Bit).Value = NewInformationEvent.IsActiveEvent;
 
 
                         connection.Open();
@@ -397,7 +399,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception Ex)
             {
-                Console.WriteLine(Ex.Message);
+                throw;
             }
 
             return RowAffective;
@@ -524,6 +526,72 @@ namespace EETMS_DataAccessLayer
 
         public static DataTable GetEventTicketCapacityInfoBy(int EventID)
             => _GetEventTicketCapacityInfoBy(EventID);
+
+        private static DataTable _GetRemainingCapacityEventfoBy(int EventID)
+        {
+
+            DataTable DT_EventRemainingCapacity = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+
+                string Query = @"
+
+
+                                    SELECT
+
+                                                  E.EventID,
+                                                  ISNULL(E.MaxCapacity - SUM(T.Quantity - T.Available), E.MaxCapacity) AS RemainingCapacity
+
+
+                                        FROM Events E
+                                        LEFT JOIN TicketTypes T
+                                            ON T.EventID = E.EventID
+
+                                        WHERE E.EventID = @EventID
+
+                                        GROUP BY 
+                                                    E.EventID, 
+                                                     E.MaxCapacity;
+
+
+
+                                ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+
+                    command.Parameters.Add("@EventID", SqlDbType.Int).Value = EventID;
+
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        if (reader.HasRows)
+                            DT_EventRemainingCapacity.Load(reader);
+
+
+                    }
+
+
+
+                }
+            }
+
+            return DT_EventRemainingCapacity;
+
+        }
+
+        public static DataTable GetRemainingCapacityEventfoBy(int EventID)
+            => _GetRemainingCapacityEventfoBy(EventID);
+
+
 
 
         #endregion

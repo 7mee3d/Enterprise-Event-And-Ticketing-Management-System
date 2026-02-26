@@ -41,6 +41,9 @@ namespace EETMS_BusinessLayer
             return false;
         }
 
+        public static DataTable GetRemainingCapacityEventfoBy(int EventID)
+            => EventsDAL.GetRemainingCapacityEventfoBy(EventID);
+
 
     }
 }

@@ -8,8 +8,8 @@ namespace EETMS_Models
     {
         public enum EnModeEvent
         {
-            _kADD_NEW_EVENT = 1 , 
-            _kUPDATE_INFORMATION_EVENT = 2 
+            _kADD_NEW_EVENT = 1,
+            _kUPDATE_INFORMATION_EVENT = 2
         }
 
 
@@ -23,10 +23,12 @@ namespace EETMS_Models
         public int CountryID { get; set; }
         public int CategoryID { get; set; }
         public string Discripation { get; set; }
+        public bool IsActiveEvent { get; set; } = true;
+
         public EnModeEvent EnMode { get; set; }
 
 
-        public MEvent(int eventID, string eventName, DateTime? dateTimeEvent, int durationEvent, int maxCapacity, string street, int countryID, int categoryID, string discripation)
+        public MEvent(int eventID, string eventName, DateTime? dateTimeEvent, int durationEvent, int maxCapacity, string street, int countryID, int categoryID, string discripation, bool IsActiveEvent)
         {
             this.EventID = eventID;
             this.EventName = eventName;
@@ -37,13 +39,15 @@ namespace EETMS_Models
             this.CountryID = countryID;
             this.CategoryID = categoryID;
             this.Discripation = discripation;
+            this.IsActiveEvent = IsActiveEvent;
 
-            this.EnMode = EnModeEvent._kUPDATE_INFORMATION_EVENT; 
+            this.EnMode = EnModeEvent._kUPDATE_INFORMATION_EVENT;
 
         }
 
         public MEvent()
         {
+
             this.EventID = default(int);
             this.EventName = default(string);
             this.DateTimeEvent = default(DateTime);
@@ -53,8 +57,10 @@ namespace EETMS_Models
             this.CountryID = default(int);
             this.CategoryID = default(int);
             this.Discripation = default(string);
+            this.IsActiveEvent = true;
 
             this.EnMode = EnModeEvent._kADD_NEW_EVENT;
+
         }
 
         #endregion

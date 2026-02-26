@@ -575,6 +575,19 @@ namespace EETMS_Presentation.EETMS_Tickets
             ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "VIP", _NumberOfTicketVIP);
             ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "Premium", _NumberOfTicketPreimum);
 
+            // Change The Active Event After The Fully Booking Event 
+            DataTable DT_InfoEvent = EventBL.GetRemainingCapacityEventfoBy(_EventID);
+            MEvent mEvent = EventBL.FindTheEventBy(_EventID);
+
+            if (Convert.ToInt32(DT_InfoEvent.Rows[0]["RemainingCapacity"]) == clsEETMS_Constants.kZERO)
+            {
+
+                mEvent.IsActiveEvent = false;
+                mEvent.EnMode = MEvent.EnModeEvent._kUPDATE_INFORMATION_EVENT;
+                EventBL.SaveTheMode(mEvent);
+
+            }
+
             _ResetAllSettingCardsTickets();
             _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
         }
