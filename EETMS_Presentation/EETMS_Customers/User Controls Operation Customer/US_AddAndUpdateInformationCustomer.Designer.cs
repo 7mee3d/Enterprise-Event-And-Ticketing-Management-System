@@ -99,7 +99,7 @@
             this.GButtonAddNewCustomer.Name = "GButtonAddNewCustomer";
             this.GButtonAddNewCustomer.PressedColor = System.Drawing.Color.White;
             this.GButtonAddNewCustomer.Size = new System.Drawing.Size(169, 45);
-            this.GButtonAddNewCustomer.TabIndex = 4;
+            this.GButtonAddNewCustomer.TabIndex = 6;
             this.GButtonAddNewCustomer.Text = "Save Customer";
             this.GButtonAddNewCustomer.Click += new System.EventHandler(this.GButtonAddNewCustomer_Click);
             // 
@@ -123,7 +123,7 @@
             this.GButtonCansel.Name = "GButtonCansel";
             this.GButtonCansel.PressedColor = System.Drawing.Color.White;
             this.GButtonCansel.Size = new System.Drawing.Size(104, 42);
-            this.GButtonCansel.TabIndex = 3;
+            this.GButtonCansel.TabIndex = 7;
             this.GButtonCansel.Text = "Cansel";
             this.GButtonCansel.Click += new System.EventHandler(this.GButtonCansel_Click);
             // 
@@ -247,7 +247,7 @@
             this.GTextBoxNationalID.PlaceholderText = "00000000000000";
             this.GTextBoxNationalID.SelectedText = "";
             this.GTextBoxNationalID.Size = new System.Drawing.Size(546, 45);
-            this.GTextBoxNationalID.TabIndex = 6;
+            this.GTextBoxNationalID.TabIndex = 5;
             // 
             // label11
             // 
@@ -282,7 +282,7 @@
             this.GTextBoxLastName.PlaceholderText = "Last Name .. ";
             this.GTextBoxLastName.SelectedText = "";
             this.GTextBoxLastName.Size = new System.Drawing.Size(136, 37);
-            this.GTextBoxLastName.TabIndex = 6;
+            this.GTextBoxLastName.TabIndex = 2;
             // 
             // GTextBoxMidName
             // 
@@ -306,7 +306,7 @@
             this.GTextBoxMidName.PlaceholderText = "Mid Name .. ";
             this.GTextBoxMidName.SelectedText = "";
             this.GTextBoxMidName.Size = new System.Drawing.Size(136, 37);
-            this.GTextBoxMidName.TabIndex = 6;
+            this.GTextBoxMidName.TabIndex = 1;
             // 
             // label7
             // 
@@ -340,7 +340,7 @@
             this.GTextBoxPhoneNumber.PlaceholderText = "+20 (111)000000";
             this.GTextBoxPhoneNumber.SelectedText = "";
             this.GTextBoxPhoneNumber.Size = new System.Drawing.Size(222, 41);
-            this.GTextBoxPhoneNumber.TabIndex = 6;
+            this.GTextBoxPhoneNumber.TabIndex = 4;
             // 
             // GTextBoxEmailAddress
             // 
@@ -363,7 +363,7 @@
             this.GTextBoxEmailAddress.PlaceholderText = "EETMS@example.com";
             this.GTextBoxEmailAddress.SelectedText = "";
             this.GTextBoxEmailAddress.Size = new System.Drawing.Size(322, 41);
-            this.GTextBoxEmailAddress.TabIndex = 6;
+            this.GTextBoxEmailAddress.TabIndex = 3;
             // 
             // GTextBoxFirstName
             // 
@@ -387,7 +387,7 @@
             this.GTextBoxFirstName.PlaceholderText = "First Name..";
             this.GTextBoxFirstName.SelectedText = "";
             this.GTextBoxFirstName.Size = new System.Drawing.Size(136, 37);
-            this.GTextBoxFirstName.TabIndex = 6;
+            this.GTextBoxFirstName.TabIndex = 0;
             // 
             // label6
             // 

@@ -46,7 +46,7 @@ namespace EETMS_Models
         public string Username { get; set; }
         public string PasswordUser { get; set; }
         public string EmailUser { get; set; }
-        public bool IsActiveAccount { get; set; }
+        public bool IsActiveAccount { get; set; } = true;
         public int RoleID { get; set; }
         public int NumberAttempts { get; set; }
         public EnModeUser enMode { get; set; } = EnModeUser._kADD_NEW_USER;

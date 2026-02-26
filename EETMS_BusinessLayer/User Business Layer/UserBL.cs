@@ -22,20 +22,23 @@ namespace EETMS_BusinessLayer
         public static bool UpdateInformationUser(MUser InformationNewUser)
             => UsersDAL.UpdateInformationUser(InformationNewUser.UserID, InformationNewUser) > clsEETMS_Constants.kZERO;
 
-        public static bool SaveInformationUserMode(MUser InformationUser)
+        public static bool SaveInformationUserMode(MUser InformationUser, bool IsUpdateActiveAccountUser = false)
         {
 
+            if (!IsUpdateActiveAccountUser)
+                switch (InformationUser.enMode)
+                {
+                    case MUser.EnModeUser._kADD_NEW_USER:
+                        return (AddNewUser(InformationUser)) ? true : false;
 
-            switch (InformationUser.enMode)
-            {
-                case MUser.EnModeUser._kADD_NEW_USER:
-                    return (AddNewUser(InformationUser)) ? true : false;
-
-                case MUser.EnModeUser._kUPDATE_INFORMATION_USER:
-                    return UpdateInformationUser(InformationUser);
-            }
+                    case MUser.EnModeUser._kUPDATE_INFORMATION_USER:
+                        return UpdateInformationUser(InformationUser);
+                }
+            else
+                return UpdateInformationActiveAccountUserBy(InformationUser.UserID, InformationUser);
 
             return false;
+
 
         }
 
@@ -95,6 +98,8 @@ namespace EETMS_BusinessLayer
         public static bool DeleteTheUserBy(int IDUser)
             => UsersDAL.DeleteTheUserBy(IDUser) > clsEETMS_Constants.kZERO;
 
+        public static bool UpdateInformationActiveAccountUserBy(int UserID, MUser mUser)
+            => UsersDAL.UpdateInformationUserActiveAccountInactiveBy(UserID, mUser) > 0;
 
 
     }

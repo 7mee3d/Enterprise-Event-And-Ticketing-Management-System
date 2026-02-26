@@ -157,12 +157,14 @@
             // GDateTimePickerEvent
             // 
             this.GDateTimePickerEvent.Animated = true;
-            this.GDateTimePickerEvent.BorderRadius = 5;
+            this.GDateTimePickerEvent.BackColor = System.Drawing.Color.Transparent;
+            this.GDateTimePickerEvent.BorderRadius = 6;
             this.GDateTimePickerEvent.Checked = true;
-            this.GDateTimePickerEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GDateTimePickerEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GDateTimePickerEvent.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GDateTimePickerEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
             this.GDateTimePickerEvent.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.GDateTimePickerEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GDateTimePickerEvent.Location = new System.Drawing.Point(533, 77);
             this.GDateTimePickerEvent.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.GDateTimePickerEvent.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);

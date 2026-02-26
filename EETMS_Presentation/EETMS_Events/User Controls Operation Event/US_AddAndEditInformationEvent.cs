@@ -49,6 +49,8 @@ namespace EETMS_Presentation.EETMS_Events
         private void _LoadAllInformationEvent()
         {
 
+            GDateTimePickerEvent.MinDate = DateTime.Today;
+
             if (_Mode == _EnMode._kADD_NEW_EVENT)
             {
                 _InformationEvent = new MEvent();

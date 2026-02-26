@@ -190,7 +190,7 @@
             this.GGButtonConfirmBooking.Name = "GGButtonConfirmBooking";
             this.GGButtonConfirmBooking.PressedColor = System.Drawing.Color.White;
             this.GGButtonConfirmBooking.Size = new System.Drawing.Size(289, 50);
-            this.GGButtonConfirmBooking.TabIndex = 13;
+            this.GGButtonConfirmBooking.TabIndex = 6;
             this.GGButtonConfirmBooking.Text = "Confirm Booking";
             this.GGButtonConfirmBooking.Visible = false;
             this.GGButtonConfirmBooking.Click += new System.EventHandler(this.GGButtonConfirmBooking_Click);
@@ -544,7 +544,7 @@
             0});
             this.GNumericUpDownPremium.Name = "GNumericUpDownPremium";
             this.GNumericUpDownPremium.Size = new System.Drawing.Size(233, 38);
-            this.GNumericUpDownPremium.TabIndex = 10;
+            this.GNumericUpDownPremium.TabIndex = 5;
             this.GNumericUpDownPremium.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.GNumericUpDownPremium.ValueChanged += new System.EventHandler(this.GNumericUpDownPremium_ValueChanged);
             // 
@@ -672,7 +672,7 @@
             0});
             this.GNumericUpDownVIPTicket.Name = "GNumericUpDownVIPTicket";
             this.GNumericUpDownVIPTicket.Size = new System.Drawing.Size(233, 38);
-            this.GNumericUpDownVIPTicket.TabIndex = 10;
+            this.GNumericUpDownVIPTicket.TabIndex = 4;
             this.GNumericUpDownVIPTicket.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.GNumericUpDownVIPTicket.ValueChanged += new System.EventHandler(this.GNumericUpDownVIPTicket_ValueChanged);
             // 
@@ -800,7 +800,7 @@
             0});
             this.GNumericUpDownRegularTicket.Name = "GNumericUpDownRegularTicket";
             this.GNumericUpDownRegularTicket.Size = new System.Drawing.Size(233, 38);
-            this.GNumericUpDownRegularTicket.TabIndex = 10;
+            this.GNumericUpDownRegularTicket.TabIndex = 3;
             this.GNumericUpDownRegularTicket.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.GNumericUpDownRegularTicket.ValueChanged += new System.EventHandler(this.GNumericUpDownRegularTicket_ValueChanged);
             // 
@@ -937,7 +937,7 @@
             this.GGButtonSearchTheCustomerByIDorName.Name = "GGButtonSearchTheCustomerByIDorName";
             this.GGButtonSearchTheCustomerByIDorName.PressedColor = System.Drawing.Color.White;
             this.GGButtonSearchTheCustomerByIDorName.Size = new System.Drawing.Size(175, 42);
-            this.GGButtonSearchTheCustomerByIDorName.TabIndex = 13;
+            this.GGButtonSearchTheCustomerByIDorName.TabIndex = 2;
             this.GGButtonSearchTheCustomerByIDorName.Text = "Search The Customer";
             this.GGButtonSearchTheCustomerByIDorName.Click += new System.EventHandler(this.GGButtonSearchTheCustomerByIDorName_Click);
             // 
@@ -956,7 +956,7 @@
             this.GComboBoxSelectEvents.Location = new System.Drawing.Point(54, 97);
             this.GComboBoxSelectEvents.Name = "GComboBoxSelectEvents";
             this.GComboBoxSelectEvents.Size = new System.Drawing.Size(359, 36);
-            this.GComboBoxSelectEvents.TabIndex = 11;
+            this.GComboBoxSelectEvents.TabIndex = 0;
             this.GComboBoxSelectEvents.SelectionChangeCommitted += new System.EventHandler(this.GComboBoxSelectEvents_SelectionChangeCommitted);
             // 
             // GTextBoxCustomerIDorName
@@ -981,7 +981,7 @@
             this.GTextBoxCustomerIDorName.PlaceholderText = "Search customer name or ID...";
             this.GTextBoxCustomerIDorName.SelectedText = "";
             this.GTextBoxCustomerIDorName.Size = new System.Drawing.Size(310, 42);
-            this.GTextBoxCustomerIDorName.TabIndex = 10;
+            this.GTextBoxCustomerIDorName.TabIndex = 1;
             // 
             // label4
             // 

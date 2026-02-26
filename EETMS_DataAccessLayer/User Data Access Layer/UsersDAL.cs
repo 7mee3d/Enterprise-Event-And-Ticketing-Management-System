@@ -411,7 +411,8 @@ namespace EETMS_DataAccessLayer
                                                 EmailUser  = @EmailUser ,
                                                 RoleID  = @RoleID ,
                                                 NumberAttempts = @NumberAttempts ,
-                                                ImagePath = @ImagePath
+                                                ImagePath = @ImagePath , 
+                                                ActiveAccount = @ActiveAccount
 
 
 
@@ -430,6 +431,7 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.Add("@EmailUser", SqlDbType.NVarChar, 400).Value = InformationNewUser.EmailUser;
                         command.Parameters.Add("@RoleID", SqlDbType.SmallInt).Value = InformationNewUser.RoleID;
                         command.Parameters.Add("@NumberAttempts", SqlDbType.TinyInt).Value = InformationNewUser.NumberAttempts;
+                        command.Parameters.Add("@ActiveAccount", SqlDbType.TinyInt).Value = (InformationNewUser.IsActiveAccount) ? 1 : 0;
 
                         if (InformationNewUser.ImagePath != null)
                             command.Parameters.AddWithValue("@ImagePath", InformationNewUser.ImagePath);
@@ -695,6 +697,58 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetAllInformationUsers()
             => _GetAllInformationUsers();
 
+        private static int _UpdateInformationUserActiveAccountInactiveBy(int IDUser, MUser InformationNewUser)
+        {
 
+            int RowAfective = -1;
+
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+
+                    string Query = @"
+                                                        
+                                        UPDATE Users 
+
+                                        SET    
+                                                ActiveAccount = @ActiveAccount
+
+
+
+                                        WHERE UserID = @UserID AND RoleID <> 1  ;
+
+
+                                   ";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        command.Parameters.Add("@UserID", SqlDbType.Int).Value = IDUser;
+                        command.Parameters.Add("@ActiveAccount", SqlDbType.TinyInt).Value = (InformationNewUser.IsActiveAccount) ? 1 : 0;
+
+
+                        connection.Open();
+
+                        RowAfective = command.ExecuteNonQuery();
+
+                    }
+
+                }
+
+
+            }
+            catch (Exception Ex) { throw; }
+
+
+            return RowAfective;
+
+        }
+
+        public static int UpdateInformationUserActiveAccountInactiveBy(int IDUser, MUser InformationNewUser)
+            => _UpdateInformationUserActiveAccountInactiveBy(IDUser, InformationNewUser);
     }
 }

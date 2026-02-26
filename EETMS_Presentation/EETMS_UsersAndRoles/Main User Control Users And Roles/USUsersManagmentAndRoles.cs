@@ -1,5 +1,6 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_Models;
 using EETMS_Presentation.EETMS_Settings;
 using Guna.UI2.WinForms;
 using System;
@@ -16,7 +17,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         public event EventHandler<int> ERequestToOpenTheAddNewUserUS;
         private int _IDUser;
         private Guna2MessageDialog _G2MD;
-    
+
         public USUsersManagmentAndRoles()
         {
             InitializeComponent();
@@ -133,7 +134,75 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
         }
 
+        private void _ActiveAndInactiveTheUser()
+        {
+
+            Guna2MessageDialog G2MD = new Guna2MessageDialog();
+
+            int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
+
+            MUser mUser = UserBL.FindUserBy(UserID);
+
+            if (mUser != null)
+            {
+                G2MD.Icon = MessageDialogIcon.Question;
+                G2MD.Caption = "Note. For The Inactive/Active This User";
+
+                if (mUser.IsActiveAccount)
+                    G2MD.Text = "Are You Sure Inactive This User";
+                else G2MD.Text = "Are You Sure Active This User";
+
+                G2MD.Buttons = MessageDialogButtons.OKCancel;
+
+                if (G2MD.Show() == DialogResult.Yes)
+                {
+                    if (mUser.IsActiveAccount)
+                        mUser.IsActiveAccount = false;
+                    else mUser.IsActiveAccount = true;
+
+                    if (UserBL.SaveInformationUserMode(mUser, true))
+                    {
+                        if (mUser.IsActiveAccount)
+                            G2MD.Text = "The User is Active Successfully";
+                        else G2MD.Text = "The User is Inactive Successfully";
+
+                        _InitalSettingTheUserManagmentCountsUsers();
+
+                    }
+                    else
+                    {
+                        G2MD.Icon = MessageDialogIcon.Error;
+                        if (mUser.RoleID == 1)
+                        {
+
+                            G2MD.Text = "The User is Inactive/Active Faild , Because The User is Admin .";
+                        }
+                        else
+                            G2MD.Text = "The User is Inactive Faild";
+                    }
+
+
+
+                    G2MD.Show();
+                }
+            }
+            else
+            {
+                G2MD.Caption = "Invalid Select From List User!!";
+                G2MD.Icon = MessageDialogIcon.Error;
+                G2MD.Text = "Please Select The User In The List To Be Inactive/Active User . ";
+
+                G2MD.Show();
+            }
+        }
+
+        private void InactiveUsertoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _ActiveAndInactiveTheUser();
+
+        }
 
 
     }
 }
+

@@ -96,7 +96,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
         }
 
-        private void _LoadAllInformationRolesToomboBox()
+        private void _LoadAllInformationRolesToComboBox()
         {
             DataTable DT_AllInformationRoles = RolesBL.GetAllInformationRoles();
 
@@ -104,8 +104,6 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             GComboBoxRoleUser.DisplayMember = "RoleName";
             GComboBoxRoleUser.ValueMember = "RoleID";
-
-
         }
 
         private void _AddNewUser()
@@ -241,7 +239,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
         private void USAddNewUserAndUpdate_Load(object sender, EventArgs e)
         {
-            _LoadAllInformationRolesToomboBox();
+            _LoadAllInformationRolesToComboBox();
             _LoadAllInformationUserAfterLoadTheUS();
 
 
