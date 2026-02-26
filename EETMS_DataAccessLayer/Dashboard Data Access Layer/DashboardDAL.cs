@@ -357,5 +357,7 @@ namespace EETMS_DataAccessLayer
 
         public static int GetTheTotalCustomers()
             => _GetTheTotalCustomers();
+
+
     }
 }

@@ -49,10 +49,10 @@ namespace EETMS_Presentation.EETMS_Events
         private void _LoadAllInformationEvent()
         {
 
-            GDateTimePickerEvent.MinDate = DateTime.Today;
 
             if (_Mode == _EnMode._kADD_NEW_EVENT)
             {
+                GDateTimePickerEvent.MinDate = DateTime.Today;
                 _InformationEvent = new MEvent();
                 _InformationEvent.EnMode = MEvent.EnModeEvent._kADD_NEW_EVENT;
                 return;

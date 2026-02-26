@@ -85,7 +85,7 @@ namespace EETMS_Presentation.EETMS_Events
             {
                 int.TryParse(DR_Event["MaxCapacity"].ToString(), out int MaxCapacity);
 
-                if ((int)DR_Event["SoldTickets"] == MaxCapacity || (int)DR_Event["IsActiveEvent"] == 0) ++CountFullyBookedEvents;
+                if ((int)DR_Event["SoldTickets"] == MaxCapacity || !((bool)DR_Event["IsActiveEvent"])) ++CountFullyBookedEvents;
             }
 
             return CountFullyBookedEvents;
