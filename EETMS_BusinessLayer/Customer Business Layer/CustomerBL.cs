@@ -28,6 +28,7 @@ namespace EETMS_BusinessLayer
         {
             return CustomerDAL.InsertNewCustomer(NewCustomer) > clsEETMS_Constants.kZERO;
         }
+
         private static bool _UpdateInformationCustomer(int IDCustomer, MCustomer NewInfromationCustomer)
         {
             return CustomerDAL.UpdateInformationCustomer(IDCustomer, NewInfromationCustomer) > clsEETMS_Constants.kZERO;
@@ -65,12 +66,12 @@ namespace EETMS_BusinessLayer
             return false;
         }
 
-
         public static DataTable AllInformationCustomerAfterSearch(string StrToBeSearch)
         {
             return CustomerDAL.SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(StrToBeSearch);
         }
 
-
+        public static bool _IsTheNameCustomerExsistsBy(MCustomer mCustomerName)
+            => CustomerDAL.FindTheCustomerBy(mCustomerName);
     }
 }

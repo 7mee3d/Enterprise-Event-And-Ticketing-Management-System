@@ -23,11 +23,11 @@ namespace EETMS_Presentation.EETMS_Customers
         }
 
 
-        private _EnModeCustomer _EnMode ;
-        private MCustomer _CustomerInformation ;
-        private int _IDCustomer ;
-        private List<string> _AllInformationCustomerInList ;
-        public event EventHandler RequestClose ;
+        private _EnModeCustomer _EnMode;
+        private MCustomer _CustomerInformation;
+        private int _IDCustomer;
+        private List<string> _AllInformationCustomerInList;
+        public event EventHandler RequestClose;
 
 
         public US_AddAndUpdateInformationCustomer(int IDCustomer)
@@ -37,7 +37,7 @@ namespace EETMS_Presentation.EETMS_Customers
             _CustomerInformation = null;
             _IDCustomer = clsEETMS_Constants.kZERO;
             _AllInformationCustomerInList = null;
-            RequestClose = null; 
+            RequestClose = null;
 
             if (IDCustomer != clsEETMS_Constants.kNEGATIVE_ONE)
                 _EnMode = _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER;
@@ -93,6 +93,7 @@ namespace EETMS_Presentation.EETMS_Customers
             _CustomerInformation.FirstName = GTextBoxFirstName.Text;
             _CustomerInformation.MidName = GTextBoxMidName.Text;
             _CustomerInformation.LastName = GTextBoxLastName.Text;
+
             if (!string.IsNullOrEmpty(GTextBoxEmailAddress.Text))
             {
                 if (clsValidation.IsValidEmailAddress(GTextBoxEmailAddress.Text))
@@ -120,6 +121,33 @@ namespace EETMS_Presentation.EETMS_Customers
 
 
 
+            MCustomer mCustomer = new MCustomer()
+            {
+                FirstName = GTextBoxFirstName.Text,
+                MidName = GTextBoxMidName.Text,
+                LastName = GTextBoxLastName.Text
+            };
+
+
+            if (_EnMode == _EnModeCustomer._kADD_NEW_CUSTOMER)
+                if (CustomerBL._IsTheNameCustomerExsistsBy(mCustomer))
+                {
+                    {
+
+                        Guna2MessageDialog G2MD2 = new Guna2MessageDialog();
+                        G2MD2.Icon = MessageDialogIcon.Warning;
+                        G2MD2.Caption = "Invalid Input This Data ... ";
+                        G2MD2.Text = $"This Customer" +
+                            $" {mCustomer.FirstName + ' ' + mCustomer.MidName + ' ' + mCustomer.LastName}" +
+                            $"Already Exsists in the system EETMS , Try to Enter Another Customer";
+
+                        G2MD2.Show();
+
+                        return;
+
+                    }
+                }
+
             if (CustomerBL.Save(_CustomerInformation))
             {
                 if (_EnMode == _EnModeCustomer._kADD_NEW_CUSTOMER)
@@ -137,7 +165,7 @@ namespace EETMS_Presentation.EETMS_Customers
 
         private void GButtonCansel_Click(object sender, EventArgs e)
             => RequestClose?.Invoke(this, EventArgs.Empty);
-        
+
         private void _FillAllInformationCustomerAfterFillToList()
         {
 
@@ -161,7 +189,7 @@ namespace EETMS_Presentation.EETMS_Customers
 
 
                          AllInformationCustomerInList[clsEETMS_Constants.kZERO] != "" &&   // The First Name 
-                                                                    //   AllInformationCustomerInList[1] != "" &&// The Mid Name 
+                                                                                           //   AllInformationCustomerInList[1] != "" &&// The Mid Name 
                          AllInformationCustomerInList[2] != "" &&   // The last Name
                                                                     // AllInformationCustomerInList[3] != "" &&//The Email
                                                                     //  AllInformationCustomerInList[4] != "" &&//The Phone
@@ -173,21 +201,25 @@ namespace EETMS_Presentation.EETMS_Customers
 
         private void GButtonAddNewCustomer_Click(object sender, EventArgs e)
         {
+
             _FillAllInformationCustomerAfterFillToList();
 
+
             if (_CheckTheAllTextBoxiesAllFilledOrNot(_AllInformationCustomerInList))
-
                 _AddOrUpdateInformationCustomer();
+            else
+                MessageBox.Show("Please Fill All Text Boxies Customer To Be Added / Update .. ", "Note The Add / Update Information Customer ");
 
 
-            else MessageBox.Show("Please Fill All Text Boxies Customer To Be Added / Update .. ", "Note The Add / Update Information Customer ");
+
+
 
         }
 
         private void US_AddAndUpdateInformationCustomer_Load(object sender, EventArgs e)
-            =>_LoadAllInformationAndSettingAddNewCustomer();
+            => _LoadAllInformationAndSettingAddNewCustomer();
 
-        
+
 
     }
 }

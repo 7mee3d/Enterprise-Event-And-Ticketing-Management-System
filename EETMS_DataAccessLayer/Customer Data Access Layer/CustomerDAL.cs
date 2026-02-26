@@ -16,6 +16,7 @@ namespace EETMS_DataAccessLayer
 
 
         #region All Method Data Access Connection With Data Base [ EETMS ] 
+
         private static DataTable _GetAllCustomersInformation()
         {
             DataTable DT_Customers = new DataTable("infoCustomers");
@@ -373,8 +374,15 @@ namespace EETMS_DataAccessLayer
                         Command.Parameters.AddWithValue("@LastName", NewCsutomerInformation.LastName);
                         Command.Parameters.AddWithValue("@NationalID", NewCsutomerInformation.NationalID);
 
-                        Command.Parameters.AddWithValue("@EmailAddress", NewCsutomerInformation.EmailCustomer);
-                        Command.Parameters.AddWithValue("@PhoneNumber", NewCsutomerInformation.PhoneCustomer);
+                        if (string.IsNullOrEmpty(NewCsutomerInformation.EmailCustomer))
+                            Command.Parameters.AddWithValue("@EmailAddress", DBNull.Value);
+                        else
+                            Command.Parameters.AddWithValue("@EmailAddress", NewCsutomerInformation.EmailCustomer);
+
+                        if (string.IsNullOrEmpty(NewCsutomerInformation.PhoneCustomer))
+                            Command.Parameters.AddWithValue("@PhoneNumber", DBNull.Value);
+                        else
+                            Command.Parameters.AddWithValue("@PhoneNumber", NewCsutomerInformation.PhoneCustomer);
 
 
                         RowAffective = Command.ExecuteNonQuery();
@@ -485,7 +493,58 @@ namespace EETMS_DataAccessLayer
             return _SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(ToBySearch);
         }
 
+        private static bool _FindTheCustomerBy(MCustomer mCustomerNames)
+        {
 
+            bool FlagFindTheCustomer = false;
+
+            using (SqlConnection connection = new SqlConnection(_ConnectionString))
+            {
+
+
+                string Query = @"
+
+
+                                    SELECT 1 
+                                    FROM Customers CUST 
+                                    WHERE (
+                                                    ( 
+
+                                                CONCAT(CUST.FirstName , ' ' , CUST.MidName , ' ' , CUST.LastName) 
+                                                                        =
+                                                CONCAT(@FirstName , ' ' , @MidName, ' ' ,  @LastName)
+
+                                                     ) 
+                                           )
+
+                                            ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+
+                    command.Parameters.AddWithValue("@FirstName", mCustomerNames.FirstName);
+                    command.Parameters.AddWithValue("@MidName", mCustomerNames.MidName);
+                    command.Parameters.AddWithValue("@LastName", mCustomerNames.LastName);
+
+
+                    connection.Open();
+
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int ResultTheQueryCheckName))
+                        FlagFindTheCustomer = (ResultTheQueryCheckName > 0);
+
+                }
+            }
+
+            return FlagFindTheCustomer;
+
+        }
+
+        public static bool FindTheCustomerBy(MCustomer mCustomerNames)
+            => _FindTheCustomerBy(mCustomerNames);
 
         #endregion
 
