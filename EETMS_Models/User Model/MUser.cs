@@ -8,7 +8,8 @@ namespace EETMS_Models
 {
     public class MUser
     {
-        /*   public struct stRoleUser
+        /*
+          public struct stRoleUser
            {
                int RoleID;
                string RoleName;
@@ -20,7 +21,8 @@ namespace EETMS_Models
                    RoleName = default;
                    Permssions = default; 
                }
-           }*/
+           }
+        */
 
         public enum EnModeUser
         {
@@ -52,6 +54,7 @@ namespace EETMS_Models
         public EnModeUser enMode { get; set; } = EnModeUser._kADD_NEW_USER;
         public string RoleName { get; set; }
         public string ImagePath { get; set; }
+        public DateTime LastLoginUser { get; set; } = DateTime.Now;
 
 
         #endregion

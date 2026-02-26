@@ -56,6 +56,7 @@ namespace EETMS_BusinessLayer
             if (InfoUser.NumberAttempts <= clsEETMS_Constants.kZERO)
                 return MUser.EnStatusLoginUser._kBLOCKED_USER;
 
+            InfoUser.LastLoginUser = DateTime.Now;
 
             bool isValidAccountUser = (IsUserExsitsByEmail(UsernameOrEmail, Password) || IsUserExsitsByUsername(UsernameOrEmail, Password));
 
@@ -63,6 +64,8 @@ namespace EETMS_BusinessLayer
             {
 
                 InfoUser.NumberAttempts = clsEETMS_Constants.kMAX_NUMBER_ATTEMPT_LOGIN_EETMS;
+
+
                 UpdateInformationUser(InfoUser);
                 return MUser.EnStatusLoginUser._kSUCCESS_LOGIN;
 

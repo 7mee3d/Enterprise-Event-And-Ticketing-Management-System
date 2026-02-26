@@ -433,7 +433,7 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.Add("@RoleID", SqlDbType.SmallInt).Value = InformationNewUser.RoleID;
                         command.Parameters.Add("@NumberAttempts", SqlDbType.TinyInt).Value = InformationNewUser.NumberAttempts;
                         command.Parameters.Add("@ActiveAccount", SqlDbType.TinyInt).Value = (InformationNewUser.IsActiveAccount) ? 1 : 0;
-                        command.Parameters.AddWithValue("@LastLoginAccountDate", DateTime.UtcNow);
+                        command.Parameters.AddWithValue("@LastLoginAccountDate", DateTime.Now);
 
                         if (InformationNewUser.ImagePath != null)
                             command.Parameters.AddWithValue("@ImagePath", InformationNewUser.ImagePath);
