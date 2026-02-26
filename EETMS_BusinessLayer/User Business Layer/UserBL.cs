@@ -50,8 +50,12 @@ namespace EETMS_BusinessLayer
             if (InfoUser == null)
                 return MUser.EnStatusLoginUser._kUSER_NOT_FOUND;
 
+            if (!InfoUser.IsActiveAccount)
+                return MUser.EnStatusLoginUser._kBLOCKED_USER;
+
             if (InfoUser.NumberAttempts <= clsEETMS_Constants.kZERO)
                 return MUser.EnStatusLoginUser._kBLOCKED_USER;
+
 
             bool isValidAccountUser = (IsUserExsitsByEmail(UsernameOrEmail, Password) || IsUserExsitsByUsername(UsernameOrEmail, Password));
 

@@ -412,7 +412,8 @@ namespace EETMS_DataAccessLayer
                                                 RoleID  = @RoleID ,
                                                 NumberAttempts = @NumberAttempts ,
                                                 ImagePath = @ImagePath , 
-                                                ActiveAccount = @ActiveAccount
+                                                ActiveAccount = @ActiveAccount,
+                                                LastLoginAccountDate = @LastLoginAccountDate
 
 
 
@@ -432,6 +433,7 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.Add("@RoleID", SqlDbType.SmallInt).Value = InformationNewUser.RoleID;
                         command.Parameters.Add("@NumberAttempts", SqlDbType.TinyInt).Value = InformationNewUser.NumberAttempts;
                         command.Parameters.Add("@ActiveAccount", SqlDbType.TinyInt).Value = (InformationNewUser.IsActiveAccount) ? 1 : 0;
+                        command.Parameters.AddWithValue("@LastLoginAccountDate", DateTime.UtcNow);
 
                         if (InformationNewUser.ImagePath != null)
                             command.Parameters.AddWithValue("@ImagePath", InformationNewUser.ImagePath);
@@ -661,8 +663,9 @@ namespace EETMS_DataAccessLayer
                                         					US.EmailUser ,
                                         					US.ActiveAccount ,
                                         					RO.RoleName ,
-                                        					US.LastLoginAccountDate
-                                        
+                                        					US.LastLoginAccountDate,
+                                                            DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay]
+
 
                                          FROM Users US 
                                          INNER JOIN Roles RO

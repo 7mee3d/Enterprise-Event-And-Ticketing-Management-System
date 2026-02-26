@@ -45,6 +45,19 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
         }
 
+        private string _GetTheWordLastLogin(int NumberOfDayLastLogin)
+        {
+
+            if (NumberOfDayLastLogin == clsEETMS_Constants.kNEGATIVE_ONE)
+                return "For a long time";
+            else if (NumberOfDayLastLogin == clsEETMS_Constants.kZERO)
+                return "Today";
+            else if (NumberOfDayLastLogin == clsEETMS_Constants.kONE)
+                return "Yestarday";
+
+            return NumberOfDayLastLogin.ToString() + " Day ago";
+        }
+
         private void _LoadAllDataToTheDataGridViewUsers()
         {
 
@@ -56,6 +69,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
                 string StrActiveOrInActive = (Convert.ToInt32(DR_InformationOneUser["ActiveAccount"]) == clsEETMS_Constants.kONE) ? "Active" : "Inactive";
 
+
                 int rowIndex = GDataGridViewUsersInformation.Rows.Add(
 
 
@@ -66,7 +80,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                                                                   DR_InformationOneUser["EmailUser"].ToString(),
                                                                   StrActiveOrInActive,
                                                                   DR_InformationOneUser["RoleName"].ToString(),
-                                                                  DR_InformationOneUser["LastLoginAccountDate"].ToString()
+                                                                  _GetTheWordLastLogin(Convert.ToInt32(DR_InformationOneUser["LastLoginForDay"] != DBNull.Value ? DR_InformationOneUser["LastLoginForDay"] : -1))
 
 
 
@@ -77,9 +91,14 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                 DataGridViewRow DGVR = GDataGridViewUsersInformation.Rows[rowIndex];
                 DataGridViewCell DGVC = DGVR.Cells[4];
 
+                DataGridViewRow DGVR_LastLogin = GDataGridViewUsersInformation.Rows[rowIndex];
+                DataGridViewCell DGVC_LastLogin = DGVR.Cells[6];
+
                 if (Convert.ToInt32(DR_InformationOneUser["ActiveAccount"]) == clsEETMS_Constants.kONE)
                     DGVC.Style.ForeColor = Color.Green;
                 else DGVC.Style.ForeColor = Color.Red;
+
+                DGVC_LastLogin.Style.ForeColor = Color.FromArgb(100, 116, 139);
 
             }
         }
@@ -172,7 +191,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                     else
                     {
                         G2MD.Icon = MessageDialogIcon.Error;
-                        if (mUser.RoleID == 1)
+                        if (mUser.RoleID == clsEETMS_Constants.kONE)
                         {
 
                             G2MD.Text = "The User is Inactive/Active Faild , Because The User is Admin .";

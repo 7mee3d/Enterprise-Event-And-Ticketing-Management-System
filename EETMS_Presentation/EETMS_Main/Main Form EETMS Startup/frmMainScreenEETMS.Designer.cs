@@ -32,13 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainScreenEETMS));
             this.GBorderLessForm = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.GGPanelButtonsEETMS_Main = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GCPictureBoxImageUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.GGPanelSeparatorBetweenManagmentAndMainOperation = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lblRoleUser = new System.Windows.Forms.Label();
-            this.lblNameUser = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.GPanelMainScreens = new Guna.UI2.WinForms.Guna2Panel();
-            this.GCPictureBoxImageUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.GButtonPayment = new Guna.UI2.WinForms.Guna2Button();
             this.GButtonUsersAndRoles = new Guna.UI2.WinForms.Guna2Button();
             this.GButtonReport = new Guna.UI2.WinForms.Guna2Button();
@@ -48,7 +44,11 @@
             this.GButtonCategory = new Guna.UI2.WinForms.Guna2Button();
             this.GButtonDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.PicLogoutEETMS = new System.Windows.Forms.PictureBox();
+            this.lblRoleUser = new System.Windows.Forms.Label();
+            this.lblNameUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.GPanelMainScreens = new Guna.UI2.WinForms.Guna2Panel();
             this.GGPanelButtonsEETMS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GCPictureBoxImageUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogoutEETMS)).BeginInit();
@@ -91,6 +91,19 @@
             this.GGPanelButtonsEETMS_Main.Size = new System.Drawing.Size(244, 935);
             this.GGPanelButtonsEETMS_Main.TabIndex = 0;
             // 
+            // GCPictureBoxImageUser
+            // 
+            this.GCPictureBoxImageUser.BackColor = System.Drawing.Color.Transparent;
+            this.GCPictureBoxImageUser.Image = global::EETMS_Presentation.Properties.Resources.Image_hide_White_Icon_EETMS;
+            this.GCPictureBoxImageUser.ImageRotate = 0F;
+            this.GCPictureBoxImageUser.Location = new System.Drawing.Point(9, 877);
+            this.GCPictureBoxImageUser.Name = "GCPictureBoxImageUser";
+            this.GCPictureBoxImageUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.GCPictureBoxImageUser.Size = new System.Drawing.Size(51, 43);
+            this.GCPictureBoxImageUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.GCPictureBoxImageUser.TabIndex = 9;
+            this.GCPictureBoxImageUser.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -116,65 +129,6 @@
             this.GGPanelSeparatorBetweenManagmentAndMainOperation.Name = "GGPanelSeparatorBetweenManagmentAndMainOperation";
             this.GGPanelSeparatorBetweenManagmentAndMainOperation.Size = new System.Drawing.Size(224, 10);
             this.GGPanelSeparatorBetweenManagmentAndMainOperation.TabIndex = 7;
-            // 
-            // lblRoleUser
-            // 
-            this.lblRoleUser.AutoSize = true;
-            this.lblRoleUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblRoleUser.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoleUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(198)))), ((int)(((byte)(243)))));
-            this.lblRoleUser.Location = new System.Drawing.Point(68, 901);
-            this.lblRoleUser.Name = "lblRoleUser";
-            this.lblRoleUser.Size = new System.Drawing.Size(0, 12);
-            this.lblRoleUser.TabIndex = 3;
-            // 
-            // lblNameUser
-            // 
-            this.lblNameUser.AutoSize = true;
-            this.lblNameUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameUser.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameUser.ForeColor = System.Drawing.Color.White;
-            this.lblNameUser.Location = new System.Drawing.Point(66, 881);
-            this.lblNameUser.Name = "lblNameUser";
-            this.lblNameUser.Size = new System.Drawing.Size(0, 15);
-            this.lblNameUser.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(110, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "EETMS";
-            // 
-            // GPanelMainScreens
-            // 
-            this.GPanelMainScreens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.GPanelMainScreens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GPanelMainScreens.Location = new System.Drawing.Point(244, 0);
-            this.GPanelMainScreens.Name = "GPanelMainScreens";
-            this.GPanelMainScreens.Size = new System.Drawing.Size(1419, 935);
-            this.GPanelMainScreens.TabIndex = 2;
-            this.GPanelMainScreens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseDown);
-            this.GPanelMainScreens.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseMove);
-            this.GPanelMainScreens.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseUp);
-            // 
-            // GCPictureBoxImageUser
-            // 
-            this.GCPictureBoxImageUser.BackColor = System.Drawing.Color.Transparent;
-            this.GCPictureBoxImageUser.Image = global::EETMS_Presentation.Properties.Resources.Image_hide_White_Icon_EETMS;
-            this.GCPictureBoxImageUser.ImageRotate = 0F;
-            this.GCPictureBoxImageUser.Location = new System.Drawing.Point(9, 876);
-            this.GCPictureBoxImageUser.Name = "GCPictureBoxImageUser";
-            this.GCPictureBoxImageUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.GCPictureBoxImageUser.Size = new System.Drawing.Size(53, 43);
-            this.GCPictureBoxImageUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.GCPictureBoxImageUser.TabIndex = 9;
-            this.GCPictureBoxImageUser.TabStop = false;
             // 
             // GButtonPayment
             // 
@@ -399,6 +353,28 @@
             this.PicLogoutEETMS.TabStop = false;
             this.PicLogoutEETMS.Click += new System.EventHandler(this.PicLogoutEETMS_Click);
             // 
+            // lblRoleUser
+            // 
+            this.lblRoleUser.AutoSize = true;
+            this.lblRoleUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblRoleUser.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoleUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(198)))), ((int)(((byte)(243)))));
+            this.lblRoleUser.Location = new System.Drawing.Point(68, 901);
+            this.lblRoleUser.Name = "lblRoleUser";
+            this.lblRoleUser.Size = new System.Drawing.Size(0, 12);
+            this.lblRoleUser.TabIndex = 3;
+            // 
+            // lblNameUser
+            // 
+            this.lblNameUser.AutoSize = true;
+            this.lblNameUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameUser.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameUser.ForeColor = System.Drawing.Color.White;
+            this.lblNameUser.Location = new System.Drawing.Point(66, 881);
+            this.lblNameUser.Name = "lblNameUser";
+            this.lblNameUser.Size = new System.Drawing.Size(0, 15);
+            this.lblNameUser.TabIndex = 3;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -409,6 +385,30 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(110, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "EETMS";
+            // 
+            // GPanelMainScreens
+            // 
+            this.GPanelMainScreens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.GPanelMainScreens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GPanelMainScreens.Location = new System.Drawing.Point(244, 0);
+            this.GPanelMainScreens.Name = "GPanelMainScreens";
+            this.GPanelMainScreens.Size = new System.Drawing.Size(1419, 935);
+            this.GPanelMainScreens.TabIndex = 2;
+            this.GPanelMainScreens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseDown);
+            this.GPanelMainScreens.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseMove);
+            this.GPanelMainScreens.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseUp);
             // 
             // frmMainScreenEETMS
             // 
