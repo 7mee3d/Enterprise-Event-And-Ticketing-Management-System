@@ -1,9 +1,8 @@
 ﻿using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_DataAccessLayer;
-using EETMS_Models;
 using System.Data;
-using static EETMS_Models.MPayment;
-
+using EETMS_DTOs;
+using static EETMS_DTOs.PaymentDTO;
 namespace EETMS_BusinessLayer
 {
     public class PaymentsBL
@@ -18,15 +17,15 @@ namespace EETMS_BusinessLayer
         public static DataTable GetAllInformationPaymentBy(string BookingID)
             => PaymentsDAL.GetAllInformationPaymentBy(BookingID);
 
-        private static bool _AddNewPayment(MPayment mPayment)
+        private static bool _AddNewPayment(PaymentDTO mPayment)
             => PaymentsDAL.InsertNewPayment(mPayment) > clsEETMS_Constants.kZERO;
 
-        public static bool SaveTheInformationPayment(MPayment mPayment)
+        public static bool SaveTheInformationPayment(PaymentDTO mPayment)
         {
 
             switch (mPayment.EnMode)
             {
-                case MPayment.EnModePayment._kADD_NEW_PAYMENT:
+                case PaymentDTO.EnModePayment._kADD_NEW_PAYMENT:
                     return (_AddNewPayment(mPayment));
 
                 default: return false;

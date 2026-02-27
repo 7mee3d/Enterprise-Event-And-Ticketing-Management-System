@@ -2,9 +2,9 @@
 using System;
 
 
-namespace EETMS_Models
+namespace EETMS_DTOs
 {
-    public class MEvent
+    public class EventDTO
     {
         public enum EnModeEvent
         {
@@ -28,7 +28,7 @@ namespace EETMS_Models
         public EnModeEvent EnMode { get; set; }
 
 
-        public MEvent(int eventID, string eventName, DateTime? dateTimeEvent, int durationEvent, int maxCapacity, string street, int countryID, int categoryID, string discripation, bool IsActiveEvent)
+        public EventDTO(int eventID, string eventName, DateTime? dateTimeEvent, int durationEvent, int maxCapacity, string street, int countryID, int categoryID, string discripation, bool IsActiveEvent)
         {
             this.EventID = eventID;
             this.EventName = eventName;
@@ -45,7 +45,7 @@ namespace EETMS_Models
 
         }
 
-        public MEvent()
+        public EventDTO()
         {
 
             this.EventID = default(int);

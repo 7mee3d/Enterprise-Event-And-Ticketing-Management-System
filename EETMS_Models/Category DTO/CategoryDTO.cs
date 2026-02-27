@@ -1,8 +1,8 @@
 ﻿
 
-namespace EETMS_Models
+namespace EETMS_DTOs
 {
-    public  class MCategory
+    public  class CategoryDTO
     {
 
         public enum _EnModeCategory
@@ -17,7 +17,7 @@ namespace EETMS_Models
         public string DescripationCategory  { get; set; }
         public _EnModeCategory EnMode  { get; set; }
 
-        public MCategory(int categoryID, string categoryName, string descripationCategory)
+        public CategoryDTO(int categoryID, string categoryName, string descripationCategory)
         {
             this.CategoryID = categoryID;
             this.CategoryName = categoryName;
@@ -27,7 +27,7 @@ namespace EETMS_Models
         }
 
 
-        public MCategory()
+        public CategoryDTO()
         {
             this.CategoryID = default(int);
             this.CategoryName = default(string);

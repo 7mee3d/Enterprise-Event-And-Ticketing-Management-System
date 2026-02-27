@@ -1,5 +1,5 @@
 ﻿
-using EETMS_Models;
+using EETMS_DTOs;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,10 +18,10 @@ namespace EETMS_DataAccessLayer
 
 
 
-        private static List<MReservationPayment> _GetAllInformationMReservationPayment()
+        private static List<ReservationPaymentDTO> _GetAllInformationMReservationPayment()
         {
 
-            List<MReservationPayment> LMReservationPayments = new List<MReservationPayment>();
+            List<ReservationPaymentDTO> LMReservationPayments = new List<ReservationPaymentDTO>();
 
             using (SqlConnection connection = new SqlConnection(_ConneactionString))
             {
@@ -82,7 +82,7 @@ namespace EETMS_DataAccessLayer
 
                         while (reader.Read())
                         {
-                            MReservationPayment mReservationPaymentOne = new MReservationPayment();
+                            ReservationPaymentDTO mReservationPaymentOne = new ReservationPaymentDTO();
 
                             mReservationPaymentOne.ReservationID = reader["ReservationID"] != DBNull.Value ? Convert.ToInt32(reader["ReservationID"]) : 0;
                             mReservationPaymentOne.FullName = reader["FullName"] != DBNull.Value ? reader["FullName"].ToString() : null;
@@ -100,13 +100,13 @@ namespace EETMS_DataAccessLayer
             return LMReservationPayments;
         }
 
-        public static List<MReservationPayment> GetAllInformationMReservationPayment()
+        public static List<ReservationPaymentDTO> GetAllInformationMReservationPayment()
             => _GetAllInformationMReservationPayment();
 
-        private static MReservationPayment _GetAllInformationMReservationPaymentByReservationID(int ReservationID)
+        private static ReservationPaymentDTO _GetAllInformationMReservationPaymentByReservationID(int ReservationID)
         {
 
-            MReservationPayment MReservationPayments = new MReservationPayment();
+            ReservationPaymentDTO MReservationPayments = new ReservationPaymentDTO();
 
             using (SqlConnection connection = new SqlConnection(_ConneactionString))
             {
@@ -184,7 +184,7 @@ namespace EETMS_DataAccessLayer
             return MReservationPayments;
         }
 
-        public static MReservationPayment GetAllInformationMReservationPaymentByReservationID(int ReservationID)
+        public static ReservationPaymentDTO GetAllInformationMReservationPaymentByReservationID(int ReservationID)
             => _GetAllInformationMReservationPaymentByReservationID(ReservationID);
 
 

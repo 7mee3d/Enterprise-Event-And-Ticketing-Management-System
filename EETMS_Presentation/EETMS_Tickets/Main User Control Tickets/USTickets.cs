@@ -1,14 +1,12 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
-using EETMS_Models;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Net.Sockets;
 using System.Windows.Forms;
-
+using EETMS_DTOs;
 
 namespace EETMS_Presentation.EETMS_Tickets
 {
@@ -35,7 +33,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
 
         private int _CustomerID;
-        private MReservations _MReservations;
+        private ReservationsDTO _MReservations;
         private int _EventID;
 
         public USTickets()
@@ -128,8 +126,8 @@ namespace EETMS_Presentation.EETMS_Tickets
         {
 
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket, GGButtonRegularTicketStatus);
-            _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket, GGButtonVIPTicketStatus);
-            _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket, GGButtonPremiumTicketStatus);
+            _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket, GGButtonPremiumTicketStatus);
+            _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket, GGButtonVIPTicketStatus);
 
             GNumericUpDownPremium.Enabled = false;
             GNumericUpDownRegularTicket.Enabled = false;
@@ -498,7 +496,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 if (_NumberOfTicketRegular > clsEETMS_Constants.kZERO)
                 {
 
-                    _MReservations = new MReservations()
+                    _MReservations = new ReservationsDTO()
                     {
 
                         Quantity = _NumberOfTicketRegular,
@@ -515,7 +513,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 if (_NumberOfTicketVIP > clsEETMS_Constants.kZERO)
                 {
 
-                    _MReservations = new MReservations()
+                    _MReservations = new ReservationsDTO()
                     {
 
                         Quantity = _NumberOfTicketVIP,
@@ -532,7 +530,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 if (_NumberOfTicketPreimum > clsEETMS_Constants.kZERO)
                 {
 
-                    _MReservations = new MReservations()
+                    _MReservations = new ReservationsDTO()
                     {
 
                         Quantity = _NumberOfTicketPreimum,
@@ -567,13 +565,13 @@ namespace EETMS_Presentation.EETMS_Tickets
 
             // Change The Active Event After The Fully Booking Event 
             DataTable DT_InfoEvent = EventBL.GetRemainingCapacityEventfoBy(_EventID);
-            MEvent mEvent = EventBL.FindTheEventBy(_EventID);
+            EventDTO mEvent = EventBL.FindTheEventBy(_EventID);
 
             if (Convert.ToInt32(DT_InfoEvent.Rows[0]["RemainingCapacity"]) == clsEETMS_Constants.kZERO)
             {
 
                 mEvent.IsActiveEvent = false;
-                mEvent.EnMode = MEvent.EnModeEvent._kUPDATE_INFORMATION_EVENT;
+                mEvent.EnMode = EventDTO.EnModeEvent._kUPDATE_INFORMATION_EVENT;
                 EventBL.SaveTheMode(mEvent);
 
             }

@@ -1,6 +1,6 @@
 ﻿using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_DataAccessLayer;
-using EETMS_Models;
+using EETMS_DTOs;
 
 
 namespace EETMS_BusinessLayer
@@ -9,15 +9,15 @@ namespace EETMS_BusinessLayer
     {
 
 
-        private static bool _AddNewReservation(MReservations mReservations)
+        private static bool _AddNewReservation(ReservationsDTO mReservations)
             => ReservationDAL.InsertTheNewReservation(mReservations) > clsEETMS_Constants.kZERO;
 
-        public static bool SaveTheReservatio(MReservations mReservations)
+        public static bool SaveTheReservatio(ReservationsDTO mReservations)
         {
 
             switch (mReservations.EnModeR)
             {
-                case MReservations.EnModeReservation._kADD_NEW_RESERVATION:
+                case ReservationsDTO.EnModeReservation._kADD_NEW_RESERVATION:
                     return (_AddNewReservation(mReservations));
 
                 default: return false;

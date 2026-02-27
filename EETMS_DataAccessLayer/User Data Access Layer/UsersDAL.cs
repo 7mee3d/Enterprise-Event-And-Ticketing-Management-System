@@ -3,7 +3,7 @@ using System.Configuration;
 using System;
 using System.Data.SqlClient;
 using System.Data;
-using EETMS_Models;
+using EETMS_DTOs;
 using System.Security.Cryptography;
 
 namespace EETMS_DataAccessLayer
@@ -17,10 +17,10 @@ namespace EETMS_DataAccessLayer
         private static readonly string _ConneactionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         #endregion
 
-        private static MUser _FindTheUserByUserNameOrEmail(string UsernameOrEmail)
+        private static UserDTO _FindTheUserByUserNameOrEmail(string UsernameOrEmail)
         {
 
-            MUser InfoUser = null;
+            UserDTO InfoUser = null;
 
             try
             {
@@ -74,7 +74,7 @@ namespace EETMS_DataAccessLayer
                             if (reader.Read())
                             {
 
-                                InfoUser = new MUser()
+                                InfoUser = new UserDTO()
                                 {
 
                                     UserID = reader["UserID"] != DBNull.Value ? (int)reader["UserID"] : 0,
@@ -107,15 +107,15 @@ namespace EETMS_DataAccessLayer
             return InfoUser;
         }
 
-        public static MUser FindTheUserByUserNameOrEmail(string UsernameOrEmail)
+        public static UserDTO FindTheUserByUserNameOrEmail(string UsernameOrEmail)
         {
             return _FindTheUserByUserNameOrEmail(UsernameOrEmail);
         }
 
-        private static MUser _FindTheUserBy(int IDUser)
+        private static UserDTO _FindTheUserBy(int IDUser)
         {
 
-            MUser InfoUser = null;
+            UserDTO InfoUser = null;
 
             try
             {
@@ -164,7 +164,7 @@ namespace EETMS_DataAccessLayer
                             if (reader.Read())
                             {
 
-                                InfoUser = new MUser()
+                                InfoUser = new UserDTO()
                                 {
 
                                     UserID = reader["UserID"] != DBNull.Value ? (int)reader["UserID"] : 0,
@@ -197,7 +197,7 @@ namespace EETMS_DataAccessLayer
             return InfoUser;
         }
 
-        public static MUser FindTheUserBy(int IDUser)
+        public static UserDTO FindTheUserBy(int IDUser)
             => _FindTheUserBy(IDUser);
 
         private static bool _IsExsitsTheUserByEmail(string EmailUser, string Password)
@@ -322,7 +322,7 @@ namespace EETMS_DataAccessLayer
             return _IsExsitsTheUserByUsername(Username, Password);
         }
 
-        private static int _InsertNewUser(MUser InformationNewUser)
+        private static int _InsertNewUser(UserDTO InformationNewUser)
         {
             int NewID = -1;
 
@@ -383,12 +383,12 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        public static int InsertNewUser(MUser InformationNewUser)
+        public static int InsertNewUser(UserDTO InformationNewUser)
         {
             return _InsertNewUser(InformationNewUser);
         }
 
-        private static int _UpdateInformationUser(int IDUser, MUser InformationNewUser)
+        private static int _UpdateInformationUser(int IDUser, UserDTO InformationNewUser)
         {
 
             int RowAfective = -1;
@@ -458,7 +458,7 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        public static int UpdateInformationUser(int IDUser, MUser InformationNewUser)
+        public static int UpdateInformationUser(int IDUser, UserDTO InformationNewUser)
         {
             return _UpdateInformationUser(IDUser, InformationNewUser);
         }
@@ -700,7 +700,7 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetAllInformationUsers()
             => _GetAllInformationUsers();
 
-        private static int _UpdateInformationUserActiveAccountInactiveBy(int IDUser, MUser InformationNewUser)
+        private static int _UpdateInformationUserActiveAccountInactiveBy(int IDUser, UserDTO InformationNewUser)
         {
 
             int RowAfective = -1;
@@ -751,7 +751,7 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        public static int UpdateInformationUserActiveAccountInactiveBy(int IDUser, MUser InformationNewUser)
+        public static int UpdateInformationUserActiveAccountInactiveBy(int IDUser, UserDTO InformationNewUser)
             => _UpdateInformationUserActiveAccountInactiveBy(IDUser, InformationNewUser);
     }
 }

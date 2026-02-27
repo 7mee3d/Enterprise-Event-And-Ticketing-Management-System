@@ -1,11 +1,8 @@
 ﻿
-
-using EETMS_Models;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
-using System.Xml.XPath;
-
+using EETMS_DTOs;
 
 namespace EETMS_DataAccessLayer
 {
@@ -19,7 +16,7 @@ namespace EETMS_DataAccessLayer
         #endregion
 
 
-        private static int _InsertTheNewReservation(MReservations mReservations)
+        private static int _InsertTheNewReservation(ReservationsDTO mReservations)
         {
 
             int NewIDReservation = -1;
@@ -69,7 +66,7 @@ namespace EETMS_DataAccessLayer
             return NewIDReservation;
         }
 
-        public static int InsertTheNewReservation(MReservations mReservations)
+        public static int InsertTheNewReservation(ReservationsDTO mReservations)
             => _InsertTheNewReservation(mReservations);
 
         private static int _UpdateTheQuntityTicketsBy(int EventID, string TicketTypeName, int NumberReservationTicket)

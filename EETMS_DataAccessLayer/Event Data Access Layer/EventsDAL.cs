@@ -1,5 +1,5 @@
 ﻿
-using EETMS_Models;
+using EETMS_DTOs;
 using System;
 using System.Configuration;
 using System.Data;
@@ -182,10 +182,10 @@ namespace EETMS_DataAccessLayer
             return _GetAllInformationEvents();
         }
 
-        private static MEvent _FindTheEventByID(int EventID)
+        private static EventDTO _FindTheEventByID(int EventID)
         {
 
-            MEvent InfoEvent = null;
+            EventDTO InfoEvent = null;
 
             try
             {
@@ -223,7 +223,7 @@ namespace EETMS_DataAccessLayer
 
                             if (reader.Read())
                             {
-                                InfoEvent = new MEvent()
+                                InfoEvent = new EventDTO()
                                 {
                                     EventID = reader["EventID"] != DBNull.Value ? (int)reader["EventID"] : 0,
                                     EventName = reader["EventName"] != DBNull.Value ? (string)reader["EventName"] : null,
@@ -256,12 +256,12 @@ namespace EETMS_DataAccessLayer
             return InfoEvent;
         }
 
-        public static MEvent FindTheEventByID(int EventID)
+        public static EventDTO FindTheEventByID(int EventID)
         {
             return _FindTheEventByID(EventID);
         }
 
-        private static int _InsertNewEvent(MEvent InfoNewEvent)
+        private static int _InsertNewEvent(EventDTO InfoNewEvent)
         {
             int NewID = -1;
 
@@ -336,12 +336,12 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        public static int InsertNewEvent(MEvent InfoNewEvent)
+        public static int InsertNewEvent(EventDTO InfoNewEvent)
         {
             return _InsertNewEvent(InfoNewEvent);
         }
 
-        private static int _UpdateInformationEvent(int IDEvent, MEvent NewInformationEvent)
+        private static int _UpdateInformationEvent(int IDEvent, EventDTO NewInformationEvent)
         {
             int RowAffective = -1;
 
@@ -405,7 +405,7 @@ namespace EETMS_DataAccessLayer
             return RowAffective;
         }
 
-        public static int UpdateInformationEvent(int IDEvent, MEvent NewInformationEvent)
+        public static int UpdateInformationEvent(int IDEvent, EventDTO NewInformationEvent)
         {
             return _UpdateInformationEvent(IDEvent, NewInformationEvent);
         }

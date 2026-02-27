@@ -1,5 +1,5 @@
 ﻿using EETMS_BusinessLayer;
-using EETMS_Models;
+using EETMS_DTOs;
 using EETMS_Presentation.EETMS_Category;
 using EETMS_Presentation.EETMS_Customers;
 using EETMS_Presentation.EETMS_Dashboard;
@@ -31,7 +31,7 @@ namespace EETMS_Presentation.EETMS_Main
 
         private _stInfoMovePanel _StInfoMovePanel;
 
-        MUser _InformationUser;
+        UserDTO _InformationUser;
 
         public frmMainScreenEETMS(string UsernameOrEmail)
         {

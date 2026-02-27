@@ -1,6 +1,6 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
-using EETMS_Models;
+using EETMS_DTOs;
 using EETMS_Presentation.EETMS_Settings;
 using Guna.UI2.WinForms;
 using System;
@@ -160,7 +160,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
             int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
 
-            MUser mUser = UserBL.FindUserBy(UserID);
+            UserDTO mUser = UserBL.FindUserBy(UserID);
 
             if (mUser != null)
             {

@@ -24,7 +24,7 @@ namespace EETMS_Presentation.EETMS_Customers
 
 
         private _EnModeCustomer _EnMode;
-        private MCustomer _CustomerInformation;
+        private CustomerDTO _CustomerInformation;
         private int _IDCustomer;
         private List<string> _AllInformationCustomerInList;
         public event EventHandler RequestClose;
@@ -55,8 +55,8 @@ namespace EETMS_Presentation.EETMS_Customers
             {
 
                 _EnMode = _EnModeCustomer._kADD_NEW_CUSTOMER;
-                _CustomerInformation = new MCustomer();
-                _CustomerInformation.Emode = MCustomer.EnMode._kADD_NEW_CUSTOMER;
+                _CustomerInformation = new CustomerDTO();
+                _CustomerInformation.Emode = CustomerDTO.EnMode._kADD_NEW_CUSTOMER;
                 return;
             }
 
@@ -77,7 +77,7 @@ namespace EETMS_Presentation.EETMS_Customers
             GTextBoxPhoneNumber.Text = _CustomerInformation.PhoneCustomer;
             if (_EnMode == _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER) GTextBoxNationalID.Enabled = false;
             GTextBoxNationalID.Text = _CustomerInformation.NationalID;
-            _CustomerInformation.Emode = MCustomer.EnMode._kUPDATE_INFORMATION_CUSTOMER;
+            _CustomerInformation.Emode = CustomerDTO.EnMode._kUPDATE_INFORMATION_CUSTOMER;
 
             _EnMode = _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER;
             GButtonAddNewCustomer.Text = "Update Customer";
@@ -121,7 +121,7 @@ namespace EETMS_Presentation.EETMS_Customers
 
 
 
-            MCustomer mCustomer = new MCustomer()
+            CustomerDTO mCustomer = new CustomerDTO()
             {
                 FirstName = GTextBoxFirstName.Text,
                 MidName = GTextBoxMidName.Text,
@@ -158,7 +158,7 @@ namespace EETMS_Presentation.EETMS_Customers
             GButtonAddNewCustomer.Text = "Update Customer";
             GButtonAddNewCustomer.Image = Resources.Update_Icon_EETMS;
 
-            _CustomerInformation.Emode = MCustomer.EnMode._kUPDATE_INFORMATION_CUSTOMER;
+            _CustomerInformation.Emode = CustomerDTO.EnMode._kUPDATE_INFORMATION_CUSTOMER;
             _EnMode = _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER;
 
         }

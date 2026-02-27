@@ -1,6 +1,6 @@
 ﻿using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_DataAccessLayer;
-using EETMS_Models;
+using EETMS_DTOs;
 using System;
 using System.Data;
 
@@ -16,22 +16,22 @@ namespace EETMS_BusinessLayer
         public static bool IsUserExsitsByUsername(string Username, string Password)
             => UsersDAL.IsExsitsTheUserByUsername(Username, Password);
 
-        public static bool AddNewUser(MUser InformationNewUser)
+        public static bool AddNewUser(UserDTO InformationNewUser)
             => UsersDAL.InsertNewUser(InformationNewUser) > clsEETMS_Constants.kZERO;
 
-        public static bool UpdateInformationUser(MUser InformationNewUser)
+        public static bool UpdateInformationUser(UserDTO InformationNewUser)
             => UsersDAL.UpdateInformationUser(InformationNewUser.UserID, InformationNewUser) > clsEETMS_Constants.kZERO;
 
-        public static bool SaveInformationUserMode(MUser InformationUser, bool IsUpdateActiveAccountUser = false)
+        public static bool SaveInformationUserMode(UserDTO InformationUser, bool IsUpdateActiveAccountUser = false)
         {
 
             if (!IsUpdateActiveAccountUser)
                 switch (InformationUser.enMode)
                 {
-                    case MUser.EnModeUser._kADD_NEW_USER:
+                    case UserDTO.EnModeUser._kADD_NEW_USER:
                         return (AddNewUser(InformationUser)) ? true : false;
 
-                    case MUser.EnModeUser._kUPDATE_INFORMATION_USER:
+                    case UserDTO.EnModeUser._kUPDATE_INFORMATION_USER:
                         return UpdateInformationUser(InformationUser);
                 }
             else
@@ -42,19 +42,19 @@ namespace EETMS_BusinessLayer
 
         }
 
-        public static MUser.EnStatusLoginUser PassLoginTheUser(string UsernameOrEmail, string Password)
+        public static UserDTO.EnStatusLoginUser PassLoginTheUser(string UsernameOrEmail, string Password)
         {
 
-            MUser InfoUser = UsersDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
+            UserDTO InfoUser = UsersDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
 
             if (InfoUser == null)
-                return MUser.EnStatusLoginUser._kUSER_NOT_FOUND;
+                return UserDTO.EnStatusLoginUser._kUSER_NOT_FOUND;
 
             if (!InfoUser.IsActiveAccount)
-                return MUser.EnStatusLoginUser._kBLOCKED_USER;
+                return UserDTO.EnStatusLoginUser._kBLOCKED_USER;
 
             if (InfoUser.NumberAttempts <= clsEETMS_Constants.kZERO)
-                return MUser.EnStatusLoginUser._kBLOCKED_USER;
+                return UserDTO.EnStatusLoginUser._kBLOCKED_USER;
 
             InfoUser.LastLoginUser = DateTime.Now;
 
@@ -67,7 +67,7 @@ namespace EETMS_BusinessLayer
 
 
                 UpdateInformationUser(InfoUser);
-                return MUser.EnStatusLoginUser._kSUCCESS_LOGIN;
+                return UserDTO.EnStatusLoginUser._kSUCCESS_LOGIN;
 
             }
             else
@@ -76,18 +76,18 @@ namespace EETMS_BusinessLayer
                     InfoUser.NumberAttempts -= clsEETMS_Constants.kONE;
 
                 UpdateInformationUser(InfoUser);
-                return (InfoUser.NumberAttempts > clsEETMS_Constants.kZERO) ? MUser.EnStatusLoginUser._kFAILD_LOGIN : MUser.EnStatusLoginUser._kBLOCKED_USER;
+                return (InfoUser.NumberAttempts > clsEETMS_Constants.kZERO) ? UserDTO.EnStatusLoginUser._kFAILD_LOGIN : UserDTO.EnStatusLoginUser._kBLOCKED_USER;
 
             }
 
         }
 
-        public static MUser FindUser(string UsernameOrEmail)
+        public static UserDTO FindUser(string UsernameOrEmail)
         {
             return UsersDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
         }
 
-        public static MUser FindUserBy(int IDUser)
+        public static UserDTO FindUserBy(int IDUser)
             => UsersDAL.FindTheUserBy(IDUser);
 
         public static int GetTotalUsers()
@@ -105,7 +105,7 @@ namespace EETMS_BusinessLayer
         public static bool DeleteTheUserBy(int IDUser)
             => UsersDAL.DeleteTheUserBy(IDUser) > clsEETMS_Constants.kZERO;
 
-        public static bool UpdateInformationActiveAccountUserBy(int UserID, MUser mUser)
+        public static bool UpdateInformationActiveAccountUserBy(int UserID, UserDTO mUser)
             => UsersDAL.UpdateInformationUserActiveAccountInactiveBy(UserID, mUser) > 0;
 
 

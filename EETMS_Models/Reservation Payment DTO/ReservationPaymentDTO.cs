@@ -1,8 +1,8 @@
 ﻿
 
-namespace EETMS_Models
+namespace EETMS_DTOs
 {
-    public class MReservationPayment
+    public class ReservationPaymentDTO
     {
 
         public int ReservationID { get; set; }
@@ -12,7 +12,7 @@ namespace EETMS_Models
         public decimal Remaining { get; set; }
         public string DisplayComboBox => $"BK-{ReservationID} - {FullName}";
 
-        public MReservationPayment(int reservationID, string fullName, decimal totalAmount, decimal paidAmount, decimal remaining)
+        public ReservationPaymentDTO(int reservationID, string fullName, decimal totalAmount, decimal paidAmount, decimal remaining)
         {
             this.ReservationID = reservationID;
             this.FullName = fullName;
@@ -22,7 +22,7 @@ namespace EETMS_Models
         }
 
 
-        public MReservationPayment()
+        public ReservationPaymentDTO()
         {
             this.ReservationID = default(int);
             this.FullName = default(string);

@@ -41,14 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category Model\MCategory.cs" />
-    <Compile Include="Customer Model\MCustomer.cs" />
-    <Compile Include="Event Model\MEvent.cs" />
-    <Compile Include="Ticket Type Model\MTicketType.cs" />
-    <Compile Include="Payment Model\MPayment.cs" />
-    <Compile Include="Reservation Payment Model\MReservationPayment.cs" />
-    <Compile Include="Reservation Model\MReservations.cs" />
-    <Compile Include="User Model\MUser.cs" />
+    <Compile Include="Category DTO\CategoryDTO.cs" />
+    <Compile Include="Customer DTO\CustomerDTO.cs" />
+    <Compile Include="Event DTO\EventDTO.cs" />
+    <Compile Include="Ticket Type DTO\TicketTypeDTO.cs" />
+    <Compile Include="Payment DTO\PaymentDTO.cs" />
+    <Compile Include="Reservation Payment DTO\ReservationPaymentDTO.cs" />
+    <Compile Include="Reservation DTO\ReservationsDTO.cs" />
+    <Compile Include="User DTO\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

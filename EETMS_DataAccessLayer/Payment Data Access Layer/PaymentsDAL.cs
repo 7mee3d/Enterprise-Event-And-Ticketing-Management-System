@@ -1,6 +1,6 @@
 ﻿
 
-using EETMS_Models;
+using EETMS_DTOs;
 using System;
 using System.Configuration;
 using System.Data;
@@ -176,7 +176,7 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetAllInformationPaymentBy(string BookingID)
             => _GetAllInformationPaymentBy(BookingID);
 
-        private static int _InsertNewPayment(MPayment mPayment)
+        private static int _InsertNewPayment(PaymentDTO mPayment)
         {
 
             int NewIDReservationPayment = -1;
@@ -220,7 +220,7 @@ namespace EETMS_DataAccessLayer
             return NewIDReservationPayment;
         }
 
-        public static int InsertNewPayment(MPayment mPayment)
+        public static int InsertNewPayment(PaymentDTO mPayment)
             => _InsertNewPayment(mPayment);
 
 

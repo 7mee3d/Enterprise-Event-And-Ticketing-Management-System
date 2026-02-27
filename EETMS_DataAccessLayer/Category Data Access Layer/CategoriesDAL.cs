@@ -1,4 +1,4 @@
-﻿using EETMS_Models;
+﻿using EETMS_DTOs;
 using System;
 using System.Configuration;
 using System.Data;
@@ -134,7 +134,7 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetAllInformationCategories()
              => _GetAllInformationCategories();
 
-        private static int _InsertTheNewCategory(MCategory NewInformationCategory)
+        private static int _InsertTheNewCategory(CategoryDTO NewInformationCategory)
         {
 
             int NewIDCategory = -1;
@@ -198,13 +198,13 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        public static int InsertTheNewCategory(MCategory NewInformationCategory)
+        public static int InsertTheNewCategory(CategoryDTO NewInformationCategory)
              => _InsertTheNewCategory(NewInformationCategory);
 
-        private static MCategory _FindTheCategoryBy(int IDCategory)
+        private static CategoryDTO _FindTheCategoryBy(int IDCategory)
         {
 
-            MCategory CategoryInfo = null;
+            CategoryDTO CategoryInfo = null;
 
 
             using (SqlConnection connection = new SqlConnection(_ConneactionString))
@@ -236,7 +236,7 @@ namespace EETMS_DataAccessLayer
 
                         if (reader.Read())
                         {
-                            CategoryInfo = new MCategory();
+                            CategoryInfo = new CategoryDTO();
 
                             CategoryInfo.CategoryID = reader["CategoryID"] != DBNull.Value ? (int)reader["CategoryID"] : 0;
                             CategoryInfo.CategoryName = reader["CategoryName"] != DBNull.Value ? reader["CategoryName"].ToString() : null;
@@ -250,10 +250,10 @@ namespace EETMS_DataAccessLayer
             return CategoryInfo;
         }
 
-        public static MCategory FindTheCategoryBy(int IDCategory)
+        public static CategoryDTO FindTheCategoryBy(int IDCategory)
             => _FindTheCategoryBy(IDCategory);
 
-        private static int _UpdateInformationCategoryBy(int IDCategory, MCategory NewInformationCategory)
+        private static int _UpdateInformationCategoryBy(int IDCategory, CategoryDTO NewInformationCategory)
         {
             int RowAffective = -1;
 
@@ -301,7 +301,7 @@ namespace EETMS_DataAccessLayer
             return RowAffective;
         }
 
-        public static int UpdateInformationCategoryBy(int IDCategory, MCategory NewInformationCategory)
+        public static int UpdateInformationCategoryBy(int IDCategory, CategoryDTO NewInformationCategory)
             => _UpdateInformationCategoryBy(IDCategory, NewInformationCategory);
 
         private static int _DeleteTheCategoryBy(int IDCategory)

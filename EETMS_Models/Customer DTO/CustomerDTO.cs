@@ -1,7 +1,7 @@
 ﻿
 namespace EETMS_Models
 {
-    public class MCustomer
+    public class CustomerDTO
     {
 
         public enum EnMode
@@ -22,7 +22,7 @@ namespace EETMS_Models
         public EnMode Emode { get; set; }
 
 
-        public MCustomer()
+        public CustomerDTO()
         {
             this.CusotmerID = default(int);
             this.FirstName = default(string);
@@ -35,7 +35,7 @@ namespace EETMS_Models
             Emode = EnMode._kADD_NEW_CUSTOMER;
         }
 
-        public MCustomer(int cusotmerID, string firstName, string midName, string lastName, string nationalID, string emailCustomer, string phoneCustomer, EnMode emode)
+        public CustomerDTO(int cusotmerID, string firstName, string midName, string lastName, string nationalID, string emailCustomer, string phoneCustomer, EnMode emode)
         {
 
             this.CusotmerID = cusotmerID;

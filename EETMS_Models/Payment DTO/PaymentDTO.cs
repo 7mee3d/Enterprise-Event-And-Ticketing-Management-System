@@ -2,9 +2,9 @@
 
 using System;
 
-namespace EETMS_Models
+namespace EETMS_DTOs
 {
-    public class MPayment
+    public class PaymentDTO
     {
 
         public enum EnModePayment
@@ -33,7 +33,7 @@ namespace EETMS_Models
         public string PaymentStatus { get; set; }
         public EnModePayment EnMode { get; set; }
 
-        public MPayment(int paymentID, int bookingID, DateTime? bookingDateTime, int customerID, decimal totalAmount, decimal paidAmount, string paymentMethod, string paymentStatus)
+        public PaymentDTO(int paymentID, int bookingID, DateTime? bookingDateTime, int customerID, decimal totalAmount, decimal paidAmount, string paymentMethod, string paymentStatus)
         {
             this.PaymentID = paymentID;
             this.BookingID = bookingID;
@@ -48,7 +48,7 @@ namespace EETMS_Models
         }
 
 
-        public MPayment()
+        public PaymentDTO()
         {
             this.PaymentID = default(int);
             this.BookingID = default(int);

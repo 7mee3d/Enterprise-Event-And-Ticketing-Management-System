@@ -5,6 +5,7 @@ using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EETMS_DTOs;
 
 namespace EETMS_Presentation
 {
@@ -67,18 +68,18 @@ namespace EETMS_Presentation
 
             switch (UserBL.PassLoginTheUser(UserNameOrEmail, Password))
             {
-                case EETMS_Models.MUser.EnStatusLoginUser._kSUCCESS_LOGIN:
+                case UserDTO.EnStatusLoginUser._kSUCCESS_LOGIN:
                     //await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "Login Sccessfully", Color.Green);
                     OpenMainScreenEETMS(UserNameOrEmail);
                     break;
 
-                case EETMS_Models.MUser.EnStatusLoginUser._kFAILD_LOGIN:
+                case UserDTO.EnStatusLoginUser._kFAILD_LOGIN:
                     await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "Username or Password is incorrect", Color.Red); break;
 
-                case EETMS_Models.MUser.EnStatusLoginUser._kBLOCKED_USER:
+                case UserDTO.EnStatusLoginUser._kBLOCKED_USER:
                     await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "User is blocked", Color.Red); break;
 
-                case EETMS_Models.MUser.EnStatusLoginUser._kUSER_NOT_FOUND:
+                case UserDTO.EnStatusLoginUser._kUSER_NOT_FOUND:
                     await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "User not found", Color.Red); break;
             }
         }

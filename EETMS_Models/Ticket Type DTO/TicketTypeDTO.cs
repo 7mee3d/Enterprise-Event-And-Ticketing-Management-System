@@ -1,5 +1,5 @@
 ﻿
-namespace EETMS_Models
+namespace EETMS_DTOs
 {
     public class MTicketType
     {

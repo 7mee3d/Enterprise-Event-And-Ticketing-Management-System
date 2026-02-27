@@ -2,9 +2,9 @@
 
 using System;
 
-namespace EETMS_Models
+namespace EETMS_DTOs
 {
-    public class MReservations
+    public class ReservationsDTO
     {
 
         public enum EnModeReservation
@@ -20,7 +20,7 @@ namespace EETMS_Models
         public int CustomerID { get; set; }
         public EnModeReservation EnModeR { get; set; } = EnModeReservation._kADD_NEW_RESERVATION;
 
-        public MReservations(int reservationID, DateTime? bookingDateTime, int quantity, int ticketTypeID, int customerID)
+        public ReservationsDTO(int reservationID, DateTime? bookingDateTime, int quantity, int ticketTypeID, int customerID)
         {
             this.ReservationID = reservationID;
             this.BookingDateTime = bookingDateTime;
@@ -32,7 +32,7 @@ namespace EETMS_Models
         }
 
 
-        public MReservations()
+        public ReservationsDTO()
         {
             this.ReservationID = default(int);
             this.BookingDateTime = default(DateTime);

@@ -112,10 +112,10 @@ namespace EETMS_DataAccessLayer
             return _GetAllCustomersInformationJoinesPhoneAndEmail();
         }
 
-        private static MCustomer _FindTheCustomerReturingAllInformation(int CustomerID)
+        private static CustomerDTO _FindTheCustomerReturingAllInformation(int CustomerID)
         {
 
-            MCustomer InfoCustomer = null;
+            CustomerDTO InfoCustomer = null;
 
             try
             {
@@ -159,7 +159,7 @@ namespace EETMS_DataAccessLayer
                             if (reader.Read())
                             {
 
-                                InfoCustomer = new MCustomer();
+                                InfoCustomer = new CustomerDTO();
 
                                 InfoCustomer.CusotmerID = reader["CusotmerID"] != DBNull.Value ? (int)reader["CusotmerID"] : 0;
                                 InfoCustomer.FirstName = reader["FirstName"] != DBNull.Value ? (string)reader["FirstName"] : null;
@@ -185,12 +185,12 @@ namespace EETMS_DataAccessLayer
             return InfoCustomer;
         }
 
-        public static MCustomer FindTheCustomerReturingAllInformation(int CustomerID)
+        public static CustomerDTO FindTheCustomerReturingAllInformation(int CustomerID)
         {
             return _FindTheCustomerReturingAllInformation(CustomerID);
         }
 
-        private static int _InsertNewCustomer(MCustomer NewCsutomer)
+        private static int _InsertNewCustomer(CustomerDTO NewCsutomer)
         {
 
             int ID_NewCustomer = -1;
@@ -275,7 +275,7 @@ namespace EETMS_DataAccessLayer
             return ID_NewCustomer;
         }
 
-        public static int InsertNewCustomer(MCustomer NewCsutomer)
+        public static int InsertNewCustomer(CustomerDTO NewCsutomer)
         {
             return _InsertNewCustomer(NewCsutomer);
         }
@@ -327,7 +327,7 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        private static int _UpdateInformationCustomer(int IDCustomer, MCustomer NewCsutomerInformation)
+        private static int _UpdateInformationCustomer(int IDCustomer, CustomerDTO NewCsutomerInformation)
         {
 
 
@@ -400,7 +400,7 @@ namespace EETMS_DataAccessLayer
             return RowAffective;
         }
 
-        public static int UpdateInformationCustomer(int IDCustomer, MCustomer NewCsutomerInformation)
+        public static int UpdateInformationCustomer(int IDCustomer, CustomerDTO NewCsutomerInformation)
         {
             return _UpdateInformationCustomer(IDCustomer, NewCsutomerInformation);
         }
@@ -493,7 +493,7 @@ namespace EETMS_DataAccessLayer
             return _SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(ToBySearch);
         }
 
-        private static bool _FindTheCustomerBy(MCustomer mCustomerNames)
+        private static bool _FindTheCustomerBy(CustomerDTO mCustomerNames)
         {
 
             bool FlagFindTheCustomer = false;
@@ -543,7 +543,7 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        public static bool FindTheCustomerBy(MCustomer mCustomerNames)
+        public static bool FindTheCustomerBy(CustomerDTO mCustomerNames)
             => _FindTheCustomerBy(mCustomerNames);
 
         #endregion

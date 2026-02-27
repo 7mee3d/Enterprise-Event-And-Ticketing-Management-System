@@ -62,9 +62,9 @@
       <Project>{3b9459ca-bbd0-4da4-ad39-59af5ebf2ef8}</Project>
       <Name>EETMS_DataAccessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EETMS_Models\EETMS_Models.csproj">
+    <ProjectReference Include="..\EETMS_Models\EETMS_DTOs.csproj">
       <Project>{1fa2ae45-6cde-4d78-9289-319dd1ab5bed}</Project>
-      <Name>EETMS_Models</Name>
+      <Name>EETMS_DTOs</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

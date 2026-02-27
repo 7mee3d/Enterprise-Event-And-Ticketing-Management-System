@@ -1,6 +1,6 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
-using EETMS_Models;
+using EETMS_DTOs;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
@@ -22,7 +22,7 @@ namespace EETMS_Presentation.EETMS_Events
         private _EnMode _Mode;
         public event EventHandler RequestClose;
         public event EventHandler<int> ERequestTheOpen_AddAndUpdateTheTicketsEvents;
-        private MEvent _InformationEvent;
+        private EventDTO _InformationEvent;
         private int _IDEvent;
 
 
@@ -54,8 +54,8 @@ namespace EETMS_Presentation.EETMS_Events
             if (_Mode == _EnMode._kADD_NEW_EVENT)
             {
                 GDateTimePickerEvent.MinDate = DateTime.Today;
-                _InformationEvent = new MEvent();
-                _InformationEvent.EnMode = MEvent.EnModeEvent._kADD_NEW_EVENT;
+                _InformationEvent = new EventDTO();
+                _InformationEvent.EnMode = EventDTO.EnModeEvent._kADD_NEW_EVENT;
                 return;
             }
 
@@ -71,7 +71,7 @@ namespace EETMS_Presentation.EETMS_Events
 
 
             _Mode = _EnMode._kEDIT_THE_INFORMATION_EVENT;
-            _InformationEvent.EnMode = MEvent.EnModeEvent._kUPDATE_INFORMATION_EVENT;
+            _InformationEvent.EnMode = EventDTO.EnModeEvent._kUPDATE_INFORMATION_EVENT;
             GTextBoxEventName.Text = _InformationEvent.EventName;
             GTextBoxDiscripation.Text = _InformationEvent.Discripation;
             GDateTimePickerEvent.Value = _InformationEvent.DateTimeEvent.Value;
@@ -190,12 +190,12 @@ namespace EETMS_Presentation.EETMS_Events
             {
                 _IDEvent = _InformationEvent.EventID;
 
-                if (_InformationEvent.EnMode == MEvent.EnModeEvent._kADD_NEW_EVENT) MessageBox.Show("Add The New Event Information Sccessfully", "Note The Add New Event ");
+                if (_InformationEvent.EnMode == EventDTO.EnModeEvent._kADD_NEW_EVENT) MessageBox.Show("Add The New Event Information Sccessfully", "Note The Add New Event ");
                 else MessageBox.Show("Update The Event Information Sccessfully", "Note The Update Event ");
             }
 
             GButtonCreateEvent.Text = "Update Event";
-            _InformationEvent.EnMode = MEvent.EnModeEvent._kUPDATE_INFORMATION_EVENT;
+            _InformationEvent.EnMode = EventDTO.EnModeEvent._kUPDATE_INFORMATION_EVENT;
             _Mode = _EnMode._kEDIT_THE_INFORMATION_EVENT;
 
             if (_IDEvent > clsEETMS_Constants.kZERO)

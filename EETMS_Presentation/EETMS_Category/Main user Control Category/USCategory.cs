@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_BusinessLayer.Validation;
-using EETMS_Models;
+using EETMS_DTOs;
 using EETMS_Presentation.Properties;
 using Guna.UI2.WinForms;
 
@@ -16,7 +16,7 @@ namespace EETMS_Presentation.EETMS_Category
     {
 
 
-        private MCategory _CategoryInfo;
+        private CategoryDTO _CategoryInfo;
         private int IDCategory;
         private _EnModeCategory _ModeCategory;
 
@@ -85,7 +85,7 @@ namespace EETMS_Presentation.EETMS_Category
             if (!_CheckTheTextBoxFiledOrNot())
 
                 if (CategoriesBL.SaveInformationCategory(_CategoryInfo))
-                    if (_CategoryInfo.EnMode == MCategory._EnModeCategory._kAADD_NEW_CATEGORY)
+                    if (_CategoryInfo.EnMode == CategoryDTO._EnModeCategory._kAADD_NEW_CATEGORY)
                     {
 
                         IDCategory = _CategoryInfo.CategoryID;
@@ -115,7 +115,7 @@ namespace EETMS_Presentation.EETMS_Category
 
         private void _InitalSettingUpdateMode()
         {
-            _CategoryInfo.EnMode = MCategory._EnModeCategory._kUPDATE_INFORMATION_CATEGORY;
+            _CategoryInfo.EnMode = CategoryDTO._EnModeCategory._kUPDATE_INFORMATION_CATEGORY;
             GTextBoxCategoryName.Text = _CategoryInfo.CategoryName;
             GTextBoxCategoryDescripation.Text = _CategoryInfo.DescripationCategory;
             _ModeCategory = _EnModeCategory._UPDATE_INFORMATION_CATEGORY;
@@ -131,8 +131,8 @@ namespace EETMS_Presentation.EETMS_Category
             if (_ModeCategory == _EnModeCategory._ADD_NEW_CATEGORY && IDCategory == clsEETMS_Constants.kNEGATIVE_ONE)
             {
                 GGButtonAddNewCategory.Text = "Add New Category";
-                _CategoryInfo = new MCategory();
-                _CategoryInfo.EnMode = MCategory._EnModeCategory._kAADD_NEW_CATEGORY;
+                _CategoryInfo = new CategoryDTO();
+                _CategoryInfo.EnMode = CategoryDTO._EnModeCategory._kAADD_NEW_CATEGORY;
 
                 return;
             }

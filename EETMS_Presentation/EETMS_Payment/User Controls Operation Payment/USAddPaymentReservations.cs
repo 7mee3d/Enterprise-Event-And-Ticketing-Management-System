@@ -1,6 +1,6 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
-using EETMS_Models;
+using EETMS_DTOs;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -11,8 +11,8 @@ namespace EETMS_Presentation.EETMS_Payment
     {
 
         public event EventHandler ERequestTheClosePaymentBooking;
-        private MReservationPayment _MReservationPayment;
-        private MPayment mPayment;
+        private ReservationPaymentDTO _MReservationPayment;
+        private PaymentDTO mPayment;
 
 
         public USAddPaymentReservations()
@@ -26,7 +26,7 @@ namespace EETMS_Presentation.EETMS_Payment
 
         private void _LoadThReservationPaymentIDandNameCustomer()
         {
-            List<MReservationPayment> AllInformationReservationPayment = ReservationPaymentBL.GetAllInformationReservationPayment();
+            List<ReservationPaymentDTO> AllInformationReservationPayment = ReservationPaymentBL.GetAllInformationReservationPayment();
 
 
             GComboBoxBookingIDAndCustomerName.DataSource = AllInformationReservationPayment;
@@ -83,7 +83,7 @@ namespace EETMS_Presentation.EETMS_Payment
         private void _AddNewPayment()
         {
 
-            mPayment = new MPayment();
+            mPayment = new PaymentDTO();
 
 
             int StatusPaymentNumber = clsEETMS_Constants.kZERO;
@@ -98,9 +98,9 @@ namespace EETMS_Presentation.EETMS_Payment
                 mPayment.PaidAmount = AmountToPay;
 
 
-            if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == MPayment.EnPaymentStatus._kPAID)
+            if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == PaymentDTO.EnPaymentStatus._kPAID)
                 StatusPaymentNumber = clsEETMS_Constants.kONE;
-            else if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == MPayment.EnPaymentStatus._kPARTIALLY_PAID)
+            else if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == PaymentDTO.EnPaymentStatus._kPARTIALLY_PAID)
                 StatusPaymentNumber = 2;
             else
                 StatusPaymentNumber = 3;
@@ -118,7 +118,7 @@ namespace EETMS_Presentation.EETMS_Payment
 
             if (mPayment != null)
             {
-                mPayment = new MPayment
+                mPayment = new PaymentDTO
                 {
 
                     PaidAmount = AmountToPay,

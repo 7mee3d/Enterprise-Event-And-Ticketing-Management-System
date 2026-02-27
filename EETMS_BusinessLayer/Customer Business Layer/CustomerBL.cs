@@ -19,17 +19,17 @@ namespace EETMS_BusinessLayer
             return CustomerDAL.GetAllCustomersInformationJoinesPhoneAndEmail();
         }
 
-        public static MCustomer FindCustomer(int CustomerID)
+        public static CustomerDTO FindCustomer(int CustomerID)
         {
             return CustomerDAL.FindTheCustomerReturingAllInformation(CustomerID);
         }
 
-        private static bool _AddNewCustomer(MCustomer NewCustomer)
+        private static bool _AddNewCustomer(CustomerDTO NewCustomer)
         {
             return CustomerDAL.InsertNewCustomer(NewCustomer) > clsEETMS_Constants.kZERO;
         }
 
-        private static bool _UpdateInformationCustomer(int IDCustomer, MCustomer NewInfromationCustomer)
+        private static bool _UpdateInformationCustomer(int IDCustomer, CustomerDTO NewInfromationCustomer)
         {
             return CustomerDAL.UpdateInformationCustomer(IDCustomer, NewInfromationCustomer) > clsEETMS_Constants.kZERO;
         }
@@ -40,20 +40,20 @@ namespace EETMS_BusinessLayer
 
         }
 
-        public static bool Save(MCustomer NewCustomer)
+        public static bool Save(CustomerDTO NewCustomer)
         {
 
             switch (NewCustomer.Emode)
             {
 
 
-                case MCustomer.EnMode._kADD_NEW_CUSTOMER:
+                case CustomerDTO.EnMode._kADD_NEW_CUSTOMER:
                     if (_AddNewCustomer(NewCustomer: NewCustomer))
                         return true;
                     else return false;
 
 
-                case MCustomer.EnMode._kUPDATE_INFORMATION_CUSTOMER:
+                case CustomerDTO.EnMode._kUPDATE_INFORMATION_CUSTOMER:
                     return _UpdateInformationCustomer(
 
                                                       IDCustomer: NewCustomer.CusotmerID,
@@ -71,7 +71,7 @@ namespace EETMS_BusinessLayer
             return CustomerDAL.SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(StrToBeSearch);
         }
 
-        public static bool _IsTheNameCustomerExsistsBy(MCustomer mCustomerName)
+        public static bool _IsTheNameCustomerExsistsBy(CustomerDTO mCustomerName)
             => CustomerDAL.FindTheCustomerBy(mCustomerName);
     }
 }

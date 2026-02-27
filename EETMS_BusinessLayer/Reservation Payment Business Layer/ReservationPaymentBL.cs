@@ -1,6 +1,6 @@
 ﻿
 using EETMS_DataAccessLayer;
-using EETMS_Models;
+using EETMS_DTOs;
 using System.Collections.Generic;
 
 namespace EETMS_BusinessLayer
@@ -8,10 +8,10 @@ namespace EETMS_BusinessLayer
     public class ReservationPaymentBL
     {
 
-        public static List<MReservationPayment> GetAllInformationReservationPayment()
+        public static List<ReservationPaymentDTO> GetAllInformationReservationPayment()
             => ReservationPaymentDAL.GetAllInformationMReservationPayment();
 
-        public static MReservationPayment GetAllInformationReservationPaymentByReservationID(int ReservationID)
+        public static ReservationPaymentDTO GetAllInformationReservationPaymentByReservationID(int ReservationID)
       => ReservationPaymentDAL.GetAllInformationMReservationPaymentByReservationID(ReservationID);
     }
 }

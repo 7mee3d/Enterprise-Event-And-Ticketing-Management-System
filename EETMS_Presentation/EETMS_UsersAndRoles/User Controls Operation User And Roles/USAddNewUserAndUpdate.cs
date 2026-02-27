@@ -2,7 +2,7 @@
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_BusinessLayer.Roles_Business_Layer;
 using EETMS_BusinessLayer.Validation;
-using EETMS_Models;
+using EETMS_DTOs;
 using EETMS_Presentation.Properties;
 using Guna.UI2.WinForms;
 using System;
@@ -20,7 +20,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
         private int _IDUser;
         private string _ImagePathUser;
         private _EnModeUser _EnMode;
-        private MUser _InformationUser;
+        private UserDTO _InformationUser;
 
         private enum _EnModeUser
         {
@@ -54,7 +54,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             if (_EnMode == _EnModeUser._kADD_NEW_USER)
             {
                 lblTiteTheUS.Text = "Create Account";
-                _InformationUser = new MUser();
+                _InformationUser = new UserDTO();
                 return;
 
             }
@@ -89,7 +89,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             }
 
-            _InformationUser.enMode = MUser.EnModeUser._kUPDATE_INFORMATION_USER;
+            _InformationUser.enMode = UserDTO.EnModeUser._kUPDATE_INFORMATION_USER;
             _EnMode = _EnModeUser._kUPDATE_INFORMATION_USER;
             GButtonCreateTheNewUser.Text = "Update Information User";
             lblTiteTheUS.Text = "Update Account";
@@ -200,7 +200,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
                 GCPictureBoxImageUser.Image = Image.FromFile(_InformationUser.ImagePath);
             }
 
-            _InformationUser.enMode = MUser.EnModeUser._kUPDATE_INFORMATION_USER;
+            _InformationUser.enMode = UserDTO.EnModeUser._kUPDATE_INFORMATION_USER;
             _EnMode = _EnModeUser._kUPDATE_INFORMATION_USER;
             GButtonCreateTheNewUser.Text = "Update Information User";
             lblTiteTheUS.Text = "Update Account";

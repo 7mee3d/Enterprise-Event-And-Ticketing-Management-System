@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EETMS_Models
+
+namespace EETMS_DTOs
 {
-    public class MUser
+    public class UserDTO
     {
         /*
           public struct stRoleUser
@@ -61,7 +58,7 @@ namespace EETMS_Models
 
         #region Constractors User class 
 
-        public MUser(int userID, string userFullName, string username, string passwordUser, string emailUser, bool isActiveAccount, int RoleID, short numberAttempts)
+        public UserDTO(int userID, string userFullName, string username, string passwordUser, string emailUser, bool isActiveAccount, int RoleID, short numberAttempts)
         {
             UserID = userID;
             UserFullName = userFullName;
@@ -74,7 +71,7 @@ namespace EETMS_Models
             this.enMode = EnModeUser._kUPDATE_INFORMATION_USER;
         }
 
-        public MUser()
+        public UserDTO()
         {
             this.UserID = default(int);
             this.UserFullName = default(string);
