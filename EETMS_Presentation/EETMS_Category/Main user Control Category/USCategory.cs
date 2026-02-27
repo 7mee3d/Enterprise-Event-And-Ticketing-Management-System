@@ -176,7 +176,7 @@ namespace EETMS_Presentation.EETMS_Category
 
                     CategoryID,
                     CategoriesGroupByName_DT.Rows[counter]["CategoryName"].ToString(),
-                    CategoriesGroupByName_DT.Rows[counter]["CountEventForCategory"].ToString(),
+                    CategoriesGroupByName_DT.Rows[counter]["CountEventForCategory"].ToString() ,
                     Categories_DT.Rows[counter]["Discripation"].ToString()
 
 

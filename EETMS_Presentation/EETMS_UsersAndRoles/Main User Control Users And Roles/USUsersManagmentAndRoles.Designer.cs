@@ -503,7 +503,7 @@
             this.GContextMenuStripUsers.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.GContextMenuStripUsers.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.GContextMenuStripUsers.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripUsers.Size = new System.Drawing.Size(189, 118);
+            this.GContextMenuStripUsers.Size = new System.Drawing.Size(189, 96);
             // 
             // toolStripTextBox1
             // 

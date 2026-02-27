@@ -275,7 +275,6 @@ namespace EETMS_Presentation.EETMS_Tickets
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
 
-
         }
 
         private void GGPanelPermiumTicket_MouseClick(object sender, MouseEventArgs e)

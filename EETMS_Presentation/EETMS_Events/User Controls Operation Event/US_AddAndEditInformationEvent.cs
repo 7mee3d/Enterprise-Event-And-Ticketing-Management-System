@@ -1,6 +1,7 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_Models;
+using Guna.UI2.WinForms;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -90,15 +91,11 @@ namespace EETMS_Presentation.EETMS_Events
         }
 
         private void GButtonBackTheEvents_Click(object sender, EventArgs e)
-        {
-            RequestClose?.Invoke(this, EventArgs.Empty);
-        }
-
+            => RequestClose?.Invoke(this, EventArgs.Empty);
+        
         private void GButtonCansel_Click(object sender, EventArgs e)
-        {
-            RequestClose?.Invoke(this, EventArgs.Empty);
-        }
-
+            => RequestClose?.Invoke(this, EventArgs.Empty);
+        
         private void _LoadAllInformationCountriesInComboBox()
         {
 
@@ -123,8 +120,56 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
+        private string _TextTheMessageDialogToCheckTheDataEventEntered()
+        {
+
+            string Text = clsEETMS_Constants.kEMPTY_STRING;
+
+            if (string.IsNullOrWhiteSpace(GTextBoxEventName.Text))
+                Text += "\nPlease,Enter a Event Name";
+
+            if (string.IsNullOrWhiteSpace(GTextBoxDiscripation.Text))
+                Text += "\nPlease,Enter a Descripation Event";
+
+            if (string.IsNullOrWhiteSpace(GTextBoxStreet.Text))
+                Text += "\nPlease,Enter a Street Location Event";
+
+            if (string.IsNullOrWhiteSpace(GTextBoxDuration.Text))
+                Text += "\nPlease,Enter a Duration Event";
+
+            if (GNumericUpDownMaxCapacity.Value <= clsEETMS_Constants.kZERO)
+                Text += "\nPlease,Enter a Max Capacity Event Grather ZERO";
+
+
+            return Text;
+        }
+
+        private bool _CheckTheAllTextBoxiesFilledOrNot()
+        {
+            return (
+                            (!string.IsNullOrWhiteSpace(GTextBoxEventName.Text)) &&
+                            (!string.IsNullOrWhiteSpace(GTextBoxDiscripation.Text)) &&
+                            (!string.IsNullOrWhiteSpace(GTextBoxStreet.Text)) &&
+                            (!string.IsNullOrWhiteSpace(GTextBoxDuration.Text)) &&
+                            (GNumericUpDownMaxCapacity.Value > clsEETMS_Constants.kZERO)
+
+                    );
+        }
+
         private void _AddOrEditEventInformation()
         {
+            Guna2MessageDialog G2MD = new Guna2MessageDialog();
+
+            if (!_CheckTheAllTextBoxiesFilledOrNot())
+            {
+                G2MD.Icon = MessageDialogIcon.Error;
+                G2MD.Buttons = MessageDialogButtons.OK;
+                G2MD.Caption = "Invalid Data";
+                G2MD.Text = _TextTheMessageDialogToCheckTheDataEventEntered();
+
+                G2MD.Show();
+                return;
+            }
 
             _InformationEvent.EventName = GTextBoxEventName.Text;
             _InformationEvent.Discripation = GTextBoxDiscripation.Text;
@@ -171,15 +216,12 @@ namespace EETMS_Presentation.EETMS_Events
         }
 
         private void GButtonCreateEvent_Click(object sender, EventArgs e)
-        {
-            _AddOrEditEventInformation();
-        }
-
+           => _AddOrEditEventInformation();
+        
         private void GGButtonManageTheTicketsEvents_Click(object sender, EventArgs e)
-        {
-            ERequestTheOpen_AddAndUpdateTheTicketsEvents?.Invoke(this, _IDEvent);
+            => ERequestTheOpen_AddAndUpdateTheTicketsEvents?.Invoke(this, _IDEvent);
 
-        }
+        
 
 
 
