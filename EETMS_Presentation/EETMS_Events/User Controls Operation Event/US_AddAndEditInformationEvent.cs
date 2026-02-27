@@ -92,10 +92,10 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void GButtonBackTheEvents_Click(object sender, EventArgs e)
             => RequestClose?.Invoke(this, EventArgs.Empty);
-        
+
         private void GButtonCansel_Click(object sender, EventArgs e)
             => RequestClose?.Invoke(this, EventArgs.Empty);
-        
+
         private void _LoadAllInformationCountriesInComboBox()
         {
 
@@ -217,12 +217,9 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void GButtonCreateEvent_Click(object sender, EventArgs e)
            => _AddOrEditEventInformation();
-        
+
         private void GGButtonManageTheTicketsEvents_Click(object sender, EventArgs e)
             => ERequestTheOpen_AddAndUpdateTheTicketsEvents?.Invoke(this, _IDEvent);
-
-        
-
 
 
     }

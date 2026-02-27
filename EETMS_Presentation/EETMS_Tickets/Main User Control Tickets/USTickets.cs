@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
-using EETMS_BusinessLayer;
+﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_Models;
 using Guna.UI2.WinForms;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.Net.Sockets;
+using System.Windows.Forms;
 
 
 namespace EETMS_Presentation.EETMS_Tickets
@@ -24,6 +25,9 @@ namespace EETMS_Presentation.EETMS_Tickets
         private int _PriceTheVIPTicket;
         private int _PriceThePreimumTicket;
 
+        private int _NumberAvailableTicketRegular;
+        private int _NumberAvailableTicketVIP;
+        private int _NumberAvailableTicketPremium;
 
         private double _SubTotalAmount;
         private double _Tax;
@@ -33,8 +37,6 @@ namespace EETMS_Presentation.EETMS_Tickets
         private int _CustomerID;
         private MReservations _MReservations;
         private int _EventID;
-
-
 
         public USTickets()
         {
@@ -50,6 +52,10 @@ namespace EETMS_Presentation.EETMS_Tickets
             _SubTotalAmount = clsEETMS_Constants.kZERO;
             _Tax = clsEETMS_Constants.kZERO;
             _TotalAmount = clsEETMS_Constants.kZERO;
+
+            _NumberAvailableTicketRegular = clsEETMS_Constants.kZERO;
+            _NumberAvailableTicketVIP = clsEETMS_Constants.kZERO;
+            _NumberAvailableTicketPremium = clsEETMS_Constants.kZERO;
 
 
             _CustomerID = clsEETMS_Constants.kNEGATIVE_ONE;
@@ -184,6 +190,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                             GNumericUpDownRegularTicket.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceTheRegularTicket = Convert.ToInt32(DR_Tickets["Price"]);
+                            _NumberAvailableTicketRegular = Convert.ToInt32(DR_Tickets["Available"]);
 
                             break;
 
@@ -199,6 +206,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                             GNumericUpDownVIPTicket.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceTheVIPTicket = Convert.ToInt32(DR_Tickets["Price"]);
+                            _NumberAvailableTicketVIP = Convert.ToInt32(DR_Tickets["Available"]);
                             break;
 
 
@@ -213,6 +221,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                             GNumericUpDownPremium.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceThePreimumTicket = Convert.ToInt32(DR_Tickets["Price"]);
+                            _NumberAvailableTicketPremium = Convert.ToInt32(DR_Tickets["Available"]);
+
                             break;
 
                     }
@@ -259,32 +269,13 @@ namespace EETMS_Presentation.EETMS_Tickets
         }
 
         private void GGPanelRegularTicket_MouseClick(object sender, MouseEventArgs e)
-        {
-
-            _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonRegularTicketStatus, lblQLeftRegular);
-            _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelRegularTicket, GNumericUpDownRegularTicket);
-            _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
-            _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
-
-        }
+            => TicketPanel("Regular");
 
         private void GGPanelVIPTicket_MouseClick(object sender, MouseEventArgs e)
-        {
-            _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonVIPTicketStatus, lblQLeftVIP);
-            _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelVIPTicket, GNumericUpDownVIPTicket);
-            _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
-            _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
-
-        }
+            => TicketPanel("VIP");
 
         private void GGPanelPermiumTicket_MouseClick(object sender, MouseEventArgs e)
-        {
-            _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonPremiumTicketStatus, lblQLeftPermium);
-            _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelPermiumTicket, GNumericUpDownPremium);
-            _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
-            _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
-
-        }
+            => TicketPanel("Premium");
 
         private void _UpdateThePanelsAndThePricesAndCountTickets()
         {
@@ -601,6 +592,49 @@ namespace EETMS_Presentation.EETMS_Tickets
         {
             _ResetAllSettingCardsTickets();
             _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
+        }
+
+        private void TicketPanel(string TicketType)
+        {
+            switch (TicketType)
+            {
+
+                case "Regular":
+                    _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonRegularTicketStatus, lblQLeftRegular);
+                    _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelRegularTicket, GNumericUpDownRegularTicket);
+                    _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
+                    _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
+
+                    _CheckTheStackTickes(_NumberAvailableTicketPremium, false, GGButtonPremiumTicketStatus, lblQLeftPermium);
+                    _CheckTheStackTickes(_NumberAvailableTicketVIP, false, GGButtonVIPTicketStatus, lblQLeftVIP);
+
+                    break;
+
+                case "VIP":
+                    _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonVIPTicketStatus, lblQLeftVIP);
+                    _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelVIPTicket, GNumericUpDownVIPTicket);
+                    _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
+                    _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
+
+
+                    _CheckTheStackTickes(_NumberAvailableTicketPremium, false, GGButtonPremiumTicketStatus, lblQLeftPermium);
+                    _CheckTheStackTickes(_NumberAvailableTicketRegular, false, GGButtonRegularTicketStatus, lblQLeftRegular);
+
+                    break;
+
+                case "Premium":
+                    _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonPremiumTicketStatus, lblQLeftPermium);
+                    _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelPermiumTicket, GNumericUpDownPremium);
+                    _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
+                    _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
+
+                    _CheckTheStackTickes(_NumberAvailableTicketVIP, false, GGButtonVIPTicketStatus, lblQLeftVIP);
+                    _CheckTheStackTickes(_NumberAvailableTicketRegular, false, GGButtonRegularTicketStatus, lblQLeftRegular);
+
+                    break;
+
+
+            }
         }
 
 
