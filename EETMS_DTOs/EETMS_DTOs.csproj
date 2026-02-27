@@ -7,8 +7,8 @@
     <ProjectGuid>{1FA2AE45-6CDE-4D78-9289-319DD1AB5BED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EETMS_Models</RootNamespace>
-    <AssemblyName>EETMS_Models</AssemblyName>
+    <RootNamespace>EETMS_DTOs</RootNamespace>
+    <AssemblyName>EETMS_DTOs</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
