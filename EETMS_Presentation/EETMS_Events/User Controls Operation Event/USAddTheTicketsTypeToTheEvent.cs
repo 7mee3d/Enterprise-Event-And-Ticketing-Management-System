@@ -1,11 +1,12 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
-using EETMS_DTOs;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using EETMS_DTOs;
+
 
 namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 {
@@ -18,7 +19,7 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
         private int _IDTicketType;
 
         private _EnModeTicketType _MTicketType;
-        private MTicketType _ObjTicketTypeInformation;
+        private TicketTypeDTO _ObjTicketTypeInformation;
         Guna2MessageDialog _G2MD = new Guna2MessageDialog();
 
 
@@ -167,7 +168,7 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             if (_MTicketType == _EnModeTicketType._kADD_NEW_TICKETTYPE)
             {
-                _ObjTicketTypeInformation = new MTicketType();
+                _ObjTicketTypeInformation = new TicketTypeDTO();
                 GButtonAddTicketAndSave.Text = "Add New Ticket Type";
                 _MTicketType = _EnModeTicketType._kADD_NEW_TICKETTYPE;
                 _LoadAllTicketTypeNotIncludeTheEventToTheComboBoxAddMode();
@@ -192,7 +193,7 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
             GTextBoxAvailableQuantity.Text = _ObjTicketTypeInformation.Quantity.ToString();
 
             _MTicketType = _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
-            _ObjTicketTypeInformation.EnMode = MTicketType.EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
+            _ObjTicketTypeInformation.EnMode = TicketTypeDTO.EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
 
             GButtonAddTicketAndSave.Text = "Save Changes";
 
@@ -203,19 +204,42 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             DataTable DT_EventTicketCapacityInfo = EventBL.GetEventTicketCapacityInfoBy(_IDEvent);
 
-            int MaxCapacity = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[0]["MaxCapacity"]);
-            int RemainingCapacity = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[0]["RemainingCapacity"]);
 
+            int NewQuantity = Convert.ToInt32(GTextBoxAvailableQuantity.Text);
+            int OriginalQuantityTicket = 0;
+
+
+            if (_MTicketType == _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE)
+                OriginalQuantityTicket = TicketBL.FindTheTicketTypeBy(_IDEvent, _IDTicketType).Quantity;
+
+
+            int MaxCapacity = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[0]["MaxCapacity"]);
 
             int AvailableBeforeUpdate = _ObjTicketTypeInformation.Available;
             int QuantityBeforeUpdated = _ObjTicketTypeInformation.Quantity;
 
+            int FinialResultTicketQuantity = 0;
+
+            int TotalQuantityTicket = 0;
+            if (OriginalQuantityTicket >= NewQuantity)
+            {
+                FinialResultTicketQuantity = OriginalQuantityTicket - NewQuantity;
+                TotalQuantityTicket = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[0]["TotalQuantityTickets"]) - FinialResultTicketQuantity;
+            }
+            else
+            {
+                FinialResultTicketQuantity = NewQuantity - OriginalQuantityTicket;
+                TotalQuantityTicket = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[0]["TotalQuantityTickets"]) + FinialResultTicketQuantity;
+
+            }
+
+
             _ObjTicketTypeInformation.TicketTypeName = GComboBoxAllTicketTypeNotIncludeEvent.SelectedItem.ToString();
 
-            if (Convert.ToInt32(GTextBoxAvailableQuantity.Text) > 0)
+            if (NewQuantity > clsEETMS_Constants.kZERO)
             {
-                if (MaxCapacity >= Convert.ToInt32(GTextBoxAvailableQuantity.Text) && (RemainingCapacity >= (Convert.ToInt32(GTextBoxAvailableQuantity.Text) - AvailableBeforeUpdate)))
-                    _ObjTicketTypeInformation.Quantity = Convert.ToInt32(GTextBoxAvailableQuantity.Text);
+                if (MaxCapacity >= TotalQuantityTicket)
+                    _ObjTicketTypeInformation.Quantity = NewQuantity;
                 else
                 {
                     _ShowTheMessageBox("\nConnot Added This Ticket Type Because The Qunatity Ticket Type Grther Than Max Capacity", "Note The Add new Ticket Type", "Warning");
@@ -228,9 +252,15 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
                 return;
             }
 
-            int HowIncrementQuantity = _ObjTicketTypeInformation.Quantity - QuantityBeforeUpdated;
+            int SoldTickets = QuantityBeforeUpdated - AvailableBeforeUpdate;
 
-            _ObjTicketTypeInformation.Available = (AvailableBeforeUpdate + HowIncrementQuantity);
+            if (NewQuantity < SoldTickets)
+            {
+                _ShowTheMessageBox("\nCannot reduce quantity below sold tickets", "Warning", "Error");
+                return;
+            }
+
+            _ObjTicketTypeInformation.Available = NewQuantity - SoldTickets;
 
             _ObjTicketTypeInformation.Price = Convert.ToDecimal(GTextBoxPriceTheTicketType.Text);
             _ObjTicketTypeInformation.EventID = _IDEvent;
@@ -250,7 +280,7 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
             GTextBoxPriceTheTicketType.Text = _ObjTicketTypeInformation.Price.ToString();
 
             _MTicketType = _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
-            _ObjTicketTypeInformation.EnMode = MTicketType.EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
+            _ObjTicketTypeInformation.EnMode = TicketTypeDTO.EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
 
             GButtonAddTicketAndSave.Text = "Save Changes";
 

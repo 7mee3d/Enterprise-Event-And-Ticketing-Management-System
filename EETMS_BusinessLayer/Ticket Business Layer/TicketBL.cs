@@ -16,19 +16,19 @@ namespace EETMS_BusinessLayer
         public static DataTable GetInformationTicketForEvent(int EventID)
             => TicketsDAL.GetInformationTicketForEventBy(EventID);
 
-        private static bool _AddNewTicketType(MTicketType mTicketType)
+        private static bool _AddNewTicketType(TicketTypeDTO mTicketType)
             => TicketsDAL.InsertNewTicketToTheEventBy(mTicketType) > clsEETMS_Constants.kZERO;
 
-        private static bool _UpdateInformationTicketType(MTicketType mTicketType)
+        private static bool _UpdateInformationTicketType(TicketTypeDTO mTicketType)
             => TicketsDAL.UpdateInformationTicketToTheEventBy(mTicketType) > clsEETMS_Constants.kZERO;
 
-        public static MTicketType FindTheTicketTypeBy(int EventID, int TicketTypeID)
+        public static TicketTypeDTO FindTheTicketTypeBy(int EventID, int TicketTypeID)
             => TicketsDAL.FindTheTicketTypeBy(EventID, TicketTypeID);
 
         public static Dictionary<int, string> GetTheAllTicketTypeBy(int IDEvent)
             => TicketsDAL.GetTheAllTicketTypeBy(IDEvent);
 
-        public static bool SaveModeTicketType(MTicketType mTicketType)
+        public static bool SaveModeTicketType(TicketTypeDTO mTicketType)
         {
 
 
@@ -36,10 +36,10 @@ namespace EETMS_BusinessLayer
             {
 
 
-                case MTicketType.EnModeTicketType._kADD_NEW_TICKETTYPE:
+                case TicketTypeDTO.EnModeTicketType._kADD_NEW_TICKETTYPE:
                     return _AddNewTicketType(mTicketType);
 
-                case MTicketType.EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE:
+                case TicketTypeDTO.EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE:
                     return _UpdateInformationTicketType(mTicketType);
 
                 default: return false;

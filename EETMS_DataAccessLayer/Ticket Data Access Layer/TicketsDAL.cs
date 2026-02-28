@@ -1,10 +1,9 @@
-﻿
-using EETMS_DTOs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using EETMS_DTOs;
 
 namespace EETMS_DataAccessLayer
 {
@@ -120,7 +119,7 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetInformationTicketForEventBy(int EventID)
             => _GetInformationTicketForEventBy(EventID);
 
-        private static int _InsertNewTicketToTheEventBy(MTicketType mTicketType)
+        private static int _InsertNewTicketToTheEventBy(TicketTypeDTO mTicketType)
         {
 
             int NewIDTicket = -1;
@@ -175,10 +174,10 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        public static int InsertNewTicketToTheEventBy(MTicketType mTicketType)
+        public static int InsertNewTicketToTheEventBy(TicketTypeDTO mTicketType)
             => _InsertNewTicketToTheEventBy(mTicketType);
 
-        private static int _UpdateInformationTicketToTheEventBy(MTicketType mTicketType)
+        private static int _UpdateInformationTicketToTheEventBy(TicketTypeDTO mTicketType)
         {
 
             int RowAffective = -1;
@@ -229,13 +228,13 @@ namespace EETMS_DataAccessLayer
 
         }
 
-        public static int UpdateInformationTicketToTheEventBy(MTicketType mTicketType)
+        public static int UpdateInformationTicketToTheEventBy(TicketTypeDTO mTicketType)
             => _UpdateInformationTicketToTheEventBy(mTicketType);
 
-        private static MTicketType _FindTheTicketTypeBy(int EventID, int TicketID)
+        private static TicketTypeDTO _FindTheTicketTypeBy(int EventID, int TicketID)
         {
 
-            MTicketType mTicketType = null;
+            TicketTypeDTO TicketTypedto = null;
 
 
             using (SqlConnection connection = new SqlConnection(_ConnectionString))
@@ -279,7 +278,7 @@ namespace EETMS_DataAccessLayer
                         if (reader.Read())
                         {
 
-                            mTicketType = new MTicketType()
+                            TicketTypedto = new TicketTypeDTO()
                             {
 
                                 TicketTypeID = TicketID,
@@ -300,12 +299,11 @@ namespace EETMS_DataAccessLayer
 
             }
 
-            return mTicketType;
+            return TicketTypedto;
         }
 
-        public static MTicketType FindTheTicketTypeBy(int EventID, int TicketID)
+        public static TicketTypeDTO FindTheTicketTypeBy(int EventID, int TicketID)
             => _FindTheTicketTypeBy(EventID, TicketID);
-
 
         private static Dictionary<int, string> _GetTheAllTicketTypeBy(int IDEvent)
         {

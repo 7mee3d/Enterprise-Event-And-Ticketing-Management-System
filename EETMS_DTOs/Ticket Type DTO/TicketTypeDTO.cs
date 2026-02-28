@@ -1,7 +1,7 @@
 ﻿
 namespace EETMS_DTOs
 {
-    public class MTicketType
+    public class TicketTypeDTO
     {
 
         public enum EnModeTicketType
@@ -20,7 +20,7 @@ namespace EETMS_DTOs
         public int EventID { get; set; }
         public EnModeTicketType EnMode { get; set; }
 
-        public MTicketType(int ticketTypeID, string ticketTypeName, int quantity, int available, decimal price, int eventID)
+        public TicketTypeDTO(int ticketTypeID, string ticketTypeName, int quantity, int available, decimal price, int eventID)
         {
             this.TicketTypeID = ticketTypeID;
             this.TicketTypeName = ticketTypeName;
@@ -31,7 +31,7 @@ namespace EETMS_DTOs
             this.EnMode = EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
         }
 
-        public MTicketType()
+        public TicketTypeDTO()
         {
             this.TicketTypeID = default(int);
             this.TicketTypeName = default(string);
