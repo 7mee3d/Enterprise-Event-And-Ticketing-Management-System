@@ -40,7 +40,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheAvtiveAdmin(), lblTotalActiveAdmin, 5, false);
             clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheBlockedUser(), lblTotalBlockedAccountsUser, 5, false);
 
-            _LoadAllDataToTheDataGridViewUsers();
+            _LoadAllInformationUsersToTheDGV();
             GDataGridViewUsersInformation.ClearSelection();
 
         }
@@ -58,12 +58,10 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             return NumberOfDayLastLogin.ToString() + " Day ago";
         }
 
-        private void _LoadAllDataToTheDataGridViewUsers()
+        private void _LoadAllDataToTheDataGridViewUsers(DataTable DT_InformationUsers)
         {
 
-            DataTable DT_AllInformationUser = UserBL.GetAllInformationUsers();
-
-            foreach (DataRow DR_InformationOneUser in DT_AllInformationUser.Rows)
+            foreach (DataRow DR_InformationOneUser in DT_InformationUsers.Rows)
             {
 
 
@@ -101,6 +99,12 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                 DGVC_LastLogin.Style.ForeColor = Color.FromArgb(100, 116, 139);
 
             }
+        }
+
+        private void _LoadAllInformationUsersToTheDGV()
+        {
+            DataTable DT_AllInformationUser = UserBL.GetAllInformationUsers();
+            _LoadAllDataToTheDataGridViewUsers(DT_AllInformationUser);
         }
 
         private void _USUsersManagmentAndRoles_Load(object sender, EventArgs e)
@@ -216,11 +220,21 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         }
 
         private void InactiveUsertoolStripMenuItem_Click(object sender, EventArgs e)
+           => _ActiveAndInactiveTheUser();
+
+        private void _LoadAllInformationUserAfterTheSearchByNameOrUsername()
         {
-            _ActiveAndInactiveTheUser();
+            GDataGridViewUsersInformation.Rows.Clear();
+
+            string TextSearchTheUserByNameOrUsername = GTextBoxSearchTheUser.Text.Trim();
+
+            DataTable DT_AllUsersAfterSearch = UserBL.GetAllUsersAfterSearchBy(TextSearchTheUserByNameOrUsername);
+            _LoadAllDataToTheDataGridViewUsers(DT_AllUsersAfterSearch);
 
         }
 
+        private void GTextBoxSearchTheUser_TextChanged(object sender, EventArgs e)
+            => _LoadAllInformationUserAfterTheSearchByNameOrUsername();
 
     }
 }

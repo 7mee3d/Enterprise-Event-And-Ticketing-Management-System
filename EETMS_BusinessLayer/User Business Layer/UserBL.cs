@@ -108,6 +108,9 @@ namespace EETMS_BusinessLayer
         public static bool UpdateInformationActiveAccountUserBy(int UserID, UserDTO mUser)
             => UsersDAL.UpdateInformationUserActiveAccountInactiveBy(UserID, mUser) > 0;
 
+        public static DataTable GetAllUsersAfterSearchBy(string SearchTheUserByNameOrUsername)
+            => UsersDAL.GetAllAfterSearchUsersBy(SearchTheUserByNameOrUsername);
+
 
     }
 }

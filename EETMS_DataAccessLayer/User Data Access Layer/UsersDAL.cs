@@ -753,5 +753,66 @@ namespace EETMS_DataAccessLayer
 
         public static int UpdateInformationUserActiveAccountInactiveBy(int IDUser, UserDTO InformationNewUser)
             => _UpdateInformationUserActiveAccountInactiveBy(IDUser, InformationNewUser);
+
+        private static DataTable _GetAllAfterSearchUsersBy(string SearchUserByNameOrUsername)
+        {
+
+            DataTable DT_AllUsersAfterSearch = new DataTable();
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+
+                string Query = @"
+
+                                        SELECT 
+                                        
+                                        					US.UserID ,
+                                        					US.UserFullName ,
+                                        					US.UserName ,
+                                        					US.PasswordUser ,
+                                        					US.EmailUser ,
+                                        					US.ActiveAccount ,
+                                        					RO.RoleName ,
+                                        					US.LastLoginAccountDate,
+                                                            DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay]
+
+
+                                         FROM Users US 
+                                         INNER JOIN Roles RO
+
+                                         ON US.RoleID = RO.RoleID 
+
+                                        WHERE
+                                                    LOWER (US.UserFullName) LIKE '%' + LOWER ( @SearchUserByNameOrUsername ) +'%' 
+                                        OR
+                                                    LOWER (US.UserName) LIKE '%' + LOWER ( @SearchUserByNameOrUsername ) +'%' ;
+
+                            ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+
+                    command.Parameters.AddWithValue("@SearchUserByNameOrUsername", SearchUserByNameOrUsername);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                        if (reader.HasRows) DT_AllUsersAfterSearch.Load(reader);
+
+                }
+            }
+
+            return DT_AllUsersAfterSearch;
+
+        }
+
+        public static DataTable GetAllAfterSearchUsersBy(string SearchUserByNameOrUsername)
+            => _GetAllAfterSearchUsersBy(SearchUserByNameOrUsername);
+
+
     }
 }

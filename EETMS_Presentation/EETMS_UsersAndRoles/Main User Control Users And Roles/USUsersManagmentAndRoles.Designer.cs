@@ -50,7 +50,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GGButtonCreateNewUser = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GTextBoxSearchTheUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.GDataGridViewUsersInformation = new Guna.UI2.WinForms.Guna2DataGridView();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -298,7 +298,7 @@
             this.GGPanelDataGridViewEvents.BorderRadius = 10;
             this.GGPanelDataGridViewEvents.BorderThickness = 2;
             this.GGPanelDataGridViewEvents.Controls.Add(this.GGButtonCreateNewUser);
-            this.GGPanelDataGridViewEvents.Controls.Add(this.GTextBoxSearchTheEvent);
+            this.GGPanelDataGridViewEvents.Controls.Add(this.GTextBoxSearchTheUser);
             this.GGPanelDataGridViewEvents.Controls.Add(this.GDataGridViewUsersInformation);
             this.GGPanelDataGridViewEvents.FillColor = System.Drawing.Color.White;
             this.GGPanelDataGridViewEvents.FillColor2 = System.Drawing.Color.White;
@@ -333,27 +333,28 @@
             this.GGButtonCreateNewUser.Text = "Create New User";
             this.GGButtonCreateNewUser.Click += new System.EventHandler(this._GGButtonAddNewUser_Click);
             // 
-            // GTextBoxSearchTheEvent
+            // GTextBoxSearchTheUser
             // 
-            this.GTextBoxSearchTheEvent.Animated = true;
-            this.GTextBoxSearchTheEvent.BorderRadius = 10;
-            this.GTextBoxSearchTheEvent.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxSearchTheEvent.DefaultText = "";
-            this.GTextBoxSearchTheEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxSearchTheEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxSearchTheEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheEvent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheEvent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxSearchTheEvent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheEvent.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheEvent.IconLeft")));
-            this.GTextBoxSearchTheEvent.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxSearchTheEvent.Location = new System.Drawing.Point(17, 30);
-            this.GTextBoxSearchTheEvent.Name = "GTextBoxSearchTheEvent";
-            this.GTextBoxSearchTheEvent.PlaceholderText = "Search Users";
-            this.GTextBoxSearchTheEvent.SelectedText = "";
-            this.GTextBoxSearchTheEvent.Size = new System.Drawing.Size(461, 44);
-            this.GTextBoxSearchTheEvent.TabIndex = 2;
+            this.GTextBoxSearchTheUser.Animated = true;
+            this.GTextBoxSearchTheUser.BorderRadius = 10;
+            this.GTextBoxSearchTheUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxSearchTheUser.DefaultText = "";
+            this.GTextBoxSearchTheUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxSearchTheUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxSearchTheUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheUser.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxSearchTheUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheUser.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheUser.IconLeft")));
+            this.GTextBoxSearchTheUser.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxSearchTheUser.Location = new System.Drawing.Point(17, 30);
+            this.GTextBoxSearchTheUser.Name = "GTextBoxSearchTheUser";
+            this.GTextBoxSearchTheUser.PlaceholderText = "Search Users By Full Name ,Username ...";
+            this.GTextBoxSearchTheUser.SelectedText = "";
+            this.GTextBoxSearchTheUser.Size = new System.Drawing.Size(461, 44);
+            this.GTextBoxSearchTheUser.TabIndex = 2;
+            this.GTextBoxSearchTheUser.TextChanged += new System.EventHandler(this.GTextBoxSearchTheUser_TextChanged);
             // 
             // GDataGridViewUsersInformation
             // 
@@ -589,7 +590,7 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2GradientPanel GGPanelDataGridViewEvents;
         private Guna.UI2.WinForms.Guna2DataGridView GDataGridViewUsersInformation;
-        private Guna.UI2.WinForms.Guna2TextBox GTextBoxSearchTheEvent;
+        private Guna.UI2.WinForms.Guna2TextBox GTextBoxSearchTheUser;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonCreateNewUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullNameUser;
