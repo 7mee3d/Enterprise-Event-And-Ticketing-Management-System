@@ -147,7 +147,7 @@ namespace EETMS_Presentation.EETMS_Events
         }
 
         private void GTextBoxSearchTheEvent_TextChanged(object sender, EventArgs e)
-           => _LoadAllInformationEventsToDGVAfterTheSearchEvent()
+           => _LoadAllInformationEventsToDGVAfterTheSearchEvent();
 
         
     }

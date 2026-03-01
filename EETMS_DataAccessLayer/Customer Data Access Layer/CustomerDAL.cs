@@ -452,12 +452,17 @@ namespace EETMS_DataAccessLayer
                                                             WHERE 
                                                                        ( 
 
-                                                                        CustomerTableSubQuery.FullName =  @Search 
-                                                                        OR CustomerTableSubQuery.NationalID = @Search 
+                                                                        LOWER ( CustomerTableSubQuery.FullName ) LIKE   LOWER ( '%' +  @Search  + '%' )  
+                                                                  
 
                                                                         ) 
 
-                                                                        OR ( CustomerTableSubQuery.FullNameWithOutMidName = @Search  ) ;
+                                                                  OR (
+                                                                        LOWER ( CustomerTableSubQuery.FullNameWithOutMidName ) LIKE LOWER ( '%' +  @Search  + '%' ) 
+                                                                     ) 
+
+                                                                  OR  CustomerTableSubQuery.NationalID  LIKE '%' +  @Search  + '%'
+
 
                                     
                                 ";
