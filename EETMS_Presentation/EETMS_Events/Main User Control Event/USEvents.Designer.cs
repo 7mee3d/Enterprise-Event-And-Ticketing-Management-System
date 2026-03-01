@@ -382,6 +382,7 @@
             this.GTextBoxSearchTheEvent.SelectedText = "";
             this.GTextBoxSearchTheEvent.Size = new System.Drawing.Size(439, 44);
             this.GTextBoxSearchTheEvent.TabIndex = 1;
+            this.GTextBoxSearchTheEvent.TextChanged += new System.EventHandler(this.GTextBoxSearchTheEvent_TextChanged);
             // 
             // guna2GradientPanel1
             // 

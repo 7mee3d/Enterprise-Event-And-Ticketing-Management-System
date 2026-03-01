@@ -23,11 +23,9 @@ namespace EETMS_Presentation.EETMS_Events
             RequestOpenCreateNewEventUS = null;
         }
 
-
-        private void _LoadAndFillDataGridViewONAllInformationEvent()
+        private void _LoadTheInformationEventsToGDVBy(DataTable DT_EventsInformation)
         {
-
-            _EventDT = EventBL.GetAllInformationEvents();
+            GDataGridViewEventsInformation.Rows.Clear();
 
             foreach (DataRow DR_Event in _EventDT.Rows)
             {
@@ -47,6 +45,15 @@ namespace EETMS_Presentation.EETMS_Events
                                                     );
 
             }
+        }
+
+        private void _LoadAndFillDataGridViewONAllInformationEvent()
+        {
+
+            _EventDT = EventBL.GetAllInformationEvents();
+
+            _LoadTheInformationEventsToGDVBy(_EventDT);
+
         }
 
         private int _GetCountTheDraftEvents()
@@ -132,7 +139,16 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
+        private void _LoadAllInformationEventsToDGVAfterTheSearchEvent ()
+        {
+            string EventNameToBeSearch = GTextBoxSearchTheEvent.Text;
+            _EventDT = EventBL.AllEventsAfterSearchBy(EventNameToBeSearch);
+            _LoadTheInformationEventsToGDVBy(_EventDT);
+        }
 
+        private void GTextBoxSearchTheEvent_TextChanged(object sender, EventArgs e)
+           => _LoadAllInformationEventsToDGVAfterTheSearchEvent()
 
+        
     }
 }
