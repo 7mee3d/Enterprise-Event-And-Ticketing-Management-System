@@ -11,16 +11,16 @@ namespace EETMS_BusinessLayer
 
 
         public static bool IsUserExsitsByEmail(string Email, string Password)
-            => UsersDAL.IsExsitsTheUserByEmail(Email, Password);
+            => UsersQueriesDAL.IsExsitsTheUserByEmail(Email, Password);
 
         public static bool IsUserExsitsByUsername(string Username, string Password)
-            => UsersDAL.IsExsitsTheUserByUsername(Username, Password);
+            => UsersQueriesDAL.IsExsitsTheUserByUsername(Username, Password);
 
         public static bool AddNewUser(UserDTO InformationNewUser)
-            => UsersDAL.InsertNewUser(InformationNewUser) > clsEETMS_Constants.kZERO;
+            => UserCommandsDAL.InsertNewUser(InformationNewUser) > clsEETMS_Constants.kZERO;
 
         public static bool UpdateInformationUser(UserDTO InformationNewUser)
-            => UsersDAL.UpdateInformationUser(InformationNewUser.UserID, InformationNewUser) > clsEETMS_Constants.kZERO;
+            => UserCommandsDAL.UpdateInformationUser(InformationNewUser.UserID, InformationNewUser) > clsEETMS_Constants.kZERO;
 
         public static bool SaveInformationUserMode(UserDTO InformationUser, bool IsUpdateActiveAccountUser = false)
         {
@@ -45,7 +45,7 @@ namespace EETMS_BusinessLayer
         public static UserDTO.EnStatusLoginUser PassLoginTheUser(string UsernameOrEmail, string Password)
         {
 
-            UserDTO InfoUser = UsersDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
+            UserDTO InfoUser = UsersQueriesDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
 
             if (InfoUser == null)
                 return UserDTO.EnStatusLoginUser._kUSER_NOT_FOUND;
@@ -84,33 +84,35 @@ namespace EETMS_BusinessLayer
 
         public static UserDTO FindUser(string UsernameOrEmail)
         {
-            return UsersDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
+            return UsersQueriesDAL.FindTheUserByUserNameOrEmail(UsernameOrEmail);
         }
 
         public static UserDTO FindUserBy(int IDUser)
-            => UsersDAL.FindTheUserBy(IDUser);
+            => UsersQueriesDAL.FindTheUserBy(IDUser);
 
         public static int GetTotalUsers()
-            => UsersDAL.GetTheTotalUsers();
+            => UsersQueriesDAL.GetTheTotalUsers();
 
         public static int GetTheAvtiveAdmin()
-            => UsersDAL.GetTheTotalActiveAdmin();
+            => UsersQueriesDAL.GetTheTotalActiveAdmin();
 
         public static int GetTheBlockedUser()
-            => UsersDAL.GetTheTotalBlockedUsers();
+            => UsersQueriesDAL.GetTheTotalBlockedUsers();
 
         public static DataTable GetAllInformationUsers()
-            => UsersDAL.GetAllInformationUsers();
+            => UsersQueriesDAL.GetAllInformationUsers();
 
         public static bool DeleteTheUserBy(int IDUser)
-            => UsersDAL.DeleteTheUserBy(IDUser) > clsEETMS_Constants.kZERO;
+            => UserCommandsDAL.DeleteTheUserBy(IDUser) > clsEETMS_Constants.kZERO;
 
         public static bool UpdateInformationActiveAccountUserBy(int UserID, UserDTO mUser)
-            => UsersDAL.UpdateInformationUserActiveAccountInactiveBy(UserID, mUser) > 0;
+            => UserCommandsDAL.UpdateInformationUserActiveAccountInactiveBy(UserID, mUser) > 0;
 
         public static DataTable GetAllUsersAfterSearchBy(string SearchTheUserByNameOrUsername)
-            => UsersDAL.GetAllAfterSearchUsersBy(SearchTheUserByNameOrUsername);
+            => UsersQueriesDAL.GetAllAfterSearchUsersBy(SearchTheUserByNameOrUsername);
 
+        public static DataTable GetAllStatusType()
+            => UsersQueriesDAL.GetAllStatus();
 
     }
 }

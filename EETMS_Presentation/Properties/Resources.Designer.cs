@@ -83,6 +83,16 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cancel_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Cancel_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EETMS_Login {
             get {
                 object obj = ResourceManager.GetObject("EETMS_Login", resourceCulture);
@@ -96,6 +106,16 @@ namespace EETMS_Presentation.Properties {
         internal static System.Drawing.Bitmap EETMS_LoginScreen_Background {
             get {
                 object obj = ResourceManager.GetObject("EETMS_LoginScreen_Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Filter_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Filter_Icon_EETMS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

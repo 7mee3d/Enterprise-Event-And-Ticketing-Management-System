@@ -2,6 +2,7 @@
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_DTOs;
 using EETMS_Presentation.EETMS_Settings;
+using EETMS_Presentation.Properties;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
@@ -17,6 +18,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         public event EventHandler<int> ERequestToOpenTheAddNewUserUS;
         private int _IDUser;
         private Guna2MessageDialog _G2MD;
+        private bool _IsCheckButtonFilter = false;
 
         public USUsersManagmentAndRoles()
         {
@@ -76,8 +78,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                                                                   DR_InformationOneUser["UserFullName"].ToString(),
                                                                   DR_InformationOneUser["UserName"].ToString(),
                                                                   DR_InformationOneUser["EmailUser"].ToString(),
-                                                                  StrActiveOrInActive,
                                                                   DR_InformationOneUser["RoleName"].ToString(),
+                                                                  StrActiveOrInActive,
                                                                   _GetTheWordLastLogin(Convert.ToInt32(DR_InformationOneUser["LastLoginForDay"] != DBNull.Value ? DR_InformationOneUser["LastLoginForDay"] : -1))
 
 
@@ -87,7 +89,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
 
                 DataGridViewRow DGVR = GDataGridViewUsersInformation.Rows[rowIndex];
-                DataGridViewCell DGVC = DGVR.Cells[4];
+                DataGridViewCell DGVC = DGVR.Cells[5];
 
                 DataGridViewRow DGVR_LastLogin = GDataGridViewUsersInformation.Rows[rowIndex];
                 DataGridViewCell DGVC_LastLogin = DGVR.Cells[6];
@@ -108,7 +110,13 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         }
 
         private void _USUsersManagmentAndRoles_Load(object sender, EventArgs e)
-           => _InitalSettingTheUserManagmentCountsUsers();
+        {
+            _InitalSettingTheUserManagmentCountsUsers();
+            GComboBoxMainTypeFilter.Items.Clear();
+
+            GComboBoxMainTypeFilter.Items.Add("Status");
+            GComboBoxMainTypeFilter.Items.Add("Roles");
+        }
 
         private void _GGButtonAddNewUser_Click(object sender, EventArgs e)
             => ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
@@ -235,6 +243,76 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
         private void GTextBoxSearchTheUser_TextChanged(object sender, EventArgs e)
             => _LoadAllInformationUserAfterTheSearchByNameOrUsername();
+
+        private void _LoadAllInformationTypeStatusUserToComboBox()
+        {
+            GSubComboBoxTypeTheFilter.DataSource = UserBL.GetAllStatusType();
+            GSubComboBoxTypeTheFilter.DisplayMember = "TypeStatusUser";
+        }
+
+        private void _LoadAllInformationToComboBoxies()
+        {
+
+            if (GComboBoxMainTypeFilter.SelectedIndex == 0)
+                _LoadAllInformationTypeStatusUserToComboBox();
+        }
+
+        private void _InitalSettingTheComboBoxies()
+        {
+
+
+
+            GComboBoxMainTypeFilter.SelectedIndex = -1;
+            GSubComboBoxTypeTheFilter.SelectedIndex = -1;
+
+            if (GComboBoxMainTypeFilter.Items.Count <= 0)
+                GComboBoxMainTypeFilter.Items.Clear();
+
+
+            if (GSubComboBoxTypeTheFilter.Items.Count <= 0)
+                GSubComboBoxTypeTheFilter.Items.Clear();
+
+        }
+
+        private void _ActiveTheFilter()
+        {
+
+            if (_IsCheckButtonFilter)
+            {
+                GGButtonFilter.HoverState.Image = Resources.Filter_Icon_EETMS;
+                GGButtonFilter.Image = Resources.Filter_Icon_EETMS;
+                GGMainPanelFilter.Visible = false;
+                _IsCheckButtonFilter = false;
+                GGButtonFilter.Text = "Filter";
+                _LoadAllInformationToComboBoxies();
+            }
+            else
+            {
+                GGButtonFilter.HoverState.Image = Resources.Cancel_Icon_EETMS;
+                GGButtonFilter.Image = Resources.Cancel_Icon_EETMS;
+                GGMainPanelFilter.Visible = true;
+                _IsCheckButtonFilter = true;
+                GGButtonFilter.Text = "Cancel Filter";
+                _InitalSettingTheComboBoxies();
+            }
+
+
+
+
+        }
+
+        private void GGButtonFilter_Click(object sender, EventArgs e)
+        {
+
+            _ActiveTheFilter();
+
+        }
+
+        private void GComboBoxMainTypeFilter_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            _LoadAllInformationToComboBoxies();
+        }
+
 
     }
 }
