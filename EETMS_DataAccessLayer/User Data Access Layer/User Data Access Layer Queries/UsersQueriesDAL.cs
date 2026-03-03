@@ -617,6 +617,122 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetAllStatus()
             => _GetAllStatus();
 
+        private static DataTable _GetTheUserActiveAccount(string TypeFilterUserStatus)
+        {
 
+            DataTable DT_userActiveAccount = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+                string Query = @"
+
+
+                                    SELECT 
+                                    		US.UserID ,
+                                            US.UserFullName ,
+                                            US.UserName ,
+                                            US.PasswordUser ,
+                                            US.EmailUser ,
+                                            US.ActiveAccount ,
+                                            RO.RoleName ,
+                                            US.LastLoginAccountDate,
+                                            DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay]
+                                    
+                                    FROM Users US
+                                    INNER JOIN Roles RO 
+                                    ON RO.RoleID = US.RoleID 
+
+                                    WHERE  (
+
+                                                CASE 
+                                    		    	WHEN US.ActiveAccount = 1 THEN 'Active'
+                                    		    	ELSE 'Inactive' 
+                                    		    END 
+
+
+                                    		) = @TypeFilterUserStatus
+
+                                    
+                        ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@TypeFilterUserStatus", TypeFilterUserStatus);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        DT_userActiveAccount.Load(reader);
+
+                    }
+
+                }
+            }
+
+            return DT_userActiveAccount;
+
+        }
+
+        public static DataTable GetTheUserActiveAccount(string TypeFilterUserStatus)
+            => _GetTheUserActiveAccount(TypeFilterUserStatus);
+
+        private static DataTable _GetUserAccordingheRoleName(string RoleName)
+        {
+
+            DataTable DT_UserAccrodingRoleName = new DataTable();
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+                string Query = @"
+
+                                    SELECT 
+                                                 US.UserID ,
+                                                 US.UserFullName ,
+                                                 US.UserName ,
+                                                 US.PasswordUser ,
+                                                 US.EmailUser ,
+                                                 US.ActiveAccount ,
+                                                 RO.RoleName ,
+                                                 US.LastLoginAccountDate,
+                                                 DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay]
+   
+                                     FROM Users US
+                                     INNER JOIN Roles RO 
+                                     ON RO.RoleID = US.RoleID 
+
+
+                                     WHERE  RO.RoleName = @RoleName ; 
+
+
+                            ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@RoleName", RoleName);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                            DT_UserAccrodingRoleName.Load(reader);
+                    }
+                }
+            }
+
+            return DT_UserAccrodingRoleName;
+
+        }
+
+        public static DataTable GetUserAccordingheRoleName(string RoleName)
+            => _GetUserAccordingheRoleName(RoleName);
     }
+
 }

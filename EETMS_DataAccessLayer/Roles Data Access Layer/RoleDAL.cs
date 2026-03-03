@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -59,6 +60,46 @@ namespace EETMS_DataAccessLayer.Roles_Data_Access_Layer
         public static DataTable GetTheAllInformationRoles()
             => _GetTheAllInformationRoles();
 
+        private static List<string> _GetAllNameRole()
+        {
+
+
+            List<string> LI_AllRoleName = new List<string>();
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+
+                string Query = @"
+
+
+                                SELECT DISTINCT 
+                                                    RO.RoleName 
+		                        FROM Roles RO;
+
+
+                            ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                        while (reader.Read())
+                            LI_AllRoleName.Add(reader["RoleName"].ToString());
+                }
+
+            }
+
+            return LI_AllRoleName;
+        }
+
+        public static List<string> GetAllNameRole()
+            => _GetAllNameRole();
 
     }
 }

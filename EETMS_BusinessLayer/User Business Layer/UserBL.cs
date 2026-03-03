@@ -114,5 +114,24 @@ namespace EETMS_BusinessLayer
         public static DataTable GetAllStatusType()
             => UsersQueriesDAL.GetAllStatus();
 
+        public static DataTable GetTheUsersAccordingSelectFilter(UserFilterDTO userFilterDTO)
+        {
+
+            switch (userFilterDTO.MainNameFilter)
+            {
+                case "Status":
+                    if (userFilterDTO.SubFilter == "Active")
+                        return UsersQueriesDAL.GetTheUserActiveAccount("Active");
+                    else
+                        return UsersQueriesDAL.GetTheUserActiveAccount("Inactive");
+
+                case "Roles":
+                    return UsersQueriesDAL.GetUserAccordingheRoleName(userFilterDTO.SubFilter);
+
+                default: return new DataTable();
+            }
+
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_BusinessLayer.Roles_Business_Layer;
 using EETMS_DTOs;
 using EETMS_Presentation.EETMS_Settings;
 using EETMS_Presentation.Properties;
@@ -246,21 +247,35 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
         private void _LoadAllInformationTypeStatusUserToComboBox()
         {
+            GSubComboBoxTypeTheFilter.DataSource = null;
             GSubComboBoxTypeTheFilter.DataSource = UserBL.GetAllStatusType();
             GSubComboBoxTypeTheFilter.DisplayMember = "TypeStatusUser";
+            GSubComboBoxTypeTheFilter.ValueMember = "TypeStatusUser";
+        }
+
+        private void _LoadAllInformationRoleNameToComboBox()
+        {
+            GSubComboBoxTypeTheFilter.DataSource = null;
+            GSubComboBoxTypeTheFilter.DataSource = RolesBL.GetAllRoleName();
+            GSubComboBoxTypeTheFilter.DisplayMember = "RoleName";
         }
 
         private void _LoadAllInformationToComboBoxies()
         {
 
             if (GComboBoxMainTypeFilter.SelectedIndex == 0)
+            {
                 _LoadAllInformationTypeStatusUserToComboBox();
+            }
+            else if (GComboBoxMainTypeFilter.SelectedIndex == 1)
+                _LoadAllInformationRoleNameToComboBox();
         }
 
         private void _InitalSettingTheComboBoxies()
         {
 
 
+            GDataGridViewUsersInformation.Rows.Clear();
 
             GComboBoxMainTypeFilter.SelectedIndex = -1;
             GSubComboBoxTypeTheFilter.SelectedIndex = -1;
@@ -272,6 +287,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             if (GSubComboBoxTypeTheFilter.Items.Count <= 0)
                 GSubComboBoxTypeTheFilter.Items.Clear();
 
+            _LoadAllInformationUsersToTheDGV();
         }
 
         private void _ActiveTheFilter()
@@ -284,7 +300,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                 GGMainPanelFilter.Visible = false;
                 _IsCheckButtonFilter = false;
                 GGButtonFilter.Text = "Filter";
-                _LoadAllInformationToComboBoxies();
+
+                _InitalSettingTheComboBoxies();
             }
             else
             {
@@ -293,27 +310,46 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                 GGMainPanelFilter.Visible = true;
                 _IsCheckButtonFilter = true;
                 GGButtonFilter.Text = "Cancel Filter";
-                _InitalSettingTheComboBoxies();
+
             }
 
 
+        }
+
+        private void _FillTheInformationFilter()
+        {
+
+            string MainSelectComboBoxTypeFilter = GComboBoxMainTypeFilter.SelectedItem.ToString();
+            string SubSelectComboBoxTypeFilter = GSubComboBoxTypeTheFilter.SelectedValue.ToString();
+
+            UserFilterDTO userFilterDTO = new UserFilterDTO()
+            {
+                MainNameFilter = MainSelectComboBoxTypeFilter,
+                SubFilter = SubSelectComboBoxTypeFilter
+            };
 
 
+
+            DataTable DT_ResultFilter = UserBL.GetTheUsersAccordingSelectFilter(userFilterDTO);
+
+            GDataGridViewUsersInformation.Rows.Clear();
+            _LoadAllDataToTheDataGridViewUsers(DT_ResultFilter);
         }
 
         private void GGButtonFilter_Click(object sender, EventArgs e)
-        {
-
-            _ActiveTheFilter();
-
-        }
+            => _ActiveTheFilter();
 
         private void GComboBoxMainTypeFilter_SelectionChangeCommitted(object sender, EventArgs e)
         {
             _LoadAllInformationToComboBoxies();
+
+
         }
 
-
+        private void GSubComboBoxTypeTheFilter_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            _FillTheInformationFilter();
+        }
     }
 }
 

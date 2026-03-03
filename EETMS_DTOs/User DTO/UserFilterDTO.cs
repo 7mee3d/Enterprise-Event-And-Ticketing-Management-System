@@ -1,6 +1,6 @@
 ﻿
 
-namespace EETMS_DTOs.User_DTO
+namespace EETMS_DTOs
 {
     public class UserFilterDTO
     {
