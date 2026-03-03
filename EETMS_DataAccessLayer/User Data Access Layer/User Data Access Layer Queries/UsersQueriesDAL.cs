@@ -733,6 +733,63 @@ namespace EETMS_DataAccessLayer
 
         public static DataTable GetUserAccordingheRoleName(string RoleName)
             => _GetUserAccordingheRoleName(RoleName);
+
+        private static DataTable _GetUserAccordingrTheLastLoginForDay(int DayToBeFilter)
+        {
+
+            DataTable DT_UserAccrodingLastLoginForDay = new DataTable();
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+                string Query = @"
+
+                                    SELECT 
+                                                 US.UserID ,
+                                                 US.UserFullName ,
+                                                 US.UserName ,
+                                                 US.PasswordUser ,
+                                                 US.EmailUser ,
+                                                 US.ActiveAccount ,
+                                                 RO.RoleName ,
+                                                 US.LastLoginAccountDate,
+                                                 DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay]
+   
+                                     FROM Users US
+                                     INNER JOIN Roles RO 
+                                     ON RO.RoleID = US.RoleID 
+
+                                     WHERE    DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) <= @DayToBeFilter 
+
+
+
+                            ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@DayToBeFilter", DayToBeFilter);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                            DT_UserAccrodingLastLoginForDay.Load(reader);
+                    }
+                }
+            }
+
+            return DT_UserAccrodingLastLoginForDay;
+
+        }
+
+        public static DataTable GetUserAccordingrTheLastLoginForDay(int DayToBeFilter)
+            => _GetUserAccordingrTheLastLoginForDay(DayToBeFilter);
+
+
+
     }
 
 }

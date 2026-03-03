@@ -28,6 +28,7 @@ namespace EETMS_BusinessLayer.EETMS_Constants
         //Animation 
 
         public const short kMAX_NUMBER_DELAY_EVENT_US = 6;
+        public const short kMAX_NUMBER_DELAY_USER_US = 5;
 
 
     }

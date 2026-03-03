@@ -19,7 +19,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         public event EventHandler<int> ERequestToOpenTheAddNewUserUS;
         private int _IDUser;
         private Guna2MessageDialog _G2MD;
-        private bool _IsCheckButtonFilter = false;
+        private bool _IsCheckButtonFilter;
 
         public USUsersManagmentAndRoles()
         {
@@ -27,6 +27,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             ERequestToOpenTheAddNewUserUS = null;
             _IDUser = clsEETMS_Constants.kZERO;
             _G2MD = null;
+            _IsCheckButtonFilter = false;
         }
 
 
@@ -39,9 +40,9 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         {
             GDataGridViewUsersInformation.Rows.Clear();
 
-            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTotalUsers(), lblTotalUsers, 5, false);
-            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheAvtiveAdmin(), lblTotalActiveAdmin, 5, false);
-            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheBlockedUser(), lblTotalBlockedAccountsUser, 5, false);
+            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTotalUsers(), lblTotalUsers, clsEETMS_Constants.kMAX_NUMBER_DELAY_USER_US, false);
+            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheAvtiveAdmin(), lblTotalActiveAdmin, clsEETMS_Constants.kMAX_NUMBER_DELAY_USER_US, false);
+            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheBlockedUser(), lblTotalBlockedAccountsUser, clsEETMS_Constants.kMAX_NUMBER_DELAY_USER_US, false);
 
             _LoadAllInformationUsersToTheDGV();
             GDataGridViewUsersInformation.ClearSelection();
@@ -117,6 +118,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
             GComboBoxMainTypeFilter.Items.Add("Status");
             GComboBoxMainTypeFilter.Items.Add("Roles");
+            GComboBoxMainTypeFilter.Items.Add("Last Login For Day");
         }
 
         private void _GGButtonAddNewUser_Click(object sender, EventArgs e)
@@ -260,31 +262,42 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             GSubComboBoxTypeTheFilter.DisplayMember = "RoleName";
         }
 
+        private void _LoadAllInformationLgoinForDaysToComboBox()
+        {
+            GSubComboBoxTypeTheFilter.DataSource = null;
+
+            GSubComboBoxTypeTheFilter.Items.Add("Today");
+            GSubComboBoxTypeTheFilter.Items.Add("Last 7 Days");
+            GSubComboBoxTypeTheFilter.Items.Add("Last 30 Days");
+
+        }
+
         private void _LoadAllInformationToComboBoxies()
         {
 
-            if (GComboBoxMainTypeFilter.SelectedIndex == 0)
+            if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kZERO)
             {
                 _LoadAllInformationTypeStatusUserToComboBox();
             }
-            else if (GComboBoxMainTypeFilter.SelectedIndex == 1)
+            else if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kONE)
                 _LoadAllInformationRoleNameToComboBox();
+            else _LoadAllInformationLgoinForDaysToComboBox();
+
         }
 
         private void _InitalSettingTheComboBoxies()
         {
 
-
             GDataGridViewUsersInformation.Rows.Clear();
 
-            GComboBoxMainTypeFilter.SelectedIndex = -1;
-            GSubComboBoxTypeTheFilter.SelectedIndex = -1;
+            GComboBoxMainTypeFilter.SelectedIndex = clsEETMS_Constants.kNEGATIVE_ONE;
+            GSubComboBoxTypeTheFilter.SelectedIndex = clsEETMS_Constants.kNEGATIVE_ONE;
 
-            if (GComboBoxMainTypeFilter.Items.Count <= 0)
+            if (GComboBoxMainTypeFilter.Items.Count <= clsEETMS_Constants.kZERO)
                 GComboBoxMainTypeFilter.Items.Clear();
 
 
-            if (GSubComboBoxTypeTheFilter.Items.Count <= 0)
+            if (GSubComboBoxTypeTheFilter.Items.Count <= clsEETMS_Constants.kZERO)
                 GSubComboBoxTypeTheFilter.Items.Clear();
 
             _LoadAllInformationUsersToTheDGV();
@@ -309,7 +322,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                 GGButtonFilter.Image = Resources.Cancel_Icon_EETMS;
                 GGMainPanelFilter.Visible = true;
                 _IsCheckButtonFilter = true;
-                GGButtonFilter.Text = "Cancel Filter";
+                GGButtonFilter.Text = "Cancel";
 
             }
 
@@ -318,38 +331,58 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
         private void _FillTheInformationFilter()
         {
+            DataTable DT_ResultFilter = null;
+            int NumberDay = clsEETMS_Constants.kZERO;
+            string SubSelectComboBoxTypeFilter = clsEETMS_Constants.kEMPTY_STRING;
 
-            string MainSelectComboBoxTypeFilter = GComboBoxMainTypeFilter.SelectedItem.ToString();
-            string SubSelectComboBoxTypeFilter = GSubComboBoxTypeTheFilter.SelectedValue.ToString();
 
-            UserFilterDTO userFilterDTO = new UserFilterDTO()
+            try
             {
-                MainNameFilter = MainSelectComboBoxTypeFilter,
-                SubFilter = SubSelectComboBoxTypeFilter
-            };
+
+                string MainSelectComboBoxTypeFilter = GComboBoxMainTypeFilter.SelectedItem.ToString();
+                if (MainSelectComboBoxTypeFilter == "Last Login For Day")
+                    SubSelectComboBoxTypeFilter = GSubComboBoxTypeTheFilter.SelectedItem.ToString();
+                else SubSelectComboBoxTypeFilter = GSubComboBoxTypeTheFilter.SelectedValue.ToString();
+
+                if (MainSelectComboBoxTypeFilter == "Last Login For Day")
+                {
+                    if (SubSelectComboBoxTypeFilter == "Today") NumberDay = clsEETMS_Constants.kZERO;
+                    else if (SubSelectComboBoxTypeFilter == "Last 7 Days") NumberDay = clsEETMS_Constants.kNUMBER_DAY_LAST_LOGIN_SEVEN_DAY;
+                    else NumberDay = clsEETMS_Constants.kNUMBER_DAY_LAST_LOGIN_THIRDTY_DAY;
+
+                    SubSelectComboBoxTypeFilter = NumberDay.ToString();
+
+                }
 
 
+                UserFilterDTO userFilterDTO = new UserFilterDTO()
+                {
+                    MainNameFilter = MainSelectComboBoxTypeFilter,
+                    SubFilter = SubSelectComboBoxTypeFilter
+                };
 
-            DataTable DT_ResultFilter = UserBL.GetTheUsersAccordingSelectFilter(userFilterDTO);
+
+                DT_ResultFilter = UserBL.GetTheUsersAccordingSelectFilter(userFilterDTO);
+
+            }
+            catch (Exception ex) { }
+            ;
 
             GDataGridViewUsersInformation.Rows.Clear();
-            _LoadAllDataToTheDataGridViewUsers(DT_ResultFilter);
+
+            if (DT_ResultFilter != null)
+                _LoadAllDataToTheDataGridViewUsers(DT_ResultFilter);
         }
 
         private void GGButtonFilter_Click(object sender, EventArgs e)
             => _ActiveTheFilter();
 
         private void GComboBoxMainTypeFilter_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            _LoadAllInformationToComboBoxies();
-
-
-        }
+            => _LoadAllInformationToComboBoxies();
 
         private void GSubComboBoxTypeTheFilter_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            _FillTheInformationFilter();
-        }
+            => _FillTheInformationFilter();
+
     }
 }
 

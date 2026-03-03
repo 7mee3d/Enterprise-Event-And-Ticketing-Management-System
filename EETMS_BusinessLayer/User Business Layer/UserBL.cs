@@ -128,6 +128,9 @@ namespace EETMS_BusinessLayer
                 case "Roles":
                     return UsersQueriesDAL.GetUserAccordingheRoleName(userFilterDTO.SubFilter);
 
+                case "Last Login For Day":
+                    return UsersQueriesDAL.GetUserAccordingrTheLastLoginForDay(Convert.ToInt32(userFilterDTO.SubFilter));
+
                 default: return new DataTable();
             }
 
