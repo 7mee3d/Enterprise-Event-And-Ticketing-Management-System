@@ -7,16 +7,16 @@ namespace EETMS_BusinessLayer
     {
 
         public static DataTable GetTotalRevenuePerEvent()
-            => ReportDAL.GetTotalRevenuePerEvent();
+            => ReportQueriesDAL.GetTotalRevenuePerEvent();
 
         public static DataTable GetTotalCategorySales()
-            => ReportDAL.GetTotalCategorySales();
+            => ReportQueriesDAL.GetTotalCategorySales();
 
         public static DataTable GetTopSpenders()
-            => ReportDAL.GetTopSpenders();
+            => ReportQueriesDAL.GetTopSpenders();
 
         public static DataTable GetAllInformationEvent()
-            => ReportDAL.GetAllInformationEvents();
+            => ReportQueriesDAL.GetAllInformationEvents();
 
     }
 }

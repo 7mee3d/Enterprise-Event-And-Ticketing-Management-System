@@ -10,7 +10,7 @@ namespace EETMS_BusinessLayer
 
 
         private static bool _AddNewReservation(ReservationsDTO mReservations)
-            => ReservationDAL.InsertTheNewReservation(mReservations) > clsEETMS_Constants.kZERO;
+            => ReservationCommandsDAL.InsertTheNewReservation(mReservations) > clsEETMS_Constants.kZERO;
 
         public static bool SaveTheReservatio(ReservationsDTO mReservations)
         {
@@ -27,7 +27,7 @@ namespace EETMS_BusinessLayer
         }
 
         public static bool UpdateTheInformationTicketTypesBy(int EventID, string TicketTypeName, int NewAvailableTicket)
-            => ReservationDAL.UpdateTheQuntityTicketsBy(EventID, TicketTypeName, NewAvailableTicket) > clsEETMS_Constants.kZERO;
+            => ReservationCommandsDAL.UpdateTheQuntityTicketsBy(EventID, TicketTypeName, NewAvailableTicket) > clsEETMS_Constants.kZERO;
 
 
     }

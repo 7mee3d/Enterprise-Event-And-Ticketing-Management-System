@@ -46,15 +46,17 @@
     <Compile Include="Country Data Access Layer\CountriesDAL.cs" />
     <Compile Include="Customer Data Access Layer\CustomerDAL.cs" />
     <Compile Include="Dashboard Data Access Layer\DashboardDAL.cs" />
-    <Compile Include="Event Data Access Layer\EventsDAL.cs" />
+    <Compile Include="Event Data Access Layer\Event Data Access Layer Commands\EventCommandsDAL.cs" />
+    <Compile Include="Event Data Access Layer\Event Data Access Layer Queries\EventsQueriesDAL.cs" />
     <Compile Include="Payment Data Access Layer\Payment Data Access Layer Commands\PaymentCommandsDAL.cs" />
     <Compile Include="Payment Data Access Layer\Payment Data Access Layer Queries\PaymentsQueriesDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report Data Access Layer\ReportDAL.cs" />
-    <Compile Include="Reservation Data Access Layer\ReservationDAL.cs" />
-    <Compile Include="Reservation Payment Data Access Layer\ReservationPaymentDAL.cs" />
-    <Compile Include="Roles Data Access Layer\RoleDAL.cs" />
-    <Compile Include="Ticket Data Access Layer\TicketsDAL.cs" />
+    <Compile Include="Report Data Access Layer\Report Data Access Layer Queries\ReportQueriesDAL.cs" />
+    <Compile Include="Reservation Data Access Layer\Reservation Data Access Layer Commands\ReservationCommandsDAL.cs" />
+    <Compile Include="Reservation Payment Data Access Layer\Reservation Payment Data Access Layer Queries\ReservationPaymentQueriesDAL.cs" />
+    <Compile Include="Roles Data Access Layer\Roles Data Access Layer Queries\RoleQueriesDAL.cs" />
+    <Compile Include="Ticket Data Access Layer\Ticket Data Access Layer Commands\TicketCommandsDAL.cs" />
+    <Compile Include="Ticket Data Access Layer\Ticket Data Access Layer Queries\TicketsQueriesDAL.cs" />
     <Compile Include="User Data Access Layer\User Data Access Layer Commands\UserCommandsDAL.cs" />
     <Compile Include="User Data Access Layer\User Data Access Layer Queries\UsersQueriesDAL.cs" />
   </ItemGroup>
@@ -64,5 +66,6 @@
       <Name>EETMS_DTOs</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

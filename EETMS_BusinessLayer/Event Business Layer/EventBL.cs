@@ -11,24 +11,22 @@ namespace EETMS_BusinessLayer
 
 
         public static DataTable GetAllInformationEvents()
-        {
-            return EventsDAL.GetAllInformationEvents();
-        }
+            => EventsQueriesDAL.GetAllInformationEvents();
 
-        public static bool DeleteTheEvent(int IDEvent) 
-            => EventsDAL.DeleteTheEventByID(IDEvent) > clsEETMS_Constants.kZERO;
+        public static bool DeleteTheEvent(int IDEvent)
+            => EventCommandsDAL.DeleteTheEventByID(IDEvent) > clsEETMS_Constants.kZERO;
 
-        public static EventDTO FindTheEventBy(int IDEvent) 
-            => EventsDAL.FindTheEventByID(IDEvent);
+        public static EventDTO FindTheEventBy(int IDEvent)
+            => EventsQueriesDAL.FindTheEventByID(IDEvent);
 
-        private static bool AddNewEvent(EventDTO NewInformationEvent) 
-            => EventsDAL.InsertNewEvent(NewInformationEvent) > clsEETMS_Constants.kZERO;
+        private static bool AddNewEvent(EventDTO NewInformationEvent)
+            => EventCommandsDAL.InsertNewEvent(NewInformationEvent) > clsEETMS_Constants.kZERO;
 
-        private static bool UpdateInformationEvent(int IDEvent, EventDTO NewInformationEvent) 
-            => EventsDAL.UpdateInformationEvent(IDEvent, NewInformationEvent) > clsEETMS_Constants.kZERO;
+        private static bool UpdateInformationEvent(int IDEvent, EventDTO NewInformationEvent)
+            => EventCommandsDAL.UpdateInformationEvent(IDEvent, NewInformationEvent) > clsEETMS_Constants.kZERO;
 
         public static DataTable GetEventTicketCapacityInfoBy(int EventID)
-            => EventsDAL.GetEventTicketCapacityInfoBy(EventID);
+            => EventsQueriesDAL.GetEventTicketCapacityInfoBy(EventID);
 
         public static bool SaveTheMode(EventDTO InformationEvent)
         {
@@ -46,10 +44,10 @@ namespace EETMS_BusinessLayer
         }
 
         public static DataTable GetRemainingCapacityEventfoBy(int EventID)
-            => EventsDAL.GetRemainingCapacityEventfoBy(EventID);
+            => EventsQueriesDAL.GetRemainingCapacityEventfoBy(EventID);
 
         public static DataTable AllEventsAfterSearchBy(string EventName)
-            => EventsDAL.GetTheAllEventsAccordingTheSearchBy(EventName);
+            => EventsQueriesDAL.GetTheAllEventsAccordingTheSearchBy(EventName);
 
 
     }

@@ -15,7 +15,7 @@ namespace EETMS_DataAccessLayer
 
 
 
-        private static DataTable _GetAllInformationCountries ()
+        private static DataTable _GetAllInformationCountries()
         {
 
             DataTable CountriesDT = new DataTable();
@@ -60,7 +60,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception Ex)
             {
-                Console.WriteLine(Ex.Message);
+                throw;
             }
 
 

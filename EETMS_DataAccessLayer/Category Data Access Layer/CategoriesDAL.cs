@@ -68,7 +68,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception Ex)
             {
-                Console.WriteLine(Ex.Message);
+                throw;
             }
 
 
@@ -124,7 +124,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception Ex)
             {
-                Console.WriteLine(Ex.Message);
+                throw;
             }
 
 
@@ -189,7 +189,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine(ex.Message);
+                throw;
             }
             ;
 
@@ -294,7 +294,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw;
             }
 
 
@@ -337,7 +337,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw;
             }
 
             return RowAffecive;

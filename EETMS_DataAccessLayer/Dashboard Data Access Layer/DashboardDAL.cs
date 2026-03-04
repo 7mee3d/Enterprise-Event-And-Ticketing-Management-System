@@ -18,6 +18,7 @@ namespace EETMS_DataAccessLayer
         #endregion
 
 
+        #region All MEthod Dashboard Queries 
 
         private static DataTable _GetTheStatisticsTicketsByCategory()
         {
@@ -137,11 +138,14 @@ namespace EETMS_DataAccessLayer
 
             DataTable TotalRevenueForMonth_DT = new DataTable();
 
-            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            try
             {
 
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
 
-                string Query = @"
+
+                    string Query = @"
 
 	
                                                       SELECT 
@@ -158,24 +162,27 @@ namespace EETMS_DataAccessLayer
                                    ";
 
 
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
-
-                    command.Parameters.Add("@Year", SqlDbType.Int).Value = Year;
-
-                    connection.Open();
-
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlCommand command = new SqlCommand(Query, connection))
                     {
 
+                        command.Parameters.Add("@Year", SqlDbType.Int).Value = Year;
 
-                        if (reader.HasRows) TotalRevenueForMonth_DT.Load(reader);
+                        connection.Open();
 
 
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+
+                            if (reader.HasRows) TotalRevenueForMonth_DT.Load(reader);
+
+
+                        }
                     }
                 }
             }
+            catch (Exception ex) { throw; }
+            ;
 
             return TotalRevenueForMonth_DT;
 
@@ -357,6 +364,9 @@ namespace EETMS_DataAccessLayer
 
         public static int GetTheTotalCustomers()
             => _GetTheTotalCustomers();
+
+
+        #endregion
 
 
     }

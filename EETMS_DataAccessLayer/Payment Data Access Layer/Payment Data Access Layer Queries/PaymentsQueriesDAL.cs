@@ -1,5 +1,4 @@
-﻿using EETMS_DTOs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,6 +12,9 @@ namespace EETMS_DataAccessLayer
         #region Setting Data Access Events
         private static readonly string _ConneactionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         #endregion
+
+
+        #region All Methods Payment Queries 
 
         private static double _GetTotalRevenue()
         {
@@ -453,6 +455,8 @@ namespace EETMS_DataAccessLayer
 
         public static DataTable GetAllInformationPaymentFilterTwoDate(DateTime DateFrom, DateTime DateTo)
             => _GetAllInformationPaymentFilterTwoDate(DateFrom, DateTo);
+
+        #endregion
 
 
     }

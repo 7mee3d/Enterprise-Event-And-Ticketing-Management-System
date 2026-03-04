@@ -186,9 +186,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
             this.label2.Location = new System.Drawing.Point(10, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(287, 17);
+            this.label2.Size = new System.Drawing.Size(357, 17);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Manage your event attendees, and their history.\n";
+            this.label2.Text = "Manage and view all registered customers and their details.";
             // 
             // label3
             // 

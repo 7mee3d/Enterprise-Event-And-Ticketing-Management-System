@@ -15,17 +15,22 @@ namespace EETMS_DataAccessLayer
         #endregion
 
 
+        #region All Methods Payment Commands 
+
+
         private static int _InsertNewPayment(PaymentDTO mPayment)
         {
 
             int NewIDReservationPayment = -1;
 
-
-            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            try
             {
 
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
 
-                string Query = @"
+
+                    string Query = @"
 
                                             INSERT INTO Payments ( Amount , PaymentMethodID , PaymentStatusID , ReservationID )
                                             VALUES (@Amount , @PaymentMethodID , @PaymentStatusID , @ReservationID ) ;
@@ -35,26 +40,28 @@ namespace EETMS_DataAccessLayer
 
                                  ";
 
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
 
 
-                    command.Parameters.AddWithValue("@Amount", mPayment.PaidAmount);
-                    command.Parameters.AddWithValue("@PaymentMethodID", Convert.ToInt32(mPayment.PaymentMethod));
-                    command.Parameters.AddWithValue("@PaymentStatusID", Convert.ToInt32(mPayment.PaymentStatus));
-                    command.Parameters.AddWithValue("@ReservationID", mPayment.BookingID);
+                        command.Parameters.AddWithValue("@Amount", mPayment.PaidAmount);
+                        command.Parameters.AddWithValue("@PaymentMethodID", Convert.ToInt32(mPayment.PaymentMethod));
+                        command.Parameters.AddWithValue("@PaymentStatusID", Convert.ToInt32(mPayment.PaymentStatus));
+                        command.Parameters.AddWithValue("@ReservationID", mPayment.BookingID);
 
-                    connection.Open();
+                        connection.Open();
 
-                    object result = command.ExecuteScalar();
+                        object result = command.ExecuteScalar();
 
-                    if (result != null && int.TryParse(result.ToString(), out int NewID))
-                        NewIDReservationPayment = NewID;
+                        if (result != null && int.TryParse(result.ToString(), out int NewID))
+                            NewIDReservationPayment = NewID;
 
-                    mPayment.PaymentID = NewIDReservationPayment;
+                        mPayment.PaymentID = NewIDReservationPayment;
 
+                    }
                 }
             }
+            catch (Exception ex) { throw; }
 
             return NewIDReservationPayment;
         }
@@ -62,6 +69,8 @@ namespace EETMS_DataAccessLayer
         public static int InsertNewPayment(PaymentDTO mPayment)
             => _InsertNewPayment(mPayment);
 
+
+        #endregion
 
     }
 }

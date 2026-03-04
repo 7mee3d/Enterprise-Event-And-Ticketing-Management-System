@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace EETMS_DataAccessLayer
 {
-    public class ReservationPaymentDAL
+    public class ReservationPaymentQueriesDAL
     {
 
 
@@ -18,15 +18,20 @@ namespace EETMS_DataAccessLayer
 
 
 
+        #region All Method Reservation Payment Queries
+
         private static List<ReservationPaymentDTO> _GetAllInformationMReservationPayment()
         {
 
             List<ReservationPaymentDTO> LMReservationPayments = new List<ReservationPaymentDTO>();
 
-            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            try
             {
 
-                string Query = @"
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+                    string Query = @"
 
 
 	                           SELECT 
@@ -69,33 +74,35 @@ namespace EETMS_DataAccessLayer
 
                               ";
 
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
-
-
-                    connection.Open();
-
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlCommand command = new SqlCommand(Query, connection))
                     {
 
 
-                        while (reader.Read())
+                        connection.Open();
+
+
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            ReservationPaymentDTO mReservationPaymentOne = new ReservationPaymentDTO();
-
-                            mReservationPaymentOne.ReservationID = reader["ReservationID"] != DBNull.Value ? Convert.ToInt32(reader["ReservationID"]) : 0;
-                            mReservationPaymentOne.FullName = reader["FullName"] != DBNull.Value ? reader["FullName"].ToString() : null;
-                            mReservationPaymentOne.TotalAmount = reader["TotalAmount"] != DBNull.Value ? Convert.ToDecimal(reader["TotalAmount"]) : 0.0M;
-                            mReservationPaymentOne.PaidAmount = reader["PaidAmount"] != DBNull.Value ? Convert.ToDecimal(reader["PaidAmount"]) : 0.0M;
-                            mReservationPaymentOne.Remaining = reader["Remaining"] != DBNull.Value ? Convert.ToDecimal(reader["Remaining"]) : 0.0M;
 
 
-                            LMReservationPayments.Add(mReservationPaymentOne);
+                            while (reader.Read())
+                            {
+                                ReservationPaymentDTO mReservationPaymentOne = new ReservationPaymentDTO();
+
+                                mReservationPaymentOne.ReservationID = reader["ReservationID"] != DBNull.Value ? Convert.ToInt32(reader["ReservationID"]) : 0;
+                                mReservationPaymentOne.FullName = reader["FullName"] != DBNull.Value ? reader["FullName"].ToString() : null;
+                                mReservationPaymentOne.TotalAmount = reader["TotalAmount"] != DBNull.Value ? Convert.ToDecimal(reader["TotalAmount"]) : 0.0M;
+                                mReservationPaymentOne.PaidAmount = reader["PaidAmount"] != DBNull.Value ? Convert.ToDecimal(reader["PaidAmount"]) : 0.0M;
+                                mReservationPaymentOne.Remaining = reader["Remaining"] != DBNull.Value ? Convert.ToDecimal(reader["Remaining"]) : 0.0M;
+
+
+                                LMReservationPayments.Add(mReservationPaymentOne);
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex) { throw; }
 
             return LMReservationPayments;
         }
@@ -108,10 +115,13 @@ namespace EETMS_DataAccessLayer
 
             ReservationPaymentDTO MReservationPayments = new ReservationPaymentDTO();
 
-            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            try
             {
 
-                string Query = @"
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+                    string Query = @"
 
 
 	                           SELECT 
@@ -155,37 +165,41 @@ namespace EETMS_DataAccessLayer
 
                               ";
 
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
-
-                    command.Parameters.Add("@ReservationID", System.Data.SqlDbType.Int).Value = ReservationID;
-                    connection.Open();
-
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlCommand command = new SqlCommand(Query, connection))
                     {
 
+                        command.Parameters.Add("@ReservationID", System.Data.SqlDbType.Int).Value = ReservationID;
+                        connection.Open();
 
-                        if (reader.Read())
+
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
 
 
-                            MReservationPayments.ReservationID = reader["ReservationID"] != DBNull.Value ? Convert.ToInt32(reader["ReservationID"]) : 0;
-                            MReservationPayments.FullName = reader["FullName"] != DBNull.Value ? reader["FullName"].ToString() : null;
-                            MReservationPayments.TotalAmount = reader["TotalAmount"] != DBNull.Value ? Convert.ToDecimal(reader["TotalAmount"]) : 0.0M;
-                            MReservationPayments.PaidAmount = reader["PaidAmount"] != DBNull.Value ? Convert.ToDecimal(reader["PaidAmount"]) : 0.0M;
-                            MReservationPayments.Remaining = reader["Remaining"] != DBNull.Value ? Convert.ToDecimal(reader["Remaining"]) : 0.0M;
+                            if (reader.Read())
+                            {
 
+
+                                MReservationPayments.ReservationID = reader["ReservationID"] != DBNull.Value ? Convert.ToInt32(reader["ReservationID"]) : 0;
+                                MReservationPayments.FullName = reader["FullName"] != DBNull.Value ? reader["FullName"].ToString() : null;
+                                MReservationPayments.TotalAmount = reader["TotalAmount"] != DBNull.Value ? Convert.ToDecimal(reader["TotalAmount"]) : 0.0M;
+                                MReservationPayments.PaidAmount = reader["PaidAmount"] != DBNull.Value ? Convert.ToDecimal(reader["PaidAmount"]) : 0.0M;
+                                MReservationPayments.Remaining = reader["Remaining"] != DBNull.Value ? Convert.ToDecimal(reader["Remaining"]) : 0.0M;
+
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex) { throw; }
 
             return MReservationPayments;
         }
 
         public static ReservationPaymentDTO GetAllInformationMReservationPaymentByReservationID(int ReservationID)
             => _GetAllInformationMReservationPaymentByReservationID(ReservationID);
+
+        #endregion
 
 
     }

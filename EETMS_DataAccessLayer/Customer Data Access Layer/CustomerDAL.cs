@@ -179,7 +179,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception ex)
             {
-
+                throw;
             }
 
             return InfoCustomer;
@@ -410,11 +410,14 @@ namespace EETMS_DataAccessLayer
 
             DataTable DT_Customer = new DataTable();
 
-            using (SqlConnection connection = new SqlConnection(_ConnectionString))
+            try
             {
 
+                using (SqlConnection connection = new SqlConnection(_ConnectionString))
+                {
 
-                string Query = @"
+
+                    string Query = @"
                                            SELECT  
 
                                                    CustomerTableSubQuery.CusotmerID,
@@ -468,26 +471,29 @@ namespace EETMS_DataAccessLayer
                                 ";
 
 
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
-                    command.Parameters.AddWithValue("@Search", ToBySearch);
-
-                    connection.Open();
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlCommand command = new SqlCommand(Query, connection))
                     {
+                        command.Parameters.AddWithValue("@Search", ToBySearch);
 
-                        if (reader.HasRows)
-                            DT_Customer.Load(reader);
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.HasRows)
+                                DT_Customer.Load(reader);
+
+
+                        }
 
 
                     }
 
 
                 }
-
-
             }
+            catch (Exception ex) { throw; }
+            ;
 
             return DT_Customer;
 
@@ -503,11 +509,13 @@ namespace EETMS_DataAccessLayer
 
             bool FlagFindTheCustomer = false;
 
-            using (SqlConnection connection = new SqlConnection(_ConnectionString))
+            try
             {
+                using (SqlConnection connection = new SqlConnection(_ConnectionString))
+                {
 
 
-                string Query = @"
+                    string Query = @"
 
 
                                     SELECT 1 
@@ -524,25 +532,28 @@ namespace EETMS_DataAccessLayer
 
                                             ";
 
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
 
 
-                    command.Parameters.AddWithValue("@FirstName", mCustomerNames.FirstName);
-                    command.Parameters.AddWithValue("@MidName", mCustomerNames.MidName);
-                    command.Parameters.AddWithValue("@LastName", mCustomerNames.LastName);
+                        command.Parameters.AddWithValue("@FirstName", mCustomerNames.FirstName);
+                        command.Parameters.AddWithValue("@MidName", mCustomerNames.MidName);
+                        command.Parameters.AddWithValue("@LastName", mCustomerNames.LastName);
 
 
-                    connection.Open();
+                        connection.Open();
 
 
-                    object result = command.ExecuteScalar();
+                        object result = command.ExecuteScalar();
 
-                    if (result != null && int.TryParse(result.ToString(), out int ResultTheQueryCheckName))
-                        FlagFindTheCustomer = (ResultTheQueryCheckName > 0);
+                        if (result != null && int.TryParse(result.ToString(), out int ResultTheQueryCheckName))
+                            FlagFindTheCustomer = (ResultTheQueryCheckName > 0);
 
+                    }
                 }
             }
+            catch (Exception ex) { throw; }
+            ;
 
             return FlagFindTheCustomer;
 

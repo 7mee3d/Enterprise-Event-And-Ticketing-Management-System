@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace EETMS_DataAccessLayer
 {
-    public class ReportDAL
+    public class ReportQueriesDAL
     {
 
 
@@ -16,6 +16,7 @@ namespace EETMS_DataAccessLayer
         #endregion
 
 
+        #region All Methods Report Queries 
 
         private static DataTable _GetTotalRevenuePerEvent()
         {
@@ -147,6 +148,7 @@ namespace EETMS_DataAccessLayer
 
         private static DataTable _GetTopSpenders()
         {
+
             DataTable DT_InformationTopSpenders = new DataTable();
 
 
@@ -295,7 +297,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception Ex)
             {
-                Console.WriteLine(Ex.Message);
+                throw;
             }
 
 
@@ -303,9 +305,11 @@ namespace EETMS_DataAccessLayer
         }
 
         public static DataTable GetAllInformationEvents()
-        {
-            return _GetAllInformationEvents();
-        }
+             => _GetAllInformationEvents();
+
+
+
+        #endregion
 
 
 

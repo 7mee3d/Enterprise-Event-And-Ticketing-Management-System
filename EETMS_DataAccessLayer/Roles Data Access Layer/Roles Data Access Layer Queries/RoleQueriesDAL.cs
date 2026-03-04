@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace EETMS_DataAccessLayer.Roles_Data_Access_Layer
 {
-    public class RoleDAL
+    public class RoleQueriesDAL
     {
 
         #region Setting Data Access Events
@@ -14,6 +14,8 @@ namespace EETMS_DataAccessLayer.Roles_Data_Access_Layer
         #endregion
 
 
+
+        #region All Methods Role Queries 
 
         private static DataTable _GetTheAllInformationRoles()
         {
@@ -100,6 +102,8 @@ namespace EETMS_DataAccessLayer.Roles_Data_Access_Layer
 
         public static List<string> GetAllNameRole()
             => _GetAllNameRole();
+
+        #endregion
 
     }
 }

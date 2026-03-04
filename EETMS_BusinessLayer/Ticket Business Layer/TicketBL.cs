@@ -11,22 +11,22 @@ namespace EETMS_BusinessLayer
     {
 
         public static DataTable GetInformationEvent_Name_And_ID()
-            => TicketsDAL.GetInformation_ID_Name_Events();
+            => TicketsQueriesDAL.GetInformation_ID_Name_Events();
 
         public static DataTable GetInformationTicketForEvent(int EventID)
-            => TicketsDAL.GetInformationTicketForEventBy(EventID);
+            => TicketsQueriesDAL.GetInformationTicketForEventBy(EventID);
 
         private static bool _AddNewTicketType(TicketTypeDTO mTicketType)
-            => TicketsDAL.InsertNewTicketToTheEventBy(mTicketType) > clsEETMS_Constants.kZERO;
+            => TicketCommandsDAL.InsertNewTicketToTheEventBy(mTicketType) > clsEETMS_Constants.kZERO;
 
         private static bool _UpdateInformationTicketType(TicketTypeDTO mTicketType)
-            => TicketsDAL.UpdateInformationTicketToTheEventBy(mTicketType) > clsEETMS_Constants.kZERO;
+            => TicketCommandsDAL.UpdateInformationTicketToTheEventBy(mTicketType) > clsEETMS_Constants.kZERO;
 
         public static TicketTypeDTO FindTheTicketTypeBy(int EventID, int TicketTypeID)
-            => TicketsDAL.FindTheTicketTypeBy(EventID, TicketTypeID);
+            => TicketsQueriesDAL.FindTheTicketTypeBy(EventID, TicketTypeID);
 
         public static Dictionary<int, string> GetTheAllTicketTypeBy(int IDEvent)
-            => TicketsDAL.GetTheAllTicketTypeBy(IDEvent);
+            => TicketsQueriesDAL.GetTheAllTicketTypeBy(IDEvent);
 
         public static bool SaveModeTicketType(TicketTypeDTO mTicketType)
         {

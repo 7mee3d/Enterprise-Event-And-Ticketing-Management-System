@@ -9,9 +9,9 @@ namespace EETMS_BusinessLayer.Roles_Business_Layer
     {
 
         public static DataTable GetAllInformationRoles()
-            => RoleDAL.GetTheAllInformationRoles();
+            => RoleQueriesDAL.GetTheAllInformationRoles();
 
         public static List<string> GetAllRoleName()
-            => RoleDAL.GetAllNameRole();
+            => RoleQueriesDAL.GetAllNameRole();
     }
 }

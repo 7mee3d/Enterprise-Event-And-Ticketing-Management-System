@@ -7,8 +7,9 @@ using EETMS_DTOs;
 
 namespace EETMS_DataAccessLayer
 {
-    public class TicketsDAL
+    public class TicketsQueriesDAL
     {
+
 
         #region  The Connection String [Connect The Data base EETMS] 
 
@@ -16,6 +17,9 @@ namespace EETMS_DataAccessLayer
 
         #endregion
 
+
+
+        #region All Methods Ticket Queries 
 
         private static DataTable _GetInformation_ID_Name_Events()
         {
@@ -118,118 +122,6 @@ namespace EETMS_DataAccessLayer
 
         public static DataTable GetInformationTicketForEventBy(int EventID)
             => _GetInformationTicketForEventBy(EventID);
-
-        private static int _InsertNewTicketToTheEventBy(TicketTypeDTO mTicketType)
-        {
-
-            int NewIDTicket = -1;
-
-
-            using (SqlConnection connection = new SqlConnection(_ConnectionString))
-            {
-
-
-
-                string Query = @"
-
-
-                                    INSERT INTO TicketTypes ( TicketTypeName , Quantity , Available , Price , EventID )
-                                    VALUES (@TicketTypeName , @Quantity ,@Available ,  @Price , @EventID);
-
-
-                                    SELECT SCOPE_IDENTITY(); 
-
-
-
-                             ";
-
-
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
-
-                    command.Parameters.Add("@TicketTypeName", SqlDbType.NVarChar, 250).Value = mTicketType.TicketTypeName;
-                    command.Parameters.Add("@Quantity", SqlDbType.Int).Value = mTicketType.Quantity;
-                    command.Parameters.Add("@Available", SqlDbType.Int).Value = mTicketType.Quantity;
-                    command.Parameters.Add("@Price", SqlDbType.Decimal).Value = mTicketType.Price;
-                    command.Parameters.Add("@EventID", SqlDbType.Int).Value = mTicketType.EventID;
-
-                    connection.Open();
-
-
-                    object result = command.ExecuteScalar();
-
-
-                    if (result != null && int.TryParse(result.ToString(), out int NewID))
-                        NewIDTicket = NewID;
-
-
-                    mTicketType.TicketTypeID = NewIDTicket;
-
-                }
-
-
-            }
-
-            return NewIDTicket;
-
-        }
-
-        public static int InsertNewTicketToTheEventBy(TicketTypeDTO mTicketType)
-            => _InsertNewTicketToTheEventBy(mTicketType);
-
-        private static int _UpdateInformationTicketToTheEventBy(TicketTypeDTO mTicketType)
-        {
-
-            int RowAffective = -1;
-
-
-            using (SqlConnection connection = new SqlConnection(_ConnectionString))
-            {
-
-
-
-                string Query = @"
-
-
-                                    UPDATE TicketTypes
-
-                                            SET Quantity = @Quantity , Available = @Available ,  Price = @Price 
-
-                                            WHERE  EventID = @EventID AND TicketTypeID = @TicketTypeID
-
-
-
-                             ";
-
-
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
-
-                    command.Parameters.Add("@Quantity", SqlDbType.Int).Value = mTicketType.Quantity;
-                    command.Parameters.Add("@Available", SqlDbType.Int).Value = mTicketType.Available;
-                    command.Parameters.Add("@Price", SqlDbType.Decimal).Value = mTicketType.Price;
-                    command.Parameters.Add("@EventID", SqlDbType.Int).Value = mTicketType.EventID;
-                    command.Parameters.Add("@TicketTypeID", SqlDbType.Int).Value = mTicketType.TicketTypeID;
-
-
-                    connection.Open();
-
-
-                    RowAffective = command.ExecuteNonQuery();
-
-
-
-                }
-
-
-            }
-
-            return RowAffective;
-
-        }
-
-        public static int UpdateInformationTicketToTheEventBy(TicketTypeDTO mTicketType)
-            => _UpdateInformationTicketToTheEventBy(mTicketType);
 
         private static TicketTypeDTO _FindTheTicketTypeBy(int EventID, int TicketID)
         {
@@ -361,6 +253,8 @@ namespace EETMS_DataAccessLayer
         public static Dictionary<int, string> GetTheAllTicketTypeBy(int IDEvent)
             => _GetTheAllTicketTypeBy(IDEvent);
 
+
+        #endregion
 
     }
 }

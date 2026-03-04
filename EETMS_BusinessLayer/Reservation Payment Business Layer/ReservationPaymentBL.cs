@@ -9,9 +9,9 @@ namespace EETMS_BusinessLayer
     {
 
         public static List<ReservationPaymentDTO> GetAllInformationReservationPayment()
-            => ReservationPaymentDAL.GetAllInformationMReservationPayment();
+            => ReservationPaymentQueriesDAL.GetAllInformationMReservationPayment();
 
         public static ReservationPaymentDTO GetAllInformationReservationPaymentByReservationID(int ReservationID)
-      => ReservationPaymentDAL.GetAllInformationMReservationPaymentByReservationID(ReservationID);
+      => ReservationPaymentQueriesDAL.GetAllInformationMReservationPaymentByReservationID(ReservationID);
     }
 }

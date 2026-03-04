@@ -278,5 +278,5 @@ namespace EETMS_Presentation.EETMS_Payment
             _PushAllInformtionPaymentAccrodingTypeToDGV();
         }
 
-    }
+   }
 }
