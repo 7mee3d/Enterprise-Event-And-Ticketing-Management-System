@@ -89,53 +89,56 @@ namespace EETMS_Presentation.EETMS_Payment
             int StatusPaymentNumber = clsEETMS_Constants.kZERO;
             int PaymentMethodNumebr = clsEETMS_Constants.kZERO;
 
-            int ResevationID = _MReservationPayment.ReservationID;
-
-            decimal AmountToPay = GNumericUpDownAmountToPay.Value;
-            decimal RemainingBalance = _MReservationPayment.Remaining;
-
-            if (!PaymentsBL.IsPaidAmountGratherThanOriginalAmount(AmountToPay, RemainingBalance))
-                mPayment.PaidAmount = AmountToPay;
-
-
-            if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == PaymentDTO.EnPaymentStatus._kPAID)
-                StatusPaymentNumber = clsEETMS_Constants.kONE;
-            else if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == PaymentDTO.EnPaymentStatus._kPARTIALLY_PAID)
-                StatusPaymentNumber = 2;
-            else
-                StatusPaymentNumber = 3;
-
-
-            if (GButtonCash.Checked)
-                PaymentMethodNumebr = Convert.ToInt16(GButtonCash.Tag);
-
-            else if (GButtonCard.Checked)
-                PaymentMethodNumebr = Convert.ToInt16(GButtonCard.Tag);
-
-            else if (GButtonBankTransfer.Checked)
-                PaymentMethodNumebr = Convert.ToInt16(GButtonBankTransfer.Tag);
-
-
-            if (mPayment != null)
+            if (_MReservationPayment != null)
             {
-                mPayment = new PaymentDTO
+                int ResevationID = _MReservationPayment.ReservationID;
+
+                decimal AmountToPay = GNumericUpDownAmountToPay.Value;
+                decimal RemainingBalance = _MReservationPayment.Remaining;
+
+                if (!PaymentsBL.IsPaidAmountGratherThanOriginalAmount(AmountToPay, RemainingBalance))
+                    mPayment.PaidAmount = AmountToPay;
+
+
+                if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == PaymentDTO.EnPaymentStatus._kPAID)
+                    StatusPaymentNumber = clsEETMS_Constants.kONE;
+                else if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == PaymentDTO.EnPaymentStatus._kPARTIALLY_PAID)
+                    StatusPaymentNumber = 2;
+                else
+                    StatusPaymentNumber = 3;
+
+
+                if (GButtonCash.Checked)
+                    PaymentMethodNumebr = Convert.ToInt16(GButtonCash.Tag);
+
+                else if (GButtonCard.Checked)
+                    PaymentMethodNumebr = Convert.ToInt16(GButtonCard.Tag);
+
+                else if (GButtonBankTransfer.Checked)
+                    PaymentMethodNumebr = Convert.ToInt16(GButtonBankTransfer.Tag);
+
+
+                if (mPayment != null)
                 {
+                    mPayment = new PaymentDTO
+                    {
 
-                    PaidAmount = AmountToPay,
-                    PaymentMethod = PaymentMethodNumebr.ToString(),
-                    PaymentStatus = StatusPaymentNumber.ToString(),
-                    BookingID = ResevationID
+                        PaidAmount = AmountToPay,
+                        PaymentMethod = PaymentMethodNumebr.ToString(),
+                        PaymentStatus = StatusPaymentNumber.ToString(),
+                        BookingID = ResevationID
 
-                };
+                    };
+                }
+
+                if (PaymentsBL.SaveTheInformationPayment(mPayment))
+                    MessageBox.Show("The Payment is Addedd Sccessfully ", "Note For Add New Payment ");
+                else MessageBox.Show("The Payment is Addedd Faild ", "Note For Add New Payment ");
+
+
+                mPayment = null;
+                _ResetAllSettingAfterConfirmThePayment();
             }
-
-            if (PaymentsBL.SaveTheInformationPayment(mPayment))
-                MessageBox.Show("The Payment is Addedd Sccessfully ", "Note For Add New Payment ");
-            else MessageBox.Show("The Payment is Addedd Faild ", "Note For Add New Payment ");
-
-
-            mPayment = null;
-            _ResetAllSettingAfterConfirmThePayment();
         }
 
         private void GButtonConfirmPayment_Click(object sender, EventArgs e)

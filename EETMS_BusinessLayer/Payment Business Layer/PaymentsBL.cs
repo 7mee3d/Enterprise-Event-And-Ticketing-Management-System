@@ -3,29 +3,31 @@ using EETMS_DataAccessLayer;
 using System.Data;
 using EETMS_DTOs;
 using static EETMS_DTOs.PaymentDTO;
+using System.Collections.Generic;
+using System;
 namespace EETMS_BusinessLayer
 {
     public class PaymentsBL
     {
 
         public static double GetTheTotalRevenue()
-            => PaymentsDAL.GetTotalRevenue();
+            => PaymentsQueriesDAL.GetTotalRevenue();
 
         public static DataTable GetAllInformationPayments()
-            => PaymentsDAL.GetAllInformationPayment();
+            => PaymentsQueriesDAL.GetAllInformationPayment();
 
         public static DataTable GetAllInformationPaymentBy(string BookingID)
-            => PaymentsDAL.GetAllInformationPaymentBy(BookingID);
+            => PaymentsQueriesDAL.GetAllInformationPaymentBy(BookingID);
 
         private static bool _AddNewPayment(PaymentDTO mPayment)
-            => PaymentsDAL.InsertNewPayment(mPayment) > clsEETMS_Constants.kZERO;
+            => PaymentCommandsDAL.InsertNewPayment(mPayment) > clsEETMS_Constants.kZERO;
 
         public static bool SaveTheInformationPayment(PaymentDTO mPayment)
         {
 
             switch (mPayment.EnMode)
             {
-                case PaymentDTO.EnModePayment._kADD_NEW_PAYMENT:
+                case EnModePayment._kADD_NEW_PAYMENT:
                     return (_AddNewPayment(mPayment));
 
                 default: return false;
@@ -46,6 +48,38 @@ namespace EETMS_BusinessLayer
                 return EnPaymentStatus._kUNPAID;
 
             return EnPaymentStatus._kUNPAID;
+        }
+
+        public static List<string> GetAllPaymentStatus()
+            => PaymentsQueriesDAL.GetAllPaymentStatus();
+
+        public static List<string> GetAllPaymentMethods()
+            => PaymentsQueriesDAL.GetAllPaymentMethods();
+
+        private static DataTable _GetAllInformationPaymentAccordingBy(string NameStatusPaymentToBeFilter)
+            => PaymentsQueriesDAL.GetAllInformationPaymentAccordingBy(NameStatusPaymentToBeFilter);
+
+        private static DataTable _GetAllInformationPaymentMethodAccordingBy(string NamePaymentMethodFilter)
+            => PaymentsQueriesDAL.GetAllInformationPaymentMethodsBy(NamePaymentMethodFilter);
+
+        private static DataTable _GetAllInformationPaymentAccordingBy(DateTime DateFrom, DateTime DateTo)
+        => PaymentsQueriesDAL.GetAllInformationPaymentFilterTwoDate(DateFrom, DateTo);
+
+        public static DataTable GetAllInformationPaymentFilter(PaymentFilterDTO paymentFilterDTO)
+        {
+
+            switch (paymentFilterDTO.TypeMainFilter)
+            {
+                case "Payment Status":
+                    return _GetAllInformationPaymentAccordingBy(paymentFilterDTO.TypeSubMainFilter);
+                case "Payment Method":
+                    return _GetAllInformationPaymentMethodAccordingBy(paymentFilterDTO.TypeSubMainFilter);
+                case "Payment Date":
+                    return _GetAllInformationPaymentAccordingBy(paymentFilterDTO.FromDatePayment ?? DateTime.Now, paymentFilterDTO.ToDatePayment ?? DateTime.Now);
+                default:
+                    return new DataTable();
+
+            }
         }
 
     }

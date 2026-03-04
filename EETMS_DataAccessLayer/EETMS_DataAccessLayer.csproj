@@ -47,7 +47,8 @@
     <Compile Include="Customer Data Access Layer\CustomerDAL.cs" />
     <Compile Include="Dashboard Data Access Layer\DashboardDAL.cs" />
     <Compile Include="Event Data Access Layer\EventsDAL.cs" />
-    <Compile Include="Payment Data Access Layer\PaymentsDAL.cs" />
+    <Compile Include="Payment Data Access Layer\Payment Data Access Layer Commands\PaymentCommandsDAL.cs" />
+    <Compile Include="Payment Data Access Layer\Payment Data Access Layer Queries\PaymentsQueriesDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report Data Access Layer\ReportDAL.cs" />
     <Compile Include="Reservation Data Access Layer\ReservationDAL.cs" />

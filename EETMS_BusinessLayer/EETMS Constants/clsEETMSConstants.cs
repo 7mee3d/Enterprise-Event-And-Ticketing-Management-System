@@ -31,5 +31,11 @@ namespace EETMS_BusinessLayer.EETMS_Constants
         public const short kMAX_NUMBER_DELAY_USER_US = 5;
 
 
+        //User 
+
+
+        public const short kNUMBER_DAY_LAST_LOGIN_SEVEN_DAY = 7;
+        public const short kNUMBER_DAY_LAST_LOGIN_THIRDTY_DAY = 30;
+
     }
 }
