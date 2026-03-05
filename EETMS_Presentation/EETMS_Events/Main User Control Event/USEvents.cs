@@ -5,6 +5,7 @@ using EETMS_Presentation.EETMS_Settings;
 using EETMS_Presentation.Properties;
 using Guna.UI2.WinForms;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -100,6 +101,14 @@ namespace EETMS_Presentation.EETMS_Events
             return CountFullyBookedEvents;
         }
 
+        private void _LoadAllInformationCategoryNameToComboBox()
+        {
+
+            GSubComboBoxTypeTheFilter.DataSource = CategoriesBL.AllCategoryNames();
+            GSubComboBoxTypeTheFilter.DisplayMember = "CategoryName";
+
+        }
+
         private int _GetTheCountOfEvents()
             => _EventDT.Rows.Count;
 
@@ -127,9 +136,31 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void _LoadAllInformationTypeStatus()
         {
-            GSubComboBoxTypeTheFilter.Items.Add("Fully Booked");
-            GSubComboBoxTypeTheFilter.Items.Add("Live");
-            GSubComboBoxTypeTheFilter.Items.Add("Draft");
+            List<string> AllItemsStatusEvent = new List<string>();
+
+            AllItemsStatusEvent.Add("None");
+            AllItemsStatusEvent.Add("Fully Booked");
+            AllItemsStatusEvent.Add("Live");
+            AllItemsStatusEvent.Add("Draft");
+
+            GSubComboBoxTypeTheFilter.DataSource = AllItemsStatusEvent;
+
+
+        }
+
+        private void _LoadAllInformationTypeCapacityUsage()
+        {
+            List<string> AllItemsCapacityUsageEvent = new List<string>();
+
+            AllItemsCapacityUsageEvent.Add("None");
+            AllItemsCapacityUsageEvent.Add("Less Than 50%");
+            AllItemsCapacityUsageEvent.Add("50% - 90%");
+            AllItemsCapacityUsageEvent.Add("Almost Full");
+            AllItemsCapacityUsageEvent.Add("Sold Out");
+
+            GSubComboBoxTypeTheFilter.DataSource = AllItemsCapacityUsageEvent;
+
+
         }
 
         private int _GetTheEventID()
@@ -162,9 +193,10 @@ namespace EETMS_Presentation.EETMS_Events
         {
 
             GDataGridViewEventsInformation.Rows.Clear();
+            GSubComboBoxTypeTheFilter.Visible = false;
 
-            GComboBoxMainTypeFilter.SelectedIndex = clsEETMS_Constants.kONE;
-            GSubComboBoxTypeTheFilter.SelectedIndex = clsEETMS_Constants.kONE;
+            GComboBoxMainTypeFilter.SelectedIndex = clsEETMS_Constants.kZERO;
+            GSubComboBoxTypeTheFilter.SelectedIndex = clsEETMS_Constants.kZERO;
 
             if (GComboBoxMainTypeFilter.Items.Count <= clsEETMS_Constants.kZERO)
                 GComboBoxMainTypeFilter.Items.Clear();
@@ -204,9 +236,20 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void _PushAllInformationMainType()
         {
-            if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kONE)
+            if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kZERO)
+            {
+                GSubComboBoxTypeTheFilter.Visible = false;
+                return;
+            }
+            else
+                GSubComboBoxTypeTheFilter.Visible = true;
 
+            if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kONE)
                 _LoadAllInformationTypeStatus();
+            else if (GComboBoxMainTypeFilter.SelectedIndex == 2)
+                _LoadAllInformationCategoryNameToComboBox();
+            else if (GComboBoxMainTypeFilter.SelectedIndex == 3)
+                _LoadAllInformationTypeCapacityUsage();
 
         }
 

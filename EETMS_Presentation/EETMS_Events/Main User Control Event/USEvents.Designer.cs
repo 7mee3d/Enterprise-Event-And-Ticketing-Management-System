@@ -618,14 +618,14 @@
             this.GGMainPanelFilter.Controls.Add(this.GComboBoxMainTypeFilter);
             this.GGMainPanelFilter.Location = new System.Drawing.Point(153, 306);
             this.GGMainPanelFilter.Name = "GGMainPanelFilter";
-            this.GGMainPanelFilter.Size = new System.Drawing.Size(419, 63);
+            this.GGMainPanelFilter.Size = new System.Drawing.Size(391, 63);
             this.GGMainPanelFilter.TabIndex = 9;
             this.GGMainPanelFilter.Visible = false;
             // 
             // GSubComboBoxTypeTheFilter
             // 
             this.GSubComboBoxTypeTheFilter.BackColor = System.Drawing.Color.Transparent;
-            this.GSubComboBoxTypeTheFilter.BorderRadius = 8;
+            this.GSubComboBoxTypeTheFilter.BorderRadius = 5;
             this.GSubComboBoxTypeTheFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.GSubComboBoxTypeTheFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GSubComboBoxTypeTheFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -635,16 +635,18 @@
             this.GSubComboBoxTypeTheFilter.ItemHeight = 30;
             this.GSubComboBoxTypeTheFilter.Items.AddRange(new object[] {
             "None"});
-            this.GSubComboBoxTypeTheFilter.Location = new System.Drawing.Point(243, 14);
+            this.GSubComboBoxTypeTheFilter.Location = new System.Drawing.Point(219, 14);
             this.GSubComboBoxTypeTheFilter.Name = "GSubComboBoxTypeTheFilter";
             this.GSubComboBoxTypeTheFilter.Size = new System.Drawing.Size(158, 36);
+            this.GSubComboBoxTypeTheFilter.StartIndex = 0;
             this.GSubComboBoxTypeTheFilter.TabIndex = 0;
+            this.GSubComboBoxTypeTheFilter.Visible = false;
             this.GSubComboBoxTypeTheFilter.SelectionChangeCommitted += new System.EventHandler(this.GSubComboBoxTypeTheFilter_SelectionChangeCommitted);
             // 
             // GComboBoxMainTypeFilter
             // 
             this.GComboBoxMainTypeFilter.BackColor = System.Drawing.Color.Transparent;
-            this.GComboBoxMainTypeFilter.BorderRadius = 8;
+            this.GComboBoxMainTypeFilter.BorderRadius = 5;
             this.GComboBoxMainTypeFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.GComboBoxMainTypeFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GComboBoxMainTypeFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -654,10 +656,13 @@
             this.GComboBoxMainTypeFilter.ItemHeight = 30;
             this.GComboBoxMainTypeFilter.Items.AddRange(new object[] {
             "None",
-            "Status Event"});
+            "Status Event",
+            "Category",
+            "Capacity Usage"});
             this.GComboBoxMainTypeFilter.Location = new System.Drawing.Point(15, 14);
             this.GComboBoxMainTypeFilter.Name = "GComboBoxMainTypeFilter";
             this.GComboBoxMainTypeFilter.Size = new System.Drawing.Size(189, 36);
+            this.GComboBoxMainTypeFilter.StartIndex = 0;
             this.GComboBoxMainTypeFilter.TabIndex = 0;
             this.GComboBoxMainTypeFilter.SelectedIndexChanged += new System.EventHandler(this.GComboBoxMainTypeFilter_SelectedIndexChanged);
             // 

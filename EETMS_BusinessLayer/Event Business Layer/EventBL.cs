@@ -68,6 +68,30 @@ namespace EETMS_BusinessLayer
             }
         }
 
+        private static DataTable _GetAllEventAccordingUsageCapacityBy(string TypeFilterUsageCapacity)
+        {
+
+            switch (TypeFilterUsageCapacity)
+            {
+
+                case "Less Than 50%":
+                    return EventsQueriesDAL.GetAllEventAccordingByCapacityUsageLessThan50Percent();
+                case "50% - 90%":
+                    return EventsQueriesDAL.GetAllEventAccordingByCapacityUsageBetween50And90Percent();
+                case "Almost Full":
+                    return EventsQueriesDAL.GetAllEventAccordingByCapacityUsageBetween90And99Percent();
+                case "Sold Out":
+                    return EventsQueriesDAL.GetAllEventAccordingByCapacityUsageSoldOut();
+
+                default: return GetAllInformationEvents();
+
+            }
+
+        }
+
+        private static DataTable _GetAllInformatioNEventCategoryAccordingBy(string CategoryName)
+            => EventsQueriesDAL.GetAllEventAccordingCategoryBy(CategoryName);
+
         public static DataTable GetAllInformationEventAccordingBy(EventFilterDTO eventFilterDTO)
         {
 
@@ -76,9 +100,17 @@ namespace EETMS_BusinessLayer
 
                 case "Status Event":
                     return _GetAllEventsAccordingTheStatusBy(eventFilterDTO.TypeSubFilterEvent);
+                case "Category":
+                    return _GetAllInformatioNEventCategoryAccordingBy(eventFilterDTO.TypeSubFilterEvent);
+                case "Capacity Usage":
+                    return _GetAllEventAccordingUsageCapacityBy(eventFilterDTO.TypeSubFilterEvent);
 
-                default: return new DataTable();
+                default: return GetAllInformationEvents();
             }
         }
+
+
+
+
     }
 }

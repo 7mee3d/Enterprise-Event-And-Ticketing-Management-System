@@ -2,6 +2,7 @@
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_DataAccessLayer;
 using EETMS_DTOs;
+using System.Collections.Generic;
 using System.Data;
 
 namespace EETMS_BusinessLayer
@@ -9,17 +10,23 @@ namespace EETMS_BusinessLayer
     public class CategoriesBL
     {
 
-        public static DataTable GetAllInformationCategories() => CategoriesDAL.GetAllInformationCategories();
+        public static DataTable GetAllInformationCategories()
+            => CategoriesQueriesDAL.GetAllInformationCategories();
 
-        public static DataTable GetAllInformationCategoriesGroupByNameForEvent() => CategoriesDAL.GetAllInformationCategoriesGroupByCategoryname();
+        public static DataTable GetAllInformationCategoriesGroupByNameForEvent()
+            => CategoriesQueriesDAL.GetAllInformationCategoriesGroupByCategoryname();
 
-        public static CategoryDTO FindTheCategoryBy(int IDCategory) => CategoriesDAL.FindTheCategoryBy(IDCategory);
+        public static CategoryDTO FindTheCategoryBy(int IDCategory)
+            => CategoriesQueriesDAL.FindTheCategoryBy(IDCategory);
 
-        private static bool _AddNewCategory(CategoryDTO NewInformationCategory) => CategoriesDAL.InsertTheNewCategory(NewInformationCategory) > clsEETMS_Constants.kZERO;
+        private static bool _AddNewCategory(CategoryDTO NewInformationCategory)
+            => CategoriesCommandsDAL.InsertTheNewCategory(NewInformationCategory) > clsEETMS_Constants.kZERO;
 
-        private static bool _UpdateInformationCategory(int IDCategory, CategoryDTO NewInformationCategory) => CategoriesDAL.UpdateInformationCategoryBy(IDCategory, NewInformationCategory) > clsEETMS_Constants.kZERO;
+        private static bool _UpdateInformationCategory(int IDCategory, CategoryDTO NewInformationCategory)
+            => CategoriesCommandsDAL.UpdateInformationCategoryBy(IDCategory, NewInformationCategory) > clsEETMS_Constants.kZERO;
 
-        public static bool DeleteTheCategoryBy(int IDCategory) => CategoriesDAL.DeleteTheCategoryBy(IDCategory) > clsEETMS_Constants.kZERO;
+        public static bool DeleteTheCategoryBy(int IDCategory)
+            => CategoriesCommandsDAL.DeleteTheCategoryBy(IDCategory) > clsEETMS_Constants.kZERO;
 
         public static bool SaveInformationCategory(CategoryDTO NewInformationCategory)
         {
@@ -38,7 +45,11 @@ namespace EETMS_BusinessLayer
             return false;
         }
 
-        public static DataTable GetAllInformationCategoryFullInformation(string CategoryNameToBeSearch) => CategoriesDAL.SearchCategoryFullInfo(CategoryNameToBeSearch);
+        public static DataTable GetAllInformationCategoryFullInformation(string CategoryNameToBeSearch)
+            => CategoriesQueriesDAL.SearchCategoryFullInfo(CategoryNameToBeSearch);
+
+        public static List<string> AllCategoryNames()
+            => CategoriesQueriesDAL.GetAllCategoryNames();
 
     }
 }

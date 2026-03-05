@@ -14,6 +14,14 @@ namespace EETMS_DTOs
         };
 
 
+        public enum EnStatusCapacityUsage
+        {
+            kLESS_THAN_50_PRESANTAGE = 1 , 
+            kUSAGE_CAPACITY_BETWEEN_50_AND_90 = 2 ,
+            kALMOST_FULL = 3 , 
+            kSOLD_OUT = 4 
+        }
+
         public string TypeMainFilterEvent { get; set; }
         public string TypeSubFilterEvent { get; set; }
         public EnStatusEvent NumberStatusEvent { get; set; }

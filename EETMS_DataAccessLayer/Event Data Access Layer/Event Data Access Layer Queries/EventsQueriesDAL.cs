@@ -588,6 +588,444 @@ namespace EETMS_DataAccessLayer
         public static DataTable GetAllInfromationEventFilterBy(int StatusEventToBeFilter)
             => _GetAllInfromationEventFilterBy(StatusEventToBeFilter);
 
+        private static DataTable _GetAllEventAccordingCategoryBy(string CategoryName)
+        {
+
+            DataTable DT_AllEventsAfterFilter = new DataTable();
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+                string Query = @"
+
+
+                                  SELECT
+                                                        E.EventID,
+                                                        E.EventName,
+
+                                                        ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
+
+                                                        ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
+
+                                                        ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
+
+                                                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
+
+                                                        E.Duration,
+                                                        E.MaxCapacity,
+                                                        E.DateTimeEvent,
+                                                        CAT.CategoryName,
+                                                        COUN.CountryName,
+                                                        E.Street,	
+                                                        E.Discripation ,
+                                                        E.IsActiveEvent
+
+
+                                                                                     FROM Events E
+                                                                                     LEFT JOIN TicketTypes TT
+                                                                                         ON E.EventID = TT.EventID
+                                                                                     INNER JOIN Categories CAT
+                                                                                         ON CAT.CategoryID = E.CategoryID
+                                                                                     INNER JOIN Countries COUN
+                                                                                         ON COUN.CountryID = E.CountryID
+
+								   WHERE   CAT.CategoryName = @CategoryName 
+
+                                   GROUP BY
+                 				                    E.EventID,
+                 				                    E.EventName,
+                 				                    E.Duration,
+                 				                    E.MaxCapacity,
+                 				                    E.DateTimeEvent,
+                 				                    CAT.CategoryName,
+                 				                    COUN.CountryName,
+                 				                    E.Street,
+								                    E.Discripation,
+                 				                    E.IsActiveEvent;
+
+
+                        ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@CategoryName", CategoryName);
+
+                    connection.Open();
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        if (reader.HasRows)
+                            DT_AllEventsAfterFilter.Load(reader);
+
+                    }
+
+
+                }
+
+            }
+            return DT_AllEventsAfterFilter;
+
+        }
+
+        public static DataTable GetAllEventAccordingCategoryBy(string CategoryName)
+            => _GetAllEventAccordingCategoryBy(CategoryName);
+
+        public static DataTable GetAllEventAccordingByCapacityUsageLessThan50Percent()
+        {
+
+            DataTable DT_EventsCapacityUsageLessThan50 = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+
+                                  SELECT
+
+                                                        E.EventID,
+                                                        E.EventName,
+
+                                                        ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
+
+                                                        ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
+
+                                                        ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
+
+                                                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
+
+                                                        E.Duration,
+                                                        E.MaxCapacity,
+                                                        E.DateTimeEvent,
+                                                        CAT.CategoryName,
+                                                        COUN.CountryName,
+                                                        E.Street,	
+                                                        E.Discripation ,
+                                                        E.IsActiveEvent
+
+
+                                                                                     FROM Events E
+                                                                                     LEFT JOIN TicketTypes TT
+                                                                                         ON E.EventID = TT.EventID
+                                                                                     INNER JOIN Categories CAT
+                                                                                         ON CAT.CategoryID = E.CategoryID
+                                                                                     INNER JOIN Countries COUN
+                                                                                         ON COUN.CountryID = E.CountryID
+
+                                GROUP BY
+                 				                    E.EventID,
+                 				                    E.EventName,
+                 				                    E.Duration,
+                 				                    E.MaxCapacity,
+                 				                    E.DateTimeEvent,
+                 				                    CAT.CategoryName,
+                 				                    COUN.CountryName,
+                 				                    E.Street,
+								                    E.Discripation,
+                 				                    E.IsActiveEvent
+
+								HAVING 
+											( ISNULL(SUM(TT.Quantity - TT.Available),0) * 100.0 ) / E.MaxCapacity < 50
+
+
+
+                        ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        if (reader.HasRows)
+                            DT_EventsCapacityUsageLessThan50.Load(reader);
+
+                    }
+
+
+                }
+
+            }
+
+            return DT_EventsCapacityUsageLessThan50;
+
+        }
+
+        public static DataTable GetAllEventAccordingByCapacityUsageBetween50And90Percent()
+        {
+
+            DataTable DT_EventsCapacityUsageBetween50And90 = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+
+                                  SELECT
+
+                                                        E.EventID,
+                                                        E.EventName,
+
+                                                        ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
+
+                                                        ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
+
+                                                        ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
+
+                                                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
+
+                                                        E.Duration,
+                                                        E.MaxCapacity,
+                                                        E.DateTimeEvent,
+                                                        CAT.CategoryName,
+                                                        COUN.CountryName,
+                                                        E.Street,	
+                                                        E.Discripation ,
+                                                        E.IsActiveEvent
+
+
+                                                                                     FROM Events E
+                                                                                     LEFT JOIN TicketTypes TT
+                                                                                         ON E.EventID = TT.EventID
+                                                                                     INNER JOIN Categories CAT
+                                                                                         ON CAT.CategoryID = E.CategoryID
+                                                                                     INNER JOIN Countries COUN
+                                                                                         ON COUN.CountryID = E.CountryID
+
+                                GROUP BY
+                 				                    E.EventID,
+                 				                    E.EventName,
+                 				                    E.Duration,
+                 				                    E.MaxCapacity,
+                 				                    E.DateTimeEvent,
+                 				                    CAT.CategoryName,
+                 				                    COUN.CountryName,
+                 				                    E.Street,
+								                    E.Discripation,
+                 				                    E.IsActiveEvent
+
+								HAVING 
+											( ISNULL(SUM(TT.Quantity - TT.Available),0) * 100.0 ) / E.MaxCapacity BETWEEN 50 AND 90 
+
+
+
+                        ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        if (reader.HasRows)
+                            DT_EventsCapacityUsageBetween50And90.Load(reader);
+
+                    }
+
+
+                }
+
+            }
+
+            return DT_EventsCapacityUsageBetween50And90;
+
+        }
+
+        public static DataTable GetAllEventAccordingByCapacityUsageBetween90And99Percent()
+        {
+
+            DataTable DT_EventsCapacityUsageBetween90And99 = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+
+                                  SELECT
+
+                                                        E.EventID,
+                                                        E.EventName,
+
+                                                        ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
+
+                                                        ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
+
+                                                        ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
+
+                                                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
+
+                                                        E.Duration,
+                                                        E.MaxCapacity,
+                                                        E.DateTimeEvent,
+                                                        CAT.CategoryName,
+                                                        COUN.CountryName,
+                                                        E.Street,	
+                                                        E.Discripation ,
+                                                        E.IsActiveEvent
+
+
+                                                                                     FROM Events E
+                                                                                     LEFT JOIN TicketTypes TT
+                                                                                         ON E.EventID = TT.EventID
+                                                                                     INNER JOIN Categories CAT
+                                                                                         ON CAT.CategoryID = E.CategoryID
+                                                                                     INNER JOIN Countries COUN
+                                                                                         ON COUN.CountryID = E.CountryID
+
+                                GROUP BY
+                 				                    E.EventID,
+                 				                    E.EventName,
+                 				                    E.Duration,
+                 				                    E.MaxCapacity,
+                 				                    E.DateTimeEvent,
+                 				                    CAT.CategoryName,
+                 				                    COUN.CountryName,
+                 				                    E.Street,
+								                    E.Discripation,
+                 				                    E.IsActiveEvent
+
+								HAVING 
+										(SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity BETWEEN 90 AND 99 ;
+                       
+
+
+
+                        ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        if (reader.HasRows)
+                            DT_EventsCapacityUsageBetween90And99.Load(reader);
+
+                    }
+
+
+                }
+
+            }
+
+            return DT_EventsCapacityUsageBetween90And99;
+
+        }
+
+        public static DataTable GetAllEventAccordingByCapacityUsageSoldOut()
+        {
+
+            DataTable DT_EventsCapacityUsageSoldOut = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+
+                                  SELECT
+
+                                                        E.EventID,
+                                                        E.EventName,
+
+                                                        ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
+
+                                                        ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
+
+                                                        ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
+
+                                                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
+
+                                                        E.Duration,
+                                                        E.MaxCapacity,
+                                                        E.DateTimeEvent,
+                                                        CAT.CategoryName,
+                                                        COUN.CountryName,
+                                                        E.Street,	
+                                                        E.Discripation ,
+                                                        E.IsActiveEvent
+
+
+                                                                                     FROM Events E
+                                                                                     LEFT JOIN TicketTypes TT
+                                                                                         ON E.EventID = TT.EventID
+                                                                                     INNER JOIN Categories CAT
+                                                                                         ON CAT.CategoryID = E.CategoryID
+                                                                                     INNER JOIN Countries COUN
+                                                                                         ON COUN.CountryID = E.CountryID
+
+                                GROUP BY
+                 				                    E.EventID,
+                 				                    E.EventName,
+                 				                    E.Duration,
+                 				                    E.MaxCapacity,
+                 				                    E.DateTimeEvent,
+                 				                    CAT.CategoryName,
+                 				                    COUN.CountryName,
+                 				                    E.Street,
+								                    E.Discripation,
+                 				                    E.IsActiveEvent
+
+								HAVING 
+										((SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity ) >= 100 
+                               
+
+
+
+                        ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    connection.Open();
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        if (reader.HasRows)
+                            DT_EventsCapacityUsageSoldOut.Load(reader);
+
+                    }
+
+
+                }
+
+            }
+
+            return DT_EventsCapacityUsageSoldOut;
+
+        }
+
+
+
 
         #endregion
 

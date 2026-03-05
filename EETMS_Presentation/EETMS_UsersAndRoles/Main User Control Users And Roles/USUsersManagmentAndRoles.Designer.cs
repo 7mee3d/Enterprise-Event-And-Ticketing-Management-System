@@ -340,6 +340,7 @@
             this.GSubComboBoxTypeTheFilter.Location = new System.Drawing.Point(205, 14);
             this.GSubComboBoxTypeTheFilter.Name = "GSubComboBoxTypeTheFilter";
             this.GSubComboBoxTypeTheFilter.Size = new System.Drawing.Size(158, 36);
+            this.GSubComboBoxTypeTheFilter.StartIndex = 0;
             this.GSubComboBoxTypeTheFilter.TabIndex = 0;
             this.GSubComboBoxTypeTheFilter.SelectionChangeCommitted += new System.EventHandler(this.GSubComboBoxTypeTheFilter_SelectionChangeCommitted);
             // 
