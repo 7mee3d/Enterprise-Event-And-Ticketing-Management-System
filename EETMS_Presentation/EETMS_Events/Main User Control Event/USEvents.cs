@@ -1,6 +1,8 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_DTOs;
 using EETMS_Presentation.EETMS_Settings;
+using EETMS_Presentation.Properties;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
@@ -11,7 +13,7 @@ namespace EETMS_Presentation.EETMS_Events
 {
     public partial class USEvents : UserControl
     {
-
+        private bool _IsCheckButtonFilter = false;
         private DataTable _EventDT;
         public event EventHandler<int> RequestOpenCreateNewEventUS;
 
@@ -27,7 +29,7 @@ namespace EETMS_Presentation.EETMS_Events
         {
             GDataGridViewEventsInformation.Rows.Clear();
 
-            foreach (DataRow DR_Event in _EventDT.Rows)
+            foreach (DataRow DR_Event in DT_EventsInformation.Rows)
             {
 
                 GDataGridViewEventsInformation.Rows.Add(
@@ -123,6 +125,13 @@ namespace EETMS_Presentation.EETMS_Events
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
             => RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
 
+        private void _LoadAllInformationTypeStatus()
+        {
+            GSubComboBoxTypeTheFilter.Items.Add("Fully Booked");
+            GSubComboBoxTypeTheFilter.Items.Add("Live");
+            GSubComboBoxTypeTheFilter.Items.Add("Draft");
+        }
+
         private int _GetTheEventID()
             => (GDataGridViewEventsInformation.SelectedRows.Count > clsEETMS_Constants.kZERO) ?
             Convert.ToInt32(GDataGridViewEventsInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells["EventID"].Value) :
@@ -139,7 +148,7 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
-        private void _LoadAllInformationEventsToDGVAfterTheSearchEvent ()
+        private void _LoadAllInformationEventsToDGVAfterTheSearchEvent()
         {
             string EventNameToBeSearch = GTextBoxSearchTheEvent.Text;
             _EventDT = EventBL.AllEventsAfterSearchBy(EventNameToBeSearch);
@@ -149,6 +158,102 @@ namespace EETMS_Presentation.EETMS_Events
         private void GTextBoxSearchTheEvent_TextChanged(object sender, EventArgs e)
            => _LoadAllInformationEventsToDGVAfterTheSearchEvent();
 
-        
+        private void _InitalSettingTheComboBoxies()
+        {
+
+            GDataGridViewEventsInformation.Rows.Clear();
+
+            GComboBoxMainTypeFilter.SelectedIndex = clsEETMS_Constants.kONE;
+            GSubComboBoxTypeTheFilter.SelectedIndex = clsEETMS_Constants.kONE;
+
+            if (GComboBoxMainTypeFilter.Items.Count <= clsEETMS_Constants.kZERO)
+                GComboBoxMainTypeFilter.Items.Clear();
+
+
+            if (GSubComboBoxTypeTheFilter.Items.Count <= clsEETMS_Constants.kZERO)
+                GSubComboBoxTypeTheFilter.Items.Clear();
+
+            _LoadAndFillDataGridViewONAllInformationEvent();
+        }
+
+        private void _ActiveTheFilter()
+        {
+
+            if (_IsCheckButtonFilter)
+            {
+                GGButtonFilter.HoverState.Image = Resources.Filter_Icon_EETMS;
+                GGButtonFilter.Image = Resources.Filter_Icon_EETMS;
+                GGMainPanelFilter.Visible = false;
+                _IsCheckButtonFilter = false;
+                GGButtonFilter.Text = "Filter";
+
+                _InitalSettingTheComboBoxies();
+            }
+            else
+            {
+                GGButtonFilter.HoverState.Image = Resources.Cancel_Icon_EETMS;
+                GGButtonFilter.Image = Resources.Cancel_Icon_EETMS;
+                GGMainPanelFilter.Visible = true;
+                _IsCheckButtonFilter = true;
+                GGButtonFilter.Text = "Cancel";
+
+            }
+
+
+        }
+
+        private void _PushAllInformationMainType()
+        {
+            if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kONE)
+
+                _LoadAllInformationTypeStatus();
+
+        }
+
+        private void _FillTheInformationFilter()
+        {
+            DataTable DT_ResultFilter = null;
+            string SubSelectComboBoxTypeFilter = clsEETMS_Constants.kEMPTY_STRING;
+
+            try
+            {
+
+                string MainSelectComboBoxTypeFilter = GComboBoxMainTypeFilter.SelectedItem.ToString();
+                SubSelectComboBoxTypeFilter = GSubComboBoxTypeTheFilter.SelectedItem.ToString();
+
+
+
+                EventFilterDTO eventFilterDTO = new EventFilterDTO()
+                {
+                    TypeMainFilterEvent = MainSelectComboBoxTypeFilter,
+                    TypeSubFilterEvent = SubSelectComboBoxTypeFilter
+                };
+
+
+                DT_ResultFilter = EventBL.GetAllInformationEventAccordingBy(eventFilterDTO);
+
+            }
+            catch (Exception ex) { }
+            ;
+
+
+            if (DT_ResultFilter != null)
+                _LoadTheInformationEventsToGDVBy(DT_ResultFilter);
+        }
+
+        private void GGButtonFilter_Click(object sender, EventArgs e)
+        {
+            _ActiveTheFilter();
+        }
+
+        private void GSubComboBoxTypeTheFilter_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            _FillTheInformationFilter();
+        }
+
+        private void GComboBoxMainTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _PushAllInformationMainType();
+        }
     }
 }

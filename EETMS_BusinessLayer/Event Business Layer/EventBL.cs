@@ -2,6 +2,7 @@
 using EETMS_DataAccessLayer;
 using EETMS_DTOs;
 using System.Data;
+using static EETMS_DTOs.EventFilterDTO;
 
 
 namespace EETMS_BusinessLayer
@@ -49,6 +50,35 @@ namespace EETMS_BusinessLayer
         public static DataTable AllEventsAfterSearchBy(string EventName)
             => EventsQueriesDAL.GetTheAllEventsAccordingTheSearchBy(EventName);
 
+        private static DataTable _GetAllEventsAccordingTheStatusBy(string TypeTheFilterStatusEvent)
+        {
 
+            switch (TypeTheFilterStatusEvent)
+            {
+                case "Fully Booked":
+                    return EventsQueriesDAL.GetAllInfromationEventFilterBy((int)EnStatusEvent.kFULLY_BOOKED_EVENT);
+                case "Live":
+                    return EventsQueriesDAL.GetAllInfromationEventFilterBy((int)EnStatusEvent.kLIVE_EVENT);
+                case "Draft":
+                    return EventsQueriesDAL.GetAllInfromationEventFilterBy((int)EnStatusEvent.kDRAFT_EVENT);
+
+                default:
+                    return new DataTable();
+
+            }
+        }
+
+        public static DataTable GetAllInformationEventAccordingBy(EventFilterDTO eventFilterDTO)
+        {
+
+            switch (eventFilterDTO.TypeMainFilterEvent)
+            {
+
+                case "Status Event":
+                    return _GetAllEventsAccordingTheStatusBy(eventFilterDTO.TypeSubFilterEvent);
+
+                default: return new DataTable();
+            }
+        }
     }
 }

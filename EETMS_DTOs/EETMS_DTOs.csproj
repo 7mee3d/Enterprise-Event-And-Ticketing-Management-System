@@ -44,6 +44,7 @@
     <Compile Include="Category DTO\CategoryDTO.cs" />
     <Compile Include="Customer DTO\CustomerDTO.cs" />
     <Compile Include="Event DTO\EventDTO.cs" />
+    <Compile Include="Event DTO\EventFilterDTO.cs" />
     <Compile Include="Payment DTO\PaymentFilterDTO.cs" />
     <Compile Include="Ticket Type DTO\TicketTypeDTO.cs" />
     <Compile Include="Payment DTO\PaymentDTO.cs" />

@@ -35,7 +35,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USEvents));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.GComboBoxAllCategories = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GDataGridViewEventsInformation = new Guna.UI2.WinForms.Guna2DataGridView();
             this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +70,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblNumberDraftsEvents = new System.Windows.Forms.Label();
             this.GGButtonWarningDisable = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GGMainPanelFilter = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GSubComboBoxTypeTheFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxMainTypeFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GGButtonFilter = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).BeginInit();
             this.GContextMenuStripEvents.SuspendLayout();
@@ -80,6 +83,7 @@
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
+            this.GGMainPanelFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -102,23 +106,6 @@
             this.label2.Size = new System.Drawing.Size(322, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Manage and track all your upcoming and past events.";
-            // 
-            // GComboBoxAllCategories
-            // 
-            this.GComboBoxAllCategories.BackColor = System.Drawing.Color.Transparent;
-            this.GComboBoxAllCategories.BorderRadius = 5;
-            this.GComboBoxAllCategories.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.GComboBoxAllCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GComboBoxAllCategories.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GComboBoxAllCategories.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GComboBoxAllCategories.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F);
-            this.GComboBoxAllCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.GComboBoxAllCategories.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GComboBoxAllCategories.ItemHeight = 30;
-            this.GComboBoxAllCategories.Location = new System.Drawing.Point(40, 319);
-            this.GComboBoxAllCategories.Name = "GComboBoxAllCategories";
-            this.GComboBoxAllCategories.Size = new System.Drawing.Size(319, 36);
-            this.GComboBoxAllCategories.TabIndex = 3;
             // 
             // GGPanelDataGridViewEvents
             // 
@@ -625,11 +612,93 @@
             this.GGButtonWarningDisable.TabIndex = 7;
             this.GGButtonWarningDisable.Text = "Events with sold tickets cannot be deleted.";
             // 
+            // GGMainPanelFilter
+            // 
+            this.GGMainPanelFilter.Controls.Add(this.GSubComboBoxTypeTheFilter);
+            this.GGMainPanelFilter.Controls.Add(this.GComboBoxMainTypeFilter);
+            this.GGMainPanelFilter.Location = new System.Drawing.Point(153, 306);
+            this.GGMainPanelFilter.Name = "GGMainPanelFilter";
+            this.GGMainPanelFilter.Size = new System.Drawing.Size(419, 63);
+            this.GGMainPanelFilter.TabIndex = 9;
+            this.GGMainPanelFilter.Visible = false;
+            // 
+            // GSubComboBoxTypeTheFilter
+            // 
+            this.GSubComboBoxTypeTheFilter.BackColor = System.Drawing.Color.Transparent;
+            this.GSubComboBoxTypeTheFilter.BorderRadius = 8;
+            this.GSubComboBoxTypeTheFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GSubComboBoxTypeTheFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GSubComboBoxTypeTheFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GSubComboBoxTypeTheFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GSubComboBoxTypeTheFilter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GSubComboBoxTypeTheFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GSubComboBoxTypeTheFilter.ItemHeight = 30;
+            this.GSubComboBoxTypeTheFilter.Items.AddRange(new object[] {
+            "None"});
+            this.GSubComboBoxTypeTheFilter.Location = new System.Drawing.Point(243, 14);
+            this.GSubComboBoxTypeTheFilter.Name = "GSubComboBoxTypeTheFilter";
+            this.GSubComboBoxTypeTheFilter.Size = new System.Drawing.Size(158, 36);
+            this.GSubComboBoxTypeTheFilter.TabIndex = 0;
+            this.GSubComboBoxTypeTheFilter.SelectionChangeCommitted += new System.EventHandler(this.GSubComboBoxTypeTheFilter_SelectionChangeCommitted);
+            // 
+            // GComboBoxMainTypeFilter
+            // 
+            this.GComboBoxMainTypeFilter.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxMainTypeFilter.BorderRadius = 8;
+            this.GComboBoxMainTypeFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxMainTypeFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxMainTypeFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxMainTypeFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxMainTypeFilter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxMainTypeFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxMainTypeFilter.ItemHeight = 30;
+            this.GComboBoxMainTypeFilter.Items.AddRange(new object[] {
+            "None",
+            "Status Event"});
+            this.GComboBoxMainTypeFilter.Location = new System.Drawing.Point(15, 14);
+            this.GComboBoxMainTypeFilter.Name = "GComboBoxMainTypeFilter";
+            this.GComboBoxMainTypeFilter.Size = new System.Drawing.Size(189, 36);
+            this.GComboBoxMainTypeFilter.TabIndex = 0;
+            this.GComboBoxMainTypeFilter.SelectedIndexChanged += new System.EventHandler(this.GComboBoxMainTypeFilter_SelectedIndexChanged);
+            // 
+            // GGButtonFilter
+            // 
+            this.GGButtonFilter.Animated = true;
+            this.GGButtonFilter.AnimatedGIF = true;
+            this.GGButtonFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.GGButtonFilter.BorderRadius = 10;
+            this.GGButtonFilter.BorderThickness = 1;
+            this.GGButtonFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GGButtonFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonFilter.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GGButtonFilter.FillColor = System.Drawing.Color.White;
+            this.GGButtonFilter.FillColor2 = System.Drawing.Color.White;
+            this.GGButtonFilter.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold);
+            this.GGButtonFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.GGButtonFilter.HoverState.FillColor = System.Drawing.Color.White;
+            this.GGButtonFilter.HoverState.FillColor2 = System.Drawing.Color.White;
+            this.GGButtonFilter.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.GGButtonFilter.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.GGButtonFilter.Image = global::EETMS_Presentation.Properties.Resources.Filter_Icon_EETMS;
+            this.GGButtonFilter.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GGButtonFilter.Location = new System.Drawing.Point(45, 315);
+            this.GGButtonFilter.Name = "GGButtonFilter";
+            this.GGButtonFilter.PressedColor = System.Drawing.Color.White;
+            this.GGButtonFilter.Size = new System.Drawing.Size(102, 47);
+            this.GGButtonFilter.TabIndex = 8;
+            this.GGButtonFilter.Text = "Filter";
+            this.GGButtonFilter.Click += new System.EventHandler(this.GGButtonFilter_Click);
+            // 
             // USEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.GGMainPanelFilter);
+            this.Controls.Add(this.GGButtonFilter);
             this.Controls.Add(this.GGButtonWarningDisable);
             this.Controls.Add(this.guna2GradientPanel4);
             this.Controls.Add(this.guna2GradientPanel3);
@@ -637,7 +706,6 @@
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.PanelHeaderEvents);
             this.Controls.Add(this.GGPanelDataGridViewEvents);
-            this.Controls.Add(this.GComboBoxAllCategories);
             this.Name = "USEvents";
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.USEvents_Load);
@@ -656,6 +724,7 @@
             this.guna2GradientPanel3.PerformLayout();
             this.guna2GradientPanel4.ResumeLayout(false);
             this.guna2GradientPanel4.PerformLayout();
+            this.GGMainPanelFilter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -666,7 +735,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxSearchTheEvent;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonCreateNewEvent;
-        private Guna.UI2.WinForms.Guna2ComboBox GComboBoxAllCategories;
         private Guna.UI2.WinForms.Guna2GradientPanel GGPanelDataGridViewEvents;
         private Guna.UI2.WinForms.Guna2DataGridView GDataGridViewEventsInformation;
         private System.Windows.Forms.Panel PanelHeaderEvents;
@@ -700,5 +768,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DurationEvent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discripation;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonWarningDisable;
+        private Guna.UI2.WinForms.Guna2GradientPanel GGMainPanelFilter;
+        private Guna.UI2.WinForms.Guna2ComboBox GSubComboBoxTypeTheFilter;
+        private Guna.UI2.WinForms.Guna2ComboBox GComboBoxMainTypeFilter;
+        private Guna.UI2.WinForms.Guna2GradientButton GGButtonFilter;
     }
 }
