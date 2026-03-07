@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Category Data Access Layer\Category Data Access Layer Commands\CategoriesCommandsDAL.cs" />
     <Compile Include="Category Data Access Layer\Category Data Access Layer Queries\CategoriesQueriesDAL.cs" />
-    <Compile Include="Country Data Access Layer\CountriesDAL.cs" />
+    <Compile Include="Country Data Access Layer\CountriesQueriesDAL.cs" />
     <Compile Include="Customer Data Access Layer\CustomerDAL.cs" />
     <Compile Include="Dashboard Data Access Layer\DashboardDAL.cs" />
     <Compile Include="Event Data Access Layer\Event Data Access Layer Commands\EventCommandsDAL.cs" />
@@ -67,6 +67,8 @@
       <Name>EETMS_DTOs</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Country Data Access Layer\Country Data Access Layer Queries\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

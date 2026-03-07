@@ -71,6 +71,7 @@
             this.lblNumberDraftsEvents = new System.Windows.Forms.Label();
             this.GGButtonWarningDisable = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGMainPanelFilter = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GTextBoxStreetSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.GSubComboBoxTypeTheFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxMainTypeFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GGButtonFilter = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -614,13 +615,38 @@
             // 
             // GGMainPanelFilter
             // 
+            this.GGMainPanelFilter.Controls.Add(this.GTextBoxStreetSearch);
             this.GGMainPanelFilter.Controls.Add(this.GSubComboBoxTypeTheFilter);
             this.GGMainPanelFilter.Controls.Add(this.GComboBoxMainTypeFilter);
             this.GGMainPanelFilter.Location = new System.Drawing.Point(153, 306);
             this.GGMainPanelFilter.Name = "GGMainPanelFilter";
-            this.GGMainPanelFilter.Size = new System.Drawing.Size(391, 63);
+            this.GGMainPanelFilter.Size = new System.Drawing.Size(885, 63);
             this.GGMainPanelFilter.TabIndex = 9;
             this.GGMainPanelFilter.Visible = false;
+            // 
+            // GTextBoxStreetSearch
+            // 
+            this.GTextBoxStreetSearch.Animated = true;
+            this.GTextBoxStreetSearch.BorderRadius = 8;
+            this.GTextBoxStreetSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxStreetSearch.DefaultText = "";
+            this.GTextBoxStreetSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxStreetSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxStreetSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxStreetSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxStreetSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxStreetSearch.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxStreetSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxStreetSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxStreetSearch.IconLeft")));
+            this.GTextBoxStreetSearch.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxStreetSearch.Location = new System.Drawing.Point(392, 13);
+            this.GTextBoxStreetSearch.Name = "GTextBoxStreetSearch";
+            this.GTextBoxStreetSearch.PlaceholderText = "Enter The Street...";
+            this.GTextBoxStreetSearch.SelectedText = "";
+            this.GTextBoxStreetSearch.Size = new System.Drawing.Size(201, 37);
+            this.GTextBoxStreetSearch.TabIndex = 2;
+            this.GTextBoxStreetSearch.Visible = false;
+            this.GTextBoxStreetSearch.TextChanged += new System.EventHandler(this.GTextBoxStreetSearch_TextChanged);
             // 
             // GSubComboBoxTypeTheFilter
             // 
@@ -658,7 +684,8 @@
             "None",
             "Status Event",
             "Category",
-            "Capacity Usage"});
+            "Capacity Usage",
+            "Location"});
             this.GComboBoxMainTypeFilter.Location = new System.Drawing.Point(15, 14);
             this.GComboBoxMainTypeFilter.Name = "GComboBoxMainTypeFilter";
             this.GComboBoxMainTypeFilter.Size = new System.Drawing.Size(189, 36);
@@ -777,5 +804,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox GSubComboBoxTypeTheFilter;
         private Guna.UI2.WinForms.Guna2ComboBox GComboBoxMainTypeFilter;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonFilter;
+        private Guna.UI2.WinForms.Guna2TextBox GTextBoxStreetSearch;
     }
 }

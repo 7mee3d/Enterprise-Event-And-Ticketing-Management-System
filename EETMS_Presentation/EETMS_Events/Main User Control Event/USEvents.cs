@@ -163,6 +163,14 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
+        private void _LoadAllInformationTypeCountry()
+        {
+
+            GSubComboBoxTypeTheFilter.DataSource = CountriesBL.AllInformationCountryName();
+            GSubComboBoxTypeTheFilter.DisplayMember = "CountryName";
+
+        }
+
         private int _GetTheEventID()
             => (GDataGridViewEventsInformation.SelectedRows.Count > clsEETMS_Constants.kZERO) ?
             Convert.ToInt32(GDataGridViewEventsInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells["EventID"].Value) :
@@ -194,6 +202,7 @@ namespace EETMS_Presentation.EETMS_Events
 
             GDataGridViewEventsInformation.Rows.Clear();
             GSubComboBoxTypeTheFilter.Visible = false;
+            GTextBoxStreetSearch.Text = "";
 
             GComboBoxMainTypeFilter.SelectedIndex = clsEETMS_Constants.kZERO;
             GSubComboBoxTypeTheFilter.SelectedIndex = clsEETMS_Constants.kZERO;
@@ -250,7 +259,15 @@ namespace EETMS_Presentation.EETMS_Events
                 _LoadAllInformationCategoryNameToComboBox();
             else if (GComboBoxMainTypeFilter.SelectedIndex == 3)
                 _LoadAllInformationTypeCapacityUsage();
+            else if (GComboBoxMainTypeFilter.SelectedIndex == 4)
+            {
 
+                _LoadAllInformationTypeCountry();
+
+
+            }
+
+            GTextBoxStreetSearch.Visible = false;
         }
 
         private void _FillTheInformationFilter()
@@ -284,6 +301,38 @@ namespace EETMS_Presentation.EETMS_Events
                 _LoadTheInformationEventsToGDVBy(DT_ResultFilter);
         }
 
+        private void _GetAllEventAccordingTheCountryAndStreet()
+        {
+
+            DataTable DT_ResultFilter = null;
+            string CountryName = clsEETMS_Constants.kEMPTY_STRING;
+
+            try
+            {
+
+                string MainSelectComboBoxTypeFilter = GComboBoxMainTypeFilter.SelectedItem.ToString();
+                CountryName = GSubComboBoxTypeTheFilter.SelectedItem.ToString();
+                string StreetName = GTextBoxStreetSearch.Text;
+
+                EventFilterDTO eventFilterDTO = new EventFilterDTO()
+                {
+                    TypeMainFilterEvent = MainSelectComboBoxTypeFilter,
+                    CountryName = CountryName,
+                    Street = StreetName
+                };
+
+
+                DT_ResultFilter = EventBL.GetAllInformationEventAccordingBy(eventFilterDTO);
+
+            }
+            catch (Exception ex) { }
+            ;
+
+
+            if (DT_ResultFilter != null)
+                _LoadTheInformationEventsToGDVBy(DT_ResultFilter);
+        }
+
         private void GGButtonFilter_Click(object sender, EventArgs e)
         {
             _ActiveTheFilter();
@@ -291,12 +340,25 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void GSubComboBoxTypeTheFilter_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            _FillTheInformationFilter();
+            if (GComboBoxMainTypeFilter.SelectedIndex != 4)
+                _FillTheInformationFilter();
+            else
+            {
+                GTextBoxStreetSearch.Visible = true;
+                _GetAllEventAccordingTheCountryAndStreet();
+            }
         }
 
         private void GComboBoxMainTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             _PushAllInformationMainType();
         }
+
+        private void GTextBoxStreetSearch_TextChanged(object sender, EventArgs e)
+        {
+            _GetAllEventAccordingTheCountryAndStreet();
+        }
+
+
     }
 }

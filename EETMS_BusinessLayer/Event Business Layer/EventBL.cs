@@ -104,13 +104,16 @@ namespace EETMS_BusinessLayer
                     return _GetAllInformatioNEventCategoryAccordingBy(eventFilterDTO.TypeSubFilterEvent);
                 case "Capacity Usage":
                     return _GetAllEventAccordingUsageCapacityBy(eventFilterDTO.TypeSubFilterEvent);
+                case "Location":
+                    return GetAllEventsAccrodingCountryAndStreetBy(eventFilterDTO.CountryName, eventFilterDTO.Street);
+
 
                 default: return GetAllInformationEvents();
             }
         }
 
-
-
+        private static DataTable GetAllEventsAccrodingCountryAndStreetBy(string CountryName, string Street)
+            => EventsQueriesDAL.GetAllInformationEventAccrodingCountryAndStreetBy(CountryName, Street);
 
     }
 }

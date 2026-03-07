@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -6,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace EETMS_DataAccessLayer
 {
-    public class CountriesDAL
+    public class CountriesQueriesDAL
     {
 
         #region Setting Data Access Events
@@ -71,6 +72,54 @@ namespace EETMS_DataAccessLayer
         {
             return _GetAllInformationCountries();
         }
+
+        private static List<string> _GetAllCountryName()
+        {
+
+            List<string> LI_AllCountryName = new List<string>();
+
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+                                            SELECT COUN.CountryName
+                                            FROM Countries COUN
+
+
+
+                                ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+
+                    connection.Open();
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                            LI_AllCountryName.Add(reader["CountryName"].ToString());
+
+                    }
+
+                }
+
+            }
+
+            return LI_AllCountryName;
+
+        }
+
+        public static List<string> GetAllCountryName()
+            => _GetAllCountryName();
 
 
     }
