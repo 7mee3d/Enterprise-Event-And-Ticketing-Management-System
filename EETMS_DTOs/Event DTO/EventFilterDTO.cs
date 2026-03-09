@@ -27,6 +27,9 @@ namespace EETMS_DTOs
         public EnStatusEvent NumberStatusEvent { get; set; }
         public string CountryName { get; set; }
         public string Street { get; set; }
+        public string StatusEvent { get; set; }
+        public string CategoryEvent { get; set; }
+        public string UnsageCapacityEvent { get; set; }
 
     }
 }

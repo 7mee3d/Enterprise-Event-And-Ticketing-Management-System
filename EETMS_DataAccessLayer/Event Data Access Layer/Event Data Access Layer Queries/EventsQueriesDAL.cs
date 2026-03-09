@@ -3,6 +3,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using static EETMS_DTOs.EventFilterDTO;
 
 
 namespace EETMS_DataAccessLayer
@@ -1114,6 +1115,142 @@ namespace EETMS_DataAccessLayer
             return DT_AllEventsAccordingCountryNameAndStreet;
 
         }
+
+        public static DataTable GetAllInformationEventAccrodingStatusAndCategoryAndCountryAndCapacityAndLocationBy(EventFilterDTO eventFilterDTO)
+        {
+
+            DataTable DT_AllEventsAccordingAllOptions = new DataTable();
+
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+
+                                  
+                                   SELECT
+						                        E.EventID,
+						                        E.EventName,
+
+						                        ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
+
+						                        ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
+
+						                        ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
+
+						                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
+
+						                        E.Duration,
+						                        E.MaxCapacity,
+						                        E.DateTimeEvent,
+						                        CAT.CategoryName,
+						                        COUN.CountryName,
+						                        E.Street,	
+                                                E.Discripation ,
+						                        E.IsActiveEvent
+
+
+                                                                        FROM Events E
+                                                                        LEFT JOIN TicketTypes TT
+                                                                            ON E.EventID = TT.EventID
+                                                                        INNER JOIN Categories CAT
+                                                                            ON CAT.CategoryID = E.CategoryID
+                                                                        INNER JOIN Countries COUN
+                                                                            ON COUN.CountryID = E.CountryID
+																		
+
+                                     WHERE 
+                                 
+                                               (@CountryName IS NULL OR @CountryName = '' OR COUN.CountryName = @CountryName)
+
+                                               AND (@StreetName IS NULL OR @StreetName = '' 
+                                                    OR LOWER(E.Street) LIKE LOWER('%' + @StreetName + '%'))
+								    
+									
+
+                                     GROUP BY
+                                     				E.EventID,
+                                     				E.EventName,
+                                     				E.Duration,
+                                     				E.MaxCapacity,
+                                     				E.DateTimeEvent,
+                                     				CAT.CategoryName,
+                                     				COUN.CountryName,
+                                     				E.Street,
+                                                    E.Discripation,
+                                     				E.IsActiveEvent
+
+                                      HAVING  
+                                      
+                                      (
+                                                  @StatusEvent IS NULL 
+                                                  OR @StatusEvent = '' 
+                                                  OR
+                                                  CASE 
+                                                      WHEN ISNULL(SUM(TT.Quantity - TT.Available),0) = ISNULL(SUM(TT.Quantity),0) THEN 'Fully Booked'
+                                                      WHEN ISNULL(SUM(TT.Quantity - TT.Available),0) > 0 THEN 'Live'
+                                                      ELSE 'Draft'
+                                                  END = @StatusEvent
+                                      )
+                                      
+                                      AND
+                                      (
+                                                  @CategoryEventName IS NULL
+                                                  OR @CategoryEventName = ''
+                                                  OR CAT.CategoryName = @CategoryEventName
+                                      )
+                                      
+                                      AND
+                                      (
+                                                   @UnsageCapacityEvent IS NULL
+                                                   OR @UnsageCapacityEvent = ''
+                                                   OR
+                                                   CASE 
+                                                       WHEN (SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity < 50 THEN 'Less Than 50%'
+                                                       WHEN (SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity BETWEEN 50 AND 90 THEN '50% - 90%'
+                                                       WHEN (SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity BETWEEN 90 AND 99 THEN 'Almost Full'
+                                                       WHEN (SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity >= 100 THEN 'Sold Out'
+                                                   END = @UnsageCapacityEvent
+                                      )
+
+
+
+                        ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@StatusEvent", eventFilterDTO.StatusEvent);
+                    command.Parameters.AddWithValue("@CategoryEventName", eventFilterDTO.CategoryEvent);
+                    command.Parameters.AddWithValue("@UnsageCapacityEvent", eventFilterDTO.UnsageCapacityEvent);
+                    command.Parameters.AddWithValue("@CountryName", eventFilterDTO.CountryName);
+                    command.Parameters.AddWithValue("@StreetName", eventFilterDTO.Street);
+
+                    connection.Open();
+
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                        if (reader.HasRows)
+                            DT_AllEventsAccordingAllOptions.Load(reader);
+
+
+
+
+                }
+
+
+
+            }
+
+            return DT_AllEventsAccordingAllOptions;
+
+        }
+
 
 
         #endregion

@@ -7,7 +7,6 @@ using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace EETMS_Presentation.EETMS_Events
@@ -101,11 +100,11 @@ namespace EETMS_Presentation.EETMS_Events
             return CountFullyBookedEvents;
         }
 
-        private void _LoadAllInformationCategoryNameToComboBox()
+        private void _LoadAllInformationCategoryNameToComboBox(Guna2ComboBox G2CB)
         {
 
-            GSubComboBoxTypeTheFilter.DataSource = CategoriesBL.AllCategoryNames();
-            GSubComboBoxTypeTheFilter.DisplayMember = "CategoryName";
+            G2CB.DataSource = CategoriesBL.AllCategoryNames();
+            G2CB.DisplayMember = "CategoryName";
 
         }
 
@@ -134,7 +133,7 @@ namespace EETMS_Presentation.EETMS_Events
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
             => RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
 
-        private void _LoadAllInformationTypeStatus()
+        private void _LoadAllInformationTypeStatus(Guna2ComboBox G2CB)
         {
             List<string> AllItemsStatusEvent = new List<string>();
 
@@ -143,12 +142,12 @@ namespace EETMS_Presentation.EETMS_Events
             AllItemsStatusEvent.Add("Live");
             AllItemsStatusEvent.Add("Draft");
 
-            GSubComboBoxTypeTheFilter.DataSource = AllItemsStatusEvent;
+            G2CB.DataSource = AllItemsStatusEvent;
 
 
         }
 
-        private void _LoadAllInformationTypeCapacityUsage()
+        private void _LoadAllInformationTypeCapacityUsage(Guna2ComboBox G2CB)
         {
             List<string> AllItemsCapacityUsageEvent = new List<string>();
 
@@ -158,16 +157,16 @@ namespace EETMS_Presentation.EETMS_Events
             AllItemsCapacityUsageEvent.Add("Almost Full");
             AllItemsCapacityUsageEvent.Add("Sold Out");
 
-            GSubComboBoxTypeTheFilter.DataSource = AllItemsCapacityUsageEvent;
+            G2CB.DataSource = AllItemsCapacityUsageEvent;
 
 
         }
 
-        private void _LoadAllInformationTypeCountry()
+        private void _LoadAllInformationTypeCountry(Guna2ComboBox G2CB)
         {
 
-            GSubComboBoxTypeTheFilter.DataSource = CountriesBL.AllInformationCountryName();
-            GSubComboBoxTypeTheFilter.DisplayMember = "CountryName";
+            G2CB.DataSource = CountriesBL.AllInformationCountryName();
+            G2CB.DisplayMember = "CountryName";
 
         }
 
@@ -202,6 +201,9 @@ namespace EETMS_Presentation.EETMS_Events
 
             GDataGridViewEventsInformation.Rows.Clear();
             GSubComboBoxTypeTheFilter.Visible = false;
+            GTextBoxStreetSearch.Visible = false;
+            GGPanelCustomFilter.Visible = false;
+
             GTextBoxStreetSearch.Text = "";
 
             GComboBoxMainTypeFilter.SelectedIndex = clsEETMS_Constants.kZERO;
@@ -243,30 +245,45 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
+        private void _LoadAllInformationFiltersToComboBoxiesCustomOption()
+        {
+
+            _LoadAllInformationTypeStatus(GCombvoBoxStatusCustomFilter);
+            _LoadAllInformationCategoryNameToComboBox(GCombvoBoxCategoryCustomFilter);
+            _LoadAllInformationTypeCapacityUsage(GComboBoxUnsageCapacityCustomerFilter);
+            _LoadAllInformationTypeCountry(GComboBoxCountryCustomerFilter);
+        }
+
         private void _PushAllInformationMainType()
         {
             if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kZERO)
             {
                 GSubComboBoxTypeTheFilter.Visible = false;
+                GGPanelCustomFilter.Visible = false;
+                GTextBoxStreetSearch.Visible = false;
                 return;
             }
-            else
-                GSubComboBoxTypeTheFilter.Visible = true;
+
+            GSubComboBoxTypeTheFilter.Visible = true;
 
             if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kONE)
-                _LoadAllInformationTypeStatus();
+                _LoadAllInformationTypeStatus(GSubComboBoxTypeTheFilter);
             else if (GComboBoxMainTypeFilter.SelectedIndex == 2)
-                _LoadAllInformationCategoryNameToComboBox();
+                _LoadAllInformationCategoryNameToComboBox(GSubComboBoxTypeTheFilter);
             else if (GComboBoxMainTypeFilter.SelectedIndex == 3)
-                _LoadAllInformationTypeCapacityUsage();
+                _LoadAllInformationTypeCapacityUsage(GSubComboBoxTypeTheFilter);
             else if (GComboBoxMainTypeFilter.SelectedIndex == 4)
+                _LoadAllInformationTypeCountry(GSubComboBoxTypeTheFilter);
+            else if (GComboBoxMainTypeFilter.SelectedIndex == 5)
             {
-
-                _LoadAllInformationTypeCountry();
-
-
+                GSubComboBoxTypeTheFilter.Visible = false;
+                GGPanelCustomFilter.Visible = true;
+                GGPanelCustomFilter.BringToFront();
+                _LoadAllInformationFiltersToComboBoxiesCustomOption();
+                return;
             }
 
+            GGPanelCustomFilter.Visible = false;
             GTextBoxStreetSearch.Visible = false;
         }
 
@@ -295,6 +312,44 @@ namespace EETMS_Presentation.EETMS_Events
             }
             catch (Exception ex) { }
             ;
+
+
+            if (DT_ResultFilter != null)
+                _LoadTheInformationEventsToGDVBy(DT_ResultFilter);
+        }
+
+        private void _FillTheInformationEventToDGVAfterTheFilterCustom()
+        {
+            DataTable DT_ResultFilter = null;
+
+            try
+            {
+
+                string MainSelectComboBoxTypeFilter = GComboBoxMainTypeFilter.SelectedItem.ToString();
+                string SelectedStatus = GCombvoBoxStatusCustomFilter.SelectedItem.ToString();
+                string SelectedCategory = GCombvoBoxCategoryCustomFilter.SelectedItem.ToString();
+                string SelectedUnsageCapactity = GComboBoxUnsageCapacityCustomerFilter.SelectedItem.ToString();
+                string SelectedCountry = GComboBoxCountryCustomerFilter.SelectedItem.ToString();
+                string NameStreet = GTextBoxStreetCustomFilter.Text;
+
+
+
+                EventFilterDTO eventFilterDTO = new EventFilterDTO()
+                {
+                    TypeMainFilterEvent = MainSelectComboBoxTypeFilter,
+                    StatusEvent = SelectedStatus,
+                    CategoryEvent = SelectedCategory,
+                    UnsageCapacityEvent = SelectedUnsageCapactity,
+                    CountryName = SelectedCountry,
+                    Street = NameStreet
+                };
+
+
+                DT_ResultFilter = EventBL.GetAllInformationEventAccordingBy(eventFilterDTO);
+
+            }
+            catch (Exception ex) { }
+         ;
 
 
             if (DT_ResultFilter != null)
@@ -334,9 +389,7 @@ namespace EETMS_Presentation.EETMS_Events
         }
 
         private void GGButtonFilter_Click(object sender, EventArgs e)
-        {
-            _ActiveTheFilter();
-        }
+            => _ActiveTheFilter();
 
         private void GSubComboBoxTypeTheFilter_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -350,14 +403,22 @@ namespace EETMS_Presentation.EETMS_Events
         }
 
         private void GComboBoxMainTypeFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _PushAllInformationMainType();
-        }
+            => _PushAllInformationMainType();
 
         private void GTextBoxStreetSearch_TextChanged(object sender, EventArgs e)
         {
             _GetAllEventAccordingTheCountryAndStreet();
         }
+
+        private void GCombvoBoxCategoryCustomFilter_SelectionChangeCommitted(object sender, EventArgs e)
+            => _FillTheInformationEventToDGVAfterTheFilterCustom();
+
+        private void GComboBoxCountryCustomerFilter_SelectionChangeCommitted(object sender, EventArgs e)
+            => _FillTheInformationEventToDGVAfterTheFilterCustom();
+
+        private void GTextBoxStreetCustomFilter_TextChanged(object sender, EventArgs e)
+            => _FillTheInformationEventToDGVAfterTheFilterCustom();
+
 
 
     }

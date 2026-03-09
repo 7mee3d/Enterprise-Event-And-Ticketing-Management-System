@@ -92,6 +92,9 @@ namespace EETMS_BusinessLayer
         private static DataTable _GetAllInformatioNEventCategoryAccordingBy(string CategoryName)
             => EventsQueriesDAL.GetAllEventAccordingCategoryBy(CategoryName);
 
+        private static DataTable _GetAllInformationEventCustomOptions(EventFilterDTO eventFilterDTO)
+            => EventsQueriesDAL.GetAllInformationEventAccrodingStatusAndCategoryAndCountryAndCapacityAndLocationBy(eventFilterDTO);
+
         public static DataTable GetAllInformationEventAccordingBy(EventFilterDTO eventFilterDTO)
         {
 
@@ -106,6 +109,8 @@ namespace EETMS_BusinessLayer
                     return _GetAllEventAccordingUsageCapacityBy(eventFilterDTO.TypeSubFilterEvent);
                 case "Location":
                     return GetAllEventsAccrodingCountryAndStreetBy(eventFilterDTO.CountryName, eventFilterDTO.Street);
+                case "Custom":
+                    return _GetAllInformationEventCustomOptions(eventFilterDTO);
 
 
                 default: return GetAllInformationEvents();

@@ -229,6 +229,19 @@
         xXBrF66gX0usXYzcm4G1iyGkGax6dwp5c6cZsJZhmH94A4dzrJytUnm1AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="GTextBoxStreetCustomFilter.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAapJREFUWEft
+        l7FOwzAQhjsy8ggdOzIyMvIGMHYrI2/ACyBFNHE7WviCOmaiPpchI4/AIzAyMgYdjVPnmjYkMaFI/SRL
+        ke98/n0+2+1gcOS/MpXLcwGryVTpMX1z+68Rgr6IALPtZjKRf8+lHvJx3ogAP7Yn39lSPr4zFZNkIsa5
+        iM0VbYkATLg9AnzncVpTZEDlk8vnM+5jmarlbSFi7d89Iw+Al+7quL2KQCZDV7SU6Qn3aYQroMkJmMU4
+        97YtNhBVPrfV0TSDldDKi0AxSm6vgzLQXYTS400mVhNuryMC1HR/0PhAJqfc/iPo+HUSEWPaOROhNCOn
+        JjS31+GlJghHRONAPkV8WhFNtmRdD+2LukQg9frisRnZc1taQoU33rJgicBsVkVNYcB9LHRNl3zBNK6l
+        nbhn3mn0pqQhmNcKmytkweO1prTPebO/Iex94PTnr2rerzwKoccoUvjGxTiCivSLR3NX2L8fM49CXEjU
+        vldSwMtGCJhsBphwn14Q4GSEZatXDkoIK+S/E1IqZHUAQujU0N8I7tMLhZAnfc1tvXIvzYj3HTk4vgDQ
+        tlcxPJ/K9AAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>43</value>
   </metadata>

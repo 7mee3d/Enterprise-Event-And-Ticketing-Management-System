@@ -75,6 +75,12 @@
             this.GSubComboBoxTypeTheFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxMainTypeFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GGButtonFilter = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GGPanelCustomFilter = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GTextBoxStreetCustomFilter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GComboBoxCountryCustomerFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxUnsageCapacityCustomerFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GCombvoBoxCategoryCustomFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GCombvoBoxStatusCustomFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).BeginInit();
             this.GContextMenuStripEvents.SuspendLayout();
@@ -85,6 +91,7 @@
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
             this.GGMainPanelFilter.SuspendLayout();
+            this.GGPanelCustomFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -620,7 +627,7 @@
             this.GGMainPanelFilter.Controls.Add(this.GComboBoxMainTypeFilter);
             this.GGMainPanelFilter.Location = new System.Drawing.Point(153, 306);
             this.GGMainPanelFilter.Name = "GGMainPanelFilter";
-            this.GGMainPanelFilter.Size = new System.Drawing.Size(885, 63);
+            this.GGMainPanelFilter.Size = new System.Drawing.Size(607, 63);
             this.GGMainPanelFilter.TabIndex = 9;
             this.GGMainPanelFilter.Visible = false;
             // 
@@ -685,7 +692,8 @@
             "Status Event",
             "Category",
             "Capacity Usage",
-            "Location"});
+            "Location",
+            "Custom"});
             this.GComboBoxMainTypeFilter.Location = new System.Drawing.Point(15, 14);
             this.GComboBoxMainTypeFilter.Name = "GComboBoxMainTypeFilter";
             this.GComboBoxMainTypeFilter.Size = new System.Drawing.Size(189, 36);
@@ -724,11 +732,132 @@
             this.GGButtonFilter.Text = "Filter";
             this.GGButtonFilter.Click += new System.EventHandler(this.GGButtonFilter_Click);
             // 
+            // GGPanelCustomFilter
+            // 
+            this.GGPanelCustomFilter.Controls.Add(this.GTextBoxStreetCustomFilter);
+            this.GGPanelCustomFilter.Controls.Add(this.GComboBoxCountryCustomerFilter);
+            this.GGPanelCustomFilter.Controls.Add(this.GComboBoxUnsageCapacityCustomerFilter);
+            this.GGPanelCustomFilter.Controls.Add(this.GCombvoBoxCategoryCustomFilter);
+            this.GGPanelCustomFilter.Controls.Add(this.GCombvoBoxStatusCustomFilter);
+            this.GGPanelCustomFilter.Location = new System.Drawing.Point(363, 304);
+            this.GGPanelCustomFilter.Name = "GGPanelCustomFilter";
+            this.GGPanelCustomFilter.Size = new System.Drawing.Size(678, 63);
+            this.GGPanelCustomFilter.TabIndex = 10;
+            this.GGPanelCustomFilter.Visible = false;
+            // 
+            // GTextBoxStreetCustomFilter
+            // 
+            this.GTextBoxStreetCustomFilter.Animated = true;
+            this.GTextBoxStreetCustomFilter.BorderRadius = 8;
+            this.GTextBoxStreetCustomFilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxStreetCustomFilter.DefaultText = "";
+            this.GTextBoxStreetCustomFilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxStreetCustomFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxStreetCustomFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxStreetCustomFilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxStreetCustomFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxStreetCustomFilter.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxStreetCustomFilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxStreetCustomFilter.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxStreetCustomFilter.IconLeft")));
+            this.GTextBoxStreetCustomFilter.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxStreetCustomFilter.Location = new System.Drawing.Point(502, 13);
+            this.GTextBoxStreetCustomFilter.Name = "GTextBoxStreetCustomFilter";
+            this.GTextBoxStreetCustomFilter.PlaceholderText = "Enter The Street...";
+            this.GTextBoxStreetCustomFilter.SelectedText = "";
+            this.GTextBoxStreetCustomFilter.Size = new System.Drawing.Size(169, 37);
+            this.GTextBoxStreetCustomFilter.TabIndex = 2;
+            this.GTextBoxStreetCustomFilter.TextChanged += new System.EventHandler(this.GTextBoxStreetCustomFilter_TextChanged);
+            // 
+            // GComboBoxCountryCustomerFilter
+            // 
+            this.GComboBoxCountryCustomerFilter.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxCountryCustomerFilter.BorderRadius = 5;
+            this.GComboBoxCountryCustomerFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxCountryCustomerFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxCountryCustomerFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxCountryCustomerFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxCountryCustomerFilter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxCountryCustomerFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxCountryCustomerFilter.ItemHeight = 30;
+            this.GComboBoxCountryCustomerFilter.Items.AddRange(new object[] {
+            "None"});
+            this.GComboBoxCountryCustomerFilter.Location = new System.Drawing.Point(379, 14);
+            this.GComboBoxCountryCustomerFilter.Name = "GComboBoxCountryCustomerFilter";
+            this.GComboBoxCountryCustomerFilter.Size = new System.Drawing.Size(117, 36);
+            this.GComboBoxCountryCustomerFilter.StartIndex = 0;
+            this.GComboBoxCountryCustomerFilter.TabIndex = 0;
+            this.GComboBoxCountryCustomerFilter.SelectionChangeCommitted += new System.EventHandler(this.GComboBoxCountryCustomerFilter_SelectionChangeCommitted);
+            // 
+            // GComboBoxUnsageCapacityCustomerFilter
+            // 
+            this.GComboBoxUnsageCapacityCustomerFilter.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxUnsageCapacityCustomerFilter.BorderRadius = 5;
+            this.GComboBoxUnsageCapacityCustomerFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxUnsageCapacityCustomerFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxUnsageCapacityCustomerFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxUnsageCapacityCustomerFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxUnsageCapacityCustomerFilter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxUnsageCapacityCustomerFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxUnsageCapacityCustomerFilter.ItemHeight = 30;
+            this.GComboBoxUnsageCapacityCustomerFilter.Items.AddRange(new object[] {
+            "None"});
+            this.GComboBoxUnsageCapacityCustomerFilter.Location = new System.Drawing.Point(256, 14);
+            this.GComboBoxUnsageCapacityCustomerFilter.Name = "GComboBoxUnsageCapacityCustomerFilter";
+            this.GComboBoxUnsageCapacityCustomerFilter.Size = new System.Drawing.Size(117, 36);
+            this.GComboBoxUnsageCapacityCustomerFilter.StartIndex = 0;
+            this.GComboBoxUnsageCapacityCustomerFilter.TabIndex = 0;
+            this.GComboBoxUnsageCapacityCustomerFilter.SelectionChangeCommitted += new System.EventHandler(this.GComboBoxCountryCustomerFilter_SelectionChangeCommitted);
+            // 
+            // GCombvoBoxCategoryCustomFilter
+            // 
+            this.GCombvoBoxCategoryCustomFilter.BackColor = System.Drawing.Color.Transparent;
+            this.GCombvoBoxCategoryCustomFilter.BorderRadius = 5;
+            this.GCombvoBoxCategoryCustomFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GCombvoBoxCategoryCustomFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GCombvoBoxCategoryCustomFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GCombvoBoxCategoryCustomFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GCombvoBoxCategoryCustomFilter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GCombvoBoxCategoryCustomFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GCombvoBoxCategoryCustomFilter.ItemHeight = 30;
+            this.GCombvoBoxCategoryCustomFilter.Items.AddRange(new object[] {
+            "None"});
+            this.GCombvoBoxCategoryCustomFilter.Location = new System.Drawing.Point(133, 14);
+            this.GCombvoBoxCategoryCustomFilter.Name = "GCombvoBoxCategoryCustomFilter";
+            this.GCombvoBoxCategoryCustomFilter.Size = new System.Drawing.Size(117, 36);
+            this.GCombvoBoxCategoryCustomFilter.StartIndex = 0;
+            this.GCombvoBoxCategoryCustomFilter.TabIndex = 0;
+            this.GCombvoBoxCategoryCustomFilter.SelectionChangeCommitted += new System.EventHandler(this.GComboBoxCountryCustomerFilter_SelectionChangeCommitted);
+            // 
+            // GCombvoBoxStatusCustomFilter
+            // 
+            this.GCombvoBoxStatusCustomFilter.BackColor = System.Drawing.Color.Transparent;
+            this.GCombvoBoxStatusCustomFilter.BorderRadius = 5;
+            this.GCombvoBoxStatusCustomFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GCombvoBoxStatusCustomFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GCombvoBoxStatusCustomFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GCombvoBoxStatusCustomFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GCombvoBoxStatusCustomFilter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GCombvoBoxStatusCustomFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GCombvoBoxStatusCustomFilter.ItemHeight = 30;
+            this.GCombvoBoxStatusCustomFilter.Items.AddRange(new object[] {
+            "Capacity Usage",
+            "Category",
+            "Location",
+            "None",
+            "Status Event"});
+            this.GCombvoBoxStatusCustomFilter.Location = new System.Drawing.Point(15, 14);
+            this.GCombvoBoxStatusCustomFilter.Name = "GCombvoBoxStatusCustomFilter";
+            this.GCombvoBoxStatusCustomFilter.Size = new System.Drawing.Size(112, 36);
+            this.GCombvoBoxStatusCustomFilter.StartIndex = 0;
+            this.GCombvoBoxStatusCustomFilter.TabIndex = 0;
+            this.GCombvoBoxStatusCustomFilter.SelectionChangeCommitted += new System.EventHandler(this.GComboBoxCountryCustomerFilter_SelectionChangeCommitted);
+            // 
             // USEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.GGPanelCustomFilter);
             this.Controls.Add(this.GGMainPanelFilter);
             this.Controls.Add(this.GGButtonFilter);
             this.Controls.Add(this.GGButtonWarningDisable);
@@ -757,6 +886,7 @@
             this.guna2GradientPanel4.ResumeLayout(false);
             this.guna2GradientPanel4.PerformLayout();
             this.GGMainPanelFilter.ResumeLayout(false);
+            this.GGPanelCustomFilter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -805,5 +935,11 @@
         private Guna.UI2.WinForms.Guna2ComboBox GComboBoxMainTypeFilter;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonFilter;
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxStreetSearch;
+        private Guna.UI2.WinForms.Guna2GradientPanel GGPanelCustomFilter;
+        private Guna.UI2.WinForms.Guna2TextBox GTextBoxStreetCustomFilter;
+        private Guna.UI2.WinForms.Guna2ComboBox GComboBoxUnsageCapacityCustomerFilter;
+        private Guna.UI2.WinForms.Guna2ComboBox GCombvoBoxCategoryCustomFilter;
+        private Guna.UI2.WinForms.Guna2ComboBox GCombvoBoxStatusCustomFilter;
+        private Guna.UI2.WinForms.Guna2ComboBox GComboBoxCountryCustomerFilter;
     }
 }
