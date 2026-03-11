@@ -50,10 +50,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GPanelMainScreens = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.GPanelMessage = new Guna.UI2.WinForms.Guna2Panel();
             this.GGPanelButtonsEETMS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GCPictureBoxImageUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogoutEETMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.GPanelMainScreens.SuspendLayout();
+            this.GPanelMessage.SuspendLayout();
             this.SuspendLayout();
             // 
             // GBorderLessForm
@@ -430,6 +435,7 @@
             // GPanelMainScreens
             // 
             this.GPanelMainScreens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.GPanelMainScreens.Controls.Add(this.GPanelMessage);
             this.GPanelMainScreens.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GPanelMainScreens.Location = new System.Drawing.Point(244, 0);
             this.GPanelMainScreens.Name = "GPanelMainScreens";
@@ -438,6 +444,40 @@
             this.GPanelMainScreens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseDown);
             this.GPanelMainScreens.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseMove);
             this.GPanelMainScreens.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseUp);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Britannic Bold", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(29, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(652, 106);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Access Denied";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.label4.Location = new System.Drawing.Point(169, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(372, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Contact the system administrator to open sections.";
+            // 
+            // GPanelMessage
+            // 
+            this.GPanelMessage.Controls.Add(this.label4);
+            this.GPanelMessage.Controls.Add(this.label3);
+            this.GPanelMessage.Location = new System.Drawing.Point(354, 369);
+            this.GPanelMessage.Name = "GPanelMessage";
+            this.GPanelMessage.Size = new System.Drawing.Size(699, 196);
+            this.GPanelMessage.TabIndex = 3;
+            this.GPanelMessage.Visible = false;
             // 
             // frmMainScreenEETMS
             // 
@@ -457,6 +497,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.GCPictureBoxImageUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogoutEETMS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.GPanelMainScreens.ResumeLayout(false);
+            this.GPanelMessage.ResumeLayout(false);
+            this.GPanelMessage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -483,5 +526,8 @@
         private Guna.UI2.WinForms.Guna2Button GButtonUsersAndRoles;
         private Guna.UI2.WinForms.Guna2CirclePictureBox GCPictureBoxImageUser;
         private Guna.UI2.WinForms.Guna2Button GButtonRole;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Panel GPanelMessage;
     }
 }

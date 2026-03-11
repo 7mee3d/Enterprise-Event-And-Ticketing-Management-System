@@ -71,6 +71,9 @@ namespace EETMS_Presentation.EETMS_Roles.Users_Control_Opration_Roles
             if (GCheckBoxPPayment.Checked)
                 PermssionsRole += (int)RoleDTO.EnPermssionsType.kPAYMENT;
 
+            if (GCheckBoxPReport.Checked)
+                PermssionsRole += (int)RoleDTO.EnPermssionsType.kREPORT;
+
             if (GCheckBoxPUsers.Checked)
                 PermssionsRole += (int)RoleDTO.EnPermssionsType.kUSERS_MANAGMENT;
 
@@ -101,6 +104,9 @@ namespace EETMS_Presentation.EETMS_Roles.Users_Control_Opration_Roles
 
             if (RolesBL.IsPassUserPermssions(Permssions, EnPermssionsType.kPAYMENT))
                 GCheckBoxPPayment.Checked = true;
+
+            if (RolesBL.IsPassUserPermssions(Permssions, EnPermssionsType.kREPORT))
+               GCheckBoxPReport.Checked = true;
 
             if (RolesBL.IsPassUserPermssions(Permssions, EnPermssionsType.kUSERS_MANAGMENT))
                 GCheckBoxPUsers.Checked = true;

@@ -40,41 +40,38 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Permissions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblTotalRoles = new System.Windows.Forms.Label();
-            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTotalActiveStzatusRoles = new System.Windows.Forms.Label();
-            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblTotalUsesRolesUsers = new System.Windows.Forms.Label();
             this.GContextMenuStripRoles = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.EditRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.GGButtonCreateNewRole = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTotalRoles = new System.Windows.Forms.Label();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotalActiveStzatusRoles = new System.Windows.Forms.Label();
+            this.GGButtonCreateNewRole = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewRolesInformation)).BeginInit();
+            this.GContextMenuStripRoles.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
-            this.GContextMenuStripRoles.SuspendLayout();
             this.SuspendLayout();
             // 
             // GGPanelDataGridViewEvents
             // 
             this.GGPanelDataGridViewEvents.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.GGPanelDataGridViewEvents.BorderRadius = 10;
-            this.GGPanelDataGridViewEvents.BorderThickness = 2;
+            this.GGPanelDataGridViewEvents.BorderThickness = 1;
             this.GGPanelDataGridViewEvents.Controls.Add(this.GDataGridViewRolesInformation);
-            this.GGPanelDataGridViewEvents.Location = new System.Drawing.Point(46, 431);
+            this.GGPanelDataGridViewEvents.Location = new System.Drawing.Point(46, 399);
             this.GGPanelDataGridViewEvents.Name = "GGPanelDataGridViewEvents";
             this.GGPanelDataGridViewEvents.Size = new System.Drawing.Size(1327, 423);
             this.GGPanelDataGridViewEvents.TabIndex = 5;
@@ -192,6 +189,62 @@
             this.StatusRole.Name = "StatusRole";
             this.StatusRole.ReadOnly = true;
             // 
+            // GContextMenuStripRoles
+            // 
+            this.GContextMenuStripRoles.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GContextMenuStripRoles.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
+            this.toolStripSeparator1,
+            this.EditRoleToolStripMenuItem,
+            this.deleteRoleToolStripMenuItem});
+            this.GContextMenuStripRoles.Name = "GContextMenuStripEvents";
+            this.GContextMenuStripRoles.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.GContextMenuStripRoles.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.GContextMenuStripRoles.RenderStyle.ColorTable = null;
+            this.GContextMenuStripRoles.RenderStyle.RoundedEdges = true;
+            this.GContextMenuStripRoles.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.GContextMenuStripRoles.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.GContextMenuStripRoles.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.GContextMenuStripRoles.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.GContextMenuStripRoles.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.GContextMenuStripRoles.Size = new System.Drawing.Size(161, 74);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
+            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.toolStripTextBox1.Enabled = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.ReadOnly = true;
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 18);
+            this.toolStripTextBox1.Text = "Main Operation";
+            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
+            // 
+            // EditRoleToolStripMenuItem
+            // 
+            this.EditRoleToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
+            this.EditRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.EditRoleToolStripMenuItem.Name = "EditRoleToolStripMenuItem";
+            this.EditRoleToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.EditRoleToolStripMenuItem.Text = "Edit Role";
+            this.EditRoleToolStripMenuItem.Click += new System.EventHandler(this.EditRoleToolStripMenuItem_Click);
+            // 
+            // deleteRoleToolStripMenuItem
+            // 
+            this.deleteRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.deleteRoleToolStripMenuItem.Name = "deleteRoleToolStripMenuItem";
+            this.deleteRoleToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.deleteRoleToolStripMenuItem.Text = "Delete Role";
+            this.deleteRoleToolStripMenuItem.Click += new System.EventHandler(this.deleteRoleToolStripMenuItem_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -222,10 +275,29 @@
             this.guna2GradientPanel1.Controls.Add(this.guna2CircleButton2);
             this.guna2GradientPanel1.Controls.Add(this.label3);
             this.guna2GradientPanel1.Controls.Add(this.lblTotalRoles);
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(106, 221);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(328, 221);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(319, 107);
             this.guna2GradientPanel1.TabIndex = 8;
+            // 
+            // guna2CircleButton2
+            // 
+            this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.guna2CircleButton2.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2CircleButton2.Enabled = false;
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton2.Image")));
+            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(13, 25);
+            this.guna2CircleButton2.Name = "guna2CircleButton2";
+            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton2.Size = new System.Drawing.Size(57, 56);
+            this.guna2CircleButton2.TabIndex = 13;
             // 
             // label3
             // 
@@ -256,10 +328,29 @@
             this.guna2GradientPanel2.Controls.Add(this.guna2CircleButton1);
             this.guna2GradientPanel2.Controls.Add(this.label4);
             this.guna2GradientPanel2.Controls.Add(this.lblTotalActiveStzatusRoles);
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(550, 221);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(772, 221);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(319, 107);
             this.guna2GradientPanel2.TabIndex = 8;
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(249)))), ((int)(((byte)(239)))));
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(249)))), ((int)(((byte)(239)))));
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(249)))), ((int)(((byte)(239)))));
+            this.guna2CircleButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2CircleButton1.Enabled = false;
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(249)))), ((int)(((byte)(239)))));
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
+            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(13, 25);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(57, 56);
+            this.guna2CircleButton1.TabIndex = 13;
             // 
             // label4
             // 
@@ -282,96 +373,6 @@
             this.lblTotalActiveStzatusRoles.TabIndex = 0;
             this.lblTotalActiveStzatusRoles.Text = "0";
             // 
-            // guna2GradientPanel3
-            // 
-            this.guna2GradientPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.guna2GradientPanel3.BorderRadius = 10;
-            this.guna2GradientPanel3.BorderThickness = 2;
-            this.guna2GradientPanel3.Controls.Add(this.guna2CircleButton3);
-            this.guna2GradientPanel3.Controls.Add(this.label6);
-            this.guna2GradientPanel3.Controls.Add(this.lblTotalUsesRolesUsers);
-            this.guna2GradientPanel3.Location = new System.Drawing.Point(994, 221);
-            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
-            this.guna2GradientPanel3.Size = new System.Drawing.Size(319, 107);
-            this.guna2GradientPanel3.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
-            this.label6.Location = new System.Drawing.Point(83, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Total Roles Uses Users";
-            // 
-            // lblTotalUsesRolesUsers
-            // 
-            this.lblTotalUsesRolesUsers.AutoSize = true;
-            this.lblTotalUsesRolesUsers.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalUsesRolesUsers.Location = new System.Drawing.Point(81, 49);
-            this.lblTotalUsesRolesUsers.Name = "lblTotalUsesRolesUsers";
-            this.lblTotalUsesRolesUsers.Size = new System.Drawing.Size(28, 32);
-            this.lblTotalUsesRolesUsers.TabIndex = 0;
-            this.lblTotalUsesRolesUsers.Text = "0";
-            // 
-            // GContextMenuStripRoles
-            // 
-            this.GContextMenuStripRoles.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GContextMenuStripRoles.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
-            this.toolStripSeparator1,
-            this.EditRoleToolStripMenuItem,
-            this.deleteRoleToolStripMenuItem});
-            this.GContextMenuStripRoles.Name = "GContextMenuStripEvents";
-            this.GContextMenuStripRoles.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripRoles.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripRoles.RenderStyle.ColorTable = null;
-            this.GContextMenuStripRoles.RenderStyle.RoundedEdges = true;
-            this.GContextMenuStripRoles.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.GContextMenuStripRoles.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripRoles.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.GContextMenuStripRoles.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripRoles.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripRoles.Size = new System.Drawing.Size(181, 96);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toolStripTextBox1.Enabled = false;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.ReadOnly = true;
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 18);
-            this.toolStripTextBox1.Text = "Main Operation";
-            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // EditRoleToolStripMenuItem
-            // 
-            this.EditRoleToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.EditRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.EditRoleToolStripMenuItem.Name = "EditRoleToolStripMenuItem";
-            this.EditRoleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.EditRoleToolStripMenuItem.Text = "Edit Role";
-            this.EditRoleToolStripMenuItem.Click += new System.EventHandler(this.EditRoleToolStripMenuItem_Click);
-            // 
-            // deleteRoleToolStripMenuItem
-            // 
-            this.deleteRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.deleteRoleToolStripMenuItem.Name = "deleteRoleToolStripMenuItem";
-            this.deleteRoleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deleteRoleToolStripMenuItem.Text = "Delete Role";
-            this.deleteRoleToolStripMenuItem.Click += new System.EventHandler(this.deleteRoleToolStripMenuItem_Click);
-            // 
             // GGButtonCreateNewRole
             // 
             this.GGButtonCreateNewRole.Animated = true;
@@ -390,7 +391,7 @@
             this.GGButtonCreateNewRole.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
             this.GGButtonCreateNewRole.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonCreateNewRole.Image")));
             this.GGButtonCreateNewRole.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GGButtonCreateNewRole.Location = new System.Drawing.Point(1115, 373);
+            this.GGButtonCreateNewRole.Location = new System.Drawing.Point(1095, 17);
             this.GGButtonCreateNewRole.Name = "GGButtonCreateNewRole";
             this.GGButtonCreateNewRole.PressedColor = System.Drawing.Color.White;
             this.GGButtonCreateNewRole.Size = new System.Drawing.Size(198, 42);
@@ -398,69 +399,22 @@
             this.GGButtonCreateNewRole.Text = "Create New Role";
             this.GGButtonCreateNewRole.Click += new System.EventHandler(this.GGButtonCreateNewRole_Click);
             // 
-            // guna2CircleButton3
+            // guna2GradientPanel3
             // 
-            this.guna2CircleButton3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(230)))));
-            this.guna2CircleButton3.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(230)))));
-            this.guna2CircleButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(230)))));
-            this.guna2CircleButton3.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.guna2CircleButton3.Enabled = false;
-            this.guna2CircleButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(245)))), ((int)(((byte)(230)))));
-            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton3.Image")));
-            this.guna2CircleButton3.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2CircleButton3.Location = new System.Drawing.Point(13, 25);
-            this.guna2CircleButton3.Name = "guna2CircleButton3";
-            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton3.Size = new System.Drawing.Size(57, 56);
-            this.guna2CircleButton3.TabIndex = 13;
-            // 
-            // guna2CircleButton1
-            // 
-            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(249)))), ((int)(((byte)(239)))));
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(249)))), ((int)(((byte)(239)))));
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(249)))), ((int)(((byte)(239)))));
-            this.guna2CircleButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.guna2CircleButton1.Enabled = false;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(249)))), ((int)(((byte)(239)))));
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
-            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2CircleButton1.Location = new System.Drawing.Point(13, 25);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(57, 56);
-            this.guna2CircleButton1.TabIndex = 13;
-            // 
-            // guna2CircleButton2
-            // 
-            this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.guna2CircleButton2.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.guna2CircleButton2.Enabled = false;
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton2.Image")));
-            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2CircleButton2.Location = new System.Drawing.Point(13, 25);
-            this.guna2CircleButton2.Name = "guna2CircleButton2";
-            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(57, 56);
-            this.guna2CircleButton2.TabIndex = 13;
+            this.guna2GradientPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2GradientPanel3.BorderRadius = 10;
+            this.guna2GradientPanel3.BorderThickness = 1;
+            this.guna2GradientPanel3.Controls.Add(this.GGButtonCreateNewRole);
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(46, 828);
+            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(1327, 74);
+            this.guna2GradientPanel3.TabIndex = 10;
             // 
             // US_RolesManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.GGButtonCreateNewRole);
             this.Controls.Add(this.guna2GradientPanel3);
             this.Controls.Add(this.guna2GradientPanel2);
             this.Controls.Add(this.guna2GradientPanel1);
@@ -472,14 +426,13 @@
             this.Load += new System.EventHandler(this.US_RolesManagment_Load);
             this.GGPanelDataGridViewEvents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewRolesInformation)).EndInit();
+            this.GContextMenuStripRoles.ResumeLayout(false);
+            this.GContextMenuStripRoles.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
             this.guna2GradientPanel3.ResumeLayout(false);
-            this.guna2GradientPanel3.PerformLayout();
-            this.GContextMenuStripRoles.ResumeLayout(false);
-            this.GContextMenuStripRoles.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,10 +452,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTotalActiveStzatusRoles;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblTotalUsesRolesUsers;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonCreateNewRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleID;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleName;
@@ -514,5 +463,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem EditRoleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteRoleToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
     }
 }

@@ -19,8 +19,9 @@ namespace EETMS_DTOs
             kCUSTOMER = 8,
             kRESERVATION = 16,
             kPAYMENT = 32,
-            kUSERS_MANAGMENT = 64,
-            kROLES_MANAGMENT = 128
+            kREPORT = 64,
+            kUSERS_MANAGMENT = 128,
+            kROLES_MANAGMENT = 256
         }
 
         public int RoleID { get; set; }

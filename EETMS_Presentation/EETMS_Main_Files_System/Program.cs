@@ -14,7 +14,7 @@ namespace EETMS_Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMainScreenEETMS("Test"));
+            Application.Run(new frmLoginEETMS());
         }
     }
 }

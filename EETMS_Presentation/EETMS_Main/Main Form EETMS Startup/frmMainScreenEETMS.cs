@@ -1,4 +1,5 @@
 ﻿using EETMS_BusinessLayer;
+using EETMS_BusinessLayer.Roles_Business_Layer;
 using EETMS_DTOs;
 using EETMS_Presentation.EETMS_Category;
 using EETMS_Presentation.EETMS_Customers;
@@ -9,10 +10,12 @@ using EETMS_Presentation.EETMS_Payment;
 using EETMS_Presentation.EETMS_Report;
 using EETMS_Presentation.EETMS_Roles;
 using EETMS_Presentation.EETMS_Roles.Users_Control_Opration_Roles;
+using EETMS_Presentation.EETMS_Settings;
 using EETMS_Presentation.EETMS_Tickets;
 using EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Roles;
 using EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_And_Roles;
 using EETMS_Presentation.Properties;
+using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -32,8 +35,10 @@ namespace EETMS_Presentation.EETMS_Main
         }
 
         private _stInfoMovePanel _StInfoMovePanel;
-
         UserDTO _InformationUser;
+        private int _Permissionsuser;
+        private Guna2MessageDialog _G2MD;
+
 
         public frmMainScreenEETMS(string UsernameOrEmail)
         {
@@ -52,6 +57,8 @@ namespace EETMS_Presentation.EETMS_Main
                     GCPictureBoxImageUser.Load(_InformationUser.ImagePath);
                 else
                     GCPictureBoxImageUser.Image = Resources.Image_hide_White_Icon_EETMS;
+
+                _Permissionsuser = RolesBL.FindTheRoleBy(_InformationUser.RoleID).PermssionsRole;
             }
 
         }
@@ -66,6 +73,18 @@ namespace EETMS_Presentation.EETMS_Main
             us.BringToFront();
         }
 
+        private void _ShowTheMessageAccessDenied()
+        {
+            GPanelMainScreens.Controls.Clear();
+            GPanelMainScreens.Controls.Add(GPanelMessage);
+            GPanelMessage.Visible = true;
+
+            GPanelMessage.BringToFront();
+        }
+
+        private bool _IsHasAPermissionsThisSeaction(int Permissions, RoleDTO.EnPermssionsType enPermssionsType)
+            => RolesBL.IsPassUserPermssions(Permissions, enPermssionsType);
+
         private void PicLogoutEETMS_Click(object sender, EventArgs e)
         {
             frmLoginEETMS frm_L_EETMS = new frmLoginEETMS();
@@ -75,17 +94,28 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void GButtonDashboard_Click(object sender, EventArgs e)
         {
-            _ShowTheUserControlInThePanel(new USDashboard());
+            if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kDASHBOARD))
+                _ShowTheUserControlInThePanel(new USDashboard());
+            else _ShowTheMessageAccessDenied();
+
         }
 
         private void GButtonCategory_Click(object sender, EventArgs e)
         {
-            _ShowTheUserControlInThePanel(new USCategory());
+            if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kCATEGORY_MANAGMENT))
+                _ShowTheUserControlInThePanel(new USCategory());
+            else
+                _ShowTheMessageAccessDenied();
+
+
         }
 
         private void GButtonEvents_Click(object sender, EventArgs e)
         {
-            _ShowTheEventUS();
+            if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kEVENTS_MANAGMENT))
+                _ShowTheEventUS();
+            else _ShowTheMessageAccessDenied();
+
         }
 
         private void _OpenTheAddNewCustomer(int IDCustomer)
@@ -127,20 +157,24 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void GButtonCustomers_Click(object sender, EventArgs e)
         {
-
-            _OpenThe_US_Customer();
-
+            if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kCUSTOMER))
+                _OpenThe_US_Customer();
+            else _ShowTheMessageAccessDenied();
         }
-
 
         private void GButtonPayment_Click(object sender, EventArgs e)
         {
-            _OpenThePaymentUS();
+
+            if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kPAYMENT))
+                _OpenThePaymentUS();
+            else _ShowTheMessageAccessDenied();
         }
 
         private void GButtonReport_Click(object sender, EventArgs e)
         {
-            _ShowTheUserControlInThePanel(new USReport());
+            if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kREPORT))
+                _ShowTheUserControlInThePanel(new USReport());
+            else _ShowTheMessageAccessDenied();
         }
 
         private void _OpenTheAddNewTicketTypeToTheEvent(int IDEvent, int IDTicketType)
@@ -221,7 +255,13 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void frmMainScreenEETMS_Load(object sender, EventArgs e)
         {
-            _ShowTheUserControlInThePanel(new USDashboard());
+            if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kDASHBOARD))
+                _ShowTheUserControlInThePanel(new USDashboard());
+            else
+            {
+                GButtonDashboard.Checked = false;
+                _ShowTheMessageAccessDenied();
+            }
         }
 
         private void _OpenTheAddNewUser(int IDUser)
@@ -246,7 +286,13 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void GButtonUsersAndRoles_Click(object sender, EventArgs e)
         {
-            _ShowTheUserAndRoleUS();
+
+            if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kUSERS_MANAGMENT))
+                _ShowTheUserAndRoleUS();
+            else
+
+                _ShowTheMessageAccessDenied();
+
         }
 
         private void _OpenTheAddNewRole(int IDNewRole)
@@ -275,13 +321,16 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void GButtonRole_Click(object sender, EventArgs e)
         {
-            _ShowTheRoleManagment();
+            if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kROLES_MANAGMENT))
+                _ShowTheRoleManagment();
+            else _ShowTheMessageAccessDenied();
         }
 
         private void GButtonReservation_Click(object sender, EventArgs e)
         {
-            _ShowTheUserControlInThePanel(new USReservation());
-
+            if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kRESERVATION))
+                _ShowTheUserControlInThePanel(new USReservation());
+            else _ShowTheMessageAccessDenied();
         }
     }
 }
