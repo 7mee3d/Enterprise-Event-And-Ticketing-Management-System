@@ -3,6 +3,7 @@ using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_BusinessLayer.Roles_Business_Layer;
 using EETMS_BusinessLayer.Validation;
 using EETMS_DTOs;
+using EETMS_Presentation.EETMS_Settings;
 using EETMS_Presentation.Properties;
 using Guna.UI2.WinForms;
 using System;
@@ -21,6 +22,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
         private string _ImagePathUser;
         private _EnModeUser _EnMode;
         private UserDTO _InformationUser;
+        private Guna2MessageDialog _G2MD;
 
         private enum _EnModeUser
         {
@@ -28,6 +30,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             _kUPDATE_INFORMATION_USER = 2,
             _kNOTHING = 3
         };
+
+
 
         public USAddNewUserAndUpdate(int id)
         {
@@ -37,7 +41,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             _IDUser = clsEETMS_Constants.kZERO;
             ERequestToTheCloseAddNewUser = null;
             _ImagePathUser = null;
-
+            _G2MD = null;
 
             if (id != clsEETMS_Constants.kNEGATIVE_ONE)
                 this._EnMode = _EnModeUser._kUPDATE_INFORMATION_USER;
@@ -59,12 +63,11 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             }
 
-
             _InformationUser = UserBL.FindUserBy(_IDUser);
 
             if (_InformationUser == null)
             {
-                MessageBox.Show("This User Not Found in The EETMS ", "Note For Find The User");
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "This User Not Found in The EETMS ", "Note For Find The User", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
 
             }
@@ -166,13 +169,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             if (!FlagIsFillFullName || !FlagIsFillUsername || !FlagIsFillEmail || !FlagIsFillPassword)
             {
-
-                guna2MessageDialog.Icon = MessageDialogIcon.Error;
-                guna2MessageDialog.Buttons = MessageDialogButtons.OK;
-                guna2MessageDialog.Caption = "Invalid Data!";
-                guna2MessageDialog.Text = TextMessageDialog;
-                guna2MessageDialog.Show();
-
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, TextMessageDialog, "Invalid Data!", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 
@@ -183,11 +180,10 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             if (UserBL.SaveInformationUserMode(_InformationUser))
             {
-                if (_EnMode == _EnModeUser._kADD_NEW_USER) MessageBox.Show("Add Sccessfuly");
-                else if (_EnMode == _EnModeUser._kUPDATE_INFORMATION_USER) MessageBox.Show("Update Sccessfuly ");
+                if (_EnMode == _EnModeUser._kADD_NEW_USER) clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The User Added Sccessfully..", "Note For Add new user", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                else if (_EnMode == _EnModeUser._kUPDATE_INFORMATION_USER) clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The User Updated Information Sccessfully..", "Note For Update Information user", MessageDialogButtons.OK, MessageDialogIcon.Information);
 
             }
-
 
             GTextBoxFullName.Text = _InformationUser.UserFullName;
             GTextBoxUsername.Text = _InformationUser.Username;
@@ -212,7 +208,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             OpenFileDialog OFD = new OpenFileDialog();
 
-            OFD.Filter = "PNG IMAGE|*.png|JPGE IMAGE|jpge.*";
+            OFD.Filter = "ALL TYPE IMAGE|*.*|PNG IMAGE|*.png|JPEG IMAGE|*.jpeg|WEBP IMAGES|*.webp";
             OFD.Title = "Select The Image User";
 
             if (OFD.ShowDialog() == DialogResult.OK)
@@ -221,16 +217,22 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             }
 
-            if (_ImagePathUser != null)
+            try
             {
+                if (_ImagePathUser != null)
+                {
 
-                GCPictureBoxImageUser.Visible = true;
-                GGCButtonAddImageUser.Visible = false;
-                GCPictureBoxImageUser.Image = Image.FromFile(_ImagePathUser);
-                _InformationUser.ImagePath = _ImagePathUser;
+                    GCPictureBoxImageUser.Visible = true;
+                    GGCButtonAddImageUser.Visible = false;
+                    GCPictureBoxImageUser.Load(_ImagePathUser);
+                    _InformationUser.ImagePath = _ImagePathUser;
 
+                }
             }
-
+            catch (Exception ex)
+            {
+                throw;
+            }
 
         }
 
@@ -241,8 +243,6 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
         {
             _LoadAllInformationRolesToComboBox();
             _LoadAllInformationUserAfterLoadTheUS();
-
-
         }
 
         private void GGCButtonAddImageUser_Click(object sender, EventArgs e)

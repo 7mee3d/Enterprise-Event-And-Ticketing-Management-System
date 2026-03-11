@@ -152,11 +152,11 @@
     <Compile Include="EETMS_Roles\Users Control Opration Roles\US_AddNewRoleAndUpdate.Designer.cs">
       <DependentUpon>US_AddNewRoleAndUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Tickets\Main User Control Tickets\USTickets.cs">
+    <Compile Include="EETMS_Tickets\Main User Control Reservation\USReservation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Tickets\Main User Control Tickets\USTickets.Designer.cs">
-      <DependentUpon>USTickets.cs</DependentUpon>
+    <Compile Include="EETMS_Tickets\Main User Control Reservation\USReservation.Designer.cs">
+      <DependentUpon>USReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="EETMS_Main_Files_System\Program.cs" />
     <Compile Include="EETMS_UsersAndRoles\Main User Control Users\USUsersManagment.cs">
@@ -217,8 +217,8 @@
     <EmbeddedResource Include="EETMS_Roles\Users Control Opration Roles\US_AddNewRoleAndUpdate.resx">
       <DependentUpon>US_AddNewRoleAndUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Tickets\Main User Control Tickets\USTickets.resx">
-      <DependentUpon>USTickets.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Tickets\Main User Control Reservation\USReservation.resx">
+      <DependentUpon>USReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_UsersAndRoles\Main User Control Users\USUsersManagment.resx">
       <DependentUpon>USUsersManagment.cs</DependentUpon>

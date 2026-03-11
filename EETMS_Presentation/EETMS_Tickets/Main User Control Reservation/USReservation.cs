@@ -7,11 +7,12 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using EETMS_DTOs;
+using EETMS_Presentation.EETMS_Settings;
 
 namespace EETMS_Presentation.EETMS_Tickets
 {
 
-    public partial class USTickets : UserControl
+    public partial class USReservation : UserControl
     {
 
 
@@ -35,8 +36,9 @@ namespace EETMS_Presentation.EETMS_Tickets
         private int _CustomerID;
         private ReservationsDTO _MReservations;
         private int _EventID;
+        private Guna2MessageDialog _G2MD;
 
-        public USTickets()
+        public USReservation()
         {
             InitializeComponent();
             _NumberOfTicketRegular = clsEETMS_Constants.kZERO;
@@ -48,7 +50,7 @@ namespace EETMS_Presentation.EETMS_Tickets
             _PriceThePreimumTicket = clsEETMS_Constants.kZERO;
 
             _SubTotalAmount = clsEETMS_Constants.kZERO;
-            _Tax = clsEETMS_Constants.kZERO;
+            _Tax = 5;
             _TotalAmount = clsEETMS_Constants.kZERO;
 
             _NumberAvailableTicketRegular = clsEETMS_Constants.kZERO;
@@ -385,26 +387,25 @@ namespace EETMS_Presentation.EETMS_Tickets
 
         private void _CalcTheTotalAmountAndSubAmount()
         {
+            _SubTotalAmount = 0;
 
-            _SubTotalAmount = clsEETMS_Constants.kZERO;
-            _TotalAmount = clsEETMS_Constants.kZERO;
+            _SubTotalAmount += _NumberOfTicketRegular * _PriceTheRegularTicket;
+            _SubTotalAmount += _NumberOfTicketVIP * _PriceTheVIPTicket;
+            _SubTotalAmount += _NumberOfTicketPreimum * _PriceThePreimumTicket;
 
+            double TaxAmount = (_Tax / 100.0) * _SubTotalAmount;
 
-            _SubTotalAmount += _Tax + _NumberOfTicketRegular * _PriceTheRegularTicket;
-            _TotalAmount = _SubTotalAmount;
-
-            _SubTotalAmount += _Tax + _NumberOfTicketVIP * _PriceTheVIPTicket;
-            _TotalAmount = _SubTotalAmount;
-
-            _SubTotalAmount += _Tax + _NumberOfTicketPreimum * _PriceThePreimumTicket;
-            _TotalAmount = _SubTotalAmount;
+            _TotalAmount = _SubTotalAmount + TaxAmount;
         }
 
         private void _LoadTheAmountSubTotalToLabel_ConvertNumberToString()
         {
-            lblTotalAmount.Text = "$" + _TotalAmount.ToString();
-            lblSubTotal.Text = "$" + _SubTotalAmount.ToString();
-            lblTax.Text = "$" + _Tax.ToString();
+            lblTotalAmount.Text = "$" + _TotalAmount.ToString("0.00");
+            lblSubTotal.Text = "$" + _SubTotalAmount.ToString("0.00");
+
+            double FilnialCalcTax = ((_Tax / 100.0) * _SubTotalAmount);
+
+            lblTax.Text = "$" + FilnialCalcTax.ToString("0.00");
         }
 
         private void GNumericUpDownRegularTicket_ValueChanged(object sender, EventArgs e)
@@ -458,7 +459,7 @@ namespace EETMS_Presentation.EETMS_Tickets
             string ToBeSearch = clsEETMS_Constants.kEMPTY_STRING;
 
             if (!string.IsNullOrEmpty(GTextBoxCustomerIDorName.Text))
-                ToBeSearch = GTextBoxCustomerIDorName.Text;
+                ToBeSearch = GTextBoxCustomerIDorName.Text.Trim();
             else
                 return;
 
@@ -467,8 +468,10 @@ namespace EETMS_Presentation.EETMS_Tickets
             if (DT.Rows.Count > clsEETMS_Constants.kZERO)
                 _CustomerID = Convert.ToInt32(DT.Rows[clsEETMS_Constants.kZERO]["CusotmerID"]);
 
-            if (_CustomerID > clsEETMS_Constants.kZERO) MessageBox.Show("The Customer Founded", "note For Search The Customer ");
-            else MessageBox.Show("The Customer Not Founded", "note For Search The Customer ");
+            if (_CustomerID > clsEETMS_Constants.kZERO)
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Customer is Founded", "note For Search The Customer ", MessageDialogButtons.OK, MessageDialogIcon.Information);
+            else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Customer Not Founded", "note For Search The Customer ", MessageDialogButtons.OK, MessageDialogIcon.Error);
+
         }
 
         private void _BookingTheNewTickets()
@@ -549,14 +552,11 @@ namespace EETMS_Presentation.EETMS_Tickets
             }
             else
             {
-
-                MessageBox.Show("Must Search The Customer To Be Booking", "Note OF Booking New Tickets ");
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Must Search The Customer To Be Booking", "Note Of Booking New Tickets ", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 
-            MessageBox.Show("The Booking Is Successfully", "Note For Add New Reservations");
-            ;
-
+            clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Booking Is Successfully", "Note For Add New Reservations", MessageDialogButtons.OK, MessageDialogIcon.Information);
 
 
             ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "Regular", _NumberOfTicketRegular);

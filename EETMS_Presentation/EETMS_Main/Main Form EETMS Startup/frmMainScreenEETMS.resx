@@ -138,14 +138,16 @@
   </data>
   <data name="GButtonRole.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAX5JREFUWEft
-        lqFSw0AQhiuRSGRlJY+ARNaBxGFxlUhkZSUSWckjVCKRlTxCVfMxl+Tu9v5sWpMAw+SbyTRzu//tn2uy
-        d7PZxMR/AHgCXoEX4ELjowK8IVTNz5fmjoJnQDioZnDqMu1jW2ToWnWDASzLWrF6aaGCD9UOBhzXuXBJ
-        HmruVDsYwGOnrDXUrkoFe9UOirMIHneqG5QKPps6nfcgoZpRAPbtsncsaO6oAHNgGxoUVDvgRnP+FMD7
-        r6yUJf1XY5kALsMlY2Fjm7f3B2ui5aqOHVlb3VmCEI6bPE//y+jl9JgJLFTfoWxQPpIfXljLVuKr8sti
-        aeMF4XxgZ4p4zeqUVmMBIz290XnFSnLbVm0gZul4oOkzNf0Hob5VUKJRR7+IORoL5Bm41VgiNJ6c52xU
-        7YBnwtnudxLfyGTPNp4oTZTUcjHk6B06TxEpPu9EMtGn6zopdk3gPt7nDS8p0jkUeEgi5dRKWKwNncPS
-        9IgmW2M/hj0ca2xi4hzfAD1No0nuEhsAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAelJREFUWEft
+        lSFYAkEQhY1Eo5FoNBJtEmlWmpVGNBqJRKORaDQSjUai0Ujynt8MM3dv396h1e+7PwA383Z2bnZ2uLgY
+        GRn5LwCYwWlOXyeOAJaq/QsA7jmQ03i8uWodAO++dffRxwHAta5lAEwsli4saWyH93LhNx5V5lQJ+eJk
+        W8RAxhh8gT66GGmJPYsMAWzOhj3rdDYSz6rZksYlB+IFDIAroNlzgIouzofpNUZSrAEeNLO1iBcAVgDu
+        xD6PhmXs+V50tv5JG9v2oXUHzWoaoqXYE9vINRRwJc/TriDcQ/7LXxLAJZ+iJuEltB+/HPUrb5yYXYVO
+        BLOv1GoSXNZZBEueaYMt2Y19+sKv17LtfIuTxni+Id3RMuJmewzRJ9m03Ae6upn0Nem/RL+isn6GbU3H
+        tDcDn7+LQshYtRY9Pr/OAN7SQJrbVhVJk++r9WVc1pLQJp9QdkoD7EL7UjhaOn3Gzf3SUxgJnYQP4m8R
+        3RBPoit6ix16Jav/h6hMzo0b9RtxBDa+Ld6kx982ZFSi/CPTUlcCweaB6Iv5ocSAY46q8Tet0jg15K3q
+        dP4T1bi2aVtP165JK/qbcZjuprLhT1RHVTE4+YTG5v5Jr4NqiN5JexZ8Y6NRgp2+TVSxnYxCcUNGRkb+
+        FT9E8kqU52SCjwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="GButtonUsersAndRoles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -171,7 +173,7 @@
         FqV07iRq/v7vYKgj2/2BvdmSX1czll1TWoF+AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="GButtonTickets.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="GButtonReservation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAX1JREFUWEft
         ljFSwzAURF1SUlJScgRKjkCX3ICWG3AEyhyHkjJlSkpKl3RaRrIsfa3+lzWJM5PCb0YTj3elv5Fk2cOw

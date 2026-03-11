@@ -119,6 +119,47 @@ namespace EETMS_DataAccessLayer
         public static int UpdateInformationRole(int RoleID, RoleDTO InfromationNewRole)
             => _UpdateInformationRole(RoleID, InfromationNewRole);
 
+        private static int _DeleteRoleBy(int RoleID)
+        {
+
+            int RowAffective = -1;
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+                string Query = @"
+
+
+                                    DELETE FROM Roles 
+                                    WHERE RoleID = @RoleID;
+
+                            ";
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@RoleID", RoleID);
+
+                    connection.Open();
+
+
+                    RowAffective = command.ExecuteNonQuery();
+
+
+
+                }
+
+            }
+
+            return RowAffective;
+
+        }
+
+        public static int DeleteRoleBy(int RoleID)
+            => _DeleteRoleBy(RoleID);
+
         #endregion
     }
 }

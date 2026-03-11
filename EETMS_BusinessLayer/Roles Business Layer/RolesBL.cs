@@ -34,6 +34,9 @@ namespace EETMS_BusinessLayer.Roles_Business_Layer
         private static bool UpdateIOnformationRole(int RoleID, RoleDTO InfromationNewRole)
             => RolesCommandsDAL.UpdateInformationRole(RoleID, InfromationNewRole) > 0;
 
+        public static bool DeleteRoleBy(int RoleID)
+            => RolesCommandsDAL.DeleteRoleBy(RoleID) > 0;
+
         public static bool SaveMode(RoleDTO InfromationNewRole)
         {
 

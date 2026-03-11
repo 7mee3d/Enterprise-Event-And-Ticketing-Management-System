@@ -1,6 +1,6 @@
 ﻿namespace EETMS_Presentation.EETMS_Tickets
 {
-    partial class USTickets
+    partial class USReservation
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USTickets));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USReservation));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.GGPnaelMainPanelComponetNewTicketSale = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -213,7 +213,7 @@
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI Variable Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.lblTotalAmount.Location = new System.Drawing.Point(268, 110);
+            this.lblTotalAmount.Location = new System.Drawing.Point(245, 110);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(28, 32);
             this.lblTotalAmount.TabIndex = 8;

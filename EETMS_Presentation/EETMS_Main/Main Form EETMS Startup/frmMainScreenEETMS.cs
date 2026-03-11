@@ -15,7 +15,6 @@ using EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_And_Ro
 using EETMS_Presentation.Properties;
 using System;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 
@@ -133,11 +132,6 @@ namespace EETMS_Presentation.EETMS_Main
 
         }
 
-        private void GButtonTickets_Click(object sender, EventArgs e)
-        {
-            _ShowTheUserControlInThePanel(new USTickets());
-
-        }
 
         private void GButtonPayment_Click(object sender, EventArgs e)
         {
@@ -282,6 +276,12 @@ namespace EETMS_Presentation.EETMS_Main
         private void GButtonRole_Click(object sender, EventArgs e)
         {
             _ShowTheRoleManagment();
+        }
+
+        private void GButtonReservation_Click(object sender, EventArgs e)
+        {
+            _ShowTheUserControlInThePanel(new USReservation());
+
         }
     }
 }

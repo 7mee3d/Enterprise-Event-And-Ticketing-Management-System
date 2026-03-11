@@ -25,12 +25,14 @@ namespace EETMS_DataAccessLayer
 
             DataTable dataTableTicketsByCategory = new DataTable();
 
-
-            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            try
             {
 
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
 
-                string Query = @"
+
+                    string Query = @"
 
 
                                 SELECT  C.CategoryName ,
@@ -52,24 +54,26 @@ namespace EETMS_DataAccessLayer
                     ";
 
 
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
-
-                    connection.Open();
-
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlCommand command = new SqlCommand(Query, connection))
                     {
 
+                        connection.Open();
 
-                        if (reader.HasRows)
-                            dataTableTicketsByCategory.Load(reader);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+
+                            if (reader.HasRows)
+                                dataTableTicketsByCategory.Load(reader);
+
+                        }
+
 
                     }
-
-
                 }
             }
+            catch (Exception ex) { throw; }
 
             return dataTableTicketsByCategory;
         }

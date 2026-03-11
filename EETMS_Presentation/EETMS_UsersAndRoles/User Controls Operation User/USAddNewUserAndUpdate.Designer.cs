@@ -118,7 +118,7 @@
             this.GTextBoxPassword.PlaceholderText = "••••••••";
             this.GTextBoxPassword.SelectedText = "";
             this.GTextBoxPassword.Size = new System.Drawing.Size(418, 43);
-            this.GTextBoxPassword.TabIndex = 17;
+            this.GTextBoxPassword.TabIndex = 4;
             // 
             // GButtonClose
             // 
@@ -140,7 +140,7 @@
             this.GButtonClose.Name = "GButtonClose";
             this.GButtonClose.PressedColor = System.Drawing.Color.White;
             this.GButtonClose.Size = new System.Drawing.Size(227, 37);
-            this.GButtonClose.TabIndex = 1;
+            this.GButtonClose.TabIndex = 6;
             this.GButtonClose.Text = "Close";
             this.GButtonClose.Click += new System.EventHandler(this.GButtonClose_Click);
             // 
@@ -162,7 +162,7 @@
             this.GButtonCreateTheNewUser.Location = new System.Drawing.Point(38, 703);
             this.GButtonCreateTheNewUser.Name = "GButtonCreateTheNewUser";
             this.GButtonCreateTheNewUser.Size = new System.Drawing.Size(416, 48);
-            this.GButtonCreateTheNewUser.TabIndex = 1;
+            this.GButtonCreateTheNewUser.TabIndex = 5;
             this.GButtonCreateTheNewUser.Text = "Create User";
             this.GButtonCreateTheNewUser.Click += new System.EventHandler(this.GButtonCreateTheNewUser_Click);
             // 
@@ -191,7 +191,7 @@
             this.GComboBoxRoleUser.Location = new System.Drawing.Point(36, 546);
             this.GComboBoxRoleUser.Name = "GComboBoxRoleUser";
             this.GComboBoxRoleUser.Size = new System.Drawing.Size(413, 36);
-            this.GComboBoxRoleUser.TabIndex = 15;
+            this.GComboBoxRoleUser.TabIndex = 3;
             // 
             // label6
             // 
@@ -222,7 +222,7 @@
             this.GTextBoxProfessionalEmail.PlaceholderText = "jane@example.com";
             this.GTextBoxProfessionalEmail.SelectedText = "";
             this.GTextBoxProfessionalEmail.Size = new System.Drawing.Size(418, 43);
-            this.GTextBoxProfessionalEmail.TabIndex = 14;
+            this.GTextBoxProfessionalEmail.TabIndex = 2;
             // 
             // label4
             // 
@@ -253,7 +253,7 @@
             this.GTextBoxUsername.PlaceholderText = "Jane Doe";
             this.GTextBoxUsername.SelectedText = "";
             this.GTextBoxUsername.Size = new System.Drawing.Size(418, 43);
-            this.GTextBoxUsername.TabIndex = 14;
+            this.GTextBoxUsername.TabIndex = 1;
             // 
             // label8
             // 
@@ -284,7 +284,7 @@
             this.GTextBoxFullName.PlaceholderText = "Jane Doe";
             this.GTextBoxFullName.SelectedText = "";
             this.GTextBoxFullName.Size = new System.Drawing.Size(418, 43);
-            this.GTextBoxFullName.TabIndex = 14;
+            this.GTextBoxFullName.TabIndex = 0;
             // 
             // label2
             // 

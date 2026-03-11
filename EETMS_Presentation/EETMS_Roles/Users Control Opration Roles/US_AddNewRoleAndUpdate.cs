@@ -1,6 +1,7 @@
 ﻿using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_BusinessLayer.Roles_Business_Layer;
 using EETMS_DTOs;
+using EETMS_Presentation.EETMS_Settings;
 using EETMS_Presentation.Properties;
 using Guna.UI2.WinForms;
 using System;
@@ -109,19 +110,6 @@ namespace EETMS_Presentation.EETMS_Roles.Users_Control_Opration_Roles
 
         }
 
-        private void _ShowTheMessageBoxUseTheMessageDialog(string Text, string Caption, MessageDialogButtons messageDialogButtons, MessageDialogIcon messageDialogIcon)
-        {
-
-            _G2MD.Text = Text;
-            _G2MD.Caption = Caption;
-            _G2MD.Buttons = messageDialogButtons;
-            _G2MD.Icon = messageDialogIcon;
-
-            _G2MD.Show();
-
-
-        }
-
         private void _loadAllInformationRole()
         {
 
@@ -137,7 +125,7 @@ namespace EETMS_Presentation.EETMS_Roles.Users_Control_Opration_Roles
 
             if (_InformationNewRole == null)
             {
-                _ShowTheMessageBoxUseTheMessageDialog("The Role Is Not Exsits..", "Note For Search The Role", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Is Not Exsits..", "Note For Search The Role", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 
@@ -174,14 +162,14 @@ namespace EETMS_Presentation.EETMS_Roles.Users_Control_Opration_Roles
                 if (RolesBL.SaveMode(_InformationNewRole))
                 {
                     if (_InformationNewRole.ModeRole == EnModeRole.kADD_NEW_ROLE)
-                        _ShowTheMessageBoxUseTheMessageDialog("The Role Is Added Sccessfully..", "Note For Add New Role.", MessageDialogButtons.OK, MessageDialogIcon.Information);
-                    else _ShowTheMessageBoxUseTheMessageDialog("The Role Is Updated Sccessfully..", "Note For Update Role.", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Is Added Sccessfully..", "Note For Add New Role.", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                    else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Is Updated Sccessfully..", "Note For Update Role.", MessageDialogButtons.OK, MessageDialogIcon.Information);
 
                 }
             }
             else
             {
-                _ShowTheMessageBoxUseTheMessageDialog("Please,Enter All Field To Be Add/Update!!", "Note For Add/Update Role.", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Please,Enter All Field To Be Add/Update!!", "Note For Add/Update Role.", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 

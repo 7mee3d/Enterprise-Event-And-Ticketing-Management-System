@@ -3,11 +3,11 @@ using System;
 using System.Windows.Forms;
 using EETMS_BusinessLayer;
 using System.Collections.Generic;
-using System.Reflection;
 using EETMS_Presentation.Properties;
 using EETMS_BusinessLayer.Validation;
 using Guna.UI2.WinForms;
 using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_Presentation.EETMS_Settings;
 
 namespace EETMS_Presentation.EETMS_Customers
 {
@@ -28,6 +28,7 @@ namespace EETMS_Presentation.EETMS_Customers
         private int _IDCustomer;
         private List<string> _AllInformationCustomerInList;
         public event EventHandler RequestClose;
+        private Guna2MessageDialog _G2MD;
 
 
         public US_AddAndUpdateInformationCustomer(int IDCustomer)
@@ -38,6 +39,8 @@ namespace EETMS_Presentation.EETMS_Customers
             _IDCustomer = clsEETMS_Constants.kZERO;
             _AllInformationCustomerInList = null;
             RequestClose = null;
+            _G2MD = null;
+
 
             if (IDCustomer != clsEETMS_Constants.kNEGATIVE_ONE)
                 _EnMode = _EnModeCustomer._kUPDATE_INFORMATION_CUSTOMER;
@@ -65,7 +68,7 @@ namespace EETMS_Presentation.EETMS_Customers
 
             if (_CustomerInformation == null)
             {
-                MessageBox.Show($"The Customer ID [{_IDCustomer}] Not Found ..", "Note Of Search The Customer By ID");
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, $"The Customer ID [{_IDCustomer}] Not Found ..", "Note Of Search The Customer By ID", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 
@@ -100,14 +103,21 @@ namespace EETMS_Presentation.EETMS_Customers
                     _CustomerInformation.EmailCustomer = GTextBoxEmailAddress.Text;
                 else
                 {
-                    G2MD.Icon = MessageDialogIcon.Error;
-                    G2MD.Buttons = MessageDialogButtons.OK;
-                    G2MD.Style = MessageDialogStyle.Light;
-                    G2MD.Caption = "Invalid Email Address !!";
-                    G2MD.Text = "\nPlease enter a valid email address\n";
 
-                    G2MD.Show();
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                                          _G2MD,
+                                         "\nPlease enter a valid email address\n",
+                                          "Invalid Email Address !!",
+                                          MessageDialogButtons.OK,
+                                          MessageDialogIcon.Error
+
+
+                   );
+
                     return;
+
+
+
                 }
             }
             else
@@ -132,27 +142,28 @@ namespace EETMS_Presentation.EETMS_Customers
             if (_EnMode == _EnModeCustomer._kADD_NEW_CUSTOMER)
                 if (CustomerBL._IsTheNameCustomerExsistsBy(mCustomer))
                 {
-                    {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                                           _G2MD,
+                                           $"This Customer" +
+                                           $" {mCustomer.FirstName + ' ' + mCustomer.MidName + ' ' + mCustomer.LastName}" +
+                                           $"Already Exsists in the system EETMS , Try to Enter Another Customer",
+                                           "Invalid Input This Data ... ",
+                                           MessageDialogButtons.OK,
+                                           MessageDialogIcon.Warning
 
-                        Guna2MessageDialog G2MD2 = new Guna2MessageDialog();
-                        G2MD2.Icon = MessageDialogIcon.Warning;
-                        G2MD2.Caption = "Invalid Input This Data ... ";
-                        G2MD2.Text = $"This Customer" +
-                            $" {mCustomer.FirstName + ' ' + mCustomer.MidName + ' ' + mCustomer.LastName}" +
-                            $"Already Exsists in the system EETMS , Try to Enter Another Customer";
 
-                        G2MD2.Show();
+                    );
 
-                        return;
-
-                    }
+                    return;
                 }
+
 
             if (CustomerBL.Save(_CustomerInformation))
             {
                 if (_EnMode == _EnModeCustomer._kADD_NEW_CUSTOMER)
-                    MessageBox.Show($"The Customer ID [{_CustomerInformation.CusotmerID}] Added Sccuessfully", "Note Of Add New Customer");
-                else MessageBox.Show($"The Customer ID [{_CustomerInformation.CusotmerID}] Updated Sccuessfully", "Note Of Add Update Customer");
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, $"The Customer ID [{_CustomerInformation.CusotmerID}] Added Sccuessfully", "Note Of Add New Customer", MessageDialogButtons.OK, MessageDialogIcon.Information);
+
+                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, $"The Customer ID [{_CustomerInformation.CusotmerID}] Updated Sccuessfully", "Note Of Add Update Customer", MessageDialogButtons.OK, MessageDialogIcon.Information);
             }
 
             GButtonAddNewCustomer.Text = "Update Customer";
@@ -204,13 +215,10 @@ namespace EETMS_Presentation.EETMS_Customers
 
             _FillAllInformationCustomerAfterFillToList();
 
-
             if (_CheckTheAllTextBoxiesAllFilledOrNot(_AllInformationCustomerInList))
                 _AddOrUpdateInformationCustomer();
             else
-                MessageBox.Show("Please Fill All Text Boxies Customer To Be Added / Update .. ", "Note The Add / Update Information Customer ");
-
-
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Please Fill All Text Boxies Customer To Be Added / Update .. ", "Note The Add / Update Information Customer ", MessageDialogButtons.OK, MessageDialogIcon.Error);
 
 
 

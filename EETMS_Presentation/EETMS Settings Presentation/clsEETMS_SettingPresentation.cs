@@ -1,5 +1,6 @@
 ﻿
 using EETMS_BusinessLayer.EETMS_Constants;
+using Guna.UI2.WinForms;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -37,6 +38,24 @@ namespace EETMS_Presentation.EETMS_Settings
         }
 
 
+        public static bool ShowTheMessageBoxUseTheMessageDialog(Guna2MessageDialog G2MD, string Text, string Caption, MessageDialogButtons messageDialogButtons, MessageDialogIcon messageDialogIcon)
+        {
+            G2MD = new Guna2MessageDialog();
+
+
+            G2MD.Text = Text;
+            G2MD.Caption = Caption;
+            G2MD.Buttons = messageDialogButtons;
+            G2MD.Icon = messageDialogIcon;
+
+            DialogResult dialogResult = G2MD.Show();
+
+            if (dialogResult == DialogResult.OK || dialogResult == DialogResult.Yes)
+                return true;
+            else return false;
+
+
+        }
 
 
     }
