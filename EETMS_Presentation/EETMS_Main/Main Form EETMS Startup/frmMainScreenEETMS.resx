@@ -136,6 +136,18 @@
         rTkW4CE6AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="GButtonRole.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAX5JREFUWEft
+        lqFSw0AQhiuRSGRlJY+ARNaBxGFxlUhkZSUSWckjVCKRlTxCVfMxl+Tu9v5sWpMAw+SbyTRzu//tn2uy
+        d7PZxMR/AHgCXoEX4ELjowK8IVTNz5fmjoJnQDioZnDqMu1jW2ToWnWDASzLWrF6aaGCD9UOBhzXuXBJ
+        HmruVDsYwGOnrDXUrkoFe9UOirMIHneqG5QKPps6nfcgoZpRAPbtsncsaO6oAHNgGxoUVDvgRnP+FMD7
+        r6yUJf1XY5kALsMlY2Fjm7f3B2ui5aqOHVlb3VmCEI6bPE//y+jl9JgJLFTfoWxQPpIfXljLVuKr8sti
+        aeMF4XxgZ4p4zeqUVmMBIz290XnFSnLbVm0gZul4oOkzNf0Hob5VUKJRR7+IORoL5Bm41VgiNJ6c52xU
+        7YBnwtnudxLfyGTPNp4oTZTUcjHk6B06TxEpPu9EMtGn6zopdk3gPt7nDS8p0jkUeEgi5dRKWKwNncPS
+        9IgmW2M/hj0ca2xi4hzfAD1No0nuEhsAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="GButtonUsersAndRoles.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAX5JREFUWEft

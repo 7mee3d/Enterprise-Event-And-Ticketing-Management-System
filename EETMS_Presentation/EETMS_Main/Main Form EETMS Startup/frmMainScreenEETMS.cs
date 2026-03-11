@@ -7,12 +7,15 @@ using EETMS_Presentation.EETMS_Events;
 using EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event;
 using EETMS_Presentation.EETMS_Payment;
 using EETMS_Presentation.EETMS_Report;
+using EETMS_Presentation.EETMS_Roles;
+using EETMS_Presentation.EETMS_Roles.Users_Control_Opration_Roles;
 using EETMS_Presentation.EETMS_Tickets;
 using EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Roles;
 using EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_And_Roles;
 using EETMS_Presentation.Properties;
 using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 
@@ -252,7 +255,33 @@ namespace EETMS_Presentation.EETMS_Main
             _ShowTheUserAndRoleUS();
         }
 
+        private void _OpenTheAddNewRole(int IDNewRole)
+        {
+            US_AddNewRoleAndUpdate USAddNewRole = new US_AddNewRoleAndUpdate(IDNewRole);
+            USAddNewRole.ERequestToCloseTheUSAddNewRole += (sender, e) =>
+            {
+                _ShowTheRoleManagment();
+            };
 
+            _ShowTheUserControlInThePanel(USAddNewRole);
+        }
 
+        private void _ShowTheRoleManagment()
+        {
+            US_RolesManagment USRolesManagment = new US_RolesManagment();
+
+            USRolesManagment.ERequestToOpenCreateNewRole += (sender, RoleID) =>
+            {
+                _OpenTheAddNewRole(RoleID);
+            };
+
+            _ShowTheUserControlInThePanel(USRolesManagment);
+
+        }
+
+        private void GButtonRole_Click(object sender, EventArgs e)
+        {
+            _ShowTheRoleManagment();
+        }
     }
 }

@@ -140,6 +140,18 @@
     <Compile Include="EETMS_Report\Main User Control Report\USReport.Designer.cs">
       <DependentUpon>USReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="EETMS_Roles\Main User Control Roles\US_RolesManagment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Roles\Main User Control Roles\US_RolesManagment.Designer.cs">
+      <DependentUpon>US_RolesManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EETMS_Roles\Users Control Opration Roles\US_AddNewRoleAndUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EETMS_Roles\Users Control Opration Roles\US_AddNewRoleAndUpdate.Designer.cs">
+      <DependentUpon>US_AddNewRoleAndUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="EETMS_Tickets\Main User Control Tickets\USTickets.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,16 +159,16 @@
       <DependentUpon>USTickets.cs</DependentUpon>
     </Compile>
     <Compile Include="EETMS_Main_Files_System\Program.cs" />
-    <Compile Include="EETMS_UsersAndRoles\Main User Control Users And Roles\USUsersManagmentAndRoles.cs">
+    <Compile Include="EETMS_UsersAndRoles\Main User Control Users\USUsersManagment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_UsersAndRoles\Main User Control Users And Roles\USUsersManagmentAndRoles.Designer.cs">
-      <DependentUpon>USUsersManagmentAndRoles.cs</DependentUpon>
+    <Compile Include="EETMS_UsersAndRoles\Main User Control Users\USUsersManagment.Designer.cs">
+      <DependentUpon>USUsersManagment.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_UsersAndRoles\User Controls Operation User And Roles\USAddNewUserAndUpdate.cs">
+    <Compile Include="EETMS_UsersAndRoles\User Controls Operation User\USAddNewUserAndUpdate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_UsersAndRoles\User Controls Operation User And Roles\USAddNewUserAndUpdate.Designer.cs">
+    <Compile Include="EETMS_UsersAndRoles\User Controls Operation User\USAddNewUserAndUpdate.Designer.cs">
       <DependentUpon>USAddNewUserAndUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -199,13 +211,19 @@
     <EmbeddedResource Include="EETMS_Report\Main User Control Report\USReport.resx">
       <DependentUpon>USReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Roles\Main User Control Roles\US_RolesManagment.resx">
+      <DependentUpon>US_RolesManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EETMS_Roles\Users Control Opration Roles\US_AddNewRoleAndUpdate.resx">
+      <DependentUpon>US_AddNewRoleAndUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Tickets\Main User Control Tickets\USTickets.resx">
       <DependentUpon>USTickets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_UsersAndRoles\Main User Control Users And Roles\USUsersManagmentAndRoles.resx">
-      <DependentUpon>USUsersManagmentAndRoles.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_UsersAndRoles\Main User Control Users\USUsersManagment.resx">
+      <DependentUpon>USUsersManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_UsersAndRoles\User Controls Operation User And Roles\USAddNewUserAndUpdate.resx">
+    <EmbeddedResource Include="EETMS_UsersAndRoles\User Controls Operation User\USAddNewUserAndUpdate.resx">
       <DependentUpon>USAddNewUserAndUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -243,6 +261,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Save_Icon_EETMS.png" />
     <None Include="Resources\Filter_Icon_EETMS.png" />
     <None Include="Resources\Cancel_Icon_EETMS.png" />
     <None Include="Resources\Image_hide_White_Icon_EETMS.png" />

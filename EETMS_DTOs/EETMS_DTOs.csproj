@@ -46,6 +46,7 @@
     <Compile Include="Event DTO\EventDTO.cs" />
     <Compile Include="Event DTO\EventFilterDTO.cs" />
     <Compile Include="Payment DTO\PaymentFilterDTO.cs" />
+    <Compile Include="Role DTO\RoleDTO.cs" />
     <Compile Include="Ticket Type DTO\TicketTypeDTO.cs" />
     <Compile Include="Payment DTO\PaymentDTO.cs" />
     <Compile Include="Reservation Payment DTO\ReservationPaymentDTO.cs" />

@@ -117,41 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="EETMS_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EETMS_Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAn9JREFUWEft
+        ViFsIzEQDCx8WPjwYUik3PkqhbWwrDSstKzwffZLlZ4UFj58WFhYGBhYWFjpSaT8xY6e3GvtW9/u+q4q
+        rXQjWbqsZ2fX9nqd2WzChAmfBUq7pbKuVYYNf2aateR+BOqHuxJaQa+yzYXkBih73Ja5QxjE/lro/Tfp
+        S7HS7UlVH7ZSQxnPv+1hyxxL67+LYB8Yx4dMI+wiDTauGe2+18AjCBPWsQyVcfdSIA4ebNgevu+pXmnc
+        K+V3xmZNnakDxeJnc6pqv8mCDqxeGfey0M2p1EAkPvja4zWsNGVWWndLyYXeXyrT3BT18ZzbmwsoMBHY
+        QyFyHvj7u1LzwoY4tM4giSQ01/5rIOHu5Kv0S70LHITSzQ39DfMiuTRwkXPdfqG1AmfU/fAtbiF8v1tQ
+        2j/RwAhl/JPky9FziY1tq3ZLTjj8IgEemKB1G5wL89aJa9lXPujQJErdzAnPz1TtNrjtcM2ik3vrSXy7
+        ++r2KWnoHV1ikPiO8sEftQrj3sBWWXeb9Gu3gay62xFGIEVnFA3DF/ZwmebQXseGo4x7Rg3kVPrviuiy
+        OUg0Jab3UZe2aiSudXsSbWP1EeyPwC2N+03tlIe+qBviDSTGjKyLhQT/XYvAuQDT4EkUxt9xHq+tNBGv
+        ZO889D7Am4B9AwpLzgPgCKCuznSzBr6c7wsyxsoeMppdTGTkpeuQ+kFX1LJ/SHQNjsbwkhNWSnsGEiu9
+        W1Ee1ArekIFaeVnoP6xdQ7dVNraBsaNkgEQG/k+Qkb0RfGQdlrwRpJ6GjioD73zjgWFHAj9rVOx606QG
+        O+27GHvGS+0e5WrCLhofOmP3lwATbStxQyZMmPCp8B8VsC0r1GyvXAAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="Add_New_Photo_NoFill_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Add_New_Photo_NoFill_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cancel_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cancel_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EETMS_LoginScreen_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EETMS_LoginScreen_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Filter_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Filter_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Remove_Image_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Remove_Image_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logout_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logout_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Add_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Add_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Update_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Update_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Image_hide_White_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Image_hide_White_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Upload_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Upload_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Save_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="guna2CircleButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAn9JREFUWEft
+        ViFsIzEQDCx8WPjwYUik3PkqhbWwrDSstKzwffZLlZ4UFj58WFhYGBhYWFjpSaT8xY6e3GvtW9/u+q4q
+        rXQjWbqsZ2fX9nqd2WzChAmfBUq7pbKuVYYNf2aateR+BOqHuxJaQa+yzYXkBih73Ja5QxjE/lro/Tfp
+        S7HS7UlVH7ZSQxnPv+1hyxxL67+LYB8Yx4dMI+wiDTauGe2+18AjCBPWsQyVcfdSIA4ebNgevu+pXmnc
+        K+V3xmZNnakDxeJnc6pqv8mCDqxeGfey0M2p1EAkPvja4zWsNGVWWndLyYXeXyrT3BT18ZzbmwsoMBHY
+        QyFyHvj7u1LzwoY4tM4giSQ01/5rIOHu5Kv0S70LHITSzQ39DfMiuTRwkXPdfqG1AmfU/fAtbiF8v1tQ
+        2j/RwAhl/JPky9FziY1tq3ZLTjj8IgEemKB1G5wL89aJa9lXPujQJErdzAnPz1TtNrjtcM2ik3vrSXy7
+        ++r2KWnoHV1ikPiO8sEftQrj3sBWWXeb9Gu3gay62xFGIEVnFA3DF/ZwmebQXseGo4x7Rg3kVPrviuiy
+        OUg0Jab3UZe2aiSudXsSbWP1EeyPwC2N+03tlIe+qBviDSTGjKyLhQT/XYvAuQDT4EkUxt9xHq+tNBGv
+        ZO889D7Am4B9AwpLzgPgCKCuznSzBr6c7wsyxsoeMppdTGTkpeuQ+kFX1LJ/SHQNjsbwkhNWSnsGEiu9
+        W1Ee1ArekIFaeVnoP6xdQ7dVNraBsaNkgEQG/k+Qkb0RfGQdlrwRpJ6GjioD73zjgWFHAj9rVOx606QG
+        O+27GHvGS+0e5WrCLhofOmP3lwATbStxQyZMmPCp8B8VsC0r1GyvXAAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

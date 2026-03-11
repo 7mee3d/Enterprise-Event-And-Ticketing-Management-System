@@ -49,6 +49,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GPanelMainScreens = new Guna.UI2.WinForms.Guna2Panel();
+            this.GButtonRole = new Guna.UI2.WinForms.Guna2Button();
             this.GGPanelButtonsEETMS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GCPictureBoxImageUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogoutEETMS)).BeginInit();
@@ -71,6 +72,7 @@
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.label2);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GGPanelSeparatorBetweenManagmentAndMainOperation);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonPayment);
+            this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonRole);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonUsersAndRoles);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonReport);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GButtonTickets);
@@ -410,6 +412,33 @@
             this.GPanelMainScreens.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseMove);
             this.GPanelMainScreens.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseUp);
             // 
+            // GButtonRole
+            // 
+            this.GButtonRole.Animated = true;
+            this.GButtonRole.AnimatedGIF = true;
+            this.GButtonRole.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonRole.BorderRadius = 5;
+            this.GButtonRole.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonRole.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonRole.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonRole.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonRole.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonRole.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonRole.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonRole.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GButtonRole.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonRole.ForeColor = System.Drawing.Color.White;
+            this.GButtonRole.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
+            this.GButtonRole.Image = ((System.Drawing.Image)(resources.GetObject("GButtonRole.Image")));
+            this.GButtonRole.ImageOffset = new System.Drawing.Point(2, 0);
+            this.GButtonRole.Location = new System.Drawing.Point(12, 728);
+            this.GButtonRole.Name = "GButtonRole";
+            this.GButtonRole.Size = new System.Drawing.Size(220, 44);
+            this.GButtonRole.TabIndex = 6;
+            this.GButtonRole.Text = "Roles";
+            this.GButtonRole.TextOffset = new System.Drawing.Point(4, 0);
+            this.GButtonRole.Click += new System.EventHandler(this.GButtonRole_Click);
+            // 
             // frmMainScreenEETMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,5 +482,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button GButtonUsersAndRoles;
         private Guna.UI2.WinForms.Guna2CirclePictureBox GCPictureBoxImageUser;
+        private Guna.UI2.WinForms.Guna2Button GButtonRole;
     }
 }

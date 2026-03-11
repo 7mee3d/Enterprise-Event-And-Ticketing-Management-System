@@ -55,6 +55,7 @@
     <Compile Include="Report Data Access Layer\Report Data Access Layer Queries\ReportQueriesDAL.cs" />
     <Compile Include="Reservation Data Access Layer\Reservation Data Access Layer Commands\ReservationCommandsDAL.cs" />
     <Compile Include="Reservation Payment Data Access Layer\Reservation Payment Data Access Layer Queries\ReservationPaymentQueriesDAL.cs" />
+    <Compile Include="Roles Data Access Layer\Roles Data Access Layer Commands\RolesCommandsDAL.cs" />
     <Compile Include="Roles Data Access Layer\Roles Data Access Layer Queries\RoleQueriesDAL.cs" />
     <Compile Include="Ticket Data Access Layer\Ticket Data Access Layer Commands\TicketCommandsDAL.cs" />
     <Compile Include="Ticket Data Access Layer\Ticket Data Access Layer Queries\TicketsQueriesDAL.cs" />
