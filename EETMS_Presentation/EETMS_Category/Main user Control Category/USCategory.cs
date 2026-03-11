@@ -6,6 +6,7 @@ using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_BusinessLayer.Validation;
 using EETMS_DTOs;
+using EETMS_Presentation.EETMS_Settings;
 using EETMS_Presentation.Properties;
 using Guna.UI2.WinForms;
 
@@ -19,6 +20,9 @@ namespace EETMS_Presentation.EETMS_Category
         private CategoryDTO _CategoryInfo;
         private int IDCategory;
         private _EnModeCategory _ModeCategory;
+        private Guna2MessageDialog _G2MD;
+
+
 
         private enum _EnModeCategory
         {
@@ -66,13 +70,16 @@ namespace EETMS_Presentation.EETMS_Category
             if (clsValidation.CheckTheNameHaveDigit_SymbolOrPunctuation(GTextBoxCategoryName.Text))
             {
 
-                G2MD.Icon = MessageDialogIcon.Error;
-                G2MD.Buttons = MessageDialogButtons.OK;
-                G2MD.Caption = "Invaild Input Data !!";
-                G2MD.Text = "Please Enter The Category Name is Vaild" +
-                    "\nWithout The Symbol , Digits And Punctuation";
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD,
+                    $"Please Enter The Category Name is Vaild" +
+                    "\nWithout The Symbol , Digits And Punctuation",
+                    "Invaild Input Data !!",
+                    MessageDialogButtons.OK,
+                    MessageDialogIcon.Error
+                    );
 
-                G2MD.Show();
+
                 return;
             }
             else
@@ -83,26 +90,30 @@ namespace EETMS_Presentation.EETMS_Category
 
 
             if (!_CheckTheTextBoxFiledOrNot())
-
-                if (CategoriesBL.SaveInformationCategory(_CategoryInfo))
-                    if (_CategoryInfo.EnMode == CategoryDTO._EnModeCategory._kAADD_NEW_CATEGORY)
+                if (!CategoriesBL.IsCategoryExistsBy(GTextBoxCategoryName.Text))
+                    if (CategoriesBL.SaveInformationCategory(_CategoryInfo))
+                        if (_CategoryInfo.EnMode == CategoryDTO._EnModeCategory._kAADD_NEW_CATEGORY)
+                        {
+                            IDCategory = _CategoryInfo.CategoryID;
+                            clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category Addedd Successfully", "Note of Add new Category", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                        }
+                        else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category Updated Successfully", "Note of Update Category", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                    else
                     {
-
-                        IDCategory = _CategoryInfo.CategoryID;
-                        MessageBox.Show("The Category Addedd Successfully", "Note of Add new Category");
-
+                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Add/Update Faild", "Note For Add /Update Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                        _ClearTheTextBoxies();
+                        return;
                     }
-                    else MessageBox.Show("The Category Updated Successfully", "Note of Update Category");
                 else
                 {
-                    MessageBox.Show("Connot Be Added This Category Becouse The Category Already Exsits", "Note of Add/Update Category");
                     _ClearTheTextBoxies();
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Connot Be Added This Category Becouse The Category Already Exsits.", "Note For Add New Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
                     return;
                 }
             else
             {
 
-                MessageBox.Show("Must Fill The Category Name To Be Add", "Note Add New Category ");
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Must Fill The Category Name To Be Add", "Note Add New Category ", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
 
             }
@@ -143,13 +154,12 @@ namespace EETMS_Presentation.EETMS_Category
 
             if (_CategoryInfo == null)
             {
-                MessageBox.Show("Sorry The Category is Not Exsits ", "note Of Add/Update New Category");
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Sorry The Category is Not Exsits ", "note Of Add/Update New Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 
 
             _InitalSettingUpdateMode();
-
 
         }
 
@@ -176,7 +186,7 @@ namespace EETMS_Presentation.EETMS_Category
 
                     CategoryID,
                     CategoriesGroupByName_DT.Rows[counter]["CategoryName"].ToString(),
-                    CategoriesGroupByName_DT.Rows[counter]["CountEventForCategory"].ToString() ,
+                    CategoriesGroupByName_DT.Rows[counter]["CountEventForCategory"].ToString(),
                     Categories_DT.Rows[counter]["Discripation"].ToString()
 
 
@@ -227,16 +237,15 @@ namespace EETMS_Presentation.EETMS_Category
 
         private void _DeleteTheCategoryByID()
         {
-            if (MessageBox.Show("Are You Sure To Be Delete This Category ?? ", "Note For Delete The Category", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+
+            if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure To Be Delete This Category ??", "Note For Delete The Category", MessageDialogButtons.OK, MessageDialogIcon.Question))
             {
                 if (CategoriesBL.DeleteTheCategoryBy(_GetTheIDCategoryAfterSelectedDGV()))
-                    MessageBox.Show("The Category deleted Successfully ", "note For Delete Category");
-                else MessageBox.Show("The Category deleted Faild ", "note For Delete Category");
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category deleted Successfully ", "note For Delete Category", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category deleted Faild ", "note For Delete Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
             }
             else
-            {
-                MessageBox.Show("The Category Connot deleted Becouse The Category Referance Events", "note For Delete Category", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category Connot deleted Becouse The Category Referance Events", "note For Delete Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
 
             _IntialSettingsAfterLoadTheSection();
             _ResetAllSettingAfterClickTheUSCategory();

@@ -13,7 +13,7 @@ namespace EETMS_Presentation.EETMS_Settings
         {
 
             int Steps = 100;
-            double StepValue = ResultNumber / Steps;
+            double StepValue = ResultNumber / (float)Steps;
             double CurrentValue = clsEETMS_Constants.kZERO;
 
 
@@ -21,7 +21,7 @@ namespace EETMS_Presentation.EETMS_Settings
             {
 
                 if (IsTheLableMoney)
-                    LableToBeAni.Text = "$" + CurrentValue.ToString("N0");
+                    LableToBeAni.Text = "$" + CurrentValue.ToString("0.00");
                 else LableToBeAni.Text = ((int)CurrentValue).ToString("");
 
                 CurrentValue += StepValue;
@@ -32,7 +32,7 @@ namespace EETMS_Presentation.EETMS_Settings
 
 
             if (IsTheLableMoney)
-                LableToBeAni.Text = "$" + (ResultNumber).ToString("N0");
+                LableToBeAni.Text = "$" + (ResultNumber).ToString("0.00");
             else
                 LableToBeAni.Text = ((int)ResultNumber).ToString("");
         }

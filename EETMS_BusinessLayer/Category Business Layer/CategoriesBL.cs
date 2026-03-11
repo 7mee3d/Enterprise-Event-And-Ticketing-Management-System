@@ -51,5 +51,8 @@ namespace EETMS_BusinessLayer
         public static List<string> AllCategoryNames()
             => CategoriesQueriesDAL.GetAllCategoryNames();
 
+        public static bool IsCategoryExistsBy(string CategoryName)
+            => CategoriesQueriesDAL.IsTheCategoryIsExistsBy(CategoryName);
+
     }
 }

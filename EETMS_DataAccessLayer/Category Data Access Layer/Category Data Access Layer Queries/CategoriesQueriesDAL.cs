@@ -282,6 +282,51 @@ namespace EETMS_DataAccessLayer
         public static List<string> GetAllCategoryNames()
             => _GetAllCategoryNames();
 
+        private static bool _IsTheCategoryIsExistsBy(string CategoryName)
+        {
+
+
+            int FlagFoundedCategory = -1;
+
+
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+
+
+                string Query = @"
+
+
+                                    SELECT 1 AS [ResultFoundedCategoryOrNot] 
+                                    FROM Categories CAT 
+                                    WHERE CAT.CategoryName = @CategoryName;
+
+    ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@CategoryName", CategoryName);
+
+                    connection.Open();
+
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && int.TryParse(result.ToString(), out int ResultTheFoundedCategory))
+                        FlagFoundedCategory = ResultTheFoundedCategory;
+
+                }
+            }
+
+            return FlagFoundedCategory > 0;
+
+        }
+
+        public static bool IsTheCategoryIsExistsBy(string CategoryName)
+                => _IsTheCategoryIsExistsBy(CategoryName);
 
 
 
