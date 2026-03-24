@@ -35,8 +35,8 @@ namespace EETMS_DataAccessLayer
 
                     string Query = @"
 
-                                            INSERT INTO ReservationTickets (Price, Quantity, TicketTypeID, ReservationID)
-                                            VALUES ( @Price , @Quantity , @TicketTypeID , @ReservationID) ;
+                                            INSERT INTO ReservationTickets (Price, Quantity, TicketTypeID, ReservationID , Tax)
+                                            VALUES ( @Price , @Quantity , @TicketTypeID , @ReservationID , @Tax) ;
 
                                             
                                             SELECT SCOPE_IDENTITY(); 
@@ -52,6 +52,7 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.Add("@Price", SqlDbType.Int).Value = mReservations.Price;
                         command.Parameters.Add("@TicketTypeID", SqlDbType.Int).Value = mReservations.TicketTypeID;
                         command.Parameters.Add("@ReservationID", SqlDbType.Int).Value = mReservations.ReservationID;
+                        command.Parameters.Add("@Tax", SqlDbType.Decimal).Value = mReservations.Tax;
 
                         connection.Open();
 

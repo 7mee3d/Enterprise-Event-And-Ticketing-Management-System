@@ -12,11 +12,11 @@ namespace EETMS_DTOs.Reservation_Tickets_DTO
 
         public int ReservationTicketID { set; get; }
         public decimal Price { set; get; }
-        public int Quantity { set; get; }
+        public decimal Quantity { set; get; }
         public int TicketTypeID { set; get; }
         public int ReservationID { set; get; }
-
-        public EnModeReservation ModeReservation { set; get; } 
+        public double Tax { get; set; }
+        public EnModeReservation ModeReservation { set; get; }
 
         public ReservationTicketsDTO()
         {
@@ -25,6 +25,7 @@ namespace EETMS_DTOs.Reservation_Tickets_DTO
             Quantity = default;
             TicketTypeID = default;
             ReservationID = default;
+            Tax = default;
             ModeReservation = EnModeReservation._kADD_NEW_RESERVATION;
         }
     }

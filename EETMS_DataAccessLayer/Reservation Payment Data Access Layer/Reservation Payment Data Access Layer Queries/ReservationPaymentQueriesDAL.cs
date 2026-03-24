@@ -35,43 +35,47 @@ namespace EETMS_DataAccessLayer
 
 
 
-                                        SELECT DISTINCT 
-                                               R.ReservationID,
-                                               CONCAT(C.FirstName, ' ', C.MidName, ' ', C.LastName) AS FullName,
-                                               RT.TotalAmount,
-                                               ISNULL(PA.PaidAmount, 0) AS PaidAmount,
-                                               RT.TotalAmount - ISNULL(PA.PaidAmount, 0) AS Remaining
-                                        
-                                        
-                                                       FROM Reservations R
-                                        
-                                                           INNER JOIN Customers C
-                                                            ON R.CusotmerID = C.CusotmerID
-                                        
-                                        				INNER JOIN ReservationTickets ReservationT 
-                                        				ON ReservationT.ReservationID = R.ReservationID 
-                                        
-                                                       INNER JOIN (
-                                                           SELECT 
-                                                               ReservationID,
-                                                               SUM(T.Price * R.Quantity) AS TotalAmount
-                                                           FROM ReservationTickets R
-                                                           INNER JOIN TicketTypes T
-                                                               ON T.TicketTypeID = R.TicketTypeID
-                                                           GROUP BY ReservationID
-                                                       ) RT
-                                                           ON RT.ReservationID = R.ReservationID
-                                        
-                                        
-                                        
-                                                       LEFT JOIN (
-                                                           SELECT 
-                                                               ReservationID,
-                                                               SUM(Amount) AS PaidAmount
-                                                           FROM Payments
-                                                           GROUP BY ReservationID
-                                                       ) PA
-                                                           ON PA.ReservationID = R.ReservationID
+                                          SELECT DISTINCT
+                                                                     R.ReservationID,
+                                                                      CONCAT(C.FirstName, ' ', C.MidName, ' ', C.LastName) AS FullName,
+                                                                      RT.TotalAmount,
+                                                                      ISNULL(PA.PaidAmount, 0) AS PaidAmount,
+                                                                     CAST (RT.TotalAmount AS DECIMAL (10 , 2 ) ) - CAST ( ISNULL( PA.PaidAmount, 0 ) AS DECIMAL (10 , 2 )) AS Remaining
+
+
+                                                                              FROM Reservations R
+
+                                                                                  INNER JOIN Customers C
+                                                                                   ON R.CusotmerID = C.CusotmerID
+
+                                                                				INNER JOIN ReservationTickets ReservationT 
+                                                                				ON ReservationT.ReservationID = R.ReservationID 
+
+                                                                              INNER JOIN (
+                                                                                  SELECT 
+                                                                                      ReservationID,
+                                                                                      SUM(T.Price * CAST (  R.Quantity  AS DECIMAL (10 , 2 ) )) + ISNULL (R.Tax , 0 ) AS TotalAmount
+                                                                                  FROM ReservationTickets R
+                                                                                  INNER JOIN TicketTypes T
+                                                                                      ON T.TicketTypeID = R.TicketTypeID
+                                                                                  GROUP BY ReservationID , R.Tax 
+                                                                              ) RT
+                                                                                  ON RT.ReservationID = R.ReservationID
+
+
+
+                                                                              LEFT JOIN (
+                                                                                  SELECT 
+                                                                                      ReservationID,
+                                                                                      SUM(Amount) AS PaidAmount
+                                                                                  FROM Payments
+                                                                                  GROUP BY ReservationID
+                                                                              ) PA
+                                                                                  ON PA.ReservationID = R.ReservationID
+                                                                            WHERE
+                                                                            CAST (RT.TotalAmount AS DECIMAL (10 , 2 ) ) - CAST ( ISNULL( PA.PaidAmount, 0 ) AS DECIMAL (10 , 2 )) <> 0 
+                                                           
+
                                                                                 
 
 
@@ -127,47 +131,48 @@ namespace EETMS_DataAccessLayer
                     string Query = @"
 
 
-	    
 
-                                        SELECT DISTINCT
-                                             R.ReservationID,
-                                              CONCAT(C.FirstName, ' ', C.MidName, ' ', C.LastName) AS FullName,
-                                              RT.TotalAmount,
-                                              ISNULL(PA.PaidAmount, 0) AS PaidAmount,
-                                              RT.TotalAmount - ISNULL(PA.PaidAmount, 0) AS Remaining
-
-
-                                                      FROM Reservations R
-
-                                                          INNER JOIN Customers C
-                                                           ON R.CusotmerID = C.CusotmerID
-
-                                        				INNER JOIN ReservationTickets ReservationT 
-                                        				ON ReservationT.ReservationID = R.ReservationID 
-
-                                                      INNER JOIN (
-                                                          SELECT 
-                                                              ReservationID,
-                                                              SUM(T.Price * R.Quantity) AS TotalAmount
-                                                          FROM ReservationTickets R
-                                                          INNER JOIN TicketTypes T
-                                                              ON T.TicketTypeID = R.TicketTypeID
-                                                          GROUP BY ReservationID
-                                                      ) RT
-                                                          ON RT.ReservationID = R.ReservationID
+                                                                SELECT DISTINCT
+                                                                     R.ReservationID,
+                                                                      CONCAT(C.FirstName, ' ', C.MidName, ' ', C.LastName) AS FullName,
+                                                                      RT.TotalAmount,
+                                                                      ISNULL(PA.PaidAmount, 0) AS PaidAmount,
+                                                                     CAST (RT.TotalAmount AS DECIMAL (10 , 2 ) ) - CAST ( ISNULL( PA.PaidAmount, 0 ) AS DECIMAL (10 , 2 )) AS Remaining
 
 
+                                                                              FROM Reservations R
 
-                                                      LEFT JOIN (
-                                                          SELECT 
-                                                              ReservationID,
-                                                              SUM(Amount) AS PaidAmount
-                                                          FROM Payments
-                                                          GROUP BY ReservationID
-                                                      ) PA
-                                                          ON PA.ReservationID = R.ReservationID
+                                                                                  INNER JOIN Customers C
+                                                                                   ON R.CusotmerID = C.CusotmerID
 
-                                                   WHERE R.ReservationID = @ReservationID ;
+                                                                				INNER JOIN ReservationTickets ReservationT 
+                                                                				ON ReservationT.ReservationID = R.ReservationID 
+
+                                                                              INNER JOIN (
+                                                                                  SELECT 
+                                                                                      ReservationID,
+                                                                                      SUM(T.Price * CAST (  R.Quantity  AS DECIMAL (10 , 2 ) )) + ISNULL (R.Tax , 0 ) AS TotalAmount
+                                                                                  FROM ReservationTickets R
+                                                                                  INNER JOIN TicketTypes T
+                                                                                      ON T.TicketTypeID = R.TicketTypeID
+                                                                                  GROUP BY ReservationID , R.Tax 
+                                                                              ) RT
+                                                                                  ON RT.ReservationID = R.ReservationID
+
+
+
+                                                                              LEFT JOIN (
+                                                                                  SELECT 
+                                                                                      ReservationID,
+                                                                                      SUM(Amount) AS PaidAmount
+                                                                                  FROM Payments
+                                                                                  GROUP BY ReservationID
+                                                                              ) PA
+                                                                                  ON PA.ReservationID = R.ReservationID
+
+                                                                           WHERE  
+                                                                                  R.ReservationID = @ReservationID ;
+
 
 
 

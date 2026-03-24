@@ -32,7 +32,7 @@ namespace EETMS_Presentation.EETMS_Tickets
         private double _SubTotalAmount;
         private double _Tax;
         private double _TotalAmount;
-
+        double _FilnialCalcTax;
 
         private int _CustomerID;
         private ReservationTicketsDTO _MReservations;
@@ -53,6 +53,7 @@ namespace EETMS_Presentation.EETMS_Tickets
             _SubTotalAmount = clsEETMS_Constants.kZERO;
             _Tax = 5;
             _TotalAmount = clsEETMS_Constants.kZERO;
+            _FilnialCalcTax = clsEETMS_Constants.kZERO;
 
             _NumberAvailableTicketRegular = clsEETMS_Constants.kZERO;
             _NumberAvailableTicketVIP = clsEETMS_Constants.kZERO;
@@ -404,9 +405,9 @@ namespace EETMS_Presentation.EETMS_Tickets
             lblTotalAmount.Text = "$" + _TotalAmount.ToString("0.00");
             lblSubTotal.Text = "$" + _SubTotalAmount.ToString("0.00");
 
-            double FilnialCalcTax = ((_Tax / 100.0) * _SubTotalAmount);
+            _FilnialCalcTax = ((_Tax / 100.0) * _SubTotalAmount);
 
-            lblTax.Text = "$" + FilnialCalcTax.ToString("0.00");
+            lblTax.Text = "$" + _FilnialCalcTax.ToString("0.00");
         }
 
         private void GNumericUpDownRegularTicket_ValueChanged(object sender, EventArgs e)
@@ -477,6 +478,8 @@ namespace EETMS_Presentation.EETMS_Tickets
 
         private void _BookingTheNewTickets()
         {
+
+
             _EventID = (int)GComboBoxSelectEvents.SelectedValue;
 
             Dictionary<int, string> Dic_AllTicketTypeEvents = TicketBL.GetTheAllTicketTypeBy(_EventID);
@@ -492,7 +495,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
                 if (ReservationBL.SaveTheInformationReservationMode(reservationsDTO))
                 {
-                    MessageBox.Show("Done Save");
+             
 
                     int TicketTypeIDRegular = clsEETMS_Constants.kZERO;
                     int TicketTypeIDVIP = clsEETMS_Constants.kZERO;
@@ -519,7 +522,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                             Price = ticketTypeDTO.Price,
                             Quantity = _NumberOfTicketRegular,
                             TicketTypeID = TicketTypeIDRegular,
-                            ReservationID = reservationsDTO.ReservationID
+                            ReservationID = reservationsDTO.ReservationID,
+                            Tax = _FilnialCalcTax
 
                         };
 
@@ -536,8 +540,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                             Price = ticketTypeDTO.Price,
                             Quantity = _NumberOfTicketVIP,
                             TicketTypeID = TicketTypeIDVIP,
-                            ReservationID = reservationsDTO.ReservationID
-
+                            ReservationID = reservationsDTO.ReservationID,
+                            Tax = _FilnialCalcTax
                         };
 
 
@@ -554,8 +558,8 @@ namespace EETMS_Presentation.EETMS_Tickets
                             Price = ticketTypeDTO.Price,
                             Quantity = _NumberOfTicketPreimum,
                             TicketTypeID = TicketTypeIDPremium,
-                            ReservationID = reservationsDTO.ReservationID
-
+                            ReservationID = reservationsDTO.ReservationID,
+                            Tax = _FilnialCalcTax
                         };
 
 

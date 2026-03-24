@@ -11,7 +11,7 @@ namespace EETMS_DTOs
         public decimal PaidAmount { get; set; }
         public decimal Remaining { get; set; }
         public string DisplayComboBox => $"BK-{ReservationID} - {FullName}";
-
+        public double Tax { get; set; }
         public ReservationPaymentDTO(int reservationID, string fullName, decimal totalAmount, decimal paidAmount, decimal remaining)
         {
             this.ReservationID = reservationID;
