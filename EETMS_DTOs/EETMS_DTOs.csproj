@@ -46,6 +46,7 @@
     <Compile Include="Event DTO\EventDTO.cs" />
     <Compile Include="Event DTO\EventFilterDTO.cs" />
     <Compile Include="Payment DTO\PaymentFilterDTO.cs" />
+    <Compile Include="Reservation Tickets DTO\ReservationTicketsDTO.cs" />
     <Compile Include="Role DTO\RoleDTO.cs" />
     <Compile Include="Ticket Type DTO\TicketTypeDTO.cs" />
     <Compile Include="Payment DTO\PaymentDTO.cs" />
@@ -55,5 +56,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User DTO\UserFilterDTO.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

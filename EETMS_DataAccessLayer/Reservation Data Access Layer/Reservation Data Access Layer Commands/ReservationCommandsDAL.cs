@@ -1,9 +1,8 @@
-﻿
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Data;
-using EETMS_DTOs;
+﻿using EETMS_DTOs;
 using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace EETMS_DataAccessLayer
 {
@@ -15,7 +14,6 @@ namespace EETMS_DataAccessLayer
         private static readonly string _ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         #endregion
-
 
 
         #region All Methods Reservation Commands 
@@ -33,14 +31,11 @@ namespace EETMS_DataAccessLayer
 
 
                     string Query = @"
+
+                                           INSERT INTO Reservations ( CusotmerID) 
+                                           VALUES (@CusotmerID); 
                                             
-                                            INSERT INTO Reservations (Quantity , 	TicketTypeID , 	CusotmerID ) 
-                                            VALUES ( @Quantity , @TicketTypeID , @CusotmerID) ;
-
-                                            
-                                            SELECT SCOPE_IDENTITY(); 
-
-
+                                           SELECT SCOPE_IDENTITY(); 
 
 
                         ";
@@ -49,8 +44,6 @@ namespace EETMS_DataAccessLayer
 
                     using (SqlCommand command = new SqlCommand(Query, connection))
                     {
-                        command.Parameters.Add("@Quantity", SqlDbType.Int).Value = mReservations.Quantity;
-                        command.Parameters.Add("@TicketTypeID", SqlDbType.Int).Value = mReservations.TicketTypeID;
                         command.Parameters.Add("@CusotmerID", SqlDbType.Int).Value = mReservations.CustomerID;
 
                         connection.Open();
@@ -76,51 +69,6 @@ namespace EETMS_DataAccessLayer
         public static int InsertTheNewReservation(ReservationsDTO mReservations)
             => _InsertTheNewReservation(mReservations);
 
-        private static int _UpdateTheQuntityTicketsBy(int EventID, string TicketTypeName, int NumberReservationTicket)
-        {
-
-            int RowAffective = -1;
-
-            try
-            {
-
-                using (SqlConnection connection = new SqlConnection(_ConnectionString))
-                {
-
-
-                    string Query = @"
-                                            UPDATE TicketTypes 
-                                            SET Available = Available - @NumberReservationTicket 
-                                            WHERE TicketTypeName = @TicketTypeName AND EventID = @EventID
-
-                                        ";
-
-
-
-                    using (SqlCommand command = new SqlCommand(Query, connection))
-                    {
-
-                        command.Parameters.Add("@NumberReservationTicket", SqlDbType.Int).Value = NumberReservationTicket;
-                        command.Parameters.AddWithValue("@TicketTypeName", TicketTypeName);
-                        command.Parameters.Add("@EventID", SqlDbType.Int).Value = EventID;
-
-                        connection.Open();
-
-
-                        RowAffective = command.ExecuteNonQuery();
-
-
-                    }
-                }
-            }
-            catch (Exception ex) { throw; }
-            ;
-
-            return RowAffective;
-        }
-
-        public static int UpdateTheQuntityTicketsBy(int EventID, string TicketTypeName, int NewAvailableTicket)
-            => _UpdateTheQuntityTicketsBy(EventID, TicketTypeName, NewAvailableTicket);
 
         #endregion
 

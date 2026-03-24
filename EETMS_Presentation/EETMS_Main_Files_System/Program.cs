@@ -1,6 +1,7 @@
 ﻿using EETMS_Presentation.EETMS_Main;
 using System;
 using System.Windows.Forms;
+using EETMS_DTOs;
 
 namespace EETMS_Presentation
 {
@@ -14,7 +15,7 @@ namespace EETMS_Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLoginEETMS());
+            Application.Run(new frmMainScreenEETMS("Ahmed"));
         }
     }
 }

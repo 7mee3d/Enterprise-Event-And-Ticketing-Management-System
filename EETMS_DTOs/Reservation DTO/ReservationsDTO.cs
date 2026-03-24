@@ -15,8 +15,6 @@ namespace EETMS_DTOs
 
         public int ReservationID { get; set; }
         public DateTime? BookingDateTime { get; set; }
-        public int Quantity { get; set; }
-        public int TicketTypeID { get; set; }
         public int CustomerID { get; set; }
         public EnModeReservation EnModeR { get; set; } = EnModeReservation._kADD_NEW_RESERVATION;
 
@@ -24,8 +22,6 @@ namespace EETMS_DTOs
         {
             this.ReservationID = reservationID;
             this.BookingDateTime = bookingDateTime;
-            this.Quantity = quantity;
-            this.TicketTypeID = ticketTypeID;
             this.CustomerID = customerID;
 
             this.EnModeR = EnModeReservation._kUPDATE_INFORMATION_RESERVATION;
@@ -36,8 +32,6 @@ namespace EETMS_DTOs
         {
             this.ReservationID = default(int);
             this.BookingDateTime = default(DateTime);
-            this.Quantity = default(int);
-            this.TicketTypeID = default(int);
             this.CustomerID = default(int);
         }
 

@@ -51,6 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report Business Layer\ReportBL.cs" />
     <Compile Include="Reservation Business Layer\ReservationBL.cs" />
+    <Compile Include="Reservation Ticket Business Layer\ReservationTicketBL.cs" />
     <Compile Include="Reservation Payment Business Layer\ReservationPaymentBL.cs" />
     <Compile Include="Roles Business Layer\RolesBL.cs" />
     <Compile Include="Ticket Business Layer\TicketBL.cs" />

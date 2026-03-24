@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using EETMS_DTOs;
 using EETMS_Presentation.EETMS_Settings;
+using EETMS_DTOs.Reservation_Tickets_DTO;
 
 namespace EETMS_Presentation.EETMS_Tickets
 {
@@ -34,7 +35,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
 
         private int _CustomerID;
-        private ReservationsDTO _MReservations;
+        private ReservationTicketsDTO _MReservations;
         private int _EventID;
         private Guna2MessageDialog _G2MD;
 
@@ -483,101 +484,117 @@ namespace EETMS_Presentation.EETMS_Tickets
 
             if (_CustomerID > clsEETMS_Constants.kZERO)
             {
-                int TicketTypeIDRegular = clsEETMS_Constants.kZERO;
-                int TicketTypeIDVIP = clsEETMS_Constants.kZERO;
-                int TicketTypeIDPremium = clsEETMS_Constants.kZERO;
 
-                foreach (var ItemDic in Dic_AllTicketTypeEvents)
+                ReservationsDTO reservationsDTO = new ReservationsDTO()
                 {
+                    CustomerID = _CustomerID
+                };
 
-                    if (ItemDic.Value == "Regular") TicketTypeIDRegular = ItemDic.Key;
-                    else if (ItemDic.Value == "VIP") TicketTypeIDVIP = ItemDic.Key;
-                    else if (ItemDic.Value == "Premium") TicketTypeIDPremium = ItemDic.Key;
-
-                }
-
-                if (_NumberOfTicketRegular > clsEETMS_Constants.kZERO)
+                if (ReservationBL.SaveTheInformationReservationMode(reservationsDTO))
                 {
+                    MessageBox.Show("Done Save");
 
-                    _MReservations = new ReservationsDTO()
+                    int TicketTypeIDRegular = clsEETMS_Constants.kZERO;
+                    int TicketTypeIDVIP = clsEETMS_Constants.kZERO;
+                    int TicketTypeIDPremium = clsEETMS_Constants.kZERO;
+
+                    foreach (var ItemDic in Dic_AllTicketTypeEvents)
                     {
 
-                        Quantity = _NumberOfTicketRegular,
-                        TicketTypeID = TicketTypeIDRegular,
-                        CustomerID = _CustomerID
+                        if (ItemDic.Value == "Regular") TicketTypeIDRegular = ItemDic.Key;
+                        else if (ItemDic.Value == "VIP") TicketTypeIDVIP = ItemDic.Key;
+                        else if (ItemDic.Value == "Premium") TicketTypeIDPremium = ItemDic.Key;
+
+                    }
 
 
-                    };
 
-                    ReservationBL.SaveTheReservatio(_MReservations);
-
-                }
-
-                if (_NumberOfTicketVIP > clsEETMS_Constants.kZERO)
-                {
-
-                    _MReservations = new ReservationsDTO()
+                    if (_NumberOfTicketRegular > clsEETMS_Constants.kZERO)
                     {
 
-                        Quantity = _NumberOfTicketVIP,
-                        TicketTypeID = TicketTypeIDVIP,
-                        CustomerID = _CustomerID
+                        TicketTypeDTO ticketTypeDTO = TicketBL.FindTheTicketTypeBy(_EventID, TicketTypeIDRegular);
+
+                        _MReservations = new ReservationTicketsDTO()
+                        {
+                            Price = ticketTypeDTO.Price,
+                            Quantity = _NumberOfTicketRegular,
+                            TicketTypeID = TicketTypeIDRegular,
+                            ReservationID = reservationsDTO.ReservationID
+
+                        };
+
+                        ReservationTicketBL.SaveTheReservatio(_MReservations);
+
+                    }
+
+                    if (_NumberOfTicketVIP > clsEETMS_Constants.kZERO)
+                    {
+                        TicketTypeDTO ticketTypeDTO = TicketBL.FindTheTicketTypeBy(_EventID, TicketTypeIDVIP);
+
+                        _MReservations = new ReservationTicketsDTO()
+                        {
+                            Price = ticketTypeDTO.Price,
+                            Quantity = _NumberOfTicketVIP,
+                            TicketTypeID = TicketTypeIDVIP,
+                            ReservationID = reservationsDTO.ReservationID
+
+                        };
 
 
-                    };
+
+                        ReservationTicketBL.SaveTheReservatio(_MReservations);
+
+                    }
+                    if (_NumberOfTicketPreimum > clsEETMS_Constants.kZERO)
+                    {
+                        TicketTypeDTO ticketTypeDTO = TicketBL.FindTheTicketTypeBy(_EventID, TicketTypeIDPremium);
+
+                        _MReservations = new ReservationTicketsDTO()
+                        {
+                            Price = ticketTypeDTO.Price,
+                            Quantity = _NumberOfTicketPreimum,
+                            TicketTypeID = TicketTypeIDPremium,
+                            ReservationID = reservationsDTO.ReservationID
+
+                        };
 
 
-                    ReservationBL.SaveTheReservatio(_MReservations);
+
+                        ReservationTicketBL.SaveTheReservatio(_MReservations);
+
+                    }
+
 
                 }
-                if (_NumberOfTicketPreimum > clsEETMS_Constants.kZERO)
+                else
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Must Search The Customer To Be Booking", "Note Of Booking New Tickets ", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                    return;
+                }
+
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Booking Is Successfully", "Note For Add New Reservations", MessageDialogButtons.OK, MessageDialogIcon.Information);
+
+
+                ReservationTicketBL.UpdateTheInformationTicketTypesBy(_EventID, "Regular", _NumberOfTicketRegular);
+                ReservationTicketBL.UpdateTheInformationTicketTypesBy(_EventID, "VIP", _NumberOfTicketVIP);
+                ReservationTicketBL.UpdateTheInformationTicketTypesBy(_EventID, "Premium", _NumberOfTicketPreimum);
+
+                // Change The Active Event After The Fully Booking Event 
+                DataTable DT_InfoEvent = EventBL.GetRemainingCapacityEventfoBy(_EventID);
+                EventDTO mEvent = EventBL.FindTheEventBy(_EventID);
+
+                if (Convert.ToInt32(DT_InfoEvent.Rows[0]["RemainingCapacity"]) == clsEETMS_Constants.kZERO)
                 {
 
-                    _MReservations = new ReservationsDTO()
-                    {
-
-                        Quantity = _NumberOfTicketPreimum,
-                        TicketTypeID = TicketTypeIDPremium,
-                        CustomerID = _CustomerID
-
-
-                    };
-
-
-                    ReservationBL.SaveTheReservatio(_MReservations);
+                    mEvent.IsActiveEvent = false;
+                    mEvent.EnMode = EventDTO.EnModeEvent._kUPDATE_INFORMATION_EVENT;
+                    EventBL.SaveTheMode(mEvent);
 
                 }
 
-
+                _ResetAllSettingCardsTickets();
+                _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
             }
-            else
-            {
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Must Search The Customer To Be Booking", "Note Of Booking New Tickets ", MessageDialogButtons.OK, MessageDialogIcon.Error);
-                return;
-            }
-
-            clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Booking Is Successfully", "Note For Add New Reservations", MessageDialogButtons.OK, MessageDialogIcon.Information);
-
-
-            ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "Regular", _NumberOfTicketRegular);
-            ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "VIP", _NumberOfTicketVIP);
-            ReservationBL.UpdateTheInformationTicketTypesBy(_EventID, "Premium", _NumberOfTicketPreimum);
-
-            // Change The Active Event After The Fully Booking Event 
-            DataTable DT_InfoEvent = EventBL.GetRemainingCapacityEventfoBy(_EventID);
-            EventDTO mEvent = EventBL.FindTheEventBy(_EventID);
-
-            if (Convert.ToInt32(DT_InfoEvent.Rows[0]["RemainingCapacity"]) == clsEETMS_Constants.kZERO)
-            {
-
-                mEvent.IsActiveEvent = false;
-                mEvent.EnMode = EventDTO.EnModeEvent._kUPDATE_INFORMATION_EVENT;
-                EventBL.SaveTheMode(mEvent);
-
-            }
-
-            _ResetAllSettingCardsTickets();
-            _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
         }
 
         private void GGButtonSearchTheCustomerByIDorName_Click(object sender, EventArgs e)
