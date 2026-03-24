@@ -32,7 +32,7 @@ namespace EETMS_DataAccessLayer
 
                 string Query = @"
 
-
+ 
                                         SELECT 
                                                 E.EventName,
                                                 ISNULL( SUM ( P.Amount ) , 0 )  AS [TotalRevenue]
@@ -41,11 +41,11 @@ namespace EETMS_DataAccessLayer
                                                 LEFT JOIN TicketTypes TT
                                                     ON TT.EventID = E.EventID
 
-                                                LEFT JOIN Reservations R
-                                                    ON R.TicketTypeID = TT.TicketTypeID
+                                                LEFT JOIN ReservationTickets RT
+                                                    ON RT.TicketTypeID = TT.TicketTypeID
 
                                                 LEFT JOIN Payments P
-                                                    ON P.ReservationID = R.ReservationID
+                                                    ON P.ReservationID = RT.ReservationID
 
                                                 GROUP BY E.EventName
                                                 ORDER BY TotalRevenue DESC ; 
