@@ -141,7 +141,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception ex)
             {
-                throw;
+                return false;
             }
 
             return RowAffective > 0;

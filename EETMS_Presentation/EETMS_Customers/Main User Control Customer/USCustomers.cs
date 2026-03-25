@@ -94,7 +94,8 @@ namespace EETMS_Presentation.EETMS_Customers
                 _G2MD = new Guna2MessageDialog();
                 _G2MD.Icon = MessageDialogIcon.Warning;
                 _G2MD.Caption = "Important Note ...";
-                _G2MD.Text = "You Must Selected The Customer From List To Be Delete.";
+                _G2MD.Text = "You Must Selected The Customer From List To Be Delete." +
+                    "\nOR .. cannot Delete This Custoemr Because The Customer Have The Reservations";
 
                 _G2MD.Show();
             }
@@ -126,7 +127,7 @@ namespace EETMS_Presentation.EETMS_Customers
 
             string SearchStr = GTextBoxSearchTheCustomer.Text;
 
-            _CustomersDT = CustomerBL.AllInformationCustomerAfterSearch(SearchStr);
+            _CustomersDT = CustomerBL.GetAllInformationCustomerAfterSearchBy(SearchStr);
 
             GDataGridViewCustomerInformation.Rows.Clear();
 

@@ -9,35 +9,27 @@ namespace EETMS_BusinessLayer
     {
 
         public static DataTable GetAllInformationCustomer()
-        {
-            return CustomerQueriesDAL.GetAllCustomersInformation();
-        }
+           => CustomerQueriesDAL.GetAllCustomersInformation();
+
 
         public static DataTable GetAllInformationCustomerWithPhoneAndEmail()
-        {
-            return CustomerQueriesDAL.GetAllCustomersInformationJoinesPhoneAndEmail();
-        }
+           => CustomerQueriesDAL.GetAllCustomersInformationJoinesPhoneAndEmail();
+
 
         public static CustomerDTO FindCustomer(int CustomerID)
-        {
-            return CustomerQueriesDAL.FindTheCustomerReturingAllInformation(CustomerID);
-        }
+           => CustomerQueriesDAL.FindTheCustomerReturingAllInformation(CustomerID);
+
 
         private static bool _AddNewCustomer(CustomerDTO NewCustomer)
-        {
-            return CustomerCommandsDAL.InsertNewCustomer(NewCustomer) > clsEETMS_Constants.kZERO;
-        }
+           => CustomerCommandsDAL.InsertNewCustomer(NewCustomer) > clsEETMS_Constants.kZERO;
+
 
         private static bool _UpdateInformationCustomer(int IDCustomer, CustomerDTO NewInfromationCustomer)
-        {
-            return CustomerCommandsDAL.UpdateInformationCustomer(IDCustomer, NewInfromationCustomer) > clsEETMS_Constants.kZERO;
-        }
+           => CustomerCommandsDAL.UpdateInformationCustomer(IDCustomer, NewInfromationCustomer) > clsEETMS_Constants.kZERO;
+
 
         public static bool DeleteTheCustomer(int IDCustomer)
-        {
-            return CustomerCommandsDAL.DeleteTheCustomer(IDCustomer);
-
-        }
+            => CustomerCommandsDAL.DeleteTheCustomer(IDCustomer);
 
         public static bool Save(CustomerDTO NewCustomer)
         {
@@ -66,9 +58,10 @@ namespace EETMS_BusinessLayer
         }
 
         public static DataTable AllInformationCustomerAfterSearch(string StrToBeSearch)
-        {
-            return CustomerQueriesDAL.SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(StrToBeSearch);
-        }
+            => CustomerQueriesDAL.SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(StrToBeSearch);
+
+        public static DataTable GetAllInformationCustomerAfterSearchBy(string StrToBeSearch)
+          => CustomerQueriesDAL.SearchTheCustomerFirstNameOrMidOrLast_OR_NationalIDUsingLIKE(StrToBeSearch);
 
         public static bool _IsTheNameCustomerExsistsBy(CustomerDTO mCustomerName)
             => CustomerQueriesDAL.FindTheCustomerBy(mCustomerName);

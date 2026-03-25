@@ -93,9 +93,9 @@ namespace EETMS_Presentation.EETMS_Customers
             Guna2MessageDialog G2MD = new Guna2MessageDialog();
 
 
-            _CustomerInformation.FirstName = GTextBoxFirstName.Text;
-            _CustomerInformation.MidName = GTextBoxMidName.Text;
-            _CustomerInformation.LastName = GTextBoxLastName.Text;
+            _CustomerInformation.FirstName = GTextBoxFirstName.Text.Trim();
+            _CustomerInformation.MidName = GTextBoxMidName.Text.Trim();
+            _CustomerInformation.LastName = GTextBoxLastName.Text.Trim();
 
             if (!string.IsNullOrEmpty(GTextBoxEmailAddress.Text))
             {
@@ -133,9 +133,9 @@ namespace EETMS_Presentation.EETMS_Customers
 
             CustomerDTO mCustomer = new CustomerDTO()
             {
-                FirstName = GTextBoxFirstName.Text,
-                MidName = GTextBoxMidName.Text,
-                LastName = GTextBoxLastName.Text
+                FirstName = GTextBoxFirstName.Text.Trim(),
+                MidName = GTextBoxMidName.Text.Trim(),
+                LastName = GTextBoxLastName.Text.Trim()
             };
 
 
@@ -146,8 +146,8 @@ namespace EETMS_Presentation.EETMS_Customers
                     clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
                                            _G2MD,
                                            $"This Customer" +
-                                           $" {mCustomer.FirstName + ' ' + mCustomer.MidName + ' ' + mCustomer.LastName}" +
-                                           $"Already Exsists in the system EETMS , Try to Enter Another Customer",
+                                           $" [ {mCustomer.FirstName + ' ' + mCustomer.MidName + ' ' + mCustomer.LastName} ]" +
+                                           $" Already Exsists in the system EETMS , Try to Enter Another Customer",
                                            "Invalid Input This Data ... ",
                                            MessageDialogButtons.OK,
                                            MessageDialogIcon.Warning

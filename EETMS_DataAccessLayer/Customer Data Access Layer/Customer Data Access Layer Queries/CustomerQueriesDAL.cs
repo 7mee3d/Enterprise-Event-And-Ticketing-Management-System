@@ -286,6 +286,103 @@ namespace EETMS_DataAccessLayer
 
         }
 
+        private static DataTable _SearchTheCustomerFirstNameOrMidOrLast_OR_NationalIDUsingLIKE(string ToBySearch)
+        {
+
+            DataTable DT_Customer = new DataTable();
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConnectionString))
+                {
+
+
+                    string Query = @"
+                                           SELECT  
+
+                                                   CustomerTableSubQuery.CusotmerID,
+                                                   CustomerTableSubQuery.FirstName ,
+                                                   CustomerTableSubQuery.MidName ,
+                                                   CustomerTableSubQuery.LastName , 
+                                                   CustomerTableSubQuery.NationalID ,
+                                                   CustomerTableSubQuery.EmailAddress , 
+                                                   CustomerTableSubQuery.PhoneNumber ,
+                                                   CustomerTableSubQuery.FullName , 
+                                                   CustomerTableSubQuery.FullNameWithOutMidName
+
+
+                                                         FROM
+                                                                        (
+                                                                           SELECT 
+                                                                                Customers.CusotmerID ,
+                                                                                Customers.FirstName ,
+                                                                                Customers.MidName ,
+                                                                                Customers.LastName , 
+                                                                                Customers.NationalID ,
+                                                                                Emails.EmailAddress , 
+                                                                                Phones.PhoneNumber ,
+                                                                                CONCAT(Customers.FirstName, ' ', Customers.MidName, ' ', Customers.LastName) AS FullName,
+                                                                                CONCAT(Customers.FirstName, ' ', Customers.LastName) AS FullNameWithOutMidName
+
+                                                                                                 FROM Customers 
+                                                                                                 LEFT JOIN Emails ON Emails.CusotmerID = Customers.CusotmerID 
+                                                                                                 LEFT JOIN Phones ON Phones.CusotmerID = Customers.CusotmerID 
+
+                                                             ) AS CustomerTableSubQuery
+
+
+
+                                                            WHERE 
+                                                                       ( 
+
+                                                                        LOWER ( CustomerTableSubQuery.FullName )  LIKE  LOWER ( '%' + @Search + '%'  )  
+                                                                  
+
+                                                                        ) 
+
+                                                                  OR (
+                                                                        LOWER ( CustomerTableSubQuery.FullNameWithOutMidName ) LIKE LOWER ( '%' + @Search + '%'  ) 
+                                                                     ) 
+
+                                                                  OR  CustomerTableSubQuery.NationalID  LIKE '%' +  @Search  + '%'
+
+
+                                    
+                                ";
+
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Search", ToBySearch);
+
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            if (reader.HasRows)
+                                DT_Customer.Load(reader);
+
+
+                        }
+
+
+                    }
+
+
+                }
+            }
+            catch (Exception ex) { throw; }
+    ;
+
+            return DT_Customer;
+
+        }
+
+        public static DataTable SearchTheCustomerFirstNameOrMidOrLast_OR_NationalIDUsingLIKE(string ToBySearch)
+            => _SearchTheCustomerFirstNameOrMidOrLast_OR_NationalIDUsingLIKE(ToBySearch);
+
         public static DataTable SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(string ToBySearch)
         {
             return _SearchTheCustomerFirstNameOrMidOrLast_OR_NationalID(ToBySearch);
