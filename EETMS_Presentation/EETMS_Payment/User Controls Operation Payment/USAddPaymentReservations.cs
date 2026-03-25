@@ -1,6 +1,8 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_DTOs;
+using EETMS_Presentation.EETMS_Settings;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,6 +15,7 @@ namespace EETMS_Presentation.EETMS_Payment
         public event EventHandler ERequestTheClosePaymentBooking;
         private ReservationPaymentDTO _MReservationPayment;
         private PaymentDTO mPayment;
+        private Guna2MessageDialog _G2MD;
 
 
         public USAddPaymentReservations()
@@ -21,6 +24,8 @@ namespace EETMS_Presentation.EETMS_Payment
             ERequestTheClosePaymentBooking = null;
             _MReservationPayment = null;
             mPayment = null;
+            _G2MD = null;
+
 
         }
 
@@ -129,6 +134,12 @@ namespace EETMS_Presentation.EETMS_Payment
                         BookingID = ResevationID
 
                     };
+                }
+
+                if ((!GButtonCash.Checked && !GButtonCard.Checked && !GButtonBankTransfer.Checked) || GNumericUpDownAmountToPay.Value < 0)
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Invalid Data! Please Enter All Data To Be Confirm Reservation", "Note Of Confirm Reservation", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                    return;
                 }
 
                 if (PaymentsBL.SaveTheInformationPayment(mPayment))

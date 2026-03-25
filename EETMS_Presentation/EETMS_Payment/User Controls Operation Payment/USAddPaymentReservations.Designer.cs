@@ -98,7 +98,7 @@
             this.GButtonConfirmPayment.Location = new System.Drawing.Point(174, 651);
             this.GButtonConfirmPayment.Name = "GButtonConfirmPayment";
             this.GButtonConfirmPayment.Size = new System.Drawing.Size(295, 45);
-            this.GButtonConfirmPayment.TabIndex = 6;
+            this.GButtonConfirmPayment.TabIndex = 5;
             this.GButtonConfirmPayment.Text = "Confirm Payment";
             this.GButtonConfirmPayment.TextOffset = new System.Drawing.Point(5, 0);
             this.GButtonConfirmPayment.Click += new System.EventHandler(this.GButtonConfirmPayment_Click);
@@ -156,7 +156,7 @@
             this.GButtonBankTransfer.Location = new System.Drawing.Point(331, 534);
             this.GButtonBankTransfer.Name = "GButtonBankTransfer";
             this.GButtonBankTransfer.Size = new System.Drawing.Size(138, 72);
-            this.GButtonBankTransfer.TabIndex = 7;
+            this.GButtonBankTransfer.TabIndex = 4;
             this.GButtonBankTransfer.Tag = "3";
             this.GButtonBankTransfer.Text = "Bank Transfer";
             this.GButtonBankTransfer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -191,7 +191,7 @@
             this.GButtonCard.Location = new System.Drawing.Point(174, 534);
             this.GButtonCard.Name = "GButtonCard";
             this.GButtonCard.Size = new System.Drawing.Size(138, 72);
-            this.GButtonCard.TabIndex = 7;
+            this.GButtonCard.TabIndex = 3;
             this.GButtonCard.Tag = "2";
             this.GButtonCard.Text = "Card";
             this.GButtonCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -226,7 +226,7 @@
             this.GButtonCash.Location = new System.Drawing.Point(17, 534);
             this.GButtonCash.Name = "GButtonCash";
             this.GButtonCash.Size = new System.Drawing.Size(138, 72);
-            this.GButtonCash.TabIndex = 7;
+            this.GButtonCash.TabIndex = 2;
             this.GButtonCash.Tag = "1";
             this.GButtonCash.Text = "Cash";
             this.GButtonCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -241,7 +241,7 @@
             this.GNumericUpDownAmountToPay.Location = new System.Drawing.Point(17, 416);
             this.GNumericUpDownAmountToPay.Name = "GNumericUpDownAmountToPay";
             this.GNumericUpDownAmountToPay.Size = new System.Drawing.Size(452, 46);
-            this.GNumericUpDownAmountToPay.TabIndex = 10;
+            this.GNumericUpDownAmountToPay.TabIndex = 1;
             this.GNumericUpDownAmountToPay.UpDownButtonFillColor = System.Drawing.Color.White;
             // 
             // guna2GradientPanel2
@@ -296,7 +296,7 @@
             this.GComboBoxBookingIDAndCustomerName.Location = new System.Drawing.Point(17, 191);
             this.GComboBoxBookingIDAndCustomerName.Name = "GComboBoxBookingIDAndCustomerName";
             this.GComboBoxBookingIDAndCustomerName.Size = new System.Drawing.Size(452, 36);
-            this.GComboBoxBookingIDAndCustomerName.TabIndex = 8;
+            this.GComboBoxBookingIDAndCustomerName.TabIndex = 0;
             this.GComboBoxBookingIDAndCustomerName.SelectionChangeCommitted += new System.EventHandler(this.GComboBoxBookingIDAndCustomerName_SelectionChangeCommitted);
             // 
             // label6
