@@ -100,7 +100,7 @@ namespace EETMS_DataAccessLayer
                                         SELECT  
 
                                                 CAT.CategoryName ,
-                                                SUM (TT.Available) AS [Count]
+                                                SUM (TT.Quantity -  TT.Available) AS [Count]
 
                                         FROM Categories CAT 
                                         INNER JOIN [Events] EVE
