@@ -203,7 +203,7 @@ namespace EETMS_DataAccessLayer
             catch (Exception Ex)
             {
 
-                throw;
+                return RowAffective;
             }
 
             return RowAffective;

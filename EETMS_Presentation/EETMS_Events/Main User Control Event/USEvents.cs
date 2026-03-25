@@ -16,6 +16,7 @@ namespace EETMS_Presentation.EETMS_Events
         private bool _IsCheckButtonFilter = false;
         private DataTable _EventDT;
         public event EventHandler<int> RequestOpenCreateNewEventUS;
+        private Guna2MessageDialog _G2MD;
 
 
         public USEvents()
@@ -23,6 +24,8 @@ namespace EETMS_Presentation.EETMS_Events
             InitializeComponent();
             _EventDT = null;
             RequestOpenCreateNewEventUS = null;
+            _G2MD = null;
+
         }
 
         private void _LoadTheInformationEventsToGDVBy(DataTable DT_EventsInformation)
@@ -177,11 +180,19 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void deleteEventToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are You Sure To Delete This Event ?", "Note For Delete Event", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+
+
+            if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure To Delete This Event ?", "Note For Delete Event", MessageDialogButtons.OK, MessageDialogIcon.Information))
                 if (EventBL.DeleteTheEvent(_GetTheEventID()))
                 {
-                    MessageBox.Show("The Event Is Deleted Successfully", "Note For Delete Event");
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Event Is Deleted Successfully", "Note For Delete Event", MessageDialogButtons.OK, MessageDialogIcon.Information);
                     _InitalSettingAfterLoadTheUSEvents();
+                }
+                else
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Connot Delete This Event Because The Event Selled Tickets", "Note For Delete Event", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                    _InitalSettingAfterLoadTheUSEvents();
+                    return;
                 }
 
         }
