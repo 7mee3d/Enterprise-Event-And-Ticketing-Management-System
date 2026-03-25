@@ -140,6 +140,7 @@ namespace EETMS_Presentation.EETMS_Customers
 
 
             if (_EnMode == _EnModeCustomer._kADD_NEW_CUSTOMER)
+            {
                 if (CustomerBL._IsTheNameCustomerExsistsBy(mCustomer))
                 {
                     clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
@@ -157,6 +158,24 @@ namespace EETMS_Presentation.EETMS_Customers
                     return;
                 }
 
+                if (CustomerBL._IsTheNationalIDCustomerExsistsBy(_CustomerInformation.NationalID))
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                                       _G2MD,
+                                       $"This Customer National ID" +
+                                       $" [ {_CustomerInformation.NationalID} ] " +
+                                       $"Already Exsists in the system EETMS , Try to Enter Another Customer",
+                                       "Invalid Input This Data ... ",
+                                       MessageDialogButtons.OK,
+                                       MessageDialogIcon.Warning
+
+
+                );
+
+                    return;
+                }
+
+            }
 
             if (CustomerBL.Save(_CustomerInformation))
             {
