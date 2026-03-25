@@ -88,7 +88,11 @@ namespace EETMS_Presentation.EETMS_Roles
                     clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Deleted Successfully .", "Note For Delete Role..", MessageDialogButtons.OK, MessageDialogIcon.Information);
                     _LoadDataRolesAndHeaders();
                 }
-                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Deleted Faild .", "Note For Delete Role..", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                else
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Deleted Faild Because The Role Referances Users .", "Note For Delete Role..", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                    return;
+                }
 
         }
     }

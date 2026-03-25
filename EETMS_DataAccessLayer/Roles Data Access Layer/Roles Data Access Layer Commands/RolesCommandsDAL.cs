@@ -124,12 +124,13 @@ namespace EETMS_DataAccessLayer
 
             int RowAffective = -1;
 
-
-            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            try
             {
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
 
 
-                string Query = @"
+                    string Query = @"
 
 
                                     DELETE FROM Roles 
@@ -137,19 +138,25 @@ namespace EETMS_DataAccessLayer
 
                             ";
 
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
 
-                    command.Parameters.AddWithValue("@RoleID", RoleID);
+                        command.Parameters.AddWithValue("@RoleID", RoleID);
 
-                    connection.Open();
-
-
-                    RowAffective = command.ExecuteNonQuery();
+                        connection.Open();
 
 
+                        RowAffective = command.ExecuteNonQuery();
+
+
+
+                    }
 
                 }
+            }
+            catch (Exception ex)
+            {
+                return RowAffective;
 
             }
 
