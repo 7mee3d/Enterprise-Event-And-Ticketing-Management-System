@@ -108,5 +108,10 @@ namespace EETMS_Presentation
                 GTextBoxPassword.PasswordChar = '•';
             }
         }
+
+        private void GControlBoxExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -45,6 +45,7 @@
             this.lblShowMessageInLoginScreen = new System.Windows.Forms.Label();
             this.GGButtonLoginToEETMS = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.GControlBoxExit = new Guna.UI2.WinForms.Guna2ControlBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GPictureBoxShowHidePassword)).BeginInit();
@@ -277,6 +278,19 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Password";
             // 
+            // GControlBoxExit
+            // 
+            this.GControlBoxExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GControlBoxExit.Animated = true;
+            this.GControlBoxExit.BorderRadius = 3;
+            this.GControlBoxExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GControlBoxExit.IconColor = System.Drawing.Color.White;
+            this.GControlBoxExit.Location = new System.Drawing.Point(1444, 19);
+            this.GControlBoxExit.Name = "GControlBoxExit";
+            this.GControlBoxExit.Size = new System.Drawing.Size(30, 30);
+            this.GControlBoxExit.TabIndex = 4;
+            this.GControlBoxExit.Click += new System.EventHandler(this.GControlBoxExit_Click);
+            // 
             // frmLoginEETMS
             // 
             this.AcceptButton = this.GGButtonLoginToEETMS;
@@ -287,6 +301,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1506, 848);
+            this.Controls.Add(this.GControlBoxExit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -326,6 +341,7 @@
         private System.Windows.Forms.Label lblShowMessageInLoginScreen;
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxPassword;
         private Guna.UI2.WinForms.Guna2PictureBox GPictureBoxShowHidePassword;
+        private Guna.UI2.WinForms.Guna2ControlBox GControlBoxExit;
     }
 }
 
