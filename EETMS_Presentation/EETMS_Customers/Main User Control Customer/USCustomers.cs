@@ -80,27 +80,29 @@ namespace EETMS_Presentation.EETMS_Customers
 
             if (CustomerID != clsEETMS_Constants.kNEGATIVE_ONE)
             {
-                if (MessageBox.Show("Are You Sure to be Delete This Customer?", "Note For Delete Customer operation", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure to be Delete This Customer?", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Information))
                 {
+
                     if (CustomerBL.DeleteTheCustomer(CustomerID))
-                        MessageBox.Show("Customer is Deleteed Sccuessfully", "Note For Delete Customer operation");
-                    else MessageBox.Show("Customer is Delete Failed", "Note For Delete Customer operation");
+                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Customer is Deleteed Sccuessfully", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Information);
+                    else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Customer is Delete Failed", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Warning);
 
                     _InitalSettingAfterLoadingTheCustomerUS();
                 }
             }
             else
             {
-                _G2MD = new Guna2MessageDialog();
-                _G2MD.Icon = MessageDialogIcon.Warning;
-                _G2MD.Caption = "Important Note ...";
-                _G2MD.Text = "You Must Selected The Customer From List To Be Delete." +
-                    "\nOR .. cannot Delete This Custoemr Because The Customer Have The Reservations";
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD,
+                    "You Must Selected The Customer From List To Be Delete." +
+                      "\nOR .. cannot Delete This Custoemr Because The Customer Have The Reservations",
+                    "Important Note ...",
+                    MessageDialogButtons.YesNo,
+                    MessageDialogIcon.Warning
+                    );
 
-                _G2MD.Show();
+
             }
-
-
         }
 
         private void updateCustomerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,12 +115,14 @@ namespace EETMS_Presentation.EETMS_Customers
                 RequestOpenTheAddNewCustomer?.Invoke(this, CustomerID);
             else
             {
-                _G2MD = new Guna2MessageDialog();
-                _G2MD.Icon = MessageDialogIcon.Warning;
-                _G2MD.Caption = "Important Note ...";
-                _G2MD.Text = "You Must Selected The Customer From List To Be Updated information.";
 
-                _G2MD.Show();
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                      _G2MD,
+                       "You Must Selected The Customer From List To Be Updated information.",
+                       "Important Note ...",
+                     MessageDialogButtons.YesNo,
+                      MessageDialogIcon.Warning
+                      );
             }
         }
 

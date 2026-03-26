@@ -263,29 +263,46 @@ namespace EETMS_DataAccessLayer
                 string Query = @"
 
 
-                                    SELECT      P.PaymentID ,
-                                                R.ReservationID ,
-                                                R.BookingDateTimeDateTime ,
-                                                R.CusotmerID , ( R.Quantity * T.Price ) AS [TotalAmount] , 
-                                                P.Amount  AS [PaidAmount],
-                                                PM.NamePaymentMethod ,
-                                                PS.NamePaymentStatus  
+                                              SELECT DISTINCT
+																 	 P.PaymentID, 
+																	 R.ReservationID , 
+																	 ResultTotalAmount.TotalAmount,
+																	 P.Amount  AS [PaidAmount],
+																	 PM.NamePaymentMethod,
+																	 R.BookingDateTimeDateTime,
+																	 PS.NamePaymentStatus
+																
 
-                                                        FROM Reservations R 
+															    FROM Payments P
 
-                                                        INNER JOIN Payments P 
-                                                        ON P.ReservationID = R.ReservationID 
+																INNER JOIN ReservationTickets RT 
+																ON RT.ReservationID = P.ReservationID 
 
-                                                        INNER JOIN TicketTypes T
-                                                        ON T.TicketTypeID = R.TicketTypeID
+															    INNER JOIN TicketTypes TT
+															    ON TT.TicketTypeID = RT.TicketTypeID 
 
-                                                        INNER JOIN PaymentMethods PM 
-                                                        ON PM.PaymentMethodID = P.PaymentMethodID 
+																INNER JOIN Reservations R
+																ON R.ReservationID = P.ReservationID
+																
+													
+																INNER JOIN (
+																			
+																			SELECT RT.ReservationID ,
+																		    SUM(RT.Price * CAST (  RT.Quantity  AS DECIMAL (10 , 2 ) )) + ISNULL (RT.Tax , 0 )AS [TotalAmount] 
+																			FROM ReservationTickets  RT
+																			GROUP BY RT.ReservationID , RT.Tax  
 
-                                                        INNER JOIN PaymentStatus PS 
-                                                        ON PS.PaymentStatusID = P.PaymentStatusID 
+																) AS ResultTotalAmount  
+																ON P.ReservationID = ResultTotalAmount.ReservationID
 
-                                    WHERE PS.NamePaymentStatus = @NamePaymentStatus ; 
+
+																INNER JOIN PaymentMethods PM 
+																ON PM.PaymentMethodID = P.PaymentMethodID 
+
+																INNER JOIN PaymentStatus PS 
+																ON PS.PaymentStatusID = P.PaymentStatusID 
+
+                                                                WHERE PS.NamePaymentStatus= @NamePaymentStatus
 
 
 
@@ -370,29 +387,47 @@ namespace EETMS_DataAccessLayer
                 string Query = @"
 
 
-                                    SELECT      P.PaymentID ,
-                                                R.ReservationID ,
-                                                R.BookingDateTimeDateTime ,
-                                                R.CusotmerID , ( R.Quantity * T.Price ) AS [TotalAmount] , 
-                                                P.Amount  AS [PaidAmount],
-                                                PM.NamePaymentMethod ,
-                                                PS.NamePaymentStatus  
+                                               SELECT DISTINCT
+																 	 P.PaymentID, 
+																	 R.ReservationID , 
+																	 ResultTotalAmount.TotalAmount,
+																	 P.Amount  AS [PaidAmount],
+																	 PM.NamePaymentMethod,
+																	 R.BookingDateTimeDateTime,
+																	 PS.NamePaymentStatus
+																
 
-                                                        FROM Reservations R 
+															    FROM Payments P
 
-                                                        INNER JOIN Payments P 
-                                                        ON P.ReservationID = R.ReservationID 
+																INNER JOIN ReservationTickets RT 
+																ON RT.ReservationID = P.ReservationID 
 
-                                                        INNER JOIN TicketTypes T
-                                                        ON T.TicketTypeID = R.TicketTypeID
+															    INNER JOIN TicketTypes TT
+															    ON TT.TicketTypeID = RT.TicketTypeID 
 
-                                                        INNER JOIN PaymentMethods PM 
-                                                        ON PM.PaymentMethodID = P.PaymentMethodID 
+																INNER JOIN Reservations R
+																ON R.ReservationID = P.ReservationID
+																
+													
+																INNER JOIN (
+																			
+																			SELECT RT.ReservationID ,
+																		    SUM(RT.Price * CAST (  RT.Quantity  AS DECIMAL (10 , 2 ) )) + ISNULL (RT.Tax , 0 )AS [TotalAmount] 
+																			FROM ReservationTickets  RT
+																			GROUP BY RT.ReservationID , RT.Tax  
 
-                                                        INNER JOIN PaymentStatus PS 
-                                                        ON PS.PaymentStatusID = P.PaymentStatusID 
+																) AS ResultTotalAmount  
+																ON P.ReservationID = ResultTotalAmount.ReservationID
 
-                                    WHERE PM.NamePaymentMethod = @NamePaymentMethod
+
+																INNER JOIN PaymentMethods PM 
+																ON PM.PaymentMethodID = P.PaymentMethodID 
+
+																INNER JOIN PaymentStatus PS 
+																ON PS.PaymentStatusID = P.PaymentStatusID 
+
+
+                                                                WHERE PM.NamePaymentMethod = @NamePaymentMethod
 
                             ";
 
@@ -433,31 +468,48 @@ namespace EETMS_DataAccessLayer
                 string Query = @"
 
 
-                                    SELECT      P.PaymentID ,
-                                                R.ReservationID ,
-                                                R.BookingDateTimeDateTime ,
-                                                R.CusotmerID , ( R.Quantity * T.Price ) AS [TotalAmount] , 
-                                                P.Amount  AS [PaidAmount],
-                                                PM.NamePaymentMethod ,
-                                                PS.NamePaymentStatus  
+                                   SELECT DISTINCT
+																 	 P.PaymentID, 
+																	 R.ReservationID , 
+																	 ResultTotalAmount.TotalAmount,
+																	 P.Amount  AS [PaidAmount],
+																	 PM.NamePaymentMethod,
+																	 R.BookingDateTimeDateTime,
+																	 PS.NamePaymentStatus
+																
 
-                                                        FROM Reservations R 
+															    FROM Payments P
 
-                                                        INNER JOIN Payments P 
-                                                        ON P.ReservationID = R.ReservationID 
+																INNER JOIN ReservationTickets RT 
+																ON RT.ReservationID = P.ReservationID 
 
-                                                        INNER JOIN TicketTypes T
-                                                        ON T.TicketTypeID = R.TicketTypeID
+															    INNER JOIN TicketTypes TT
+															    ON TT.TicketTypeID = RT.TicketTypeID 
 
-                                                        INNER JOIN PaymentMethods PM 
-                                                        ON PM.PaymentMethodID = P.PaymentMethodID 
+																INNER JOIN Reservations R
+																ON R.ReservationID = P.ReservationID
+																
+													
+																INNER JOIN (
+																			
+																			SELECT RT.ReservationID ,
+																		    SUM(RT.Price * CAST (  RT.Quantity  AS DECIMAL (10 , 2 ) )) + ISNULL (RT.Tax , 0 )AS [TotalAmount] 
+																			FROM ReservationTickets  RT
+																			GROUP BY RT.ReservationID , RT.Tax  
 
-                                                        INNER JOIN PaymentStatus PS 
-                                                        ON PS.PaymentStatusID = P.PaymentStatusID 
+																) AS ResultTotalAmount  
+																ON P.ReservationID = ResultTotalAmount.ReservationID
 
 
-                                    WHERE  R.BookingDateTimeDateTime  >= @DateFrom AND
-                                           R.BookingDateTimeDateTime < DATEADD(DAY , 1 , @DateTo ) ; 
+																INNER JOIN PaymentMethods PM 
+																ON PM.PaymentMethodID = P.PaymentMethodID 
+
+																INNER JOIN PaymentStatus PS 
+																ON PS.PaymentStatusID = P.PaymentStatusID 
+
+
+                                                                WHERE  R.BookingDateTimeDateTime  >= @DateFrom AND
+                                                                       R.BookingDateTimeDateTime < DATEADD(DAY , 1 , @DateTo ) ; 
 
 
                             ";

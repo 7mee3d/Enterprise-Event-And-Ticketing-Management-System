@@ -120,5 +120,8 @@ namespace EETMS_BusinessLayer
         private static DataTable GetAllEventsAccrodingCountryAndStreetBy(string CountryName, string Street)
             => EventsQueriesDAL.GetAllInformationEventAccrodingCountryAndStreetBy(CountryName, Street);
 
+        public static bool FindTheEventBy(string EventName)
+            => EventsQueriesDAL.IsTheEventExsitsOrNotBy(EventName);
+
     }
 }

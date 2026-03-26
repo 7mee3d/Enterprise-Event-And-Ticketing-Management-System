@@ -1251,7 +1251,58 @@ namespace EETMS_DataAccessLayer
 
         }
 
+        private static bool _IsTheEventExsitsOrNotBy(string NameEvent)
+        {
 
+            bool FlagIsExsistsEvent = false;
+
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+
+                    string Query = @"
+
+
+                                 SELECT DISTINCT 1 
+                                 FROM Events EVE
+                                 WHERE EVE.EventName = @EventName
+
+                            ";
+
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+
+                        command.Parameters.AddWithValue("@EventName", NameEvent);
+
+                        connection.Open();
+
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                            if (reader.Read())
+                                FlagIsExsistsEvent = true;
+
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return FlagIsExsistsEvent;
+            }
+
+
+            return FlagIsExsistsEvent;
+        }
+
+        public static bool IsTheEventExsitsOrNotBy(string NameEvent)
+            => _IsTheEventExsitsOrNotBy(NameEvent);
 
         #endregion
 

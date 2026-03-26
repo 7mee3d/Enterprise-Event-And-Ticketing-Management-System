@@ -1,6 +1,7 @@
 ﻿using EETMS_BusinessLayer;
 using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_DTOs;
+using EETMS_Presentation.EETMS_Settings;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
@@ -24,6 +25,7 @@ namespace EETMS_Presentation.EETMS_Events
         public event EventHandler<int> ERequestTheOpen_AddAndUpdateTheTicketsEvents;
         private EventDTO _InformationEvent;
         private int _IDEvent;
+        private Guna2MessageDialog _G2MD;
 
 
         public US_AddAndEditInformationEvent(int id)
@@ -65,7 +67,8 @@ namespace EETMS_Presentation.EETMS_Events
 
             if (_InformationEvent == null)
             {
-                MessageBox.Show("Connot Found The Event , Try Agian Later...", "Note Of The Find Event");
+
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Connot Found The Event , Try Agian Later...", "Note Of The Find Event", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 
@@ -158,16 +161,10 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void _AddOrEditEventInformation()
         {
-            Guna2MessageDialog G2MD = new Guna2MessageDialog();
 
             if (!_CheckTheAllTextBoxiesFilledOrNot())
             {
-                G2MD.Icon = MessageDialogIcon.Error;
-                G2MD.Buttons = MessageDialogButtons.OK;
-                G2MD.Caption = "Invalid Data";
-                G2MD.Text = _TextTheMessageDialogToCheckTheDataEventEntered();
-
-                G2MD.Show();
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, _TextTheMessageDialogToCheckTheDataEventEntered(), "Invalid Data", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 
@@ -185,14 +182,21 @@ namespace EETMS_Presentation.EETMS_Events
 
             _InformationEvent.MaxCapacity = Convert.ToInt32(GNumericUpDownMaxCapacity.Value);
 
+            if (EventBL.FindTheEventBy(GTextBoxEventName.Text))
+            {
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, $"The Event [ {GTextBoxEventName.Text} ] Already Exsits Enter Another Name", "Note The Add New Event", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                return;
+            }
 
             if (EventBL.SaveTheMode(_InformationEvent))
             {
-                _IDEvent = _InformationEvent.EventID;
 
-                if (_InformationEvent.EnMode == EventDTO.EnModeEvent._kADD_NEW_EVENT) MessageBox.Show("Add The New Event Information Sccessfully", "Note The Add New Event ");
-                else MessageBox.Show("Update The Event Information Sccessfully", "Note The Update Event ");
+                if (_InformationEvent.EnMode == EventDTO.EnModeEvent._kADD_NEW_EVENT) clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Add The New Event Information Sccessfully", "Note The Add New Event", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Update The Event Information Sccessfully", "Note The Update Event ", MessageDialogButtons.OK, MessageDialogIcon.Information);
+
+                _IDEvent = _InformationEvent.EventID;
             }
+
 
             GButtonCreateEvent.Text = "Update Event";
             _InformationEvent.EnMode = EventDTO.EnModeEvent._kUPDATE_INFORMATION_EVENT;

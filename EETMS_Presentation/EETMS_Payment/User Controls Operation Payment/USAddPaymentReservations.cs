@@ -38,8 +38,6 @@ namespace EETMS_Presentation.EETMS_Payment
             GComboBoxBookingIDAndCustomerName.DisplayMember = "DisplayComboBox";
             GComboBoxBookingIDAndCustomerName.ValueMember = "ReservationID";
 
-
-
         }
 
         private void _LoadAndInitalSettingAfterTheLoadingPayment()
@@ -143,9 +141,8 @@ namespace EETMS_Presentation.EETMS_Payment
                 }
 
                 if (PaymentsBL.SaveTheInformationPayment(mPayment))
-                    MessageBox.Show("The Payment is Addedd Sccessfully ", "Note For Add New Payment ");
-                else MessageBox.Show("The Payment is Addedd Faild ", "Note For Add New Payment ");
-
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Payment is Addedd Sccessfully ", "Note For Add New Payment ", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Payment is Addedd Faild ", "Note For Add New Payment ", MessageDialogButtons.OK, MessageDialogIcon.Warning);
 
                 mPayment = null;
                 _ResetAllSettingAfterConfirmThePayment();
