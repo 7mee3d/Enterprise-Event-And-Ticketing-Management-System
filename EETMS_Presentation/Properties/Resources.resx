@@ -118,32 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="EETMS_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EETMS_Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Add_New_Photo_NoFill_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Add_New_Photo_NoFill_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Filter_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Filter_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cancel_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Update_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Update_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EETMS_LoginScreen_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EETMS_LoginScreen_Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Filter_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Filter_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Remove_Image_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Remove_Image_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logout_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logout_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Update_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Update_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Remove_Image_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Remove_Image_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add_New_Photo_NoFill_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add_New_Photo_NoFill_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logout_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EETMS_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EETMS_Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Image_hide_White_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Image_hide_White_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,7 +154,10 @@
   <data name="Upload_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Upload_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Save_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eye hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye show gif Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye show gif Image.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

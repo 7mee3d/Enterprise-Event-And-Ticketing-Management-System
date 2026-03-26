@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EETMS_DTOs;
+using EETMS_Presentation.Properties;
 
 namespace EETMS_Presentation
 {
@@ -27,7 +28,7 @@ namespace EETMS_Presentation
             int Y_Axis = ((Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
 
             this.Location = new Point(X_Axis, Y_Axis);
-            this.Size = new Size(1663, 935);
+            this.Size = new Size(1506, 848);
 
         }
 
@@ -93,6 +94,19 @@ namespace EETMS_Presentation
         private void frmLoginEETMS_Resize(object sender, EventArgs e)
            => _MakeTheLoginScreenCenterPosition();
 
+        private void GPictureBoxShowPassword_Click(object sender, EventArgs e)
+        {
+            if (GTextBoxPassword.PasswordChar == '•')
+            {
+                GPictureBoxShowHidePassword.Image = Resources.eye_show_gif_Image;
+                GTextBoxPassword.PasswordChar = '\0';
 
+            }
+            else
+            {
+                GPictureBoxShowHidePassword.Image = Resources.eye_hide;
+                GTextBoxPassword.PasswordChar = '•';
+            }
+        }
     }
 }

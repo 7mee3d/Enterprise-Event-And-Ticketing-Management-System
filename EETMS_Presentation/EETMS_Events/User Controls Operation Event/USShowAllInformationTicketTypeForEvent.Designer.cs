@@ -91,7 +91,7 @@
             this.GButtonDiscardChanges.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.GButtonDiscardChanges.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.GButtonDiscardChanges.Image = ((System.Drawing.Image)(resources.GetObject("GButtonDiscardChanges.Image")));
-            this.GButtonDiscardChanges.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.GButtonDiscardChanges.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.GButtonDiscardChanges.ImageOffset = new System.Drawing.Point(20, 0);
             this.GButtonDiscardChanges.Location = new System.Drawing.Point(1144, 837);
             this.GButtonDiscardChanges.Name = "GButtonDiscardChanges";

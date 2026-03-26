@@ -261,6 +261,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\eye show gif Image.gif" />
+    <None Include="Resources\eye hide.png" />
     <None Include="Resources\Save_Icon_EETMS.png" />
     <None Include="Resources\Filter_Icon_EETMS.png" />
     <None Include="Resources\Cancel_Icon_EETMS.png" />

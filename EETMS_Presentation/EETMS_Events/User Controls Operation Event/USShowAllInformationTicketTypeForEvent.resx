@@ -129,11 +129,11 @@
   </data>
   <data name="GButtonDiscardChanges.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAMBJREFUWEft
-        lF0KwyAQhHOkHKP3iz4X6hkCerI+pvgXdWJKQzG7CQ4MBFni5+juMHR13VFC6TeunSqh9CJeeiEDkUo/
-        pIVIpgOJEAGIEsTwSsR6ogdZU6EGYXA17pG61nWp0IH83TVrnH4QbR3WYU4EF52S+xhI5QcV55sZD7QH
-        nfw7yP5pys2+fleM+zSVfM4jD4DsarCmqXgkAA8Ta5qKRwKxm0ISWNNULBLAeYA1p8hOQA9gaACiDo3i
-        rq4r6QOSvrlr4sqTYQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAALZJREFUWEftllEKgCAYgztSx+h+2XOQZwjyZD0WptnfynrKSTgYhEr7mCZVVVHR
+        H6X0NONYUiltFqUnaw6ID9/cWfdjjWs+lQTYICgAww5gSAD0BnYPbABqA/4c8ADoDUgIeSYen8MlBjYL
+        5kRlb8DrC4Rvw2LBZ2PWo+Ig1zDZBM7hOOa8yoKEABfW4Jokco2YsAVkkGwaOc4EDaTNrxHXChUko68m
+        QJBB/EWEc0lF+8ktKvpaK3cTuWsB8gt4AAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="TicketTypeID2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

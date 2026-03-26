@@ -40,12 +40,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.GTextBoxUserNameOrEmailUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.GPictureBoxShowHidePassword = new Guna.UI2.WinForms.Guna2PictureBox();
             this.GTextBoxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblShowMessageInLoginScreen = new System.Windows.Forms.Label();
             this.GGButtonLoginToEETMS = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GPictureBoxShowHidePassword)).BeginInit();
             this.SuspendLayout();
             // 
             // GBorderLessForm
@@ -60,11 +62,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Britannic Bold", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 54.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(98, 325);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(640, 89);
+            this.label1.Size = new System.Drawing.Size(584, 80);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome Back to";
             // 
@@ -169,6 +171,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.GPictureBoxShowHidePassword);
             this.panel1.Controls.Add(this.GTextBoxPassword);
             this.panel1.Controls.Add(this.lblShowMessageInLoginScreen);
             this.panel1.Controls.Add(this.GGButtonLoginToEETMS);
@@ -177,10 +180,23 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(858, 298);
+            this.panel1.Location = new System.Drawing.Point(731, 234);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(572, 525);
             this.panel1.TabIndex = 3;
+            // 
+            // GPictureBoxShowHidePassword
+            // 
+            this.GPictureBoxShowHidePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.GPictureBoxShowHidePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GPictureBoxShowHidePassword.Image = global::EETMS_Presentation.Properties.Resources.eye_show_gif_Image;
+            this.GPictureBoxShowHidePassword.ImageRotate = 0F;
+            this.GPictureBoxShowHidePassword.Location = new System.Drawing.Point(516, 319);
+            this.GPictureBoxShowHidePassword.Name = "GPictureBoxShowHidePassword";
+            this.GPictureBoxShowHidePassword.Size = new System.Drawing.Size(30, 25);
+            this.GPictureBoxShowHidePassword.TabIndex = 4;
+            this.GPictureBoxShowHidePassword.TabStop = false;
+            this.GPictureBoxShowHidePassword.Click += new System.EventHandler(this.GPictureBoxShowPassword_Click);
             // 
             // GTextBoxPassword
             // 
@@ -204,7 +220,7 @@
             this.GTextBoxPassword.PlaceholderText = "•••••••";
             this.GTextBoxPassword.SelectedText = "";
             this.GTextBoxPassword.Size = new System.Drawing.Size(506, 44);
-            this.GTextBoxPassword.TabIndex = 7;
+            this.GTextBoxPassword.TabIndex = 1;
             // 
             // lblShowMessageInLoginScreen
             // 
@@ -266,10 +282,11 @@
             this.AcceptButton = this.GGButtonLoginToEETMS;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::EETMS_Presentation.Properties.Resources.EETMS_LoginScreen_Background;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1663, 935);
+            this.ClientSize = new System.Drawing.Size(1506, 848);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -287,6 +304,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GPictureBoxShowHidePassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,6 +325,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonLoginToEETMS;
         private System.Windows.Forms.Label lblShowMessageInLoginScreen;
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxPassword;
+        private Guna.UI2.WinForms.Guna2PictureBox GPictureBoxShowHidePassword;
     }
 }
 
