@@ -16,11 +16,21 @@ namespace EETMS_Presentation.EETMS_Payment
 
 
         public event EventHandler ERequestTheOpenAddPaymentBooking;
-        private bool _IsCheckButtonFilter = false;
+        private bool _IsCheckButtonFilter;
+
+        private enum _EnMainChoiseFilterPayment
+        {
+            kNONE = 0,
+            kPAYMENT_METHOD = 1,
+            kPAYMENT_DATE = 2,
+            kPAYMENT_STATUS = 3
+        }
+
 
         public USPayment()
         {
             InitializeComponent();
+            _IsCheckButtonFilter = false;
             ERequestTheOpenAddPaymentBooking = null;
         }
 
@@ -52,16 +62,28 @@ namespace EETMS_Presentation.EETMS_Payment
                 DataGridViewRow DGVR = GDataGridViewPaymentInformation.Rows[counter++];
 
                 DataGridViewCell DGVC_BookingID = DGVR.Cells[clsEETMS_Constants.kONE];
-                DataGridViewCell DGVC_Status = DGVR.Cells[6];
+                DataGridViewCell DGVC_Status = DGVR.Cells[clsEETMS_Constants.kNUMBER_COLUMN_STATUS_PAYMENT_IN_DATA_GRID_VIEW];
 
                 switch (DGVC_Status.Value.ToString())
                 {
                     case "Paid":
-                        DGVC_Status.Style.ForeColor = Color.FromArgb(22, 129, 62);
+                        DGVC_Status.Style.ForeColor = Color.FromArgb(
+
+                            clsEETMS_Constants.kNUMBER_RED_COLOR_STATUS_FORSET_GREEN,
+                            clsEETMS_Constants.kNUMBER_GREEN_COLOR_STATUS_FORSET_GREEN,
+                            clsEETMS_Constants.kNUMBER_BLUE_COLOR_STATUS_FORSET_GREEN
+                            );
+
                         break;
 
                     case "Partially Paid":
-                        DGVC_Status.Style.ForeColor = Color.FromArgb(180, 83, 9);
+                        DGVC_Status.Style.ForeColor = Color.FromArgb(
+
+                            clsEETMS_Constants.kNUMBER_RED_COLOR_STATUS_BURNT_ORANGE,
+                            clsEETMS_Constants.kNUMBER_GREEN_COLOR_STATUS_BURNT_ORANGE,
+                            clsEETMS_Constants.kNUMBER_BLUE_COLOR_STATUS_BURNT_ORANGE
+                            );
+
                         break;
 
                     case "Unpaid":
@@ -69,7 +91,12 @@ namespace EETMS_Presentation.EETMS_Payment
                         break;
                 }
 
-                DGVC_BookingID.Style.ForeColor = Color.FromArgb(255, 45, 141, 238);
+                DGVC_BookingID.Style.ForeColor = Color.FromArgb(
+
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_BOOKING_ID_COLUMN_SKY_BLUE,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_BOOKING_ID_COLUMN_SKY_BLUE,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_BOOKING_ID_COLUMN_SKY_BLUE
+                    );
 
 
             }
@@ -80,7 +107,7 @@ namespace EETMS_Presentation.EETMS_Payment
         {
             DataTable Payments_DT = PaymentsBL.GetAllInformationPayments();
 
-            clsEETMS_SettingPresentation._AnimationLables(PaymentsBL.GetTheTotalRevenue(), lblTotalRevenue, 5, true);
+            clsEETMS_SettingPresentation._AnimationLables(PaymentsBL.GetTheTotalRevenue(), lblTotalRevenue, clsEETMS_Constants.kNUMBER_DELEAY_ANIMATION_PAYMENT, true);
 
             _LoadAllInformationPayments(Payments_DT);
 
@@ -168,14 +195,10 @@ namespace EETMS_Presentation.EETMS_Payment
         }
 
         private void GGButtonFilter_Click(object sender, EventArgs e)
-        {
-            _ActiveTheFilter();
-
-        }
+            => _ActiveTheFilter();
 
         private void _LoadAllInformationPaymentStatusToComboBox()
         {
-
             GSubComboBoxTheFilterPayment.DataSource = PaymentsBL.GetAllPaymentStatus();
             GSubComboBoxTheFilterPayment.DisplayMember = "NamePaymentStatus";
         }
@@ -189,24 +212,22 @@ namespace EETMS_Presentation.EETMS_Payment
 
         private void _PushAllInformationAccordingTheTypeFilterToComboBox()
         {
-            if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kZERO)
-
+            if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnMainChoiseFilterPayment.kNONE))
                 GSubComboBoxTheFilterPayment.Visible = false;
-
             else GSubComboBoxTheFilterPayment.Visible = true;
 
 
 
-            if (GComboBoxMainTypeFilter.SelectedIndex == 3)
+            if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnMainChoiseFilterPayment.kPAYMENT_STATUS))
                 _LoadAllInformationPaymentStatusToComboBox();
-            else if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kONE)
+            else if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnMainChoiseFilterPayment.kPAYMENT_METHOD))
                 _LoadAllInformationPaymentMethodsToComboBox();
 
         }
 
         private void _ShowTheSubFiltering()
         {
-            if (GComboBoxMainTypeFilter.SelectedIndex == 2)
+            if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnMainChoiseFilterPayment.kPAYMENT_DATE))
             {
                 GGSubPanelFilteringByPaymentDate.Visible = true;
                 GGSubPanelGeneralFilter.Visible = false;
@@ -228,7 +249,7 @@ namespace EETMS_Presentation.EETMS_Payment
             DataTable DT_InformationPaymentAccrodingTheStatus = null;
 
 
-            if (GComboBoxMainTypeFilter.SelectedIndex != 2)
+            if (GComboBoxMainTypeFilter.SelectedIndex != Convert.ToInt16(_EnMainChoiseFilterPayment.kPAYMENT_DATE))
             {
 
                 PaymentFilterDTO paymentFilterDTO = new PaymentFilterDTO()
@@ -278,5 +299,5 @@ namespace EETMS_Presentation.EETMS_Payment
             _PushAllInformtionPaymentAccrodingTypeToDGV();
         }
 
-   }
+    }
 }

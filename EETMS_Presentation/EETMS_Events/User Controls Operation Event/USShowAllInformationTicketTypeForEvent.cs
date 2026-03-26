@@ -10,7 +10,7 @@ namespace EETMS_Presentation.EETMS_Events
     public partial class USShowAllInformationTicketTypeForEvent : UserControl
     {
 
-        private int _EventID = 0;
+        private int _EventID;
         public event EventHandler<int> ERequestTheClose_AddAndUpdateTheTicketsEvents;
         public event EventHandler<TicketEventArgs> ERequestToOpenThe_USAddNewTicketTypeToTheEvent;
         DataTable _DT_AllTicketsEvent;
@@ -19,6 +19,7 @@ namespace EETMS_Presentation.EETMS_Events
         {
             InitializeComponent();
 
+            _EventID = clsEETMS_Constants.kZERO;
             ERequestTheClose_AddAndUpdateTheTicketsEvents = null;
             ERequestToOpenThe_USAddNewTicketTypeToTheEvent = null;
             _DT_AllTicketsEvent = null;

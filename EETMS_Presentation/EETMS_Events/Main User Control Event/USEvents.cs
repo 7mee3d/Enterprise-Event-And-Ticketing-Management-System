@@ -7,6 +7,8 @@ using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Management.Instrumentation;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 namespace EETMS_Presentation.EETMS_Events
@@ -18,6 +20,16 @@ namespace EETMS_Presentation.EETMS_Events
         public event EventHandler<int> RequestOpenCreateNewEventUS;
         private Guna2MessageDialog _G2MD;
 
+
+        private enum _EnChoiseMainFilter
+        {
+            kNONE = 0,
+            kSTATUS_EVENT = 1,
+            kCATEGORY_TYPE_EVENT = 2,
+            kCAPACITY_UNSAGE_EVENT = 3,
+            kLOCATION_EVENT = 4,
+            kCUSTOM_FILTER_EVENT = 5
+        }
 
         public USEvents()
         {
@@ -276,15 +288,15 @@ namespace EETMS_Presentation.EETMS_Events
 
             GSubComboBoxTypeTheFilter.Visible = true;
 
-            if (GComboBoxMainTypeFilter.SelectedIndex == clsEETMS_Constants.kONE)
+            if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnChoiseMainFilter.kSTATUS_EVENT))
                 _LoadAllInformationTypeStatus(GSubComboBoxTypeTheFilter);
-            else if (GComboBoxMainTypeFilter.SelectedIndex == 2)
+            else if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnChoiseMainFilter.kCATEGORY_TYPE_EVENT))
                 _LoadAllInformationCategoryNameToComboBox(GSubComboBoxTypeTheFilter);
-            else if (GComboBoxMainTypeFilter.SelectedIndex == 3)
+            else if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnChoiseMainFilter.kCAPACITY_UNSAGE_EVENT))
                 _LoadAllInformationTypeCapacityUsage(GSubComboBoxTypeTheFilter);
-            else if (GComboBoxMainTypeFilter.SelectedIndex == 4)
+            else if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnChoiseMainFilter.kLOCATION_EVENT))
                 _LoadAllInformationTypeCountry(GSubComboBoxTypeTheFilter);
-            else if (GComboBoxMainTypeFilter.SelectedIndex == 5)
+            else if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnChoiseMainFilter.kCUSTOM_FILTER_EVENT))
             {
                 GSubComboBoxTypeTheFilter.Visible = false;
                 GGPanelCustomFilter.Visible = true;
@@ -403,7 +415,7 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void GSubComboBoxTypeTheFilter_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (GComboBoxMainTypeFilter.SelectedIndex != 4)
+            if (GComboBoxMainTypeFilter.SelectedIndex != Convert.ToInt16(_EnChoiseMainFilter.kLOCATION_EVENT))
                 _FillTheInformationFilter();
             else
             {
@@ -416,9 +428,7 @@ namespace EETMS_Presentation.EETMS_Events
             => _PushAllInformationMainType();
 
         private void GTextBoxStreetSearch_TextChanged(object sender, EventArgs e)
-        {
-            _GetAllEventAccordingTheCountryAndStreet();
-        }
+            => _GetAllEventAccordingTheCountryAndStreet();
 
         private void GCombvoBoxCategoryCustomFilter_SelectionChangeCommitted(object sender, EventArgs e)
             => _FillTheInformationEventToDGVAfterTheFilterCustom();

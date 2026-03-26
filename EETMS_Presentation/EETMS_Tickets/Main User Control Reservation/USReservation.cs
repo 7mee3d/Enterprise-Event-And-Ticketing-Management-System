@@ -51,7 +51,7 @@ namespace EETMS_Presentation.EETMS_Tickets
             _PriceThePreimumTicket = clsEETMS_Constants.kZERO;
 
             _SubTotalAmount = clsEETMS_Constants.kZERO;
-            _Tax = 5;
+            _Tax = clsEETMS_Constants.kNUMBER_OF_TAX_RESERVATION;
             _TotalAmount = clsEETMS_Constants.kZERO;
             _FilnialCalcTax = clsEETMS_Constants.kZERO;
 
@@ -61,9 +61,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
 
             _CustomerID = clsEETMS_Constants.kNEGATIVE_ONE;
-
             _MReservations = null;
-
             _EventID = clsEETMS_Constants.kZERO;
         }
 
@@ -76,41 +74,114 @@ namespace EETMS_Presentation.EETMS_Tickets
                 G2DB.Text = "Selected";
                 G2DB.DisabledState.ForeColor = Color.White;
 
-                G2DB.DisabledState.FillColor = Color.FromArgb(43, 140, 238);
-                G2DB.DisabledState.FillColor2 = Color.FromArgb(43, 140, 238);
+                G2DB.DisabledState.FillColor = Color.FromArgb(
+
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
+
+                    );
+
+                G2DB.DisabledState.FillColor2 = Color.FromArgb(
+
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
+
+                    );
 
                 return;
             }
 
             if (CountOfTicketsAvailable == clsEETMS_Constants.kZERO)
             {
-                G2DB.Text = "";
-                G2DB.DisabledState.FillColor = Color.FromArgb(43, 140, 238);
-                G2DB.DisabledState.FillColor2 = Color.FromArgb(43, 140, 238);
+                G2DB.Text = clsEETMS_Constants.kEMPTY_STRING ;
+                G2DB.DisabledState.FillColor = Color.FromArgb(
+
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
+
+                    );
+
+                G2DB.DisabledState.FillColor2 = Color.FromArgb(
+
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
+                    
+                    );
                 lblLeftTikets.ForeColor = Color.Black;
 
                 return;
             }
 
-            if (CountOfTicketsAvailable > 10)
+            if (CountOfTicketsAvailable > clsEETMS_Constants.kNUMBER_LOW_STACK_TICKETS)
             {
                 G2DB.Text = "Available";
-                G2DB.DisabledState.ForeColor = Color.FromArgb(21, 128, 61);
+                G2DB.DisabledState.ForeColor = Color.FromArgb(
 
-                G2DB.DisabledState.FillColor = Color.FromArgb(220, 252, 231);
-                G2DB.DisabledState.FillColor2 = Color.FromArgb(220, 252, 231);
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_FOREST_GREEN,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_FOREST_GREEN, 
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_FOREST_GREEN
+                    
+                    );
+
+
+                G2DB.DisabledState.FillColor = Color.FromArgb(
+
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_LIGHT_GREEN,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_LIGHT_GREEN,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_LIGHT_GREEN
+
+                    );
+
+                G2DB.DisabledState.FillColor2 = Color.FromArgb(
+                    
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_LIGHT_GREEN,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_LIGHT_GREEN,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_LIGHT_GREEN
+                    
+                    );
+
                 lblLeftTikets.ForeColor = Color.Black;
             }
             else
             {
 
                 G2DB.Text = "Low Stack";
-                G2DB.DisabledState.ForeColor = Color.FromArgb(180, 83, 9);
+                G2DB.DisabledState.ForeColor = Color.FromArgb(
+                    
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_BURNT_ORANGE,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_BURNT_ORANGE,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_BURNT_ORANGE
+                    
+                    );
 
-                G2DB.DisabledState.FillColor = Color.FromArgb(254, 243, 199);
-                G2DB.DisabledState.FillColor2 = Color.FromArgb(254, 243, 199);
 
-                lblLeftTikets.ForeColor = Color.FromArgb(180, 83, 9);
+                G2DB.DisabledState.FillColor = Color.FromArgb(
+
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_LIGHT_AMBER,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_LIGHT_AMBER,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_LIGHT_AMBER
+                    
+                    );
+
+                G2DB.DisabledState.FillColor2 = Color.FromArgb(
+                    
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_LIGHT_AMBER,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_LIGHT_AMBER,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_LIGHT_AMBER
+
+                    );
+
+                lblLeftTikets.ForeColor = Color.FromArgb(
+                    
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_BURNT_ORANGE,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_BURNT_ORANGE,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_BURNT_ORANGE
+                    
+                    );
 
             }
 

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using EETMS_DTOs;
+using EETMS_Presentation.EETMS_Settings;
 
 
 namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
@@ -20,43 +21,13 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
         private _EnModeTicketType _MTicketType;
         private TicketTypeDTO _ObjTicketTypeInformation;
-        Guna2MessageDialog _G2MD = new Guna2MessageDialog();
+        Guna2MessageDialog _G2MD;
 
 
         private enum _EnModeTicketType
         {
             _kADD_NEW_TICKETTYPE = 1,
             _kUPDATE_INFOMRATION_TICKETTYPE = 2
-        }
-
-
-
-        private void _ShowTheMessageBox(string Text, string Caption, string IconMessageBox)
-        {
-            _G2MD.Text = Text;
-            _G2MD.Caption = Caption;
-
-            switch (IconMessageBox)
-            {
-
-                case "Warning":
-                    _G2MD.Icon = MessageDialogIcon.Warning;
-                    break;
-                case "Error":
-                    _G2MD.Icon = MessageDialogIcon.Error;
-                    break;
-                case "Question":
-                    _G2MD.Icon = MessageDialogIcon.Question;
-                    break;
-                case "Information":
-                    _G2MD.Icon = MessageDialogIcon.Information;
-                    break;
-                default:
-                    _G2MD.Icon = MessageDialogIcon.None;
-                    break;
-            }
-
-            _G2MD.Show();
         }
 
         public USAddTheTicketsTypeToTheEvent(int IDEvent, int IDTicketType)
@@ -181,9 +152,8 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             if (_ObjTicketTypeInformation == null)
             {
-                _ShowTheMessageBox("\nThe Ticket Type Not Found, Try Agian", "Note Of Find The Ticket Type ", "Error");
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "\nThe Ticket Type Not Found, Try Agian", "Note Of Find The Ticket Type ", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
-
             }
 
             _LoadAllTicketTypeNotIncludeTheEventToTheComboBoxUpdateMode();
@@ -206,30 +176,30 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
 
             int NewQuantity = Convert.ToInt32(GTextBoxAvailableQuantity.Text);
-            int OriginalQuantityTicket = 0;
+            int OriginalQuantityTicket = clsEETMS_Constants.kZERO;
 
 
             if (_MTicketType == _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE)
                 OriginalQuantityTicket = TicketBL.FindTheTicketTypeBy(_IDEvent, _IDTicketType).Quantity;
 
 
-            int MaxCapacity = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[0]["MaxCapacity"]);
+            int MaxCapacity = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[clsEETMS_Constants.kZERO]["MaxCapacity"]);
 
             int AvailableBeforeUpdate = _ObjTicketTypeInformation.Available;
             int QuantityBeforeUpdated = _ObjTicketTypeInformation.Quantity;
 
-            int FinialResultTicketQuantity = 0;
+            int FinialResultTicketQuantity = clsEETMS_Constants.kZERO;
 
-            int TotalQuantityTicket = 0;
+            int TotalQuantityTicket = clsEETMS_Constants.kZERO;
             if (OriginalQuantityTicket >= NewQuantity)
             {
                 FinialResultTicketQuantity = OriginalQuantityTicket - NewQuantity;
-                TotalQuantityTicket = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[0]["TotalQuantityTickets"]) - FinialResultTicketQuantity;
+                TotalQuantityTicket = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[clsEETMS_Constants.kZERO]["TotalQuantityTickets"]) - FinialResultTicketQuantity;
             }
             else
             {
                 FinialResultTicketQuantity = NewQuantity - OriginalQuantityTicket;
-                TotalQuantityTicket = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[0]["TotalQuantityTickets"]) + FinialResultTicketQuantity;
+                TotalQuantityTicket = Convert.ToInt32(DT_EventTicketCapacityInfo.Rows[clsEETMS_Constants.kZERO]["TotalQuantityTickets"]) + FinialResultTicketQuantity;
 
             }
 
@@ -242,13 +212,13 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
                     _ObjTicketTypeInformation.Quantity = NewQuantity;
                 else
                 {
-                    _ShowTheMessageBox("\nConnot Added This Ticket Type Because The Qunatity Ticket Type Grther Than Max Capacity", "Note The Add new Ticket Type", "Warning");
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "\nConnot Added This Ticket Type Because The Qunatity Ticket Type Grther Than Max Capacity", "Note The Add new Ticket Type", MessageDialogButtons.OK, MessageDialogIcon.Warning);
                     return;
                 }
             }
             else
             {
-                _ShowTheMessageBox("\nConnot Added This Ticket Type Because The Qunatity Ticket Type is Zero", "Note The Add new Ticket Type", "Error");
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "\nConnot Added This Ticket Type Because The Qunatity Ticket Type is Zero", "Note The Add new Ticket Type", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 
@@ -256,7 +226,7 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             if (NewQuantity < SoldTickets)
             {
-                _ShowTheMessageBox("\nCannot reduce quantity below sold tickets", "Warning", "Error");
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "\nCannot reduce quantity below sold tickets", "Warning...", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 
@@ -269,9 +239,10 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
             {
 
                 if (_MTicketType == _EnModeTicketType._kADD_NEW_TICKETTYPE)
-                    _ShowTheMessageBox("\nAdd The Ticket Type Successfully", "Note For Add New Ticket Type", "Information");
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "\nAdd The Ticket Type Successfully", "Note For Add New Ticket Type", MessageDialogButtons.OK, MessageDialogIcon.Information);
                 else if (_MTicketType == _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE)
-                    _ShowTheMessageBox("\nUpdate The Ticket Type Successfully", "Note For Update Ticket Type", "Information");
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "\nUpdate The Ticket Type Successfully", "Note For Update Ticket Type", MessageDialogButtons.OK, MessageDialogIcon.Information);
+
             }
 
 

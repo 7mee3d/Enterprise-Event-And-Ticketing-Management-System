@@ -13,22 +13,22 @@ namespace EETMS_Presentation
     public partial class frmLoginEETMS : Form
     {
 
-        bool _IsAnimating = false;
+        private bool _IsAnimating;
 
         public frmLoginEETMS()
         {
             InitializeComponent();
-
+            _IsAnimating = false;
         }
 
         private void _MakeTheLoginScreenCenterPosition()
         {
 
-            int X_Axis = ((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2);
-            int Y_Axis = ((Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
+            int X_Axis = ((Screen.PrimaryScreen.Bounds.Width - this.Width) / clsEETMS_Constants.kNUMBER_TWO_OF_HALF_PRIMARY_SCREEN);
+            int Y_Axis = ((Screen.PrimaryScreen.Bounds.Height - this.Height) / clsEETMS_Constants.kNUMBER_TWO_OF_HALF_PRIMARY_SCREEN);
 
             this.Location = new Point(X_Axis, Y_Axis);
-            this.Size = new Size(1506, 848);
+            this.Size = new Size(clsEETMS_Constants.kNUMBER_WIDTH_LOGIN_SCREEN, clsEETMS_Constants.kNUMBER_HEIGTH_LOGIN_SCREEN);
 
         }
 
@@ -43,13 +43,13 @@ namespace EETMS_Presentation
 
             for (int i = clsEETMS_Constants.kZERO; i <= clsEETMS_Constants.kNUMBER_TOP_SHOW_KMESSAGE; i++)
             {
-                ObjLabel.Location = new Point(81, 374 - i);
+                ObjLabel.Location = new Point(clsEETMS_Constants.kNUMBER_OF_WIDTH_LABEL_ANIMATION, clsEETMS_Constants.kNUMBER_OF_HEIGTH_LABEL_ANIMATION - i);
                 await Task.Delay(5);
             }
 
-            await Task.Delay(2000);
+            await Task.Delay(clsEETMS_Constants.kNUMBER_OF_DELAY_LABEL_ANIMATION_LOGIN_SCREEN);
             ObjLabel.Visible = false;
-            ObjLabel.Location = new Point(81, clsEETMS_Constants.kORIGNIAL_TOP_LABLEL_SHOW_MESSAGE);
+            ObjLabel.Location = new Point(clsEETMS_Constants.kNUMBER_OF_WIDTH_LABEL_ANIMATION, clsEETMS_Constants.kORIGNIAL_TOP_LABLEL_SHOW_MESSAGE);
 
             _IsAnimating = false;
         }
@@ -70,7 +70,6 @@ namespace EETMS_Presentation
             switch (UserBL.PassLoginTheUser(UserNameOrEmail, Password))
             {
                 case UserDTO.EnStatusLoginUser._kSUCCESS_LOGIN:
-                    //await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "Login Sccessfully", Color.Green);
                     OpenMainScreenEETMS(UserNameOrEmail);
                     break;
 
@@ -110,8 +109,7 @@ namespace EETMS_Presentation
         }
 
         private void GControlBoxExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+           => Application.Exit();
+
     }
 }

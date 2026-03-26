@@ -103,7 +103,7 @@ namespace EETMS_Presentation.EETMS_Report
                                                  );
 
                     DataGridViewRow GDVR = GDataGridViewFullyBookedEvents.Rows[rowIndex];
-                    DataGridViewCell DGVC = GDVR.Cells[1];
+                    DataGridViewCell DGVC = GDVR.Cells[clsEETMS_Constants.kONE];
 
                     DGVC.Style.ForeColor = Color.Red;
                 }
@@ -134,7 +134,7 @@ namespace EETMS_Presentation.EETMS_Report
                                                  );
 
                     DataGridViewRow GDVR = GDataGridViewRemainingCapacity.Rows[rowIndex];
-                    DataGridViewCell DGVC = GDVR.Cells[1];
+                    DataGridViewCell DGVC = GDVR.Cells[clsEETMS_Constants.kONE];
 
                     DGVC.Style.ForeColor = Color.Green;
                 }

@@ -49,7 +49,7 @@ namespace EETMS_Presentation.EETMS_Category
                 foreach (Control innerControl in outterControl.Controls)
                 {
                     if (innerControl is Guna2TextBox G2TB)
-                        G2TB.Text = "";
+                        G2TB.Text = clsEETMS_Constants.kEMPTY_STRING;
 
                 }
             }
@@ -177,7 +177,7 @@ namespace EETMS_Presentation.EETMS_Category
 
             for (int counter = clsEETMS_Constants.kZERO; counter < MaxCount; counter += clsEETMS_Constants.kONE)
             {
-                string CategoryID = "";
+                string CategoryID = clsEETMS_Constants.kEMPTY_STRING;
 
                 CategoryID = "#CAT-" + Categories_DT.Rows[counter]["CategoryID"].ToString();
 
@@ -196,7 +196,11 @@ namespace EETMS_Presentation.EETMS_Category
                 DataGridViewRow DataGridViewRowCategory = GDataGridViewCategoriesInformation.Rows[rowIndexCategory];
                 DataGridViewCell DataGridViewCellCategory = DataGridViewRowCategory.Cells[clsEETMS_Constants.kZERO];
 
-                DataGridViewCellCategory.Style.ForeColor = Color.FromArgb(39, 83, 227);
+                DataGridViewCellCategory.Style.ForeColor = Color.FromArgb(
+                    clsEETMS_Constants.kNUMBER_RED_COLOR_ROYAL_BLUE,
+                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_ROYAL_BLUE,
+                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_ROYAL_BLUE
+                    );
 
             }
         }
@@ -262,15 +266,15 @@ namespace EETMS_Presentation.EETMS_Category
 
             foreach (DataRow DR_Category in CategoriesGroupByName_DT.Rows)
             {
-                string CategoryID = "";
+                string CategoryID = clsEETMS_Constants.kEMPTY_STRING;
 
                 CategoryID = "#CAT-" + DR_Category["CategoryID"].ToString();
 
                 GDataGridViewCategoriesInformation.Rows.Add(
 
                      CategoryID,
-                     DR_Category["CategoryName"] != null ? DR_Category["CategoryName"].ToString() : "",
-                     DR_Category["CountEventForCategory"] != null ? DR_Category["CountEventForCategory"].ToString() : "",
+                     DR_Category["CategoryName"] != null ? DR_Category["CategoryName"].ToString() : clsEETMS_Constants.kEMPTY_STRING,
+                     DR_Category["CountEventForCategory"] != null ? DR_Category["CountEventForCategory"].ToString() : clsEETMS_Constants.kEMPTY_STRING,
                      DR_Category["Discripation"].ToString()
 
 

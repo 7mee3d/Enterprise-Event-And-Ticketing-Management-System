@@ -1,4 +1,5 @@
-﻿using EETMS_BusinessLayer.Roles_Business_Layer;
+﻿using EETMS_BusinessLayer.EETMS_Constants;
+using EETMS_BusinessLayer.Roles_Business_Layer;
 using EETMS_Presentation.EETMS_Settings;
 using Guna.UI2.WinForms;
 using System;
@@ -12,18 +13,20 @@ namespace EETMS_Presentation.EETMS_Roles
     {
 
         public event EventHandler<int> ERequestToOpenCreateNewRole;
-
         private Guna2MessageDialog _G2MD;
+  
         public US_RolesManagment()
         {
             InitializeComponent();
+
+            _G2MD = null; 
         }
 
         private void _InitalSettingAfterLoadTheUSRoles()
         {
 
-            clsEETMS_SettingPresentation._AnimationLables(RolesBL.TotalRoles(), lblTotalRoles, 5, false);
-            clsEETMS_SettingPresentation._AnimationLables(RolesBL.TotalActiveRoles(), lblTotalActiveStzatusRoles, 5, false);
+            clsEETMS_SettingPresentation._AnimationLables(RolesBL.TotalRoles(), lblTotalRoles, clsEETMS_Constants.kNUMBER_OF_DELAY_ANIMATION_ROLE, false);
+            clsEETMS_SettingPresentation._AnimationLables(RolesBL.TotalActiveRoles(), lblTotalActiveStzatusRoles, clsEETMS_Constants.kNUMBER_OF_DELAY_ANIMATION_ROLE, false);
 
         }
 
@@ -49,8 +52,8 @@ namespace EETMS_Presentation.EETMS_Roles
 
 
                 DataGridViewRow DGVR = GDataGridViewRolesInformation.Rows[RpwIndex];
-                DataGridViewCell DGVC = DGVR.Cells[4];
-                if (DGVR.Cells[4].Value.ToString() == "Active")
+                DataGridViewCell DGVC = DGVR.Cells[clsEETMS_Constants.kNUMBER_OF_COLUMN_STATUS_ROLE];
+                if (DGVR.Cells[clsEETMS_Constants.kNUMBER_OF_COLUMN_STATUS_ROLE].Value.ToString() == "Active")
                     DGVC.Style.ForeColor = Color.Green;
                 else DGVC.Style.ForeColor = Color.Red;
             }
@@ -58,7 +61,7 @@ namespace EETMS_Presentation.EETMS_Roles
         }
 
         private int _GetTheIDRoleFromDGV()
-            => GDataGridViewRolesInformation.SelectedRows.Count > 0 ? Convert.ToInt32(GDataGridViewRolesInformation.SelectedRows[0].Cells[0].Value) : -1;
+            => GDataGridViewRolesInformation.SelectedRows.Count > clsEETMS_Constants.kZERO ? Convert.ToInt32(GDataGridViewRolesInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells[clsEETMS_Constants.kZERO].Value) : clsEETMS_Constants.kNEGATIVE_ONE;
 
         private void _LoadDataRolesAndHeaders()
         {
@@ -74,7 +77,7 @@ namespace EETMS_Presentation.EETMS_Roles
            => _LoadDataRolesAndHeaders();
 
         private void GGButtonCreateNewRole_Click(object sender, EventArgs e)
-            => ERequestToOpenCreateNewRole?.Invoke(this, -1);
+            => ERequestToOpenCreateNewRole?.Invoke(this, clsEETMS_Constants.kNEGATIVE_ONE);
 
         private void EditRoleToolStripMenuItem_Click(object sender, EventArgs e)
         => ERequestToOpenCreateNewRole?.Invoke(this, _GetTheIDRoleFromDGV());

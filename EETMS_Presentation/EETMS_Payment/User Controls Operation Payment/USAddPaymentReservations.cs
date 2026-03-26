@@ -104,11 +104,11 @@ namespace EETMS_Presentation.EETMS_Payment
 
 
                 if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == PaymentDTO.EnPaymentStatus._kPAID)
-                    StatusPaymentNumber = clsEETMS_Constants.kONE;
+                    StatusPaymentNumber = clsEETMS_Constants.kNUMBER_PAYMENT_STATUS_PAID;
                 else if (PaymentsBL.GetTheStatusPayment(AmountToPay, RemainingBalance) == PaymentDTO.EnPaymentStatus._kPARTIALLY_PAID)
-                    StatusPaymentNumber = 2;
+                    StatusPaymentNumber = clsEETMS_Constants.kNUMBER_PAYMENT_STATUS_PARTIALLY_PAID;
                 else
-                    StatusPaymentNumber = 3;
+                    StatusPaymentNumber = clsEETMS_Constants.kNUMBER_PAYMENT_STATUS_UNPAID;
 
 
                 if (GButtonCash.Checked)
@@ -134,7 +134,7 @@ namespace EETMS_Presentation.EETMS_Payment
                     };
                 }
 
-                if ((!GButtonCash.Checked && !GButtonCard.Checked && !GButtonBankTransfer.Checked) || GNumericUpDownAmountToPay.Value < 0)
+                if ((!GButtonCash.Checked && !GButtonCard.Checked && !GButtonBankTransfer.Checked) || GNumericUpDownAmountToPay.Value < clsEETMS_Constants.kZERO)
                 {
                     clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Invalid Data! Please Enter All Data To Be Confirm Reservation", "Note Of Confirm Reservation", MessageDialogButtons.OK, MessageDialogIcon.Error);
                     return;
