@@ -131,14 +131,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             if (UserID != clsEETMS_Constants.kNEGATIVE_ONE)
                 ERequestToOpenTheAddNewUserUS?.Invoke(this, UserID);
             else
-            {
-                _G2MD = new Guna2MessageDialog();
-                _G2MD.Icon = MessageDialogIcon.Warning;
-                _G2MD.Caption = "Important Note ...";
-                _G2MD.Text = "You Must Selected The User From List To Be Updated information.";
-
-                _G2MD.Show();
-            }
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "You Must Selected The User From List To Be Updated information.", "Important Note ...", MessageDialogButtons.OK, MessageDialogIcon.Warning);
         }
 
         private void _DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -147,23 +140,19 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
             if (UserID != clsEETMS_Constants.kNEGATIVE_ONE)
             {
-                if (MessageBox.Show("Are you sure to be delete This User ..?? ", "Note For the delete user", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+
+
+                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are you sure to be delete This User ..?? ", "Note For the delete user", MessageDialogButtons.YesNo, MessageDialogIcon.Question))
                     if (UserBL.DeleteTheUserBy(_GetTheIDUserAfterSelectionUserFromDGV()))
                     {
-                        MessageBox.Show("The User is Deleted Successfully", "Note For Delete The User");
+                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The User is Deleted Successfully", "Note For Delete The User", MessageDialogButtons.YesNo, MessageDialogIcon.Information);
                         _InitalSettingTheUserManagmentCountsUsers();
                     }
-                    else MessageBox.Show("The User is Deleted Faild", "Note For Delete The User");
+                    else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The User is Deleted Faild", "Note For Delete The User", MessageDialogButtons.OK, MessageDialogIcon.Error);
+
             }
             else
-            {
-                _G2MD = new Guna2MessageDialog();
-                _G2MD.Icon = MessageDialogIcon.Warning;
-                _G2MD.Caption = "Important Note ...";
-                _G2MD.Text = "You Must Selected The User From List To Be Delete.";
-
-                _G2MD.Show();
-            }
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "You Must Selected The User From List To Be Delete.", "Important Note ...", MessageDialogButtons.OK, MessageDialogIcon.Warning);
 
 
         }
@@ -171,7 +160,12 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         private void _ActiveAndInactiveTheUser()
         {
 
-            Guna2MessageDialog G2MD = new Guna2MessageDialog();
+
+            string TextMessage = clsEETMS_Constants.kEMPTY_STRING;
+            string CaptionMessage = clsEETMS_Constants.kEMPTY_STRING;
+
+            MessageDialogIcon MDI = new MessageDialogIcon();
+            MessageDialogButtons MDB = new MessageDialogButtons();
 
             int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
 
@@ -179,16 +173,16 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
             if (mUser != null)
             {
-                G2MD.Icon = MessageDialogIcon.Question;
-                G2MD.Caption = "Note. For The Inactive/Active This User";
+                MDI = MessageDialogIcon.Question;
+                CaptionMessage = "Note. For The Inactive/Active This User";
 
                 if (mUser.IsActiveAccount)
-                    G2MD.Text = "Are You Sure Inactive This User";
-                else G2MD.Text = "Are You Sure Active This User";
+                    TextMessage = "Are You Sure Inactive This User";
+                else TextMessage = "Are You Sure Active This User";
 
-                G2MD.Buttons = MessageDialogButtons.OKCancel;
+                MDB = MessageDialogButtons.OKCancel;
 
-                if (G2MD.Show() == DialogResult.Yes)
+                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, TextMessage, CaptionMessage, MDB, MDI))
                 {
                     if (mUser.IsActiveAccount)
                         mUser.IsActiveAccount = false;
@@ -197,36 +191,40 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                     if (UserBL.SaveInformationUserMode(mUser, true))
                     {
                         if (mUser.IsActiveAccount)
-                            G2MD.Text = "The User is Active Successfully";
-                        else G2MD.Text = "The User is Inactive Successfully";
+                            TextMessage = "The User is Active Successfully";
+                        else TextMessage = "The User is Inactive Successfully";
 
                         _InitalSettingTheUserManagmentCountsUsers();
 
                     }
                     else
                     {
-                        G2MD.Icon = MessageDialogIcon.Error;
+
+                        MDI = MessageDialogIcon.Error;
                         if (mUser.RoleID == clsEETMS_Constants.kONE)
                         {
 
-                            G2MD.Text = "The User is Inactive/Active Faild , Because The User is Admin .";
+                            TextMessage = "The User is Inactive/Active Faild , Because The User is Admin .";
                         }
                         else
-                            G2MD.Text = "The User is Inactive Faild";
+                            TextMessage = "The User is Inactive Faild";
                     }
 
+                    MDB = MessageDialogButtons.OK;
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, TextMessage, CaptionMessage, MDB, MDI);
 
 
-                    G2MD.Show();
+
                 }
             }
             else
             {
-                G2MD.Caption = "Invalid Select From List User!!";
-                G2MD.Icon = MessageDialogIcon.Error;
-                G2MD.Text = "Please Select The User In The List To Be Inactive/Active User . ";
+                CaptionMessage = "Invalid Select From List User!!";
+                MDI = MessageDialogIcon.Error;
+                TextMessage = "Please Select The User In The List To Be Inactive/Active User . ";
 
-                G2MD.Show();
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, TextMessage, CaptionMessage, MDB, MDI);
+
             }
         }
 

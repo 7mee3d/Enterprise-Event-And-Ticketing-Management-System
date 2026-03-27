@@ -20,12 +20,14 @@ namespace EETMS_DataAccessLayer
         private static int _InsertNewRole(RoleDTO InformationNewRole)
         {
 
-            int IDNewRole = 0;
+            int IDNewRole = -1;
 
-            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            try
             {
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
 
-                string Query = @"
+                    string Query = @"
 
 
                                     INSERT INTO Roles (RoleName , DescripationRole , Permssions )
@@ -36,32 +38,38 @@ namespace EETMS_DataAccessLayer
 
                             ";
 
-                using (SqlCommand command = new SqlCommand(Query, connection))
-                {
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
 
 
-                    command.Parameters.AddWithValue("@RoleName", InformationNewRole.RoleName);
-                    if (!string.IsNullOrWhiteSpace(InformationNewRole.DescripationRole))
-                        command.Parameters.AddWithValue("@DescripationRole", InformationNewRole.DescripationRole);
-                    else command.Parameters.AddWithValue("@DescripationRole", DBNull.Value);
+                        command.Parameters.AddWithValue("@RoleName", InformationNewRole.RoleName);
+                        if (!string.IsNullOrWhiteSpace(InformationNewRole.DescripationRole))
+                            command.Parameters.AddWithValue("@DescripationRole", InformationNewRole.DescripationRole);
+                        else command.Parameters.AddWithValue("@DescripationRole", DBNull.Value);
 
-                    if (InformationNewRole.PermssionsRole == 0)
-                        command.Parameters.AddWithValue("@Permssions", -1);
-                    else command.Parameters.AddWithValue("@Permssions", InformationNewRole.PermssionsRole);
+                        if (InformationNewRole.PermssionsRole == 0)
+                            command.Parameters.AddWithValue("@Permssions", -1);
+                        else command.Parameters.AddWithValue("@Permssions", InformationNewRole.PermssionsRole);
 
-                    connection.Open();
+                        connection.Open();
 
-                    object result = command.ExecuteScalar();
+                        object result = command.ExecuteScalar();
 
-                    if (result != null && int.TryParse(result.ToString(), out int ResultNewIDRole))
-                        IDNewRole = ResultNewIDRole;
+                        if (result != null && int.TryParse(result.ToString(), out int ResultNewIDRole))
+                            IDNewRole = ResultNewIDRole;
 
-                    InformationNewRole.RoleID = IDNewRole;
+                        InformationNewRole.RoleID = IDNewRole;
+                    }
+
+
+
                 }
-
-
-
             }
+            catch (Exception ex)
+            {
+                return IDNewRole;
+            }
+
 
             return IDNewRole;
 
@@ -83,7 +91,7 @@ namespace EETMS_DataAccessLayer
                 string Query = @"
 
                                             UPDATE Roles 
-                                            SET RoleName  = @RoleName  , DescripationRole = @DescripationRole , Permssions = @Permssions 
+                                            SET RoleName  = @RoleName  , DescripationRole = @DescripationRole , Permssions = @Permssions , IsActiveRole = @StatusActiveRole
 
                                             WHERE RoleID = @RoleID ; 
 
@@ -104,6 +112,8 @@ namespace EETMS_DataAccessLayer
                     if (InfromationNewRole.PermssionsRole == 0)
                         command.Parameters.AddWithValue("@Permssions", -1);
                     else command.Parameters.AddWithValue("@Permssions", InfromationNewRole.PermssionsRole);
+
+                    command.Parameters.AddWithValue("@StatusActiveRole", InfromationNewRole.isActiveRole);
 
                     connection.Open();
 

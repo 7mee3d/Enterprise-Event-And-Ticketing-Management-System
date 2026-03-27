@@ -44,6 +44,7 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.EditRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ActiveInactiveRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -196,7 +197,8 @@
             this.toolStripTextBox1,
             this.toolStripSeparator1,
             this.EditRoleToolStripMenuItem,
-            this.deleteRoleToolStripMenuItem});
+            this.deleteRoleToolStripMenuItem,
+            this.ActiveInactiveRoleToolStripMenuItem});
             this.GContextMenuStripRoles.Name = "GContextMenuStripEvents";
             this.GContextMenuStripRoles.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.GContextMenuStripRoles.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
@@ -207,7 +209,7 @@
             this.GContextMenuStripRoles.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.GContextMenuStripRoles.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.GContextMenuStripRoles.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripRoles.Size = new System.Drawing.Size(161, 74);
+            this.GContextMenuStripRoles.Size = new System.Drawing.Size(193, 118);
             // 
             // toolStripTextBox1
             // 
@@ -224,7 +226,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(189, 6);
             // 
             // EditRoleToolStripMenuItem
             // 
@@ -232,16 +234,25 @@
             this.EditRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
             this.EditRoleToolStripMenuItem.Name = "EditRoleToolStripMenuItem";
-            this.EditRoleToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.EditRoleToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.EditRoleToolStripMenuItem.Text = "Edit Role";
             this.EditRoleToolStripMenuItem.Click += new System.EventHandler(this.EditRoleToolStripMenuItem_Click);
+            // 
+            // ActiveInactiveRoleToolStripMenuItem
+            // 
+            this.ActiveInactiveRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActiveInactiveRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.ActiveInactiveRoleToolStripMenuItem.Name = "ActiveInactiveRoleToolStripMenuItem";
+            this.ActiveInactiveRoleToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.ActiveInactiveRoleToolStripMenuItem.Text = "Active / Inactive Role";
+            this.ActiveInactiveRoleToolStripMenuItem.Click += new System.EventHandler(this.ActiveInactiveRoleToolStripMenuItem_Click);
             // 
             // deleteRoleToolStripMenuItem
             // 
             this.deleteRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
             this.deleteRoleToolStripMenuItem.Name = "deleteRoleToolStripMenuItem";
-            this.deleteRoleToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.deleteRoleToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.deleteRoleToolStripMenuItem.Text = "Delete Role";
             this.deleteRoleToolStripMenuItem.Click += new System.EventHandler(this.deleteRoleToolStripMenuItem_Click);
             // 
@@ -464,5 +475,6 @@
         private System.Windows.Forms.ToolStripMenuItem EditRoleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteRoleToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
+        private System.Windows.Forms.ToolStripMenuItem ActiveInactiveRoleToolStripMenuItem;
     }
 }

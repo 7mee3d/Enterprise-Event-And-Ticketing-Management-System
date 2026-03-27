@@ -27,7 +27,7 @@ namespace EETMS_DTOs
         public int RoleID { get; set; }
         public string RoleName { get; set; }
         public string DescripationRole { get; set; }
-        public bool isActiveRole { get; set; }
+        public bool isActiveRole { get; set; } = true;
         public int PermssionsRole { get; set; }
         public EnModeRole ModeRole { get; set; }
 
@@ -36,7 +36,6 @@ namespace EETMS_DTOs
             this.RoleID = default(int);
             this.RoleName = default(string);
             this.DescripationRole = default(string);
-            this.isActiveRole = default(bool);
             this.PermssionsRole = default(int);
 
             this.ModeRole = EnModeRole.kADD_NEW_ROLE;

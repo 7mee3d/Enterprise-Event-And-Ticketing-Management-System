@@ -1,5 +1,4 @@
 ﻿
-using System;
 namespace EETMS_BusinessLayer.EETMS_Constants
 {
     public sealed class clsEETMS_Constants

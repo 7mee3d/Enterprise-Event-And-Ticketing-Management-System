@@ -1,5 +1,6 @@
 ﻿using EETMS_BusinessLayer.EETMS_Constants;
 using EETMS_BusinessLayer.Roles_Business_Layer;
+using EETMS_DTOs;
 using EETMS_Presentation.EETMS_Settings;
 using Guna.UI2.WinForms;
 using System;
@@ -14,12 +15,12 @@ namespace EETMS_Presentation.EETMS_Roles
 
         public event EventHandler<int> ERequestToOpenCreateNewRole;
         private Guna2MessageDialog _G2MD;
-  
+
         public US_RolesManagment()
         {
             InitializeComponent();
 
-            _G2MD = null; 
+            _G2MD = null;
         }
 
         private void _InitalSettingAfterLoadTheUSRoles()
@@ -97,6 +98,37 @@ namespace EETMS_Presentation.EETMS_Roles
                     return;
                 }
 
+        }
+
+        private void ActiveInactiveRoleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int RoleID = _GetTheIDRoleFromDGV();
+            string WordActiveInactive = clsEETMS_Constants.kEMPTY_STRING;
+
+            RoleDTO DTO_Role = RolesBL.FindTheRoleBy(RoleID);
+
+            if (DTO_Role.isActiveRole)
+            {
+                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure Make Role Inactive ?", "Note Active/Inactive Role", MessageDialogButtons.YesNo, MessageDialogIcon.Question))
+                {
+                    DTO_Role.isActiveRole = false;
+                    WordActiveInactive = "Inactive";
+                }
+            }
+            else
+                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure Make Role Active ?", "Note Active/Inactive Role", MessageDialogButtons.YesNo, MessageDialogIcon.Question))
+            {
+                WordActiveInactive = "Active";
+                DTO_Role.isActiveRole = true;
+            }
+
+
+            DTO_Role.ModeRole = RoleDTO.EnModeRole.kUPDATE_INFORMATION_ROLE;
+
+            if (RolesBL.SaveMode(DTO_Role)) clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, $"The Role [ {DTO_Role.RoleName} ] is [{WordActiveInactive}] Successfully", "Note Active/Inactive Role", MessageDialogButtons.OK, MessageDialogIcon.Information);
+            else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, $"The Role [ {DTO_Role.RoleName} ] is [{WordActiveInactive}] Faild Because The Role Referances Users", "Note Active/Inactive Role", MessageDialogButtons.OK, MessageDialogIcon.Error);
+
+            _LoadDataRolesAndHeaders();
         }
     }
 }
