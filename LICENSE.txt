@@ -1,1 +1,20 @@
+EETMS - Enterprise Event And Ticketing Management System
 
+Copyright (c) 2026 Ahmed Jehad
+
+This project is for educational purposes only.
+
+Permission
+
+You may:  
+- View the source code  
+- Learn from it  
+- Modify it for personal, non-commercial learning  
+
+ Restrictions
+
+You may not:  
+- Use this project for commercial purposes or profit  
+- Sell or distribute it as your own  
+- Claim it as your original work  
+- Use it for purposes other than personal learning and study
