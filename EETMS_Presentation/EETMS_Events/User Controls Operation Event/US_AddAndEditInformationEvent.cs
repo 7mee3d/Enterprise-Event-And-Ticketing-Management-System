@@ -164,7 +164,12 @@ namespace EETMS_Presentation.EETMS_Events
 
             if (!_CheckTheAllTextBoxiesFilledOrNot())
             {
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, _TextTheMessageDialogToCheckTheDataEventEntered(), "Invalid Data", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD,
+                    _TextTheMessageDialogToCheckTheDataEventEntered(),
+                    "Invalid Data",
+                    MessageDialogButtons.OK,
+                    MessageDialogIcon.Error);
                 return;
             }
 
@@ -184,15 +189,31 @@ namespace EETMS_Presentation.EETMS_Events
 
             if (EventBL.FindTheEventBy(GTextBoxEventName.Text))
             {
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, $"The Event [ {GTextBoxEventName.Text} ] Already Exsits Enter Another Name", "Note The Add New Event", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD,
+                    $"The Event [ {GTextBoxEventName.Text} ] Already Exsits Enter Another Name",
+                    "Note The Add New Event",
+                    MessageDialogButtons.OK,
+                    MessageDialogIcon.Error);
                 return;
             }
 
             if (EventBL.SaveTheMode(_InformationEvent))
             {
 
-                if (_InformationEvent.EnMode == EventDTO.EnModeEvent._kADD_NEW_EVENT) clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Add The New Event Information Sccessfully", "Note The Add New Event", MessageDialogButtons.OK, MessageDialogIcon.Information);
-                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Update The Event Information Sccessfully", "Note The Update Event ", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                if (_InformationEvent.EnMode == EventDTO.EnModeEvent._kADD_NEW_EVENT) 
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                        _G2MD,
+                        "Add The New Event Information Sccessfully",
+                        "Note The Add New Event",
+                        MessageDialogButtons.OK,
+                        MessageDialogIcon.Information);
+                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD,
+                    "Update The Event Information Sccessfully",
+                    "Note The Update Event ",
+                    MessageDialogButtons.OK, 
+                    MessageDialogIcon.Information);
 
                 _IDEvent = _InformationEvent.EventID;
             }

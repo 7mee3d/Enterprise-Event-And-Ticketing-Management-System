@@ -192,7 +192,7 @@
             this.GButtonCard.Name = "GButtonCard";
             this.GButtonCard.Size = new System.Drawing.Size(138, 72);
             this.GButtonCard.TabIndex = 3;
-            this.GButtonCard.Tag = "2";
+            this.GButtonCard.Tag = "1";
             this.GButtonCard.Text = "Card";
             this.GButtonCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.GButtonCard.TextOffset = new System.Drawing.Point(43, 15);
@@ -227,7 +227,7 @@
             this.GButtonCash.Name = "GButtonCash";
             this.GButtonCash.Size = new System.Drawing.Size(138, 72);
             this.GButtonCash.TabIndex = 2;
-            this.GButtonCash.Tag = "1";
+            this.GButtonCash.Tag = "2";
             this.GButtonCash.Text = "Cash";
             this.GButtonCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.GButtonCash.TextOffset = new System.Drawing.Point(43, 15);

@@ -207,7 +207,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                             TextMessage = "The User is Inactive/Active Faild , Because The User is Admin .";
                         }
                         else
-                            TextMessage = "The User is Inactive Faild";
+                            TextMessage = "The User is Inactive Failed";
                     }
 
                     MDB = MessageDialogButtons.OK;

@@ -26,13 +26,12 @@ namespace EETMS_Presentation.EETMS_Payment
             mPayment = null;
             _G2MD = null;
 
-
         }
 
         private void _LoadThReservationPaymentIDandNameCustomer()
         {
-            List<ReservationPaymentDTO> AllInformationReservationPayment = ReservationPaymentBL.GetAllInformationReservationPayment();
-
+            List<ReservationPaymentDTO> AllInformationReservationPayment =
+                ReservationPaymentBL.GetAllInformationReservationPayment();
 
             GComboBoxBookingIDAndCustomerName.DataSource = AllInformationReservationPayment;
             GComboBoxBookingIDAndCustomerName.DisplayMember = "DisplayComboBox";
@@ -58,7 +57,7 @@ namespace EETMS_Presentation.EETMS_Payment
             }
 
         }
-
+  
         private void Close_Click(object sender, EventArgs e)
             => ERequestTheClosePaymentBooking?.Invoke(this, EventArgs.Empty);
 
@@ -134,7 +133,8 @@ namespace EETMS_Presentation.EETMS_Payment
                     };
                 }
 
-                if ((!GButtonCash.Checked && !GButtonCard.Checked && !GButtonBankTransfer.Checked) || GNumericUpDownAmountToPay.Value < clsEETMS_Constants.kZERO)
+                if ((!GButtonCash.Checked && !GButtonCard.Checked && !GButtonBankTransfer.Checked) ||
+                    GNumericUpDownAmountToPay.Value < clsEETMS_Constants.kZERO)
                 {
                     clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Invalid Data! Please Enter All Data To Be Confirm Reservation", "Note Of Confirm Reservation", MessageDialogButtons.OK, MessageDialogIcon.Error);
                     return;

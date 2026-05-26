@@ -252,6 +252,7 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             _MTicketType = _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
             _ObjTicketTypeInformation.EnMode = TicketTypeDTO.EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE;
+            _IDTicketType = _ObjTicketTypeInformation.TicketTypeID;
 
             GButtonAddTicketAndSave.Text = "Save Changes";
 

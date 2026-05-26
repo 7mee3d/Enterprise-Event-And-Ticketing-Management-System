@@ -53,7 +53,7 @@ namespace EETMS_Presentation.EETMS_Main
             {
                 lblNameUser.Text = _InformationUser.UserFullName;
                 lblRoleUser.Text = _InformationUser.RoleName;
-                if (_InformationUser.ImagePath != null)
+                if ( !string.IsNullOrWhiteSpace(_InformationUser.ImagePath))
                     GCPictureBoxImageUser.Load(_InformationUser.ImagePath);
                 else
                     GCPictureBoxImageUser.Image = Resources.Image_hide_White_Icon_EETMS;
@@ -197,8 +197,8 @@ namespace EETMS_Presentation.EETMS_Main
                 _ShowTheCreateNewEventUS(eventId);
             };
 
-            us.ERequestToOpenThe_USAddNewTicketTypeToTheEvent += (sender, DataAddNewTicketToRvent) =>
-            _OpenTheAddNewTicketTypeToTheEvent(DataAddNewTicketToRvent.EventID, DataAddNewTicketToRvent.TicketTypeID);
+            us.ERequestToOpenThe_USAddNewTicketTypeToTheEvent += (sender, DataAddNewTicketToEvent) =>
+            _OpenTheAddNewTicketTypeToTheEvent(DataAddNewTicketToEvent.EventID, DataAddNewTicketToEvent.TicketTypeID);
 
             _ShowTheUserControlInThePanel(us);
         }
