@@ -15,6 +15,7 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
     {
 
         public event EventHandler<int> ERequestToTheClose_USAddNewTicketTypeToTheEvent;
+        public event Action<bool> OnFinishedAddUpdateInfoTickets;
 
         private int _IDEvent;
         private int _IDTicketType;
@@ -237,7 +238,7 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
 
             if (TicketBL.SaveModeTicketType(_ObjTicketTypeInformation))
             {
-
+                OnFinishedAddUpdateInfoTickets?.Invoke(true);
                 if (_MTicketType == _EnModeTicketType._kADD_NEW_TICKETTYPE)
                     clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "\nAdd The Ticket Type Successfully", "Note For Add New Ticket Type", MessageDialogButtons.OK, MessageDialogIcon.Information);
                 else if (_MTicketType == _EnModeTicketType._kUPDATE_INFOMRATION_TICKETTYPE)

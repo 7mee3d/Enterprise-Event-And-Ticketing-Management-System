@@ -35,6 +35,7 @@ namespace EETMS_DataAccessLayer
 
                                                                         EventName,
                                                                         DateTimeEvent,
+                                                                        EndDateTimeEvent,
                                                                         Duration,
                                                                         MaxCapacity,
                                                                         Street,
@@ -44,7 +45,7 @@ namespace EETMS_DataAccessLayer
 
                                                                     )
 
-                                            VALUES (@EventName , @DateTimeEvent , @Duration , @MaxCapacity , @Street , @CountryID , @CategoryID , @Discripation) ;
+                                            VALUES (@EventName , @DateTimeEvent , @EndDateTimeEvent , @Duration , @MaxCapacity , @Street , @CountryID , @CategoryID , @Discripation) ;
 
 
                                             SELECT SCOPE_IDENTITY();
@@ -58,6 +59,7 @@ namespace EETMS_DataAccessLayer
 
                         command.Parameters.Add("EventName", SqlDbType.NVarChar, 300).Value = InfoNewEvent.EventName;
                         command.Parameters.Add("DateTimeEvent", SqlDbType.DateTime2).Value = InfoNewEvent.DateTimeEvent;
+                        command.Parameters.Add("EndDateTimeEvent", SqlDbType.DateTime2).Value = InfoNewEvent.EndDateTimeEvent;
                         command.Parameters.Add("Duration", SqlDbType.Int).Value = InfoNewEvent.DurationEvent;
                         command.Parameters.Add("MaxCapacity", SqlDbType.SmallInt).Value = InfoNewEvent.MaxCapacity;
                         command.Parameters.Add("Street", SqlDbType.NVarChar, 350).Value = InfoNewEvent.Street;

@@ -17,6 +17,7 @@ namespace EETMS_DTOs
         public int EventID { get; set; }
         public string EventName { get; set; }
         public DateTime? DateTimeEvent { get; set; }
+        public DateTime? EndDateTimeEvent { get; set; }
         public int DurationEvent { get; set; }
         public int MaxCapacity { get; set; }
         public string Street { get; set; }
@@ -58,7 +59,7 @@ namespace EETMS_DTOs
             this.CategoryID = default(int);
             this.Discripation = default(string);
             this.IsActiveEvent = true;
-
+            this.EndDateTimeEvent = default;
             this.EnMode = EnModeEvent._kADD_NEW_EVENT;
 
         }

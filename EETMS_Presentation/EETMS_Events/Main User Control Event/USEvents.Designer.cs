@@ -37,14 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GDataGridViewEventsInformation = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTimeEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapacityEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DurationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discripation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GContextMenuStripEvents = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -81,6 +73,16 @@
             this.GComboBoxUnsageCapacityCustomerFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GCombvoBoxCategoryCustomFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GCombvoBoxStatusCustomFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTimeEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndEventDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapacityEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DurationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discripation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusEvent_Pending_InProgress_Completed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).BeginInit();
             this.GContextMenuStripEvents.SuspendLayout();
@@ -152,10 +154,12 @@
             this.EventName,
             this.Category,
             this.DateTimeEvent,
+            this.EndEventDateTime,
             this.CapacityEvent,
             this.LocationEvent,
             this.DurationEvent,
-            this.Discripation});
+            this.Discripation,
+            this.StatusEvent_Pending_InProgress_Completed});
             this.GDataGridViewEventsInformation.ContextMenuStrip = this.GContextMenuStripEvents;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -205,63 +209,6 @@
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.Height = 67;
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // EventID
-            // 
-            this.EventID.HeaderText = "EventID";
-            this.EventID.Name = "EventID";
-            this.EventID.ReadOnly = true;
-            this.EventID.Visible = false;
-            // 
-            // EventName
-            // 
-            this.EventName.FillWeight = 30.401F;
-            this.EventName.HeaderText = "EVENT NAME";
-            this.EventName.MinimumWidth = 20;
-            this.EventName.Name = "EventName";
-            this.EventName.ReadOnly = true;
-            // 
-            // Category
-            // 
-            this.Category.FillWeight = 12.7665F;
-            this.Category.HeaderText = "CATEGORY";
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            // 
-            // DateTimeEvent
-            // 
-            this.DateTimeEvent.FillWeight = 17.7665F;
-            this.DateTimeEvent.HeaderText = "DATE & TIME";
-            this.DateTimeEvent.Name = "DateTimeEvent";
-            this.DateTimeEvent.ReadOnly = true;
-            // 
-            // CapacityEvent
-            // 
-            this.CapacityEvent.FillWeight = 12.7665F;
-            this.CapacityEvent.HeaderText = "CAPACITY";
-            this.CapacityEvent.Name = "CapacityEvent";
-            this.CapacityEvent.ReadOnly = true;
-            // 
-            // LocationEvent
-            // 
-            this.LocationEvent.FillWeight = 22.7665F;
-            this.LocationEvent.HeaderText = "LOCATION EVENT";
-            this.LocationEvent.Name = "LocationEvent";
-            this.LocationEvent.ReadOnly = true;
-            // 
-            // DurationEvent
-            // 
-            this.DurationEvent.FillWeight = 10.7665F;
-            this.DurationEvent.HeaderText = "DURATION EVENT";
-            this.DurationEvent.Name = "DurationEvent";
-            this.DurationEvent.ReadOnly = true;
-            // 
-            // Discripation
-            // 
-            this.Discripation.FillWeight = 17.7665F;
-            this.Discripation.HeaderText = "DESCRIPATION";
-            this.Discripation.Name = "Discripation";
-            this.Discripation.ReadOnly = true;
             // 
             // GContextMenuStripEvents
             // 
@@ -852,6 +799,77 @@
             this.GCombvoBoxStatusCustomFilter.TabIndex = 0;
             this.GCombvoBoxStatusCustomFilter.SelectionChangeCommitted += new System.EventHandler(this.GComboBoxCountryCustomerFilter_SelectionChangeCommitted);
             // 
+            // EventID
+            // 
+            this.EventID.HeaderText = "EventID";
+            this.EventID.Name = "EventID";
+            this.EventID.ReadOnly = true;
+            this.EventID.Visible = false;
+            // 
+            // EventName
+            // 
+            this.EventName.FillWeight = 30.401F;
+            this.EventName.HeaderText = "EVENT NAME";
+            this.EventName.MinimumWidth = 20;
+            this.EventName.Name = "EventName";
+            this.EventName.ReadOnly = true;
+            // 
+            // Category
+            // 
+            this.Category.FillWeight = 12.7665F;
+            this.Category.HeaderText = "CATEGORY";
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            // 
+            // DateTimeEvent
+            // 
+            this.DateTimeEvent.FillWeight = 17.7665F;
+            this.DateTimeEvent.HeaderText = "DATE & TIME";
+            this.DateTimeEvent.Name = "DateTimeEvent";
+            this.DateTimeEvent.ReadOnly = true;
+            // 
+            // EndEventDateTime
+            // 
+            this.EndEventDateTime.FillWeight = 17.7665F;
+            this.EndEventDateTime.HeaderText = "END EVENT DATE TIME";
+            this.EndEventDateTime.Name = "EndEventDateTime";
+            this.EndEventDateTime.ReadOnly = true;
+            // 
+            // CapacityEvent
+            // 
+            this.CapacityEvent.FillWeight = 12.7665F;
+            this.CapacityEvent.HeaderText = "CAPACITY";
+            this.CapacityEvent.Name = "CapacityEvent";
+            this.CapacityEvent.ReadOnly = true;
+            // 
+            // LocationEvent
+            // 
+            this.LocationEvent.FillWeight = 22.7665F;
+            this.LocationEvent.HeaderText = "LOCATION EVENT";
+            this.LocationEvent.Name = "LocationEvent";
+            this.LocationEvent.ReadOnly = true;
+            // 
+            // DurationEvent
+            // 
+            this.DurationEvent.FillWeight = 10.7665F;
+            this.DurationEvent.HeaderText = "DURATION EVENT";
+            this.DurationEvent.Name = "DurationEvent";
+            this.DurationEvent.ReadOnly = true;
+            // 
+            // Discripation
+            // 
+            this.Discripation.FillWeight = 17.7665F;
+            this.Discripation.HeaderText = "DESCRIPATION";
+            this.Discripation.Name = "Discripation";
+            this.Discripation.ReadOnly = true;
+            // 
+            // StatusEvent_Pending_InProgress_Completed
+            // 
+            this.StatusEvent_Pending_InProgress_Completed.FillWeight = 15F;
+            this.StatusEvent_Pending_InProgress_Completed.HeaderText = "EVENT STATUS";
+            this.StatusEvent_Pending_InProgress_Completed.Name = "StatusEvent_Pending_InProgress_Completed";
+            this.StatusEvent_Pending_InProgress_Completed.ReadOnly = true;
+            // 
             // USEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -921,14 +939,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem EditToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteEventToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EventID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateTimeEvent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CapacityEvent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationEvent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DurationEvent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Discripation;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonWarningDisable;
         private Guna.UI2.WinForms.Guna2GradientPanel GGMainPanelFilter;
         private Guna.UI2.WinForms.Guna2ComboBox GSubComboBoxTypeTheFilter;
@@ -941,5 +951,15 @@
         private Guna.UI2.WinForms.Guna2ComboBox GCombvoBoxCategoryCustomFilter;
         private Guna.UI2.WinForms.Guna2ComboBox GCombvoBoxStatusCustomFilter;
         private Guna.UI2.WinForms.Guna2ComboBox GComboBoxCountryCustomerFilter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateTimeEvent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndEventDateTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CapacityEvent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationEvent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DurationEvent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discripation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusEvent_Pending_InProgress_Completed;
     }
 }

@@ -119,7 +119,8 @@ namespace EETMS_DataAccessLayer
 						                        COUN.CountryName,
 						                        E.Street,	
                                                 E.Discripation ,
-						                        E.IsActiveEvent
+						                        E.IsActiveEvent ,
+                                                E.EndDateTimeEvent
 
 
                                                                         FROM Events E
@@ -140,7 +141,8 @@ namespace EETMS_DataAccessLayer
                                      				COUN.CountryName,
                                      				E.Street,
                                                     E.Discripation,
-                                     				E.IsActiveEvent;
+                                     				E.IsActiveEvent ,
+                                                    E.EndDateTimeEvent ;
 
 
 

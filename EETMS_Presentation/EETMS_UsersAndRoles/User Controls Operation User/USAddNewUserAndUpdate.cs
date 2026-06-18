@@ -79,7 +79,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             GComboBoxRoleUser.SelectedValue = _InformationUser.RoleID;
             GTextBoxPassword.Text = _InformationUser.PasswordUser;
 
-            if (_InformationUser.ImagePath != null)
+            if (!string.IsNullOrWhiteSpace(_InformationUser.ImagePath))
             {
                 GCPictureBoxImageUser.Visible = true;
                 _ImagePathUser = _InformationUser.ImagePath;
@@ -98,6 +98,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             lblTiteTheUS.Text = "Update Account";
 
         }
+
 
         private void _LoadAllInformationRolesToComboBox()
         {

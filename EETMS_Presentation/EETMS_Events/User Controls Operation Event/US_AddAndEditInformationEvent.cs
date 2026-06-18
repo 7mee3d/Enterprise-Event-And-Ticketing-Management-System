@@ -49,13 +49,31 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
+        private bool _HnadleDateTime()
+        {
+            if (_Mode == _EnMode._kADD_NEW_EVENT)
+                if (GDateTimePickerEndDateTimeEvent.Value < GDateTimePickerStartDateTimeEvent.Value)
+
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD,
+                    "Connot Add Event Becouse Start Date Grather Than End",
+                    "Invalid Data",
+                    MessageDialogButtons.OK,
+                    MessageDialogIcon.Error);
+                    return false;
+                }
+
+            return true;
+        }
+
         private void _LoadAllInformationEvent()
         {
 
 
             if (_Mode == _EnMode._kADD_NEW_EVENT)
             {
-                GDateTimePickerEvent.MinDate = DateTime.Today;
+                GDateTimePickerStartDateTimeEvent.MinDate = DateTime.Today;
                 _InformationEvent = new EventDTO();
                 _InformationEvent.EnMode = EventDTO.EnModeEvent._kADD_NEW_EVENT;
                 return;
@@ -77,7 +95,7 @@ namespace EETMS_Presentation.EETMS_Events
             _InformationEvent.EnMode = EventDTO.EnModeEvent._kUPDATE_INFORMATION_EVENT;
             GTextBoxEventName.Text = _InformationEvent.EventName;
             GTextBoxDiscripation.Text = _InformationEvent.Discripation;
-            GDateTimePickerEvent.Value = _InformationEvent.DateTimeEvent.Value;
+            GDateTimePickerStartDateTimeEvent.Value = _InformationEvent.DateTimeEvent.Value;
             GComboBoxCategories.SelectedValue = _InformationEvent.CategoryID;
             GComboBoxCountries.SelectedValue = _InformationEvent.CountryID;
             GTextBoxStreet.Text = _InformationEvent.Street;
@@ -161,6 +179,7 @@ namespace EETMS_Presentation.EETMS_Events
 
         private void _AddOrEditEventInformation()
         {
+            if (!_HnadleDateTime()) return;
 
             if (!_CheckTheAllTextBoxiesFilledOrNot())
             {
@@ -175,7 +194,8 @@ namespace EETMS_Presentation.EETMS_Events
 
             _InformationEvent.EventName = GTextBoxEventName.Text;
             _InformationEvent.Discripation = GTextBoxDiscripation.Text;
-            _InformationEvent.DateTimeEvent = GDateTimePickerEvent.Value;
+            _InformationEvent.DateTimeEvent = GDateTimePickerStartDateTimeEvent.Value;
+            _InformationEvent.EndDateTimeEvent = GDateTimePickerEndDateTimeEvent.Value;
             _InformationEvent.CategoryID = Convert.ToInt32(GComboBoxCategories.SelectedValue);
             _InformationEvent.CountryID = Convert.ToInt32(GComboBoxCountries.SelectedValue);
             _InformationEvent.Street = GTextBoxStreet.Text;
@@ -187,21 +207,22 @@ namespace EETMS_Presentation.EETMS_Events
 
             _InformationEvent.MaxCapacity = Convert.ToInt32(GNumericUpDownMaxCapacity.Value);
 
-            if (EventBL.FindTheEventBy(GTextBoxEventName.Text))
-            {
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
-                    _G2MD,
-                    $"The Event [ {GTextBoxEventName.Text} ] Already Exsits Enter Another Name",
-                    "Note The Add New Event",
-                    MessageDialogButtons.OK,
-                    MessageDialogIcon.Error);
-                return;
-            }
+            if (_Mode == _EnMode._kADD_NEW_EVENT)
+                if (EventBL.FindTheEventBy(GTextBoxEventName.Text))
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                        _G2MD,
+                        $"The Event [ {GTextBoxEventName.Text} ] Already Exsits Enter Another Name",
+                        "Note The Add New Event",
+                        MessageDialogButtons.OK,
+                        MessageDialogIcon.Error);
+                    return;
+                }
 
             if (EventBL.SaveTheMode(_InformationEvent))
             {
 
-                if (_InformationEvent.EnMode == EventDTO.EnModeEvent._kADD_NEW_EVENT) 
+                if (_InformationEvent.EnMode == EventDTO.EnModeEvent._kADD_NEW_EVENT)
                     clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
                         _G2MD,
                         "Add The New Event Information Sccessfully",
@@ -212,7 +233,7 @@ namespace EETMS_Presentation.EETMS_Events
                     _G2MD,
                     "Update The Event Information Sccessfully",
                     "Note The Update Event ",
-                    MessageDialogButtons.OK, 
+                    MessageDialogButtons.OK,
                     MessageDialogIcon.Information);
 
                 _IDEvent = _InformationEvent.EventID;
@@ -230,9 +251,22 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
+        private void _SetDefaultDateTimeEvent()
+        {
+            if (_Mode == _EnMode._kADD_NEW_EVENT)
+            {
+                GDateTimePickerStartDateTimeEvent.MinDate = DateTime.Now;
+                GDateTimePickerStartDateTimeEvent.Value = GDateTimePickerStartDateTimeEvent.MinDate;
+
+
+                GDateTimePickerEndDateTimeEvent.MinDate = DateTime.Now;
+                GDateTimePickerEndDateTimeEvent.Value = GDateTimePickerEndDateTimeEvent.MinDate;
+            }
+        }
+
         private void US_AddAndEditInformationEvent_Load(object sender, EventArgs e)
         {
-
+            _SetDefaultDateTimeEvent();
             _LoadAllInformationCountriesInComboBox();
             _LoadAllInformationCategoriesInComboBox();
 

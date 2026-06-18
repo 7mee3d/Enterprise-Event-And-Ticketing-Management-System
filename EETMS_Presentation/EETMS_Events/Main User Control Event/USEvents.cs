@@ -40,6 +40,18 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
+        private string _GetTheEventStatusBy(DateTime StartDateTimeEvent, DateTime EndDateTimeEvent)
+        {
+            if (StartDateTimeEvent.ToString() == "1/1/0001 12:00:00 AM" || EndDateTimeEvent.ToString() == "1/1/0001 12:00:00 AM") return "Unknown";
+
+            if (DateTime.Now > EndDateTimeEvent) return "Completed";
+
+            if (StartDateTimeEvent > DateTime.Now) return "Pending";
+
+
+            return "In Progress";
+        }
+
         private void _LoadTheInformationEventsToGDVBy(DataTable DT_EventsInformation)
         {
             GDataGridViewEventsInformation.Rows.Clear();
@@ -53,10 +65,12 @@ namespace EETMS_Presentation.EETMS_Events
                     DR_Event["EventName"],
                     DR_Event["CategoryName"],
                     DR_Event["DateTimeEvent"],
+                     !string.IsNullOrWhiteSpace(DR_Event["EndDateTimeEvent"].ToString()) ? DR_Event["EndDateTimeEvent"] : "Unknown",
                     DR_Event["SoldTickets"] + " / " + DR_Event["MaxCapacity"],
                     DR_Event["CountryName"] + " , " + DR_Event["Street"],
                     DR_Event["Duration"],
-                    DR_Event["Discripation"]
+                    DR_Event["Discripation"],
+                    _GetTheEventStatusBy(Convert.ToDateTime(DR_Event["DateTimeEvent"]), Convert.ToDateTime(!string.IsNullOrWhiteSpace(DR_Event["EndDateTimeEvent"].ToString()) ? DR_Event["EndDateTimeEvent"] : null))
 
 
                                                     );

@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GNumericUpDownMaxCapacity = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.GDateTimePickerEvent = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.GDateTimePickerStartDateTimeEvent = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.GComboBoxCountries = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxCategories = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -56,6 +56,8 @@
             this.GButtonCreateEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GButtonCansel = new Guna.UI2.WinForms.Guna2Button();
             this.GGButtonWarningDisable = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GDateTimePickerEndDateTimeEvent = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownMaxCapacity)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
@@ -111,8 +113,10 @@
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.guna2GradientPanel1.BorderRadius = 20;
             this.guna2GradientPanel1.BorderThickness = 1;
+            this.guna2GradientPanel1.Controls.Add(this.GDateTimePickerEndDateTimeEvent);
+            this.guna2GradientPanel1.Controls.Add(this.label12);
             this.guna2GradientPanel1.Controls.Add(this.GNumericUpDownMaxCapacity);
-            this.guna2GradientPanel1.Controls.Add(this.GDateTimePickerEvent);
+            this.guna2GradientPanel1.Controls.Add(this.GDateTimePickerStartDateTimeEvent);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel1.Controls.Add(this.GComboBoxCountries);
             this.guna2GradientPanel1.Controls.Add(this.GComboBoxCategories);
@@ -143,7 +147,7 @@
             this.GNumericUpDownMaxCapacity.BorderRadius = 5;
             this.GNumericUpDownMaxCapacity.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.GNumericUpDownMaxCapacity.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNumericUpDownMaxCapacity.Location = new System.Drawing.Point(536, 357);
+            this.GNumericUpDownMaxCapacity.Location = new System.Drawing.Point(533, 391);
             this.GNumericUpDownMaxCapacity.Maximum = new decimal(new int[] {
             3000,
             0,
@@ -154,24 +158,24 @@
             this.GNumericUpDownMaxCapacity.TabIndex = 6;
             this.GNumericUpDownMaxCapacity.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             // 
-            // GDateTimePickerEvent
+            // GDateTimePickerStartDateTimeEvent
             // 
-            this.GDateTimePickerEvent.Animated = true;
-            this.GDateTimePickerEvent.BackColor = System.Drawing.Color.Transparent;
-            this.GDateTimePickerEvent.BorderRadius = 6;
-            this.GDateTimePickerEvent.Checked = true;
-            this.GDateTimePickerEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.GDateTimePickerEvent.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GDateTimePickerEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
-            this.GDateTimePickerEvent.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.GDateTimePickerEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.GDateTimePickerEvent.Location = new System.Drawing.Point(533, 77);
-            this.GDateTimePickerEvent.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.GDateTimePickerEvent.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.GDateTimePickerEvent.Name = "GDateTimePickerEvent";
-            this.GDateTimePickerEvent.Size = new System.Drawing.Size(419, 42);
-            this.GDateTimePickerEvent.TabIndex = 5;
-            this.GDateTimePickerEvent.Value = new System.DateTime(2026, 2, 10, 0, 14, 58, 732);
+            this.GDateTimePickerStartDateTimeEvent.Animated = true;
+            this.GDateTimePickerStartDateTimeEvent.BackColor = System.Drawing.Color.Transparent;
+            this.GDateTimePickerStartDateTimeEvent.BorderRadius = 6;
+            this.GDateTimePickerStartDateTimeEvent.Checked = true;
+            this.GDateTimePickerStartDateTimeEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.GDateTimePickerStartDateTimeEvent.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GDateTimePickerStartDateTimeEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
+            this.GDateTimePickerStartDateTimeEvent.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.GDateTimePickerStartDateTimeEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.GDateTimePickerStartDateTimeEvent.Location = new System.Drawing.Point(533, 77);
+            this.GDateTimePickerStartDateTimeEvent.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.GDateTimePickerStartDateTimeEvent.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.GDateTimePickerStartDateTimeEvent.Name = "GDateTimePickerStartDateTimeEvent";
+            this.GDateTimePickerStartDateTimeEvent.Size = new System.Drawing.Size(419, 42);
+            this.GDateTimePickerStartDateTimeEvent.TabIndex = 5;
+            this.GDateTimePickerStartDateTimeEvent.Value = new System.DateTime(2026, 2, 10, 0, 14, 58, 732);
             // 
             // guna2Button1
             // 
@@ -258,7 +262,7 @@
             this.GTextBoxDuration.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GTextBoxDuration.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GTextBoxDuration.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxDuration.Location = new System.Drawing.Point(533, 215);
+            this.GTextBoxDuration.Location = new System.Drawing.Point(527, 286);
             this.GTextBoxDuration.Name = "GTextBoxDuration";
             this.GTextBoxDuration.PlaceholderText = "Duration....";
             this.GTextBoxDuration.SelectedText = "";
@@ -321,7 +325,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(532, 324);
+            this.label9.Location = new System.Drawing.Point(529, 358);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 20);
             this.label9.TabIndex = 1;
@@ -365,7 +369,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(529, 188);
+            this.label8.Location = new System.Drawing.Point(523, 259);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 20);
             this.label8.TabIndex = 1;
@@ -389,9 +393,9 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(523, 47);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 20);
+            this.label7.Size = new System.Drawing.Size(156, 20);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Date And Time";
+            this.label7.Text = "Start Event Date Time";
             // 
             // label3
             // 
@@ -520,6 +524,36 @@
             this.GGButtonWarningDisable.TabIndex = 0;
             this.GGButtonWarningDisable.Text = "Events with sold tickets cannot be deleted.";
             // 
+            // GDateTimePickerEndDateTimeEvent
+            // 
+            this.GDateTimePickerEndDateTimeEvent.Animated = true;
+            this.GDateTimePickerEndDateTimeEvent.BackColor = System.Drawing.Color.Transparent;
+            this.GDateTimePickerEndDateTimeEvent.BorderRadius = 6;
+            this.GDateTimePickerEndDateTimeEvent.Checked = true;
+            this.GDateTimePickerEndDateTimeEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.GDateTimePickerEndDateTimeEvent.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GDateTimePickerEndDateTimeEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
+            this.GDateTimePickerEndDateTimeEvent.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.GDateTimePickerEndDateTimeEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.GDateTimePickerEndDateTimeEvent.Location = new System.Drawing.Point(527, 188);
+            this.GDateTimePickerEndDateTimeEvent.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.GDateTimePickerEndDateTimeEvent.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.GDateTimePickerEndDateTimeEvent.Name = "GDateTimePickerEndDateTimeEvent";
+            this.GDateTimePickerEndDateTimeEvent.Size = new System.Drawing.Size(419, 42);
+            this.GDateTimePickerEndDateTimeEvent.TabIndex = 8;
+            this.GDateTimePickerEndDateTimeEvent.Value = new System.DateTime(2026, 2, 10, 0, 14, 58, 732);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(517, 158);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(150, 20);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "End Event Date Time";
+            // 
             // US_AddAndEditInformationEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -558,7 +592,7 @@
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxStreet;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2NumericUpDown GNumericUpDownMaxCapacity;
-        private Guna.UI2.WinForms.Guna2DateTimePicker GDateTimePickerEvent;
+        private Guna.UI2.WinForms.Guna2DateTimePicker GDateTimePickerStartDateTimeEvent;
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxDuration;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -571,5 +605,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonManageTheTicketsEvents;
+        private Guna.UI2.WinForms.Guna2DateTimePicker GDateTimePickerEndDateTimeEvent;
+        private System.Windows.Forms.Label label12;
     }
 }
