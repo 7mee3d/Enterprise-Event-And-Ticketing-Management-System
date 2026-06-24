@@ -50,9 +50,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GPanelMainScreens = new Guna.UI2.WinForms.Guna2Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.GPanelMessage = new Guna.UI2.WinForms.Guna2Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.GGPanelButtonsEETMS_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GCPictureBoxImageUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicLogoutEETMS)).BeginInit();
@@ -73,6 +73,7 @@
             // 
             // GGPanelButtonsEETMS_Main
             // 
+            this.GGPanelButtonsEETMS_Main.BorderRadius = 20;
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GCPictureBoxImageUser);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.label2);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.GGPanelSeparatorBetweenManagmentAndMainOperation);
@@ -90,12 +91,11 @@
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.lblNameUser);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.pictureBox1);
             this.GGPanelButtonsEETMS_Main.Controls.Add(this.label1);
-            this.GGPanelButtonsEETMS_Main.Dock = System.Windows.Forms.DockStyle.Left;
             this.GGPanelButtonsEETMS_Main.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
             this.GGPanelButtonsEETMS_Main.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGPanelButtonsEETMS_Main.Location = new System.Drawing.Point(0, 0);
+            this.GGPanelButtonsEETMS_Main.Location = new System.Drawing.Point(11, 10);
             this.GGPanelButtonsEETMS_Main.Name = "GGPanelButtonsEETMS_Main";
-            this.GGPanelButtonsEETMS_Main.Size = new System.Drawing.Size(244, 935);
+            this.GGPanelButtonsEETMS_Main.Size = new System.Drawing.Size(244, 915);
             this.GGPanelButtonsEETMS_Main.TabIndex = 0;
             // 
             // GCPictureBoxImageUser
@@ -103,7 +103,7 @@
             this.GCPictureBoxImageUser.BackColor = System.Drawing.Color.Transparent;
             this.GCPictureBoxImageUser.Image = global::EETMS_Presentation.Properties.Resources.Image_hide_White_Icon_EETMS;
             this.GCPictureBoxImageUser.ImageRotate = 0F;
-            this.GCPictureBoxImageUser.Location = new System.Drawing.Point(9, 877);
+            this.GCPictureBoxImageUser.Location = new System.Drawing.Point(9, 853);
             this.GCPictureBoxImageUser.Name = "GCPictureBoxImageUser";
             this.GCPictureBoxImageUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.GCPictureBoxImageUser.Size = new System.Drawing.Size(51, 43);
@@ -117,7 +117,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Copperplate Gothic Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(12, 625);
+            this.label2.Location = new System.Drawing.Point(12, 619);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 12);
             this.label2.TabIndex = 8;
@@ -132,7 +132,7 @@
             this.GGPanelSeparatorBetweenManagmentAndMainOperation.CustomBorderThickness = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.GGPanelSeparatorBetweenManagmentAndMainOperation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
             this.GGPanelSeparatorBetweenManagmentAndMainOperation.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGPanelSeparatorBetweenManagmentAndMainOperation.Location = new System.Drawing.Point(8, 644);
+            this.GGPanelSeparatorBetweenManagmentAndMainOperation.Location = new System.Drawing.Point(8, 638);
             this.GGPanelSeparatorBetweenManagmentAndMainOperation.Name = "GGPanelSeparatorBetweenManagmentAndMainOperation";
             this.GGPanelSeparatorBetweenManagmentAndMainOperation.Size = new System.Drawing.Size(224, 10);
             this.GGPanelSeparatorBetweenManagmentAndMainOperation.TabIndex = 7;
@@ -146,6 +146,7 @@
             this.GButtonPayment.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.GButtonPayment.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonPayment.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonPayment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -156,7 +157,7 @@
             this.GButtonPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonPayment.Image = ((System.Drawing.Image)(resources.GetObject("GButtonPayment.Image")));
             this.GButtonPayment.ImageOffset = new System.Drawing.Point(-9, 0);
-            this.GButtonPayment.Location = new System.Drawing.Point(12, 477);
+            this.GButtonPayment.Location = new System.Drawing.Point(12, 471);
             this.GButtonPayment.Name = "GButtonPayment";
             this.GButtonPayment.Size = new System.Drawing.Size(220, 44);
             this.GButtonPayment.TabIndex = 5;
@@ -172,6 +173,7 @@
             this.GButtonRole.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.GButtonRole.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonRole.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonRole.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonRole.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonRole.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonRole.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -182,7 +184,7 @@
             this.GButtonRole.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonRole.Image = ((System.Drawing.Image)(resources.GetObject("GButtonRole.Image")));
             this.GButtonRole.ImageOffset = new System.Drawing.Point(-13, 0);
-            this.GButtonRole.Location = new System.Drawing.Point(12, 728);
+            this.GButtonRole.Location = new System.Drawing.Point(12, 722);
             this.GButtonRole.Name = "GButtonRole";
             this.GButtonRole.Size = new System.Drawing.Size(220, 44);
             this.GButtonRole.TabIndex = 6;
@@ -199,6 +201,7 @@
             this.GButtonUsersAndRoles.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.GButtonUsersAndRoles.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonUsersAndRoles.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonUsersAndRoles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonUsersAndRoles.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonUsersAndRoles.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonUsersAndRoles.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -209,7 +212,7 @@
             this.GButtonUsersAndRoles.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonUsersAndRoles.Image = ((System.Drawing.Image)(resources.GetObject("GButtonUsersAndRoles.Image")));
             this.GButtonUsersAndRoles.ImageOffset = new System.Drawing.Point(-13, 0);
-            this.GButtonUsersAndRoles.Location = new System.Drawing.Point(12, 664);
+            this.GButtonUsersAndRoles.Location = new System.Drawing.Point(12, 658);
             this.GButtonUsersAndRoles.Name = "GButtonUsersAndRoles";
             this.GButtonUsersAndRoles.Size = new System.Drawing.Size(220, 44);
             this.GButtonUsersAndRoles.TabIndex = 6;
@@ -226,6 +229,7 @@
             this.GButtonReport.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.GButtonReport.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonReport.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -236,7 +240,7 @@
             this.GButtonReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonReport.Image = ((System.Drawing.Image)(resources.GetObject("GButtonReport.Image")));
             this.GButtonReport.ImageOffset = new System.Drawing.Point(-12, 0);
-            this.GButtonReport.Location = new System.Drawing.Point(12, 543);
+            this.GButtonReport.Location = new System.Drawing.Point(12, 537);
             this.GButtonReport.Name = "GButtonReport";
             this.GButtonReport.Size = new System.Drawing.Size(220, 44);
             this.GButtonReport.TabIndex = 6;
@@ -252,6 +256,7 @@
             this.GButtonReservation.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.GButtonReservation.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonReservation.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonReservation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonReservation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonReservation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonReservation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -262,7 +267,7 @@
             this.GButtonReservation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonReservation.Image = ((System.Drawing.Image)(resources.GetObject("GButtonReservation.Image")));
             this.GButtonReservation.ImageOffset = new System.Drawing.Point(-3, 0);
-            this.GButtonReservation.Location = new System.Drawing.Point(12, 411);
+            this.GButtonReservation.Location = new System.Drawing.Point(12, 405);
             this.GButtonReservation.Name = "GButtonReservation";
             this.GButtonReservation.Size = new System.Drawing.Size(220, 44);
             this.GButtonReservation.TabIndex = 4;
@@ -278,6 +283,7 @@
             this.GButtonCustomers.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.GButtonCustomers.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonCustomers.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonCustomers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonCustomers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonCustomers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -288,7 +294,7 @@
             this.GButtonCustomers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonCustomers.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCustomers.Image")));
             this.GButtonCustomers.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GButtonCustomers.Location = new System.Drawing.Point(12, 345);
+            this.GButtonCustomers.Location = new System.Drawing.Point(12, 339);
             this.GButtonCustomers.Name = "GButtonCustomers";
             this.GButtonCustomers.Size = new System.Drawing.Size(220, 44);
             this.GButtonCustomers.TabIndex = 3;
@@ -304,6 +310,7 @@
             this.GButtonEvents.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.GButtonEvents.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonEvents.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonEvents.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonEvents.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonEvents.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -314,7 +321,7 @@
             this.GButtonEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonEvents.Image = ((System.Drawing.Image)(resources.GetObject("GButtonEvents.Image")));
             this.GButtonEvents.ImageOffset = new System.Drawing.Point(-12, 0);
-            this.GButtonEvents.Location = new System.Drawing.Point(12, 279);
+            this.GButtonEvents.Location = new System.Drawing.Point(12, 273);
             this.GButtonEvents.Name = "GButtonEvents";
             this.GButtonEvents.Size = new System.Drawing.Size(220, 44);
             this.GButtonEvents.TabIndex = 2;
@@ -330,6 +337,7 @@
             this.GButtonCategory.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.GButtonCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonCategory.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -340,7 +348,7 @@
             this.GButtonCategory.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonCategory.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCategory.Image")));
             this.GButtonCategory.ImageOffset = new System.Drawing.Point(-9, 0);
-            this.GButtonCategory.Location = new System.Drawing.Point(12, 213);
+            this.GButtonCategory.Location = new System.Drawing.Point(12, 207);
             this.GButtonCategory.Name = "GButtonCategory";
             this.GButtonCategory.Size = new System.Drawing.Size(220, 44);
             this.GButtonCategory.TabIndex = 1;
@@ -357,6 +365,7 @@
             this.GButtonDashboard.Checked = true;
             this.GButtonDashboard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonDashboard.CheckedState.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -367,7 +376,7 @@
             this.GButtonDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(102)))), ((int)(((byte)(191)))));
             this.GButtonDashboard.Image = ((System.Drawing.Image)(resources.GetObject("GButtonDashboard.Image")));
             this.GButtonDashboard.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GButtonDashboard.Location = new System.Drawing.Point(12, 147);
+            this.GButtonDashboard.Location = new System.Drawing.Point(12, 141);
             this.GButtonDashboard.Name = "GButtonDashboard";
             this.GButtonDashboard.Size = new System.Drawing.Size(220, 44);
             this.GButtonDashboard.TabIndex = 0;
@@ -379,7 +388,7 @@
             this.PicLogoutEETMS.BackColor = System.Drawing.Color.Transparent;
             this.PicLogoutEETMS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicLogoutEETMS.Image = global::EETMS_Presentation.Properties.Resources.logout_EETMS;
-            this.PicLogoutEETMS.Location = new System.Drawing.Point(198, 880);
+            this.PicLogoutEETMS.Location = new System.Drawing.Point(201, 856);
             this.PicLogoutEETMS.Name = "PicLogoutEETMS";
             this.PicLogoutEETMS.Size = new System.Drawing.Size(35, 33);
             this.PicLogoutEETMS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -393,7 +402,7 @@
             this.lblRoleUser.BackColor = System.Drawing.Color.Transparent;
             this.lblRoleUser.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoleUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(198)))), ((int)(((byte)(243)))));
-            this.lblRoleUser.Location = new System.Drawing.Point(68, 901);
+            this.lblRoleUser.Location = new System.Drawing.Point(68, 877);
             this.lblRoleUser.Name = "lblRoleUser";
             this.lblRoleUser.Size = new System.Drawing.Size(0, 12);
             this.lblRoleUser.TabIndex = 3;
@@ -404,7 +413,7 @@
             this.lblNameUser.BackColor = System.Drawing.Color.Transparent;
             this.lblNameUser.Font = new System.Drawing.Font("Lucida Sans Typewriter", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameUser.ForeColor = System.Drawing.Color.White;
-            this.lblNameUser.Location = new System.Drawing.Point(66, 881);
+            this.lblNameUser.Location = new System.Drawing.Point(66, 857);
             this.lblNameUser.Name = "lblNameUser";
             this.lblNameUser.Size = new System.Drawing.Size(0, 15);
             this.lblNameUser.TabIndex = 3;
@@ -413,7 +422,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(50, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(49, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -426,7 +435,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(110, 35);
+            this.label1.Location = new System.Drawing.Point(106, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 30);
             this.label1.TabIndex = 0;
@@ -434,28 +443,25 @@
             // 
             // GPanelMainScreens
             // 
-            this.GPanelMainScreens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.GPanelMainScreens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GPanelMainScreens.Controls.Add(this.GPanelMessage);
-            this.GPanelMainScreens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GPanelMainScreens.Location = new System.Drawing.Point(244, 0);
+            this.GPanelMainScreens.Location = new System.Drawing.Point(258, 0);
             this.GPanelMainScreens.Name = "GPanelMainScreens";
-            this.GPanelMainScreens.Size = new System.Drawing.Size(1419, 935);
+            this.GPanelMainScreens.Size = new System.Drawing.Size(1405, 935);
             this.GPanelMainScreens.TabIndex = 2;
             this.GPanelMainScreens.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseDown);
             this.GPanelMainScreens.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseMove);
             this.GPanelMainScreens.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GPanelMainScreens_MouseUp);
             // 
-            // label3
+            // GPanelMessage
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Britannic Bold", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(29, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(652, 106);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Access Denied";
+            this.GPanelMessage.Controls.Add(this.label4);
+            this.GPanelMessage.Controls.Add(this.label3);
+            this.GPanelMessage.Location = new System.Drawing.Point(354, 369);
+            this.GPanelMessage.Name = "GPanelMessage";
+            this.GPanelMessage.Size = new System.Drawing.Size(699, 196);
+            this.GPanelMessage.TabIndex = 3;
+            this.GPanelMessage.Visible = false;
             // 
             // label4
             // 
@@ -469,21 +475,23 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Contact the system administrator to open sections.";
             // 
-            // GPanelMessage
+            // label3
             // 
-            this.GPanelMessage.Controls.Add(this.label4);
-            this.GPanelMessage.Controls.Add(this.label3);
-            this.GPanelMessage.Location = new System.Drawing.Point(354, 369);
-            this.GPanelMessage.Name = "GPanelMessage";
-            this.GPanelMessage.Size = new System.Drawing.Size(699, 196);
-            this.GPanelMessage.TabIndex = 3;
-            this.GPanelMessage.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Britannic Bold", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(29, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(652, 106);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Access Denied";
             // 
             // frmMainScreenEETMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1663, 935);
             this.Controls.Add(this.GPanelMainScreens);
             this.Controls.Add(this.GGPanelButtonsEETMS_Main);

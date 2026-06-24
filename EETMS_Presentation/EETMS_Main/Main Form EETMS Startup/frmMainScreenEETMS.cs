@@ -95,7 +95,7 @@ namespace EETMS_Presentation.EETMS_Main
         private void GButtonDashboard_Click(object sender, EventArgs e)
         {
             if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kDASHBOARD))
-                _ShowTheUserControlInThePanel(new USDashboard());
+                _ShowTheUserControlInThePanel(new UC_Dashboard());
             else _ShowTheMessageAccessDenied();
 
         }
@@ -103,7 +103,7 @@ namespace EETMS_Presentation.EETMS_Main
         private void GButtonCategory_Click(object sender, EventArgs e)
         {
             if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kCATEGORY_MANAGMENT))
-                _ShowTheUserControlInThePanel(new USCategory());
+                _ShowTheUserControlInThePanel(new UC_Category());
             else
                 _ShowTheMessageAccessDenied();
 
@@ -120,7 +120,7 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void _OpenTheAddNewCustomer(int IDCustomer)
         {
-            US_AddAndUpdateInformationCustomer US_AddNewCustomer = new US_AddAndUpdateInformationCustomer(IDCustomer);
+            UC_AddAndUpdateInformationCustomer US_AddNewCustomer = new UC_AddAndUpdateInformationCustomer(IDCustomer);
 
             US_AddNewCustomer.RequestClose += (sender, e) => _OpenThe_US_Customer();
 
@@ -129,7 +129,7 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void _OpenThe_US_Customer()
         {
-            USCustomers US_Customer = new USCustomers();
+            UC_Customers US_Customer = new UC_Customers();
 
             US_Customer.RequestOpenTheAddNewCustomer += (sender, IDCustomer) => _OpenTheAddNewCustomer(IDCustomer);
 
@@ -138,7 +138,7 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void _OpenThePaymentUS()
         {
-            USPayment US_Payment = new USPayment();
+            UC_Payment US_Payment = new UC_Payment();
 
             US_Payment.ERequestTheOpenAddPaymentBooking += (sender, e) => _OpenTheAddNewPaymentBooking();
 
@@ -148,7 +148,7 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void _OpenTheAddNewPaymentBooking()
         {
-            USAddPaymentReservations US_APR = new USAddPaymentReservations();
+            UC_AddPaymentReservations US_APR = new UC_AddPaymentReservations();
 
             US_APR.ERequestTheClosePaymentBooking += (sender, e) => _OpenThePaymentUS();
             _ShowTheUserControlInThePanel(US_APR);
@@ -173,13 +173,13 @@ namespace EETMS_Presentation.EETMS_Main
         private void GButtonReport_Click(object sender, EventArgs e)
         {
             if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kREPORT))
-                _ShowTheUserControlInThePanel(new USReport());
+                _ShowTheUserControlInThePanel(new UC_Report());
             else _ShowTheMessageAccessDenied();
         }
 
         private void _OpenTheAddNewTicketTypeToTheEvent(int IDEvent, int IDTicketType)
         {
-            var US_AddNewTicketTypeToTheEvent = new USAddTheTicketsTypeToTheEvent(IDEvent, IDTicketType);
+            var US_AddNewTicketTypeToTheEvent = new UC_AddTheTicketsTypeToTheEvent(IDEvent, IDTicketType);
 
             US_AddNewTicketTypeToTheEvent.ERequestToTheClose_USAddNewTicketTypeToTheEvent += (sender, e) =>
             _ShowTicketEvent(IDEvent, IDTicketType);
@@ -190,7 +190,7 @@ namespace EETMS_Presentation.EETMS_Main
         private void _ShowTicketEvent(int id, int IDTicketType)
         {
 
-            var us = new USShowAllInformationTicketTypeForEvent(id);
+            var us = new UC_ShowAllInformationTicketTypeForEvent(id);
 
             us.ERequestTheClose_AddAndUpdateTheTicketsEvents += (sender, eventId) =>
             {
@@ -207,7 +207,7 @@ namespace EETMS_Presentation.EETMS_Main
         {
             int IDTicketType = -1;
 
-            US_AddAndEditInformationEvent US_AddNewEvent = new US_AddAndEditInformationEvent(id);
+            UC_AddAndEditInformationEvent US_AddNewEvent = new UC_AddAndEditInformationEvent(id);
 
 
             US_AddNewEvent.ERequestTheOpen_AddAndUpdateTheTicketsEvents += (sender, eventId) =>
@@ -224,7 +224,7 @@ namespace EETMS_Presentation.EETMS_Main
         private void _ShowTheEventUS()
 
         {
-            USEvents US_Event = new USEvents();
+            UC_Events US_Event = new UC_Events();
 
             US_Event.RequestOpenCreateNewEventUS += (sender, id) => _ShowTheCreateNewEventUS(id);
 
@@ -256,7 +256,7 @@ namespace EETMS_Presentation.EETMS_Main
         private void frmMainScreenEETMS_Load(object sender, EventArgs e)
         {
             if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kDASHBOARD))
-                _ShowTheUserControlInThePanel(new USDashboard());
+                _ShowTheUserControlInThePanel(new UC_Dashboard());
             else
             {
                 GButtonDashboard.Checked = false;
@@ -266,7 +266,7 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void _OpenTheAddNewUser(int IDUser)
         {
-            USAddNewUserAndUpdate USANUAU = new USAddNewUserAndUpdate(IDUser);
+            UC_AddNewUserAndUpdate USANUAU = new UC_AddNewUserAndUpdate(IDUser);
             USANUAU.ERequestToTheCloseAddNewUser += (sender, e) =>
             _ShowTheUserAndRoleUS();
 
@@ -297,7 +297,7 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void _OpenTheAddNewRole(int IDNewRole)
         {
-            US_AddNewRoleAndUpdate USAddNewRole = new US_AddNewRoleAndUpdate(IDNewRole);
+            UC_AddNewRoleAndUpdate USAddNewRole = new UC_AddNewRoleAndUpdate(IDNewRole);
             USAddNewRole.ERequestToCloseTheUSAddNewRole += (sender, e) =>
             {
                 _ShowTheRoleManagment();
@@ -308,7 +308,7 @@ namespace EETMS_Presentation.EETMS_Main
 
         private void _ShowTheRoleManagment()
         {
-            US_RolesManagment USRolesManagment = new US_RolesManagment();
+            UC_RolesManagment USRolesManagment = new UC_RolesManagment();
 
             USRolesManagment.ERequestToOpenCreateNewRole += (sender, RoleID) =>
             {
@@ -329,7 +329,7 @@ namespace EETMS_Presentation.EETMS_Main
         private void GButtonReservation_Click(object sender, EventArgs e)
         {
             if (_IsHasAPermissionsThisSeaction(_Permissionsuser, RoleDTO.EnPermssionsType.kRESERVATION))
-                _ShowTheUserControlInThePanel(new USReservation());
+                _ShowTheUserControlInThePanel(new UC_Reservation());
             else _ShowTheMessageAccessDenied();
         }
     }

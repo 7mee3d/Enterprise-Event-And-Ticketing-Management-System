@@ -61,54 +61,54 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EETMS Settings Presentation\clsEETMS_SettingPresentation.cs" />
-    <Compile Include="EETMS_Category\Main user Control Category\USCategory.cs">
+    <Compile Include="EETMS_Category\Main user Control Category\UC_Category.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Category\Main user Control Category\USCategory.Designer.cs">
-      <DependentUpon>USCategory.cs</DependentUpon>
+    <Compile Include="EETMS_Category\Main user Control Category\UC_Category.Designer.cs">
+      <DependentUpon>UC_Category.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Customers\Main User Control Customer\USCustomers.cs">
+    <Compile Include="EETMS_Customers\Main User Control Customer\UC_Customers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Customers\Main User Control Customer\USCustomers.Designer.cs">
-      <DependentUpon>USCustomers.cs</DependentUpon>
+    <Compile Include="EETMS_Customers\Main User Control Customer\UC_Customers.Designer.cs">
+      <DependentUpon>UC_Customers.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Customers\User Controls Operation Customer\US_AddAndUpdateInformationCustomer.cs">
+    <Compile Include="EETMS_Customers\User Controls Operation Customer\UC_AddAndUpdateInformationCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Customers\User Controls Operation Customer\US_AddAndUpdateInformationCustomer.Designer.cs">
-      <DependentUpon>US_AddAndUpdateInformationCustomer.cs</DependentUpon>
+    <Compile Include="EETMS_Customers\User Controls Operation Customer\UC_AddAndUpdateInformationCustomer.Designer.cs">
+      <DependentUpon>UC_AddAndUpdateInformationCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Dashboard\Main User Control Dashboard\USDashboard.cs">
+    <Compile Include="EETMS_Dashboard\Main User Control Dashboard\UC_Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Dashboard\Main User Control Dashboard\USDashboard.Designer.cs">
-      <DependentUpon>USDashboard.cs</DependentUpon>
+    <Compile Include="EETMS_Dashboard\Main User Control Dashboard\UC_Dashboard.Designer.cs">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="EETMS_Events\Main User Control Event\TicketEventArgs.cs" />
-    <Compile Include="EETMS_Events\Main User Control Event\USEvents.cs">
+    <Compile Include="EETMS_Events\Main User Control Event\UC_Events.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Events\Main User Control Event\USEvents.Designer.cs">
-      <DependentUpon>USEvents.cs</DependentUpon>
+    <Compile Include="EETMS_Events\Main User Control Event\UC_Events.Designer.cs">
+      <DependentUpon>UC_Events.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Events\User Controls Operation Event\USAddTheTicketsTypeToTheEvent.cs">
+    <Compile Include="EETMS_Events\User Controls Operation Event\UC_AddTheTicketsTypeToTheEvent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Events\User Controls Operation Event\USAddTheTicketsTypeToTheEvent.Designer.cs">
-      <DependentUpon>USAddTheTicketsTypeToTheEvent.cs</DependentUpon>
+    <Compile Include="EETMS_Events\User Controls Operation Event\UC_AddTheTicketsTypeToTheEvent.Designer.cs">
+      <DependentUpon>UC_AddTheTicketsTypeToTheEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Events\User Controls Operation Event\US_AddAndEditInformationEvent.cs">
+    <Compile Include="EETMS_Events\User Controls Operation Event\UC_AddAndEditInformationEvent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Events\User Controls Operation Event\US_AddAndEditInformationEvent.Designer.cs">
-      <DependentUpon>US_AddAndEditInformationEvent.cs</DependentUpon>
+    <Compile Include="EETMS_Events\User Controls Operation Event\UC_AddAndEditInformationEvent.Designer.cs">
+      <DependentUpon>UC_AddAndEditInformationEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Events\User Controls Operation Event\USShowAllInformationTicketTypeForEvent.cs">
+    <Compile Include="EETMS_Events\User Controls Operation Event\UC_ShowAllInformationTicketTypeForEvent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Events\User Controls Operation Event\USShowAllInformationTicketTypeForEvent.Designer.cs">
-      <DependentUpon>USShowAllInformationTicketTypeForEvent.cs</DependentUpon>
+    <Compile Include="EETMS_Events\User Controls Operation Event\UC_ShowAllInformationTicketTypeForEvent.Designer.cs">
+      <DependentUpon>UC_ShowAllInformationTicketTypeForEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="EETMS_Login\Main Form Login EETMS\frmLoginEETMS.cs">
       <SubType>Form</SubType>
@@ -122,79 +122,79 @@
     <Compile Include="EETMS_Main\Main Form EETMS Startup\frmMainScreenEETMS.Designer.cs">
       <DependentUpon>frmMainScreenEETMS.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Payment\User Controls Operation Payment\USAddPaymentReservations.cs">
+    <Compile Include="EETMS_Payment\User Controls Operation Payment\UC_AddPaymentReservations.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Payment\User Controls Operation Payment\USAddPaymentReservations.Designer.cs">
-      <DependentUpon>USAddPaymentReservations.cs</DependentUpon>
+    <Compile Include="EETMS_Payment\User Controls Operation Payment\UC_AddPaymentReservations.Designer.cs">
+      <DependentUpon>UC_AddPaymentReservations.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Payment\Main User Control Payment\USPayment.cs">
+    <Compile Include="EETMS_Payment\Main User Control Payment\UC_Payment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Payment\Main User Control Payment\USPayment.Designer.cs">
-      <DependentUpon>USPayment.cs</DependentUpon>
+    <Compile Include="EETMS_Payment\Main User Control Payment\UC_Payment.Designer.cs">
+      <DependentUpon>UC_Payment.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Report\Main User Control Report\USReport.cs">
+    <Compile Include="EETMS_Report\Main User Control Report\UC_Report.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Report\Main User Control Report\USReport.Designer.cs">
-      <DependentUpon>USReport.cs</DependentUpon>
+    <Compile Include="EETMS_Report\Main User Control Report\UC_Report.Designer.cs">
+      <DependentUpon>UC_Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Roles\Main User Control Roles\US_RolesManagment.cs">
+    <Compile Include="EETMS_Roles\Main User Control Roles\UC_RolesManagment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Roles\Main User Control Roles\US_RolesManagment.Designer.cs">
-      <DependentUpon>US_RolesManagment.cs</DependentUpon>
+    <Compile Include="EETMS_Roles\Main User Control Roles\UC_RolesManagment.Designer.cs">
+      <DependentUpon>UC_RolesManagment.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Roles\Users Control Opration Roles\US_AddNewRoleAndUpdate.cs">
+    <Compile Include="EETMS_Roles\Users Control Opration Roles\UC_AddNewRoleAndUpdate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Roles\Users Control Opration Roles\US_AddNewRoleAndUpdate.Designer.cs">
-      <DependentUpon>US_AddNewRoleAndUpdate.cs</DependentUpon>
+    <Compile Include="EETMS_Roles\Users Control Opration Roles\UC_AddNewRoleAndUpdate.Designer.cs">
+      <DependentUpon>UC_AddNewRoleAndUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_Tickets\Main User Control Reservation\USReservation.cs">
+    <Compile Include="EETMS_Tickets\Main User Control Reservation\UC_Reservation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_Tickets\Main User Control Reservation\USReservation.Designer.cs">
-      <DependentUpon>USReservation.cs</DependentUpon>
+    <Compile Include="EETMS_Tickets\Main User Control Reservation\UC_Reservation.Designer.cs">
+      <DependentUpon>UC_Reservation.cs</DependentUpon>
     </Compile>
     <Compile Include="EETMS_Main_Files_System\Program.cs" />
-    <Compile Include="EETMS_UsersAndRoles\Main User Control Users\USUsersManagment.cs">
+    <Compile Include="EETMS_UsersAndRoles\Main User Control Users\UC_UsersManagment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_UsersAndRoles\Main User Control Users\USUsersManagment.Designer.cs">
-      <DependentUpon>USUsersManagment.cs</DependentUpon>
+    <Compile Include="EETMS_UsersAndRoles\Main User Control Users\UC_UsersManagment.Designer.cs">
+      <DependentUpon>UC_UsersManagment.cs</DependentUpon>
     </Compile>
-    <Compile Include="EETMS_UsersAndRoles\User Controls Operation User\USAddNewUserAndUpdate.cs">
+    <Compile Include="EETMS_UsersAndRoles\User Controls Operation User\UC_AddNewUserAndUpdate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EETMS_UsersAndRoles\User Controls Operation User\USAddNewUserAndUpdate.Designer.cs">
-      <DependentUpon>USAddNewUserAndUpdate.cs</DependentUpon>
+    <Compile Include="EETMS_UsersAndRoles\User Controls Operation User\UC_AddNewUserAndUpdate.Designer.cs">
+      <DependentUpon>UC_AddNewUserAndUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EETMS_Category\Main user Control Category\USCategory.resx">
-      <DependentUpon>USCategory.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Category\Main user Control Category\UC_Category.resx">
+      <DependentUpon>UC_Category.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Customers\Main User Control Customer\USCustomers.resx">
-      <DependentUpon>USCustomers.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Customers\Main User Control Customer\UC_Customers.resx">
+      <DependentUpon>UC_Customers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Customers\User Controls Operation Customer\US_AddAndUpdateInformationCustomer.resx">
-      <DependentUpon>US_AddAndUpdateInformationCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Customers\User Controls Operation Customer\UC_AddAndUpdateInformationCustomer.resx">
+      <DependentUpon>UC_AddAndUpdateInformationCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Dashboard\Main User Control Dashboard\USDashboard.resx">
-      <DependentUpon>USDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Dashboard\Main User Control Dashboard\UC_Dashboard.resx">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Events\Main User Control Event\USEvents.resx">
-      <DependentUpon>USEvents.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Events\Main User Control Event\UC_Events.resx">
+      <DependentUpon>UC_Events.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\USAddTheTicketsTypeToTheEvent.resx">
-      <DependentUpon>USAddTheTicketsTypeToTheEvent.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\UC_AddTheTicketsTypeToTheEvent.resx">
+      <DependentUpon>UC_AddTheTicketsTypeToTheEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\US_AddAndEditInformationEvent.resx">
-      <DependentUpon>US_AddAndEditInformationEvent.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\UC_AddAndEditInformationEvent.resx">
+      <DependentUpon>UC_AddAndEditInformationEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\USShowAllInformationTicketTypeForEvent.resx">
-      <DependentUpon>USShowAllInformationTicketTypeForEvent.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Events\User Controls Operation Event\UC_ShowAllInformationTicketTypeForEvent.resx">
+      <DependentUpon>UC_ShowAllInformationTicketTypeForEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EETMS_Login\Main Form Login EETMS\frmLoginEETMS.resx">
       <DependentUpon>frmLoginEETMS.cs</DependentUpon>
@@ -202,29 +202,29 @@
     <EmbeddedResource Include="EETMS_Main\Main Form EETMS Startup\frmMainScreenEETMS.resx">
       <DependentUpon>frmMainScreenEETMS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Payment\User Controls Operation Payment\USAddPaymentReservations.resx">
-      <DependentUpon>USAddPaymentReservations.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Payment\User Controls Operation Payment\UC_AddPaymentReservations.resx">
+      <DependentUpon>UC_AddPaymentReservations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Payment\Main User Control Payment\USPayment.resx">
-      <DependentUpon>USPayment.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Payment\Main User Control Payment\UC_Payment.resx">
+      <DependentUpon>UC_Payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Report\Main User Control Report\USReport.resx">
-      <DependentUpon>USReport.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Report\Main User Control Report\UC_Report.resx">
+      <DependentUpon>UC_Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Roles\Main User Control Roles\US_RolesManagment.resx">
-      <DependentUpon>US_RolesManagment.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Roles\Main User Control Roles\UC_RolesManagment.resx">
+      <DependentUpon>UC_RolesManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Roles\Users Control Opration Roles\US_AddNewRoleAndUpdate.resx">
-      <DependentUpon>US_AddNewRoleAndUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Roles\Users Control Opration Roles\UC_AddNewRoleAndUpdate.resx">
+      <DependentUpon>UC_AddNewRoleAndUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_Tickets\Main User Control Reservation\USReservation.resx">
-      <DependentUpon>USReservation.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_Tickets\Main User Control Reservation\UC_Reservation.resx">
+      <DependentUpon>UC_Reservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_UsersAndRoles\Main User Control Users\USUsersManagment.resx">
-      <DependentUpon>USUsersManagment.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_UsersAndRoles\Main User Control Users\UC_UsersManagment.resx">
+      <DependentUpon>UC_UsersManagment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EETMS_UsersAndRoles\User Controls Operation User\USAddNewUserAndUpdate.resx">
-      <DependentUpon>USAddNewUserAndUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="EETMS_UsersAndRoles\User Controls Operation User\UC_AddNewUserAndUpdate.resx">
+      <DependentUpon>UC_AddNewUserAndUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
