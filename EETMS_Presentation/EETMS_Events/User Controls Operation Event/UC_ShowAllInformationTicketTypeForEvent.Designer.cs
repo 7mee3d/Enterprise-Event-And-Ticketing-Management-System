@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ShowAllInformationTicketTypeForEvent));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblBackEvents = new System.Windows.Forms.Label();
             this.GButtonDiscardChanges = new Guna.UI2.WinForms.Guna2Button();
             this.lblNameTheEventAfterAdded = new System.Windows.Forms.Label();
@@ -46,17 +47,17 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentSales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GGButtonWarningFullTheTicketTypeEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGButtonAddTicketType = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.contextMenuStripOperationTicket = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewTicketsEvents)).BeginInit();
-            this.guna2ContextMenuStrip1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
+            this.contextMenuStripOperationTicket.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBackEvents
@@ -150,20 +151,20 @@
             this.GDataGridViewTicketsEvents.AllowUserToAddRows = false;
             this.GDataGridViewTicketsEvents.AllowUserToDeleteRows = false;
             this.GDataGridViewTicketsEvents.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.GDataGridViewTicketsEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewTicketsEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.GDataGridViewTicketsEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewTicketsEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GDataGridViewTicketsEvents.ColumnHeadersHeight = 72;
             this.GDataGridViewTicketsEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GDataGridViewTicketsEvents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -173,28 +174,28 @@
             this.Quantity,
             this.TotalAvailable,
             this.CurrentSales});
-            this.GDataGridViewTicketsEvents.ContextMenuStrip = this.guna2ContextMenuStrip1;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GDataGridViewTicketsEvents.DefaultCellStyle = dataGridViewCellStyle7;
+            this.GDataGridViewTicketsEvents.ContextMenuStrip = this.contextMenuStripOperationTicket;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GDataGridViewTicketsEvents.DefaultCellStyle = dataGridViewCellStyle3;
             this.GDataGridViewTicketsEvents.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GDataGridViewTicketsEvents.Location = new System.Drawing.Point(3, 3);
             this.GDataGridViewTicketsEvents.Name = "GDataGridViewTicketsEvents";
             this.GDataGridViewTicketsEvents.ReadOnly = true;
             this.GDataGridViewTicketsEvents.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewTicketsEvents.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewTicketsEvents.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GDataGridViewTicketsEvents.RowHeadersVisible = false;
             this.GDataGridViewTicketsEvents.RowTemplate.Height = 89;
             this.GDataGridViewTicketsEvents.Size = new System.Drawing.Size(1336, 415);
@@ -261,29 +262,6 @@
             this.CurrentSales.HeaderText = "CURRENT SALES";
             this.CurrentSales.Name = "CurrentSales";
             this.CurrentSales.ReadOnly = true;
-            // 
-            // guna2ContextMenuStrip1
-            // 
-            this.guna2ContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateToolStripMenuItem});
-            this.guna2ContextMenuStrip1.Name = "guna2ContextMenuStrip1";
-            this.guna2ContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.guna2ContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.guna2ContextMenuStrip1.RenderStyle.ColorTable = null;
-            this.guna2ContextMenuStrip1.RenderStyle.RoundedEdges = true;
-            this.guna2ContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.guna2ContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(113, 26);
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.updateToolStripMenuItem.Text = "Update";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // guna2GradientPanel2
             // 
@@ -388,7 +366,25 @@
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.guna2MessageDialog1.Text = null;
             // 
-            // USShowAllInformationTicketTypeForEvent
+            // contextMenuStripOperationTicket
+            // 
+            this.contextMenuStripOperationTicket.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateTicketToolStripMenuItem});
+            this.contextMenuStripOperationTicket.Name = "contextMenuStripOperationTicket";
+            this.contextMenuStripOperationTicket.Size = new System.Drawing.Size(190, 42);
+            // 
+            // updateTicketToolStripMenuItem
+            // 
+            this.updateTicketToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.updateTicketToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.updateTicketToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("updateTicketToolStripMenuItem.Image")));
+            this.updateTicketToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.updateTicketToolStripMenuItem.Name = "updateTicketToolStripMenuItem";
+            this.updateTicketToolStripMenuItem.Size = new System.Drawing.Size(189, 38);
+            this.updateTicketToolStripMenuItem.Text = "Update Ticket";
+            this.updateTicketToolStripMenuItem.Click += new System.EventHandler(this.updateTicketToolStripMenuItem_Click);
+            // 
+            // UC_ShowAllInformationTicketTypeForEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -401,13 +397,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblNameTheEventAfterAdded);
             this.Controls.Add(this.lblBackEvents);
-            this.Name = "USShowAllInformationTicketTypeForEvent";
+            this.Name = "UC_ShowAllInformationTicketTypeForEvent";
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.US_AddAndUpdateTheTicketsToTheEvents_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewTicketsEvents)).EndInit();
-            this.guna2ContextMenuStrip1.ResumeLayout(false);
             this.guna2GradientPanel2.ResumeLayout(false);
+            this.contextMenuStripOperationTicket.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,8 +422,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonAddTicketType;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonWarningFullTheTicketTypeEvent;
-        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketTypeID2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketType;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
@@ -435,5 +429,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAvailable;
         private System.Windows.Forms.DataGridViewTextBoxColumn CurrentSales;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripOperationTicket;
+        private System.Windows.Forms.ToolStripMenuItem updateTicketToolStripMenuItem;
     }
 }

@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Events));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,11 +48,10 @@
             this.DurationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discripation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusEvent_Pending_InProgress_Completed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GContextMenuStripEvents = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GContextMenuStripEvents = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.deleteEventToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelHeaderEvents = new System.Windows.Forms.Panel();
             this.GGButtonCreateNewEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
@@ -133,20 +133,20 @@
             this.GDataGridViewEventsInformation.AllowUserToAddRows = false;
             this.GDataGridViewEventsInformation.AllowUserToDeleteRows = false;
             this.GDataGridViewEventsInformation.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.GDataGridViewEventsInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewEventsInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.GDataGridViewEventsInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewEventsInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GDataGridViewEventsInformation.ColumnHeadersHeight = 64;
             this.GDataGridViewEventsInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GDataGridViewEventsInformation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -161,14 +161,14 @@
             this.Discripation,
             this.StatusEvent_Pending_InProgress_Completed});
             this.GDataGridViewEventsInformation.ContextMenuStrip = this.GContextMenuStripEvents;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GDataGridViewEventsInformation.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GDataGridViewEventsInformation.DefaultCellStyle = dataGridViewCellStyle3;
             this.GDataGridViewEventsInformation.GridColor = System.Drawing.Color.White;
             this.GDataGridViewEventsInformation.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GDataGridViewEventsInformation.Location = new System.Drawing.Point(5, 4);
@@ -176,14 +176,14 @@
             this.GDataGridViewEventsInformation.Name = "GDataGridViewEventsInformation";
             this.GDataGridViewEventsInformation.ReadOnly = true;
             this.GDataGridViewEventsInformation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewEventsInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewEventsInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GDataGridViewEventsInformation.RowHeadersVisible = false;
             this.GDataGridViewEventsInformation.RowTemplate.Height = 67;
             this.GDataGridViewEventsInformation.Size = new System.Drawing.Size(1319, 526);
@@ -283,59 +283,39 @@
             // 
             // GContextMenuStripEvents
             // 
-            this.GContextMenuStripEvents.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GContextMenuStripEvents.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
-            this.toolStripSeparator1,
-            this.EditToolStripMenuItem,
-            this.deleteEventToolStripMenuItem});
-            this.GContextMenuStripEvents.Name = "GContextMenuStripEvents";
-            this.GContextMenuStripEvents.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripEvents.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripEvents.RenderStyle.ColorTable = null;
-            this.GContextMenuStripEvents.RenderStyle.RoundedEdges = true;
-            this.GContextMenuStripEvents.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.GContextMenuStripEvents.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripEvents.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.GContextMenuStripEvents.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripEvents.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripEvents.Size = new System.Drawing.Size(161, 74);
+            this.editEventToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.deleteEventToolStripMenuItem1});
+            this.GContextMenuStripEvents.Name = "contextMenuStrip1";
+            this.GContextMenuStripEvents.Size = new System.Drawing.Size(197, 108);
             // 
-            // toolStripTextBox1
+            // editEventToolStripMenuItem
             // 
-            this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toolStripTextBox1.Enabled = false;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.ReadOnly = true;
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 18);
-            this.toolStripTextBox1.Text = "Main Operation";
-            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.editEventToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEventToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.editEventToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editEventToolStripMenuItem.Image")));
+            this.editEventToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editEventToolStripMenuItem.Name = "editEventToolStripMenuItem";
+            this.editEventToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.editEventToolStripMenuItem.Text = "Edit Event";
+            this.editEventToolStripMenuItem.Click += new System.EventHandler(this.editEventToolStripMenuItem_Click);
             // 
-            // toolStripSeparator1
+            // toolStripSeparator2
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(193, 6);
             // 
-            // EditToolStripMenuItem
+            // deleteEventToolStripMenuItem1
             // 
-            this.EditToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.EditToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.EditToolStripMenuItem.Text = "Edit Event";
-            this.EditToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // deleteEventToolStripMenuItem
-            // 
-            this.deleteEventToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteEventToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.deleteEventToolStripMenuItem.Name = "deleteEventToolStripMenuItem";
-            this.deleteEventToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.deleteEventToolStripMenuItem.Text = "Delete Event";
-            this.deleteEventToolStripMenuItem.Click += new System.EventHandler(this.deleteEventToolStripMenuItem_Click);
+            this.deleteEventToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.deleteEventToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.deleteEventToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteEventToolStripMenuItem1.Image")));
+            this.deleteEventToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteEventToolStripMenuItem1.Name = "deleteEventToolStripMenuItem1";
+            this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
+            this.deleteEventToolStripMenuItem1.Text = "Delete Event";
+            this.deleteEventToolStripMenuItem1.Click += new System.EventHandler(this.deleteEventToolStripMenuItem1_Click);
             // 
             // PanelHeaderEvents
             // 
@@ -870,7 +850,7 @@
             this.GCombvoBoxStatusCustomFilter.TabIndex = 0;
             this.GCombvoBoxStatusCustomFilter.SelectionChangeCommitted += new System.EventHandler(this.GComboBoxCountryCustomerFilter_SelectionChangeCommitted);
             // 
-            // USEvents
+            // UC_Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -885,13 +865,12 @@
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.PanelHeaderEvents);
             this.Controls.Add(this.GGPanelDataGridViewEvents);
-            this.Name = "USEvents";
+            this.Name = "UC_Events";
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.USEvents_Load);
             this.GGPanelDataGridViewEvents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).EndInit();
             this.GContextMenuStripEvents.ResumeLayout(false);
-            this.GContextMenuStripEvents.PerformLayout();
             this.PanelHeaderEvents.ResumeLayout(false);
             this.PanelHeaderEvents.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
@@ -934,11 +913,6 @@
         private Guna.UI2.WinForms.Guna2GradientCircleButton guna2GradientCircleButton1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblNumberDraftsEvents;
-        private Guna.UI2.WinForms.Guna2ContextMenuStrip GContextMenuStripEvents;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem EditToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteEventToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonWarningDisable;
         private Guna.UI2.WinForms.Guna2GradientPanel GGMainPanelFilter;
         private Guna.UI2.WinForms.Guna2ComboBox GSubComboBoxTypeTheFilter;
@@ -961,5 +935,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DurationEvent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discripation;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusEvent_Pending_InProgress_Completed;
+        private System.Windows.Forms.ContextMenuStrip GContextMenuStripEvents;
+        private System.Windows.Forms.ToolStripMenuItem editEventToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem deleteEventToolStripMenuItem1;
     }
 }

@@ -80,10 +80,10 @@ namespace EETMS_Presentation.EETMS_Roles
         private void GGButtonCreateNewRole_Click(object sender, EventArgs e)
             => ERequestToOpenCreateNewRole?.Invoke(this, clsEETMS_Constants.kNEGATIVE_ONE);
 
-        private void EditRoleToolStripMenuItem_Click(object sender, EventArgs e)
-        => ERequestToOpenCreateNewRole?.Invoke(this, _GetTheIDRoleFromDGV());
+        private void editInfoRoleToolStripMenuItem_Click(object sender, EventArgs e)
+             => ERequestToOpenCreateNewRole?.Invoke(this, _GetTheIDRoleFromDGV());
 
-        private void deleteRoleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DeleteRoleToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
             if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure to be delete this role ?", "Note For Delete Role..", MessageDialogButtons.YesNo, MessageDialogIcon.Question))
@@ -97,10 +97,9 @@ namespace EETMS_Presentation.EETMS_Roles
                     clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Deleted Faild Because The Role Referances Users .", "Note For Delete Role..", MessageDialogButtons.OK, MessageDialogIcon.Error);
                     return;
                 }
-
         }
 
-        private void ActiveInactiveRoleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void activeUnactiveRoleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int RoleID = _GetTheIDRoleFromDGV();
             string WordActiveInactive = clsEETMS_Constants.kEMPTY_STRING;

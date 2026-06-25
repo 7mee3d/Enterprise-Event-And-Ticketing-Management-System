@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Customers));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -49,16 +50,15 @@
             this.EmailCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhoneCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NationalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GContextMenuStripOperationCustomer = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.DeleteCustomerlStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripOperationCustomers = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.UpdateInformationCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.deleteCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelHeaderEvents.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewCustomerInformation)).BeginInit();
-            this.GContextMenuStripOperationCustomer.SuspendLayout();
+            this.contextMenuStripOperationCustomers.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeaderEvents
@@ -243,7 +243,7 @@
             this.EmailCustomer,
             this.PhoneCustomer,
             this.NationalID});
-            this.GDataGridViewCustomerInformation.ContextMenuStrip = this.GContextMenuStripOperationCustomer;
+            this.GDataGridViewCustomerInformation.ContextMenuStrip = this.contextMenuStripOperationCustomers;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -324,67 +324,50 @@
             this.NationalID.Name = "NationalID";
             this.NationalID.ReadOnly = true;
             // 
-            // GContextMenuStripOperationCustomer
+            // contextMenuStripOperationCustomers
             // 
-            this.GContextMenuStripOperationCustomer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
-            this.toolStripSeparator1,
-            this.DeleteCustomerlStripMenuItem,
-            this.updateCustomerToolStripMenuItem});
-            this.GContextMenuStripOperationCustomer.Name = "GContextMenuStripOperationCustomer";
-            this.GContextMenuStripOperationCustomer.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripOperationCustomer.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripOperationCustomer.RenderStyle.ColorTable = null;
-            this.GContextMenuStripOperationCustomer.RenderStyle.RoundedEdges = true;
-            this.GContextMenuStripOperationCustomer.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.GContextMenuStripOperationCustomer.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripOperationCustomer.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.GContextMenuStripOperationCustomer.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripOperationCustomer.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripOperationCustomer.Size = new System.Drawing.Size(167, 72);
+            this.contextMenuStripOperationCustomers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UpdateInformationCustomerToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.deleteCustomerToolStripMenuItem});
+            this.contextMenuStripOperationCustomers.Name = "contextMenuStripOperationCustomers";
+            this.contextMenuStripOperationCustomers.Size = new System.Drawing.Size(216, 108);
             // 
-            // toolStripTextBox1
+            // UpdateInformationCustomerToolStripMenuItem
             // 
-            this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toolStripTextBox1.Enabled = false;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 16);
-            this.toolStripTextBox1.Text = "Operation";
+            this.UpdateInformationCustomerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.UpdateInformationCustomerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.UpdateInformationCustomerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("UpdateInformationCustomerToolStripMenuItem.Image")));
+            this.UpdateInformationCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.UpdateInformationCustomerToolStripMenuItem.Name = "UpdateInformationCustomerToolStripMenuItem";
+            this.UpdateInformationCustomerToolStripMenuItem.Size = new System.Drawing.Size(215, 38);
+            this.UpdateInformationCustomerToolStripMenuItem.Text = "Update Customer";
+            this.UpdateInformationCustomerToolStripMenuItem.Click += new System.EventHandler(this.UpdateInformationCustomerToolStripMenuItem_Click_1);
             // 
-            // toolStripSeparator1
+            // toolStripSeparator2
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(212, 6);
             // 
-            // DeleteCustomerlStripMenuItem
+            // deleteCustomerToolStripMenuItem
             // 
-            this.DeleteCustomerlStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.DeleteCustomerlStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteCustomerlStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DeleteCustomerlStripMenuItem.Name = "DeleteCustomerlStripMenuItem";
-            this.DeleteCustomerlStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.DeleteCustomerlStripMenuItem.Text = "Delete Customer";
-            this.DeleteCustomerlStripMenuItem.Click += new System.EventHandler(this.DeleteCustomerlStripMenuItem_Click);
+            this.deleteCustomerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.deleteCustomerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.deleteCustomerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteCustomerToolStripMenuItem.Image")));
+            this.deleteCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteCustomerToolStripMenuItem.Name = "deleteCustomerToolStripMenuItem";
+            this.deleteCustomerToolStripMenuItem.Size = new System.Drawing.Size(215, 38);
+            this.deleteCustomerToolStripMenuItem.Text = "Delete Customer";
+            this.deleteCustomerToolStripMenuItem.Click += new System.EventHandler(this.deleteCustomerToolStripMenuItem_Click);
             // 
-            // updateCustomerToolStripMenuItem
-            // 
-            this.updateCustomerToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.updateCustomerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateCustomerToolStripMenuItem.Name = "updateCustomerToolStripMenuItem";
-            this.updateCustomerToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.updateCustomerToolStripMenuItem.Text = "Update Customer";
-            this.updateCustomerToolStripMenuItem.Click += new System.EventHandler(this.updateCustomerToolStripMenuItem_Click);
-            // 
-            // USCustomers
+            // UC_Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.GGPanelDataGridViewEvents);
             this.Controls.Add(this.PanelHeaderEvents);
-            this.Name = "USCustomers";
+            this.Name = "UC_Customers";
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.USCustomers_Load);
             this.PanelHeaderEvents.ResumeLayout(false);
@@ -393,8 +376,7 @@
             this.GGPanelDataGridViewEvents.ResumeLayout(false);
             this.GGPanelDataGridViewEvents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewCustomerInformation)).EndInit();
-            this.GContextMenuStripOperationCustomer.ResumeLayout(false);
-            this.GContextMenuStripOperationCustomer.PerformLayout();
+            this.contextMenuStripOperationCustomers.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -408,11 +390,6 @@
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxSearchTheCustomer;
         private Guna.UI2.WinForms.Guna2GradientPanel GGPanelDataGridViewEvents;
         private Guna.UI2.WinForms.Guna2DataGridView GDataGridViewCustomerInformation;
-        private Guna.UI2.WinForms.Guna2ContextMenuStrip GContextMenuStripOperationCustomer;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem DeleteCustomerlStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateCustomerToolStripMenuItem;
         private System.Windows.Forms.Label lblTotalCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
@@ -422,5 +399,9 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripOperationCustomers;
+        private System.Windows.Forms.ToolStripMenuItem UpdateInformationCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem deleteCustomerToolStripMenuItem;
     }
 }

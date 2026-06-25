@@ -76,33 +76,7 @@ namespace EETMS_Presentation.EETMS_Customers
         private void DeleteCustomerlStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            int CustomerID = _GetTheIDCustomerAfterSelectedInDataGridView();
 
-            if (CustomerID != clsEETMS_Constants.kNEGATIVE_ONE)
-            {
-                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure to be Delete This Customer?", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Information))
-                {
-
-                    if (CustomerBL.DeleteTheCustomer(CustomerID))
-                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Customer is Deleteed Sccuessfully", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Information);
-                    else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Customer is Delete Failed", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Warning);
-
-                    _InitalSettingAfterLoadingTheCustomerUS();
-                }
-            }
-            else
-            {
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
-                    _G2MD,
-                    "You Must Selected The Customer From List To Be Delete." +
-                      "\nOR .. cannot Delete This Custoemr Because The Customer Have The Reservations",
-                    "Important Note ...",
-                    MessageDialogButtons.YesNo,
-                    MessageDialogIcon.Warning
-                    );
-
-
-            }
         }
 
         private void updateCustomerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,5 +136,55 @@ namespace EETMS_Presentation.EETMS_Customers
         private void GGButtonAddNewCustomer_Click_1(object sender, EventArgs e)
          => RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
 
+        private void UpdateInformationCustomerToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            int CustomerID = _GetTheIDCustomerAfterSelectedInDataGridView();
+
+
+            if (CustomerID != clsEETMS_Constants.kNEGATIVE_ONE)
+                RequestOpenTheAddNewCustomer?.Invoke(this, CustomerID);
+            else
+            {
+
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                      _G2MD,
+                       "You Must Selected The Customer From List To Be Updated information.",
+                       "Important Note ...",
+                     MessageDialogButtons.YesNo,
+                      MessageDialogIcon.Warning
+                      );
+            }
+        }
+
+        private void deleteCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int CustomerID = _GetTheIDCustomerAfterSelectedInDataGridView();
+
+            if (CustomerID != clsEETMS_Constants.kNEGATIVE_ONE)
+            {
+                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure to be Delete This Customer?", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Information))
+                {
+
+                    if (CustomerBL.DeleteTheCustomer(CustomerID))
+                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Customer is Deleteed Sccuessfully", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Information);
+                    else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Customer is Delete Failed", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Warning);
+
+                    _InitalSettingAfterLoadingTheCustomerUS();
+                }
+            }
+            else
+            {
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD,
+                    "You Must Selected The Customer From List To Be Delete." +
+                      "\nOR .. cannot Delete This Custoemr Because The Customer Have The Reservations",
+                    "Important Note ...",
+                    MessageDialogButtons.YesNo,
+                    MessageDialogIcon.Warning
+                    );
+
+
+            }
+        }
     }
 }

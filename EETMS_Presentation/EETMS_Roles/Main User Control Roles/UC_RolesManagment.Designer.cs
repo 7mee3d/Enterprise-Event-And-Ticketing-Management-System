@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,12 +41,6 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Permissions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GContextMenuStripRoles = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.EditRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ActiveInactiveRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -58,12 +53,18 @@
             this.lblTotalActiveStzatusRoles = new System.Windows.Forms.Label();
             this.GGButtonCreateNewRole = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ContextMenuStripRoles = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editInfoRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.DeleteRoleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.activeUnactiveRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewRolesInformation)).BeginInit();
-            this.GContextMenuStripRoles.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
+            this.ContextMenuStripRoles.SuspendLayout();
             this.SuspendLayout();
             // 
             // GGPanelDataGridViewEvents
@@ -104,7 +105,7 @@
             this.Description,
             this.Permissions,
             this.StatusRole});
-            this.GDataGridViewRolesInformation.ContextMenuStrip = this.GContextMenuStripRoles;
+            this.GDataGridViewRolesInformation.ContextMenuStrip = this.ContextMenuStripRoles;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,72 +190,6 @@
             this.StatusRole.HeaderText = "STATUS";
             this.StatusRole.Name = "StatusRole";
             this.StatusRole.ReadOnly = true;
-            // 
-            // GContextMenuStripRoles
-            // 
-            this.GContextMenuStripRoles.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GContextMenuStripRoles.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
-            this.toolStripSeparator1,
-            this.EditRoleToolStripMenuItem,
-            this.deleteRoleToolStripMenuItem,
-            this.ActiveInactiveRoleToolStripMenuItem});
-            this.GContextMenuStripRoles.Name = "GContextMenuStripEvents";
-            this.GContextMenuStripRoles.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripRoles.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripRoles.RenderStyle.ColorTable = null;
-            this.GContextMenuStripRoles.RenderStyle.RoundedEdges = true;
-            this.GContextMenuStripRoles.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.GContextMenuStripRoles.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripRoles.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.GContextMenuStripRoles.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripRoles.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripRoles.Size = new System.Drawing.Size(193, 96);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toolStripTextBox1.Enabled = false;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.ReadOnly = true;
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 18);
-            this.toolStripTextBox1.Text = "Main Operation";
-            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(189, 6);
-            // 
-            // EditRoleToolStripMenuItem
-            // 
-            this.EditRoleToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.EditRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.EditRoleToolStripMenuItem.Name = "EditRoleToolStripMenuItem";
-            this.EditRoleToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.EditRoleToolStripMenuItem.Text = "Edit Role";
-            this.EditRoleToolStripMenuItem.Click += new System.EventHandler(this.EditRoleToolStripMenuItem_Click);
-            // 
-            // deleteRoleToolStripMenuItem
-            // 
-            this.deleteRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.deleteRoleToolStripMenuItem.Name = "deleteRoleToolStripMenuItem";
-            this.deleteRoleToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.deleteRoleToolStripMenuItem.Text = "Delete Role";
-            this.deleteRoleToolStripMenuItem.Click += new System.EventHandler(this.deleteRoleToolStripMenuItem_Click);
-            // 
-            // ActiveInactiveRoleToolStripMenuItem
-            // 
-            this.ActiveInactiveRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActiveInactiveRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.ActiveInactiveRoleToolStripMenuItem.Name = "ActiveInactiveRoleToolStripMenuItem";
-            this.ActiveInactiveRoleToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.ActiveInactiveRoleToolStripMenuItem.Text = "Active / Inactive Role";
-            this.ActiveInactiveRoleToolStripMenuItem.Click += new System.EventHandler(this.ActiveInactiveRoleToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -421,6 +356,60 @@
             this.guna2GradientPanel3.Size = new System.Drawing.Size(1327, 74);
             this.guna2GradientPanel3.TabIndex = 10;
             // 
+            // ContextMenuStripRoles
+            // 
+            this.ContextMenuStripRoles.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editInfoRoleToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.DeleteRoleToolStripMenuItem1,
+            this.toolStripSeparator3,
+            this.activeUnactiveRoleToolStripMenuItem});
+            this.ContextMenuStripRoles.Name = "contextMenuStrip1";
+            this.ContextMenuStripRoles.Size = new System.Drawing.Size(240, 152);
+            // 
+            // editInfoRoleToolStripMenuItem
+            // 
+            this.editInfoRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editInfoRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.editInfoRoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editInfoRoleToolStripMenuItem.Image")));
+            this.editInfoRoleToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editInfoRoleToolStripMenuItem.Name = "editInfoRoleToolStripMenuItem";
+            this.editInfoRoleToolStripMenuItem.Size = new System.Drawing.Size(239, 38);
+            this.editInfoRoleToolStripMenuItem.Text = "Edit Role";
+            this.editInfoRoleToolStripMenuItem.Click += new System.EventHandler(this.editInfoRoleToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(236, 6);
+            // 
+            // DeleteRoleToolStripMenuItem1
+            // 
+            this.DeleteRoleToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.DeleteRoleToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.DeleteRoleToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("DeleteRoleToolStripMenuItem1.Image")));
+            this.DeleteRoleToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.DeleteRoleToolStripMenuItem1.Name = "DeleteRoleToolStripMenuItem1";
+            this.DeleteRoleToolStripMenuItem1.Size = new System.Drawing.Size(239, 38);
+            this.DeleteRoleToolStripMenuItem1.Text = "Delete Role";
+            this.DeleteRoleToolStripMenuItem1.Click += new System.EventHandler(this.DeleteRoleToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(236, 6);
+            // 
+            // activeUnactiveRoleToolStripMenuItem
+            // 
+            this.activeUnactiveRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.activeUnactiveRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.activeUnactiveRoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("activeUnactiveRoleToolStripMenuItem.Image")));
+            this.activeUnactiveRoleToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.activeUnactiveRoleToolStripMenuItem.Name = "activeUnactiveRoleToolStripMenuItem";
+            this.activeUnactiveRoleToolStripMenuItem.Size = new System.Drawing.Size(239, 38);
+            this.activeUnactiveRoleToolStripMenuItem.Text = "Active/Unactive Role";
+            this.activeUnactiveRoleToolStripMenuItem.Click += new System.EventHandler(this.activeUnactiveRoleToolStripMenuItem_Click);
+            // 
             // UC_RolesManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,13 +426,12 @@
             this.Load += new System.EventHandler(this.US_RolesManagment_Load);
             this.GGPanelDataGridViewEvents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewRolesInformation)).EndInit();
-            this.GContextMenuStripRoles.ResumeLayout(false);
-            this.GContextMenuStripRoles.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
             this.guna2GradientPanel3.ResumeLayout(false);
+            this.ContextMenuStripRoles.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,12 +457,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Permissions;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusRole;
-        private Guna.UI2.WinForms.Guna2ContextMenuStrip GContextMenuStripRoles;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem EditRoleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteRoleToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
-        private System.Windows.Forms.ToolStripMenuItem ActiveInactiveRoleToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStripRoles;
+        private System.Windows.Forms.ToolStripMenuItem editInfoRoleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem DeleteRoleToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem activeUnactiveRoleToolStripMenuItem;
     }
 }

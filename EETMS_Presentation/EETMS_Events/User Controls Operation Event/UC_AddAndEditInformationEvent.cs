@@ -101,8 +101,11 @@ namespace EETMS_Presentation.EETMS_Events
             GTextBoxEventName.Text = _InformationEvent.EventName;
             GTextBoxDiscripation.Text = _InformationEvent.Discripation;
 
-            GDateTimePickerStartDateTimeEvent.Value = _InformationEvent.DateTimeEvent.Value;
-            GDateTimePickerEndDateTimeEvent.Value = _InformationEvent.EndDateTimeEvent.Value;
+            if (_InformationEvent.DateTimeEvent != null)
+                GDateTimePickerStartDateTimeEvent.Value = _InformationEvent.DateTimeEvent.Value;
+
+            if (_InformationEvent.EndDateTimeEvent != null)
+                GDateTimePickerEndDateTimeEvent.Value = _InformationEvent.EndDateTimeEvent.Value;
 
             GComboBoxCategories.SelectedValue = _InformationEvent.CategoryID;
             GComboBoxCountries.SelectedValue = _InformationEvent.CountryID;

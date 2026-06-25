@@ -45,13 +45,8 @@ namespace EETMS_Presentation.EETMS_Events
                                  DR_TicketsForEvent["Quantity"].ToString(),
                                  DR_TicketsForEvent["Available"].ToString(),
                                  DR_TicketsForEvent["CurrentSales"].ToString()
-
-
-
                     );
-
             }
-
         }
 
         private int _GetTheIDTicketTypeFromDGV()
@@ -105,9 +100,8 @@ namespace EETMS_Presentation.EETMS_Events
             ERequestToOpenThe_USAddNewTicketTypeToTheEvent?.Invoke(this, new TicketEventArgs(_EventID, clsEETMS_Constants.kNEGATIVE_ONE));
         }
 
-        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ERequestToOpenThe_USAddNewTicketTypeToTheEvent?.Invoke(this, new TicketEventArgs(_EventID, _GetTheIDTicketTypeFromDGV()));
-        }
+        private void updateTicketToolStripMenuItem_Click(object sender, EventArgs e)
+           => ERequestToOpenThe_USAddNewTicketTypeToTheEvent?.Invoke(this, new TicketEventArgs(_EventID, _GetTheIDTicketTypeFromDGV()));
+
     }
 }

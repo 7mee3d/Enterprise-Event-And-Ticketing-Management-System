@@ -88,11 +88,7 @@ namespace EETMS_Presentation.EETMS_Events
                 else if (DGVC.Value.ToString() == "Completed") DGVC.Style.ForeColor = Color.FromArgb(34, 197, 94);
                 else DGVC.Style.ForeColor = Color.Red;
 
-
             }
-
-
-
         }
 
         private void _LoadAndFillDataGridViewONAllInformationEvent()
@@ -220,24 +216,6 @@ namespace EETMS_Presentation.EETMS_Events
             => (GDataGridViewEventsInformation.SelectedRows.Count > clsEETMS_Constants.kZERO) ?
             Convert.ToInt32(GDataGridViewEventsInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells["EventID"].Value) :
             clsEETMS_Constants.kNEGATIVE_ONE;
-
-        private void deleteEventToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-            if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure To Delete This Event ?", "Note For Delete Event", MessageDialogButtons.YesNo, MessageDialogIcon.Information))
-                if (EventBL.DeleteTheEvent(_GetTheEventID()))
-                {
-                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Event Is Deleted Successfully", "Note For Delete Event", MessageDialogButtons.OK, MessageDialogIcon.Information);
-                    _InitalSettingAfterLoadTheUSEvents();
-                }
-                else
-                {
-                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Connot Delete This Event Because The Event Selled Tickets", "Note For Delete Event", MessageDialogButtons.OK, MessageDialogIcon.Error);
-                    return;
-                }
-
-        }
 
         private void _LoadAllInformationEventsToDGVAfterTheSearchEvent()
         {
@@ -470,6 +448,23 @@ namespace EETMS_Presentation.EETMS_Events
         private void GTextBoxStreetCustomFilter_TextChanged(object sender, EventArgs e)
             => _FillTheInformationEventToDGVAfterTheFilterCustom();
 
+        private void editEventToolStripMenuItem_Click(object sender, EventArgs e)
+          => RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
+
+        private void deleteEventToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure To Delete This Event ?", "Note For Delete Event", MessageDialogButtons.YesNo, MessageDialogIcon.Information))
+                if (EventBL.DeleteTheEvent(_GetTheEventID()))
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Event Is Deleted Successfully", "Note For Delete Event", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                    _InitalSettingAfterLoadTheUSEvents();
+                }
+                else
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Connot Delete This Event Because The Event Selled Tickets", "Note For Delete Event", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                    return;
+                }
+        }
 
 
     }
