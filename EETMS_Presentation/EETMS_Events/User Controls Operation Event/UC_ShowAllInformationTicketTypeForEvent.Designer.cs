@@ -47,17 +47,17 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentSales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStripOperationTicket = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GGButtonWarningFullTheTicketTypeEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGButtonAddTicketType = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.contextMenuStripOperationTicket = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewTicketsEvents)).BeginInit();
-            this.guna2GradientPanel2.SuspendLayout();
             this.contextMenuStripOperationTicket.SuspendLayout();
+            this.guna2GradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBackEvents
@@ -263,6 +263,24 @@
             this.CurrentSales.Name = "CurrentSales";
             this.CurrentSales.ReadOnly = true;
             // 
+            // contextMenuStripOperationTicket
+            // 
+            this.contextMenuStripOperationTicket.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateTicketToolStripMenuItem});
+            this.contextMenuStripOperationTicket.Name = "contextMenuStripOperationTicket";
+            this.contextMenuStripOperationTicket.Size = new System.Drawing.Size(190, 42);
+            // 
+            // updateTicketToolStripMenuItem
+            // 
+            this.updateTicketToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.updateTicketToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.updateTicketToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("updateTicketToolStripMenuItem.Image")));
+            this.updateTicketToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.updateTicketToolStripMenuItem.Name = "updateTicketToolStripMenuItem";
+            this.updateTicketToolStripMenuItem.Size = new System.Drawing.Size(189, 38);
+            this.updateTicketToolStripMenuItem.Text = "Update Ticket";
+            this.updateTicketToolStripMenuItem.Click += new System.EventHandler(this.updateTicketToolStripMenuItem_Click);
+            // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
@@ -302,7 +320,7 @@
             this.GGButtonWarningFullTheTicketTypeEvent.Location = new System.Drawing.Point(12, 13);
             this.GGButtonWarningFullTheTicketTypeEvent.Name = "GGButtonWarningFullTheTicketTypeEvent";
             this.GGButtonWarningFullTheTicketTypeEvent.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.GGButtonWarningFullTheTicketTypeEvent.Size = new System.Drawing.Size(460, 37);
+            this.GGButtonWarningFullTheTicketTypeEvent.Size = new System.Drawing.Size(677, 37);
             this.GGButtonWarningFullTheTicketTypeEvent.TabIndex = 7;
             this.GGButtonWarningFullTheTicketTypeEvent.Text = "*You cannot add a Ticket Type because all types already exist.";
             this.GGButtonWarningFullTheTicketTypeEvent.Visible = false;
@@ -366,24 +384,6 @@
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.guna2MessageDialog1.Text = null;
             // 
-            // contextMenuStripOperationTicket
-            // 
-            this.contextMenuStripOperationTicket.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateTicketToolStripMenuItem});
-            this.contextMenuStripOperationTicket.Name = "contextMenuStripOperationTicket";
-            this.contextMenuStripOperationTicket.Size = new System.Drawing.Size(190, 42);
-            // 
-            // updateTicketToolStripMenuItem
-            // 
-            this.updateTicketToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
-            this.updateTicketToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.updateTicketToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("updateTicketToolStripMenuItem.Image")));
-            this.updateTicketToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.updateTicketToolStripMenuItem.Name = "updateTicketToolStripMenuItem";
-            this.updateTicketToolStripMenuItem.Size = new System.Drawing.Size(189, 38);
-            this.updateTicketToolStripMenuItem.Text = "Update Ticket";
-            this.updateTicketToolStripMenuItem.Click += new System.EventHandler(this.updateTicketToolStripMenuItem_Click);
-            // 
             // UC_ShowAllInformationTicketTypeForEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,8 +402,8 @@
             this.Load += new System.EventHandler(this.US_AddAndUpdateTheTicketsToTheEvents_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewTicketsEvents)).EndInit();
-            this.guna2GradientPanel2.ResumeLayout(false);
             this.contextMenuStripOperationTicket.ResumeLayout(false);
+            this.guna2GradientPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

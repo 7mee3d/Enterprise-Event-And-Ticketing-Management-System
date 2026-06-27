@@ -116,6 +116,7 @@ namespace EETMS_DataAccessLayer
                                             SET
                                             EventName = @EventName ,
                                             DateTimeEvent = @DateTimeEvent ,
+                                            EndDateTimeEvent = @EndDateTimeEvent ,
                                             Duration = @Duration ,
                                             MaxCapacity = @MaxCapacity,
                                             Street = @Street ,
@@ -136,6 +137,7 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.Add("EventID", SqlDbType.Int).Value = IDEvent;
                         command.Parameters.Add("EventName", SqlDbType.NVarChar, 300).Value = NewInformationEvent.EventName;
                         command.Parameters.Add("DateTimeEvent", SqlDbType.DateTime2).Value = NewInformationEvent.DateTimeEvent;
+                        command.Parameters.Add("EndDateTimeEvent", SqlDbType.DateTime2).Value = NewInformationEvent.EndDateTimeEvent;
                         command.Parameters.Add("Duration", SqlDbType.Int).Value = NewInformationEvent.DurationEvent;
                         command.Parameters.Add("MaxCapacity", SqlDbType.SmallInt).Value = NewInformationEvent.MaxCapacity;
                         command.Parameters.Add("Street", SqlDbType.NVarChar, 350).Value = NewInformationEvent.Street;

@@ -71,6 +71,30 @@ namespace EETMS_Presentation.EETMS_Events
             GDataGridViewTicketsEvents.ClearSelection();
             _CheckTheEventHaveTheFullTicketOrNotVisiableAddTicket();
             _InitalSettingLabelsTitleEvents();
+            if (!_HandleCompletedEventContraints()) return;
+        }
+
+        private bool _HandleCompletedEventContraints()
+        {
+            EventDTO AllInformationEvent = EventBL.FindTheEventBy(_EventID);
+            if (AllInformationEvent == null) return false;
+
+            if (DateTime.Now > AllInformationEvent.EndDateTimeEvent && _DT_AllTicketsEvent.Rows.Count == 3)
+            {
+                GGButtonWarningFullTheTicketTypeEvent.Visible = true;
+                GGButtonAddTicketType.Visible = false;
+                GGButtonWarningFullTheTicketTypeEvent.Text = "*You cannot add a Ticket Type because all types already exist , And Tickets cannot be added or modified because this event has been completed.";
+                return false;
+            }
+            else if (DateTime.Now > AllInformationEvent.EndDateTimeEvent)
+            {
+                GGButtonWarningFullTheTicketTypeEvent.Visible = true;
+                GGButtonAddTicketType.Visible = false;
+                GGButtonWarningFullTheTicketTypeEvent.Text = "*Tickets cannot be added or modified because this event has been completed.";
+                return false;
+            }
+
+            return true;
         }
 
         private void US_AddAndUpdateTheTicketsToTheEvents_Load(object sender, EventArgs e)

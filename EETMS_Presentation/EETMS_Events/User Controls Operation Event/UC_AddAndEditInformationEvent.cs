@@ -49,11 +49,6 @@ namespace EETMS_Presentation.EETMS_Events
 
         }
 
-        private string _GetTheFullDateAndTime(Guna2DateTimePicker DatePicker, Guna2DateTimePicker TimePicker)
-        {
-            return DatePicker.Value.ToString() + TimePicker.Value.ToString();
-        }
-
         private bool _HnadleDateTime()
         {
             if (_Mode == _EnMode._kADD_NEW_EVENT)
@@ -72,6 +67,29 @@ namespace EETMS_Presentation.EETMS_Events
             return true;
         }
 
+        private bool _HandleCompletedEventContraints()
+        {
+            if (DateTime.Now > _InformationEvent.EndDateTimeEvent)
+            {
+                GGButtonWarningMessageWhenTheEventComplete.Visible = true;
+                GButtonCreateEvent.Enabled = false;
+
+                GTextBoxDiscripation.Enabled = false;
+                GTextBoxDuration.Enabled = false;
+                GTextBoxEventName.Enabled = false;
+                GTextBoxStreet.Enabled = false;
+                GDateTimePickerEndDateTimeEvent.Enabled = false;
+                GDateTimePickerStartDateTimeEvent.Enabled = false;
+                GNumericUpDownMaxCapacity.Enabled = false;
+                GComboBoxCategories.Enabled = false;
+                GComboBoxCountries.Enabled = false;
+                return false;
+
+            }
+
+            return true;
+        }
+
         private void _LoadAllInformationEvent()
         {
 
@@ -81,11 +99,14 @@ namespace EETMS_Presentation.EETMS_Events
                 GDateTimePickerStartDateTimeEvent.MinDate = DateTime.Today;
                 _InformationEvent = new EventDTO();
                 _InformationEvent.EnMode = EventDTO.EnModeEvent._kADD_NEW_EVENT;
+                lblMainTitleEvent.Text = "Create New Event";
+
                 return;
             }
 
 
             _InformationEvent = EventBL.FindTheEventBy(_IDEvent);
+
 
 
             if (_InformationEvent == null)
@@ -120,6 +141,9 @@ namespace EETMS_Presentation.EETMS_Events
             else
                 GGButtonManageTheTicketsEvents.Enabled = false;
 
+            lblMainTitleEvent.Text = "Update Information Event";
+
+            if (!_HandleCompletedEventContraints()) return;
         }
 
         private void GButtonBackTheEvents_Click(object sender, EventArgs e)
@@ -252,6 +276,7 @@ namespace EETMS_Presentation.EETMS_Events
 
 
             GButtonCreateEvent.Text = "Update Event";
+            lblMainTitleEvent.Text = "Update Information Event";
             _InformationEvent.EnMode = EventDTO.EnModeEvent._kUPDATE_INFORMATION_EVENT;
             _Mode = _EnMode._kEDIT_THE_INFORMATION_EVENT;
 
