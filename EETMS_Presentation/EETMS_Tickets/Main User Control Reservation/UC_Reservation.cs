@@ -65,124 +65,129 @@ namespace EETMS_Presentation.EETMS_Tickets
             _EventID = clsEETMS_Constants.kZERO;
         }
 
-        private void _CheckTheStackTickes(int CountOfTicketsAvailable = clsEETMS_Constants.kZERO, bool IsSelected = false, Guna2GradientButton G2DB = null, Label lblLeftTikets = null)
+        private void _CheckTheStackTickes(Guna2GradientPanel Panel, int CountOfTicketsAvailable = clsEETMS_Constants.kZERO, bool IsSelected = false, Guna2GradientButton G2DB = null, Label lblLeftTikets = null, Guna2NumericUpDown G2ND = null)
         {
-
-            if (IsSelected)
+            if (Panel.Enabled)
             {
+                if (G2ND != null)
+                    G2ND.Enabled = false;
 
-                G2DB.Text = "Selected";
-                G2DB.DisabledState.ForeColor = Color.White;
+                if (IsSelected)
+                {
 
-                G2DB.DisabledState.FillColor = Color.FromArgb(
+                    G2DB.Text = "Selected";
+                    G2DB.DisabledState.ForeColor = Color.White;
+                    G2ND.Enabled = true;
+                    G2DB.DisabledState.FillColor = Color.FromArgb(
 
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
 
-                    );
+                        );
 
-                G2DB.DisabledState.FillColor2 = Color.FromArgb(
+                    G2DB.DisabledState.FillColor2 = Color.FromArgb(
 
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
 
-                    );
+                        );
 
-                return;
-            }
+                    return;
+                }
 
-            if (CountOfTicketsAvailable == clsEETMS_Constants.kZERO)
-            {
-                G2DB.Text = clsEETMS_Constants.kEMPTY_STRING ;
-                G2DB.DisabledState.FillColor = Color.FromArgb(
+                if (CountOfTicketsAvailable == clsEETMS_Constants.kZERO)
+                {
+                    G2DB.Text = clsEETMS_Constants.kEMPTY_STRING;
+                    G2DB.DisabledState.FillColor = Color.FromArgb(
 
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
 
-                    );
+                        );
 
-                G2DB.DisabledState.FillColor2 = Color.FromArgb(
+                    G2DB.DisabledState.FillColor2 = Color.FromArgb(
 
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
-                    
-                    );
-                lblLeftTikets.ForeColor = Color.Black;
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE
 
-                return;
-            }
+                        );
+                    lblLeftTikets.ForeColor = Color.Black;
 
-            if (CountOfTicketsAvailable > clsEETMS_Constants.kNUMBER_LOW_STACK_TICKETS)
-            {
-                G2DB.Text = "Available";
-                G2DB.DisabledState.ForeColor = Color.FromArgb(
+                    return;
+                }
 
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_FOREST_GREEN,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_FOREST_GREEN, 
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_FOREST_GREEN
-                    
-                    );
+                if (CountOfTicketsAvailable > clsEETMS_Constants.kNUMBER_LOW_STACK_TICKETS)
+                {
+                    G2DB.Text = "Available";
+                    G2DB.DisabledState.ForeColor = Color.FromArgb(
 
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_FOREST_GREEN,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_FOREST_GREEN,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_FOREST_GREEN
 
-                G2DB.DisabledState.FillColor = Color.FromArgb(
-
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_LIGHT_GREEN,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_LIGHT_GREEN,
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_LIGHT_GREEN
-
-                    );
-
-                G2DB.DisabledState.FillColor2 = Color.FromArgb(
-                    
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_LIGHT_GREEN,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_LIGHT_GREEN,
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_LIGHT_GREEN
-                    
-                    );
-
-                lblLeftTikets.ForeColor = Color.Black;
-            }
-            else
-            {
-
-                G2DB.Text = "Low Stack";
-                G2DB.DisabledState.ForeColor = Color.FromArgb(
-                    
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_BURNT_ORANGE,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_BURNT_ORANGE,
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_BURNT_ORANGE
-                    
-                    );
+                        );
 
 
-                G2DB.DisabledState.FillColor = Color.FromArgb(
+                    G2DB.DisabledState.FillColor = Color.FromArgb(
 
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_LIGHT_AMBER,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_LIGHT_AMBER,
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_LIGHT_AMBER
-                    
-                    );
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_LIGHT_GREEN,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_LIGHT_GREEN,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_LIGHT_GREEN
 
-                G2DB.DisabledState.FillColor2 = Color.FromArgb(
-                    
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_LIGHT_AMBER,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_LIGHT_AMBER,
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_LIGHT_AMBER
+                        );
 
-                    );
+                    G2DB.DisabledState.FillColor2 = Color.FromArgb(
 
-                lblLeftTikets.ForeColor = Color.FromArgb(
-                    
-                    clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_BURNT_ORANGE,
-                    clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_BURNT_ORANGE,
-                    clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_BURNT_ORANGE
-                    
-                    );
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_LIGHT_GREEN,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_LIGHT_GREEN,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_LIGHT_GREEN
 
+                        );
+
+                    lblLeftTikets.ForeColor = Color.Black;
+                }
+                else
+                {
+
+                    G2DB.Text = "Low Stack";
+                    G2DB.DisabledState.ForeColor = Color.FromArgb(
+
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_BURNT_ORANGE,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_BURNT_ORANGE,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_BURNT_ORANGE
+
+                        );
+
+
+                    G2DB.DisabledState.FillColor = Color.FromArgb(
+
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_LIGHT_AMBER,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_LIGHT_AMBER,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_LIGHT_AMBER
+
+                        );
+
+                    G2DB.DisabledState.FillColor2 = Color.FromArgb(
+
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_LIGHT_AMBER,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_LIGHT_AMBER,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_LIGHT_AMBER
+
+                        );
+
+                    lblLeftTikets.ForeColor = Color.FromArgb(
+
+                        clsEETMS_Constants.kNUMBER_RED_COLOR_RESERVATION_BURNT_ORANGE,
+                        clsEETMS_Constants.kNUMBER_GREEN_COLOR_RESERVATION_BURNT_ORANGE,
+                        clsEETMS_Constants.kNUMBER_BLUE_COLOR_RESERVATION_BURNT_ORANGE
+
+                        );
+
+                }
             }
 
         }
@@ -240,10 +245,14 @@ namespace EETMS_Presentation.EETMS_Tickets
             if (GComboBoxSelectEvents.Items.Count > clsEETMS_Constants.kZERO)
                 _EventID = (int)GComboBoxSelectEvents.SelectedValue;
 
+            GGPanelPermiumTicket.Enabled = false;
+            GGPanelRegularTicket.Enabled = false;
+            GGPanelVIPTicket.Enabled = false;
 
             DataTable TicketType_DT = TicketBL.GetInformationTicketForEvent(_EventID);
 
             if (TicketType_DT != null)
+
                 foreach (DataRow DR_Tickets in TicketType_DT.Rows)
                 {
                     string ticketType = DR_Tickets["TicketTypeName"].ToString();
@@ -252,14 +261,14 @@ namespace EETMS_Presentation.EETMS_Tickets
                     {
                         case "Regular":
 
+                            if (Convert.ToInt32(DR_Tickets["Available"]) <= clsEETMS_Constants.kZERO)
+                                break;
+
                             lblQLeftRegular.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketRegular.Text = "$" + DR_Tickets["Price"].ToString();
+                            GGPanelRegularTicket.Enabled = true;
 
-                            if (Convert.ToInt32(DR_Tickets["Available"]) > clsEETMS_Constants.kZERO)
-                                GGPanelRegularTicket.Enabled = true;
-
-
-                            _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonRegularTicketStatus, lblQLeftRegular);
+                            _CheckTheStackTickes(GGPanelRegularTicket, Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonRegularTicketStatus, lblQLeftRegular);
                             GNumericUpDownRegularTicket.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceTheRegularTicket = Convert.ToInt32(DR_Tickets["Price"]);
@@ -269,28 +278,33 @@ namespace EETMS_Presentation.EETMS_Tickets
 
 
                         case "VIP":
+
+                            if (Convert.ToInt32(DR_Tickets["Available"]) <= clsEETMS_Constants.kZERO)
+                                break;
+
                             lblQLeftVIP.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketVIP.Text = "$" + DR_Tickets["Price"].ToString();
+                            GGPanelVIPTicket.Enabled = true;
 
-                            if (Convert.ToInt32(DR_Tickets["Available"]) > clsEETMS_Constants.kZERO)
-                                GGPanelVIPTicket.Enabled = true;
-
-                            _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonVIPTicketStatus, lblQLeftVIP);
+                            _CheckTheStackTickes(GGPanelVIPTicket, Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonVIPTicketStatus, lblQLeftVIP);
                             GNumericUpDownVIPTicket.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceTheVIPTicket = Convert.ToInt32(DR_Tickets["Price"]);
                             _NumberAvailableTicketVIP = Convert.ToInt32(DR_Tickets["Available"]);
+
                             break;
 
 
                         case "Premium":
+
+                            if (Convert.ToInt32(DR_Tickets["Available"]) <= clsEETMS_Constants.kZERO)
+                                break;
+
                             lblQLeftPermium.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketPermium.Text = "$" + DR_Tickets["Price"].ToString();
+                            GGPanelPermiumTicket.Enabled = true;
 
-                            if (Convert.ToInt32(DR_Tickets["Available"]) > clsEETMS_Constants.kZERO)
-                                GGPanelPermiumTicket.Enabled = true;
-
-                            _CheckTheStackTickes(Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonPremiumTicketStatus, lblQLeftPermium);
+                            _CheckTheStackTickes(GGPanelPermiumTicket, Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonPremiumTicketStatus, lblQLeftPermium);
                             GNumericUpDownPremium.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
 
                             _PriceThePreimumTicket = Convert.ToInt32(DR_Tickets["Price"]);
@@ -342,13 +356,13 @@ namespace EETMS_Presentation.EETMS_Tickets
         }
 
         private void GGPanelRegularTicket_MouseClick(object sender, MouseEventArgs e)
-            => TicketPanel("Regular");
+            => TicketPanel(sender, "Regular");
 
         private void GGPanelVIPTicket_MouseClick(object sender, MouseEventArgs e)
-            => TicketPanel("VIP");
+            => TicketPanel(sender, "VIP");
 
         private void GGPanelPermiumTicket_MouseClick(object sender, MouseEventArgs e)
-            => TicketPanel("Premium");
+            => TicketPanel(sender, "Premium");
 
         private void _UpdateThePanelsAndThePricesAndCountTickets()
         {
@@ -566,7 +580,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
                 if (ReservationBL.SaveTheInformationReservationMode(reservationsDTO))
                 {
-             
+
 
                     int TicketTypeIDRegular = clsEETMS_Constants.kZERO;
                     int TicketTypeIDVIP = clsEETMS_Constants.kZERO;
@@ -684,42 +698,44 @@ namespace EETMS_Presentation.EETMS_Tickets
             _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
         }
 
-        private void TicketPanel(string TicketType)
+        private void TicketPanel(object sender, string TicketType)
         {
+            Guna2GradientPanel Panel = sender as Guna2GradientPanel;
+
             switch (TicketType)
             {
 
                 case "Regular":
-                    _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonRegularTicketStatus, lblQLeftRegular);
+                    _CheckTheStackTickes(Panel, clsEETMS_Constants.kZERO, true, GGButtonRegularTicketStatus, lblQLeftRegular, GNumericUpDownRegularTicket);
                     _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelRegularTicket, GNumericUpDownRegularTicket);
                     _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
                     _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
 
-                    _CheckTheStackTickes(_NumberAvailableTicketPremium, false, GGButtonPremiumTicketStatus, lblQLeftPermium);
-                    _CheckTheStackTickes(_NumberAvailableTicketVIP, false, GGButtonVIPTicketStatus, lblQLeftVIP);
+                    _CheckTheStackTickes(GGPanelPermiumTicket, _NumberAvailableTicketPremium, false, GGButtonPremiumTicketStatus, lblQLeftPermium, GNumericUpDownPremium);
+                    _CheckTheStackTickes(GGPanelVIPTicket, _NumberAvailableTicketVIP, false, GGButtonVIPTicketStatus, lblQLeftVIP, GNumericUpDownVIPTicket);
 
                     break;
 
                 case "VIP":
-                    _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonVIPTicketStatus, lblQLeftVIP);
+                    _CheckTheStackTickes(Panel, clsEETMS_Constants.kZERO, true, GGButtonVIPTicketStatus, lblQLeftVIP, GNumericUpDownVIPTicket);
                     _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelVIPTicket, GNumericUpDownVIPTicket);
                     _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket);
                     _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
 
 
-                    _CheckTheStackTickes(_NumberAvailableTicketPremium, false, GGButtonPremiumTicketStatus, lblQLeftPermium);
-                    _CheckTheStackTickes(_NumberAvailableTicketRegular, false, GGButtonRegularTicketStatus, lblQLeftRegular);
+                    _CheckTheStackTickes(GGPanelPermiumTicket, _NumberAvailableTicketPremium, false, GGButtonPremiumTicketStatus, lblQLeftPermium, GNumericUpDownPremium);
+                    _CheckTheStackTickes(GGPanelRegularTicket, _NumberAvailableTicketRegular, false, GGButtonRegularTicketStatus, lblQLeftRegular, GNumericUpDownRegularTicket);
 
                     break;
 
                 case "Premium":
-                    _CheckTheStackTickes(clsEETMS_Constants.kZERO, true, GGButtonPremiumTicketStatus, lblQLeftPermium);
+                    _CheckTheStackTickes(Panel, clsEETMS_Constants.kZERO, true, GGButtonPremiumTicketStatus, lblQLeftPermium, GNumericUpDownPremium);
                     _ChangeTheColorBackAndFrontMouseClickTheCardTicket(GGPanelPermiumTicket, GNumericUpDownPremium);
                     _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket);
                     _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket);
 
-                    _CheckTheStackTickes(_NumberAvailableTicketVIP, false, GGButtonVIPTicketStatus, lblQLeftVIP);
-                    _CheckTheStackTickes(_NumberAvailableTicketRegular, false, GGButtonRegularTicketStatus, lblQLeftRegular);
+                    _CheckTheStackTickes(GGPanelVIPTicket, _NumberAvailableTicketVIP, false, GGButtonVIPTicketStatus, lblQLeftVIP, GNumericUpDownVIPTicket);
+                    _CheckTheStackTickes(GGPanelRegularTicket, _NumberAvailableTicketRegular, false, GGButtonRegularTicketStatus, lblQLeftRegular, GNumericUpDownRegularTicket);
 
                     break;
 

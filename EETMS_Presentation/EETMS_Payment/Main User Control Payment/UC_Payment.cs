@@ -199,12 +199,16 @@ namespace EETMS_Presentation.EETMS_Payment
 
         private void _LoadAllInformationPaymentStatusToComboBox()
         {
+            GSubComboBoxTheFilterPayment.DataSource = null;
+            GSubComboBoxTheFilterPayment.Items.Clear();
             GSubComboBoxTheFilterPayment.DataSource = PaymentsBL.GetAllPaymentStatus();
             GSubComboBoxTheFilterPayment.DisplayMember = "NamePaymentStatus";
         }
 
         private void _LoadAllInformationPaymentMethodsToComboBox()
         {
+            GSubComboBoxTheFilterPayment.DataSource = null;
+            GSubComboBoxTheFilterPayment.Items.Clear();
             GSubComboBoxTheFilterPayment.DataSource = PaymentsBL.GetAllPaymentMethods();
             GSubComboBoxTheFilterPayment.DisplayMember = "NamePaymentMethod";
 
