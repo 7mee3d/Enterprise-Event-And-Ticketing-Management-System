@@ -386,7 +386,7 @@
             // 
             this.PicLogoutEETMS.BackColor = System.Drawing.Color.Transparent;
             this.PicLogoutEETMS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PicLogoutEETMS.Image = ((System.Drawing.Image)(resources.GetObject("PicLogoutEETMS.Image")));
+            this.PicLogoutEETMS.Image = global::EETMS_Presentation.Properties.Resources.logout_EETMS;
             this.PicLogoutEETMS.Location = new System.Drawing.Point(201, 856);
             this.PicLogoutEETMS.Name = "PicLogoutEETMS";
             this.PicLogoutEETMS.Size = new System.Drawing.Size(35, 33);

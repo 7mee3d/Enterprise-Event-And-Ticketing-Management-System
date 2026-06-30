@@ -731,8 +731,8 @@
             this.GGButtonManageTheTicketsEvents.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GGButtonManageTheTicketsEvents.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonManageTheTicketsEvents.ForeColor = System.Drawing.Color.White;
-            this.GGButtonManageTheTicketsEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GGButtonManageTheTicketsEvents.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
+            this.GGButtonManageTheTicketsEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonManageTheTicketsEvents.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GGButtonManageTheTicketsEvents.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonManageTheTicketsEvents.Image")));
             this.GGButtonManageTheTicketsEvents.Location = new System.Drawing.Point(976, 22);
             this.GGButtonManageTheTicketsEvents.Name = "GGButtonManageTheTicketsEvents";
