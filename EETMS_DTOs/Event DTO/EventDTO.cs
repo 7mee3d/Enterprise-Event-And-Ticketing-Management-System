@@ -25,6 +25,8 @@ namespace EETMS_DTOs
         public int CategoryID { get; set; }
         public string Discripation { get; set; }
         public bool IsActiveEvent { get; set; } = true;
+        public string StartTimeMeridiem { get; set; }
+        public string EndTimeMeridiem { get; set; }
 
         public EnModeEvent EnMode { get; set; }
 

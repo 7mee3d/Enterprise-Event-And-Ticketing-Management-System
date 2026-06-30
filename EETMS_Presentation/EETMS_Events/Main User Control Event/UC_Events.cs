@@ -57,16 +57,31 @@ namespace EETMS_Presentation.EETMS_Events
         {
             GDataGridViewEventsInformation.Rows.Clear();
 
+
             foreach (DataRow DR_Event in DT_EventsInformation.Rows)
             {
+                DateTime start = Convert.ToDateTime(DR_Event["DateTimeEvent"]);
+
+                string startDate =
+                    $"{start:dd/MM/yyyy HH:mm} {DR_Event["StartTimeMeridiem"]}";
+
+                string endDate = "Unknown";
+
+                if (!string.IsNullOrWhiteSpace(DR_Event["EndDateTimeEvent"].ToString()))
+                {
+                    DateTime end = Convert.ToDateTime(DR_Event["EndDateTimeEvent"]);
+
+                    endDate =
+                        $"{end:dd/MM/yyyy HH:mm} {DR_Event["EndTimeMeridiem"]}";
+                }
 
                 int CurrentRow = GDataGridViewEventsInformation.Rows.Add(
 
                      DR_Event["EventID"],
                      DR_Event["EventName"],
                      DR_Event["CategoryName"],
-                     DR_Event["DateTimeEvent"],
-                      !string.IsNullOrWhiteSpace(DR_Event["EndDateTimeEvent"].ToString()) ? DR_Event["EndDateTimeEvent"] : "Unknown",
+                     startDate,
+                     endDate,
                      DR_Event["SoldTickets"] + " / " + DR_Event["MaxCapacity"],
                      DR_Event["CountryName"] + " , " + DR_Event["Street"],
                      DR_Event["Duration"],
@@ -466,6 +481,9 @@ namespace EETMS_Presentation.EETMS_Events
                 }
         }
 
+        private void GDataGridViewEventsInformation_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
 
+        }
     }
 }

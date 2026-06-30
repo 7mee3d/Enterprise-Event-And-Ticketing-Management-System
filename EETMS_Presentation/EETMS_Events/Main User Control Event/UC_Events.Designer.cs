@@ -209,6 +209,7 @@
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.Height = 67;
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.GDataGridViewEventsInformation.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GDataGridViewEventsInformation_CellFormatting);
             // 
             // EventID
             // 
@@ -288,7 +289,7 @@
             this.toolStripSeparator2,
             this.deleteEventToolStripMenuItem1});
             this.GContextMenuStripEvents.Name = "contextMenuStrip1";
-            this.GContextMenuStripEvents.Size = new System.Drawing.Size(197, 108);
+            this.GContextMenuStripEvents.Size = new System.Drawing.Size(181, 86);
             // 
             // editEventToolStripMenuItem
             // 
@@ -297,14 +298,14 @@
             this.editEventToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editEventToolStripMenuItem.Image")));
             this.editEventToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editEventToolStripMenuItem.Name = "editEventToolStripMenuItem";
-            this.editEventToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.editEventToolStripMenuItem.Size = new System.Drawing.Size(180, 38);
             this.editEventToolStripMenuItem.Text = "Edit Event";
             this.editEventToolStripMenuItem.Click += new System.EventHandler(this.editEventToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // deleteEventToolStripMenuItem1
             // 
@@ -313,7 +314,7 @@
             this.deleteEventToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteEventToolStripMenuItem1.Image")));
             this.deleteEventToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteEventToolStripMenuItem1.Name = "deleteEventToolStripMenuItem1";
-            this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
+            this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(180, 38);
             this.deleteEventToolStripMenuItem1.Text = "Delete Event";
             this.deleteEventToolStripMenuItem1.Click += new System.EventHandler(this.deleteEventToolStripMenuItem1_Click);
             // 
@@ -333,13 +334,14 @@
             this.GGButtonCreateNewEvent.Animated = true;
             this.GGButtonCreateNewEvent.AnimatedGIF = true;
             this.GGButtonCreateNewEvent.BorderRadius = 5;
+            this.GGButtonCreateNewEvent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GGButtonCreateNewEvent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GGButtonCreateNewEvent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GGButtonCreateNewEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonCreateNewEvent.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonCreateNewEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonCreateNewEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonCreateNewEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonCreateNewEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonCreateNewEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
             this.GGButtonCreateNewEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonCreateNewEvent.ForeColor = System.Drawing.Color.White;
             this.GGButtonCreateNewEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));

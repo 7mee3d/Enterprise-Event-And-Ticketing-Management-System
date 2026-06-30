@@ -67,6 +67,20 @@ namespace EETMS_Presentation.EETMS_Events
             return true;
         }
 
+        private DateTime GetFullDateTime(Guna2DateTimePicker datePicker, Guna2ComboBox[] comboBoxes)
+        {
+            int hour = int.Parse(comboBoxes[0].Text);
+            int minute = int.Parse(comboBoxes[1].Text);
+
+            return new DateTime(
+                datePicker.Value.Year,
+                datePicker.Value.Month,
+                datePicker.Value.Day,
+                hour,
+                minute,
+               0);
+        }
+
         private bool _HandleCompletedEventContraints()
         {
             if (DateTime.Now > _InformationEvent.EndDateTimeEvent)
@@ -123,10 +137,29 @@ namespace EETMS_Presentation.EETMS_Events
             GTextBoxDiscripation.Text = _InformationEvent.Discripation;
 
             if (_InformationEvent.DateTimeEvent != null)
-                GDateTimePickerStartDateTimeEvent.Value = _InformationEvent.DateTimeEvent.Value;
+            {
+                GDateTimePickerStartDateTimeEvent.Value = new DateTime(_InformationEvent.DateTimeEvent.Value.Year, _InformationEvent.DateTimeEvent.Value.Month, _InformationEvent.DateTimeEvent.Value.Day);
+
+                if (_InformationEvent.DateTimeEvent.Value.Hour > 12)
+                    GComboBoxStartHours.SelectedIndex = GComboBoxStartHours.FindString((_InformationEvent.DateTimeEvent.Value.Hour - 12).ToString());
+                else GComboBoxStartHours.SelectedIndex = GComboBoxStartHours.FindString((_InformationEvent.DateTimeEvent.Value.Hour).ToString());
+
+                GComboBoxStartMinutes.SelectedIndex = GComboBoxStartMinutes.FindString(_InformationEvent.DateTimeEvent.Value.Minute.ToString());
+                GComboBoxStartZone.SelectedIndex = GComboBoxStartZone.FindString(_InformationEvent.StartTimeMeridiem);
+            }
 
             if (_InformationEvent.EndDateTimeEvent != null)
-                GDateTimePickerEndDateTimeEvent.Value = _InformationEvent.EndDateTimeEvent.Value;
+            {
+                GDateTimePickerEndDateTimeEvent.Value = new DateTime(_InformationEvent.EndDateTimeEvent.Value.Year, _InformationEvent.EndDateTimeEvent.Value.Month, _InformationEvent.EndDateTimeEvent.Value.Day);
+
+                if (_InformationEvent.EndDateTimeEvent.Value.Hour > 12)
+                    GComboBoxEndHour.SelectedIndex = GComboBoxEndHour.FindString((_InformationEvent.EndDateTimeEvent.Value.Hour - 12).ToString());
+                else GComboBoxEndHour.SelectedIndex = GComboBoxEndHour.FindString((_InformationEvent.EndDateTimeEvent.Value.Hour).ToString());
+
+                GComboBoxEndMinutes.SelectedIndex = GComboBoxEndMinutes.FindString(_InformationEvent.EndDateTimeEvent.Value.Minute.ToString());
+                GComboBoxEndZone.SelectedIndex = GComboBoxEndZone.FindString(_InformationEvent.EndTimeMeridiem);
+            }
+
 
             GComboBoxCategories.SelectedValue = _InformationEvent.CategoryID;
             GComboBoxCountries.SelectedValue = _InformationEvent.CountryID;
@@ -212,6 +245,21 @@ namespace EETMS_Presentation.EETMS_Events
                     );
         }
 
+        private bool _HandleTheDateTimeStartAndEndEvent()
+        {
+            if (_InformationEvent.DateTimeEvent > _InformationEvent.EndDateTimeEvent)
+            {
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                   _G2MD,
+                   "The End Date Time Is Less than start date",
+                   "Invalid Data",
+                   MessageDialogButtons.OK,
+                   MessageDialogIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
         private void _AddOrEditEventInformation()
         {
             if (!_HnadleDateTime()) return;
@@ -229,11 +277,22 @@ namespace EETMS_Presentation.EETMS_Events
 
             _InformationEvent.EventName = GTextBoxEventName.Text;
             _InformationEvent.Discripation = GTextBoxDiscripation.Text;
-            _InformationEvent.DateTimeEvent = GDateTimePickerStartDateTimeEvent.Value;
-            _InformationEvent.EndDateTimeEvent = GDateTimePickerEndDateTimeEvent.Value;
+
+            Guna2ComboBox[] ArrAllStartTime = { GComboBoxStartHours, GComboBoxStartMinutes };
+            _InformationEvent.DateTimeEvent = GetFullDateTime(GDateTimePickerStartDateTimeEvent, ArrAllStartTime);
+
+            Guna2ComboBox[] ArrAllEndTime = { GComboBoxEndHour, GComboBoxEndMinutes };
+            _InformationEvent.EndDateTimeEvent = GetFullDateTime(GDateTimePickerEndDateTimeEvent, ArrAllEndTime);
+
+            if (!_HandleTheDateTimeStartAndEndEvent()) return;
+
+            _InformationEvent.StartTimeMeridiem = GComboBoxStartZone.Text;
+            _InformationEvent.EndTimeMeridiem = GComboBoxEndZone.Text;
+
             _InformationEvent.CategoryID = Convert.ToInt32(GComboBoxCategories.SelectedValue);
             _InformationEvent.CountryID = Convert.ToInt32(GComboBoxCountries.SelectedValue);
             _InformationEvent.Street = GTextBoxStreet.Text;
+
 
             if (GTextBoxDuration.Text != null)
                 _InformationEvent.DurationEvent = Convert.ToInt32(GTextBoxDuration.Text);

@@ -43,7 +43,9 @@ namespace EETMS_DataAccessLayer
                                         CountryID,
                                         CategoryID,
                                         Discripation,
-                                        AvailableInEvent
+                                        AvailableInEvent,
+                                        StartTimeMeridiem ,
+                                        EndTimeMeridiem
 
 
                                 FROM [Events] ;
@@ -120,7 +122,9 @@ namespace EETMS_DataAccessLayer
 						                        E.Street,	
                                                 E.Discripation ,
 						                        E.IsActiveEvent ,
-                                                E.EndDateTimeEvent
+                                                E.EndDateTimeEvent , 
+                                                E.StartTimeMeridiem ,
+                                                E.EndTimeMeridiem
 
 
                                                                         FROM Events E
@@ -142,7 +146,9 @@ namespace EETMS_DataAccessLayer
                                      				E.Street,
                                                     E.Discripation,
                                      				E.IsActiveEvent ,
-                                                    E.EndDateTimeEvent ;
+                                                    E.EndDateTimeEvent ,
+                                                    E.StartTimeMeridiem ,
+                                                    E.EndTimeMeridiem ;
 
 
 
@@ -205,7 +211,9 @@ namespace EETMS_DataAccessLayer
                                             Street,
                                             CountryID,
                                             CategoryID,
-                                            Discripation
+                                            Discripation ,
+                                            StartTimeMeridiem  ,
+                                            EndTimeMeridiem
 
                                                     FROM [Events]
                                                     WHERE EventID = @EventID ;
@@ -238,6 +246,8 @@ namespace EETMS_DataAccessLayer
                                     CountryID = reader["CountryID"] != DBNull.Value ? (int)reader["CountryID"] : 0,
                                     CategoryID = reader["CategoryID"] != DBNull.Value ? (int)reader["CategoryID"] : 0,
                                     Discripation = reader["Discripation"] != DBNull.Value ? (string)reader["Discripation"] : null,
+                                    StartTimeMeridiem = reader["StartTimeMeridiem"] != DBNull.Value ? (string)reader["StartTimeMeridiem"] : null,
+                                    EndTimeMeridiem = reader["EndTimeMeridiem"] != DBNull.Value ? (string)reader["EndTimeMeridiem"] : null,
                                 };
 
                             }

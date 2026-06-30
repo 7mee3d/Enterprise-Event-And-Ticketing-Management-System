@@ -36,6 +36,7 @@
             this.GDateTimePickerEndDateTimeEvent = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.GNumericUpDownMaxCapacity = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.GGButtonWarningMessageWhenTheEventComplete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GDateTimePickerStartDateTimeEvent = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.GComboBoxCountries = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -58,7 +59,12 @@
             this.GButtonCreateEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GButtonCansel = new Guna.UI2.WinForms.Guna2Button();
             this.GGButtonWarningDisable = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.GGButtonWarningMessageWhenTheEventComplete = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GComboBoxStartHours = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxStartMinutes = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxStartZone = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxEndHour = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxEndMinutes = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxEndZone = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownMaxCapacity)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
@@ -120,6 +126,12 @@
             this.guna2GradientPanel1.Controls.Add(this.GGButtonWarningMessageWhenTheEventComplete);
             this.guna2GradientPanel1.Controls.Add(this.GDateTimePickerStartDateTimeEvent);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
+            this.guna2GradientPanel1.Controls.Add(this.GComboBoxEndZone);
+            this.guna2GradientPanel1.Controls.Add(this.GComboBoxStartZone);
+            this.guna2GradientPanel1.Controls.Add(this.GComboBoxEndMinutes);
+            this.guna2GradientPanel1.Controls.Add(this.GComboBoxStartMinutes);
+            this.guna2GradientPanel1.Controls.Add(this.GComboBoxEndHour);
+            this.guna2GradientPanel1.Controls.Add(this.GComboBoxStartHours);
             this.guna2GradientPanel1.Controls.Add(this.GComboBoxCountries);
             this.guna2GradientPanel1.Controls.Add(this.GComboBoxCategories);
             this.guna2GradientPanel1.Controls.Add(this.GTextBoxDiscripation);
@@ -149,25 +161,26 @@
             this.GDateTimePickerEndDateTimeEvent.BackColor = System.Drawing.Color.Transparent;
             this.GDateTimePickerEndDateTimeEvent.BorderRadius = 6;
             this.GDateTimePickerEndDateTimeEvent.Checked = true;
+            this.GDateTimePickerEndDateTimeEvent.CustomFormat = "dd/MM/yyyy";
             this.GDateTimePickerEndDateTimeEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GDateTimePickerEndDateTimeEvent.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GDateTimePickerEndDateTimeEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
-            this.GDateTimePickerEndDateTimeEvent.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.GDateTimePickerEndDateTimeEvent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.GDateTimePickerEndDateTimeEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.GDateTimePickerEndDateTimeEvent.Location = new System.Drawing.Point(527, 188);
+            this.GDateTimePickerEndDateTimeEvent.Location = new System.Drawing.Point(527, 216);
             this.GDateTimePickerEndDateTimeEvent.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.GDateTimePickerEndDateTimeEvent.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.GDateTimePickerEndDateTimeEvent.Name = "GDateTimePickerEndDateTimeEvent";
             this.GDateTimePickerEndDateTimeEvent.Size = new System.Drawing.Size(419, 42);
             this.GDateTimePickerEndDateTimeEvent.TabIndex = 8;
-            this.GDateTimePickerEndDateTimeEvent.Value = new System.DateTime(2026, 2, 10, 0, 14, 58, 732);
+            this.GDateTimePickerEndDateTimeEvent.Value = new System.DateTime(2026, 2, 10, 0, 0, 0, 0);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(517, 158);
+            this.label12.Location = new System.Drawing.Point(517, 186);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(150, 20);
             this.label12.TabIndex = 7;
@@ -179,7 +192,7 @@
             this.GNumericUpDownMaxCapacity.BorderRadius = 5;
             this.GNumericUpDownMaxCapacity.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.GNumericUpDownMaxCapacity.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNumericUpDownMaxCapacity.Location = new System.Drawing.Point(533, 391);
+            this.GNumericUpDownMaxCapacity.Location = new System.Drawing.Point(533, 452);
             this.GNumericUpDownMaxCapacity.Maximum = new decimal(new int[] {
             3000,
             0,
@@ -190,16 +203,41 @@
             this.GNumericUpDownMaxCapacity.TabIndex = 6;
             this.GNumericUpDownMaxCapacity.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             // 
+            // GGButtonWarningMessageWhenTheEventComplete
+            // 
+            this.GGButtonWarningMessageWhenTheEventComplete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.BorderRadius = 5;
+            this.GGButtonWarningMessageWhenTheEventComplete.BorderThickness = 1;
+            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.GGButtonWarningMessageWhenTheEventComplete.Enabled = false;
+            this.GGButtonWarningMessageWhenTheEventComplete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonWarningMessageWhenTheEventComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonWarningMessageWhenTheEventComplete.Image")));
+            this.GGButtonWarningMessageWhenTheEventComplete.Location = new System.Drawing.Point(533, 513);
+            this.GGButtonWarningMessageWhenTheEventComplete.Name = "GGButtonWarningMessageWhenTheEventComplete";
+            this.GGButtonWarningMessageWhenTheEventComplete.Size = new System.Drawing.Size(419, 42);
+            this.GGButtonWarningMessageWhenTheEventComplete.TabIndex = 0;
+            this.GGButtonWarningMessageWhenTheEventComplete.Text = "This event has been completed and can no longer be modified.";
+            this.GGButtonWarningMessageWhenTheEventComplete.TextOffset = new System.Drawing.Point(5, 0);
+            this.GGButtonWarningMessageWhenTheEventComplete.Visible = false;
+            // 
             // GDateTimePickerStartDateTimeEvent
             // 
             this.GDateTimePickerStartDateTimeEvent.Animated = true;
             this.GDateTimePickerStartDateTimeEvent.BackColor = System.Drawing.Color.Transparent;
             this.GDateTimePickerStartDateTimeEvent.BorderRadius = 6;
             this.GDateTimePickerStartDateTimeEvent.Checked = true;
+            this.GDateTimePickerStartDateTimeEvent.CustomFormat = "dd/MM/yyyy";
             this.GDateTimePickerStartDateTimeEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GDateTimePickerStartDateTimeEvent.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold);
             this.GDateTimePickerStartDateTimeEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
-            this.GDateTimePickerStartDateTimeEvent.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.GDateTimePickerStartDateTimeEvent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.GDateTimePickerStartDateTimeEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GDateTimePickerStartDateTimeEvent.Location = new System.Drawing.Point(533, 77);
             this.GDateTimePickerStartDateTimeEvent.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -294,7 +332,7 @@
             this.GTextBoxDuration.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GTextBoxDuration.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GTextBoxDuration.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxDuration.Location = new System.Drawing.Point(527, 286);
+            this.GTextBoxDuration.Location = new System.Drawing.Point(527, 347);
             this.GTextBoxDuration.Name = "GTextBoxDuration";
             this.GTextBoxDuration.PlaceholderText = "Duration....";
             this.GTextBoxDuration.SelectedText = "";
@@ -357,7 +395,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(529, 358);
+            this.label9.Location = new System.Drawing.Point(529, 419);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 20);
             this.label9.TabIndex = 1;
@@ -401,7 +439,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(523, 259);
+            this.label8.Location = new System.Drawing.Point(523, 320);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 20);
             this.label8.TabIndex = 1;
@@ -556,28 +594,241 @@
             this.GGButtonWarningDisable.TabIndex = 0;
             this.GGButtonWarningDisable.Text = "Events with sold tickets cannot be deleted.";
             // 
-            // GGButtonWarningMessageWhenTheEventComplete
+            // GComboBoxStartHours
             // 
-            this.GGButtonWarningMessageWhenTheEventComplete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.BorderRadius = 5;
-            this.GGButtonWarningMessageWhenTheEventComplete.BorderThickness = 1;
-            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.GGButtonWarningMessageWhenTheEventComplete.Enabled = false;
-            this.GGButtonWarningMessageWhenTheEventComplete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GGButtonWarningMessageWhenTheEventComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonWarningMessageWhenTheEventComplete.Image")));
-            this.GGButtonWarningMessageWhenTheEventComplete.Location = new System.Drawing.Point(533, 487);
-            this.GGButtonWarningMessageWhenTheEventComplete.Name = "GGButtonWarningMessageWhenTheEventComplete";
-            this.GGButtonWarningMessageWhenTheEventComplete.Size = new System.Drawing.Size(419, 42);
-            this.GGButtonWarningMessageWhenTheEventComplete.TabIndex = 0;
-            this.GGButtonWarningMessageWhenTheEventComplete.Text = "This event has been completed and can no longer be modified.";
-            this.GGButtonWarningMessageWhenTheEventComplete.TextOffset = new System.Drawing.Point(5, 0);
+            this.GComboBoxStartHours.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxStartHours.BorderRadius = 5;
+            this.GComboBoxStartHours.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxStartHours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxStartHours.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartHours.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartHours.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxStartHours.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxStartHours.ItemHeight = 30;
+            this.GComboBoxStartHours.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.GComboBoxStartHours.Location = new System.Drawing.Point(582, 135);
+            this.GComboBoxStartHours.Name = "GComboBoxStartHours";
+            this.GComboBoxStartHours.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxStartHours.StartIndex = 0;
+            this.GComboBoxStartHours.TabIndex = 3;
+            // 
+            // GComboBoxStartMinutes
+            // 
+            this.GComboBoxStartMinutes.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxStartMinutes.BorderRadius = 5;
+            this.GComboBoxStartMinutes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxStartMinutes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxStartMinutes.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartMinutes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartMinutes.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxStartMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxStartMinutes.ItemHeight = 30;
+            this.GComboBoxStartMinutes.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60"});
+            this.GComboBoxStartMinutes.Location = new System.Drawing.Point(685, 135);
+            this.GComboBoxStartMinutes.Name = "GComboBoxStartMinutes";
+            this.GComboBoxStartMinutes.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxStartMinutes.StartIndex = 0;
+            this.GComboBoxStartMinutes.TabIndex = 3;
+            // 
+            // GComboBoxStartZone
+            // 
+            this.GComboBoxStartZone.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxStartZone.BorderRadius = 5;
+            this.GComboBoxStartZone.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxStartZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxStartZone.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartZone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartZone.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxStartZone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxStartZone.ItemHeight = 30;
+            this.GComboBoxStartZone.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.GComboBoxStartZone.Location = new System.Drawing.Point(788, 135);
+            this.GComboBoxStartZone.Name = "GComboBoxStartZone";
+            this.GComboBoxStartZone.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxStartZone.StartIndex = 0;
+            this.GComboBoxStartZone.TabIndex = 3;
+            // 
+            // GComboBoxEndHour
+            // 
+            this.GComboBoxEndHour.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxEndHour.BorderRadius = 5;
+            this.GComboBoxEndHour.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxEndHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxEndHour.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndHour.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndHour.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxEndHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxEndHour.ItemHeight = 30;
+            this.GComboBoxEndHour.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.GComboBoxEndHour.Location = new System.Drawing.Point(582, 264);
+            this.GComboBoxEndHour.Name = "GComboBoxEndHour";
+            this.GComboBoxEndHour.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxEndHour.StartIndex = 0;
+            this.GComboBoxEndHour.TabIndex = 3;
+            // 
+            // GComboBoxEndMinutes
+            // 
+            this.GComboBoxEndMinutes.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxEndMinutes.BorderRadius = 5;
+            this.GComboBoxEndMinutes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxEndMinutes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxEndMinutes.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndMinutes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndMinutes.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxEndMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxEndMinutes.ItemHeight = 30;
+            this.GComboBoxEndMinutes.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60"});
+            this.GComboBoxEndMinutes.Location = new System.Drawing.Point(685, 264);
+            this.GComboBoxEndMinutes.Name = "GComboBoxEndMinutes";
+            this.GComboBoxEndMinutes.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxEndMinutes.StartIndex = 0;
+            this.GComboBoxEndMinutes.TabIndex = 3;
+            // 
+            // GComboBoxEndZone
+            // 
+            this.GComboBoxEndZone.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxEndZone.BorderRadius = 5;
+            this.GComboBoxEndZone.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxEndZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxEndZone.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndZone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndZone.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxEndZone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxEndZone.ItemHeight = 30;
+            this.GComboBoxEndZone.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.GComboBoxEndZone.Location = new System.Drawing.Point(788, 264);
+            this.GComboBoxEndZone.Name = "GComboBoxEndZone";
+            this.GComboBoxEndZone.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxEndZone.StartIndex = 0;
+            this.GComboBoxEndZone.TabIndex = 3;
             // 
             // UC_AddAndEditInformationEvent
             // 
@@ -633,5 +884,11 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker GDateTimePickerEndDateTimeEvent;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonWarningMessageWhenTheEventComplete;
+        private Guna.UI2.WinForms.Guna2ComboBox GComboBoxStartZone;
+        private Guna.UI2.WinForms.Guna2ComboBox GComboBoxStartMinutes;
+        private Guna.UI2.WinForms.Guna2ComboBox GComboBoxStartHours;
+        private Guna.UI2.WinForms.Guna2ComboBox GComboBoxEndZone;
+        private Guna.UI2.WinForms.Guna2ComboBox GComboBoxEndMinutes;
+        private Guna.UI2.WinForms.Guna2ComboBox GComboBoxEndHour;
     }
 }

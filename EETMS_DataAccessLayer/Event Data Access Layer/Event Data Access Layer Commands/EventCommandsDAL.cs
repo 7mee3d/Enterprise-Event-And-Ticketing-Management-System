@@ -41,11 +41,13 @@ namespace EETMS_DataAccessLayer
                                                                         Street,
                                                                         CountryID,
                                                                         CategoryID,
-                                                                        Discripation
+                                                                        Discripation ,
+                                                                        StartTimeMeridiem,
+                                                                        EndTimeMeridiem
 
                                                                     )
 
-                                            VALUES (@EventName , @DateTimeEvent , @EndDateTimeEvent , @Duration , @MaxCapacity , @Street , @CountryID , @CategoryID , @Discripation) ;
+                                            VALUES (@EventName , @DateTimeEvent , @EndDateTimeEvent , @Duration , @MaxCapacity , @Street , @CountryID , @CategoryID , @Discripation , @StartTimeMeridiem , @EndTimeMeridiem) ;
 
 
                                             SELECT SCOPE_IDENTITY();
@@ -66,6 +68,14 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.Add("CountryID", SqlDbType.Int).Value = InfoNewEvent.CountryID;
                         command.Parameters.Add("CategoryID", SqlDbType.Int).Value = InfoNewEvent.CategoryID;
                         command.Parameters.Add("Discripation", SqlDbType.NVarChar).Value = InfoNewEvent.Discripation;
+
+                        if (!string.IsNullOrWhiteSpace(InfoNewEvent.StartTimeMeridiem))
+                            command.Parameters.Add("StartTimeMeridiem", SqlDbType.NVarChar).Value = InfoNewEvent.StartTimeMeridiem;
+                        else command.Parameters.Add("StartTimeMeridiem", SqlDbType.NVarChar).Value = DBNull.Value;
+
+                        if (!string.IsNullOrWhiteSpace(InfoNewEvent.EndTimeMeridiem))
+                            command.Parameters.Add("EndTimeMeridiem", SqlDbType.NVarChar).Value = InfoNewEvent.EndTimeMeridiem;
+                        else command.Parameters.Add("EndTimeMeridiem", SqlDbType.NVarChar).Value = DBNull.Value;
 
 
                         connection.Open();
@@ -123,7 +133,9 @@ namespace EETMS_DataAccessLayer
                                             CountryID = @CountryID ,
                                             CategoryID = @CategoryID ,
                                             Discripation = @Discripation,
-                                            IsActiveEvent = @IsActiveEvent
+                                            IsActiveEvent = @IsActiveEvent ,
+                                            StartTimeMeridiem = @StartTimeMeridiem,
+                                            EndTimeMeridiem = @EndTimeMeridiem
                                             
 
                                 WHERE EventID = @EventID ;
@@ -145,6 +157,8 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.Add("CategoryID", SqlDbType.Int).Value = NewInformationEvent.CategoryID;
                         command.Parameters.Add("Discripation", SqlDbType.NVarChar).Value = NewInformationEvent.Discripation;
                         command.Parameters.Add("IsActiveEvent", SqlDbType.Bit).Value = NewInformationEvent.IsActiveEvent;
+                        command.Parameters.Add("StartTimeMeridiem", SqlDbType.NVarChar, 2).Value = NewInformationEvent.StartTimeMeridiem;
+                        command.Parameters.Add("EndTimeMeridiem", SqlDbType.NVarChar , 2 ).Value = NewInformationEvent.EndTimeMeridiem;
 
 
                         connection.Open();
