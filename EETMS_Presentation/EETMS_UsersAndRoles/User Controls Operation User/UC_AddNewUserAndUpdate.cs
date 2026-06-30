@@ -57,6 +57,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             if (_EnMode == _EnModeUser._kADD_NEW_USER)
             {
+                GGCButtonAddImageUser.Image = Resources.Add_Image_Icon_EETMS;
                 lblTiteTheUS.Text = "Create Account";
                 _InformationUser = new UserDTO();
                 return;
@@ -87,10 +88,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             }
             else
-            {
-                GGCButtonAddImageUser.Image = Resources.Add_New_Photo_NoFill_Icon_EETMS;
-
-            }
+                GGCButtonAddImageUser.Image = Resources.Add_Image_Icon_EETMS;
 
             _InformationUser.enMode = UserDTO.EnModeUser._kUPDATE_INFORMATION_USER;
             _EnMode = _EnModeUser._kUPDATE_INFORMATION_USER;
@@ -209,7 +207,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             OpenFileDialog OFD = new OpenFileDialog();
 
-            OFD.Filter = "ALL TYPE IMAGE|*.*|PNG IMAGE|*.png|JPEG IMAGE|*.jpeg|WEBP IMAGES|*.webp";
+            OFD.Filter = "ALL TYPE IMAGE|*.png;*.jpeg|PNG IMAGE|*.png|JPEG IMAGE|*.jpeg";
             OFD.Title = "Select The Image User";
 
             if (OFD.ShowDialog() == DialogResult.OK)
@@ -259,7 +257,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
                 _InformationUser.ImagePath = null;
                 _ImagePathUser = null;
 
-                GGCButtonAddImageUser.Image = Resources.Add_New_Photo_NoFill_Icon_EETMS;
+                GGCButtonAddImageUser.Image = Resources.Add_Image_Icon_EETMS;
 
             }
         }
@@ -277,7 +275,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
                 GCPictureBoxImageUser.Visible = false;
                 GGCButtonAddImageUser.Visible = true;
 
-                GGCButtonAddImageUser.Image = (HasImage) ? Resources.Remove_Image_Icon_EETMS : Resources.Add_New_Photo_NoFill_Icon_EETMS;
+                GGCButtonAddImageUser.Image = (HasImage) ? Resources.Remove_image_Icon_EETMS : Resources.Add_Image_Icon_EETMS;
             }
 
 
@@ -304,7 +302,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             else
             {
                 GCPictureBoxImageUser.Visible = false;
-                GGCButtonAddImageUser.Image = (NotHasImage) ? Resources.Add_New_Photo_NoFill_Icon_EETMS : Resources.Remove_Image_Icon_EETMS;
+                GGCButtonAddImageUser.Image = (NotHasImage) ? Resources.Add_Image_Icon_EETMS : Resources.Remove_image_Icon_EETMS;
             }
         }
 

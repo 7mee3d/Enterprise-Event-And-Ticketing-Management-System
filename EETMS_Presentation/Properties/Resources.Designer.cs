@@ -63,19 +63,9 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add_Icon_EETMS {
+        internal static System.Drawing.Bitmap Add_Image_Icon_EETMS {
             get {
-                object obj = ResourceManager.GetObject("Add_Icon_EETMS", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Add_New_Photo_NoFill_Icon_EETMS {
-            get {
-                object obj = ResourceManager.GetObject("Add_New_Photo_NoFill_Icon_EETMS", resourceCulture);
+                object obj = ResourceManager.GetObject("Add_Image_Icon_EETMS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,26 +76,6 @@ namespace EETMS_Presentation.Properties {
         internal static System.Drawing.Bitmap Cancel_Icon_EETMS {
             get {
                 object obj = ResourceManager.GetObject("Cancel_Icon_EETMS", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap EETMS_Login {
-            get {
-                object obj = ResourceManager.GetObject("EETMS_Login", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap EETMS_LoginScreen_Background {
-            get {
-                object obj = ResourceManager.GetObject("EETMS_LoginScreen_Background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,29 +113,9 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Image_hide_White_Icon_EETMS {
+        internal static System.Drawing.Bitmap Remove_image_Icon_EETMS {
             get {
-                object obj = ResourceManager.GetObject("Image_hide_White_Icon_EETMS", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logout_EETMS {
-            get {
-                object obj = ResourceManager.GetObject("logout_EETMS", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Remove_Image_Icon_EETMS {
-            get {
-                object obj = ResourceManager.GetObject("Remove_Image_Icon_EETMS", resourceCulture);
+                object obj = ResourceManager.GetObject("Remove_image_Icon_EETMS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,16 +136,6 @@ namespace EETMS_Presentation.Properties {
         internal static System.Drawing.Bitmap Update_Icon_EETMS {
             get {
                 object obj = ResourceManager.GetObject("Update_Icon_EETMS", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Upload_Icon_EETMS {
-            get {
-                object obj = ResourceManager.GetObject("Upload_Icon_EETMS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

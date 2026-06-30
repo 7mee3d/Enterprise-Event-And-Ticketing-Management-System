@@ -142,18 +142,18 @@
             this.GButtonAddTicketAndSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GButtonAddTicketAndSave.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GButtonAddTicketAndSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonAddTicketAndSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonAddTicketAndSave.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonAddTicketAndSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GButtonAddTicketAndSave.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GButtonAddTicketAndSave.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GButtonAddTicketAndSave.ForeColor = System.Drawing.Color.White;
-            this.GButtonAddTicketAndSave.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GButtonAddTicketAndSave.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
+            this.GButtonAddTicketAndSave.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GButtonAddTicketAndSave.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonAddTicketAndSave.Image = ((System.Drawing.Image)(resources.GetObject("GButtonAddTicketAndSave.Image")));
             this.GButtonAddTicketAndSave.ImageOffset = new System.Drawing.Point(-5, 0);
             this.GButtonAddTicketAndSave.ImageSize = new System.Drawing.Size(19, 19);
             this.GButtonAddTicketAndSave.Location = new System.Drawing.Point(248, 371);
             this.GButtonAddTicketAndSave.Name = "GButtonAddTicketAndSave";
-            this.GButtonAddTicketAndSave.PressedColor = System.Drawing.Color.White;
+            this.GButtonAddTicketAndSave.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GButtonAddTicketAndSave.Size = new System.Drawing.Size(209, 46);
             this.GButtonAddTicketAndSave.TabIndex = 9;
             this.GButtonAddTicketAndSave.Text = "Add New Ticket Type";
@@ -280,13 +280,13 @@
             this.lblTitleEventAfterAddedOrUpdate.TabIndex = 3;
             this.lblTitleEventAfterAddedOrUpdate.Text = "Add Ticket Type";
             // 
-            // USAddTheTicketsTypeToTheEvent
+            // UC_AddTheTicketsTypeToTheEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.guna2GradientPanel2);
-            this.Name = "USAddTheTicketsTypeToTheEvent";
+            this.Name = "UC_AddTheTicketsTypeToTheEvent";
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.USAddTheTicketsTypeToTheEvent_Load);
             this.guna2GradientPanel2.ResumeLayout(false);

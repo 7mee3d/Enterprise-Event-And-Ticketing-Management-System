@@ -99,10 +99,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 39.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(2, 16);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
+            this.label1.Location = new System.Drawing.Point(2, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 70);
+            this.label1.Size = new System.Drawing.Size(220, 80);
             this.label1.TabIndex = 0;
             this.label1.Text = "Events";
             // 
@@ -111,7 +112,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            this.label2.Location = new System.Drawing.Point(10, 79);
+            this.label2.Location = new System.Drawing.Point(10, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(322, 17);
             this.label2.TabIndex = 0;
@@ -340,17 +341,17 @@
             this.GGButtonCreateNewEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonCreateNewEvent.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonCreateNewEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonCreateNewEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonCreateNewEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonCreateNewEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonCreateNewEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GGButtonCreateNewEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonCreateNewEvent.ForeColor = System.Drawing.Color.White;
-            this.GGButtonCreateNewEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonCreateNewEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonCreateNewEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonCreateNewEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GGButtonCreateNewEvent.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonCreateNewEvent.Image")));
             this.GGButtonCreateNewEvent.ImageOffset = new System.Drawing.Point(-5, 0);
             this.GGButtonCreateNewEvent.Location = new System.Drawing.Point(1123, 46);
             this.GGButtonCreateNewEvent.Name = "GGButtonCreateNewEvent";
-            this.GGButtonCreateNewEvent.PressedColor = System.Drawing.Color.White;
+            this.GGButtonCreateNewEvent.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GGButtonCreateNewEvent.Size = new System.Drawing.Size(215, 47);
             this.GGButtonCreateNewEvent.TabIndex = 2;
             this.GGButtonCreateNewEvent.Text = "Create New Event";
@@ -722,7 +723,6 @@
             this.GGButtonFilter.HoverState.FillColor2 = System.Drawing.Color.White;
             this.GGButtonFilter.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.GGButtonFilter.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.GGButtonFilter.Image = global::EETMS_Presentation.Properties.Resources.Filter_Icon_EETMS;
             this.GGButtonFilter.ImageOffset = new System.Drawing.Point(-5, 0);
             this.GGButtonFilter.Location = new System.Drawing.Point(45, 315);
             this.GGButtonFilter.Name = "GGButtonFilter";

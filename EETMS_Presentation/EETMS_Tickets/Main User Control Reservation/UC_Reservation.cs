@@ -249,6 +249,10 @@ namespace EETMS_Presentation.EETMS_Tickets
             GGPanelRegularTicket.Enabled = false;
             GGPanelVIPTicket.Enabled = false;
 
+
+            GGButtonRegularTicketStatus.Visible = false;
+            GGButtonVIPTicketStatus.Visible = false;
+            GGButtonPremiumTicketStatus.Visible = false;
             DataTable TicketType_DT = TicketBL.GetInformationTicketForEvent(_EventID);
 
             if (TicketType_DT != null)
@@ -262,11 +266,15 @@ namespace EETMS_Presentation.EETMS_Tickets
                         case "Regular":
 
                             if (Convert.ToInt32(DR_Tickets["Available"]) <= clsEETMS_Constants.kZERO)
+                            {
+                                GGButtonRegularTicketStatus.Visible = false;
                                 break;
+                            }
 
                             lblQLeftRegular.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketRegular.Text = "$" + DR_Tickets["Price"].ToString();
                             GGPanelRegularTicket.Enabled = true;
+                            GGButtonRegularTicketStatus.Visible = true;
 
                             _CheckTheStackTickes(GGPanelRegularTicket, Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonRegularTicketStatus, lblQLeftRegular);
                             GNumericUpDownRegularTicket.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
@@ -280,11 +288,15 @@ namespace EETMS_Presentation.EETMS_Tickets
                         case "VIP":
 
                             if (Convert.ToInt32(DR_Tickets["Available"]) <= clsEETMS_Constants.kZERO)
+                            {
+                                GGButtonVIPTicketStatus.Visible = false;
                                 break;
+                            }
 
                             lblQLeftVIP.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketVIP.Text = "$" + DR_Tickets["Price"].ToString();
                             GGPanelVIPTicket.Enabled = true;
+                            GGButtonVIPTicketStatus.Visible = true;
 
                             _CheckTheStackTickes(GGPanelVIPTicket, Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonVIPTicketStatus, lblQLeftVIP);
                             GNumericUpDownVIPTicket.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
@@ -298,11 +310,15 @@ namespace EETMS_Presentation.EETMS_Tickets
                         case "Premium":
 
                             if (Convert.ToInt32(DR_Tickets["Available"]) <= clsEETMS_Constants.kZERO)
+                            {
+                                GGButtonPremiumTicketStatus.Visible = false;
                                 break;
+                            }
 
                             lblQLeftPermium.Text = DR_Tickets["Available"].ToString() + " LEFT";
                             lblTotalPriceOneTicketPermium.Text = "$" + DR_Tickets["Price"].ToString();
                             GGPanelPermiumTicket.Enabled = true;
+                            GGButtonPremiumTicketStatus.Visible = true;
 
                             _CheckTheStackTickes(GGPanelPermiumTicket, Convert.ToInt32(DR_Tickets["Available"]), false, GGButtonPremiumTicketStatus, lblQLeftPermium);
                             GNumericUpDownPremium.Maximum = Convert.ToInt32(DR_Tickets["Available"]);
@@ -345,11 +361,11 @@ namespace EETMS_Presentation.EETMS_Tickets
 
             if (G2GB != null)
             {
+
                 G2GB.DisabledState.FillColor = Color.FromArgb(43, 140, 238);
                 G2GB.DisabledState.FillColor2 = Color.FromArgb(43, 140, 238);
                 G2GB.DisabledState.ForeColor = Color.White;
                 G2GB.Text = "";
-
 
             }
 

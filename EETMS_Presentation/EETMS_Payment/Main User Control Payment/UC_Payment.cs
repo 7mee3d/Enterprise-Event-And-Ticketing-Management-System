@@ -6,6 +6,7 @@ using EETMS_Presentation.Properties;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Resources;
 using System.Windows.Forms;
 
 

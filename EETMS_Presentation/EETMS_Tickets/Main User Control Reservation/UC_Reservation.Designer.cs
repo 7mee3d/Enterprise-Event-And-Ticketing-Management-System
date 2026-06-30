@@ -119,7 +119,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 39.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(17, 27);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
+            this.label1.Location = new System.Drawing.Point(17, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(450, 70);
             this.label1.TabIndex = 5;
@@ -130,7 +131,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            this.label2.Location = new System.Drawing.Point(26, 90);
+            this.label2.Location = new System.Drawing.Point(26, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(327, 17);
             this.label2.TabIndex = 6;
@@ -176,19 +177,19 @@
             this.GGButtonConfirmBooking.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonConfirmBooking.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonConfirmBooking.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonConfirmBooking.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonConfirmBooking.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonConfirmBooking.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonConfirmBooking.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GGButtonConfirmBooking.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonConfirmBooking.ForeColor = System.Drawing.Color.White;
-            this.GGButtonConfirmBooking.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonConfirmBooking.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonConfirmBooking.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonConfirmBooking.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GGButtonConfirmBooking.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonConfirmBooking.Image")));
             this.GGButtonConfirmBooking.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.GGButtonConfirmBooking.ImageOffset = new System.Drawing.Point(35, 1);
             this.GGButtonConfirmBooking.ImageSize = new System.Drawing.Size(25, 25);
             this.GGButtonConfirmBooking.Location = new System.Drawing.Point(49, 484);
             this.GGButtonConfirmBooking.Name = "GGButtonConfirmBooking";
-            this.GGButtonConfirmBooking.PressedColor = System.Drawing.Color.White;
+            this.GGButtonConfirmBooking.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GGButtonConfirmBooking.Size = new System.Drawing.Size(289, 50);
             this.GGButtonConfirmBooking.TabIndex = 6;
             this.GGButtonConfirmBooking.Text = "Confirm Booking";
@@ -212,7 +213,7 @@
             // 
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.Font = new System.Drawing.Font("Segoe UI Variable Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.lblTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.lblTotalAmount.Location = new System.Drawing.Point(245, 110);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(28, 32);
@@ -516,8 +517,8 @@
             this.GGButtonPremiumTicketStatus.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonPremiumTicketStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonPremiumTicketStatus.Enabled = false;
-            this.GGButtonPremiumTicketStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonPremiumTicketStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonPremiumTicketStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
+            this.GGButtonPremiumTicketStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.GGButtonPremiumTicketStatus.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonPremiumTicketStatus.ForeColor = System.Drawing.Color.White;
             this.GGButtonPremiumTicketStatus.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
@@ -527,6 +528,7 @@
             this.GGButtonPremiumTicketStatus.PressedColor = System.Drawing.Color.White;
             this.GGButtonPremiumTicketStatus.Size = new System.Drawing.Size(94, 25);
             this.GGButtonPremiumTicketStatus.TabIndex = 14;
+            this.GGButtonPremiumTicketStatus.Visible = false;
             // 
             // GNumericUpDownPremium
             // 
@@ -585,7 +587,7 @@
             // 
             this.lblTotalPriceOneTicketPermium.AutoSize = true;
             this.lblTotalPriceOneTicketPermium.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPriceOneTicketPermium.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.lblTotalPriceOneTicketPermium.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.lblTotalPriceOneTicketPermium.Location = new System.Drawing.Point(25, 111);
             this.lblTotalPriceOneTicketPermium.Name = "lblTotalPriceOneTicketPermium";
             this.lblTotalPriceOneTicketPermium.Size = new System.Drawing.Size(43, 32);
@@ -644,8 +646,8 @@
             this.GGButtonVIPTicketStatus.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonVIPTicketStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonVIPTicketStatus.Enabled = false;
-            this.GGButtonVIPTicketStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonVIPTicketStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonVIPTicketStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
+            this.GGButtonVIPTicketStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.GGButtonVIPTicketStatus.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonVIPTicketStatus.ForeColor = System.Drawing.Color.White;
             this.GGButtonVIPTicketStatus.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
@@ -655,6 +657,7 @@
             this.GGButtonVIPTicketStatus.PressedColor = System.Drawing.Color.White;
             this.GGButtonVIPTicketStatus.Size = new System.Drawing.Size(94, 25);
             this.GGButtonVIPTicketStatus.TabIndex = 14;
+            this.GGButtonVIPTicketStatus.Visible = false;
             // 
             // GNumericUpDownVIPTicket
             // 
@@ -713,7 +716,7 @@
             // 
             this.lblTotalPriceOneTicketVIP.AutoSize = true;
             this.lblTotalPriceOneTicketVIP.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPriceOneTicketVIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.lblTotalPriceOneTicketVIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.lblTotalPriceOneTicketVIP.Location = new System.Drawing.Point(25, 111);
             this.lblTotalPriceOneTicketVIP.Name = "lblTotalPriceOneTicketVIP";
             this.lblTotalPriceOneTicketVIP.Size = new System.Drawing.Size(43, 32);
@@ -772,8 +775,8 @@
             this.GGButtonRegularTicketStatus.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonRegularTicketStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GGButtonRegularTicketStatus.Enabled = false;
-            this.GGButtonRegularTicketStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonRegularTicketStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonRegularTicketStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
+            this.GGButtonRegularTicketStatus.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.GGButtonRegularTicketStatus.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonRegularTicketStatus.ForeColor = System.Drawing.Color.White;
             this.GGButtonRegularTicketStatus.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
@@ -783,6 +786,7 @@
             this.GGButtonRegularTicketStatus.PressedColor = System.Drawing.Color.White;
             this.GGButtonRegularTicketStatus.Size = new System.Drawing.Size(94, 25);
             this.GGButtonRegularTicketStatus.TabIndex = 14;
+            this.GGButtonRegularTicketStatus.Visible = false;
             // 
             // GNumericUpDownRegularTicket
             // 
@@ -841,7 +845,7 @@
             // 
             this.lblTotalPriceOneTicketRegular.AutoSize = true;
             this.lblTotalPriceOneTicketRegular.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPriceOneTicketRegular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.lblTotalPriceOneTicketRegular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.lblTotalPriceOneTicketRegular.Location = new System.Drawing.Point(25, 111);
             this.lblTotalPriceOneTicketRegular.Name = "lblTotalPriceOneTicketRegular";
             this.lblTotalPriceOneTicketRegular.Size = new System.Drawing.Size(43, 32);
@@ -883,13 +887,13 @@
             // guna2CircleButton2
             // 
             this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
-            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2CircleButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.guna2CircleButton2.ImageSize = new System.Drawing.Size(27, 27);
-            this.guna2CircleButton2.Location = new System.Drawing.Point(16, 32);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(18, 34);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton2.Size = new System.Drawing.Size(40, 37);
@@ -926,16 +930,16 @@
             this.GGButtonSearchTheCustomerByIDorName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonSearchTheCustomerByIDorName.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonSearchTheCustomerByIDorName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonSearchTheCustomerByIDorName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonSearchTheCustomerByIDorName.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonSearchTheCustomerByIDorName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonSearchTheCustomerByIDorName.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GGButtonSearchTheCustomerByIDorName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonSearchTheCustomerByIDorName.ForeColor = System.Drawing.Color.White;
-            this.GGButtonSearchTheCustomerByIDorName.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonSearchTheCustomerByIDorName.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonSearchTheCustomerByIDorName.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonSearchTheCustomerByIDorName.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GGButtonSearchTheCustomerByIDorName.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonSearchTheCustomerByIDorName.Image")));
             this.GGButtonSearchTheCustomerByIDorName.Location = new System.Drawing.Point(776, 94);
             this.GGButtonSearchTheCustomerByIDorName.Name = "GGButtonSearchTheCustomerByIDorName";
-            this.GGButtonSearchTheCustomerByIDorName.PressedColor = System.Drawing.Color.White;
+            this.GGButtonSearchTheCustomerByIDorName.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GGButtonSearchTheCustomerByIDorName.Size = new System.Drawing.Size(175, 42);
             this.GGButtonSearchTheCustomerByIDorName.TabIndex = 2;
             this.GGButtonSearchTheCustomerByIDorName.Text = "Search The Customer";
@@ -1019,13 +1023,13 @@
             // guna2CircleButton1
             // 
             this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.guna2CircleButton1.ImageSize = new System.Drawing.Size(27, 27);
-            this.guna2CircleButton1.Location = new System.Drawing.Point(16, 17);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(17, 17);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(40, 37);
@@ -1091,7 +1095,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientPanel GGPanelRegularTicket;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private System.Windows.Forms.Label lblQLeftRegular;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -1145,5 +1148,6 @@
         private System.Windows.Forms.Label label27;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonConfirmBooking;
         private System.Windows.Forms.Label lblNoteBooking;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
     }
 }

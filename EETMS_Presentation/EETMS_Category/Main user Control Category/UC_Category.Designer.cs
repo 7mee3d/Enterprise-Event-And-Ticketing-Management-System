@@ -63,7 +63,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 39.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(27, 22);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
+            this.label1.Location = new System.Drawing.Point(27, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(303, 70);
             this.label1.TabIndex = 1;
@@ -83,7 +84,7 @@
             this.GGPanelAuickAddCategory.Controls.Add(this.label2);
             this.GGPanelAuickAddCategory.FillColor = System.Drawing.Color.White;
             this.GGPanelAuickAddCategory.FillColor2 = System.Drawing.Color.White;
-            this.GGPanelAuickAddCategory.Location = new System.Drawing.Point(40, 103);
+            this.GGPanelAuickAddCategory.Location = new System.Drawing.Point(40, 114);
             this.GGPanelAuickAddCategory.Name = "GGPanelAuickAddCategory";
             this.GGPanelAuickAddCategory.Size = new System.Drawing.Size(1350, 207);
             this.GGPanelAuickAddCategory.TabIndex = 2;
@@ -98,17 +99,16 @@
             this.GGButtonAddNewCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonAddNewCategory.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonAddNewCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonAddNewCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonAddNewCategory.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonAddNewCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonAddNewCategory.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GGButtonAddNewCategory.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonAddNewCategory.ForeColor = System.Drawing.Color.White;
-            this.GGButtonAddNewCategory.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonAddNewCategory.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonAddNewCategory.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
+            this.GGButtonAddNewCategory.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonAddNewCategory.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GGButtonAddNewCategory.ImageOffset = new System.Drawing.Point(-2, 0);
             this.GGButtonAddNewCategory.Location = new System.Drawing.Point(1106, 116);
             this.GGButtonAddNewCategory.Name = "GGButtonAddNewCategory";
-            this.GGButtonAddNewCategory.PressedColor = System.Drawing.Color.White;
+            this.GGButtonAddNewCategory.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GGButtonAddNewCategory.Size = new System.Drawing.Size(206, 47);
             this.GGButtonAddNewCategory.TabIndex = 3;
             this.GGButtonAddNewCategory.Text = "Add New Category";
@@ -390,7 +390,7 @@
             this.deleteCategoryToolStripMenuItem.Text = "Delete Category";
             this.deleteCategoryToolStripMenuItem.Click += new System.EventHandler(this.deleteCategoryToolStripMenuItem_Click);
             // 
-            // USCategory
+            // UC_Category
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -398,7 +398,7 @@
             this.Controls.Add(this.GGPanelDataGridViewEvents);
             this.Controls.Add(this.GGPanelAuickAddCategory);
             this.Controls.Add(this.label1);
-            this.Name = "USCategory";
+            this.Name = "UC_Category";
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.USCategory_Load);
             this.Click += new System.EventHandler(this.USCategory_Click);

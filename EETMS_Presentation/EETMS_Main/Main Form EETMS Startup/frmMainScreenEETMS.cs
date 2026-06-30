@@ -53,10 +53,10 @@ namespace EETMS_Presentation.EETMS_Main
             {
                 lblNameUser.Text = _InformationUser.UserFullName;
                 lblRoleUser.Text = _InformationUser.RoleName;
-                if ( !string.IsNullOrWhiteSpace(_InformationUser.ImagePath))
+                if (!string.IsNullOrWhiteSpace(_InformationUser.ImagePath))
                     GCPictureBoxImageUser.Load(_InformationUser.ImagePath);
                 else
-                    GCPictureBoxImageUser.Image = Resources.Image_hide_White_Icon_EETMS;
+                    GCPictureBoxImageUser.Image = Resources.Remove_image_Icon_EETMS;
 
                 _Permissionsuser = RolesBL.FindTheRoleBy(_InformationUser.RoleID).PermssionsRole;
             }

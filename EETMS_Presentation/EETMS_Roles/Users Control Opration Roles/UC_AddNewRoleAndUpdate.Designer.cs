@@ -42,6 +42,8 @@
             this.GCheckBoxPEvent = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2GradientPanel7 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GCheckBoxPUsers = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2GradientPanel9 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GCheckBoxPReport = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GCheckBoxPResravation = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -56,18 +58,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblTiteTheUS = new System.Windows.Forms.Label();
-            this.guna2GradientPanel9 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GCheckBoxPReport = new Guna.UI2.WinForms.Guna2CheckBox();
             this.GCGPanelAddNewUser.SuspendLayout();
             this.guna2GradientPanel8.SuspendLayout();
             this.guna2GradientPanel6.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel7.SuspendLayout();
+            this.guna2GradientPanel9.SuspendLayout();
             this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
-            this.guna2GradientPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // GCGPanelAddNewUser
@@ -95,7 +95,7 @@
             this.GCGPanelAddNewUser.Controls.Add(this.label2);
             this.GCGPanelAddNewUser.Controls.Add(this.label5);
             this.GCGPanelAddNewUser.Controls.Add(this.lblTiteTheUS);
-            this.GCGPanelAddNewUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(253)))));
+            this.GCGPanelAddNewUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GCGPanelAddNewUser.CustomBorderThickness = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.GCGPanelAddNewUser.Location = new System.Drawing.Point(424, 27);
             this.GCGPanelAddNewUser.Name = "GCGPanelAddNewUser";
@@ -209,14 +209,14 @@
             this.GButtonCreateNewRole.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonCreateNewRole.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GButtonCreateNewRole.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonCreateNewRole.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(106)))), ((int)(((byte)(244)))));
+            this.GButtonCreateNewRole.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GButtonCreateNewRole.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GButtonCreateNewRole.ForeColor = System.Drawing.Color.White;
-            this.GButtonCreateNewRole.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(106)))), ((int)(((byte)(244)))));
+            this.GButtonCreateNewRole.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonCreateNewRole.HoverState.ForeColor = System.Drawing.Color.White;
-            this.GButtonCreateNewRole.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
             this.GButtonCreateNewRole.Location = new System.Drawing.Point(36, 823);
             this.GButtonCreateNewRole.Name = "GButtonCreateNewRole";
+            this.GButtonCreateNewRole.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GButtonCreateNewRole.Size = new System.Drawing.Size(411, 45);
             this.GButtonCreateNewRole.TabIndex = 1;
             this.GButtonCreateNewRole.Text = "Create New Role";
@@ -324,6 +324,40 @@
             this.GCheckBoxPUsers.UncheckedState.BorderThickness = 0;
             this.GCheckBoxPUsers.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
+            // guna2GradientPanel9
+            // 
+            this.guna2GradientPanel9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
+            this.guna2GradientPanel9.BorderRadius = 10;
+            this.guna2GradientPanel9.BorderThickness = 1;
+            this.guna2GradientPanel9.Controls.Add(this.GCheckBoxPReport);
+            this.guna2GradientPanel9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.guna2GradientPanel9.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
+            this.guna2GradientPanel9.Location = new System.Drawing.Point(35, 664);
+            this.guna2GradientPanel9.Name = "guna2GradientPanel9";
+            this.guna2GradientPanel9.Size = new System.Drawing.Size(250, 70);
+            this.guna2GradientPanel9.TabIndex = 19;
+            // 
+            // GCheckBoxPReport
+            // 
+            this.GCheckBoxPReport.Animated = true;
+            this.GCheckBoxPReport.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GCheckBoxPReport.CheckedState.BorderRadius = 0;
+            this.GCheckBoxPReport.CheckedState.BorderThickness = 0;
+            this.GCheckBoxPReport.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GCheckBoxPReport.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.GCheckBoxPReport.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GCheckBoxPReport.Location = new System.Drawing.Point(16, 18);
+            this.GCheckBoxPReport.Name = "GCheckBoxPReport";
+            this.GCheckBoxPReport.Size = new System.Drawing.Size(219, 34);
+            this.GCheckBoxPReport.TabIndex = 19;
+            this.GCheckBoxPReport.Text = "Report Management\r\nEdit, create, and delete Reservation\r\n\r\n\r\n";
+            this.GCheckBoxPReport.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            this.GCheckBoxPReport.ThreeState = true;
+            this.GCheckBoxPReport.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.GCheckBoxPReport.UncheckedState.BorderRadius = 0;
+            this.GCheckBoxPReport.UncheckedState.BorderThickness = 0;
+            this.GCheckBoxPReport.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
             // guna2GradientPanel5
             // 
             this.guna2GradientPanel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
@@ -429,12 +463,12 @@
             // guna2CircleButton2
             // 
             this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
-            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.guna2CircleButton2.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.guna2CircleButton2.Enabled = false;
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton2.Image")));
@@ -540,47 +574,13 @@
             this.lblTiteTheUS.TabIndex = 0;
             this.lblTiteTheUS.Text = "Create New Role";
             // 
-            // guna2GradientPanel9
-            // 
-            this.guna2GradientPanel9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(248)))));
-            this.guna2GradientPanel9.BorderRadius = 10;
-            this.guna2GradientPanel9.BorderThickness = 1;
-            this.guna2GradientPanel9.Controls.Add(this.GCheckBoxPReport);
-            this.guna2GradientPanel9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            this.guna2GradientPanel9.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(252)))), ((int)(((byte)(253)))));
-            this.guna2GradientPanel9.Location = new System.Drawing.Point(35, 664);
-            this.guna2GradientPanel9.Name = "guna2GradientPanel9";
-            this.guna2GradientPanel9.Size = new System.Drawing.Size(250, 70);
-            this.guna2GradientPanel9.TabIndex = 19;
-            // 
-            // GCheckBoxPReport
-            // 
-            this.GCheckBoxPReport.Animated = true;
-            this.GCheckBoxPReport.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GCheckBoxPReport.CheckedState.BorderRadius = 0;
-            this.GCheckBoxPReport.CheckedState.BorderThickness = 0;
-            this.GCheckBoxPReport.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GCheckBoxPReport.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.GCheckBoxPReport.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GCheckBoxPReport.Location = new System.Drawing.Point(16, 18);
-            this.GCheckBoxPReport.Name = "GCheckBoxPReport";
-            this.GCheckBoxPReport.Size = new System.Drawing.Size(219, 34);
-            this.GCheckBoxPReport.TabIndex = 19;
-            this.GCheckBoxPReport.Text = "Report Management\r\nEdit, create, and delete Reservation\r\n\r\n\r\n";
-            this.GCheckBoxPReport.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-            this.GCheckBoxPReport.ThreeState = true;
-            this.GCheckBoxPReport.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.GCheckBoxPReport.UncheckedState.BorderRadius = 0;
-            this.GCheckBoxPReport.UncheckedState.BorderThickness = 0;
-            this.GCheckBoxPReport.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
-            // US_AddNewRoleAndUpdate
+            // UC_AddNewRoleAndUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.GCGPanelAddNewUser);
-            this.Name = "US_AddNewRoleAndUpdate";
+            this.Name = "UC_AddNewRoleAndUpdate";
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.US_AddNewRoleAndUpdate_Load);
             this.GCGPanelAddNewUser.ResumeLayout(false);
@@ -590,10 +590,10 @@
             this.guna2GradientPanel4.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel7.ResumeLayout(false);
+            this.guna2GradientPanel9.ResumeLayout(false);
             this.guna2GradientPanel5.ResumeLayout(false);
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel2.ResumeLayout(false);
-            this.guna2GradientPanel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

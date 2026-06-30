@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_AddNewUserAndUpdate));
             this.GCGPanelAddNewUser = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.GCPictureBoxImageUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.GTextBoxPassword = new Guna.UI2.WinForms.Guna2TextBox();
@@ -73,7 +72,7 @@
             this.GCGPanelAddNewUser.Controls.Add(this.GGCButtonAddImageUser);
             this.GCGPanelAddNewUser.Controls.Add(this.label5);
             this.GCGPanelAddNewUser.Controls.Add(this.lblTiteTheUS);
-            this.GCGPanelAddNewUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(228)))), ((int)(((byte)(253)))));
+            this.GCGPanelAddNewUser.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GCGPanelAddNewUser.CustomBorderThickness = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.GCGPanelAddNewUser.Location = new System.Drawing.Point(463, 93);
             this.GCGPanelAddNewUser.Name = "GCGPanelAddNewUser";
@@ -88,7 +87,7 @@
             // GCPictureBoxImageUser
             // 
             this.GCPictureBoxImageUser.BackColor = System.Drawing.Color.Transparent;
-            this.GCPictureBoxImageUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(255)))));
+            this.GCPictureBoxImageUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GCPictureBoxImageUser.ImageRotate = 0F;
             this.GCPictureBoxImageUser.Location = new System.Drawing.Point(187, 142);
             this.GCPictureBoxImageUser.Name = "GCPictureBoxImageUser";
@@ -154,10 +153,10 @@
             this.GButtonCreateTheNewUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonCreateTheNewUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GButtonCreateTheNewUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonCreateTheNewUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(106)))), ((int)(((byte)(244)))));
+            this.GButtonCreateTheNewUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GButtonCreateTheNewUser.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GButtonCreateTheNewUser.ForeColor = System.Drawing.Color.White;
-            this.GButtonCreateTheNewUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(106)))), ((int)(((byte)(244)))));
+            this.GButtonCreateTheNewUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonCreateTheNewUser.HoverState.ForeColor = System.Drawing.Color.White;
             this.GButtonCreateTheNewUser.Location = new System.Drawing.Point(38, 703);
             this.GButtonCreateTheNewUser.Name = "GButtonCreateTheNewUser";
@@ -299,7 +298,7 @@
             // 
             // GGCButtonAddImageUser
             // 
-            this.GGCButtonAddImageUser.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(207)))), ((int)(((byte)(252)))));
+            this.GGCButtonAddImageUser.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
             this.GGCButtonAddImageUser.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.GGCButtonAddImageUser.BorderThickness = 1;
             this.GGCButtonAddImageUser.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -308,13 +307,12 @@
             this.GGCButtonAddImageUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGCButtonAddImageUser.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGCButtonAddImageUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGCButtonAddImageUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(255)))));
-            this.GGCButtonAddImageUser.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(255)))));
+            this.GGCButtonAddImageUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.GGCButtonAddImageUser.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GGCButtonAddImageUser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GGCButtonAddImageUser.ForeColor = System.Drawing.Color.White;
-            this.GGCButtonAddImageUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(255)))));
-            this.GGCButtonAddImageUser.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(250)))), ((int)(((byte)(255)))));
-            this.GGCButtonAddImageUser.Image = ((System.Drawing.Image)(resources.GetObject("GGCButtonAddImageUser.Image")));
+            this.GGCButtonAddImageUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.GGCButtonAddImageUser.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GGCButtonAddImageUser.ImageOffset = new System.Drawing.Point(1, 0);
             this.GGCButtonAddImageUser.ImageSize = new System.Drawing.Size(40, 40);
             this.GGCButtonAddImageUser.Location = new System.Drawing.Point(187, 142);
@@ -342,6 +340,7 @@
             // 
             this.lblTiteTheUS.AutoSize = true;
             this.lblTiteTheUS.Font = new System.Drawing.Font("Segoe UI Variable Text", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiteTheUS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.lblTiteTheUS.Location = new System.Drawing.Point(110, 48);
             this.lblTiteTheUS.Name = "lblTiteTheUS";
             this.lblTiteTheUS.Size = new System.Drawing.Size(273, 47);
@@ -357,14 +356,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";
             // 
-            // USAddNewUserAndUpdate
+            // UC_AddNewUserAndUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.label3);
             this.Controls.Add(this.GCGPanelAddNewUser);
-            this.Name = "USAddNewUserAndUpdate";
+            this.Name = "UC_AddNewUserAndUpdate";
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.USAddNewUserAndUpdate_Load);
             this.GCGPanelAddNewUser.ResumeLayout(false);

@@ -226,21 +226,13 @@
     <EmbeddedResource Include="EETMS_UsersAndRoles\User Controls Operation User\UC_AddNewUserAndUpdate.resx">
       <DependentUpon>UC_AddNewUserAndUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx" />
     <None Include="EETMS_Main_Files_System\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -261,6 +253,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logout_EETMS2.png" />
+    <None Include="Resources\eye hide1.png" />
+    <None Include="Resources\eye show gif Image1.gif" />
+    <None Include="Resources\logout_EETMS1.png" />
+    <None Include="Resources\Save_Icon_EETMS1.png" />
+    <None Include="Resources\Update_Icon_EETMS1.png" />
+    <None Include="Resources\Cancel_Icon_EETMS1.png" />
+    <None Include="Resources\Filter_Icon_EETMS3.png" />
+    <None Include="Resources\Add_Image_Icon_EETMS2.png" />
+    <None Include="Resources\Filter_Icon_EETMS2.png" />
+    <None Include="Resources\Filter_Icon_EETMS1.png" />
+    <None Include="Resources\Add_Image_Icon_EETMS1.png" />
+    <None Include="Resources\Remove_image_Icon_EETMS1.png" />
+    <None Include="Resources\Add_Image_Icon_EETMS.png" />
     <None Include="Resources\eye show gif Image.gif" />
     <None Include="Resources\eye hide.png" />
     <None Include="Resources\Save_Icon_EETMS.png" />

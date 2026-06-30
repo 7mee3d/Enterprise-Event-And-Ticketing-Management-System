@@ -87,17 +87,17 @@
             this.GButtonAddNewCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GButtonAddNewCustomer.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GButtonAddNewCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonAddNewCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonAddNewCustomer.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonAddNewCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GButtonAddNewCustomer.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GButtonAddNewCustomer.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GButtonAddNewCustomer.ForeColor = System.Drawing.Color.White;
-            this.GButtonAddNewCustomer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GButtonAddNewCustomer.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
+            this.GButtonAddNewCustomer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GButtonAddNewCustomer.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonAddNewCustomer.Image = ((System.Drawing.Image)(resources.GetObject("GButtonAddNewCustomer.Image")));
             this.GButtonAddNewCustomer.ImageOffset = new System.Drawing.Point(-3, 0);
             this.GButtonAddNewCustomer.Location = new System.Drawing.Point(1146, 460);
             this.GButtonAddNewCustomer.Name = "GButtonAddNewCustomer";
-            this.GButtonAddNewCustomer.PressedColor = System.Drawing.Color.White;
+            this.GButtonAddNewCustomer.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GButtonAddNewCustomer.Size = new System.Drawing.Size(169, 45);
             this.GButtonAddNewCustomer.TabIndex = 6;
             this.GButtonAddNewCustomer.Text = "Save Customer";
@@ -495,13 +495,13 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Add New Customer";
             // 
-            // US_AddAndUpdateInformationCustomer
+            // UC_AddAndUpdateInformationCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Name = "US_AddAndUpdateInformationCustomer";
+            this.Name = "UC_AddAndUpdateInformationCustomer";
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.US_AddAndUpdateInformationCustomer_Load);
             this.guna2GradientPanel1.ResumeLayout(false);

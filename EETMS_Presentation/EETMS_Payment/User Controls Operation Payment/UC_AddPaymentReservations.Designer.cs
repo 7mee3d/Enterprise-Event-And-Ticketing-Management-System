@@ -87,16 +87,17 @@
             this.GButtonConfirmPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonConfirmPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GButtonConfirmPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonConfirmPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonConfirmPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GButtonConfirmPayment.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GButtonConfirmPayment.ForeColor = System.Drawing.Color.White;
-            this.GButtonConfirmPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonConfirmPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonConfirmPayment.HoverState.ForeColor = System.Drawing.Color.White;
             this.GButtonConfirmPayment.Image = ((System.Drawing.Image)(resources.GetObject("GButtonConfirmPayment.Image")));
             this.GButtonConfirmPayment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.GButtonConfirmPayment.ImageOffset = new System.Drawing.Point(50, 0);
             this.GButtonConfirmPayment.Location = new System.Drawing.Point(174, 651);
             this.GButtonConfirmPayment.Name = "GButtonConfirmPayment";
+            this.GButtonConfirmPayment.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GButtonConfirmPayment.Size = new System.Drawing.Size(295, 45);
             this.GButtonConfirmPayment.TabIndex = 5;
             this.GButtonConfirmPayment.Text = "Confirm Payment";
@@ -135,8 +136,8 @@
             this.GButtonBankTransfer.BorderRadius = 9;
             this.GButtonBankTransfer.BorderThickness = 2;
             this.GButtonBankTransfer.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonBankTransfer.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonBankTransfer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(254)))));
+            this.GButtonBankTransfer.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.GButtonBankTransfer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GButtonBankTransfer.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.GButtonBankTransfer.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.GButtonBankTransfer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -170,8 +171,8 @@
             this.GButtonCard.BorderRadius = 9;
             this.GButtonCard.BorderThickness = 2;
             this.GButtonCard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonCard.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonCard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(254)))));
+            this.GButtonCard.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.GButtonCard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GButtonCard.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.GButtonCard.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.GButtonCard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -205,8 +206,8 @@
             this.GButtonCash.BorderRadius = 9;
             this.GButtonCash.BorderThickness = 2;
             this.GButtonCash.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonCash.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonCash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(254)))));
+            this.GButtonCash.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.GButtonCash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GButtonCash.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.GButtonCash.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.GButtonCash.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -252,10 +253,10 @@
             this.guna2GradientPanel2.BorderThickness = 1;
             this.guna2GradientPanel2.Controls.Add(this.label3);
             this.guna2GradientPanel2.Controls.Add(this.lblRemainingBalance);
-            this.guna2GradientPanel2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(236)))), ((int)(((byte)(243)))));
+            this.guna2GradientPanel2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.guna2GradientPanel2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.guna2GradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(254)))));
-            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(254)))));
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.guna2GradientPanel2.Location = new System.Drawing.Point(17, 265);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(452, 85);
@@ -265,7 +266,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
             this.label3.Location = new System.Drawing.Point(14, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 17);
@@ -362,19 +363,20 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.label9.Location = new System.Drawing.Point(11, 15);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(208, 32);
             this.label9.TabIndex = 6;
             this.label9.Text = "Process Payment";
             // 
-            // USAddPaymentReservations
+            // UC_AddPaymentReservations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.GGPanelPaymentAndTransactions);
-            this.Name = "USAddPaymentReservations";
+            this.Name = "UC_AddPaymentReservations";
             this.Size = new System.Drawing.Size(1419, 935);
             this.Load += new System.EventHandler(this.USAddPaymentReservations_Load);
             this.GGPanelPaymentAndTransactions.ResumeLayout(false);

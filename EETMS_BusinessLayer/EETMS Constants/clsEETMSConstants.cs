@@ -95,6 +95,34 @@ namespace EETMS_BusinessLayer.EETMS_Constants
 
 
 
+        ////Reservation 
+
+        //public const double kNUMBER_OF_TAX_RESERVATION = 5;
+        //public const double kNUMBER_LOW_STACK_TICKETS = 10;
+
+        //public const short kNUMBER_RED_COLOR_RESERVATION_PRIMARY_BLUE = 43;
+        //public const short kNUMBER_GREEN_COLOR_RESERVATION_PRIMARY_BLUE = 140;
+        //public const short kNUMBER_BLUE_COLOR_RESERVATION_PRIMARY_BLUE = 238;
+
+        //public const short kNUMBER_RED_COLOR_RESERVATION_FOREST_GREEN = 21;
+        //public const short kNUMBER_GREEN_COLOR_RESERVATION_FOREST_GREEN = 128;
+        //public const short kNUMBER_BLUE_COLOR_RESERVATION_FOREST_GREEN = 61;
+
+        //public const short kNUMBER_RED_COLOR_RESERVATION_LIGHT_GREEN = 220;
+        //public const short kNUMBER_GREEN_COLOR_RESERVATION_LIGHT_GREEN = 252;
+        //public const short kNUMBER_BLUE_COLOR_RESERVATION_LIGHT_GREEN = 231;
+
+
+        //public const short kNUMBER_RED_COLOR_RESERVATION_BURNT_ORANGE = 180;
+        //public const short kNUMBER_GREEN_COLOR_RESERVATION_BURNT_ORANGE = 83;
+        //public const short kNUMBER_BLUE_COLOR_RESERVATION_BURNT_ORANGE = 9;
+
+        //public const short kNUMBER_RED_COLOR_LIGHT_AMBER = 254;
+        //public const short kNUMBER_GREEN_COLOR_LIGHT_AMBER = 243;
+        //public const short kNUMBER_BLUE_COLOR_LIGHT_AMBER = 199;
+
+
+
         //Reservation 
 
         public const double kNUMBER_OF_TAX_RESERVATION = 5;

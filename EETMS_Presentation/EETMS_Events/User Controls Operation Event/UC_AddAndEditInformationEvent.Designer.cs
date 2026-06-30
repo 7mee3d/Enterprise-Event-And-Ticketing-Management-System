@@ -39,6 +39,12 @@
             this.GGButtonWarningMessageWhenTheEventComplete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GDateTimePickerStartDateTimeEvent = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.GComboBoxEndZone = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxStartZone = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxEndMinutes = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxStartMinutes = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxEndHour = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GComboBoxStartHours = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxCountries = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxCategories = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GTextBoxDiscripation = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,12 +65,6 @@
             this.GButtonCreateEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GButtonCansel = new Guna.UI2.WinForms.Guna2Button();
             this.GGButtonWarningDisable = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.GComboBoxStartHours = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.GComboBoxStartMinutes = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.GComboBoxStartZone = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.GComboBoxEndHour = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.GComboBoxEndMinutes = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.GComboBoxEndZone = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownMaxCapacity)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
@@ -80,7 +80,7 @@
             this.GButtonBackTheEvents.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.GButtonBackTheEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GButtonBackTheEvents.Font = new System.Drawing.Font("Segoe UI Variable Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonBackTheEvents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(141)))), ((int)(((byte)(238)))));
+            this.GButtonBackTheEvents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonBackTheEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GButtonBackTheEvents.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(141)))), ((int)(((byte)(238)))));
             this.GButtonBackTheEvents.Image = ((System.Drawing.Image)(resources.GetObject("GButtonBackTheEvents.Image")));
@@ -97,6 +97,7 @@
             // 
             this.lblMainTitleEvent.AutoSize = true;
             this.lblMainTitleEvent.Font = new System.Drawing.Font("Segoe UI Variable Display", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainTitleEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.lblMainTitleEvent.Location = new System.Drawing.Point(62, 115);
             this.lblMainTitleEvent.Name = "lblMainTitleEvent";
             this.lblMainTitleEvent.Size = new System.Drawing.Size(474, 70);
@@ -266,6 +267,242 @@
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(39, 40);
             this.guna2Button1.TabIndex = 4;
+            // 
+            // GComboBoxEndZone
+            // 
+            this.GComboBoxEndZone.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxEndZone.BorderRadius = 5;
+            this.GComboBoxEndZone.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxEndZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxEndZone.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndZone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndZone.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxEndZone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxEndZone.ItemHeight = 30;
+            this.GComboBoxEndZone.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.GComboBoxEndZone.Location = new System.Drawing.Point(788, 264);
+            this.GComboBoxEndZone.Name = "GComboBoxEndZone";
+            this.GComboBoxEndZone.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxEndZone.StartIndex = 0;
+            this.GComboBoxEndZone.TabIndex = 3;
+            // 
+            // GComboBoxStartZone
+            // 
+            this.GComboBoxStartZone.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxStartZone.BorderRadius = 5;
+            this.GComboBoxStartZone.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxStartZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxStartZone.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartZone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartZone.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxStartZone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxStartZone.ItemHeight = 30;
+            this.GComboBoxStartZone.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.GComboBoxStartZone.Location = new System.Drawing.Point(788, 135);
+            this.GComboBoxStartZone.Name = "GComboBoxStartZone";
+            this.GComboBoxStartZone.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxStartZone.StartIndex = 0;
+            this.GComboBoxStartZone.TabIndex = 3;
+            // 
+            // GComboBoxEndMinutes
+            // 
+            this.GComboBoxEndMinutes.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxEndMinutes.BorderRadius = 5;
+            this.GComboBoxEndMinutes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxEndMinutes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxEndMinutes.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndMinutes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndMinutes.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxEndMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxEndMinutes.ItemHeight = 30;
+            this.GComboBoxEndMinutes.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60"});
+            this.GComboBoxEndMinutes.Location = new System.Drawing.Point(685, 264);
+            this.GComboBoxEndMinutes.Name = "GComboBoxEndMinutes";
+            this.GComboBoxEndMinutes.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxEndMinutes.StartIndex = 0;
+            this.GComboBoxEndMinutes.TabIndex = 3;
+            // 
+            // GComboBoxStartMinutes
+            // 
+            this.GComboBoxStartMinutes.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxStartMinutes.BorderRadius = 5;
+            this.GComboBoxStartMinutes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxStartMinutes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxStartMinutes.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartMinutes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartMinutes.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxStartMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxStartMinutes.ItemHeight = 30;
+            this.GComboBoxStartMinutes.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60"});
+            this.GComboBoxStartMinutes.Location = new System.Drawing.Point(685, 135);
+            this.GComboBoxStartMinutes.Name = "GComboBoxStartMinutes";
+            this.GComboBoxStartMinutes.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxStartMinutes.StartIndex = 0;
+            this.GComboBoxStartMinutes.TabIndex = 3;
+            // 
+            // GComboBoxEndHour
+            // 
+            this.GComboBoxEndHour.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxEndHour.BorderRadius = 5;
+            this.GComboBoxEndHour.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxEndHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxEndHour.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndHour.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxEndHour.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxEndHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxEndHour.ItemHeight = 30;
+            this.GComboBoxEndHour.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.GComboBoxEndHour.Location = new System.Drawing.Point(582, 264);
+            this.GComboBoxEndHour.Name = "GComboBoxEndHour";
+            this.GComboBoxEndHour.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxEndHour.StartIndex = 0;
+            this.GComboBoxEndHour.TabIndex = 3;
+            // 
+            // GComboBoxStartHours
+            // 
+            this.GComboBoxStartHours.BackColor = System.Drawing.Color.Transparent;
+            this.GComboBoxStartHours.BorderRadius = 5;
+            this.GComboBoxStartHours.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.GComboBoxStartHours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GComboBoxStartHours.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartHours.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GComboBoxStartHours.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.GComboBoxStartHours.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.GComboBoxStartHours.ItemHeight = 30;
+            this.GComboBoxStartHours.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.GComboBoxStartHours.Location = new System.Drawing.Point(582, 135);
+            this.GComboBoxStartHours.Name = "GComboBoxStartHours";
+            this.GComboBoxStartHours.Size = new System.Drawing.Size(97, 36);
+            this.GComboBoxStartHours.StartIndex = 0;
+            this.GComboBoxStartHours.TabIndex = 3;
             // 
             // GComboBoxCountries
             // 
@@ -483,15 +720,15 @@
             this.GGButtonManageTheTicketsEvents.Animated = true;
             this.GGButtonManageTheTicketsEvents.AnimatedGIF = true;
             this.GGButtonManageTheTicketsEvents.BorderRadius = 6;
-            this.GGButtonManageTheTicketsEvents.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(205)))), ((int)(((byte)(247)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(205)))), ((int)(((byte)(247)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(205)))), ((int)(((byte)(247)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(205)))), ((int)(((byte)(247)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
             this.GGButtonManageTheTicketsEvents.DisabledState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.GGButtonManageTheTicketsEvents.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.GGButtonManageTheTicketsEvents.Enabled = false;
-            this.GGButtonManageTheTicketsEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonManageTheTicketsEvents.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GGButtonManageTheTicketsEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonManageTheTicketsEvents.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GGButtonManageTheTicketsEvents.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonManageTheTicketsEvents.ForeColor = System.Drawing.Color.White;
             this.GGButtonManageTheTicketsEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
@@ -528,17 +765,17 @@
             this.GButtonCreateEvent.Animated = true;
             this.GButtonCreateEvent.AnimatedGIF = true;
             this.GButtonCreateEvent.BorderRadius = 6;
-            this.GButtonCreateEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonCreateEvent.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonCreateEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonCreateEvent.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonCreateEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.GButtonCreateEvent.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.GButtonCreateEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.GButtonCreateEvent.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
             this.GButtonCreateEvent.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.GButtonCreateEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonCreateEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonCreateEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GButtonCreateEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GButtonCreateEvent.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GButtonCreateEvent.ForeColor = System.Drawing.Color.White;
-            this.GButtonCreateEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
-            this.GButtonCreateEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(112)))), ((int)(((byte)(190)))));
+            this.GButtonCreateEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GButtonCreateEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonCreateEvent.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCreateEvent.Image")));
             this.GButtonCreateEvent.Location = new System.Drawing.Point(1212, 24);
             this.GButtonCreateEvent.Name = "GButtonCreateEvent";
@@ -562,7 +799,7 @@
             this.GButtonCansel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GButtonCansel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.GButtonCansel.HoverState.FillColor = System.Drawing.Color.White;
-            this.GButtonCansel.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(141)))), ((int)(((byte)(238)))));
+            this.GButtonCansel.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.GButtonCansel.ImageOffset = new System.Drawing.Point(-5, 0);
             this.GButtonCansel.Location = new System.Drawing.Point(850, 24);
             this.GButtonCansel.Name = "GButtonCansel";
@@ -593,242 +830,6 @@
             this.GGButtonWarningDisable.Size = new System.Drawing.Size(313, 42);
             this.GGButtonWarningDisable.TabIndex = 0;
             this.GGButtonWarningDisable.Text = "Events with sold tickets cannot be deleted.";
-            // 
-            // GComboBoxStartHours
-            // 
-            this.GComboBoxStartHours.BackColor = System.Drawing.Color.Transparent;
-            this.GComboBoxStartHours.BorderRadius = 5;
-            this.GComboBoxStartHours.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.GComboBoxStartHours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GComboBoxStartHours.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxStartHours.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxStartHours.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.GComboBoxStartHours.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.GComboBoxStartHours.ItemHeight = 30;
-            this.GComboBoxStartHours.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.GComboBoxStartHours.Location = new System.Drawing.Point(582, 135);
-            this.GComboBoxStartHours.Name = "GComboBoxStartHours";
-            this.GComboBoxStartHours.Size = new System.Drawing.Size(97, 36);
-            this.GComboBoxStartHours.StartIndex = 0;
-            this.GComboBoxStartHours.TabIndex = 3;
-            // 
-            // GComboBoxStartMinutes
-            // 
-            this.GComboBoxStartMinutes.BackColor = System.Drawing.Color.Transparent;
-            this.GComboBoxStartMinutes.BorderRadius = 5;
-            this.GComboBoxStartMinutes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.GComboBoxStartMinutes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GComboBoxStartMinutes.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxStartMinutes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxStartMinutes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.GComboBoxStartMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.GComboBoxStartMinutes.ItemHeight = 30;
-            this.GComboBoxStartMinutes.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59",
-            "60"});
-            this.GComboBoxStartMinutes.Location = new System.Drawing.Point(685, 135);
-            this.GComboBoxStartMinutes.Name = "GComboBoxStartMinutes";
-            this.GComboBoxStartMinutes.Size = new System.Drawing.Size(97, 36);
-            this.GComboBoxStartMinutes.StartIndex = 0;
-            this.GComboBoxStartMinutes.TabIndex = 3;
-            // 
-            // GComboBoxStartZone
-            // 
-            this.GComboBoxStartZone.BackColor = System.Drawing.Color.Transparent;
-            this.GComboBoxStartZone.BorderRadius = 5;
-            this.GComboBoxStartZone.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.GComboBoxStartZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GComboBoxStartZone.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxStartZone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxStartZone.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.GComboBoxStartZone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.GComboBoxStartZone.ItemHeight = 30;
-            this.GComboBoxStartZone.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.GComboBoxStartZone.Location = new System.Drawing.Point(788, 135);
-            this.GComboBoxStartZone.Name = "GComboBoxStartZone";
-            this.GComboBoxStartZone.Size = new System.Drawing.Size(97, 36);
-            this.GComboBoxStartZone.StartIndex = 0;
-            this.GComboBoxStartZone.TabIndex = 3;
-            // 
-            // GComboBoxEndHour
-            // 
-            this.GComboBoxEndHour.BackColor = System.Drawing.Color.Transparent;
-            this.GComboBoxEndHour.BorderRadius = 5;
-            this.GComboBoxEndHour.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.GComboBoxEndHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GComboBoxEndHour.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxEndHour.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxEndHour.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.GComboBoxEndHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.GComboBoxEndHour.ItemHeight = 30;
-            this.GComboBoxEndHour.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.GComboBoxEndHour.Location = new System.Drawing.Point(582, 264);
-            this.GComboBoxEndHour.Name = "GComboBoxEndHour";
-            this.GComboBoxEndHour.Size = new System.Drawing.Size(97, 36);
-            this.GComboBoxEndHour.StartIndex = 0;
-            this.GComboBoxEndHour.TabIndex = 3;
-            // 
-            // GComboBoxEndMinutes
-            // 
-            this.GComboBoxEndMinutes.BackColor = System.Drawing.Color.Transparent;
-            this.GComboBoxEndMinutes.BorderRadius = 5;
-            this.GComboBoxEndMinutes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.GComboBoxEndMinutes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GComboBoxEndMinutes.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxEndMinutes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxEndMinutes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.GComboBoxEndMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.GComboBoxEndMinutes.ItemHeight = 30;
-            this.GComboBoxEndMinutes.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59",
-            "60"});
-            this.GComboBoxEndMinutes.Location = new System.Drawing.Point(685, 264);
-            this.GComboBoxEndMinutes.Name = "GComboBoxEndMinutes";
-            this.GComboBoxEndMinutes.Size = new System.Drawing.Size(97, 36);
-            this.GComboBoxEndMinutes.StartIndex = 0;
-            this.GComboBoxEndMinutes.TabIndex = 3;
-            // 
-            // GComboBoxEndZone
-            // 
-            this.GComboBoxEndZone.BackColor = System.Drawing.Color.Transparent;
-            this.GComboBoxEndZone.BorderRadius = 5;
-            this.GComboBoxEndZone.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.GComboBoxEndZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GComboBoxEndZone.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxEndZone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GComboBoxEndZone.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.GComboBoxEndZone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.GComboBoxEndZone.ItemHeight = 30;
-            this.GComboBoxEndZone.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.GComboBoxEndZone.Location = new System.Drawing.Point(788, 264);
-            this.GComboBoxEndZone.Name = "GComboBoxEndZone";
-            this.GComboBoxEndZone.Size = new System.Drawing.Size(97, 36);
-            this.GComboBoxEndZone.StartIndex = 0;
-            this.GComboBoxEndZone.TabIndex = 3;
             // 
             // UC_AddAndEditInformationEvent
             // 

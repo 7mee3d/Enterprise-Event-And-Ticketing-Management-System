@@ -228,7 +228,7 @@ namespace EETMS_Presentation.EETMS_Category
             _ModeCategory = _EnModeCategory._ADD_NEW_CATEGORY;
             IDCategory = clsEETMS_Constants.kNEGATIVE_ONE;
             GGButtonAddNewCategory.Text = "Add New Category";
-            GGButtonAddNewCategory.Image = Resources.Add_Icon_EETMS;
+            GGButtonAddNewCategory.Image = Resources.Add_Image_Icon_EETMS;
 
             _ClearTheTextBoxies();
         }

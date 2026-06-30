@@ -76,7 +76,7 @@
             this.GGPanelPaymentAndTransactions.Controls.Add(this.label2);
             this.GGPanelPaymentAndTransactions.FillColor = System.Drawing.Color.White;
             this.GGPanelPaymentAndTransactions.FillColor2 = System.Drawing.Color.White;
-            this.GGPanelPaymentAndTransactions.Location = new System.Drawing.Point(25, 106);
+            this.GGPanelPaymentAndTransactions.Location = new System.Drawing.Point(25, 131);
             this.GGPanelPaymentAndTransactions.Name = "GGPanelPaymentAndTransactions";
             this.GGPanelPaymentAndTransactions.Size = new System.Drawing.Size(1350, 157);
             this.GGPanelPaymentAndTransactions.TabIndex = 3;
@@ -84,11 +84,11 @@
             // guna2CircleButton1
             // 
             this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.guna2CircleButton1.Enabled = false;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(243)))), ((int)(((byte)(253)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
@@ -124,7 +124,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 39.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(17, 31);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
+            this.label1.Location = new System.Drawing.Point(17, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(707, 70);
             this.label1.TabIndex = 4;
@@ -275,7 +276,6 @@
             this.GGButtonFilter.HoverState.FillColor2 = System.Drawing.Color.White;
             this.GGButtonFilter.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.GGButtonFilter.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.GGButtonFilter.Image = global::EETMS_Presentation.Properties.Resources.Filter_Icon_EETMS;
             this.GGButtonFilter.ImageOffset = new System.Drawing.Point(-5, 0);
             this.GGButtonFilter.Location = new System.Drawing.Point(537, 36);
             this.GGButtonFilter.Name = "GGButtonFilter";
@@ -295,18 +295,18 @@
             this.GGButtonPaymentBooking.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonPaymentBooking.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.GGButtonPaymentBooking.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonPaymentBooking.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.GGButtonPaymentBooking.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.GGButtonPaymentBooking.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonPaymentBooking.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
             this.GGButtonPaymentBooking.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonPaymentBooking.ForeColor = System.Drawing.Color.White;
-            this.GGButtonPaymentBooking.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
-            this.GGButtonPaymentBooking.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(64)))), ((int)(((byte)(175)))));
+            this.GGButtonPaymentBooking.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonPaymentBooking.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GGButtonPaymentBooking.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.GGButtonPaymentBooking.ImageOffset = new System.Drawing.Point(35, 1);
             this.GGButtonPaymentBooking.ImageSize = new System.Drawing.Size(25, 25);
             this.GGButtonPaymentBooking.Location = new System.Drawing.Point(1084, 29);
             this.GGButtonPaymentBooking.Name = "GGButtonPaymentBooking";
-            this.GGButtonPaymentBooking.PressedColor = System.Drawing.Color.White;
+            this.GGButtonPaymentBooking.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GGButtonPaymentBooking.Size = new System.Drawing.Size(249, 48);
             this.GGButtonPaymentBooking.TabIndex = 14;
             this.GGButtonPaymentBooking.Text = "Payment Booking";
