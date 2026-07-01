@@ -34,7 +34,7 @@ namespace EETMS_Presentation.EETMS_Tickets
         private double _TotalAmount;
         double _FilnialCalcTax;
 
-        private int _CustomerID;
+        private int _CustomerID = -1;
         private ReservationTicketsDTO _MReservations;
         private int _EventID;
         private Guna2MessageDialog _G2MD;
@@ -194,7 +194,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
         private void _LoadInformationEventToComboBox()
         {
-            DataTable Events_DT = TicketBL.GetInformationEvent_Name_And_ID();
+            DataTable Events_DT = TicketBL.GetInformation_ID_Name_EventsInProgress();
 
             GComboBoxSelectEvents.ValueMember = "EventID";
             GComboBoxSelectEvents.DisplayMember = "EventName";
@@ -208,6 +208,10 @@ namespace EETMS_Presentation.EETMS_Tickets
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelRegularTicket, GGButtonRegularTicketStatus);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelPermiumTicket, GGButtonPremiumTicketStatus);
             _ChangeTheColorBackAndFrontMouseLeaveTheCardTicket(GGPanelVIPTicket, GGButtonVIPTicketStatus);
+
+            GGButtonRegularTicketStatus.Visible = false;
+            GGButtonVIPTicketStatus.Visible = false;
+            GGButtonPremiumTicketStatus.Visible = false;
 
             GNumericUpDownPremium.Enabled = false;
             GNumericUpDownRegularTicket.Enabled = false;
@@ -237,6 +241,8 @@ namespace EETMS_Presentation.EETMS_Tickets
             PanelVIPTicket.Visible = false;
             PanelPremiumTicket.Visible = false;
 
+            _CustomerID = 0;
+            GTextBoxCustomerIDorName.Clear();
         }
 
         private void _LoadAllInformationTicketTypeForEventAfterSelectComboBox()
@@ -253,6 +259,7 @@ namespace EETMS_Presentation.EETMS_Tickets
             GGButtonRegularTicketStatus.Visible = false;
             GGButtonVIPTicketStatus.Visible = false;
             GGButtonPremiumTicketStatus.Visible = false;
+
             DataTable TicketType_DT = TicketBL.GetInformationTicketForEvent(_EventID);
 
             if (TicketType_DT != null)
@@ -382,7 +389,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
         private void _UpdateThePanelsAndThePricesAndCountTickets()
         {
-
+            GButtonCancelReservation.Visible = true;
             if (_NumberOfTicketRegular > clsEETMS_Constants.kZERO && _NumberOfTicketVIP == clsEETMS_Constants.kZERO && _NumberOfTicketPreimum == clsEETMS_Constants.kZERO)
             {
                 PanelRegularTicket.Visible = true;
@@ -484,6 +491,7 @@ namespace EETMS_Presentation.EETMS_Tickets
                 GPanelSubTotalAndTaxTicketBookingSummary.Visible = false;
                 GGButtonConfirmBooking.Visible = false;
                 lblNoteBooking.Visible = false;
+                GButtonCancelReservation.Visible = false;
             }
 
         }
@@ -561,10 +569,13 @@ namespace EETMS_Presentation.EETMS_Tickets
 
             string ToBeSearch = clsEETMS_Constants.kEMPTY_STRING;
 
-            if (!string.IsNullOrEmpty(GTextBoxCustomerIDorName.Text))
+            if (!string.IsNullOrEmpty(GTextBoxCustomerIDorName.Text.Trim()))
                 ToBeSearch = GTextBoxCustomerIDorName.Text.Trim();
             else
+            {
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Must Enter The Customer ID , Name", "Note For Search The Customer ", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
+            }
 
             DataTable DT = CustomerBL.AllInformationCustomerAfterSearch(ToBeSearch);
 
@@ -671,11 +682,7 @@ namespace EETMS_Presentation.EETMS_Tickets
 
 
                 }
-                else
-                {
-                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Must Search The Customer To Be Booking", "Note Of Booking New Tickets ", MessageDialogButtons.OK, MessageDialogIcon.Error);
-                    return;
-                }
+
 
                 clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Booking Is Successfully", "Note For Add New Reservations", MessageDialogButtons.OK, MessageDialogIcon.Information);
 
@@ -699,6 +706,11 @@ namespace EETMS_Presentation.EETMS_Tickets
 
                 _ResetAllSettingCardsTickets();
                 _LoadAllInformationTicketTypeForEventAfterSelectComboBox();
+            }
+            else
+            {
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Must Search The Customer To Be Booking", "Note Of Booking New Tickets ", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                return;
             }
         }
 
@@ -759,6 +771,9 @@ namespace EETMS_Presentation.EETMS_Tickets
             }
         }
 
-
+        private void GButtonCancelReservation_Click(object sender, EventArgs e)
+        {
+            _ResetAllSettingCardsTickets();
+        }
     }
 }

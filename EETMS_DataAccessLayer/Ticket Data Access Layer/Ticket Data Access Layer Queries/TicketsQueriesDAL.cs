@@ -21,7 +21,7 @@ namespace EETMS_DataAccessLayer
 
         #region All Methods Ticket Queries 
 
-        private static DataTable _GetInformation_ID_Name_Events()
+        private static DataTable _GetInformation_ID_Name_EventsInProgress()
         {
             DataTable Events_DT = new DataTable();
 
@@ -32,12 +32,12 @@ namespace EETMS_DataAccessLayer
 
                 string Query = @"
                                         
-                                     SELECT 
-                                                 EventID ,
-                                                 EventName 
+                                       SELECT 
+                                                 E.EventID ,
+                                                 E.EventName 
 
-                                     FROM [Events] 
-
+                                     FROM [Events] E
+                                     WHERE GETDATE() < E.EndDateTimeEvent
                                 ";
 
                 using (SqlCommand command = new SqlCommand(Query, connection))
@@ -61,8 +61,8 @@ namespace EETMS_DataAccessLayer
             return Events_DT;
         }
 
-        public static DataTable GetInformation_ID_Name_Events()
-            => _GetInformation_ID_Name_Events();
+        public static DataTable GetInformation_ID_Name_EventsInProgress()
+            => _GetInformation_ID_Name_EventsInProgress();
 
         private static DataTable _GetInformationTicketForEventBy(int EventID)
         {

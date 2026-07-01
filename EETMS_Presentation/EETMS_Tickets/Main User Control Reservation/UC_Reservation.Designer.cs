@@ -96,6 +96,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.GButtonCancelReservation = new Guna.UI2.WinForms.Guna2Button();
             this.GGPnaelMainPanelComponetNewTicketSale.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.GPanelSubTotalAndTaxTicketBookingSummary.SuspendLayout();
@@ -153,6 +154,7 @@
             this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(236)))), ((int)(((byte)(243)))));
             this.guna2GradientPanel2.BorderRadius = 10;
             this.guna2GradientPanel2.BorderThickness = 1;
+            this.guna2GradientPanel2.Controls.Add(this.GButtonCancelReservation);
             this.guna2GradientPanel2.Controls.Add(this.GGButtonConfirmBooking);
             this.guna2GradientPanel2.Controls.Add(this.GPanelSubTotalAndTaxTicketBookingSummary);
             this.guna2GradientPanel2.Controls.Add(this.lblNoteBooking);
@@ -164,7 +166,7 @@
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientPanel2.Location = new System.Drawing.Point(1004, 35);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(381, 620);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(381, 636);
             this.guna2GradientPanel2.TabIndex = 5;
             // 
             // GGButtonConfirmBooking
@@ -172,6 +174,7 @@
             this.GGButtonConfirmBooking.Animated = true;
             this.GGButtonConfirmBooking.AnimatedGIF = true;
             this.GGButtonConfirmBooking.BorderRadius = 5;
+            this.GGButtonConfirmBooking.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GGButtonConfirmBooking.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GGButtonConfirmBooking.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GGButtonConfirmBooking.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -187,12 +190,13 @@
             this.GGButtonConfirmBooking.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.GGButtonConfirmBooking.ImageOffset = new System.Drawing.Point(35, 1);
             this.GGButtonConfirmBooking.ImageSize = new System.Drawing.Size(25, 25);
-            this.GGButtonConfirmBooking.Location = new System.Drawing.Point(49, 484);
+            this.GGButtonConfirmBooking.Location = new System.Drawing.Point(46, 477);
             this.GGButtonConfirmBooking.Name = "GGButtonConfirmBooking";
             this.GGButtonConfirmBooking.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GGButtonConfirmBooking.Size = new System.Drawing.Size(289, 50);
             this.GGButtonConfirmBooking.TabIndex = 6;
-            this.GGButtonConfirmBooking.Text = "Confirm Booking";
+            this.GGButtonConfirmBooking.Text = "Confirm Reservation";
+            this.GGButtonConfirmBooking.TextOffset = new System.Drawing.Point(-5, 0);
             this.GGButtonConfirmBooking.Visible = false;
             this.GGButtonConfirmBooking.Click += new System.EventHandler(this.GGButtonConfirmBooking_Click);
             // 
@@ -292,9 +296,9 @@
             // 
             this.lblNoteBooking.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoteBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(120)))), ((int)(((byte)(142)))));
-            this.lblNoteBooking.Location = new System.Drawing.Point(26, 553);
+            this.lblNoteBooking.Location = new System.Drawing.Point(26, 594);
             this.lblNoteBooking.Name = "lblNoteBooking";
-            this.lblNoteBooking.Size = new System.Drawing.Size(329, 57);
+            this.lblNoteBooking.Size = new System.Drawing.Size(329, 33);
             this.lblNoteBooking.TabIndex = 9;
             this.lblNoteBooking.Text = "* Available tickets will be decreased automatically upon confirmation.";
             this.lblNoteBooking.Visible = false;
@@ -937,7 +941,7 @@
             this.GGButtonSearchTheCustomerByIDorName.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GGButtonSearchTheCustomerByIDorName.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GGButtonSearchTheCustomerByIDorName.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonSearchTheCustomerByIDorName.Image")));
-            this.GGButtonSearchTheCustomerByIDorName.Location = new System.Drawing.Point(776, 94);
+            this.GGButtonSearchTheCustomerByIDorName.Location = new System.Drawing.Point(775, 94);
             this.GGButtonSearchTheCustomerByIDorName.Name = "GGButtonSearchTheCustomerByIDorName";
             this.GGButtonSearchTheCustomerByIDorName.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
             this.GGButtonSearchTheCustomerByIDorName.Size = new System.Drawing.Size(175, 42);
@@ -984,7 +988,7 @@
             this.GTextBoxCustomerIDorName.Name = "GTextBoxCustomerIDorName";
             this.GTextBoxCustomerIDorName.PlaceholderText = "Search customer name or ID...";
             this.GTextBoxCustomerIDorName.SelectedText = "";
-            this.GTextBoxCustomerIDorName.Size = new System.Drawing.Size(310, 42);
+            this.GTextBoxCustomerIDorName.Size = new System.Drawing.Size(335, 42);
             this.GTextBoxCustomerIDorName.TabIndex = 1;
             // 
             // label4
@@ -1035,6 +1039,31 @@
             this.guna2CircleButton1.Size = new System.Drawing.Size(40, 37);
             this.guna2CircleButton1.TabIndex = 6;
             this.guna2CircleButton1.Text = "1";
+            // 
+            // GButtonCancelReservation
+            // 
+            this.GButtonCancelReservation.Animated = true;
+            this.GButtonCancelReservation.AnimatedGIF = true;
+            this.GButtonCancelReservation.BorderColor = System.Drawing.Color.Transparent;
+            this.GButtonCancelReservation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GButtonCancelReservation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCancelReservation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCancelReservation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonCancelReservation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonCancelReservation.FillColor = System.Drawing.Color.White;
+            this.GButtonCancelReservation.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonCancelReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(117)))), ((int)(((byte)(140)))));
+            this.GButtonCancelReservation.HoverState.BorderColor = System.Drawing.Color.White;
+            this.GButtonCancelReservation.HoverState.FillColor = System.Drawing.Color.White;
+            this.GButtonCancelReservation.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(117)))), ((int)(((byte)(140)))));
+            this.GButtonCancelReservation.Location = new System.Drawing.Point(100, 534);
+            this.GButtonCancelReservation.Name = "GButtonCancelReservation";
+            this.GButtonCancelReservation.PressedColor = System.Drawing.Color.White;
+            this.GButtonCancelReservation.Size = new System.Drawing.Size(181, 37);
+            this.GButtonCancelReservation.TabIndex = 6;
+            this.GButtonCancelReservation.Text = "Cancel Reservation";
+            this.GButtonCancelReservation.Visible = false;
+            this.GButtonCancelReservation.Click += new System.EventHandler(this.GButtonCancelReservation_Click);
             // 
             // UC_Reservation
             // 
@@ -1149,5 +1178,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonConfirmBooking;
         private System.Windows.Forms.Label lblNoteBooking;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Guna.UI2.WinForms.Guna2Button GButtonCancelReservation;
     }
 }

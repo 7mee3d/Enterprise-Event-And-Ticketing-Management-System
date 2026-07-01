@@ -1295,6 +1295,7 @@ namespace EETMS_DataAccessLayer
                             
                                          WHEN (ISNULL(SUM(TT.Quantity - TT.Available), 0) * 100.0) / NULLIF(E.MaxCapacity, 0) >= 100
                                              THEN 'Sold Out'
+
                                      END = @UnsageCapacityEvent
                             );
 

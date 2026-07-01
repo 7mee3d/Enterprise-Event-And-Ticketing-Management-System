@@ -10,8 +10,8 @@ namespace EETMS_BusinessLayer
     public class TicketBL
     {
 
-        public static DataTable GetInformationEvent_Name_And_ID()
-            => TicketsQueriesDAL.GetInformation_ID_Name_Events();
+        public static DataTable GetInformation_ID_Name_EventsInProgress()
+            => TicketsQueriesDAL.GetInformation_ID_Name_EventsInProgress();
 
         public static DataTable GetInformationTicketForEvent(int EventID)
             => TicketsQueriesDAL.GetInformationTicketForEventBy(EventID);
