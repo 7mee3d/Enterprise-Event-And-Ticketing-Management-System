@@ -144,7 +144,10 @@ namespace EETMS_Presentation.EETMS_Events
                     GComboBoxStartHours.SelectedIndex = GComboBoxStartHours.FindString((_InformationEvent.DateTimeEvent.Value.Hour - 12).ToString());
                 else GComboBoxStartHours.SelectedIndex = GComboBoxStartHours.FindString((_InformationEvent.DateTimeEvent.Value.Hour).ToString());
 
-                GComboBoxStartMinutes.SelectedIndex = GComboBoxStartMinutes.FindString(_InformationEvent.DateTimeEvent.Value.Minute.ToString());
+                if (_InformationEvent.DateTimeEvent.Value.Minute < 10)
+                    GComboBoxStartMinutes.SelectedIndex = GComboBoxStartMinutes.FindString("0" + _InformationEvent.DateTimeEvent.Value.Minute.ToString());
+                else GComboBoxStartMinutes.SelectedIndex = GComboBoxStartMinutes.FindString(_InformationEvent.DateTimeEvent.Value.Minute.ToString());
+
                 GComboBoxStartZone.SelectedIndex = GComboBoxStartZone.FindString(_InformationEvent.StartTimeMeridiem);
             }
 
@@ -156,7 +159,11 @@ namespace EETMS_Presentation.EETMS_Events
                     GComboBoxEndHour.SelectedIndex = GComboBoxEndHour.FindString((_InformationEvent.EndDateTimeEvent.Value.Hour - 12).ToString());
                 else GComboBoxEndHour.SelectedIndex = GComboBoxEndHour.FindString((_InformationEvent.EndDateTimeEvent.Value.Hour).ToString());
 
-                GComboBoxEndMinutes.SelectedIndex = GComboBoxEndMinutes.FindString(_InformationEvent.EndDateTimeEvent.Value.Minute.ToString());
+                if (_InformationEvent.EndDateTimeEvent.Value.Minute < 10)
+                    GComboBoxEndMinutes.SelectedIndex = GComboBoxEndMinutes.FindString("0" + _InformationEvent.EndDateTimeEvent.Value.Minute.ToString());
+                else GComboBoxEndMinutes.SelectedIndex = GComboBoxEndMinutes.FindString(_InformationEvent.EndDateTimeEvent.Value.Minute.ToString());
+
+
                 GComboBoxEndZone.SelectedIndex = GComboBoxEndZone.FindString(_InformationEvent.EndTimeMeridiem);
             }
 
