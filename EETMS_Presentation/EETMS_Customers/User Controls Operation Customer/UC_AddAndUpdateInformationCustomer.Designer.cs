@@ -248,6 +248,7 @@
             this.GTextBoxNationalID.SelectedText = "";
             this.GTextBoxNationalID.Size = new System.Drawing.Size(546, 45);
             this.GTextBoxNationalID.TabIndex = 5;
+            this.GTextBoxNationalID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GTextBoxNationalID_KeyPress);
             // 
             // label11
             // 
@@ -283,6 +284,7 @@
             this.GTextBoxLastName.SelectedText = "";
             this.GTextBoxLastName.Size = new System.Drawing.Size(136, 37);
             this.GTextBoxLastName.TabIndex = 2;
+            this.GTextBoxLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this._ValidationTextBoxies);
             // 
             // GTextBoxMidName
             // 
@@ -307,6 +309,7 @@
             this.GTextBoxMidName.SelectedText = "";
             this.GTextBoxMidName.Size = new System.Drawing.Size(136, 37);
             this.GTextBoxMidName.TabIndex = 1;
+            this.GTextBoxMidName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this._ValidationTextBoxies);
             // 
             // label7
             // 
@@ -341,6 +344,7 @@
             this.GTextBoxPhoneNumber.SelectedText = "";
             this.GTextBoxPhoneNumber.Size = new System.Drawing.Size(222, 41);
             this.GTextBoxPhoneNumber.TabIndex = 4;
+            this.GTextBoxPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GTextBoxPhoneNumber_KeyPress);
             // 
             // GTextBoxEmailAddress
             // 
@@ -388,6 +392,7 @@
             this.GTextBoxFirstName.SelectedText = "";
             this.GTextBoxFirstName.Size = new System.Drawing.Size(136, 37);
             this.GTextBoxFirstName.TabIndex = 0;
+            this.GTextBoxFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this._ValidationTextBoxies);
             // 
             // label6
             // 

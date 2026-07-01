@@ -246,7 +246,19 @@ namespace EETMS_Presentation.EETMS_Customers
         private void US_AddAndUpdateInformationCustomer_Load(object sender, EventArgs e)
             => _LoadAllInformationAndSettingAddNewCustomer();
 
+        private void _ValidationTextBoxies(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar));
+        }
 
+        private void GTextBoxNationalID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar));
+        }
 
+        private void GTextBoxPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar));
+        }
     }
 }
