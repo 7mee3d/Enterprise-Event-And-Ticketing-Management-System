@@ -97,6 +97,15 @@ namespace EETMS_Presentation.EETMS_Events
                 GNumericUpDownMaxCapacity.Enabled = false;
                 GComboBoxCategories.Enabled = false;
                 GComboBoxCountries.Enabled = false;
+
+                GComboBoxStartHours.Enabled = false;
+                GComboBoxStartMinutes.Enabled = false;
+                GComboBoxStartZone.Enabled = false;
+
+                GComboBoxEndHour.Enabled = false;
+                GComboBoxEndMinutes.Enabled = false;
+                GComboBoxEndZone.Enabled = false;
+
                 return false;
 
             }

@@ -722,6 +722,7 @@
             this.GGButtonManageTheTicketsEvents.Animated = true;
             this.GGButtonManageTheTicketsEvents.AnimatedGIF = true;
             this.GGButtonManageTheTicketsEvents.BorderRadius = 6;
+            this.GGButtonManageTheTicketsEvents.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GGButtonManageTheTicketsEvents.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
             this.GGButtonManageTheTicketsEvents.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
             this.GGButtonManageTheTicketsEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
@@ -767,6 +768,7 @@
             this.GButtonCreateEvent.Animated = true;
             this.GButtonCreateEvent.AnimatedGIF = true;
             this.GButtonCreateEvent.BorderRadius = 6;
+            this.GButtonCreateEvent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonCreateEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
             this.GButtonCreateEvent.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
             this.GButtonCreateEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));

@@ -290,7 +290,8 @@
             this.toolStripSeparator2,
             this.deleteEventToolStripMenuItem1});
             this.GContextMenuStripEvents.Name = "contextMenuStrip1";
-            this.GContextMenuStripEvents.Size = new System.Drawing.Size(181, 86);
+            this.GContextMenuStripEvents.Size = new System.Drawing.Size(197, 108);
+            this.GContextMenuStripEvents.Opening += new System.ComponentModel.CancelEventHandler(this.GContextMenuStripEvents_Opening);
             // 
             // editEventToolStripMenuItem
             // 
@@ -299,14 +300,14 @@
             this.editEventToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editEventToolStripMenuItem.Image")));
             this.editEventToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editEventToolStripMenuItem.Name = "editEventToolStripMenuItem";
-            this.editEventToolStripMenuItem.Size = new System.Drawing.Size(180, 38);
+            this.editEventToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.editEventToolStripMenuItem.Text = "Edit Event";
             this.editEventToolStripMenuItem.Click += new System.EventHandler(this.editEventToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(193, 6);
             // 
             // deleteEventToolStripMenuItem1
             // 
@@ -315,7 +316,7 @@
             this.deleteEventToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteEventToolStripMenuItem1.Image")));
             this.deleteEventToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteEventToolStripMenuItem1.Name = "deleteEventToolStripMenuItem1";
-            this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(180, 38);
+            this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
             this.deleteEventToolStripMenuItem1.Text = "Delete Event";
             this.deleteEventToolStripMenuItem1.Click += new System.EventHandler(this.deleteEventToolStripMenuItem1_Click);
             // 

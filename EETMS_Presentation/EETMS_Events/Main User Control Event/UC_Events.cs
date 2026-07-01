@@ -485,5 +485,20 @@ namespace EETMS_Presentation.EETMS_Events
         {
 
         }
+
+        private void GContextMenuStripEvents_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (_GetTheEventID() == -1)
+            {
+                deleteEventToolStripMenuItem1.Enabled = false;
+                editEventToolStripMenuItem.Enabled = false;
+
+            }
+            else
+            {
+                deleteEventToolStripMenuItem1.Enabled = true;
+                editEventToolStripMenuItem.Enabled = true;
+            }
+        }
     }
 }
