@@ -199,6 +199,54 @@ namespace EETMS_DataAccessLayer
         public static UserDTO FindTheUserBy(int IDUser)
             => _FindTheUserBy(IDUser);
 
+        public static bool IsUserExistsBy(string Username)
+        {
+
+            bool IsExsits = false;
+
+            try
+            {
+                //UserName = @EmailOrUsername OR
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+                    string Query = @"
+
+                                        SELECT 1 AS [Found User] 
+                                        FROM Users 
+                                        WHERE (UserName = @Username  ) ; 
+                                                    
+
+
+                                     ";
+
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        command.Parameters.Add("@Username", SqlDbType.NVarChar, 400).Value = Username;
+
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != null && int.TryParse(result.ToString(), out int Result))
+                            IsExsits = Result > 0;
+
+
+                    }
+                }
+
+
+            }
+            catch (Exception Ex)
+            {
+                return false;
+            }
+
+            return IsExsits;
+        }
+
         private static DataTable _GetAllAfterSearchUsersBy(string SearchUserByNameOrUsername)
         {
 

@@ -37,6 +37,7 @@ namespace EETMS_DataAccessLayer
                                  SELECT EventID ,
                                         EventName,
                                         DateTimeEvent,
+                                        EndDateTimeEvent,
                                         Duration,
                                         MaxCapacity,
                                         Street,
@@ -117,6 +118,7 @@ namespace EETMS_DataAccessLayer
 						                        E.Duration,
 						                        E.MaxCapacity,
 						                        E.DateTimeEvent,
+						                        E.EndDateTimeEvent,
 						                        CAT.CategoryName,
 						                        COUN.CountryName,
 						                        E.Street,	
@@ -141,6 +143,7 @@ namespace EETMS_DataAccessLayer
                                      				E.Duration,
                                      				E.MaxCapacity,
                                      				E.DateTimeEvent,
+                                     				E.EndDateTimeEvent,
                                      				CAT.CategoryName,
                                      				COUN.CountryName,
                                      				E.Street,
@@ -432,6 +435,7 @@ namespace EETMS_DataAccessLayer
 						                        E.Duration,
 						                        E.MaxCapacity,
 						                        E.DateTimeEvent,
+						                        E.EndDateTimeEvent,
 						                        CAT.CategoryName,
 						                        COUN.CountryName,
 						                        E.Street,	
@@ -460,6 +464,7 @@ namespace EETMS_DataAccessLayer
                                      				E.Duration,
                                      				E.MaxCapacity,
                                      				E.DateTimeEvent,
+                                     				E.EndDateTimeEvent,
                                      				CAT.CategoryName,
                                      				COUN.CountryName,
                                      				E.Street,
@@ -529,11 +534,14 @@ namespace EETMS_DataAccessLayer
                                                         E.Duration,
                                                         E.MaxCapacity,
                                                         E.DateTimeEvent,
+                                                        E.EndDateTimeEvent,
                                                         CAT.CategoryName,
                                                         COUN.CountryName,
                                                         E.Street,	
                                                         E.Discripation ,
-                                                        E.IsActiveEvent
+                                                        E.IsActiveEvent ,
+                                                        E.StartTimeMeridiem ,
+                                                        E.EndTimeMeridiem
 
 
                                                                                      FROM Events E
@@ -551,11 +559,14 @@ namespace EETMS_DataAccessLayer
                  				                    E.Duration,
                  				                    E.MaxCapacity,
                  				                    E.DateTimeEvent,
+                 				                    E.EndDateTimeEvent,
                  				                    CAT.CategoryName,
                  				                    COUN.CountryName,
                  				                    E.Street,
 								                    E.Discripation,
-                 				                    E.IsActiveEvent
+                 				                    E.IsActiveEvent,
+                                                    E.StartTimeMeridiem ,
+                                                    E.EndTimeMeridiem
 
 
 
@@ -630,11 +641,14 @@ namespace EETMS_DataAccessLayer
                                                         E.Duration,
                                                         E.MaxCapacity,
                                                         E.DateTimeEvent,
+                                                        E.EndDateTimeEvent,
                                                         CAT.CategoryName,
                                                         COUN.CountryName,
                                                         E.Street,	
                                                         E.Discripation ,
-                                                        E.IsActiveEvent
+                                                        E.IsActiveEvent , 
+                                                        E.StartTimeMeridiem ,
+                                                        E.EndTimeMeridiem
 
 
                                                                                      FROM Events E
@@ -653,11 +667,14 @@ namespace EETMS_DataAccessLayer
                  				                    E.Duration,
                  				                    E.MaxCapacity,
                  				                    E.DateTimeEvent,
+                 				                    E.EndDateTimeEvent,
                  				                    CAT.CategoryName,
                  				                    COUN.CountryName,
                  				                    E.Street,
 								                    E.Discripation,
-                 				                    E.IsActiveEvent;
+                 				                    E.IsActiveEvent,
+                                                    E.StartTimeMeridiem ,
+                                                    E.EndTimeMeridiem
 
 
                         ";
@@ -718,11 +735,14 @@ namespace EETMS_DataAccessLayer
                                                         E.Duration,
                                                         E.MaxCapacity,
                                                         E.DateTimeEvent,
+                                                        E.EndDateTimeEvent,
                                                         CAT.CategoryName,
                                                         COUN.CountryName,
                                                         E.Street,	
                                                         E.Discripation ,
-                                                        E.IsActiveEvent
+                                                        E.IsActiveEvent,
+                                                        E.StartTimeMeridiem ,
+                                                        E.EndTimeMeridiem
 
 
                                                                                      FROM Events E
@@ -739,11 +759,14 @@ namespace EETMS_DataAccessLayer
                  				                    E.Duration,
                  				                    E.MaxCapacity,
                  				                    E.DateTimeEvent,
+                 				                    E.EndDateTimeEvent,
                  				                    CAT.CategoryName,
                  				                    COUN.CountryName,
                  				                    E.Street,
 								                    E.Discripation,
-                 				                    E.IsActiveEvent
+                 				                    E.IsActiveEvent,
+                                                    E.StartTimeMeridiem ,
+                                                    E.EndTimeMeridiem
 
 								HAVING 
 											( ISNULL(SUM(TT.Quantity - TT.Available),0) * 100.0 ) / E.MaxCapacity < 50
@@ -809,7 +832,9 @@ namespace EETMS_DataAccessLayer
                                                         COUN.CountryName,
                                                         E.Street,	
                                                         E.Discripation ,
-                                                        E.IsActiveEvent
+                                                        E.IsActiveEvent,
+                                                        E.StartTimeMeridiem ,
+                                                        E.EndTimeMeridiem
 
 
                                                                                      FROM Events E
@@ -830,7 +855,9 @@ namespace EETMS_DataAccessLayer
                  				                    COUN.CountryName,
                  				                    E.Street,
 								                    E.Discripation,
-                 				                    E.IsActiveEvent
+                 				                    E.IsActiveEvent,
+                                                    E.StartTimeMeridiem ,
+                                                    E.EndTimeMeridiem
 
 								HAVING 
 											( ISNULL(SUM(TT.Quantity - TT.Available),0) * 100.0 ) / E.MaxCapacity BETWEEN 50 AND 90 
@@ -889,14 +916,19 @@ namespace EETMS_DataAccessLayer
 
                                                         ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
 
-                                                        E.Duration,
-                                                        E.MaxCapacity,
-                                                        E.DateTimeEvent,
-                                                        CAT.CategoryName,
-                                                        COUN.CountryName,
-                                                        E.Street,	
-                                                        E.Discripation ,
-                                                        E.IsActiveEvent
+                                                       
+						                        E.Duration,
+                                                E.MaxCapacity,
+                                                E.DateTimeEvent,
+                                                E.EndDateTimeEvent,
+                                                CAT.CategoryName,
+                                                COUN.CountryName,
+                                                E.Street,	
+                                                E.Discripation ,
+                                                E.IsActiveEvent,
+                                                E.StartTimeMeridiem ,
+                                                E.EndTimeMeridiem
+
 
 
                                                                                      FROM Events E
@@ -908,16 +940,19 @@ namespace EETMS_DataAccessLayer
                                                                                          ON COUN.CountryID = E.CountryID
 
                                 GROUP BY
-                 				                    E.EventID,
-                 				                    E.EventName,
-                 				                    E.Duration,
-                 				                    E.MaxCapacity,
-                 				                    E.DateTimeEvent,
-                 				                    CAT.CategoryName,
-                 				                    COUN.CountryName,
-                 				                    E.Street,
-								                    E.Discripation,
-                 				                    E.IsActiveEvent
+                 				                    
+						                        E.Duration,
+                                                E.MaxCapacity,
+                                                E.DateTimeEvent,
+                                                E.EndDateTimeEvent,
+                                                CAT.CategoryName,
+                                                COUN.CountryName,
+                                                E.Street,	
+                                                E.Discripation ,
+                                                E.IsActiveEvent,
+                                                E.StartTimeMeridiem ,
+                                                E.EndTimeMeridiem
+
 
 								HAVING 
 										(SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity BETWEEN 90 AND 99 ;
@@ -980,11 +1015,14 @@ namespace EETMS_DataAccessLayer
                                                         E.Duration,
                                                         E.MaxCapacity,
                                                         E.DateTimeEvent,
+                                                        E.EndDateTimeEvent,
                                                         CAT.CategoryName,
                                                         COUN.CountryName,
                                                         E.Street,	
                                                         E.Discripation ,
-                                                        E.IsActiveEvent
+                                                        E.IsActiveEvent,
+                                                        E.StartTimeMeridiem ,
+                                                        E.EndTimeMeridiem
 
 
                                                                                      FROM Events E
@@ -996,16 +1034,18 @@ namespace EETMS_DataAccessLayer
                                                                                          ON COUN.CountryID = E.CountryID
 
                                 GROUP BY
-                 				                    E.EventID,
-                 				                    E.EventName,
-                 				                    E.Duration,
-                 				                    E.MaxCapacity,
-                 				                    E.DateTimeEvent,
-                 				                    CAT.CategoryName,
-                 				                    COUN.CountryName,
-                 				                    E.Street,
-								                    E.Discripation,
-                 				                    E.IsActiveEvent
+                 				                    
+						                        E.Duration,
+                                                E.MaxCapacity,
+                                                E.DateTimeEvent,
+                                                E.EndDateTimeEvent,
+                                                CAT.CategoryName,
+                                                COUN.CountryName,
+                                                E.Street,	
+                                                E.Discripation ,
+                                                E.IsActiveEvent,
+                                                E.StartTimeMeridiem ,
+                                                E.EndTimeMeridiem
 
 								HAVING 
 										((SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity ) >= 100 
@@ -1052,8 +1092,6 @@ namespace EETMS_DataAccessLayer
 
                 string Query = @"
 
-
-
                                    SELECT
 						                        E.EventID,
 						                        E.EventName,
@@ -1067,13 +1105,16 @@ namespace EETMS_DataAccessLayer
 						                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
 
 						                        E.Duration,
-						                        E.MaxCapacity,
-						                        E.DateTimeEvent,
-						                        CAT.CategoryName,
-						                        COUN.CountryName,
-						                        E.Street,	
+                                                E.MaxCapacity,
+                                                E.DateTimeEvent,
+                                                E.EndDateTimeEvent,
+                                                CAT.CategoryName,
+                                                COUN.CountryName,
+                                                E.Street,	
                                                 E.Discripation ,
-						                        E.IsActiveEvent
+                                                E.IsActiveEvent,
+                                                E.StartTimeMeridiem ,
+                                                E.EndTimeMeridiem
 
 
                                                                         FROM Events E
@@ -1088,18 +1129,19 @@ namespace EETMS_DataAccessLayer
 								     WHERE COUN.CountryName = @CountryName AND E.Street LIKE '%' + @StreetName + '%'
 
                                      GROUP BY
-                                     				E.EventID,
-                                     				E.EventName,
-                                     				E.Duration,
-                                     				E.MaxCapacity,
-                                     				E.DateTimeEvent,
-                                     				CAT.CategoryName,
-                                     				COUN.CountryName,
-                                     				E.Street,
-                                                    E.Discripation,
-                                     				E.IsActiveEvent
-
-
+						                        E.EventID,
+                                                E.EventName,
+						                        E.Duration,
+                                                E.MaxCapacity,
+                                                E.DateTimeEvent,
+                                                E.EndDateTimeEvent,
+                                                CAT.CategoryName,
+                                                COUN.CountryName,
+                                                E.Street,	
+                                                E.Discripation ,
+                                                E.IsActiveEvent,
+                                                E.StartTimeMeridiem ,
+                                                E.EndTimeMeridiem
 
                         ";
 
@@ -1116,9 +1158,6 @@ namespace EETMS_DataAccessLayer
                     using (SqlDataReader reader = command.ExecuteReader())
                         if (reader.HasRows)
                             DT_AllEventsAccordingCountryNameAndStreet.Load(reader);
-
-
-
 
                 }
 
@@ -1159,13 +1198,17 @@ namespace EETMS_DataAccessLayer
 						                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
 
 						                        E.Duration,
-						                        E.MaxCapacity,
-						                        E.DateTimeEvent,
-						                        CAT.CategoryName,
-						                        COUN.CountryName,
-						                        E.Street,	
+                                                E.MaxCapacity,
+                                                E.DateTimeEvent,
+                                                E.EndDateTimeEvent,
+                                                CAT.CategoryName,
+                                                COUN.CountryName,
+                                                E.Street,	
                                                 E.Discripation ,
-						                        E.IsActiveEvent
+                                                E.IsActiveEvent,
+                                                E.StartTimeMeridiem ,
+                                                E.EndTimeMeridiem
+
 
 
                                                                         FROM Events E
@@ -1186,17 +1229,21 @@ namespace EETMS_DataAccessLayer
 								    
 									
 
-                                     GROUP BY
-                                     				E.EventID,
-                                     				E.EventName,
-                                     				E.Duration,
-                                     				E.MaxCapacity,
-                                     				E.DateTimeEvent,
-                                     				CAT.CategoryName,
-                                     				COUN.CountryName,
-                                     				E.Street,
-                                                    E.Discripation,
-                                     				E.IsActiveEvent
+                                     GROUP BY 
+                                                E.EventID,
+                                                E.EventName,
+						                        E.Duration,
+                                                E.MaxCapacity,
+                                                E.DateTimeEvent,
+                                                E.EndDateTimeEvent,
+                                                CAT.CategoryName,
+                                                COUN.CountryName,
+                                                E.Street,	
+                                                E.Discripation ,
+                                                E.IsActiveEvent,
+                                                E.StartTimeMeridiem ,
+                                                E.EndTimeMeridiem
+
 
                                       HAVING  
                                       

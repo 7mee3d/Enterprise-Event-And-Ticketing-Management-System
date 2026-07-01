@@ -7,6 +7,7 @@ using EETMS_Presentation.EETMS_Settings;
 using EETMS_Presentation.Properties;
 using Guna.UI2.WinForms;
 using System;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -116,11 +117,11 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             bool FlagIsFillUsername = true;
             bool FlagIsFillEmail = true;
             bool FlagIsFillPassword = true;
+            bool FalgIsUsernameExists = true;
             string TextMessageDialog = clsEETMS_Constants.kEMPTY_STRING;
 
 
             if (!string.IsNullOrEmpty(GTextBoxFullName.Text))
-
                 _InformationUser.UserFullName = GTextBoxFullName.Text;
             else
             {
@@ -129,15 +130,41 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             }
 
 
-            if (!string.IsNullOrEmpty(GTextBoxUsername.Text) && !clsValidation.IsTheUsernameStartedDigits((GTextBoxUsername.Text)[0]))
-                _InformationUser.Username = GTextBoxUsername.Text;
+
+            bool IsExists = UserBL.IsUserExistsBy(GTextBoxUsername.Text.Trim());
+
+
+            if (_EnMode == _EnModeUser._kUPDATE_INFORMATION_USER)
+            {
+                if (GTextBoxUsername.Text.Trim() != _InformationUser.Username && IsExists)
+                {
+                    TextMessageDialog += "\nThis Username Already Exists , Please enter another username\n";
+                    FalgIsUsernameExists = false;
+                }
+                else
+                    FalgIsUsernameExists = true;
+            }
             else
             {
-                TextMessageDialog += "\nPlease enter a Username Without the Space , Without Start Any Digits\n";
-                FlagIsFillUsername = false;
+                if (IsExists)
+                {
+                    TextMessageDialog += "\nThis Username Already Exists , Please enter another username\n";
+                    FalgIsUsernameExists = false;
+                }
+                else
+                    FalgIsUsernameExists = true;
             }
 
+            if (FalgIsUsernameExists)
+                if (!string.IsNullOrEmpty(GTextBoxUsername.Text) && !clsValidation.IsTheUsernameStartedDigits((GTextBoxUsername.Text)[0]))
+                    _InformationUser.Username = GTextBoxUsername.Text;
+                else
+                {
+                    TextMessageDialog += "\nPlease enter a Username Without the Space , Without Start Any Digits\n";
+                    FlagIsFillUsername = false;
+                }
 
+            else FlagIsFillUsername = false;
 
             if (clsValidation.IsValidEmailAddress(GTextBoxProfessionalEmail.Text))
 
@@ -166,7 +193,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             }
 
 
-            if (!FlagIsFillFullName || !FlagIsFillUsername || !FlagIsFillEmail || !FlagIsFillPassword)
+            if (!FlagIsFillFullName || !FlagIsFillUsername || !FlagIsFillEmail || !FlagIsFillPassword || !FalgIsUsernameExists)
             {
                 clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, TextMessageDialog, "Invalid Data!", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
@@ -175,6 +202,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             _InformationUser.RoleID = Convert.ToInt32(GComboBoxRoleUser.SelectedValue);
             _InformationUser.ImagePath = _ImagePathUser != null ? _ImagePathUser : null;
+            _InformationUser.IsActiveAccount = true;
 
 
             if (UserBL.SaveInformationUserMode(_InformationUser))
@@ -306,6 +334,20 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             }
         }
 
+        private void GTextBoxFullName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && !char.IsControl(e.KeyChar));
+        }
+
+        private void GTextBoxUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsLetter(e.KeyChar) && !char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar));
+        }
+
+        private void GTextBoxProfessionalEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsLetter(e.KeyChar) && !char.IsNumber(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && !char.IsControl(e.KeyChar));
+        }
     }
 }
 

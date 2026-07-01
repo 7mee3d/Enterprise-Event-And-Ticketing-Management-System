@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.GCGPanelAddNewUser = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.GCPictureBoxImageUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.GTextBoxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.GButtonClose = new Guna.UI2.WinForms.Guna2Button();
             this.GButtonCreateTheNewUser = new Guna.UI2.WinForms.Guna2Button();
@@ -46,6 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblTiteTheUS = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.GCPictureBoxImageUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.GCGPanelAddNewUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GCPictureBoxImageUser)).BeginInit();
             this.SuspendLayout();
@@ -83,21 +83,6 @@
             this.GCGPanelAddNewUser.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(-1);
             this.GCGPanelAddNewUser.Size = new System.Drawing.Size(493, 815);
             this.GCGPanelAddNewUser.TabIndex = 0;
-            // 
-            // GCPictureBoxImageUser
-            // 
-            this.GCPictureBoxImageUser.BackColor = System.Drawing.Color.Transparent;
-            this.GCPictureBoxImageUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.GCPictureBoxImageUser.ImageRotate = 0F;
-            this.GCPictureBoxImageUser.Location = new System.Drawing.Point(187, 142);
-            this.GCPictureBoxImageUser.Name = "GCPictureBoxImageUser";
-            this.GCPictureBoxImageUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.GCPictureBoxImageUser.Size = new System.Drawing.Size(118, 114);
-            this.GCPictureBoxImageUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.GCPictureBoxImageUser.TabIndex = 3;
-            this.GCPictureBoxImageUser.TabStop = false;
-            this.GCPictureBoxImageUser.Visible = false;
-            this.GCPictureBoxImageUser.MouseEnter += new System.EventHandler(this.GCPictureBoxImageUser_MouseEnter);
             // 
             // GTextBoxPassword
             // 
@@ -222,6 +207,7 @@
             this.GTextBoxProfessionalEmail.SelectedText = "";
             this.GTextBoxProfessionalEmail.Size = new System.Drawing.Size(418, 43);
             this.GTextBoxProfessionalEmail.TabIndex = 2;
+            this.GTextBoxProfessionalEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GTextBoxProfessionalEmail_KeyPress);
             // 
             // label4
             // 
@@ -253,6 +239,7 @@
             this.GTextBoxUsername.SelectedText = "";
             this.GTextBoxUsername.Size = new System.Drawing.Size(418, 43);
             this.GTextBoxUsername.TabIndex = 1;
+            this.GTextBoxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GTextBoxUsername_KeyPress);
             // 
             // label8
             // 
@@ -284,6 +271,7 @@
             this.GTextBoxFullName.SelectedText = "";
             this.GTextBoxFullName.Size = new System.Drawing.Size(418, 43);
             this.GTextBoxFullName.TabIndex = 0;
+            this.GTextBoxFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GTextBoxFullName_KeyPress);
             // 
             // label2
             // 
@@ -313,6 +301,7 @@
             this.GGCButtonAddImageUser.ForeColor = System.Drawing.Color.White;
             this.GGCButtonAddImageUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GGCButtonAddImageUser.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.GGCButtonAddImageUser.Image = global::EETMS_Presentation.Properties.Resources.Add_Image_Icon_EETMS;
             this.GGCButtonAddImageUser.ImageOffset = new System.Drawing.Point(1, 0);
             this.GGCButtonAddImageUser.ImageSize = new System.Drawing.Size(40, 40);
             this.GGCButtonAddImageUser.Location = new System.Drawing.Point(187, 142);
@@ -355,6 +344,21 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";
+            // 
+            // GCPictureBoxImageUser
+            // 
+            this.GCPictureBoxImageUser.BackColor = System.Drawing.Color.Transparent;
+            this.GCPictureBoxImageUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.GCPictureBoxImageUser.ImageRotate = 0F;
+            this.GCPictureBoxImageUser.Location = new System.Drawing.Point(187, 142);
+            this.GCPictureBoxImageUser.Name = "GCPictureBoxImageUser";
+            this.GCPictureBoxImageUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.GCPictureBoxImageUser.Size = new System.Drawing.Size(118, 114);
+            this.GCPictureBoxImageUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.GCPictureBoxImageUser.TabIndex = 3;
+            this.GCPictureBoxImageUser.TabStop = false;
+            this.GCPictureBoxImageUser.Visible = false;
+            this.GCPictureBoxImageUser.MouseEnter += new System.EventHandler(this.GCPictureBoxImageUser_MouseEnter);
             // 
             // UC_AddNewUserAndUpdate
             // 

@@ -77,7 +77,11 @@ namespace EETMS_BusinessLayer.Validation
             try
             {
                 var Email = new System.Net.Mail.MailAddress(EmailAddress);
-                return Email.Address == EmailAddress;
+                int LastHost = Email.Host.LastIndexOf(".");
+
+                return (Email.Address == EmailAddress) &&
+                    LastHost > 0 &&
+                    LastHost < (Email.Host.Length - 2);
             }
             catch
             {

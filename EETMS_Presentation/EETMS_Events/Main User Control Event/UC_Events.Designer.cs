@@ -723,6 +723,7 @@
             this.GGButtonFilter.HoverState.FillColor2 = System.Drawing.Color.White;
             this.GGButtonFilter.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.GGButtonFilter.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.GGButtonFilter.Image = global::EETMS_Presentation.Properties.Resources.Filter_Icon_EETMS;
             this.GGButtonFilter.ImageOffset = new System.Drawing.Point(-5, 0);
             this.GGButtonFilter.Location = new System.Drawing.Point(45, 315);
             this.GGButtonFilter.Name = "GGButtonFilter";

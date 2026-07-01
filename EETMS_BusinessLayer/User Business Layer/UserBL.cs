@@ -136,5 +136,7 @@ namespace EETMS_BusinessLayer
 
         }
 
+        public static bool IsUserExistsBy(string Username)
+            => UsersQueriesDAL.IsUserExistsBy(Username);
     }
 }

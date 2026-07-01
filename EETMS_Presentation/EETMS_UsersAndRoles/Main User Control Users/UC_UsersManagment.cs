@@ -124,42 +124,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         private void _GGButtonAddNewUser_Click(object sender, EventArgs e)
             => ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
 
-        private void _EditToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
-
-            if (UserID != clsEETMS_Constants.kNEGATIVE_ONE)
-                ERequestToOpenTheAddNewUserUS?.Invoke(this, UserID);
-            else
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "You Must Selected The User From List To Be Updated information.", "Important Note ...", MessageDialogButtons.OK, MessageDialogIcon.Warning);
-        }
-
-        private void _DeleteUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
-
-            if (UserID != clsEETMS_Constants.kNEGATIVE_ONE)
-            {
-
-
-                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are you sure to be delete This User ..?? ", "Note For the delete user", MessageDialogButtons.YesNo, MessageDialogIcon.Question))
-                    if (UserBL.DeleteTheUserBy(_GetTheIDUserAfterSelectionUserFromDGV()))
-                    {
-                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The User is Deleted Successfully", "Note For Delete The User", MessageDialogButtons.YesNo, MessageDialogIcon.Information);
-                        _InitalSettingTheUserManagmentCountsUsers();
-                    }
-                    else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The User is Deleted Faild", "Note For Delete The User", MessageDialogButtons.OK, MessageDialogIcon.Error);
-
-            }
-            else
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "You Must Selected The User From List To Be Delete.", "Important Note ...", MessageDialogButtons.OK, MessageDialogIcon.Warning);
-
-
-        }
-
         private void _ActiveAndInactiveTheUser()
         {
-
 
             string TextMessage = clsEETMS_Constants.kEMPTY_STRING;
             string CaptionMessage = clsEETMS_Constants.kEMPTY_STRING;
@@ -184,6 +150,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
                 if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, TextMessage, CaptionMessage, MDB, MDI))
                 {
+                    mUser.enMode = UserDTO.EnModeUser._kUPDATE_INFORMATION_USER;
+
                     if (mUser.IsActiveAccount)
                         mUser.IsActiveAccount = false;
                     else mUser.IsActiveAccount = true;
@@ -227,9 +195,6 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
             }
         }
-
-        private void InactiveUsertoolStripMenuItem_Click(object sender, EventArgs e)
-           => _ActiveAndInactiveTheUser();
 
         private void _LoadAllInformationUserAfterTheSearchByNameOrUsername()
         {
@@ -381,6 +346,40 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         private void GSubComboBoxTypeTheFilter_SelectionChangeCommitted(object sender, EventArgs e)
             => _FillTheInformationFilter();
 
+        private void changeActiveToolStripMenuItem_Click(object sender, EventArgs e)
+            => _ActiveAndInactiveTheUser();
+
+        private void deleteEventToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
+
+            if (UserID != clsEETMS_Constants.kNEGATIVE_ONE)
+            {
+
+
+                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are you sure to be delete This User ..?? ", "Note For the delete user", MessageDialogButtons.YesNo, MessageDialogIcon.Question))
+                    if (UserBL.DeleteTheUserBy(_GetTheIDUserAfterSelectionUserFromDGV()))
+                    {
+                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The User is Deleted Successfully", "Note For Delete The User", MessageDialogButtons.YesNo, MessageDialogIcon.Information);
+                        _InitalSettingTheUserManagmentCountsUsers();
+                    }
+                    else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The User is Deleted Faild", "Note For Delete The User", MessageDialogButtons.OK, MessageDialogIcon.Error);
+
+            }
+            else
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "You Must Selected The User From List To Be Delete.", "Important Note ...", MessageDialogButtons.OK, MessageDialogIcon.Warning);
+
+        }
+
+        private void editEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
+
+            if (UserID != clsEETMS_Constants.kNEGATIVE_ONE)
+                ERequestToOpenTheAddNewUserUS?.Invoke(this, UserID);
+            else
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "You Must Selected The User From List To Be Updated information.", "Important Note ...", MessageDialogButtons.OK, MessageDialogIcon.Warning);
+        }
     }
 }
 

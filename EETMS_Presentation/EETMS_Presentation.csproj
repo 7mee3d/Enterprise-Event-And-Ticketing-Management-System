@@ -260,6 +260,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Add_Image_Icon_EETMS3.png" />
     <None Include="Resources\logout_EETMS2.png" />
     <None Include="Resources\eye hide1.png" />
     <None Include="Resources\eye show gif Image1.gif" />
