@@ -379,6 +379,7 @@
             this.GGButtonCreateNewRole.Animated = true;
             this.GGButtonCreateNewRole.AnimatedGIF = true;
             this.GGButtonCreateNewRole.BorderRadius = 5;
+            this.GGButtonCreateNewRole.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GGButtonCreateNewRole.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GGButtonCreateNewRole.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GGButtonCreateNewRole.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

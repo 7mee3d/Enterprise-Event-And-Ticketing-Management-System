@@ -106,7 +106,7 @@ namespace EETMS_Presentation.EETMS_Roles.Users_Control_Opration_Roles
                 GCheckBoxPPayment.Checked = true;
 
             if (RolesBL.IsPassUserPermssions(Permssions, EnPermssionsType.kREPORT))
-               GCheckBoxPReport.Checked = true;
+                GCheckBoxPReport.Checked = true;
 
             if (RolesBL.IsPassUserPermssions(Permssions, EnPermssionsType.kUSERS_MANAGMENT))
                 GCheckBoxPUsers.Checked = true;
@@ -150,37 +150,58 @@ namespace EETMS_Presentation.EETMS_Roles.Users_Control_Opration_Roles
             GButtonCreateNewRole.Image = Resources.Save_Icon_EETMS;
         }
 
+        private bool _CheckTheCheckBoxiesChecked()
+        {
+            return _GetThePermssionsRole() == 0;
+        }
+
         private bool _CheckAllFieldFilled()
         => (!string.IsNullOrWhiteSpace(GTextBoxRoleName.Text) && !string.IsNullOrWhiteSpace(GTextBoxDescripation.Text));
 
         private void _AddNewRole()
         {
-
-            _InformationNewRole.RoleName = GTextBoxRoleName.Text;
-            _InformationNewRole.DescripationRole = GTextBoxDescripation.Text;
-            _InformationNewRole.PermssionsRole = _GetThePermssionsRole();
-
-
-
-            if (_CheckAllFieldFilled())
-            {
-
-                if (RolesBL.SaveMode(_InformationNewRole))
-                {
-                    if (_InformationNewRole.ModeRole == EnModeRole.kADD_NEW_ROLE)
-                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Is Added Sccessfully..", "Note For Add New Role.", MessageDialogButtons.OK, MessageDialogIcon.Information);
-                    else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Is Updated Sccessfully..", "Note For Update Role.", MessageDialogButtons.OK, MessageDialogIcon.Information);
-
-                }
-            }
-            else
+            if (!_CheckAllFieldFilled())
             {
                 clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Please,Enter All Field To Be Add/Update!!", "Note For Add/Update Role.", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
             }
 
-            GTextBoxRoleName.Text = _InformationNewRole.RoleName;
-            GTextBoxDescripation.Text = _InformationNewRole.DescripationRole;
+            if (_ModeRole == _EnModeRole.kADD_NEW_ROLE)
+            {
+                if (RolesBL.IsExistsRoleBy(GTextBoxRoleName.Text.Trim()))
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Please,Enter another Role , Because the role already exsits", "Note For Add/Update Role.", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                    return;
+                }
+            }
+            else
+            {
+                if (_InformationNewRole.RoleName != GTextBoxRoleName.Text.Trim())
+                    if (RolesBL.IsExistsRoleBy(GTextBoxRoleName.Text.Trim()))
+                    {
+                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Please,Enter another Role , Because the role already exsits", "Note For Add/Update Role.", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                        return;
+                    }
+            }
+
+            if (_CheckTheCheckBoxiesChecked())
+            {
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Please,Select One or more Permssion", "Note For Add/Update Role.", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                return;
+            }
+
+            _InformationNewRole.RoleName = GTextBoxRoleName.Text;
+            _InformationNewRole.DescripationRole = GTextBoxDescripation.Text;
+            _InformationNewRole.PermssionsRole = _GetThePermssionsRole();
+
+            if (RolesBL.SaveMode(_InformationNewRole))
+            {
+                if (_InformationNewRole.ModeRole == EnModeRole.kADD_NEW_ROLE)
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Is Added Sccessfully..", "Note For Add New Role.", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Role Is Updated Sccessfully..", "Note For Update Role.", MessageDialogButtons.OK, MessageDialogIcon.Information);
+
+            }
+
             _SettingTheUpdateRoleMode();
 
         }
@@ -191,7 +212,9 @@ namespace EETMS_Presentation.EETMS_Roles.Users_Control_Opration_Roles
         private void GButtonCreateNewRole_Click(object sender, EventArgs e)
             => _AddNewRole();
 
-
-
+        private void GTextBoxRoleName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar));
+        }
     }
 }

@@ -326,6 +326,39 @@ namespace EETMS_DataAccessLayer.Roles_Data_Access_Layer
         public static RoleDTO FindTheRoleBy(int IDRole)
             => _FindTheRoleBy(IDRole);
 
+        public static bool IsRoleExistsBy(string RoleName)
+        {
+
+            bool IsExists = false;
+
+            using (SqlConnection connection = new SqlConnection(_ConneactionString))
+            {
+
+                string Query = @"
+
+
+                                SELECT FOUND = 1 
+                                FROM Roles 
+                                WHERE LOWER (RoleName ) = LOWER (@RoleName)
+
+                    ";
+
+
+                using (SqlCommand command = new SqlCommand(Query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@RoleName", RoleName);
+
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+                    IsExists = result != null && Convert.ToBoolean(result);
+
+                }
+            }
+            return IsExists;
+        }
+
         #endregion
 
     }

@@ -53,5 +53,7 @@ namespace EETMS_BusinessLayer.Roles_Business_Layer
         public static bool IsPassUserPermssions(int Permssions, EnPermssionsType enPermssionsType)
             => ((Permssions & (int)enPermssionsType) == (int)enPermssionsType);
 
+        public static bool IsExistsRoleBy(string RoleName)
+            => RoleQueriesDAL.IsRoleExistsBy(RoleName);
     }
 }

@@ -167,7 +167,7 @@
             this.GCheckBoxPPayment.Name = "GCheckBoxPPayment";
             this.GCheckBoxPPayment.Size = new System.Drawing.Size(219, 34);
             this.GCheckBoxPPayment.TabIndex = 20;
-            this.GCheckBoxPPayment.Text = "Payment Management\r\nEdit, create, and delete Payment\r\n\r\n\r\n\r\n";
+            this.GCheckBoxPPayment.Text = "Payment Management\r\ncreate only\r\n\r\n\r\n";
             this.GCheckBoxPPayment.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             this.GCheckBoxPPayment.ThreeState = true;
             this.GCheckBoxPPayment.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -350,7 +350,7 @@
             this.GCheckBoxPReport.Name = "GCheckBoxPReport";
             this.GCheckBoxPReport.Size = new System.Drawing.Size(219, 34);
             this.GCheckBoxPReport.TabIndex = 19;
-            this.GCheckBoxPReport.Text = "Report Management\r\nEdit, create, and delete Reservation\r\n\r\n\r\n";
+            this.GCheckBoxPReport.Text = "Report Management\r\nshow only\r\n\r\n\r\n\r\n";
             this.GCheckBoxPReport.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             this.GCheckBoxPReport.ThreeState = true;
             this.GCheckBoxPReport.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -384,7 +384,7 @@
             this.GCheckBoxPResravation.Name = "GCheckBoxPResravation";
             this.GCheckBoxPResravation.Size = new System.Drawing.Size(219, 34);
             this.GCheckBoxPResravation.TabIndex = 19;
-            this.GCheckBoxPResravation.Text = "Reservation Management\r\nEdit, create, and delete Reservation\r\n\r\n\r\n";
+            this.GCheckBoxPResravation.Text = "Reservation Management\r\ncreate reservation \r\n\r\n\r\n";
             this.GCheckBoxPResravation.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             this.GCheckBoxPResravation.ThreeState = true;
             this.GCheckBoxPResravation.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -452,7 +452,7 @@
             this.GCheckBoxPDasahboard.Name = "GCheckBoxPDasahboard";
             this.GCheckBoxPDasahboard.Size = new System.Drawing.Size(145, 34);
             this.GCheckBoxPDasahboard.TabIndex = 18;
-            this.GCheckBoxPDasahboard.Text = "Dashboard";
+            this.GCheckBoxPDasahboard.Text = "Dashboard\r\nshow only\r\n";
             this.GCheckBoxPDasahboard.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             this.GCheckBoxPDasahboard.ThreeState = true;
             this.GCheckBoxPDasahboard.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -530,6 +530,7 @@
             this.GTextBoxRoleName.SelectedText = "";
             this.GTextBoxRoleName.Size = new System.Drawing.Size(494, 43);
             this.GTextBoxRoleName.TabIndex = 14;
+            this.GTextBoxRoleName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GTextBoxRoleName_KeyPress);
             // 
             // label1
             // 
