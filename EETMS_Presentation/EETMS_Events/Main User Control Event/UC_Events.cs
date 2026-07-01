@@ -372,7 +372,7 @@ namespace EETMS_Presentation.EETMS_Events
             {
 
                 string MainSelectComboBoxTypeFilter = GComboBoxMainTypeFilter.SelectedItem.ToString();
-                string SelectedStatus = GCombvoBoxStatusCustomFilter.SelectedItem.ToString();
+                int SelectedStatus = GCombvoBoxStatusCustomFilter.SelectedIndex;
                 string SelectedCategory = GCombvoBoxCategoryCustomFilter.SelectedItem.ToString();
                 string SelectedUnsageCapactity = GComboBoxUnsageCapacityCustomerFilter.SelectedItem.ToString();
                 string SelectedCountry = GComboBoxCountryCustomerFilter.SelectedItem.ToString();

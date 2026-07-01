@@ -440,7 +440,9 @@ namespace EETMS_DataAccessLayer
 						                        COUN.CountryName,
 						                        E.Street,	
                                                 E.Discripation ,
-						                        E.IsActiveEvent
+						                        E.IsActiveEvent ,  
+                                                E.StartTimeMeridiem ,
+                                                E.EndTimeMeridiem
 
 
                                                                         FROM Events E
@@ -469,7 +471,9 @@ namespace EETMS_DataAccessLayer
                                      				COUN.CountryName,
                                      				E.Street,
                                                     E.Discripation,
-                                     				E.IsActiveEvent;
+                                     				E.IsActiveEvent,
+                                                    E.StartTimeMeridiem ,
+                                                    E.EndTimeMeridiem;
                                            
 
 
@@ -515,70 +519,72 @@ namespace EETMS_DataAccessLayer
 
                     string Query = @"
 
-
-   
-   
-   
-                                     SELECT
-                                                        E.EventID,
-                                                        E.EventName,
-
-                                                        ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
-
-                                                        ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
-
-                                                        ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
-
-                                                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
-
-                                                        E.Duration,
-                                                        E.MaxCapacity,
-                                                        E.DateTimeEvent,
-                                                        E.EndDateTimeEvent,
-                                                        CAT.CategoryName,
-                                                        COUN.CountryName,
-                                                        E.Street,	
-                                                        E.Discripation ,
-                                                        E.IsActiveEvent ,
-                                                        E.StartTimeMeridiem ,
-                                                        E.EndTimeMeridiem
-
-
-                                                                                     FROM Events E
-                                                                                     LEFT JOIN TicketTypes TT
-                                                                                         ON E.EventID = TT.EventID
-                                                                                     INNER JOIN Categories CAT
-                                                                                         ON CAT.CategoryID = E.CategoryID
-                                                                                     INNER JOIN Countries COUN
-                                                                                         ON COUN.CountryID = E.CountryID
-
-
-                                   GROUP BY
-                 				                    E.EventID,
-                 				                    E.EventName,
-                 				                    E.Duration,
-                 				                    E.MaxCapacity,
-                 				                    E.DateTimeEvent,
-                 				                    E.EndDateTimeEvent,
-                 				                    CAT.CategoryName,
-                 				                    COUN.CountryName,
-                 				                    E.Street,
-								                    E.Discripation,
-                 				                    E.IsActiveEvent,
-                                                    E.StartTimeMeridiem ,
+                                   SELECT
+                                                    E.EventID,
+                                                    E.EventName,
+                                                
+                                                    ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
+                                                
+                                                    ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
+                                                
+                                                    ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
+                                                
+                                                    ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
+                                                
+                                                    E.Duration,
+                                                    E.MaxCapacity,
+                                                    E.DateTimeEvent,
+                                                    E.EndDateTimeEvent,
+                                                    CAT.CategoryName,
+                                                    COUN.CountryName,
+                                                    E.Street,
+                                                    E.Discripation,
+                                                    E.IsActiveEvent,
+                                                    E.StartTimeMeridiem,
                                                     E.EndTimeMeridiem
+                                                
+                                           FROM Events E
+                                           
+                                           LEFT JOIN TicketTypes TT
+                                               ON E.EventID = TT.EventID
+                                           
+                                           INNER JOIN Categories CAT
+                                               ON CAT.CategoryID = E.CategoryID
+                                           
+                                           INNER JOIN Countries COUN
+                                               ON COUN.CountryID = E.CountryID
+                                                
+                                 GROUP BY
+                                                 E.EventID,
+                                                 E.EventName,
+                                                 E.Duration,
+                                                 E.MaxCapacity,
+                                                 E.DateTimeEvent,
+                                                 E.EndDateTimeEvent,
+                                                 CAT.CategoryName,
+                                                 COUN.CountryName,
+                                                 E.Street,
+                                                 E.Discripation,
+                                                 E.IsActiveEvent,
+                                                 E.StartTimeMeridiem,
+                                                 E.EndTimeMeridiem
+                                                
+                                HAVING
+                                (
+                                    CASE
+                                        WHEN ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) = 0
+                                            THEN 1 -- Fully Booked
+                                
+                                        WHEN ISNULL(SUM(TT.Quantity - TT.Available), 0) = 0
+                                            THEN 3 -- Draft
+                                
+                                        ELSE
+                                            2 -- Live
+                                    END
 
-
-
-		                        HAVING  ( 
-					                            CASE 
-								                            WHEN ISNULL(SUM(TT.Quantity - TT.Available), 0)   = ISNULL(SUM(TT.Quantity), 0) THEN 1 -- Fully Booked
-								                            WHEN ISNULL(SUM(TT.Quantity - TT.Available), 0) > 0 THEN 2 -- Live 
-								                            ELSE 3 -- Draft 
-
-					                            END
-
-				                        ) = @StatusEvent ;
+                                ) = @StatusEvent
+                                                
+                                                ;
 
                         ";
 
@@ -1126,7 +1132,7 @@ namespace EETMS_DataAccessLayer
                                                                             ON COUN.CountryID = E.CountryID
 
 
-								     WHERE COUN.CountryName = @CountryName AND E.Street LIKE '%' + @StreetName + '%'
+								     WHERE COUN.CountryName = @CountryName AND LOWER (E.Street) LIKE LOWER ('%' + @StreetName + '%')
 
                                      GROUP BY
 						                        E.EventID,
@@ -1184,100 +1190,113 @@ namespace EETMS_DataAccessLayer
 
 
 
-                                  
-                                   SELECT
-						                        E.EventID,
-						                        E.EventName,
+                          SELECT
+                                                    E.EventID,
+                                                    E.EventName,
 
-						                        ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
+                                                    ISNULL(SUM(TT.Available), 0) AS AvailableTickets,
 
-						                        ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
+                                                    ISNULL(SUM(TT.Quantity), 0) AS TotalCreatedTickets,
 
-						                        ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
+                                                    ISNULL(SUM(TT.Quantity - TT.Available), 0) AS SoldTickets,
 
-						                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
+                                                    ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity,
 
-						                        E.Duration,
-                                                E.MaxCapacity,
-                                                E.DateTimeEvent,
-                                                E.EndDateTimeEvent,
-                                                CAT.CategoryName,
-                                                COUN.CountryName,
-                                                E.Street,	
-                                                E.Discripation ,
-                                                E.IsActiveEvent,
-                                                E.StartTimeMeridiem ,
-                                                E.EndTimeMeridiem
+                                                    E.Duration,
+                                                    E.MaxCapacity,
+                                                    E.DateTimeEvent,
+                                                    E.EndDateTimeEvent,
+                                                    CAT.CategoryName,
+                                                    COUN.CountryName,
+                                                    E.Street,
+                                                    E.Discripation,
+                                                    E.IsActiveEvent,
+                                                    E.StartTimeMeridiem,
+                                                    E.EndTimeMeridiem
 
+                             FROM Events E
+                             
+                             LEFT JOIN TicketTypes TT
+                                 ON E.EventID = TT.EventID
+                             
+                             INNER JOIN Categories CAT
+                                 ON CAT.CategoryID = E.CategoryID
+                             
+                             INNER JOIN Countries COUN
+                                 ON COUN.CountryID = E.CountryID
 
+                          WHERE
+                                        (
+                                            @CountryName IS NULL
+                                            OR @CountryName = ''
+                                            OR COUN.CountryName = @CountryName
+                                        )
+                                   
+                                   AND
+                                        (
+                                            @StreetName IS NULL
+                                            OR @StreetName = ''
+                                            OR LOWER(E.Street) LIKE LOWER('%' + @StreetName + '%')
+                                        )
 
-                                                                        FROM Events E
-                                                                        LEFT JOIN TicketTypes TT
-                                                                            ON E.EventID = TT.EventID
-                                                                        INNER JOIN Categories CAT
-                                                                            ON CAT.CategoryID = E.CategoryID
-                                                                        INNER JOIN Countries COUN
-                                                                            ON COUN.CountryID = E.CountryID
-																		
+                GROUP BY
+                                                        E.EventID,
+                                                        E.EventName,
+                                                        E.Duration,
+                                                        E.MaxCapacity,
+                                                        E.DateTimeEvent,
+                                                        E.EndDateTimeEvent,
+                                                        CAT.CategoryName,
+                                                        COUN.CountryName,
+                                                        E.Street,
+                                                        E.Discripation,
+                                                        E.IsActiveEvent,
+                                                        E.StartTimeMeridiem,
+                                                        E.EndTimeMeridiem
 
-                                     WHERE 
-                                 
-                                               (@CountryName IS NULL OR @CountryName = '' OR COUN.CountryName = @CountryName)
-
-                                               AND (@StreetName IS NULL OR @StreetName = '' 
-                                                    OR LOWER(E.Street) LIKE LOWER('%' + @StreetName + '%'))
-								    
-									
-
-                                     GROUP BY 
-                                                E.EventID,
-                                                E.EventName,
-						                        E.Duration,
-                                                E.MaxCapacity,
-                                                E.DateTimeEvent,
-                                                E.EndDateTimeEvent,
-                                                CAT.CategoryName,
-                                                COUN.CountryName,
-                                                E.Street,	
-                                                E.Discripation ,
-                                                E.IsActiveEvent,
-                                                E.StartTimeMeridiem ,
-                                                E.EndTimeMeridiem
-
-
-                                      HAVING  
-                                      
-                                      (
-                                                  @StatusEvent IS NULL 
-                                                  OR @StatusEvent = '' 
-                                                  OR
-                                                  CASE 
-                                                      WHEN ISNULL(SUM(TT.Quantity - TT.Available),0) = ISNULL(SUM(TT.Quantity),0) THEN 'Fully Booked'
-                                                      WHEN ISNULL(SUM(TT.Quantity - TT.Available),0) > 0 THEN 'Live'
-                                                      ELSE 'Draft'
-                                                  END = @StatusEvent
-                                      )
-                                      
-                                      AND
-                                      (
-                                                  @CategoryEventName IS NULL
-                                                  OR @CategoryEventName = ''
-                                                  OR CAT.CategoryName = @CategoryEventName
-                                      )
-                                      
-                                      AND
-                                      (
-                                                   @UnsageCapacityEvent IS NULL
-                                                   OR @UnsageCapacityEvent = ''
-                                                   OR
-                                                   CASE 
-                                                       WHEN (SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity < 50 THEN 'Less Than 50%'
-                                                       WHEN (SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity BETWEEN 50 AND 90 THEN '50% - 90%'
-                                                       WHEN (SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity BETWEEN 90 AND 99 THEN 'Almost Full'
-                                                       WHEN (SUM(TT.Quantity - TT.Available) * 100.0) / E.MaxCapacity >= 100 THEN 'Sold Out'
-                                                   END = @UnsageCapacityEvent
-                                      )
-
+                            HAVING
+                            (
+                                     @StatusEvent IS NULL
+                                     OR @StatusEvent = ''
+                                     OR
+                                     CASE
+                                         WHEN ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) = 0
+                                             THEN 1 -- Fully Booked
+                            
+                                         WHEN ISNULL(SUM(TT.Quantity - TT.Available), 0) = 0
+                                             THEN 3 -- Draft
+                            
+                                         ELSE
+                                             2 -- Live
+                                     END = @StatusEvent
+                            )
+                            
+                                 AND
+                                 (
+                                     @CategoryEventName IS NULL
+                                     OR @CategoryEventName = ''
+                                     OR CAT.CategoryName = @CategoryEventName
+                                 )
+                            
+                            AND
+                            (
+                                     @UnsageCapacityEvent IS NULL
+                                     OR @UnsageCapacityEvent = ''
+                                     OR
+                                     CASE
+                                         WHEN (ISNULL(SUM(TT.Quantity - TT.Available), 0) * 100.0) / NULLIF(E.MaxCapacity, 0) < 50
+                                             THEN 'Less Than 50%'
+                            
+                                         WHEN (ISNULL(SUM(TT.Quantity - TT.Available), 0) * 100.0) / NULLIF(E.MaxCapacity, 0) BETWEEN 50 AND 90
+                                             THEN '50% - 90%'
+                            
+                                         WHEN (ISNULL(SUM(TT.Quantity - TT.Available), 0) * 100.0) / NULLIF(E.MaxCapacity, 0) BETWEEN 90 AND 99
+                                             THEN 'Almost Full'
+                            
+                                         WHEN (ISNULL(SUM(TT.Quantity - TT.Available), 0) * 100.0) / NULLIF(E.MaxCapacity, 0) >= 100
+                                             THEN 'Sold Out'
+                                     END = @UnsageCapacityEvent
+                            );
 
 
                         ";
