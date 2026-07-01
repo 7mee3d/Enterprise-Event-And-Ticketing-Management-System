@@ -304,10 +304,70 @@ namespace EETMS_DataAccessLayer
             return EventsDT;
         }
 
-        public static DataTable GetAllInformationEvents()
-             => _GetAllInformationEvents();
+        public static DataTable GetAllInfomrationEvent()
+        {
+            return _GetAllInformationEvents();
+        }
+
+        public static DataTable GetAllEventInProgressRemainingCapacity()
+        {
+
+            DataTable EventsDT = new DataTable();
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConnectionString))
+                {
 
 
+                    string Query = @"
+
+
+
+                         
+
+                                     SELECT
+						                        E.EventName,
+						                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity
+
+                                                FROM Events E
+                                                LEFT JOIN TicketTypes TT
+                                                ON E.EventID = TT.EventID
+
+                                     WHERE GETDATE() < E.EndDateTimeEvent
+
+                                     GROUP BY
+                                     				E.EventName,
+                                                    E.MaxCapacity
+                                     	
+
+                                ";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                                EventsDT.Load(reader);
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                throw;
+            }
+
+
+            return EventsDT;
+        }
 
         #endregion
 

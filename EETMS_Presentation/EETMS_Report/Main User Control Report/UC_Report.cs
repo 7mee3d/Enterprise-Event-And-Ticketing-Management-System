@@ -82,7 +82,7 @@ namespace EETMS_Presentation.EETMS_Report
         private void _FillTheDataGridViewFullyBookedEvents()
         {
 
-            DataTable DT_InformatioNEvents = ReportBL.GetAllInformationEvent();
+            DataTable DT_InformatioNEvents = ReportBL.GetAllInformationEvents();
 
             for (int counter = clsEETMS_Constants.kZERO; counter < DT_InformatioNEvents.Rows.Count; counter += clsEETMS_Constants.kONE)
             {
@@ -114,30 +114,24 @@ namespace EETMS_Presentation.EETMS_Report
         private void _FillTheDataGridViewRemainingCapacity()
         {
 
-            DataTable DT_InformatioNEvents = ReportBL.GetAllInformationEvent();
+            DataTable DT_InformatioNEvents = ReportBL.GetAllInformationEventInProgressRemainingCapacity();
 
             foreach (DataRow DR_InfoEvent in DT_InformatioNEvents.Rows)
             {
 
+                int rowIndex = GDataGridViewRemainingCapacity.Rows.Add(
 
-                int.TryParse(DR_InfoEvent["MaxCapacity"].ToString(), out int MaxCapacity);
-
-                if ((int)DR_InfoEvent["SoldTickets"] < MaxCapacity)
-                {
-                    int rowIndex = GDataGridViewRemainingCapacity.Rows.Add(
-
-                                                               DR_InfoEvent["EventName"].ToString(),
-                                                               DR_InfoEvent["RemainingCapacity"].ToString()
+                                                           DR_InfoEvent["EventName"].ToString(),
+                                                           DR_InfoEvent["RemainingCapacity"].ToString()
 
 
 
-                                                 );
+                                             );
 
-                    DataGridViewRow GDVR = GDataGridViewRemainingCapacity.Rows[rowIndex];
-                    DataGridViewCell DGVC = GDVR.Cells[clsEETMS_Constants.kONE];
+                DataGridViewRow GDVR = GDataGridViewRemainingCapacity.Rows[rowIndex];
+                DataGridViewCell DGVC = GDVR.Cells[clsEETMS_Constants.kONE];
 
-                    DGVC.Style.ForeColor = Color.Green;
-                }
+                DGVC.Style.ForeColor = Color.Green;
 
             }
         }

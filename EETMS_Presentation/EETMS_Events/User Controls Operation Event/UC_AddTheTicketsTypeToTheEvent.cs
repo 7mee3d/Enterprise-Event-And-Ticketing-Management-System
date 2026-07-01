@@ -262,7 +262,15 @@ namespace EETMS_Presentation.EETMS_Events.User_Controls_Operation_Event
         private void GButtonSaveChanges_Click(object sender, EventArgs e)
           => _AddUpdateInformatioNTicketType();
 
+        private void GTextBoxAvailableQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar));
+        }
 
+        private void GTextBoxPriceTheTicketType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsNumber(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar));
 
+        }
     }
 }

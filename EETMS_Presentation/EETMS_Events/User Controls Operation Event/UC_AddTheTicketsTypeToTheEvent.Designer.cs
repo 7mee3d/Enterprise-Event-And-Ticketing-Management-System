@@ -180,6 +180,7 @@
             this.GTextBoxAvailableQuantity.SelectedText = "";
             this.GTextBoxAvailableQuantity.Size = new System.Drawing.Size(209, 41);
             this.GTextBoxAvailableQuantity.TabIndex = 8;
+            this.GTextBoxAvailableQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GTextBoxAvailableQuantity_KeyPress);
             // 
             // label4
             // 
@@ -214,6 +215,7 @@
             this.GTextBoxPriceTheTicketType.SelectedText = "";
             this.GTextBoxPriceTheTicketType.Size = new System.Drawing.Size(207, 41);
             this.GTextBoxPriceTheTicketType.TabIndex = 6;
+            this.GTextBoxPriceTheTicketType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GTextBoxPriceTheTicketType_KeyPress);
             // 
             // GComboBoxAllTicketTypeNotIncludeEvent
             // 

@@ -15,8 +15,10 @@ namespace EETMS_BusinessLayer
         public static DataTable GetTopSpenders()
             => ReportQueriesDAL.GetTopSpenders();
 
-        public static DataTable GetAllInformationEvent()
-            => ReportQueriesDAL.GetAllInformationEvents();
+        public static DataTable GetAllInformationEvents()
+            => ReportQueriesDAL.GetAllInfomrationEvent();
+        public static DataTable GetAllInformationEventInProgressRemainingCapacity()
+            => ReportQueriesDAL.GetAllEventInProgressRemainingCapacity();
 
     }
 }
