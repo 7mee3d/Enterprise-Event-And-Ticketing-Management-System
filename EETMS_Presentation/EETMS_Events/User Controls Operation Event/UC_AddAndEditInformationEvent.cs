@@ -247,16 +247,82 @@ namespace EETMS_Presentation.EETMS_Events
 
         private bool _HandleTheDateTimeStartAndEndEvent()
         {
-            if (_InformationEvent.DateTimeEvent > _InformationEvent.EndDateTimeEvent)
+            DateTime DT1 = new DateTime(
+                _InformationEvent.DateTimeEvent.Value.Year,
+                _InformationEvent.DateTimeEvent.Value.Month,
+                _InformationEvent.DateTimeEvent.Value.Day);
+
+            DateTime DT2 = new DateTime(
+                _InformationEvent.EndDateTimeEvent.Value.Year,
+                _InformationEvent.EndDateTimeEvent.Value.Month,
+                _InformationEvent.EndDateTimeEvent.Value.Day);
+
+            if (DT1 > DT2)
             {
                 clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
-                   _G2MD,
-                   "The End Date Time Is Less than start date",
-                   "Invalid Data",
-                   MessageDialogButtons.OK,
-                   MessageDialogIcon.Error);
+                    _G2MD,
+                    "The End Date Time Is Less Than Start Date.",
+                    "Invalid Data",
+                    MessageDialogButtons.OK,
+                    MessageDialogIcon.Error);
+
                 return false;
+
             }
+            else if (DT1 == DT2)
+            {
+                int StartHour = _InformationEvent.DateTimeEvent.Value.Hour;
+                int EndHour = _InformationEvent.EndDateTimeEvent.Value.Hour;
+
+                if (_InformationEvent.StartTimeMeridiem == "PM" && StartHour != 12)
+                    StartHour += 12;
+                if (_InformationEvent.StartTimeMeridiem == "AM" && StartHour == 12)
+                    StartHour = 0;
+
+                if (_InformationEvent.EndTimeMeridiem == "PM" && EndHour != 12)
+                    EndHour += 12;
+                if (_InformationEvent.EndTimeMeridiem == "AM" && EndHour == 12)
+                    EndHour = 0;
+
+
+                TimeSpan Time1 = new TimeSpan(
+                   StartHour,
+                   _InformationEvent.DateTimeEvent.Value.Minute,
+                   0);
+
+                TimeSpan Time2 = new TimeSpan(
+                   EndHour,
+                    _InformationEvent.EndDateTimeEvent.Value.Minute,
+                    0);
+
+                if (_InformationEvent.StartTimeMeridiem == _InformationEvent.EndTimeMeridiem)
+                {
+                    if (Time1 >= Time2)
+                    {
+                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                            _G2MD,
+                            "The End Date Time Is Less Than Start Date.",
+                            "Invalid Data",
+                            MessageDialogButtons.OK,
+                            MessageDialogIcon.Error);
+
+                        return false;
+                    }
+                }
+                else if (_InformationEvent.StartTimeMeridiem == "PM" &&
+                         _InformationEvent.EndTimeMeridiem == "AM")
+                {
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                        _G2MD,
+                        "The End Date Time Is Less Than Start Date.",
+                        "Invalid Data",
+                        MessageDialogButtons.OK,
+                        MessageDialogIcon.Error);
+
+                    return false;
+                }
+            }
+
             return true;
         }
 
@@ -284,11 +350,10 @@ namespace EETMS_Presentation.EETMS_Events
             Guna2ComboBox[] ArrAllEndTime = { GComboBoxEndHour, GComboBoxEndMinutes };
             _InformationEvent.EndDateTimeEvent = GetFullDateTime(GDateTimePickerEndDateTimeEvent, ArrAllEndTime);
 
-            if (!_HandleTheDateTimeStartAndEndEvent()) return;
-
             _InformationEvent.StartTimeMeridiem = GComboBoxStartZone.Text;
             _InformationEvent.EndTimeMeridiem = GComboBoxEndZone.Text;
 
+            if (!_HandleTheDateTimeStartAndEndEvent()) return;
             _InformationEvent.CategoryID = Convert.ToInt32(GComboBoxCategories.SelectedValue);
             _InformationEvent.CountryID = Convert.ToInt32(GComboBoxCountries.SelectedValue);
             _InformationEvent.Street = GTextBoxStreet.Text;
