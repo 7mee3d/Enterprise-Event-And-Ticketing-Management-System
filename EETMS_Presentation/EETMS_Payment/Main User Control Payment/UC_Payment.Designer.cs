@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Payment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GGPanelPaymentAndTransactions = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lblTotalRevenue = new System.Windows.Forms.Label();
@@ -52,6 +52,8 @@
             this.GDataGridViewPaymentInformation = new Guna.UI2.WinForms.Guna2DataGridView();
             this.PaymentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NationalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaidAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -329,7 +331,7 @@
             this.GTextBoxSearchThePayment.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.GTextBoxSearchThePayment.Location = new System.Drawing.Point(28, 39);
             this.GTextBoxSearchThePayment.Name = "GTextBoxSearchThePayment";
-            this.GTextBoxSearchThePayment.PlaceholderText = "Search by Booking ID";
+            this.GTextBoxSearchThePayment.PlaceholderText = "Search by National ID";
             this.GTextBoxSearchThePayment.SelectedText = "";
             this.GTextBoxSearchThePayment.Size = new System.Drawing.Size(502, 39);
             this.GTextBoxSearchThePayment.TabIndex = 3;
@@ -340,38 +342,40 @@
             this.GDataGridViewPaymentInformation.AllowUserToAddRows = false;
             this.GDataGridViewPaymentInformation.AllowUserToDeleteRows = false;
             this.GDataGridViewPaymentInformation.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.GDataGridViewPaymentInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewPaymentInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.GDataGridViewPaymentInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewPaymentInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GDataGridViewPaymentInformation.ColumnHeadersHeight = 66;
             this.GDataGridViewPaymentInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GDataGridViewPaymentInformation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PaymentID,
             this.BookingID,
+            this.NationalID,
+            this.FullName,
             this.TotalAmount,
             this.PaidAmount,
             this.PaymentMethod,
             this.PaymentDate,
             this.Status});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GDataGridViewPaymentInformation.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GDataGridViewPaymentInformation.DefaultCellStyle = dataGridViewCellStyle7;
             this.GDataGridViewPaymentInformation.GridColor = System.Drawing.Color.White;
             this.GDataGridViewPaymentInformation.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GDataGridViewPaymentInformation.Location = new System.Drawing.Point(3, 105);
@@ -379,14 +383,14 @@
             this.GDataGridViewPaymentInformation.Name = "GDataGridViewPaymentInformation";
             this.GDataGridViewPaymentInformation.ReadOnly = true;
             this.GDataGridViewPaymentInformation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewPaymentInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewPaymentInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.GDataGridViewPaymentInformation.RowHeadersVisible = false;
             this.GDataGridViewPaymentInformation.RowTemplate.Height = 67;
             this.GDataGridViewPaymentInformation.Size = new System.Drawing.Size(1344, 461);
@@ -427,6 +431,19 @@
             this.BookingID.HeaderText = "BOOKING ID";
             this.BookingID.Name = "BookingID";
             this.BookingID.ReadOnly = true;
+            // 
+            // NationalID
+            // 
+            this.NationalID.FillWeight = 50F;
+            this.NationalID.HeaderText = "NATIONAL ID";
+            this.NationalID.Name = "NationalID";
+            this.NationalID.ReadOnly = true;
+            // 
+            // FullName
+            // 
+            this.FullName.HeaderText = "FULL NAME";
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
             // 
             // TotalAmount
             // 
@@ -496,13 +513,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel GGPanelDataGridViewEvents;
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxSearchThePayment;
         private Guna.UI2.WinForms.Guna2DataGridView GDataGridViewPaymentInformation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BookingID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaidAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentMethod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonPaymentBooking;
         private Guna.UI2.WinForms.Guna2GradientPanel GGMainPanelFilter;
         private Guna.UI2.WinForms.Guna2ComboBox GSubComboBoxTheFilterPayment;
@@ -512,5 +522,14 @@
         private Guna.UI2.WinForms.Guna2GradientPanel GGSubPanelFilteringByPaymentDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker GDateTimePickerToDatePayment;
         private Guna.UI2.WinForms.Guna2DateTimePicker GDateTimePickerFromDatePayment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookingID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NationalID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaidAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentMethod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

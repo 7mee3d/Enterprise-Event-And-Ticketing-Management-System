@@ -75,7 +75,7 @@ namespace EETMS_BusinessLayer.EETMS_Constants
 
         //End
 
-        public const short kNUMBER_COLUMN_STATUS_PAYMENT_IN_DATA_GRID_VIEW = 6;
+        public const short kNUMBER_COLUMN_STATUS_PAYMENT_IN_DATA_GRID_VIEW = 8;
         public const short kNUMBER_DELEAY_ANIMATION_PAYMENT = 5;
 
 

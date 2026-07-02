@@ -52,6 +52,8 @@ namespace EETMS_Presentation.EETMS_Payment
 
                                     DR_Payment["PaymentID"],
                                     BookingIDSTR,
+                                     DR_Payment["NationalID"],
+                                     DR_Payment["FullName"],
                                     "$" + DR_Payment["TotalAmount"],
                                     "$" + DR_Payment["PaidAmount"],
                                     DR_Payment["NamePaymentMethod"],
@@ -124,17 +126,17 @@ namespace EETMS_Presentation.EETMS_Payment
 
         private void GTextBoxSearchTheCategory_TextChanged(object sender, EventArgs e)
         {
-            string BookingID = clsEETMS_Constants.kEMPTY_STRING;
+            string NationalID = clsEETMS_Constants.kEMPTY_STRING;
 
             if (!String.IsNullOrEmpty(GTextBoxSearchThePayment.Text))
-                BookingID = GTextBoxSearchThePayment.Text;
+                NationalID = GTextBoxSearchThePayment.Text;
 
             DataTable Payments_DT = null;
             GDataGridViewPaymentInformation.Rows.Clear();
 
-            if (BookingID != clsEETMS_Constants.kEMPTY_STRING)
+            if (NationalID != clsEETMS_Constants.kEMPTY_STRING)
             {
-                Payments_DT = PaymentsBL.GetAllInformationPaymentBy(BookingID);
+                Payments_DT = PaymentsBL.GetAllInformationPaymentByNationalID(NationalID);
             }
             else
             {

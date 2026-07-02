@@ -16,8 +16,8 @@ namespace EETMS_BusinessLayer
         public static DataTable GetAllInformationPayments()
             => PaymentsQueriesDAL.GetAllInformationPayment();
 
-        public static DataTable GetAllInformationPaymentBy(string BookingID)
-            => PaymentsQueriesDAL.GetAllInformationPaymentBy(BookingID);
+        public static DataTable GetAllInformationPaymentByNationalID(string NationalID)
+          => PaymentsQueriesDAL._GetAllInformationPaymentNationalIDBy(NationalID);
 
         private static bool _AddNewPayment(PaymentDTO mPayment)
             => PaymentCommandsDAL.InsertNewPayment(mPayment) > clsEETMS_Constants.kZERO;
