@@ -181,7 +181,7 @@ namespace EETMS_DataAccessLayer
 
                                     UPDATE Phones 
                                     SET PhoneNumber = @PhoneNumber  
-                                    WHERE CusotmerID = @CusotmerID ; 
+                                    WHERE CustomerID = @CusotmerID ; 
 
 
 

@@ -32,8 +32,8 @@ namespace EETMS_DataAccessLayer
 
                     string Query = @"
 
-                                           INSERT INTO Reservations ( CusotmerID) 
-                                           VALUES (@CusotmerID); 
+                                           INSERT INTO Reservations ( CustomerID) 
+                                           VALUES (@CustomerID); 
                                             
                                            SELECT SCOPE_IDENTITY(); 
 
@@ -44,7 +44,7 @@ namespace EETMS_DataAccessLayer
 
                     using (SqlCommand command = new SqlCommand(Query, connection))
                     {
-                        command.Parameters.Add("@CusotmerID", SqlDbType.Int).Value = mReservations.CustomerID;
+                        command.Parameters.Add("@CustomerID", SqlDbType.Int).Value = mReservations.CustomerID;
 
                         connection.Open();
 

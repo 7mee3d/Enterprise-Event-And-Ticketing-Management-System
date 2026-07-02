@@ -46,7 +46,7 @@ namespace EETMS_DataAccessLayer
                                                                               FROM Reservations R
 
                                                                                   INNER JOIN Customers C
-                                                                                   ON R.CusotmerID = C.CusotmerID
+                                                                                   ON R.CustomerID = C.CusotmerID
 
                                                                 				INNER JOIN ReservationTickets ReservationT 
                                                                 				ON ReservationT.ReservationID = R.ReservationID 
@@ -143,7 +143,7 @@ namespace EETMS_DataAccessLayer
                                                                               FROM Reservations R
 
                                                                                   INNER JOIN Customers C
-                                                                                   ON R.CusotmerID = C.CusotmerID
+                                                                                   ON R.CustomerID = C.CusotmerID
 
                                                                 				INNER JOIN ReservationTickets ReservationT 
                                                                 				ON ReservationT.ReservationID = R.ReservationID 

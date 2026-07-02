@@ -83,7 +83,7 @@ namespace EETMS_DataAccessLayer
                                                                 ON Emails.CusotmerID = Customers.CusotmerID 
 
                                                                 LEFT OUTER JOIN Phones 
-                                                                ON Phones.CusotmerID = Customers.CusotmerID 
+                                                                ON Phones.CustomerID = Customers.CusotmerID 
                                 
                                 ";
 
@@ -139,7 +139,7 @@ namespace EETMS_DataAccessLayer
                                                                 ON Emails.CusotmerID = Customers.CusotmerID 
 
                                                                 LEFT OUTER JOIN Phones 
-                                                                ON Phones.CusotmerID = Customers.CusotmerID 
+                                                                ON Phones.CustomerID = Customers.CusotmerID 
 
 
                                                  WHERE Customers.CusotmerID = @CusotmerID ; 
@@ -233,7 +233,7 @@ namespace EETMS_DataAccessLayer
 
                                                                                                  FROM Customers 
                                                                                                  LEFT JOIN Emails ON Emails.CusotmerID = Customers.CusotmerID 
-                                                                                                 LEFT JOIN Phones ON Phones.CusotmerID = Customers.CusotmerID 
+                                                                                                 LEFT JOIN Phones ON Phones.CustomerID = Customers.CusotmerID 
 
                                                              ) AS CustomerTableSubQuery
 
@@ -327,7 +327,7 @@ namespace EETMS_DataAccessLayer
 
                                                                                                  FROM Customers 
                                                                                                  LEFT JOIN Emails ON Emails.CusotmerID = Customers.CusotmerID 
-                                                                                                 LEFT JOIN Phones ON Phones.CusotmerID = Customers.CusotmerID 
+                                                                                                 LEFT JOIN Phones ON Phones.CustomerID = Customers.CusotmerID 
 
                                                              ) AS CustomerTableSubQuery
 
@@ -475,7 +475,7 @@ namespace EETMS_DataAccessLayer
                                                                 ON Emails.CusotmerID = Customers.CusotmerID 
 
                                                                 LEFT OUTER JOIN Phones 
-                                                                ON Phones.CusotmerID = Customers.CusotmerID 
+                                                                ON Phones.CustomerID = Customers.CusotmerID 
 
 
                                                  WHERE Customers.NationalID = @NationalID ; 

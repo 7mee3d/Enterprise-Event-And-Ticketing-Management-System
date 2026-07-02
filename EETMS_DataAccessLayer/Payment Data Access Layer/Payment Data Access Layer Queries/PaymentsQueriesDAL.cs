@@ -107,7 +107,7 @@ namespace EETMS_DataAccessLayer
 																	ON PS.PaymentStatusID = P.PaymentStatusID 
 
 																	INNER JOIN Customers CUST
-																	ON CUST.CusotmerID = R.CusotmerID 
+																	ON CUST.CusotmerID = R.CustomerID   
                             ";
 
 
@@ -187,7 +187,7 @@ namespace EETMS_DataAccessLayer
 																	ON PS.PaymentStatusID = P.PaymentStatusID 
 
 																	INNER JOIN Customers CUST
-																	ON CUST.CusotmerID = R.CusotmerID 
+																	ON CUST.CusotmerID = R.CustomerID   
 
 															        WHERE R.ReservationID = @ReservationID;
                             ";
@@ -269,7 +269,7 @@ namespace EETMS_DataAccessLayer
 																	ON PS.PaymentStatusID = P.PaymentStatusID 
 
 																	INNER JOIN Customers CUST
-																	ON CUST.CusotmerID = R.CusotmerID 
+																	ON CUST.CusotmerID = R.CustomerID  
 
 															        WHERE CUST.NationalID LIKE @NationalID ; 
                             ";
@@ -398,7 +398,7 @@ namespace EETMS_DataAccessLayer
 																	ON PS.PaymentStatusID = P.PaymentStatusID 
 
 																	INNER JOIN Customers CUST
-																	ON CUST.CusotmerID = R.CusotmerID 
+																	ON CUST.CusotmerID = R.CustomerID  
 
                                                                 WHERE PS.NamePaymentStatus= @NamePaymentStatus
 
@@ -527,7 +527,7 @@ namespace EETMS_DataAccessLayer
 																	ON PS.PaymentStatusID = P.PaymentStatusID 
 
 																	INNER JOIN Customers CUST
-																	ON CUST.CusotmerID = R.CusotmerID 
+																	ON CUST.CusotmerID = R.CustomerID  
 
 
                                                                 WHERE PM.NamePaymentMethod = @NamePaymentMethod
@@ -613,7 +613,7 @@ namespace EETMS_DataAccessLayer
 																	ON PS.PaymentStatusID = P.PaymentStatusID 
 
 																	INNER JOIN Customers CUST
-																	ON CUST.CusotmerID = R.CusotmerID 
+																	ON CUST.CusotmerID = R.CustomerID  
 
 
                                                                 WHERE  R.BookingDateTimeDateTime  >= @DateFrom AND

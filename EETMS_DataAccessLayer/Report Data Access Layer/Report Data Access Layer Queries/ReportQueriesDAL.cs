@@ -172,7 +172,7 @@ namespace EETMS_DataAccessLayer
                                                 ON R.ReservationID = P.ReservationID 
 
                                                 INNER JOIN Customers C
-                                                ON C.CusotmerID = R.CusotmerID 
+                                                ON C.CusotmerID = R.CustomerID 
 
 
                                         GROUP BY  CONCAT (C.FirstName , ' ' , C.MidName , ' ' , C.LastName)
