@@ -49,15 +49,10 @@
             this.Discripation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusEvent_Pending_InProgress_Completed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuStripEvents = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.deleteEventToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelHeaderEvents = new System.Windows.Forms.Panel();
-            this.GGButtonCreateNewEvent = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblTotalEvents = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GGCButtonLiveEvents = new Guna.UI2.WinForms.Guna2GradientCircleButton();
@@ -71,29 +66,34 @@
             this.guna2GradientCircleButton1 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.label6 = new System.Windows.Forms.Label();
             this.lblNumberDraftsEvents = new System.Windows.Forms.Label();
-            this.GGButtonWarningDisable = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGMainPanelFilter = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GTextBoxStreetSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.GSubComboBoxTypeTheFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxMainTypeFilter = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.GGButtonFilter = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGPanelCustomFilter = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GTextBoxStreetCustomFilter = new Guna.UI2.WinForms.Guna2TextBox();
             this.GComboBoxCountryCustomerFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxUnsageCapacityCustomerFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GCombvoBoxCategoryCustomFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GCombvoBoxStatusCustomFilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.GTextBoxStreetCustomFilter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GTextBoxStreetSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GGButtonFilter = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GGButtonWarningDisable = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.GGButtonCreateNewEvent = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GTextBoxSearchTheEvent = new Guna.UI2.WinForms.Guna2TextBox();
+            this.editEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteEventToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).BeginInit();
             this.ContextMenuStripEvents.SuspendLayout();
             this.PanelHeaderEvents.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
             this.GGMainPanelFilter.SuspendLayout();
             this.GGPanelCustomFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -290,35 +290,13 @@
             this.toolStripSeparator2,
             this.deleteEventToolStripMenuItem1});
             this.ContextMenuStripEvents.Name = "contextMenuStrip1";
-            this.ContextMenuStripEvents.Size = new System.Drawing.Size(197, 108);
+            this.ContextMenuStripEvents.Size = new System.Drawing.Size(181, 86);
             this.ContextMenuStripEvents.Opening += new System.ComponentModel.CancelEventHandler(this.GContextMenuStripEvents_Opening);
-            // 
-            // editEventToolStripMenuItem
-            // 
-            this.editEventToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editEventToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.editEventToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editEventToolStripMenuItem.Image")));
-            this.editEventToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.editEventToolStripMenuItem.Name = "editEventToolStripMenuItem";
-            this.editEventToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
-            this.editEventToolStripMenuItem.Text = "Edit Event";
-            this.editEventToolStripMenuItem.Click += new System.EventHandler(this.editEventToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(193, 6);
-            // 
-            // deleteEventToolStripMenuItem1
-            // 
-            this.deleteEventToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
-            this.deleteEventToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.deleteEventToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteEventToolStripMenuItem1.Image")));
-            this.deleteEventToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.deleteEventToolStripMenuItem1.Name = "deleteEventToolStripMenuItem1";
-            this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(196, 38);
-            this.deleteEventToolStripMenuItem1.Text = "Delete Event";
-            this.deleteEventToolStripMenuItem1.Click += new System.EventHandler(this.deleteEventToolStripMenuItem1_Click);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // PanelHeaderEvents
             // 
@@ -330,56 +308,6 @@
             this.PanelHeaderEvents.Name = "PanelHeaderEvents";
             this.PanelHeaderEvents.Size = new System.Drawing.Size(1361, 121);
             this.PanelHeaderEvents.TabIndex = 5;
-            // 
-            // GGButtonCreateNewEvent
-            // 
-            this.GGButtonCreateNewEvent.Animated = true;
-            this.GGButtonCreateNewEvent.AnimatedGIF = true;
-            this.GGButtonCreateNewEvent.BorderRadius = 5;
-            this.GGButtonCreateNewEvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GGButtonCreateNewEvent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonCreateNewEvent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonCreateNewEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonCreateNewEvent.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonCreateNewEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonCreateNewEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.GGButtonCreateNewEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.GGButtonCreateNewEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GGButtonCreateNewEvent.ForeColor = System.Drawing.Color.White;
-            this.GGButtonCreateNewEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GGButtonCreateNewEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GGButtonCreateNewEvent.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonCreateNewEvent.Image")));
-            this.GGButtonCreateNewEvent.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GGButtonCreateNewEvent.Location = new System.Drawing.Point(1123, 46);
-            this.GGButtonCreateNewEvent.Name = "GGButtonCreateNewEvent";
-            this.GGButtonCreateNewEvent.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
-            this.GGButtonCreateNewEvent.Size = new System.Drawing.Size(215, 47);
-            this.GGButtonCreateNewEvent.TabIndex = 2;
-            this.GGButtonCreateNewEvent.Text = "Create New Event";
-            this.GGButtonCreateNewEvent.Click += new System.EventHandler(this.GGButtonCreateNewEvent_Click);
-            // 
-            // GTextBoxSearchTheEvent
-            // 
-            this.GTextBoxSearchTheEvent.Animated = true;
-            this.GTextBoxSearchTheEvent.BorderRadius = 8;
-            this.GTextBoxSearchTheEvent.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxSearchTheEvent.DefaultText = "";
-            this.GTextBoxSearchTheEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxSearchTheEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxSearchTheEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheEvent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheEvent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxSearchTheEvent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheEvent.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheEvent.IconLeft")));
-            this.GTextBoxSearchTheEvent.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxSearchTheEvent.Location = new System.Drawing.Point(663, 46);
-            this.GTextBoxSearchTheEvent.Name = "GTextBoxSearchTheEvent";
-            this.GTextBoxSearchTheEvent.PlaceholderText = "Search Events ....";
-            this.GTextBoxSearchTheEvent.SelectedText = "";
-            this.GTextBoxSearchTheEvent.Size = new System.Drawing.Size(439, 44);
-            this.GTextBoxSearchTheEvent.TabIndex = 1;
-            this.GTextBoxSearchTheEvent.TextChanged += new System.EventHandler(this.GTextBoxSearchTheEvent_TextChanged);
             // 
             // guna2GradientPanel1
             // 
@@ -404,18 +332,6 @@
             this.label3.Size = new System.Drawing.Size(96, 21);
             this.label3.TabIndex = 1;
             this.label3.Text = "Total Events";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BorderRadius = 10;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(163, 41);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(36, 40);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // lblTotalEvents
             // 
@@ -600,28 +516,6 @@
             this.lblNumberDraftsEvents.TabIndex = 0;
             this.lblNumberDraftsEvents.Text = "0";
             // 
-            // GGButtonWarningDisable
-            // 
-            this.GGButtonWarningDisable.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
-            this.GGButtonWarningDisable.BorderRadius = 5;
-            this.GGButtonWarningDisable.BorderThickness = 1;
-            this.GGButtonWarningDisable.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
-            this.GGButtonWarningDisable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningDisable.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningDisable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
-            this.GGButtonWarningDisable.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.GGButtonWarningDisable.Enabled = false;
-            this.GGButtonWarningDisable.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningDisable.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningDisable.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold);
-            this.GGButtonWarningDisable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
-            this.GGButtonWarningDisable.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonWarningDisable.Image")));
-            this.GGButtonWarningDisable.Location = new System.Drawing.Point(1059, 319);
-            this.GGButtonWarningDisable.Name = "GGButtonWarningDisable";
-            this.GGButtonWarningDisable.Size = new System.Drawing.Size(305, 42);
-            this.GGButtonWarningDisable.TabIndex = 7;
-            this.GGButtonWarningDisable.Text = "Events with sold tickets cannot be deleted.";
-            // 
             // GGMainPanelFilter
             // 
             this.GGMainPanelFilter.Controls.Add(this.GTextBoxStreetSearch);
@@ -632,30 +526,6 @@
             this.GGMainPanelFilter.Size = new System.Drawing.Size(607, 63);
             this.GGMainPanelFilter.TabIndex = 9;
             this.GGMainPanelFilter.Visible = false;
-            // 
-            // GTextBoxStreetSearch
-            // 
-            this.GTextBoxStreetSearch.Animated = true;
-            this.GTextBoxStreetSearch.BorderRadius = 8;
-            this.GTextBoxStreetSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxStreetSearch.DefaultText = "";
-            this.GTextBoxStreetSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxStreetSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxStreetSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxStreetSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxStreetSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxStreetSearch.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxStreetSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxStreetSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxStreetSearch.IconLeft")));
-            this.GTextBoxStreetSearch.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxStreetSearch.Location = new System.Drawing.Point(392, 13);
-            this.GTextBoxStreetSearch.Name = "GTextBoxStreetSearch";
-            this.GTextBoxStreetSearch.PlaceholderText = "Enter The Street...";
-            this.GTextBoxStreetSearch.SelectedText = "";
-            this.GTextBoxStreetSearch.Size = new System.Drawing.Size(201, 37);
-            this.GTextBoxStreetSearch.TabIndex = 2;
-            this.GTextBoxStreetSearch.Visible = false;
-            this.GTextBoxStreetSearch.TextChanged += new System.EventHandler(this.GTextBoxStreetSearch_TextChanged);
             // 
             // GSubComboBoxTypeTheFilter
             // 
@@ -703,37 +573,6 @@
             this.GComboBoxMainTypeFilter.TabIndex = 0;
             this.GComboBoxMainTypeFilter.SelectedIndexChanged += new System.EventHandler(this.GComboBoxMainTypeFilter_SelectedIndexChanged);
             // 
-            // GGButtonFilter
-            // 
-            this.GGButtonFilter.Animated = true;
-            this.GGButtonFilter.AnimatedGIF = true;
-            this.GGButtonFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
-            this.GGButtonFilter.BorderRadius = 10;
-            this.GGButtonFilter.BorderThickness = 1;
-            this.GGButtonFilter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GGButtonFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonFilter.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonFilter.FillColor = System.Drawing.Color.White;
-            this.GGButtonFilter.FillColor2 = System.Drawing.Color.White;
-            this.GGButtonFilter.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold);
-            this.GGButtonFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.GGButtonFilter.HoverState.FillColor = System.Drawing.Color.White;
-            this.GGButtonFilter.HoverState.FillColor2 = System.Drawing.Color.White;
-            this.GGButtonFilter.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.GGButtonFilter.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.GGButtonFilter.Image = global::EETMS_Presentation.Properties.Resources.Filter_Icon_EETMS;
-            this.GGButtonFilter.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GGButtonFilter.Location = new System.Drawing.Point(45, 315);
-            this.GGButtonFilter.Name = "GGButtonFilter";
-            this.GGButtonFilter.PressedColor = System.Drawing.Color.White;
-            this.GGButtonFilter.Size = new System.Drawing.Size(102, 47);
-            this.GGButtonFilter.TabIndex = 8;
-            this.GGButtonFilter.Text = "Filter";
-            this.GGButtonFilter.Click += new System.EventHandler(this.GGButtonFilter_Click);
-            // 
             // GGPanelCustomFilter
             // 
             this.GGPanelCustomFilter.Controls.Add(this.GTextBoxStreetCustomFilter);
@@ -746,29 +585,6 @@
             this.GGPanelCustomFilter.Size = new System.Drawing.Size(678, 63);
             this.GGPanelCustomFilter.TabIndex = 10;
             this.GGPanelCustomFilter.Visible = false;
-            // 
-            // GTextBoxStreetCustomFilter
-            // 
-            this.GTextBoxStreetCustomFilter.Animated = true;
-            this.GTextBoxStreetCustomFilter.BorderRadius = 8;
-            this.GTextBoxStreetCustomFilter.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxStreetCustomFilter.DefaultText = "";
-            this.GTextBoxStreetCustomFilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxStreetCustomFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxStreetCustomFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxStreetCustomFilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxStreetCustomFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxStreetCustomFilter.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxStreetCustomFilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxStreetCustomFilter.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxStreetCustomFilter.IconLeft")));
-            this.GTextBoxStreetCustomFilter.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxStreetCustomFilter.Location = new System.Drawing.Point(502, 13);
-            this.GTextBoxStreetCustomFilter.Name = "GTextBoxStreetCustomFilter";
-            this.GTextBoxStreetCustomFilter.PlaceholderText = "Enter The Street...";
-            this.GTextBoxStreetCustomFilter.SelectedText = "";
-            this.GTextBoxStreetCustomFilter.Size = new System.Drawing.Size(169, 37);
-            this.GTextBoxStreetCustomFilter.TabIndex = 2;
-            this.GTextBoxStreetCustomFilter.TextChanged += new System.EventHandler(this.GTextBoxStreetCustomFilter_TextChanged);
             // 
             // GComboBoxCountryCustomerFilter
             // 
@@ -854,6 +670,190 @@
             this.GCombvoBoxStatusCustomFilter.TabIndex = 0;
             this.GCombvoBoxStatusCustomFilter.SelectionChangeCommitted += new System.EventHandler(this.GComboBoxCountryCustomerFilter_SelectionChangeCommitted);
             // 
+            // GTextBoxStreetCustomFilter
+            // 
+            this.GTextBoxStreetCustomFilter.Animated = true;
+            this.GTextBoxStreetCustomFilter.BorderRadius = 8;
+            this.GTextBoxStreetCustomFilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxStreetCustomFilter.DefaultText = "";
+            this.GTextBoxStreetCustomFilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxStreetCustomFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxStreetCustomFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxStreetCustomFilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxStreetCustomFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxStreetCustomFilter.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxStreetCustomFilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxStreetCustomFilter.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxStreetCustomFilter.IconLeft")));
+            this.GTextBoxStreetCustomFilter.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxStreetCustomFilter.Location = new System.Drawing.Point(502, 13);
+            this.GTextBoxStreetCustomFilter.Name = "GTextBoxStreetCustomFilter";
+            this.GTextBoxStreetCustomFilter.PlaceholderText = "Enter The Street...";
+            this.GTextBoxStreetCustomFilter.SelectedText = "";
+            this.GTextBoxStreetCustomFilter.Size = new System.Drawing.Size(169, 37);
+            this.GTextBoxStreetCustomFilter.TabIndex = 2;
+            this.GTextBoxStreetCustomFilter.TextChanged += new System.EventHandler(this.GTextBoxStreetCustomFilter_TextChanged);
+            // 
+            // GTextBoxStreetSearch
+            // 
+            this.GTextBoxStreetSearch.Animated = true;
+            this.GTextBoxStreetSearch.BorderRadius = 8;
+            this.GTextBoxStreetSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxStreetSearch.DefaultText = "";
+            this.GTextBoxStreetSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxStreetSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxStreetSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxStreetSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxStreetSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxStreetSearch.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxStreetSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxStreetSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxStreetSearch.IconLeft")));
+            this.GTextBoxStreetSearch.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxStreetSearch.Location = new System.Drawing.Point(392, 13);
+            this.GTextBoxStreetSearch.Name = "GTextBoxStreetSearch";
+            this.GTextBoxStreetSearch.PlaceholderText = "Enter The Street...";
+            this.GTextBoxStreetSearch.SelectedText = "";
+            this.GTextBoxStreetSearch.Size = new System.Drawing.Size(201, 37);
+            this.GTextBoxStreetSearch.TabIndex = 2;
+            this.GTextBoxStreetSearch.Visible = false;
+            this.GTextBoxStreetSearch.TextChanged += new System.EventHandler(this.GTextBoxStreetSearch_TextChanged);
+            // 
+            // GGButtonFilter
+            // 
+            this.GGButtonFilter.Animated = true;
+            this.GGButtonFilter.AnimatedGIF = true;
+            this.GGButtonFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.GGButtonFilter.BorderRadius = 10;
+            this.GGButtonFilter.BorderThickness = 1;
+            this.GGButtonFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GGButtonFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonFilter.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GGButtonFilter.FillColor = System.Drawing.Color.White;
+            this.GGButtonFilter.FillColor2 = System.Drawing.Color.White;
+            this.GGButtonFilter.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold);
+            this.GGButtonFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.GGButtonFilter.HoverState.FillColor = System.Drawing.Color.White;
+            this.GGButtonFilter.HoverState.FillColor2 = System.Drawing.Color.White;
+            this.GGButtonFilter.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.GGButtonFilter.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.GGButtonFilter.Image = global::EETMS_Presentation.Properties.Resources.Filter_Icon_EETMS;
+            this.GGButtonFilter.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GGButtonFilter.Location = new System.Drawing.Point(45, 315);
+            this.GGButtonFilter.Name = "GGButtonFilter";
+            this.GGButtonFilter.PressedColor = System.Drawing.Color.White;
+            this.GGButtonFilter.Size = new System.Drawing.Size(102, 47);
+            this.GGButtonFilter.TabIndex = 8;
+            this.GGButtonFilter.Text = "Filter";
+            this.GGButtonFilter.Click += new System.EventHandler(this.GGButtonFilter_Click);
+            // 
+            // GGButtonWarningDisable
+            // 
+            this.GGButtonWarningDisable.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
+            this.GGButtonWarningDisable.BorderRadius = 5;
+            this.GGButtonWarningDisable.BorderThickness = 1;
+            this.GGButtonWarningDisable.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
+            this.GGButtonWarningDisable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningDisable.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningDisable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
+            this.GGButtonWarningDisable.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.GGButtonWarningDisable.Enabled = false;
+            this.GGButtonWarningDisable.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningDisable.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningDisable.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold);
+            this.GGButtonWarningDisable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
+            this.GGButtonWarningDisable.Image = global::EETMS_Presentation.Properties.Resources.Warning_Brown_icon_EETMS;
+            this.GGButtonWarningDisable.Location = new System.Drawing.Point(1059, 319);
+            this.GGButtonWarningDisable.Name = "GGButtonWarningDisable";
+            this.GGButtonWarningDisable.Size = new System.Drawing.Size(305, 42);
+            this.GGButtonWarningDisable.TabIndex = 7;
+            this.GGButtonWarningDisable.Text = "Events with sold tickets cannot be deleted.";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BorderRadius = 10;
+            this.guna2PictureBox1.Image = global::EETMS_Presentation.Properties.Resources.Events_Blue_Icon_EETMS;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(163, 41);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(36, 40);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // GGButtonCreateNewEvent
+            // 
+            this.GGButtonCreateNewEvent.Animated = true;
+            this.GGButtonCreateNewEvent.AnimatedGIF = true;
+            this.GGButtonCreateNewEvent.BorderRadius = 5;
+            this.GGButtonCreateNewEvent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GGButtonCreateNewEvent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonCreateNewEvent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonCreateNewEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonCreateNewEvent.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonCreateNewEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GGButtonCreateNewEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonCreateNewEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonCreateNewEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonCreateNewEvent.ForeColor = System.Drawing.Color.White;
+            this.GGButtonCreateNewEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonCreateNewEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonCreateNewEvent.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
+            this.GGButtonCreateNewEvent.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GGButtonCreateNewEvent.Location = new System.Drawing.Point(1108, 46);
+            this.GGButtonCreateNewEvent.Name = "GGButtonCreateNewEvent";
+            this.GGButtonCreateNewEvent.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
+            this.GGButtonCreateNewEvent.Size = new System.Drawing.Size(230, 47);
+            this.GGButtonCreateNewEvent.TabIndex = 2;
+            this.GGButtonCreateNewEvent.Text = "Create New Event";
+            this.GGButtonCreateNewEvent.Click += new System.EventHandler(this.GGButtonCreateNewEvent_Click);
+            // 
+            // GTextBoxSearchTheEvent
+            // 
+            this.GTextBoxSearchTheEvent.Animated = true;
+            this.GTextBoxSearchTheEvent.BorderRadius = 8;
+            this.GTextBoxSearchTheEvent.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxSearchTheEvent.DefaultText = "";
+            this.GTextBoxSearchTheEvent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxSearchTheEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxSearchTheEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheEvent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheEvent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheEvent.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxSearchTheEvent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheEvent.IconLeft = global::EETMS_Presentation.Properties.Resources.Search_Icon_EETMS;
+            this.GTextBoxSearchTheEvent.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxSearchTheEvent.Location = new System.Drawing.Point(650, 46);
+            this.GTextBoxSearchTheEvent.Name = "GTextBoxSearchTheEvent";
+            this.GTextBoxSearchTheEvent.PlaceholderText = "Search Events ....";
+            this.GTextBoxSearchTheEvent.SelectedText = "";
+            this.GTextBoxSearchTheEvent.Size = new System.Drawing.Size(452, 44);
+            this.GTextBoxSearchTheEvent.TabIndex = 1;
+            this.GTextBoxSearchTheEvent.TextChanged += new System.EventHandler(this.GTextBoxSearchTheEvent_TextChanged);
+            // 
+            // editEventToolStripMenuItem
+            // 
+            this.editEventToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEventToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.editEventToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editEventToolStripMenuItem.Image")));
+            this.editEventToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editEventToolStripMenuItem.Name = "editEventToolStripMenuItem";
+            this.editEventToolStripMenuItem.Size = new System.Drawing.Size(180, 38);
+            this.editEventToolStripMenuItem.Text = "Edit Event";
+            this.editEventToolStripMenuItem.Click += new System.EventHandler(this.editEventToolStripMenuItem_Click);
+            // 
+            // deleteEventToolStripMenuItem1
+            // 
+            this.deleteEventToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.deleteEventToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.deleteEventToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteEventToolStripMenuItem1.Image")));
+            this.deleteEventToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteEventToolStripMenuItem1.Name = "deleteEventToolStripMenuItem1";
+            this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(180, 38);
+            this.deleteEventToolStripMenuItem1.Text = "Delete Event";
+            this.deleteEventToolStripMenuItem1.Click += new System.EventHandler(this.deleteEventToolStripMenuItem1_Click);
+            // 
             // UC_Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -879,7 +879,6 @@
             this.PanelHeaderEvents.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
             this.guna2GradientPanel3.ResumeLayout(false);
@@ -888,6 +887,7 @@
             this.guna2GradientPanel4.PerformLayout();
             this.GGMainPanelFilter.ResumeLayout(false);
             this.GGPanelCustomFilter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

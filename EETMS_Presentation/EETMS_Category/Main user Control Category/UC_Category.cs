@@ -295,5 +295,10 @@ namespace EETMS_Presentation.EETMS_Category
         {
             _DeleteTheCategoryByID();
         }
+
+        private void GTextBoxCategoryName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar));
+        }
     }
 }

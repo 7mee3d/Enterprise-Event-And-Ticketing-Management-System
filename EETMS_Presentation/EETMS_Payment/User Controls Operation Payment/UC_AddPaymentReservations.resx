@@ -118,19 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="GButtonConfirmPayment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAcFJREFUWEft
-        lzFywkAMRSkpc4QcIWVKypS5ISUlJWWOkJJjUFKxP7PaxdZ+Sd7FpOQVeEaW9L9lwSybzYsVANgCOECT
-        po/75QTgjWufBsBnI6zRJizf3GsVAC7c2cO3kXL8yj2HySPlljG+BeKdNRZhA/PEtdiQcGFOHTfSNPgP
-        1N6ylkuzAw887ExbZGaXOjsCYBcWO0RxQT29wxdrT3CmJWjp0UllbYGX8RkS8FN66nEYV/YHDcDRpDks
-        5hQxMaD6ejn546jzavLTW5BpDJS+OHPSHc6dHXd1QjoGbGPOt2Nrka/V1NT2swZSPIE7XOObKGLN99oZ
-        rzGQbM6MegCuExPmAUvg5OSe601jwDHpNC5wrT8JQTo4Rm57GysGAs1CvZkvXN9fzGSNaAD8hrUVud15
-        HYdOj4xrRAx0USMomFeZG20HTGQaI2MGXOwvZoazPKpRMRIZ4LE31DhrT8hZ0nSIuuHKAUtYu2PtBqSx
-        M+USRroNXFjThasMzm0n5MJaIe2Syom5i59jov4yRtQ/OoMYsUqNl8tjBjRAUjsSiUVI/vKZchQAH56+
-        CZnAwllyLfkV3YA9KxHHnMe1L0b4Ay4D3CveOCUvAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAANJJREFUSEvt
@@ -213,12 +200,12 @@
   </data>
   <data name="resource.Image5" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAD9SURBVEhL7ZO9DoIwEMcZHR0dHXkERyYTCiQkcLBeWqK+haOP4ujoI/AIjj4GY00LBblgIlA2
-        fkmT5n/XO+4Dx1mxSQBCMhCS6tZYLIEX4z4AUQXApUqi7n6OB+o3CZbwSxNUH1VBe0/5lfqPxgQL08Iz
-        WhSdXKN7iJv+i5GYQFRnwJFqk7D2pb8IQZTdDPhzkURMJUl1ArsDpoRQ3L6qkQz4m/pYod6iuppjgi61
-        W0Ftkf4nMnGntr9hmXjodgwE8ROM9SxAlNQ2iqGhMsBdE1yGUOT9FyNpW9EMthuyPhX1n4QX4zZI+ave
-        HFOROFO/2Zi2UN0apgKqr8ziA0/Cl+lkcr/gAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAP1JREFUSEvt
+        k70OgjAQxxkdHR0deQRHJhMKJCRwsF5aor6Fo4/i6Ogj8AiOPgZjTQsFuWAiUDZ+SZPmf9c77gPHWbFJ
+        AEIyEJLq1lgsgRfjPgBRBcClSqLufo4H6jcJlvBLE1QfVUF7T/mV+o/GBAvTwjNaFJ1co3uIm/6LkZhA
+        VGfAkWqTsPalvwhBlN0M+HORREwlSXUCuwOmhFDcvqqRDPib+lih3qK6mmOCLrVbQW2R/icycae2v2GZ
+        eOh2DATxE4z1LECU1DaKoaEywF0TXIZQ5P0XI2lb0Qy2G7I+FfWfhBfjNkj5q94cU5E4U7/ZmLZQ3Rqm
+        AqqvzOIDT8KX6WRyv+AAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="GButtonCash.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

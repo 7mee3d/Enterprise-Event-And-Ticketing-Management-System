@@ -43,7 +43,7 @@ namespace EETMS_BusinessLayer.EETMS_Constants
         public const short kNUMBER_OF_WIDTH_LABEL_ANIMATION = 81;
         public const short kNUMBER_OF_HEIGTH_LABEL_ANIMATION = 374;
         public const short kNUMBER_OF_DELAY_LABEL_ANIMATION_LOGIN_SCREEN = 2000;
-        public const short kNUMBER_WIDTH_LOGIN_SCREEN = 1506;
+        public const short kNUMBER_WIDTH_LOGIN_SCREEN = 1371;
         public const short kNUMBER_HEIGTH_LOGIN_SCREEN = 848;
         public const short kNUMBER_TWO_OF_HALF_PRIMARY_SCREEN = 2;
 

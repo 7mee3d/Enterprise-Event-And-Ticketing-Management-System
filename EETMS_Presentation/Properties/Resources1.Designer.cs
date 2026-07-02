@@ -63,6 +63,46 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Account_Balance_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Account_Balance_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Active_Unactive_Icon_EETMS_321 {
+            get {
+                object obj = ResourceManager.GetObject("Active-Unactive_Icon_EETMS_321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Active_Users_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Active_Users_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Add_Blue_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Add_Blue_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Add_Icon_EETMS {
             get {
                 object obj = ResourceManager.GetObject("Add_Icon_EETMS", resourceCulture);
@@ -83,9 +123,219 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Arrow__Left_Gray_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Arrow__Left_Gray_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Arrow_Left_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Arrow_Left_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Arrow_Right_Icon_White_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Arrow_Right_Icon_White_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Block_Red_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Block_Red_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Calendar_Check_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Calendar_Check_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancel_Icon_EETMS {
             get {
                 object obj = ResourceManager.GetObject("Cancel_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Card_Information_Person_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Card_Information_Person_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Category_Gray_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Category_Gray_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Category_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Category_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Check_Choise_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Check_Choise_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Check_White_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Check_White_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_Customer_Icon_EETMS_32 {
+            get {
+                object obj = ResourceManager.GetObject("Delete_Customer_Icon_EETMS_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_ICon_EETMS_32 {
+            get {
+                object obj = ResourceManager.GetObject("Delete_ICon_EETMS_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_User_Icon_EETMS_32 {
+            get {
+                object obj = ResourceManager.GetObject("Delete_User_Icon_EETMS_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Description_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Description_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dollar_Money_Gray_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Dollar_Money_Gray_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_Customer_Icon_EETMS_32 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_Customer_Icon_EETMS_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_Role_icon_EETMS_32 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_Role_icon_EETMS_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_User_Icon_EETMS_32 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_User_Icon_EETMS_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Error_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Error_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Event_Purple_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Event_Purple_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Events_Blue_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Events_Blue_Icon_EETMS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +373,139 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fingerprint_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Fingerprint_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fully_Booked_Calender_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Fully_Booked_Calender_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Info_Gray_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Info_Gray_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Info_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Info_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout_EETMS {
             get {
                 object obj = ResourceManager.GetObject("logout_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Manage_White_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Manage_White_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Map_icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Map_icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Money_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Money_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Money_Not_Full__Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Money_Not_Full__Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pepole_Group_Orange_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Pepole_Group_Orange_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Person_Email_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Person_Email_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Person_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Person_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Person_Phone_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Person_Phone_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Quantity_Gray_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Quantity_Gray_Icon_EETMS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +523,26 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Role_users_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Role_users_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Roles_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Roles_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Save_Icon_EETMS {
             get {
                 object obj = ResourceManager.GetObject("Save_Icon_EETMS", resourceCulture);
@@ -153,9 +553,119 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Save_Icon_EETMS1 {
+            get {
+                object obj = ResourceManager.GetObject("Save_Icon_EETMS1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Search_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search_Person_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Search_Person_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search_Person_White_icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Search_Person_White_icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Seat_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Seat_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Star_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Star_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ticket_Blue_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Ticket_Blue_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Total_users_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Total_users_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trending_Up_Green_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Trending_Up_Green_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Update_Icon_EETMS {
             get {
                 object obj = ResourceManager.GetObject("Update_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warning_Brown_icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Warning_Brown_icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warning_Red_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Warning_Red_Icon_EETMS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

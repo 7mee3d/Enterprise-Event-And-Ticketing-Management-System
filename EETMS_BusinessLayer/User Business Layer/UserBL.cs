@@ -138,5 +138,8 @@ namespace EETMS_BusinessLayer
 
         public static bool IsUserExistsBy(string Username)
             => UsersQueriesDAL.IsUserExistsBy(Username);
+
+        public static bool IsEmailExists(string EmailAddress)
+            => UsersQueriesDAL.IsEmailExists(EmailAddress);
     }
 }

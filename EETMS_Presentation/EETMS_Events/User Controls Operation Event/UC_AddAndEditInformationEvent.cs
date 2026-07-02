@@ -89,7 +89,6 @@ namespace EETMS_Presentation.EETMS_Events
                 GButtonCreateEvent.Enabled = false;
 
                 GTextBoxDiscripation.Enabled = false;
-                GTextBoxDuration.Enabled = false;
                 GTextBoxEventName.Enabled = false;
                 GTextBoxStreet.Enabled = false;
                 GDateTimePickerEndDateTimeEvent.Enabled = false;
@@ -180,7 +179,6 @@ namespace EETMS_Presentation.EETMS_Events
             GComboBoxCategories.SelectedValue = _InformationEvent.CategoryID;
             GComboBoxCountries.SelectedValue = _InformationEvent.CountryID;
             GTextBoxStreet.Text = _InformationEvent.Street;
-            GTextBoxDuration.Text = _InformationEvent.DurationEvent.ToString();
             GNumericUpDownMaxCapacity.Value = _InformationEvent.MaxCapacity;
 
             GButtonCreateEvent.Text = "Update Event";
@@ -239,9 +237,6 @@ namespace EETMS_Presentation.EETMS_Events
             if (string.IsNullOrWhiteSpace(GTextBoxStreet.Text))
                 Text += "\nPlease,Enter a Street Location Event";
 
-            if (string.IsNullOrWhiteSpace(GTextBoxDuration.Text))
-                Text += "\nPlease,Enter a Duration Event";
-
             if (GNumericUpDownMaxCapacity.Value <= clsEETMS_Constants.kZERO)
                 Text += "\nPlease,Enter a Max Capacity Event Grather ZERO";
 
@@ -255,7 +250,6 @@ namespace EETMS_Presentation.EETMS_Events
                             (!string.IsNullOrWhiteSpace(GTextBoxEventName.Text)) &&
                             (!string.IsNullOrWhiteSpace(GTextBoxDiscripation.Text)) &&
                             (!string.IsNullOrWhiteSpace(GTextBoxStreet.Text)) &&
-                            (!string.IsNullOrWhiteSpace(GTextBoxDuration.Text)) &&
                             (GNumericUpDownMaxCapacity.Value > clsEETMS_Constants.kZERO)
 
                     );
@@ -342,6 +336,36 @@ namespace EETMS_Presentation.EETMS_Events
             return true;
         }
 
+        private int _GetTotalDuration()
+        {
+            int StartHour = _InformationEvent.DateTimeEvent.Value.Hour;
+            int EndHour = _InformationEvent.EndDateTimeEvent.Value.Hour;
+
+            if (_InformationEvent.StartTimeMeridiem == "PM" && StartHour != 12)
+                StartHour += 12;
+            if (_InformationEvent.StartTimeMeridiem == "AM" && StartHour == 12)
+                StartHour = 0;
+
+            if (_InformationEvent.EndTimeMeridiem == "PM" && EndHour != 12)
+                EndHour += 12;
+            if (_InformationEvent.EndTimeMeridiem == "AM" && EndHour == 12)
+                EndHour = 0;
+
+
+            TimeSpan Time1 = new TimeSpan(
+               StartHour,
+               _InformationEvent.DateTimeEvent.Value.Minute,
+               0);
+
+            TimeSpan Time2 = new TimeSpan(
+               EndHour,
+                _InformationEvent.EndDateTimeEvent.Value.Minute,
+                0);
+
+
+            return Convert.ToInt32((Time2 - Time1).TotalMinutes);
+        }
+
         private void _AddOrEditEventInformation()
         {
             if (!_HnadleDateTime()) return;
@@ -375,11 +399,9 @@ namespace EETMS_Presentation.EETMS_Events
             _InformationEvent.Street = GTextBoxStreet.Text;
 
 
-            if (GTextBoxDuration.Text != null)
-                _InformationEvent.DurationEvent = Convert.ToInt32(GTextBoxDuration.Text);
-            else
-                _InformationEvent.DurationEvent = clsEETMS_Constants.kZERO;
 
+
+            _InformationEvent.DurationEvent = _GetTotalDuration();
             _InformationEvent.MaxCapacity = Convert.ToInt32(GNumericUpDownMaxCapacity.Value);
 
             if (_Mode == _EnMode._kADD_NEW_EVENT)

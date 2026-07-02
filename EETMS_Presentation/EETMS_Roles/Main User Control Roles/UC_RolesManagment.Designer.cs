@@ -57,8 +57,8 @@
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTotalActiveStzatusRoles = new System.Windows.Forms.Label();
-            this.GGButtonCreateNewRole = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GGButtonCreateNewRole = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewRolesInformation)).BeginInit();
             this.ContextMenuStripRoles.SuspendLayout();
@@ -73,9 +73,9 @@
             this.GGPanelDataGridViewEvents.BorderRadius = 10;
             this.GGPanelDataGridViewEvents.BorderThickness = 1;
             this.GGPanelDataGridViewEvents.Controls.Add(this.GDataGridViewRolesInformation);
-            this.GGPanelDataGridViewEvents.Location = new System.Drawing.Point(46, 399);
+            this.GGPanelDataGridViewEvents.Location = new System.Drawing.Point(46, 373);
             this.GGPanelDataGridViewEvents.Name = "GGPanelDataGridViewEvents";
-            this.GGPanelDataGridViewEvents.Size = new System.Drawing.Size(1327, 423);
+            this.GGPanelDataGridViewEvents.Size = new System.Drawing.Size(1327, 451);
             this.GGPanelDataGridViewEvents.TabIndex = 5;
             // 
             // GDataGridViewRolesInformation
@@ -131,7 +131,7 @@
             this.GDataGridViewRolesInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GDataGridViewRolesInformation.RowHeadersVisible = false;
             this.GDataGridViewRolesInformation.RowTemplate.Height = 67;
-            this.GDataGridViewRolesInformation.Size = new System.Drawing.Size(1319, 416);
+            this.GDataGridViewRolesInformation.Size = new System.Drawing.Size(1319, 444);
             this.GDataGridViewRolesInformation.TabIndex = 0;
             this.GDataGridViewRolesInformation.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.GDataGridViewRolesInformation.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,8 +205,8 @@
             // editInfoRoleToolStripMenuItem
             // 
             this.editInfoRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editInfoRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.editInfoRoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editInfoRoleToolStripMenuItem.Image")));
+            this.editInfoRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
+            this.editInfoRoleToolStripMenuItem.Image = global::EETMS_Presentation.Properties.Resources.Edit_Role_icon_EETMS_32;
             this.editInfoRoleToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editInfoRoleToolStripMenuItem.Name = "editInfoRoleToolStripMenuItem";
             this.editInfoRoleToolStripMenuItem.Size = new System.Drawing.Size(239, 38);
@@ -221,8 +221,8 @@
             // DeleteRoleToolStripMenuItem1
             // 
             this.DeleteRoleToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
-            this.DeleteRoleToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.DeleteRoleToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("DeleteRoleToolStripMenuItem1.Image")));
+            this.DeleteRoleToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
+            this.DeleteRoleToolStripMenuItem1.Image = global::EETMS_Presentation.Properties.Resources.Delete_ICon_EETMS_32;
             this.DeleteRoleToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.DeleteRoleToolStripMenuItem1.Name = "DeleteRoleToolStripMenuItem1";
             this.DeleteRoleToolStripMenuItem1.Size = new System.Drawing.Size(239, 38);
@@ -237,8 +237,7 @@
             // activeUnactiveRoleToolStripMenuItem
             // 
             this.activeUnactiveRoleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
-            this.activeUnactiveRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.activeUnactiveRoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("activeUnactiveRoleToolStripMenuItem.Image")));
+            this.activeUnactiveRoleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.activeUnactiveRoleToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.activeUnactiveRoleToolStripMenuItem.Name = "activeUnactiveRoleToolStripMenuItem";
             this.activeUnactiveRoleToolStripMenuItem.Size = new System.Drawing.Size(239, 38);
@@ -249,7 +248,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(43, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(593, 34);
@@ -292,7 +291,7 @@
             this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(246)))), ((int)(((byte)(255)))));
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton2.Image")));
+            this.guna2CircleButton2.Image = global::EETMS_Presentation.Properties.Resources.Roles_Icon_EETMS;
             this.guna2CircleButton2.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2CircleButton2.Location = new System.Drawing.Point(13, 25);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
@@ -304,7 +303,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label3.Location = new System.Drawing.Point(83, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 21);
@@ -345,7 +344,7 @@
             this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(249)))), ((int)(((byte)(239)))));
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
+            this.guna2CircleButton1.Image = global::EETMS_Presentation.Properties.Resources.Check_Choise_Icon_EETMS;
             this.guna2CircleButton1.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2CircleButton1.Location = new System.Drawing.Point(13, 25);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
@@ -357,7 +356,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label4.Location = new System.Drawing.Point(83, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 21);
@@ -373,6 +372,17 @@
             this.lblTotalActiveStzatusRoles.Size = new System.Drawing.Size(28, 32);
             this.lblTotalActiveStzatusRoles.TabIndex = 0;
             this.lblTotalActiveStzatusRoles.Text = "0";
+            // 
+            // guna2GradientPanel3
+            // 
+            this.guna2GradientPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2GradientPanel3.BorderRadius = 10;
+            this.guna2GradientPanel3.BorderThickness = 1;
+            this.guna2GradientPanel3.Controls.Add(this.GGButtonCreateNewRole);
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(46, 832);
+            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(1327, 74);
+            this.guna2GradientPanel3.TabIndex = 10;
             // 
             // GGButtonCreateNewRole
             // 
@@ -391,7 +401,7 @@
             this.GGButtonCreateNewRole.ForeColor = System.Drawing.Color.White;
             this.GGButtonCreateNewRole.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GGButtonCreateNewRole.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GGButtonCreateNewRole.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonCreateNewRole.Image")));
+            this.GGButtonCreateNewRole.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
             this.GGButtonCreateNewRole.ImageOffset = new System.Drawing.Point(-5, 0);
             this.GGButtonCreateNewRole.Location = new System.Drawing.Point(1095, 17);
             this.GGButtonCreateNewRole.Name = "GGButtonCreateNewRole";
@@ -400,17 +410,6 @@
             this.GGButtonCreateNewRole.TabIndex = 9;
             this.GGButtonCreateNewRole.Text = "Create New Role";
             this.GGButtonCreateNewRole.Click += new System.EventHandler(this.GGButtonCreateNewRole_Click);
-            // 
-            // guna2GradientPanel3
-            // 
-            this.guna2GradientPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.guna2GradientPanel3.BorderRadius = 10;
-            this.guna2GradientPanel3.BorderThickness = 1;
-            this.guna2GradientPanel3.Controls.Add(this.GGButtonCreateNewRole);
-            this.guna2GradientPanel3.Location = new System.Drawing.Point(46, 828);
-            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
-            this.guna2GradientPanel3.Size = new System.Drawing.Size(1327, 74);
-            this.guna2GradientPanel3.TabIndex = 10;
             // 
             // UC_RolesManagment
             // 

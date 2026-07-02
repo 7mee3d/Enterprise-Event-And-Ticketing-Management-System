@@ -29,16 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_AddAndEditInformationEvent));
-            this.GButtonBackTheEvents = new Guna.UI2.WinForms.Guna2Button();
             this.lblMainTitleEvent = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.GDateTimePickerEndDateTimeEvent = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.GNumericUpDownMaxCapacity = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.GGButtonWarningMessageWhenTheEventComplete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GDateTimePickerStartDateTimeEvent = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.GComboBoxEndZone = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxStartZone = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxEndMinutes = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -48,7 +45,6 @@
             this.GComboBoxCountries = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GComboBoxCategories = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GTextBoxDiscripation = new Guna.UI2.WinForms.Guna2TextBox();
-            this.GTextBoxDuration = new Guna.UI2.WinForms.Guna2TextBox();
             this.GTextBoxStreet = new Guna.UI2.WinForms.Guna2TextBox();
             this.GTextBoxEventName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,42 +52,21 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.GGButtonManageTheTicketsEvents = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GButtonCreateEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GButtonCansel = new Guna.UI2.WinForms.Guna2Button();
+            this.GGButtonManageTheTicketsEvents = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GButtonCreateEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGButtonWarningDisable = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GGButtonWarningMessageWhenTheEventComplete = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.GButtonBackTheEvents = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownMaxCapacity)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // GButtonBackTheEvents
-            // 
-            this.GButtonBackTheEvents.BorderColor = System.Drawing.Color.Transparent;
-            this.GButtonBackTheEvents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GButtonBackTheEvents.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonBackTheEvents.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonBackTheEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonBackTheEvents.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonBackTheEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.GButtonBackTheEvents.Font = new System.Drawing.Font("Segoe UI Variable Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonBackTheEvents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GButtonBackTheEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.GButtonBackTheEvents.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(141)))), ((int)(((byte)(238)))));
-            this.GButtonBackTheEvents.Image = ((System.Drawing.Image)(resources.GetObject("GButtonBackTheEvents.Image")));
-            this.GButtonBackTheEvents.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GButtonBackTheEvents.Location = new System.Drawing.Point(70, 78);
-            this.GButtonBackTheEvents.Name = "GButtonBackTheEvents";
-            this.GButtonBackTheEvents.PressedColor = System.Drawing.Color.White;
-            this.GButtonBackTheEvents.Size = new System.Drawing.Size(148, 25);
-            this.GButtonBackTheEvents.TabIndex = 0;
-            this.GButtonBackTheEvents.Text = "Back to Events";
-            this.GButtonBackTheEvents.Click += new System.EventHandler(this.GButtonBackTheEvents_Click);
             // 
             // lblMainTitleEvent
             // 
@@ -136,7 +111,6 @@
             this.guna2GradientPanel1.Controls.Add(this.GComboBoxCountries);
             this.guna2GradientPanel1.Controls.Add(this.GComboBoxCategories);
             this.guna2GradientPanel1.Controls.Add(this.GTextBoxDiscripation);
-            this.guna2GradientPanel1.Controls.Add(this.GTextBoxDuration);
             this.guna2GradientPanel1.Controls.Add(this.GTextBoxStreet);
             this.guna2GradientPanel1.Controls.Add(this.GTextBoxEventName);
             this.guna2GradientPanel1.Controls.Add(this.label6);
@@ -144,7 +118,6 @@
             this.guna2GradientPanel1.Controls.Add(this.label11);
             this.guna2GradientPanel1.Controls.Add(this.label10);
             this.guna2GradientPanel1.Controls.Add(this.label5);
-            this.guna2GradientPanel1.Controls.Add(this.label8);
             this.guna2GradientPanel1.Controls.Add(this.label4);
             this.guna2GradientPanel1.Controls.Add(this.label7);
             this.guna2GradientPanel1.Controls.Add(this.label3);
@@ -165,7 +138,7 @@
             this.GDateTimePickerEndDateTimeEvent.CustomFormat = "dd/MM/yyyy";
             this.GDateTimePickerEndDateTimeEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GDateTimePickerEndDateTimeEvent.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GDateTimePickerEndDateTimeEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
+            this.GDateTimePickerEndDateTimeEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GDateTimePickerEndDateTimeEvent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.GDateTimePickerEndDateTimeEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GDateTimePickerEndDateTimeEvent.Location = new System.Drawing.Point(527, 216);
@@ -180,7 +153,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label12.Location = new System.Drawing.Point(517, 186);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(150, 20);
@@ -193,7 +166,7 @@
             this.GNumericUpDownMaxCapacity.BorderRadius = 5;
             this.GNumericUpDownMaxCapacity.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.GNumericUpDownMaxCapacity.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GNumericUpDownMaxCapacity.Location = new System.Drawing.Point(533, 452);
+            this.GNumericUpDownMaxCapacity.Location = new System.Drawing.Point(533, 352);
             this.GNumericUpDownMaxCapacity.Maximum = new decimal(new int[] {
             3000,
             0,
@@ -204,30 +177,6 @@
             this.GNumericUpDownMaxCapacity.TabIndex = 6;
             this.GNumericUpDownMaxCapacity.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             // 
-            // GGButtonWarningMessageWhenTheEventComplete
-            // 
-            this.GGButtonWarningMessageWhenTheEventComplete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.BorderRadius = 5;
-            this.GGButtonWarningMessageWhenTheEventComplete.BorderThickness = 1;
-            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.GGButtonWarningMessageWhenTheEventComplete.Enabled = false;
-            this.GGButtonWarningMessageWhenTheEventComplete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GGButtonWarningMessageWhenTheEventComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
-            this.GGButtonWarningMessageWhenTheEventComplete.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonWarningMessageWhenTheEventComplete.Image")));
-            this.GGButtonWarningMessageWhenTheEventComplete.Location = new System.Drawing.Point(533, 513);
-            this.GGButtonWarningMessageWhenTheEventComplete.Name = "GGButtonWarningMessageWhenTheEventComplete";
-            this.GGButtonWarningMessageWhenTheEventComplete.Size = new System.Drawing.Size(419, 42);
-            this.GGButtonWarningMessageWhenTheEventComplete.TabIndex = 0;
-            this.GGButtonWarningMessageWhenTheEventComplete.Text = "This event has been completed and can no longer be modified.";
-            this.GGButtonWarningMessageWhenTheEventComplete.TextOffset = new System.Drawing.Point(5, 0);
-            this.GGButtonWarningMessageWhenTheEventComplete.Visible = false;
-            // 
             // GDateTimePickerStartDateTimeEvent
             // 
             this.GDateTimePickerStartDateTimeEvent.Animated = true;
@@ -237,7 +186,7 @@
             this.GDateTimePickerStartDateTimeEvent.CustomFormat = "dd/MM/yyyy";
             this.GDateTimePickerStartDateTimeEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GDateTimePickerStartDateTimeEvent.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold);
-            this.GDateTimePickerStartDateTimeEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
+            this.GDateTimePickerStartDateTimeEvent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GDateTimePickerStartDateTimeEvent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.GDateTimePickerStartDateTimeEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.GDateTimePickerStartDateTimeEvent.Location = new System.Drawing.Point(533, 77);
@@ -247,26 +196,6 @@
             this.GDateTimePickerStartDateTimeEvent.Size = new System.Drawing.Size(419, 42);
             this.GDateTimePickerStartDateTimeEvent.TabIndex = 5;
             this.GDateTimePickerStartDateTimeEvent.Value = new System.DateTime(2026, 2, 10, 0, 14, 58, 732);
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.AnimatedGIF = true;
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.guna2Button1.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(453, 487);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(39, 40);
-            this.guna2Button1.TabIndex = 4;
             // 
             // GComboBoxEndZone
             // 
@@ -557,26 +486,7 @@
             this.GTextBoxDiscripation.SelectedText = "";
             this.GTextBoxDiscripation.Size = new System.Drawing.Size(465, 106);
             this.GTextBoxDiscripation.TabIndex = 2;
-            // 
-            // GTextBoxDuration
-            // 
-            this.GTextBoxDuration.Animated = true;
-            this.GTextBoxDuration.BorderRadius = 5;
-            this.GTextBoxDuration.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxDuration.DefaultText = "";
-            this.GTextBoxDuration.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxDuration.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxDuration.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxDuration.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxDuration.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxDuration.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GTextBoxDuration.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxDuration.Location = new System.Drawing.Point(527, 347);
-            this.GTextBoxDuration.Name = "GTextBoxDuration";
-            this.GTextBoxDuration.PlaceholderText = "Duration....";
-            this.GTextBoxDuration.SelectedText = "";
-            this.GTextBoxDuration.Size = new System.Drawing.Size(177, 40);
-            this.GTextBoxDuration.TabIndex = 2;
+            this.GTextBoxDiscripation.TextOffset = new System.Drawing.Point(0, -20);
             // 
             // GTextBoxStreet
             // 
@@ -591,7 +501,7 @@
             this.GTextBoxStreet.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GTextBoxStreet.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GTextBoxStreet.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxStreet.Location = new System.Drawing.Point(195, 487);
+            this.GTextBoxStreet.Location = new System.Drawing.Point(197, 487);
             this.GTextBoxStreet.Name = "GTextBoxStreet";
             this.GTextBoxStreet.PlaceholderText = "Enter venue Street";
             this.GTextBoxStreet.SelectedText = "";
@@ -621,11 +531,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
             this.label6.Location = new System.Drawing.Point(22, 415);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 26);
+            this.label6.Size = new System.Drawing.Size(98, 28);
             this.label6.TabIndex = 1;
             this.label6.Text = "Location";
             // 
@@ -633,8 +543,8 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(529, 419);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.label9.Location = new System.Drawing.Point(529, 324);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 20);
             this.label9.TabIndex = 1;
@@ -644,8 +554,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(204, 459);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.label11.Location = new System.Drawing.Point(206, 459);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 20);
             this.label11.TabIndex = 1;
@@ -655,7 +565,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label10.Location = new System.Drawing.Point(33, 459);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 20);
@@ -666,23 +576,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label5.Location = new System.Drawing.Point(23, 324);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Category";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(523, 320);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Duration";
             // 
             // label4
             // 
@@ -699,7 +598,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label7.Location = new System.Drawing.Point(523, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(156, 20);
@@ -710,40 +609,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label3.Location = new System.Drawing.Point(23, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Event Name ";
-            // 
-            // GGButtonManageTheTicketsEvents
-            // 
-            this.GGButtonManageTheTicketsEvents.Animated = true;
-            this.GGButtonManageTheTicketsEvents.AnimatedGIF = true;
-            this.GGButtonManageTheTicketsEvents.BorderRadius = 6;
-            this.GGButtonManageTheTicketsEvents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GGButtonManageTheTicketsEvents.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
-            this.GGButtonManageTheTicketsEvents.DisabledState.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.GGButtonManageTheTicketsEvents.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.GGButtonManageTheTicketsEvents.Enabled = false;
-            this.GGButtonManageTheTicketsEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.GGButtonManageTheTicketsEvents.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.GGButtonManageTheTicketsEvents.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GGButtonManageTheTicketsEvents.ForeColor = System.Drawing.Color.White;
-            this.GGButtonManageTheTicketsEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GGButtonManageTheTicketsEvents.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GGButtonManageTheTicketsEvents.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonManageTheTicketsEvents.Image")));
-            this.GGButtonManageTheTicketsEvents.Location = new System.Drawing.Point(976, 22);
-            this.GGButtonManageTheTicketsEvents.Name = "GGButtonManageTheTicketsEvents";
-            this.GGButtonManageTheTicketsEvents.PressedColor = System.Drawing.Color.White;
-            this.GGButtonManageTheTicketsEvents.Size = new System.Drawing.Size(212, 43);
-            this.GGButtonManageTheTicketsEvents.TabIndex = 7;
-            this.GGButtonManageTheTicketsEvents.Text = "Manage/Add Ticket Events";
-            this.GGButtonManageTheTicketsEvents.Click += new System.EventHandler(this.GGButtonManageTheTicketsEvents_Click);
             // 
             // guna2GradientPanel2
             // 
@@ -763,6 +634,58 @@
             this.guna2GradientPanel2.Size = new System.Drawing.Size(1403, 83);
             this.guna2GradientPanel2.TabIndex = 3;
             // 
+            // GButtonCansel
+            // 
+            this.GButtonCansel.Animated = true;
+            this.GButtonCansel.AnimatedGIF = true;
+            this.GButtonCansel.BorderColor = System.Drawing.Color.Transparent;
+            this.GButtonCansel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GButtonCansel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCansel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCansel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonCansel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonCansel.FillColor = System.Drawing.Color.White;
+            this.GButtonCansel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonCansel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GButtonCansel.HoverState.FillColor = System.Drawing.Color.White;
+            this.GButtonCansel.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.GButtonCansel.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GButtonCansel.Location = new System.Drawing.Point(847, 24);
+            this.GButtonCansel.Name = "GButtonCansel";
+            this.GButtonCansel.PressedColor = System.Drawing.Color.White;
+            this.GButtonCansel.Size = new System.Drawing.Size(104, 42);
+            this.GButtonCansel.TabIndex = 1;
+            this.GButtonCansel.Text = "Cancel";
+            this.GButtonCansel.Click += new System.EventHandler(this.GButtonCansel_Click);
+            // 
+            // GGButtonManageTheTicketsEvents
+            // 
+            this.GGButtonManageTheTicketsEvents.Animated = true;
+            this.GGButtonManageTheTicketsEvents.AnimatedGIF = true;
+            this.GGButtonManageTheTicketsEvents.BorderRadius = 6;
+            this.GGButtonManageTheTicketsEvents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GGButtonManageTheTicketsEvents.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(213)))), ((int)(((byte)(219)))));
+            this.GGButtonManageTheTicketsEvents.DisabledState.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.GGButtonManageTheTicketsEvents.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.GGButtonManageTheTicketsEvents.Enabled = false;
+            this.GGButtonManageTheTicketsEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonManageTheTicketsEvents.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonManageTheTicketsEvents.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonManageTheTicketsEvents.ForeColor = System.Drawing.Color.White;
+            this.GGButtonManageTheTicketsEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonManageTheTicketsEvents.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonManageTheTicketsEvents.Image = global::EETMS_Presentation.Properties.Resources.Manage_White_Icon_EETMS;
+            this.GGButtonManageTheTicketsEvents.Location = new System.Drawing.Point(976, 24);
+            this.GGButtonManageTheTicketsEvents.Name = "GGButtonManageTheTicketsEvents";
+            this.GGButtonManageTheTicketsEvents.PressedColor = System.Drawing.Color.White;
+            this.GGButtonManageTheTicketsEvents.Size = new System.Drawing.Size(212, 43);
+            this.GGButtonManageTheTicketsEvents.TabIndex = 7;
+            this.GGButtonManageTheTicketsEvents.Text = "Manage/Add Ticket Events";
+            this.GGButtonManageTheTicketsEvents.Click += new System.EventHandler(this.GGButtonManageTheTicketsEvents_Click);
+            // 
             // GButtonCreateEvent
             // 
             this.GButtonCreateEvent.Animated = true;
@@ -780,38 +703,15 @@
             this.GButtonCreateEvent.ForeColor = System.Drawing.Color.White;
             this.GButtonCreateEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonCreateEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GButtonCreateEvent.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCreateEvent.Image")));
-            this.GButtonCreateEvent.Location = new System.Drawing.Point(1212, 24);
+            this.GButtonCreateEvent.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
+            this.GButtonCreateEvent.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GButtonCreateEvent.Location = new System.Drawing.Point(1194, 24);
             this.GButtonCreateEvent.Name = "GButtonCreateEvent";
             this.GButtonCreateEvent.PressedColor = System.Drawing.Color.White;
-            this.GButtonCreateEvent.Size = new System.Drawing.Size(164, 41);
+            this.GButtonCreateEvent.Size = new System.Drawing.Size(182, 41);
             this.GButtonCreateEvent.TabIndex = 2;
             this.GButtonCreateEvent.Text = "Create Event";
             this.GButtonCreateEvent.Click += new System.EventHandler(this.GButtonCreateEvent_Click);
-            // 
-            // GButtonCansel
-            // 
-            this.GButtonCansel.Animated = true;
-            this.GButtonCansel.AnimatedGIF = true;
-            this.GButtonCansel.BorderColor = System.Drawing.Color.Transparent;
-            this.GButtonCansel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GButtonCansel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonCansel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonCansel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonCansel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonCansel.FillColor = System.Drawing.Color.White;
-            this.GButtonCansel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonCansel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.GButtonCansel.HoverState.FillColor = System.Drawing.Color.White;
-            this.GButtonCansel.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.GButtonCansel.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GButtonCansel.Location = new System.Drawing.Point(850, 24);
-            this.GButtonCansel.Name = "GButtonCansel";
-            this.GButtonCansel.PressedColor = System.Drawing.Color.White;
-            this.GButtonCansel.Size = new System.Drawing.Size(104, 42);
-            this.GButtonCansel.TabIndex = 1;
-            this.GButtonCansel.Text = "Cansel";
-            this.GButtonCansel.Click += new System.EventHandler(this.GButtonCansel_Click);
             // 
             // GGButtonWarningDisable
             // 
@@ -822,18 +722,85 @@
             this.GGButtonWarningDisable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
             this.GGButtonWarningDisable.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
             this.GGButtonWarningDisable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
-            this.GGButtonWarningDisable.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.GGButtonWarningDisable.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.GGButtonWarningDisable.Enabled = false;
             this.GGButtonWarningDisable.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
             this.GGButtonWarningDisable.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
             this.GGButtonWarningDisable.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GGButtonWarningDisable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
-            this.GGButtonWarningDisable.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonWarningDisable.Image")));
+            this.GGButtonWarningDisable.Image = global::EETMS_Presentation.Properties.Resources.Warning_Brown_icon_EETMS;
             this.GGButtonWarningDisable.Location = new System.Drawing.Point(90, 22);
             this.GGButtonWarningDisable.Name = "GGButtonWarningDisable";
             this.GGButtonWarningDisable.Size = new System.Drawing.Size(313, 42);
             this.GGButtonWarningDisable.TabIndex = 0;
             this.GGButtonWarningDisable.Text = "Events with sold tickets cannot be deleted.";
+            // 
+            // GGButtonWarningMessageWhenTheEventComplete
+            // 
+            this.GGButtonWarningMessageWhenTheEventComplete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.BorderRadius = 5;
+            this.GGButtonWarningMessageWhenTheEventComplete.BorderThickness = 1;
+            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(186)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.GGButtonWarningMessageWhenTheEventComplete.Enabled = false;
+            this.GGButtonWarningMessageWhenTheEventComplete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(235)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonWarningMessageWhenTheEventComplete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(68)))), ((int)(((byte)(19)))));
+            this.GGButtonWarningMessageWhenTheEventComplete.Image = global::EETMS_Presentation.Properties.Resources.Warning_Brown_icon_EETMS;
+            this.GGButtonWarningMessageWhenTheEventComplete.Location = new System.Drawing.Point(527, 418);
+            this.GGButtonWarningMessageWhenTheEventComplete.Name = "GGButtonWarningMessageWhenTheEventComplete";
+            this.GGButtonWarningMessageWhenTheEventComplete.Size = new System.Drawing.Size(419, 42);
+            this.GGButtonWarningMessageWhenTheEventComplete.TabIndex = 0;
+            this.GGButtonWarningMessageWhenTheEventComplete.Text = "This event has been completed and can no longer be modified.";
+            this.GGButtonWarningMessageWhenTheEventComplete.TextOffset = new System.Drawing.Point(5, 0);
+            this.GGButtonWarningMessageWhenTheEventComplete.Visible = false;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.AnimatedGIF = true;
+            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.guna2Button1.HoverState.Image = global::EETMS_Presentation.Properties.Resources.Map_icon_EETMS;
+            this.guna2Button1.Image = global::EETMS_Presentation.Properties.Resources.Map_icon_EETMS;
+            this.guna2Button1.Location = new System.Drawing.Point(466, 487);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(39, 40);
+            this.guna2Button1.TabIndex = 4;
+            // 
+            // GButtonBackTheEvents
+            // 
+            this.GButtonBackTheEvents.BorderColor = System.Drawing.Color.Transparent;
+            this.GButtonBackTheEvents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GButtonBackTheEvents.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonBackTheEvents.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonBackTheEvents.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonBackTheEvents.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonBackTheEvents.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.GButtonBackTheEvents.Font = new System.Drawing.Font("Segoe UI Variable Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonBackTheEvents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GButtonBackTheEvents.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.GButtonBackTheEvents.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GButtonBackTheEvents.Image = global::EETMS_Presentation.Properties.Resources.Arrow_Left_Icon_EETMS;
+            this.GButtonBackTheEvents.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GButtonBackTheEvents.Location = new System.Drawing.Point(70, 81);
+            this.GButtonBackTheEvents.Name = "GButtonBackTheEvents";
+            this.GButtonBackTheEvents.PressedColor = System.Drawing.Color.White;
+            this.GButtonBackTheEvents.Size = new System.Drawing.Size(148, 25);
+            this.GButtonBackTheEvents.TabIndex = 0;
+            this.GButtonBackTheEvents.Text = "Back to Events";
+            this.GButtonBackTheEvents.Click += new System.EventHandler(this.GButtonBackTheEvents_Click);
             // 
             // UC_AddAndEditInformationEvent
             // 
@@ -874,9 +841,7 @@
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2NumericUpDown GNumericUpDownMaxCapacity;
         private Guna.UI2.WinForms.Guna2DateTimePicker GDateTimePickerStartDateTimeEvent;
-        private Guna.UI2.WinForms.Guna2TextBox GTextBoxDuration;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private Guna.UI2.WinForms.Guna2GradientButton GGButtonWarningDisable;

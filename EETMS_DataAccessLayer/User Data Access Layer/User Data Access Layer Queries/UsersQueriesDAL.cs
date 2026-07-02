@@ -1,9 +1,10 @@
 ﻿
-using System.Configuration;
-using System;
-using System.Data.SqlClient;
-using System.Data;
 using EETMS_DTOs;
+using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Net.Mail;
 
 namespace EETMS_DataAccessLayer
 {
@@ -270,7 +271,8 @@ namespace EETMS_DataAccessLayer
                                         					US.ActiveAccount ,
                                         					RO.RoleName ,
                                         					US.LastLoginAccountDate,
-                                                            DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay]
+                                                            DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay],
+                                                            US.NumberAttempts
 
 
                                          FROM Users US 
@@ -410,6 +412,55 @@ namespace EETMS_DataAccessLayer
 
 
 
+                    }
+                }
+
+
+            }
+            catch (Exception Ex)
+            {
+
+            }
+
+            return FinialResult > 0;
+        }
+
+        public static bool IsEmailExists(string Email)
+        {
+
+            int FinialResult = -1;
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(_ConneactionString))
+                {
+
+                    string Query = @"
+
+                                        SELECT 1 AS [Found Email] 
+                                        FROM Users 
+                                        WHERE (
+                                                  EmailUser = @EmailAddress
+
+                                                ) ; 
+                                                    
+
+
+                                     ";
+
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+
+                        command.Parameters.Add("@EmailAddress", SqlDbType.NVarChar, 400).Value = Email;
+
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != null && int.TryParse(result.ToString(), out int Result))
+                            FinialResult = Result;
                     }
                 }
 
@@ -580,7 +631,9 @@ namespace EETMS_DataAccessLayer
                                         					US.ActiveAccount ,
                                         					RO.RoleName ,
                                         					US.LastLoginAccountDate,
-                                                            DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay]
+                                                            DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay],
+                                                            US.NumberAttempts
+                    
 
 
                                          FROM Users US 
@@ -685,7 +738,8 @@ namespace EETMS_DataAccessLayer
                                             US.ActiveAccount ,
                                             RO.RoleName ,
                                             US.LastLoginAccountDate,
-                                            DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay]
+                                            DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay],
+                                            US.NumberAttempts
                                     
                                     FROM Users US
                                     INNER JOIN Roles RO 
@@ -748,8 +802,9 @@ namespace EETMS_DataAccessLayer
                                                  US.ActiveAccount ,
                                                  RO.RoleName ,
                                                  US.LastLoginAccountDate,
-                                                 DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay]
-   
+                                                 DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay],
+                                                 US.NumberAttempts
+
                                      FROM Users US
                                      INNER JOIN Roles RO 
                                      ON RO.RoleID = US.RoleID 
@@ -802,7 +857,8 @@ namespace EETMS_DataAccessLayer
                                                  US.ActiveAccount ,
                                                  RO.RoleName ,
                                                  US.LastLoginAccountDate,
-                                                 DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay]
+                                                 DATEDIFF ( DAY , US.LastLoginAccountDate,  GETDATE () ) AS [LastLoginForDay],
+                                                 US.NumberAttempts
    
                                      FROM Users US
                                      INNER JOIN Roles RO 

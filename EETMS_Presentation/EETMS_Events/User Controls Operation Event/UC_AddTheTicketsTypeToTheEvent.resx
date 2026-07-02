@@ -118,60 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="GButtonAddTicketAndSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAYFJREFUWEft
-        lsFtwzAMRXPsCD32mLE6QjfpGBmh4/TYYyeoGchWKPJ/UqZbFMghDwiSUP9T35QT+HR6cO+IyEUMi/2i
-        +CppRuEJ++/ielDnjEyo9XoQnAD3XrhEBIqtVAtiDCVISgViPwg60jMJSlO8fh5k6IYLNRVGn5Q8iFXd
-        YqCmgu2TgR7Fiv4coh8lnVwvoEdBfTOgpgK2cRwOMRNPwB6Oegg3xLdfvBQ6jpXlcIi0UfA27gMyeSHu
-        rZAhwy7vSDNwb2VIskkEd/tR6pPAGOHVn8F7NgqcPmG9jtgQVp/R2xCRFxSurC18KvQqVmR9CPosqI1b
-        TH4dPHH+LCIf6LO0dS+PQZ+CwhsQ4gt9FhH5tGKaROk4pmwd0GcZKrI50KcMbfaH01nkG72NVt+WY2xP
-        9CpkIKj6LiKv+FhoLyYD91bW1e6rNFrpl7ejInBvZUh2jsPyDyH803YFSuvjJOGmP/N2c02YLipTVfVB
-        KZxINnYqdIL6j8gF93pwd1wBsUo96dqwhnUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="GTextBoxAvailableQuantity.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAixJREFUWEfV
-        li1v5DAQhgsPHjxYeD/hYFkPHjxY1p9QWFi40sbWQkuZnBYWtRlvwcLCwoOFhYUHcxrvJpl9Eye2umrV
-        Rxrl4x1PxvbY8cnJZ8cQN6bkRq6oZROCtRaC+sa57Rf0Q3Q71LLZBfJ9IsSNJX5CP8R2/v5YSeiRCEnM
-        Btb+qL0JQ/yqktqirslNQne2cP476h2rdX2qRwV1TR90fjq6zu2SfkV9gE7CVLxAvUX3DDWN9Fr7Ltzt
-        V/QZYIl/pn4ghXbK9h17Rj2KGrrGkr9GXZBlbIiv8L3G0uZSJ4H6JBK8bRhbKTpR1Fr0iFriW9Rn0QGW
-        ZX2BetgnJpIwxHW/l4z7zGJKv9aJoG4rdqGHFa9QE/QGGJvSJLokSm4Kqs9Qj2GIX3QSqGdhafOoRuOf
-        TEtri8g9FqMp698YN4v9CugDqjpINYyZjXV33zBoa7ro9L22pI1pDgwa+9ggoZL/HiUBKUT9IdTfBehp
-        /kbzVnRByvAuXV/9cxZWSvC/O3iP35hldFWQj9bEwNThSK4F+fnf9xjyxxsE72y/EcWWK7wvUs4QMcLG
-        Q1zLKcvQZluE6870fbAKntV7S/79a+qoyJZrKpkWv0ZtiqW7/2GIn3LbDbClv8E5Rp8xVmV9cVA3ie1G
-        GRQb+elT8p5hOynM+1/olwQuM7GVq0/RDwm+oW0/EsWfh3P0S+JgOjKGNdQRJIE+Wcgwys9ITlGoTREK
-        U9p9xHb/afkP5cSixh9ZsVgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="GTextBoxPriceTheTicketType.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAV5JREFUWEft
-        lz9OwzAUxjt25AgdO3IERkY2jsARGOkNImFbFZNFHNQxE80zS0eO0JGxR+gIeglxXj+CGGpbFepPeqrV
-        L/b7/D+ZTM78F4x9vewDtWxoR599oJaNkzNh7WaKejIK28xkcl3yrw/lpW1mWCcqPwyIMIfla6wbjdDj
-        IVmtHd1r51doCOtGwS42U5kIdUZXtB+M+AfUj0bZ5iqYqGiHOsPTlXQqlPVzOfeoZ0NOhy5pi3oWDhdg
-        WKS77Mf2Y0kfMCJD2VGDzydDufXNLybayDoyC1tfcO/RBAdvaXw+Oca93YGR0W2cnGLVHetJt7Gp/O1f
-        jcvRQO1ouoZ920v15Oeo96Q18UxbOdRj7w98XyQ1wUllgu/YmxeqlfPvw3/dIWYqWmIbUeDLqU00cjag
-        OawblaI7G8KV3fc+vNRU6wLrJEUaGVsjWZCvdKhlQ44Eatk4iS+wM7H5AsMx3xspqSelAAAAAElFTkSu
-        QmCC
-</value>
-  </data>
   <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAetJREFUWEft
-        VztuAjEQpdwyR8gxUqZLyhyJG6BkIa2ldaQo1XasUQqOkZIjUFISedbsjufjD7Q86WlXxm9+HnvNYnHH
-        FTBm37R297227uy5CU/CYWX6B6q9GR9m+yQ4S7Nz59Zu36itq7C27jhnvJsc+KdSCTQO80/UZjF8Sanx
-        UuLgLu8rMzxSH0msjOEBQPahEsC4KngOq1x4rwokFteTVQIFSn2J8D1AjSaJK1HGdI+0dngeJ+KSJpx1
-        7tD+/L74J8s+oX237pX6nsCcCMTrXavFxNoJfjfQ9csR6+lvOS6lA21jXQ8TtCDY7oCxPzjIpOXQ7ABh
-        uXsag5wJPpQyRvF8pmUce47GIAeBHQTKRjXqW70yCJ1Mn6wWJ9bPRiZqGcRl1/VlxHrRiFb2/BbVEghM
-        nZ5sssj4EEvqhaWhDY71gpFMNoIRVjkWBLeJ9YC1HcYbExML1HpC2KIJ7rEeYMyhYdkE4j64fjniSqhX
-        QM0xcxCItVoCGrE2QvIuyTKrCAK0czL+a421DNJ9QnYQ35rYHCHowCP1KYIKmQOg8L3IUDyqNfj/F7Jj
-        LSBMPTi1GTUszb6JjDKGJSDrrbE6AIypR1hmmmM2XtYDOXzSXVMYkN9t1NbNgF75cubihJ0lHYz1fh7V
-        3lGCf3Vuf1CAf1STAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="guna2GradientButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAetJREFUWEft
         VztuAjEQpdwyR8gxUqZLyhyJG6BkIa2ldaQo1XasUQqOkZIjUFISedbsjufjD7Q86WlXxm9+HnvNYnHH

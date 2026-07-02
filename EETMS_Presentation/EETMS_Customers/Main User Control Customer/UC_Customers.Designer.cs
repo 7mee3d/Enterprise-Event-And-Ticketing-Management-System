@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Customers));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelHeaderEvents = new System.Windows.Forms.Panel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lblTotalCustomer = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.GTextBoxSearchTheCustomer = new Guna.UI2.WinForms.Guna2TextBox();
-            this.GGButtonAddNewCustomer = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.GGButtonAddNewCustomer = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GTextBoxSearchTheCustomer = new Guna.UI2.WinForms.Guna2TextBox();
             this.GDataGridViewCustomerInformation = new Guna.UI2.WinForms.Guna2DataGridView();
             this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,7 +101,7 @@
             this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
+            this.guna2GradientButton2.Image = global::EETMS_Presentation.Properties.Resources.Total_users_Icon_EETMS;
             this.guna2GradientButton2.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2GradientButton2.Location = new System.Drawing.Point(213, 45);
             this.guna2GradientButton2.Name = "guna2GradientButton2";
@@ -124,67 +124,19 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Segoe UI Variable Small", 14.25F);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label4.Location = new System.Drawing.Point(23, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 26);
             this.label4.TabIndex = 1;
             this.label4.Text = "Total Customers";
             // 
-            // GTextBoxSearchTheCustomer
-            // 
-            this.GTextBoxSearchTheCustomer.BorderRadius = 8;
-            this.GTextBoxSearchTheCustomer.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxSearchTheCustomer.DefaultText = "";
-            this.GTextBoxSearchTheCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxSearchTheCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxSearchTheCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheCustomer.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxSearchTheCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheCustomer.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheCustomer.IconLeft")));
-            this.GTextBoxSearchTheCustomer.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxSearchTheCustomer.Location = new System.Drawing.Point(646, 33);
-            this.GTextBoxSearchTheCustomer.Name = "GTextBoxSearchTheCustomer";
-            this.GTextBoxSearchTheCustomer.PlaceholderText = "Search by name, National ID...";
-            this.GTextBoxSearchTheCustomer.SelectedText = "";
-            this.GTextBoxSearchTheCustomer.Size = new System.Drawing.Size(496, 44);
-            this.GTextBoxSearchTheCustomer.TabIndex = 3;
-            this.GTextBoxSearchTheCustomer.TextChanged += new System.EventHandler(this.GTextBoxSearchTheEvent_TextChanged);
-            // 
-            // GGButtonAddNewCustomer
-            // 
-            this.GGButtonAddNewCustomer.Animated = true;
-            this.GGButtonAddNewCustomer.AnimatedGIF = true;
-            this.GGButtonAddNewCustomer.BorderRadius = 5;
-            this.GGButtonAddNewCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonAddNewCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonAddNewCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonAddNewCustomer.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonAddNewCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonAddNewCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.GGButtonAddNewCustomer.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.GGButtonAddNewCustomer.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GGButtonAddNewCustomer.ForeColor = System.Drawing.Color.White;
-            this.GGButtonAddNewCustomer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GGButtonAddNewCustomer.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GGButtonAddNewCustomer.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonAddNewCustomer.Image")));
-            this.GGButtonAddNewCustomer.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.GGButtonAddNewCustomer.Location = new System.Drawing.Point(1148, 33);
-            this.GGButtonAddNewCustomer.Name = "GGButtonAddNewCustomer";
-            this.GGButtonAddNewCustomer.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
-            this.GGButtonAddNewCustomer.Size = new System.Drawing.Size(192, 44);
-            this.GGButtonAddNewCustomer.TabIndex = 2;
-            this.GGButtonAddNewCustomer.Text = "Add New Customer";
-            this.GGButtonAddNewCustomer.Click += new System.EventHandler(this.GGButtonAddNewCustomer_Click_1);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            this.label2.Location = new System.Drawing.Point(10, 74);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.label2.Location = new System.Drawing.Point(10, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(357, 17);
             this.label2.TabIndex = 0;
@@ -212,30 +164,78 @@
             this.GGPanelDataGridViewEvents.Controls.Add(this.GDataGridViewCustomerInformation);
             this.GGPanelDataGridViewEvents.Controls.Add(this.label3);
             this.GGPanelDataGridViewEvents.Controls.Add(this.label2);
-            this.GGPanelDataGridViewEvents.Location = new System.Drawing.Point(27, 239);
+            this.GGPanelDataGridViewEvents.Location = new System.Drawing.Point(27, 225);
             this.GGPanelDataGridViewEvents.Name = "GGPanelDataGridViewEvents";
-            this.GGPanelDataGridViewEvents.Size = new System.Drawing.Size(1361, 647);
+            this.GGPanelDataGridViewEvents.Size = new System.Drawing.Size(1361, 661);
             this.GGPanelDataGridViewEvents.TabIndex = 7;
+            // 
+            // GGButtonAddNewCustomer
+            // 
+            this.GGButtonAddNewCustomer.Animated = true;
+            this.GGButtonAddNewCustomer.AnimatedGIF = true;
+            this.GGButtonAddNewCustomer.BorderRadius = 5;
+            this.GGButtonAddNewCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonAddNewCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonAddNewCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonAddNewCustomer.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonAddNewCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GGButtonAddNewCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonAddNewCustomer.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonAddNewCustomer.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonAddNewCustomer.ForeColor = System.Drawing.Color.White;
+            this.GGButtonAddNewCustomer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonAddNewCustomer.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonAddNewCustomer.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
+            this.GGButtonAddNewCustomer.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.GGButtonAddNewCustomer.Location = new System.Drawing.Point(1120, 33);
+            this.GGButtonAddNewCustomer.Name = "GGButtonAddNewCustomer";
+            this.GGButtonAddNewCustomer.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
+            this.GGButtonAddNewCustomer.Size = new System.Drawing.Size(220, 44);
+            this.GGButtonAddNewCustomer.TabIndex = 2;
+            this.GGButtonAddNewCustomer.Text = "Add New Customer";
+            this.GGButtonAddNewCustomer.Click += new System.EventHandler(this.GGButtonAddNewCustomer_Click_1);
+            // 
+            // GTextBoxSearchTheCustomer
+            // 
+            this.GTextBoxSearchTheCustomer.BorderRadius = 8;
+            this.GTextBoxSearchTheCustomer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxSearchTheCustomer.DefaultText = "";
+            this.GTextBoxSearchTheCustomer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxSearchTheCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxSearchTheCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheCustomer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheCustomer.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxSearchTheCustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheCustomer.IconLeft = global::EETMS_Presentation.Properties.Resources.Search_Icon_EETMS;
+            this.GTextBoxSearchTheCustomer.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxSearchTheCustomer.Location = new System.Drawing.Point(618, 33);
+            this.GTextBoxSearchTheCustomer.Name = "GTextBoxSearchTheCustomer";
+            this.GTextBoxSearchTheCustomer.PlaceholderText = "Search by name, National ID...";
+            this.GTextBoxSearchTheCustomer.SelectedText = "";
+            this.GTextBoxSearchTheCustomer.Size = new System.Drawing.Size(496, 44);
+            this.GTextBoxSearchTheCustomer.TabIndex = 3;
+            this.GTextBoxSearchTheCustomer.TextChanged += new System.EventHandler(this.GTextBoxSearchTheEvent_TextChanged);
             // 
             // GDataGridViewCustomerInformation
             // 
             this.GDataGridViewCustomerInformation.AllowUserToAddRows = false;
             this.GDataGridViewCustomerInformation.AllowUserToDeleteRows = false;
             this.GDataGridViewCustomerInformation.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.GDataGridViewCustomerInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewCustomerInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.GDataGridViewCustomerInformation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewCustomerInformation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GDataGridViewCustomerInformation.ColumnHeadersHeight = 64;
             this.GDataGridViewCustomerInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GDataGridViewCustomerInformation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -245,14 +245,14 @@
             this.PhoneCustomer,
             this.NationalID});
             this.GDataGridViewCustomerInformation.ContextMenuStrip = this.contextMenuStripOperationCustomers;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GDataGridViewCustomerInformation.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GDataGridViewCustomerInformation.DefaultCellStyle = dataGridViewCellStyle7;
             this.GDataGridViewCustomerInformation.GridColor = System.Drawing.Color.White;
             this.GDataGridViewCustomerInformation.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.GDataGridViewCustomerInformation.Location = new System.Drawing.Point(3, 117);
@@ -260,17 +260,17 @@
             this.GDataGridViewCustomerInformation.Name = "GDataGridViewCustomerInformation";
             this.GDataGridViewCustomerInformation.ReadOnly = true;
             this.GDataGridViewCustomerInformation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewCustomerInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewCustomerInformation.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.GDataGridViewCustomerInformation.RowHeadersVisible = false;
             this.GDataGridViewCustomerInformation.RowTemplate.Height = 67;
-            this.GDataGridViewCustomerInformation.Size = new System.Drawing.Size(1355, 527);
+            this.GDataGridViewCustomerInformation.Size = new System.Drawing.Size(1355, 541);
             this.GDataGridViewCustomerInformation.TabIndex = 0;
             this.GDataGridViewCustomerInformation.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.GDataGridViewCustomerInformation.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -337,8 +337,8 @@
             // UpdateInformationCustomerToolStripMenuItem
             // 
             this.UpdateInformationCustomerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
-            this.UpdateInformationCustomerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.UpdateInformationCustomerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("UpdateInformationCustomerToolStripMenuItem.Image")));
+            this.UpdateInformationCustomerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.UpdateInformationCustomerToolStripMenuItem.Image = global::EETMS_Presentation.Properties.Resources.Edit_Customer_Icon_EETMS_32;
             this.UpdateInformationCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.UpdateInformationCustomerToolStripMenuItem.Name = "UpdateInformationCustomerToolStripMenuItem";
             this.UpdateInformationCustomerToolStripMenuItem.Size = new System.Drawing.Size(215, 38);
@@ -353,8 +353,8 @@
             // deleteCustomerToolStripMenuItem
             // 
             this.deleteCustomerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
-            this.deleteCustomerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.deleteCustomerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteCustomerToolStripMenuItem.Image")));
+            this.deleteCustomerToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.deleteCustomerToolStripMenuItem.Image = global::EETMS_Presentation.Properties.Resources.Delete_Customer_Icon_EETMS_32;
             this.deleteCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteCustomerToolStripMenuItem.Name = "deleteCustomerToolStripMenuItem";
             this.deleteCustomerToolStripMenuItem.Size = new System.Drawing.Size(215, 38);

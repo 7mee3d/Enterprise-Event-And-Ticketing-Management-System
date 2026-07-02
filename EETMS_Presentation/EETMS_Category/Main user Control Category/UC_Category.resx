@@ -118,18 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="GTextBoxCategoryDescripation.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAY9JREFUWEft
-        l01ugzAUhHOMLnuUHKFH6Q267AHAyhIVn6EhqAfLspUxBDPzsP1spG4y0ggE7+fzD1ZyOj2VUGtvv97j
-        fMV72caOH1irSFh424SfIVw1iDHfL4+CfdAovKfG23sHar4qQJpuOPvRQFOC2MaYfvzEGGN/ykAWCK1d
-        rhs9Pr+ULE0NhJMbPb5TL40EQUsjOKzhNubmfa/crHGIeQMK+wPreBC/Sdc6mSAMsd84BuH0mJEgt7HD
-        GeNIDDHPBEFsR4l1FrX99T3Ma+z1DWNIEkTYeLpOQHw2cDznKiDSx3NeY7YCgpO99+HSQB76AIh6V0Ng
-        bEyY63zITGBsTD6HP28VhLTGGBsTf9IFEGnPX8fcTIJGly0HnQfCEa60AoLXcrEWAuMVEFzMGWNjwtzF
-        /wKBeyUPwh4EISzlBNHlQNBM7O+PEufNhLAxcUo1QJirggjPgFhR6TNezc+zIEwX/O+gZjnmxqEv3fCK
-        PUVh4t6srMbfkvh+NfaKqrW3OxZIjXLXfgB37PEU6g+p5KFFLzawZAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="GTextBoxCategoryName.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAeJJREFUWEfd

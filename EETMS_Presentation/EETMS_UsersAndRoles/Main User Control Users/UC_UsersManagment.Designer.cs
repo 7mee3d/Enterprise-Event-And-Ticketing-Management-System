@@ -122,7 +122,7 @@
             this.guna2GradientButton4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton4.Image")));
+            this.guna2GradientButton4.Image = global::EETMS_Presentation.Properties.Resources.Block_Red_Icon_EETMS;
             this.guna2GradientButton4.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2GradientButton4.Location = new System.Drawing.Point(213, 45);
             this.guna2GradientButton4.Name = "guna2GradientButton4";
@@ -145,7 +145,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Small", 14.25F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label1.Location = new System.Drawing.Point(23, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 26);
@@ -184,7 +184,7 @@
             this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(252)))), ((int)(((byte)(231)))));
             this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
+            this.guna2GradientButton2.Image = global::EETMS_Presentation.Properties.Resources.Active_Users_Icon_EETMS;
             this.guna2GradientButton2.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2GradientButton2.Location = new System.Drawing.Point(213, 45);
             this.guna2GradientButton2.Name = "guna2GradientButton2";
@@ -196,7 +196,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Segoe UI Variable Small", 14.25F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label3.Location = new System.Drawing.Point(23, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 26);
@@ -246,7 +246,7 @@
             this.guna2GradientButton3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton3.Image")));
+            this.guna2GradientButton3.Image = global::EETMS_Presentation.Properties.Resources.Total_users_Icon_EETMS;
             this.guna2GradientButton3.ImageSize = new System.Drawing.Size(25, 25);
             this.guna2GradientButton3.Location = new System.Drawing.Point(213, 45);
             this.guna2GradientButton3.Name = "guna2GradientButton3";
@@ -258,7 +258,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Small", 14.25F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(118)))), ((int)(((byte)(140)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label2.Location = new System.Drawing.Point(23, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 26);
@@ -291,7 +291,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
             this.label5.Location = new System.Drawing.Point(25, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(313, 17);
@@ -384,6 +384,7 @@
             this.GGButtonFilter.HoverState.FillColor2 = System.Drawing.Color.White;
             this.GGButtonFilter.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
             this.GGButtonFilter.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.GGButtonFilter.Image = global::EETMS_Presentation.Properties.Resources.Filter_Icon_EETMS;
             this.GGButtonFilter.ImageOffset = new System.Drawing.Point(-5, 0);
             this.GGButtonFilter.Location = new System.Drawing.Point(491, 30);
             this.GGButtonFilter.Name = "GGButtonFilter";
@@ -409,7 +410,7 @@
             this.GGButtonCreateNewUser.ForeColor = System.Drawing.Color.White;
             this.GGButtonCreateNewUser.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GGButtonCreateNewUser.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GGButtonCreateNewUser.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonCreateNewUser.Image")));
+            this.GGButtonCreateNewUser.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
             this.GGButtonCreateNewUser.ImageOffset = new System.Drawing.Point(-5, 0);
             this.GGButtonCreateNewUser.Location = new System.Drawing.Point(1119, 30);
             this.GGButtonCreateNewUser.Name = "GGButtonCreateNewUser";
@@ -432,7 +433,7 @@
             this.GTextBoxSearchTheUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GTextBoxSearchTheUser.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GTextBoxSearchTheUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheUser.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheUser.IconLeft")));
+            this.GTextBoxSearchTheUser.IconLeft = global::EETMS_Presentation.Properties.Resources.Search_Icon_EETMS;
             this.GTextBoxSearchTheUser.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.GTextBoxSearchTheUser.Location = new System.Drawing.Point(17, 30);
             this.GTextBoxSearchTheUser.Name = "GTextBoxSearchTheUser";
@@ -586,7 +587,7 @@
             // 
             this.editEventToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editEventToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.editEventToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editEventToolStripMenuItem.Image")));
+            this.editEventToolStripMenuItem.Image = global::EETMS_Presentation.Properties.Resources.Edit_User_Icon_EETMS_32;
             this.editEventToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editEventToolStripMenuItem.Name = "editEventToolStripMenuItem";
             this.editEventToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
@@ -602,7 +603,7 @@
             // 
             this.deleteEventToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
             this.deleteEventToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.deleteEventToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteEventToolStripMenuItem1.Image")));
+            this.deleteEventToolStripMenuItem1.Image = global::EETMS_Presentation.Properties.Resources.Delete_User_Icon_EETMS_32;
             this.deleteEventToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteEventToolStripMenuItem1.Name = "deleteEventToolStripMenuItem1";
             this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(304, 38);
@@ -618,7 +619,7 @@
             // 
             this.ChangeUserActivationStatusToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
             this.ChangeUserActivationStatusToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.ChangeUserActivationStatusToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ChangeUserActivationStatusToolStripMenuItem.Image")));
+            this.ChangeUserActivationStatusToolStripMenuItem.Image = global::EETMS_Presentation.Properties.Resources.Active_Unactive_Icon_EETMS_321;
             this.ChangeUserActivationStatusToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ChangeUserActivationStatusToolStripMenuItem.Name = "ChangeUserActivationStatusToolStripMenuItem";
             this.ChangeUserActivationStatusToolStripMenuItem.Size = new System.Drawing.Size(304, 38);

@@ -111,5 +111,9 @@ namespace EETMS_Presentation
         private void GControlBoxExit_Click(object sender, EventArgs e)
            => Application.Exit();
 
+        private void frmLoginEETMS_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

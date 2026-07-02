@@ -121,8 +121,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             string TextMessageDialog = clsEETMS_Constants.kEMPTY_STRING;
 
 
-            if (!string.IsNullOrEmpty(GTextBoxFullName.Text))
-                _InformationUser.UserFullName = GTextBoxFullName.Text;
+            if (!string.IsNullOrEmpty(GTextBoxFullName.Text.Trim()))
+                _InformationUser.UserFullName = GTextBoxFullName.Text.Trim();
             else
             {
                 TextMessageDialog += "\nPlease enter a Full Name User\n";
@@ -156,8 +156,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             }
 
             if (FalgIsUsernameExists)
-                if (!string.IsNullOrEmpty(GTextBoxUsername.Text) && !clsValidation.IsTheUsernameStartedDigits((GTextBoxUsername.Text)[0]))
-                    _InformationUser.Username = GTextBoxUsername.Text;
+                if (!string.IsNullOrEmpty(GTextBoxUsername.Text.Trim()) && !clsValidation.IsTheUsernameStartedDigits((GTextBoxUsername.Text)[0]))
+                    _InformationUser.Username = GTextBoxUsername.Text.Trim();
                 else
                 {
                     TextMessageDialog += "\nPlease enter a Username Without the Space , Without Start Any Digits\n";
@@ -166,10 +166,23 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
             else FlagIsFillUsername = false;
 
-            if (clsValidation.IsValidEmailAddress(GTextBoxProfessionalEmail.Text))
-
-                _InformationUser.EmailUser = GTextBoxProfessionalEmail.Text;
+            if (clsValidation.IsValidEmailAddress(GTextBoxProfessionalEmail.Text.Trim()))
+            {
+                if (_EnMode == _EnModeUser._kADD_NEW_USER)
+                {
+                    if (!UserBL.IsEmailExists(GTextBoxProfessionalEmail.Text.Trim()))
+                        _InformationUser.EmailUser = GTextBoxProfessionalEmail.Text.Trim();
+                    else
+                    {
+                        TextMessageDialog += "\nThis Email Already Exists\n";
+                        FlagIsFillEmail = false;
+                    }
+                }
+                else
+                    _InformationUser.EmailUser = GTextBoxProfessionalEmail.Text.Trim();
+            }
             else
+
             {
 
                 TextMessageDialog += "\nPlease enter a valid email address\n";
@@ -178,9 +191,9 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
 
 
 
-            if (clsValidation.IsHasTheSymbolAndNumberAndLetters(GTextBoxPassword.Text))
+            if (clsValidation.IsHasTheSymbolAndNumberAndLetters(GTextBoxPassword.Text.Trim()))
             {
-                _InformationUser.PasswordUser = GTextBoxPassword.Text;
+                _InformationUser.PasswordUser = GTextBoxPassword.Text.Trim();
             }
             else
             {
@@ -203,6 +216,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.User_Controls_Operation_User_An
             _InformationUser.RoleID = Convert.ToInt32(GComboBoxRoleUser.SelectedValue);
             _InformationUser.ImagePath = _ImagePathUser != null ? _ImagePathUser : null;
             _InformationUser.IsActiveAccount = true;
+            _InformationUser.NumberAttempts = 3;
+
 
 
             if (UserBL.SaveInformationUserMode(_InformationUser))

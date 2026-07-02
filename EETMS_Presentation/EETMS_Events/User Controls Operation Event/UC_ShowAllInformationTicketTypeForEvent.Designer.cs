@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ShowAllInformationTicketTypeForEvent));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblBackEvents = new System.Windows.Forms.Label();
-            this.GButtonDiscardChanges = new Guna.UI2.WinForms.Guna2Button();
             this.lblNameTheEventAfterAdded = new System.Windows.Forms.Label();
             this.lblTitleEventAfterAddedOrUpdate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,12 +47,13 @@
             this.TotalAvailable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentSales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStripOperationTicket = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.GGButtonWarningFullTheTicketTypeEvent = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GGButtonAddTicketType = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.updateTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GButtonDiscardChanges = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewTicketsEvents)).BeginInit();
             this.contextMenuStripOperationTicket.SuspendLayout();
@@ -72,35 +72,6 @@
             this.lblBackEvents.TabIndex = 2;
             this.lblBackEvents.Text = "Events  >";
             this.lblBackEvents.Click += new System.EventHandler(this.lblBackEvents_Click);
-            // 
-            // GButtonDiscardChanges
-            // 
-            this.GButtonDiscardChanges.Animated = true;
-            this.GButtonDiscardChanges.AnimatedGIF = true;
-            this.GButtonDiscardChanges.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            this.GButtonDiscardChanges.BorderRadius = 5;
-            this.GButtonDiscardChanges.BorderThickness = 1;
-            this.GButtonDiscardChanges.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GButtonDiscardChanges.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonDiscardChanges.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonDiscardChanges.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonDiscardChanges.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonDiscardChanges.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.GButtonDiscardChanges.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonDiscardChanges.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.GButtonDiscardChanges.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
-            this.GButtonDiscardChanges.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
-            this.GButtonDiscardChanges.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.GButtonDiscardChanges.Image = ((System.Drawing.Image)(resources.GetObject("GButtonDiscardChanges.Image")));
-            this.GButtonDiscardChanges.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.GButtonDiscardChanges.ImageOffset = new System.Drawing.Point(20, 0);
-            this.GButtonDiscardChanges.Location = new System.Drawing.Point(1144, 837);
-            this.GButtonDiscardChanges.Name = "GButtonDiscardChanges";
-            this.GButtonDiscardChanges.PressedColor = System.Drawing.Color.White;
-            this.GButtonDiscardChanges.Size = new System.Drawing.Size(227, 46);
-            this.GButtonDiscardChanges.TabIndex = 3;
-            this.GButtonDiscardChanges.Text = "Back Add Event";
-            this.GButtonDiscardChanges.Click += new System.EventHandler(this.GButtonDiscardChanges_Click);
             // 
             // lblNameTheEventAfterAdded
             // 
@@ -151,20 +122,20 @@
             this.GDataGridViewTicketsEvents.AllowUserToAddRows = false;
             this.GDataGridViewTicketsEvents.AllowUserToDeleteRows = false;
             this.GDataGridViewTicketsEvents.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.GDataGridViewTicketsEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewTicketsEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.GDataGridViewTicketsEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewTicketsEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GDataGridViewTicketsEvents.ColumnHeadersHeight = 72;
             this.GDataGridViewTicketsEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.GDataGridViewTicketsEvents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -175,27 +146,27 @@
             this.TotalAvailable,
             this.CurrentSales});
             this.GDataGridViewTicketsEvents.ContextMenuStrip = this.contextMenuStripOperationTicket;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GDataGridViewTicketsEvents.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GDataGridViewTicketsEvents.DefaultCellStyle = dataGridViewCellStyle7;
             this.GDataGridViewTicketsEvents.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GDataGridViewTicketsEvents.Location = new System.Drawing.Point(3, 3);
             this.GDataGridViewTicketsEvents.Name = "GDataGridViewTicketsEvents";
             this.GDataGridViewTicketsEvents.ReadOnly = true;
             this.GDataGridViewTicketsEvents.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GDataGridViewTicketsEvents.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GDataGridViewTicketsEvents.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.GDataGridViewTicketsEvents.RowHeadersVisible = false;
             this.GDataGridViewTicketsEvents.RowTemplate.Height = 89;
             this.GDataGridViewTicketsEvents.Size = new System.Drawing.Size(1336, 415);
@@ -270,17 +241,6 @@
             this.contextMenuStripOperationTicket.Name = "contextMenuStripOperationTicket";
             this.contextMenuStripOperationTicket.Size = new System.Drawing.Size(190, 42);
             // 
-            // updateTicketToolStripMenuItem
-            // 
-            this.updateTicketToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
-            this.updateTicketToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.updateTicketToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("updateTicketToolStripMenuItem.Image")));
-            this.updateTicketToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.updateTicketToolStripMenuItem.Name = "updateTicketToolStripMenuItem";
-            this.updateTicketToolStripMenuItem.Size = new System.Drawing.Size(189, 38);
-            this.updateTicketToolStripMenuItem.Text = "Update Ticket";
-            this.updateTicketToolStripMenuItem.Click += new System.EventHandler(this.updateTicketToolStripMenuItem_Click);
-            // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
@@ -295,6 +255,15 @@
             this.guna2GradientPanel2.Size = new System.Drawing.Size(1342, 60);
             this.guna2GradientPanel2.TabIndex = 7;
             // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialog1.Caption = null;
+            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.guna2MessageDialog1.Parent = null;
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.guna2MessageDialog1.Text = null;
+            // 
             // GGButtonWarningFullTheTicketTypeEvent
             // 
             this.GGButtonWarningFullTheTicketTypeEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
@@ -304,7 +273,7 @@
             this.GGButtonWarningFullTheTicketTypeEvent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.GGButtonWarningFullTheTicketTypeEvent.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.GGButtonWarningFullTheTicketTypeEvent.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.GGButtonWarningFullTheTicketTypeEvent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
@@ -314,10 +283,10 @@
             this.GGButtonWarningFullTheTicketTypeEvent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.GGButtonWarningFullTheTicketTypeEvent.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.GGButtonWarningFullTheTicketTypeEvent.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonWarningFullTheTicketTypeEvent.Image")));
+            this.GGButtonWarningFullTheTicketTypeEvent.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.GGButtonWarningFullTheTicketTypeEvent.Image = global::EETMS_Presentation.Properties.Resources.Warning_Red_Icon_EETMS;
             this.GGButtonWarningFullTheTicketTypeEvent.ImageOffset = new System.Drawing.Point(-7, 0);
-            this.GGButtonWarningFullTheTicketTypeEvent.Location = new System.Drawing.Point(12, 13);
+            this.GGButtonWarningFullTheTicketTypeEvent.Location = new System.Drawing.Point(3, 13);
             this.GGButtonWarningFullTheTicketTypeEvent.Name = "GGButtonWarningFullTheTicketTypeEvent";
             this.GGButtonWarningFullTheTicketTypeEvent.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonWarningFullTheTicketTypeEvent.Size = new System.Drawing.Size(677, 37);
@@ -334,7 +303,7 @@
             this.GGButtonAddTicketType.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonAddTicketType.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonAddTicketType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonAddTicketType.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.GGButtonAddTicketType.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.GGButtonAddTicketType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonAddTicketType.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonAddTicketType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
@@ -344,7 +313,7 @@
             this.GGButtonAddTicketType.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonAddTicketType.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GGButtonAddTicketType.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GGButtonAddTicketType.Image = ((System.Drawing.Image)(resources.GetObject("GGButtonAddTicketType.Image")));
+            this.GGButtonAddTicketType.Image = global::EETMS_Presentation.Properties.Resources.Add_Blue_Icon_EETMS;
             this.GGButtonAddTicketType.ImageOffset = new System.Drawing.Point(-7, 0);
             this.GGButtonAddTicketType.Location = new System.Drawing.Point(3, 13);
             this.GGButtonAddTicketType.Name = "GGButtonAddTicketType";
@@ -361,28 +330,59 @@
             this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(117)))), ((int)(((byte)(140)))));
-            this.guna2GradientButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.guna2GradientButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.guna2GradientButton1.Enabled = false;
             this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
             this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GradientButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(117)))), ((int)(((byte)(140)))));
-            this.guna2GradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton1.Image")));
-            this.guna2GradientButton1.ImageOffset = new System.Drawing.Point(-7, 0);
-            this.guna2GradientButton1.Location = new System.Drawing.Point(32, 837);
+            this.guna2GradientButton1.Image = global::EETMS_Presentation.Properties.Resources.Error_Icon_EETMS;
+            this.guna2GradientButton1.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(917, 842);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(308, 37);
+            this.guna2GradientButton1.Size = new System.Drawing.Size(457, 37);
             this.guna2GradientButton1.TabIndex = 5;
-            this.guna2GradientButton1.Text = "Unsaved changes detected in 3 tiers.";
+            this.guna2GradientButton1.Text = "If three types of tickets are available for the event, no others can be added.";
             // 
-            // guna2MessageDialog1
+            // updateTicketToolStripMenuItem
             // 
-            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.guna2MessageDialog1.Caption = null;
-            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.guna2MessageDialog1.Parent = null;
-            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.guna2MessageDialog1.Text = null;
+            this.updateTicketToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.updateTicketToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.updateTicketToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("updateTicketToolStripMenuItem.Image")));
+            this.updateTicketToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.updateTicketToolStripMenuItem.Name = "updateTicketToolStripMenuItem";
+            this.updateTicketToolStripMenuItem.Size = new System.Drawing.Size(189, 38);
+            this.updateTicketToolStripMenuItem.Text = "Update Ticket";
+            this.updateTicketToolStripMenuItem.Click += new System.EventHandler(this.updateTicketToolStripMenuItem_Click);
+            // 
+            // GButtonDiscardChanges
+            // 
+            this.GButtonDiscardChanges.Animated = true;
+            this.GButtonDiscardChanges.AnimatedGIF = true;
+            this.GButtonDiscardChanges.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
+            this.GButtonDiscardChanges.BorderRadius = 5;
+            this.GButtonDiscardChanges.BorderThickness = 1;
+            this.GButtonDiscardChanges.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GButtonDiscardChanges.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonDiscardChanges.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonDiscardChanges.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonDiscardChanges.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonDiscardChanges.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.GButtonDiscardChanges.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonDiscardChanges.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.GButtonDiscardChanges.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(248)))));
+            this.GButtonDiscardChanges.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.GButtonDiscardChanges.HoverState.Image = global::EETMS_Presentation.Properties.Resources.Arrow__Left_Gray_Icon_EETMS;
+            this.GButtonDiscardChanges.Image = ((System.Drawing.Image)(resources.GetObject("GButtonDiscardChanges.Image")));
+            this.GButtonDiscardChanges.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.GButtonDiscardChanges.ImageOffset = new System.Drawing.Point(20, 0);
+            this.GButtonDiscardChanges.Location = new System.Drawing.Point(32, 839);
+            this.GButtonDiscardChanges.Name = "GButtonDiscardChanges";
+            this.GButtonDiscardChanges.PressedColor = System.Drawing.Color.White;
+            this.GButtonDiscardChanges.Size = new System.Drawing.Size(256, 46);
+            this.GButtonDiscardChanges.TabIndex = 3;
+            this.GButtonDiscardChanges.Text = "Back Add/Edit Event";
+            this.GButtonDiscardChanges.Click += new System.EventHandler(this.GButtonDiscardChanges_Click);
             // 
             // UC_ShowAllInformationTicketTypeForEvent
             // 

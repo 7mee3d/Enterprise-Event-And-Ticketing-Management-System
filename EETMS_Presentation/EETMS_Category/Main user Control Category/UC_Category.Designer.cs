@@ -45,14 +45,14 @@
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountEventForCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescriptionCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContextMenuStripCategory = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.GTextBoxSearchTheCategory = new Guna.UI2.WinForms.Guna2TextBox();
+            this.editEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteEventToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.GGButtonAddNewCategory = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GTextBoxCategoryDescripation = new Guna.UI2.WinForms.Guna2TextBox();
             this.GTextBoxCategoryName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ContextMenuStripCategory = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.deleteEventToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.GGPanelAuickAddCategory.SuspendLayout();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewCategoriesInformation)).BeginInit();
@@ -241,6 +241,20 @@
             this.DescriptionCategory.Name = "DescriptionCategory";
             this.DescriptionCategory.ReadOnly = true;
             // 
+            // ContextMenuStripCategory
+            // 
+            this.ContextMenuStripCategory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editEventToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.deleteEventToolStripMenuItem1});
+            this.ContextMenuStripCategory.Name = "contextMenuStrip1";
+            this.ContextMenuStripCategory.Size = new System.Drawing.Size(205, 86);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(201, 6);
+            // 
             // GTextBoxSearchTheCategory
             // 
             this.GTextBoxSearchTheCategory.BorderRadius = 8;
@@ -263,11 +277,34 @@
             this.GTextBoxSearchTheCategory.TabIndex = 3;
             this.GTextBoxSearchTheCategory.TextChanged += new System.EventHandler(this.GTextBoxSearchTheCategory_TextChanged);
             // 
+            // editEventToolStripMenuItem
+            // 
+            this.editEventToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEventToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.editEventToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editEventToolStripMenuItem.Image")));
+            this.editEventToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editEventToolStripMenuItem.Name = "editEventToolStripMenuItem";
+            this.editEventToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
+            this.editEventToolStripMenuItem.Text = "Edit Category";
+            this.editEventToolStripMenuItem.Click += new System.EventHandler(this.editEventToolStripMenuItem_Click);
+            // 
+            // deleteEventToolStripMenuItem1
+            // 
+            this.deleteEventToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.deleteEventToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.deleteEventToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteEventToolStripMenuItem1.Image")));
+            this.deleteEventToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteEventToolStripMenuItem1.Name = "deleteEventToolStripMenuItem1";
+            this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(204, 38);
+            this.deleteEventToolStripMenuItem1.Text = "Delete Category";
+            this.deleteEventToolStripMenuItem1.Click += new System.EventHandler(this.deleteEventToolStripMenuItem1_Click);
+            // 
             // GGButtonAddNewCategory
             // 
             this.GGButtonAddNewCategory.Animated = true;
             this.GGButtonAddNewCategory.AnimatedGIF = true;
             this.GGButtonAddNewCategory.BorderRadius = 5;
+            this.GGButtonAddNewCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GGButtonAddNewCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GGButtonAddNewCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GGButtonAddNewCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -282,10 +319,10 @@
             this.GGButtonAddNewCategory.HoverState.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
             this.GGButtonAddNewCategory.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
             this.GGButtonAddNewCategory.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.GGButtonAddNewCategory.Location = new System.Drawing.Point(1106, 116);
+            this.GGButtonAddNewCategory.Location = new System.Drawing.Point(1088, 116);
             this.GGButtonAddNewCategory.Name = "GGButtonAddNewCategory";
             this.GGButtonAddNewCategory.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
-            this.GGButtonAddNewCategory.Size = new System.Drawing.Size(206, 47);
+            this.GGButtonAddNewCategory.Size = new System.Drawing.Size(224, 47);
             this.GGButtonAddNewCategory.TabIndex = 3;
             this.GGButtonAddNewCategory.Text = "Add New Category";
             this.GGButtonAddNewCategory.Click += new System.EventHandler(this.GGButtonAddNewCategory_Click);
@@ -304,7 +341,7 @@
             this.GTextBoxCategoryDescripation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.GTextBoxCategoryDescripation.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GTextBoxCategoryDescripation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxCategoryDescripation.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxCategoryDescripation.IconLeft")));
+            this.GTextBoxCategoryDescripation.IconLeft = global::EETMS_Presentation.Properties.Resources.Description_Icon_EETMS;
             this.GTextBoxCategoryDescripation.IconLeftOffset = new System.Drawing.Point(5, 0);
             this.GTextBoxCategoryDescripation.Location = new System.Drawing.Point(500, 116);
             this.GTextBoxCategoryDescripation.Name = "GTextBoxCategoryDescripation";
@@ -335,42 +372,7 @@
             this.GTextBoxCategoryName.SelectedText = "";
             this.GTextBoxCategoryName.Size = new System.Drawing.Size(424, 45);
             this.GTextBoxCategoryName.TabIndex = 7;
-            // 
-            // ContextMenuStripCategory
-            // 
-            this.ContextMenuStripCategory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editEventToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.deleteEventToolStripMenuItem1});
-            this.ContextMenuStripCategory.Name = "contextMenuStrip1";
-            this.ContextMenuStripCategory.Size = new System.Drawing.Size(205, 108);
-            // 
-            // editEventToolStripMenuItem
-            // 
-            this.editEventToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editEventToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.editEventToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editEventToolStripMenuItem.Image")));
-            this.editEventToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.editEventToolStripMenuItem.Name = "editEventToolStripMenuItem";
-            this.editEventToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
-            this.editEventToolStripMenuItem.Text = "Edit Category";
-            this.editEventToolStripMenuItem.Click += new System.EventHandler(this.editEventToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(201, 6);
-            // 
-            // deleteEventToolStripMenuItem1
-            // 
-            this.deleteEventToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
-            this.deleteEventToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.deleteEventToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteEventToolStripMenuItem1.Image")));
-            this.deleteEventToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.deleteEventToolStripMenuItem1.Name = "deleteEventToolStripMenuItem1";
-            this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(204, 38);
-            this.deleteEventToolStripMenuItem1.Text = "Delete Category";
-            this.deleteEventToolStripMenuItem1.Click += new System.EventHandler(this.deleteEventToolStripMenuItem1_Click);
+            this.GTextBoxCategoryName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GTextBoxCategoryName_KeyPress);
             // 
             // UC_Category
             // 

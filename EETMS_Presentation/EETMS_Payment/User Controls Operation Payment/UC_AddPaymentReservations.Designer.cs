@@ -30,11 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_AddPaymentReservations));
             this.GGPanelPaymentAndTransactions = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GButtonConfirmPayment = new Guna.UI2.WinForms.Guna2Button();
             this.GButtonClose = new Guna.UI2.WinForms.Guna2Button();
-            this.GButtonBankTransfer = new Guna.UI2.WinForms.Guna2Button();
-            this.GButtonCard = new Guna.UI2.WinForms.Guna2Button();
-            this.GButtonCash = new Guna.UI2.WinForms.Guna2Button();
             this.GNumericUpDownAmountToPay = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +42,10 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.GButtonConfirmPayment = new Guna.UI2.WinForms.Guna2Button();
+            this.GButtonBankTransfer = new Guna.UI2.WinForms.Guna2Button();
+            this.GButtonCard = new Guna.UI2.WinForms.Guna2Button();
+            this.GButtonCash = new Guna.UI2.WinForms.Guna2Button();
             this.GGPanelPaymentAndTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GNumericUpDownAmountToPay)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
@@ -72,38 +72,10 @@
             this.GGPanelPaymentAndTransactions.Controls.Add(this.guna2GradientPanel1);
             this.GGPanelPaymentAndTransactions.FillColor = System.Drawing.Color.White;
             this.GGPanelPaymentAndTransactions.FillColor2 = System.Drawing.Color.White;
-            this.GGPanelPaymentAndTransactions.Location = new System.Drawing.Point(465, 90);
+            this.GGPanelPaymentAndTransactions.Location = new System.Drawing.Point(465, 108);
             this.GGPanelPaymentAndTransactions.Name = "GGPanelPaymentAndTransactions";
             this.GGPanelPaymentAndTransactions.Size = new System.Drawing.Size(489, 735);
             this.GGPanelPaymentAndTransactions.TabIndex = 5;
-            // 
-            // GButtonConfirmPayment
-            // 
-            this.GButtonConfirmPayment.Animated = true;
-            this.GButtonConfirmPayment.AnimatedGIF = true;
-            this.GButtonConfirmPayment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonConfirmPayment.BorderRadius = 5;
-            this.GButtonConfirmPayment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GButtonConfirmPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonConfirmPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonConfirmPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonConfirmPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonConfirmPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.GButtonConfirmPayment.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonConfirmPayment.ForeColor = System.Drawing.Color.White;
-            this.GButtonConfirmPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GButtonConfirmPayment.HoverState.ForeColor = System.Drawing.Color.White;
-            this.GButtonConfirmPayment.Image = ((System.Drawing.Image)(resources.GetObject("GButtonConfirmPayment.Image")));
-            this.GButtonConfirmPayment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.GButtonConfirmPayment.ImageOffset = new System.Drawing.Point(50, 0);
-            this.GButtonConfirmPayment.Location = new System.Drawing.Point(174, 651);
-            this.GButtonConfirmPayment.Name = "GButtonConfirmPayment";
-            this.GButtonConfirmPayment.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
-            this.GButtonConfirmPayment.Size = new System.Drawing.Size(295, 45);
-            this.GButtonConfirmPayment.TabIndex = 5;
-            this.GButtonConfirmPayment.Text = "Confirm Payment";
-            this.GButtonConfirmPayment.TextOffset = new System.Drawing.Point(5, 0);
-            this.GButtonConfirmPayment.Click += new System.EventHandler(this.GButtonConfirmPayment_Click);
             // 
             // GButtonClose
             // 
@@ -121,122 +93,15 @@
             this.GButtonClose.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GButtonClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
             this.GButtonClose.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GButtonClose.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonClose.HoverState.ForeColor = System.Drawing.Color.White;
-            this.GButtonClose.Location = new System.Drawing.Point(17, 651);
+            this.GButtonClose.Location = new System.Drawing.Point(17, 649);
             this.GButtonClose.Name = "GButtonClose";
             this.GButtonClose.Size = new System.Drawing.Size(138, 45);
             this.GButtonClose.TabIndex = 6;
             this.GButtonClose.Text = "Close";
             this.GButtonClose.Click += new System.EventHandler(this.Close_Click);
-            // 
-            // GButtonBankTransfer
-            // 
-            this.GButtonBankTransfer.Animated = true;
-            this.GButtonBankTransfer.AnimatedGIF = true;
-            this.GButtonBankTransfer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.GButtonBankTransfer.BorderRadius = 9;
-            this.GButtonBankTransfer.BorderThickness = 2;
-            this.GButtonBankTransfer.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonBankTransfer.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            this.GButtonBankTransfer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.GButtonBankTransfer.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.GButtonBankTransfer.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.GButtonBankTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GButtonBankTransfer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonBankTransfer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonBankTransfer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonBankTransfer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonBankTransfer.FillColor = System.Drawing.Color.White;
-            this.GButtonBankTransfer.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonBankTransfer.ForeColor = System.Drawing.Color.Black;
-            this.GButtonBankTransfer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.GButtonBankTransfer.HoverState.FillColor = System.Drawing.Color.White;
-            this.GButtonBankTransfer.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.GButtonBankTransfer.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.GButtonBankTransfer.Image = ((System.Drawing.Image)(resources.GetObject("GButtonBankTransfer.Image")));
-            this.GButtonBankTransfer.ImageOffset = new System.Drawing.Point(0, -8);
-            this.GButtonBankTransfer.ImageSize = new System.Drawing.Size(25, 25);
-            this.GButtonBankTransfer.Location = new System.Drawing.Point(331, 534);
-            this.GButtonBankTransfer.Name = "GButtonBankTransfer";
-            this.GButtonBankTransfer.Size = new System.Drawing.Size(138, 72);
-            this.GButtonBankTransfer.TabIndex = 4;
-            this.GButtonBankTransfer.Tag = "3";
-            this.GButtonBankTransfer.Text = "Bank Transfer";
-            this.GButtonBankTransfer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.GButtonBankTransfer.TextOffset = new System.Drawing.Point(23, 15);
-            // 
-            // GButtonCard
-            // 
-            this.GButtonCard.Animated = true;
-            this.GButtonCard.AnimatedGIF = true;
-            this.GButtonCard.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.GButtonCard.BorderRadius = 9;
-            this.GButtonCard.BorderThickness = 2;
-            this.GButtonCard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonCard.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            this.GButtonCard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.GButtonCard.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.GButtonCard.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.GButtonCard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GButtonCard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonCard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonCard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonCard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonCard.FillColor = System.Drawing.Color.White;
-            this.GButtonCard.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonCard.ForeColor = System.Drawing.Color.Black;
-            this.GButtonCard.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.GButtonCard.HoverState.FillColor = System.Drawing.Color.White;
-            this.GButtonCard.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.GButtonCard.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.GButtonCard.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCard.Image")));
-            this.GButtonCard.ImageOffset = new System.Drawing.Point(0, -8);
-            this.GButtonCard.ImageSize = new System.Drawing.Size(25, 25);
-            this.GButtonCard.Location = new System.Drawing.Point(174, 534);
-            this.GButtonCard.Name = "GButtonCard";
-            this.GButtonCard.Size = new System.Drawing.Size(138, 72);
-            this.GButtonCard.TabIndex = 3;
-            this.GButtonCard.Tag = "1";
-            this.GButtonCard.Text = "Card";
-            this.GButtonCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.GButtonCard.TextOffset = new System.Drawing.Point(43, 15);
-            // 
-            // GButtonCash
-            // 
-            this.GButtonCash.Animated = true;
-            this.GButtonCash.AnimatedGIF = true;
-            this.GButtonCash.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.GButtonCash.BorderRadius = 9;
-            this.GButtonCash.BorderThickness = 2;
-            this.GButtonCash.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.GButtonCash.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
-            this.GButtonCash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.GButtonCash.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.GButtonCash.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.GButtonCash.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GButtonCash.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonCash.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GButtonCash.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GButtonCash.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GButtonCash.FillColor = System.Drawing.Color.White;
-            this.GButtonCash.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GButtonCash.ForeColor = System.Drawing.Color.Black;
-            this.GButtonCash.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
-            this.GButtonCash.HoverState.FillColor = System.Drawing.Color.White;
-            this.GButtonCash.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.GButtonCash.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            this.GButtonCash.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCash.Image")));
-            this.GButtonCash.ImageOffset = new System.Drawing.Point(0, -8);
-            this.GButtonCash.ImageSize = new System.Drawing.Size(25, 25);
-            this.GButtonCash.Location = new System.Drawing.Point(17, 534);
-            this.GButtonCash.Name = "GButtonCash";
-            this.GButtonCash.Size = new System.Drawing.Size(138, 72);
-            this.GButtonCash.TabIndex = 2;
-            this.GButtonCash.Tag = "2";
-            this.GButtonCash.Text = "Cash";
-            this.GButtonCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.GButtonCash.TextOffset = new System.Drawing.Point(43, 15);
             // 
             // GNumericUpDownAmountToPay
             // 
@@ -245,7 +110,7 @@
             this.GNumericUpDownAmountToPay.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.GNumericUpDownAmountToPay.DecimalPlaces = 2;
             this.GNumericUpDownAmountToPay.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GNumericUpDownAmountToPay.Location = new System.Drawing.Point(17, 416);
+            this.GNumericUpDownAmountToPay.Location = new System.Drawing.Point(17, 415);
             this.GNumericUpDownAmountToPay.Name = "GNumericUpDownAmountToPay";
             this.GNumericUpDownAmountToPay.Size = new System.Drawing.Size(452, 46);
             this.GNumericUpDownAmountToPay.TabIndex = 1;
@@ -300,7 +165,7 @@
             this.GComboBoxBookingIDAndCustomerName.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GComboBoxBookingIDAndCustomerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.GComboBoxBookingIDAndCustomerName.ItemHeight = 30;
-            this.GComboBoxBookingIDAndCustomerName.Location = new System.Drawing.Point(17, 191);
+            this.GComboBoxBookingIDAndCustomerName.Location = new System.Drawing.Point(17, 190);
             this.GComboBoxBookingIDAndCustomerName.Name = "GComboBoxBookingIDAndCustomerName";
             this.GComboBoxBookingIDAndCustomerName.Size = new System.Drawing.Size(452, 36);
             this.GComboBoxBookingIDAndCustomerName.TabIndex = 0;
@@ -310,7 +175,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.label6.Location = new System.Drawing.Point(14, 504);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 17);
@@ -321,8 +186,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
-            this.label5.Location = new System.Drawing.Point(14, 387);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.label5.Location = new System.Drawing.Point(14, 388);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 17);
             this.label5.TabIndex = 7;
@@ -332,8 +197,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
-            this.label1.Location = new System.Drawing.Point(14, 162);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.label1.Location = new System.Drawing.Point(14, 163);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 17);
             this.label1.TabIndex = 7;
@@ -358,7 +223,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(14, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(310, 17);
@@ -368,13 +233,149 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Segoe UI Variable Display", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(39)))));
-            this.label9.Location = new System.Drawing.Point(11, 15);
+            this.label9.Location = new System.Drawing.Point(11, 13);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(208, 32);
+            this.label9.Size = new System.Drawing.Size(230, 36);
             this.label9.TabIndex = 6;
             this.label9.Text = "Process Payment";
+            // 
+            // GButtonConfirmPayment
+            // 
+            this.GButtonConfirmPayment.Animated = true;
+            this.GButtonConfirmPayment.AnimatedGIF = true;
+            this.GButtonConfirmPayment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonConfirmPayment.BorderRadius = 5;
+            this.GButtonConfirmPayment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GButtonConfirmPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonConfirmPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonConfirmPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonConfirmPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonConfirmPayment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GButtonConfirmPayment.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonConfirmPayment.ForeColor = System.Drawing.Color.White;
+            this.GButtonConfirmPayment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GButtonConfirmPayment.HoverState.ForeColor = System.Drawing.Color.White;
+            this.GButtonConfirmPayment.Image = global::EETMS_Presentation.Properties.Resources.Check_White_Icon_EETMS;
+            this.GButtonConfirmPayment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.GButtonConfirmPayment.ImageOffset = new System.Drawing.Point(50, 0);
+            this.GButtonConfirmPayment.Location = new System.Drawing.Point(174, 649);
+            this.GButtonConfirmPayment.Name = "GButtonConfirmPayment";
+            this.GButtonConfirmPayment.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
+            this.GButtonConfirmPayment.Size = new System.Drawing.Size(295, 45);
+            this.GButtonConfirmPayment.TabIndex = 5;
+            this.GButtonConfirmPayment.Text = "Confirm Payment";
+            this.GButtonConfirmPayment.TextOffset = new System.Drawing.Point(5, 0);
+            this.GButtonConfirmPayment.Click += new System.EventHandler(this.GButtonConfirmPayment_Click);
+            // 
+            // GButtonBankTransfer
+            // 
+            this.GButtonBankTransfer.Animated = true;
+            this.GButtonBankTransfer.AnimatedGIF = true;
+            this.GButtonBankTransfer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GButtonBankTransfer.BorderRadius = 9;
+            this.GButtonBankTransfer.BorderThickness = 2;
+            this.GButtonBankTransfer.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonBankTransfer.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.GButtonBankTransfer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.GButtonBankTransfer.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.GButtonBankTransfer.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.GButtonBankTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GButtonBankTransfer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonBankTransfer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonBankTransfer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonBankTransfer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonBankTransfer.FillColor = System.Drawing.Color.White;
+            this.GButtonBankTransfer.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonBankTransfer.ForeColor = System.Drawing.Color.Black;
+            this.GButtonBankTransfer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GButtonBankTransfer.HoverState.FillColor = System.Drawing.Color.White;
+            this.GButtonBankTransfer.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.GButtonBankTransfer.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.GButtonBankTransfer.Image = ((System.Drawing.Image)(resources.GetObject("GButtonBankTransfer.Image")));
+            this.GButtonBankTransfer.ImageOffset = new System.Drawing.Point(0, -8);
+            this.GButtonBankTransfer.ImageSize = new System.Drawing.Size(25, 25);
+            this.GButtonBankTransfer.Location = new System.Drawing.Point(331, 533);
+            this.GButtonBankTransfer.Name = "GButtonBankTransfer";
+            this.GButtonBankTransfer.Size = new System.Drawing.Size(138, 72);
+            this.GButtonBankTransfer.TabIndex = 4;
+            this.GButtonBankTransfer.Tag = "3";
+            this.GButtonBankTransfer.Text = "Bank Transfer";
+            this.GButtonBankTransfer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.GButtonBankTransfer.TextOffset = new System.Drawing.Point(23, 15);
+            // 
+            // GButtonCard
+            // 
+            this.GButtonCard.Animated = true;
+            this.GButtonCard.AnimatedGIF = true;
+            this.GButtonCard.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GButtonCard.BorderRadius = 9;
+            this.GButtonCard.BorderThickness = 2;
+            this.GButtonCard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonCard.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.GButtonCard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.GButtonCard.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.GButtonCard.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.GButtonCard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GButtonCard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonCard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonCard.FillColor = System.Drawing.Color.White;
+            this.GButtonCard.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonCard.ForeColor = System.Drawing.Color.Black;
+            this.GButtonCard.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GButtonCard.HoverState.FillColor = System.Drawing.Color.White;
+            this.GButtonCard.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.GButtonCard.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.GButtonCard.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCard.Image")));
+            this.GButtonCard.ImageOffset = new System.Drawing.Point(0, -8);
+            this.GButtonCard.ImageSize = new System.Drawing.Size(25, 25);
+            this.GButtonCard.Location = new System.Drawing.Point(174, 533);
+            this.GButtonCard.Name = "GButtonCard";
+            this.GButtonCard.Size = new System.Drawing.Size(138, 72);
+            this.GButtonCard.TabIndex = 3;
+            this.GButtonCard.Tag = "1";
+            this.GButtonCard.Text = "Card";
+            this.GButtonCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.GButtonCard.TextOffset = new System.Drawing.Point(43, 15);
+            // 
+            // GButtonCash
+            // 
+            this.GButtonCash.Animated = true;
+            this.GButtonCash.AnimatedGIF = true;
+            this.GButtonCash.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GButtonCash.BorderRadius = 9;
+            this.GButtonCash.BorderThickness = 2;
+            this.GButtonCash.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GButtonCash.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(235)))));
+            this.GButtonCash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.GButtonCash.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.GButtonCash.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.GButtonCash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GButtonCash.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCash.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonCash.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonCash.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonCash.FillColor = System.Drawing.Color.White;
+            this.GButtonCash.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GButtonCash.ForeColor = System.Drawing.Color.Black;
+            this.GButtonCash.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.GButtonCash.HoverState.FillColor = System.Drawing.Color.White;
+            this.GButtonCash.HoverState.ForeColor = System.Drawing.Color.Black;
+            this.GButtonCash.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.GButtonCash.Image = ((System.Drawing.Image)(resources.GetObject("GButtonCash.Image")));
+            this.GButtonCash.ImageOffset = new System.Drawing.Point(0, -8);
+            this.GButtonCash.ImageSize = new System.Drawing.Size(25, 25);
+            this.GButtonCash.Location = new System.Drawing.Point(17, 533);
+            this.GButtonCash.Name = "GButtonCash";
+            this.GButtonCash.Size = new System.Drawing.Size(138, 72);
+            this.GButtonCash.TabIndex = 2;
+            this.GButtonCash.Tag = "2";
+            this.GButtonCash.Text = "Cash";
+            this.GButtonCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.GButtonCash.TextOffset = new System.Drawing.Point(43, 15);
             // 
             // UC_AddPaymentReservations
             // 

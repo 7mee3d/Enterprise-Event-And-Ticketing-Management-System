@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Report));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -49,20 +48,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Report));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GDataGridViewRevenuePerEvent = new Guna.UI2.WinForms.Guna2DataGridView();
             this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GDataGridViewCategoryDales = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GDataGridViewTopSpenders = new Guna.UI2.WinForms.Guna2DataGridView();
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmountPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,12 +67,15 @@
             this.GDataGridViewFullyBookedEvents = new Guna.UI2.WinForms.Guna2DataGridView();
             this.EventNameV2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientButton5 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GDataGridViewRemainingCapacity = new Guna.UI2.WinForms.Guna2DataGridView();
             this.CEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton5 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewRevenuePerEvent)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
@@ -102,28 +102,6 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(358, 720);
             this.guna2GradientPanel1.TabIndex = 5;
-            // 
-            // guna2GradientButton1
-            // 
-            this.guna2GradientButton1.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.guna2GradientButton1.Enabled = false;
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton1.Image")));
-            this.guna2GradientButton1.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2GradientButton1.Location = new System.Drawing.Point(3, 20);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(222, 37);
-            this.guna2GradientButton1.TabIndex = 6;
-            this.guna2GradientButton1.Text = "Revenue per Event";
             // 
             // GDataGridViewRevenuePerEvent
             // 
@@ -225,8 +203,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            this.label2.Location = new System.Drawing.Point(35, 107);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.label2.Location = new System.Drawing.Point(38, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(351, 17);
             this.label2.TabIndex = 7;
@@ -246,28 +224,6 @@
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(365, 314);
             this.guna2GradientPanel2.TabIndex = 5;
-            // 
-            // guna2GradientButton2
-            // 
-            this.guna2GradientButton2.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton2.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.guna2GradientButton2.Enabled = false;
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
-            this.guna2GradientButton2.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2GradientButton2.Location = new System.Drawing.Point(3, 18);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(183, 37);
-            this.guna2GradientButton2.TabIndex = 6;
-            this.guna2GradientButton2.Text = "Category Sales";
             // 
             // GDataGridViewCategoryDales
             // 
@@ -368,28 +324,6 @@
             this.guna2GradientPanel3.Name = "guna2GradientPanel3";
             this.guna2GradientPanel3.Size = new System.Drawing.Size(365, 372);
             this.guna2GradientPanel3.TabIndex = 5;
-            // 
-            // guna2GradientButton3
-            // 
-            this.guna2GradientButton3.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton3.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton3.DisabledState.CustomBorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton3.DisabledState.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton3.DisabledState.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton3.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.guna2GradientButton3.Enabled = false;
-            this.guna2GradientButton3.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton3.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton3.Image")));
-            this.guna2GradientButton3.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2GradientButton3.Location = new System.Drawing.Point(3, 18);
-            this.guna2GradientButton3.Name = "guna2GradientButton3";
-            this.guna2GradientButton3.Size = new System.Drawing.Size(183, 37);
-            this.guna2GradientButton3.TabIndex = 6;
-            this.guna2GradientButton3.Text = "Top Spenders";
             // 
             // GDataGridViewTopSpenders
             // 
@@ -576,28 +510,6 @@
             this.StatusEvent.Name = "StatusEvent";
             this.StatusEvent.ReadOnly = true;
             // 
-            // guna2GradientButton4
-            // 
-            this.guna2GradientButton4.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.DisabledState.CustomBorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.DisabledState.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.DisabledState.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton4.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.guna2GradientButton4.Enabled = false;
-            this.guna2GradientButton4.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton4.Image")));
-            this.guna2GradientButton4.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2GradientButton4.Location = new System.Drawing.Point(3, 20);
-            this.guna2GradientButton4.Name = "guna2GradientButton4";
-            this.guna2GradientButton4.Size = new System.Drawing.Size(172, 37);
-            this.guna2GradientButton4.TabIndex = 6;
-            this.guna2GradientButton4.Text = "Fully Booked";
-            // 
             // guna2GradientPanel5
             // 
             this.guna2GradientPanel5.BackColor = System.Drawing.Color.Transparent;
@@ -612,28 +524,6 @@
             this.guna2GradientPanel5.Name = "guna2GradientPanel5";
             this.guna2GradientPanel5.Size = new System.Drawing.Size(454, 369);
             this.guna2GradientPanel5.TabIndex = 5;
-            // 
-            // guna2GradientButton5
-            // 
-            this.guna2GradientButton5.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.DisabledState.BorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.DisabledState.CustomBorderColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.DisabledState.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.DisabledState.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton5.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            this.guna2GradientButton5.Enabled = false;
-            this.guna2GradientButton5.FillColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton5.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton5.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton5.Image")));
-            this.guna2GradientButton5.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2GradientButton5.Location = new System.Drawing.Point(3, 18);
-            this.guna2GradientButton5.Name = "guna2GradientButton5";
-            this.guna2GradientButton5.Size = new System.Drawing.Size(227, 37);
-            this.guna2GradientButton5.TabIndex = 6;
-            this.guna2GradientButton5.Text = "Remaining Capacity";
             // 
             // GDataGridViewRemainingCapacity
             // 
@@ -719,6 +609,116 @@
             this.Seats.HeaderText = "SEATS";
             this.Seats.Name = "Seats";
             this.Seats.ReadOnly = true;
+            // 
+            // guna2GradientButton3
+            // 
+            this.guna2GradientButton3.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton3.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton3.DisabledState.CustomBorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton3.DisabledState.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton3.DisabledState.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton3.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.guna2GradientButton3.Enabled = false;
+            this.guna2GradientButton3.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton3.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton3.Image = global::EETMS_Presentation.Properties.Resources.Star_Icon_EETMS;
+            this.guna2GradientButton3.ImageSize = new System.Drawing.Size(22, 22);
+            this.guna2GradientButton3.Location = new System.Drawing.Point(3, 18);
+            this.guna2GradientButton3.Name = "guna2GradientButton3";
+            this.guna2GradientButton3.Size = new System.Drawing.Size(183, 37);
+            this.guna2GradientButton3.TabIndex = 6;
+            this.guna2GradientButton3.Text = "Top Spenders";
+            // 
+            // guna2GradientButton5
+            // 
+            this.guna2GradientButton5.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.DisabledState.CustomBorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.DisabledState.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.DisabledState.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton5.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.guna2GradientButton5.Enabled = false;
+            this.guna2GradientButton5.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton5.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton5.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton5.Image = global::EETMS_Presentation.Properties.Resources.Seat_Icon_EETMS;
+            this.guna2GradientButton5.ImageSize = new System.Drawing.Size(22, 22);
+            this.guna2GradientButton5.Location = new System.Drawing.Point(3, 18);
+            this.guna2GradientButton5.Name = "guna2GradientButton5";
+            this.guna2GradientButton5.Size = new System.Drawing.Size(227, 37);
+            this.guna2GradientButton5.TabIndex = 6;
+            this.guna2GradientButton5.Text = "Remaining Capacity";
+            // 
+            // guna2GradientButton4
+            // 
+            this.guna2GradientButton4.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.DisabledState.CustomBorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.DisabledState.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.DisabledState.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton4.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.guna2GradientButton4.Enabled = false;
+            this.guna2GradientButton4.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton4.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton4.Image = global::EETMS_Presentation.Properties.Resources.Fully_Booked_Calender_Icon_EETMS;
+            this.guna2GradientButton4.ImageSize = new System.Drawing.Size(22, 22);
+            this.guna2GradientButton4.Location = new System.Drawing.Point(3, 20);
+            this.guna2GradientButton4.Name = "guna2GradientButton4";
+            this.guna2GradientButton4.Size = new System.Drawing.Size(172, 37);
+            this.guna2GradientButton4.TabIndex = 6;
+            this.guna2GradientButton4.Text = "Fully Booked";
+            // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton2.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2GradientButton2.Enabled = false;
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton2.Image = global::EETMS_Presentation.Properties.Resources.Category_Icon_EETMS;
+            this.guna2GradientButton2.ImageSize = new System.Drawing.Size(22, 22);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(3, 18);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.Size = new System.Drawing.Size(183, 37);
+            this.guna2GradientButton2.TabIndex = 6;
+            this.guna2GradientButton2.Text = "Category Sales";
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton1.DisabledState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.guna2GradientButton1.Enabled = false;
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI Variable Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.guna2GradientButton1.Image = global::EETMS_Presentation.Properties.Resources.Money_Icon_EETMS;
+            this.guna2GradientButton1.ImageSize = new System.Drawing.Size(22, 22);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(3, 20);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(222, 37);
+            this.guna2GradientButton1.TabIndex = 6;
+            this.guna2GradientButton1.Text = "Revenue per Event";
             // 
             // UC_Report
             // 

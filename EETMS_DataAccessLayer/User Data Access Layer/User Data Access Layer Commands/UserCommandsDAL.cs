@@ -223,7 +223,8 @@ namespace EETMS_DataAccessLayer
                                         UPDATE Users 
 
                                         SET    
-                                                ActiveAccount = @ActiveAccount
+                                                ActiveAccount = @ActiveAccount , 
+                                                NumberAttempts = @NumberAttempts
 
 
 
@@ -237,6 +238,7 @@ namespace EETMS_DataAccessLayer
 
                         command.Parameters.Add("@UserID", SqlDbType.Int).Value = IDUser;
                         command.Parameters.Add("@ActiveAccount", SqlDbType.TinyInt).Value = (InformationNewUser.IsActiveAccount) ? 1 : 0;
+                        command.Parameters.Add("@NumberAttempts", SqlDbType.TinyInt).Value = InformationNewUser.NumberAttempts;
 
 
                         connection.Open();

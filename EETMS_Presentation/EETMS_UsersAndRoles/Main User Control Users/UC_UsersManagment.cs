@@ -69,7 +69,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             {
 
 
-                string StrActiveOrInActive = (Convert.ToInt32(DR_InformationOneUser["ActiveAccount"]) == clsEETMS_Constants.kONE) ? "Active" : "Inactive";
+                string StrActiveOrInActive = (Convert.ToInt32(DR_InformationOneUser["ActiveAccount"]) == clsEETMS_Constants.kONE && Convert.ToInt32(DR_InformationOneUser["NumberAttempts"]) != 0) ? "Active" : "Inactive";
 
 
                 int rowIndex = GDataGridViewUsersInformation.Rows.Add(
@@ -96,7 +96,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                 DataGridViewRow DGVR_LastLogin = GDataGridViewUsersInformation.Rows[rowIndex];
                 DataGridViewCell DGVC_LastLogin = DGVR.Cells[6];
 
-                if (Convert.ToInt32(DR_InformationOneUser["ActiveAccount"]) == clsEETMS_Constants.kONE)
+                if (Convert.ToInt32(DR_InformationOneUser["ActiveAccount"]) == clsEETMS_Constants.kONE && Convert.ToInt32(DR_InformationOneUser["NumberAttempts"]) != 0)
                     DGVC.Style.ForeColor = Color.Green;
                 else DGVC.Style.ForeColor = Color.Red;
 
@@ -135,6 +135,8 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
             int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
 
+            bool IsActiveOrAttempts = false;
+
             UserDTO mUser = UserBL.FindUserBy(UserID);
 
             if (mUser != null)
@@ -142,9 +144,16 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                 MDI = MessageDialogIcon.Question;
                 CaptionMessage = "Note. For The Inactive/Active This User";
 
-                if (mUser.IsActiveAccount)
-                    TextMessage = "Are You Sure Inactive This User";
-                else TextMessage = "Are You Sure Active This User";
+                if (mUser.NumberAttempts == 0 && mUser.IsActiveAccount)
+                {
+                    TextMessage = "Are You Sure Active This User";
+                }
+                else
+                {
+                    if (mUser.IsActiveAccount)
+                        TextMessage = "Are You Sure Inactive This User";
+                    else TextMessage = "Are You Sure Active This User";
+                }
 
                 MDB = MessageDialogButtons.OKCancel;
 
@@ -152,15 +161,35 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                 {
                     mUser.enMode = UserDTO.EnModeUser._kUPDATE_INFORMATION_USER;
 
-                    if (mUser.IsActiveAccount)
-                        mUser.IsActiveAccount = false;
-                    else mUser.IsActiveAccount = true;
+                    if (mUser.NumberAttempts == 0 && mUser.IsActiveAccount )
+                    {
+                        mUser.NumberAttempts = 3;
+                        IsActiveOrAttempts = true;
+                    }
+                    else if (mUser.NumberAttempts == 0 && !mUser.IsActiveAccount)
+                    {
+                        mUser.NumberAttempts = 3;
+                        mUser.IsActiveAccount = true;
+                    }
+                    else
+                    {
+
+                        if (mUser.IsActiveAccount)
+                            mUser.IsActiveAccount = false;
+                        else mUser.IsActiveAccount = true;
+                    }
 
                     if (UserBL.SaveInformationUserMode(mUser, true))
                     {
-                        if (mUser.IsActiveAccount)
+                        if (IsActiveOrAttempts)
+                        {
                             TextMessage = "The User is Active Successfully";
-                        else TextMessage = "The User is Inactive Successfully";
+                        }
+                        else
+                        {
+                            if (mUser.IsActiveAccount) TextMessage = "The User is Active Successfully";
+                            else TextMessage = "The User is Inactive Successfully";
+                        }
 
                         _InitalSettingTheUserManagmentCountsUsers();
 
