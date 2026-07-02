@@ -73,7 +73,7 @@ namespace EETMS_DataAccessLayer
 																		 ResultTotalAmount.TotalAmount,
 																		 P.Amount  AS [PaidAmount],
 																		 PM.NamePaymentMethod,
-																		 R.BookingDateTimeDateTime,
+																		 P.DateTimePayment,
 																		 PS.NamePaymentStatus
 																	
 
@@ -153,7 +153,7 @@ namespace EETMS_DataAccessLayer
 																		 ResultTotalAmount.TotalAmount,
 																		 P.Amount  AS [PaidAmount],
 																		 PM.NamePaymentMethod,
-																		 R.BookingDateTimeDateTime,
+																		 P.DateTimePayment,
 																		 PS.NamePaymentStatus
 																	
 
@@ -235,7 +235,7 @@ namespace EETMS_DataAccessLayer
 																		 ResultTotalAmount.TotalAmount,
 																		 P.Amount  AS [PaidAmount],
 																		 PM.NamePaymentMethod,
-																		 R.BookingDateTimeDateTime,
+																		 P.DateTimePayment,
 																		 PS.NamePaymentStatus
 																	
 
@@ -364,7 +364,7 @@ namespace EETMS_DataAccessLayer
 																		 ResultTotalAmount.TotalAmount,
 																		 P.Amount  AS [PaidAmount],
 																		 PM.NamePaymentMethod,
-																		 R.BookingDateTimeDateTime,
+																		 P.DateTimePayment,
 																		 PS.NamePaymentStatus
 																	
 
@@ -493,7 +493,7 @@ namespace EETMS_DataAccessLayer
 																		 ResultTotalAmount.TotalAmount,
 																		 P.Amount  AS [PaidAmount],
 																		 PM.NamePaymentMethod,
-																		 R.BookingDateTimeDateTime,
+																		 P.DateTimePayment,
 																		 PS.NamePaymentStatus
 																	
 
@@ -579,7 +579,7 @@ namespace EETMS_DataAccessLayer
 																		 ResultTotalAmount.TotalAmount,
 																		 P.Amount  AS [PaidAmount],
 																		 PM.NamePaymentMethod,
-																		 R.BookingDateTimeDateTime,
+																		 P.DateTimePayment,
 																		 PS.NamePaymentStatus
 																	
 

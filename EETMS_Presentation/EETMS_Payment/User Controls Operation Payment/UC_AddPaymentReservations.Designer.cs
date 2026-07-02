@@ -83,6 +83,7 @@
             this.GButtonConfirmPayment.AnimatedGIF = true;
             this.GButtonConfirmPayment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
             this.GButtonConfirmPayment.BorderRadius = 5;
+            this.GButtonConfirmPayment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonConfirmPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonConfirmPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonConfirmPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -111,6 +112,7 @@
             this.GButtonClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.GButtonClose.BorderRadius = 6;
             this.GButtonClose.BorderThickness = 1;
+            this.GButtonClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -118,8 +120,8 @@
             this.GButtonClose.FillColor = System.Drawing.Color.White;
             this.GButtonClose.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GButtonClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
-            this.GButtonClose.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
-            this.GButtonClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(140)))), ((int)(((byte)(238)))));
+            this.GButtonClose.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GButtonClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
             this.GButtonClose.HoverState.ForeColor = System.Drawing.Color.White;
             this.GButtonClose.Location = new System.Drawing.Point(17, 651);
             this.GButtonClose.Name = "GButtonClose";
@@ -140,6 +142,7 @@
             this.GButtonBankTransfer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GButtonBankTransfer.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.GButtonBankTransfer.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.GButtonBankTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonBankTransfer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonBankTransfer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonBankTransfer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -175,6 +178,7 @@
             this.GButtonCard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GButtonCard.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.GButtonCard.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.GButtonCard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonCard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonCard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonCard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -210,6 +214,7 @@
             this.GButtonCash.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.GButtonCash.CheckedState.ForeColor = System.Drawing.Color.Black;
             this.GButtonCash.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.GButtonCash.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GButtonCash.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.GButtonCash.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.GButtonCash.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -238,6 +243,7 @@
             this.GNumericUpDownAmountToPay.BackColor = System.Drawing.Color.Transparent;
             this.GNumericUpDownAmountToPay.BorderRadius = 9;
             this.GNumericUpDownAmountToPay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GNumericUpDownAmountToPay.DecimalPlaces = 2;
             this.GNumericUpDownAmountToPay.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GNumericUpDownAmountToPay.Location = new System.Drawing.Point(17, 416);
             this.GNumericUpDownAmountToPay.Name = "GNumericUpDownAmountToPay";

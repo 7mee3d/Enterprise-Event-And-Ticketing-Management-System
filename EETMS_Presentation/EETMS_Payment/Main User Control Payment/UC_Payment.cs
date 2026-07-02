@@ -57,7 +57,7 @@ namespace EETMS_Presentation.EETMS_Payment
                                     "$" + DR_Payment["TotalAmount"],
                                     "$" + DR_Payment["PaidAmount"],
                                     DR_Payment["NamePaymentMethod"],
-                                    DR_Payment["BookingDateTimeDateTime"],
+                                    DR_Payment["DateTimePayment"],
                                     DR_Payment["NamePaymentStatus"]
 
                         );

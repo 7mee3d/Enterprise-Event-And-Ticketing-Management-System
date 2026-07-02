@@ -32,8 +32,8 @@ namespace EETMS_DataAccessLayer
 
                     string Query = @"
 
-                                            INSERT INTO Payments ( Amount , PaymentMethodID , PaymentStatusID , ReservationID )
-                                            VALUES (@Amount , @PaymentMethodID , @PaymentStatusID , @ReservationID ) ;
+                                            INSERT INTO Payments ( Amount , PaymentMethodID , PaymentStatusID , ReservationID , DateTimePayment)
+                                            VALUES (@Amount , @PaymentMethodID , @PaymentStatusID , @ReservationID , @DateTimePayment) ;
 
 
                                             SELECT SCOPE_IDENTITY();
@@ -48,6 +48,7 @@ namespace EETMS_DataAccessLayer
                         command.Parameters.AddWithValue("@PaymentMethodID", Convert.ToInt32(mPayment.PaymentMethod));
                         command.Parameters.AddWithValue("@PaymentStatusID", Convert.ToInt32(mPayment.PaymentStatus));
                         command.Parameters.AddWithValue("@ReservationID", mPayment.BookingID);
+                        command.Parameters.AddWithValue("@DateTimePayment", mPayment.BookingDateTime);
 
                         connection.Open();
 

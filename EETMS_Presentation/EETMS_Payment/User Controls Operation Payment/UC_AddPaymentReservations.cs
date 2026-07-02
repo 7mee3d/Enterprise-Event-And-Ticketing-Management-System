@@ -57,7 +57,7 @@ namespace EETMS_Presentation.EETMS_Payment
             }
 
         }
-  
+
         private void Close_Click(object sender, EventArgs e)
             => ERequestTheClosePaymentBooking?.Invoke(this, EventArgs.Empty);
 
@@ -80,6 +80,15 @@ namespace EETMS_Presentation.EETMS_Payment
             GComboBoxBookingIDAndCustomerName.SelectedValue = clsEETMS_Constants.kONE;
             lblRemainingBalance.Text = "$0";
 
+            try
+            {
+                GComboBoxBookingIDAndCustomerName.DataSource = null;
+                GComboBoxBookingIDAndCustomerName.Items.Clear();
+                _LoadThReservationPaymentIDandNameCustomer();
+            }
+            catch
+            {
+            }
         }
 
         private void _AddNewPayment()
@@ -128,7 +137,8 @@ namespace EETMS_Presentation.EETMS_Payment
                         PaidAmount = AmountToPay,
                         PaymentMethod = PaymentMethodNumebr.ToString(),
                         PaymentStatus = StatusPaymentNumber.ToString(),
-                        BookingID = ResevationID
+                        BookingID = ResevationID,
+                        BookingDateTime = DateTime.Now
 
                     };
                 }
