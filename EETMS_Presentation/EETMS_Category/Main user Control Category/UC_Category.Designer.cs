@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Category));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Category));
             this.label1 = new System.Windows.Forms.Label();
             this.GGPanelAuickAddCategory = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GGButtonAddNewCategory = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.GTextBoxCategoryDescripation = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.GTextBoxCategoryName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.GGPanelDataGridViewEvents = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.GTextBoxSearchTheCategory = new Guna.UI2.WinForms.Guna2TextBox();
             this.GDataGridViewCategoriesInformation = new Guna.UI2.WinForms.Guna2DataGridView();
             this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountEventForCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescriptionCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GContextMenuStripCategory = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.EditCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GTextBoxSearchTheCategory = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GGButtonAddNewCategory = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GTextBoxCategoryDescripation = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GTextBoxCategoryName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ContextMenuStripCategory = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.deleteEventToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.GGPanelAuickAddCategory.SuspendLayout();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewCategoriesInformation)).BeginInit();
-            this.GContextMenuStripCategory.SuspendLayout();
+            this.ContextMenuStripCategory.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -89,54 +89,6 @@
             this.GGPanelAuickAddCategory.Size = new System.Drawing.Size(1350, 207);
             this.GGPanelAuickAddCategory.TabIndex = 2;
             // 
-            // GGButtonAddNewCategory
-            // 
-            this.GGButtonAddNewCategory.Animated = true;
-            this.GGButtonAddNewCategory.AnimatedGIF = true;
-            this.GGButtonAddNewCategory.BorderRadius = 5;
-            this.GGButtonAddNewCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonAddNewCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GGButtonAddNewCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonAddNewCategory.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GGButtonAddNewCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GGButtonAddNewCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.GGButtonAddNewCategory.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
-            this.GGButtonAddNewCategory.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GGButtonAddNewCategory.ForeColor = System.Drawing.Color.White;
-            this.GGButtonAddNewCategory.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GGButtonAddNewCategory.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
-            this.GGButtonAddNewCategory.ImageOffset = new System.Drawing.Point(-2, 0);
-            this.GGButtonAddNewCategory.Location = new System.Drawing.Point(1106, 116);
-            this.GGButtonAddNewCategory.Name = "GGButtonAddNewCategory";
-            this.GGButtonAddNewCategory.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
-            this.GGButtonAddNewCategory.Size = new System.Drawing.Size(206, 47);
-            this.GGButtonAddNewCategory.TabIndex = 3;
-            this.GGButtonAddNewCategory.Text = "Add New Category";
-            this.GGButtonAddNewCategory.Click += new System.EventHandler(this.GGButtonAddNewCategory_Click);
-            // 
-            // GTextBoxCategoryDescripation
-            // 
-            this.GTextBoxCategoryDescripation.Animated = true;
-            this.GTextBoxCategoryDescripation.BorderRadius = 8;
-            this.GTextBoxCategoryDescripation.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxCategoryDescripation.DefaultText = "";
-            this.GTextBoxCategoryDescripation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxCategoryDescripation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxCategoryDescripation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxCategoryDescripation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxCategoryDescripation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.GTextBoxCategoryDescripation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxCategoryDescripation.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxCategoryDescripation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxCategoryDescripation.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxCategoryDescripation.IconLeft")));
-            this.GTextBoxCategoryDescripation.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.GTextBoxCategoryDescripation.Location = new System.Drawing.Point(500, 116);
-            this.GTextBoxCategoryDescripation.Name = "GTextBoxCategoryDescripation";
-            this.GTextBoxCategoryDescripation.PlaceholderText = "Brief description of event types in this category...";
-            this.GTextBoxCategoryDescripation.SelectedText = "";
-            this.GTextBoxCategoryDescripation.Size = new System.Drawing.Size(569, 45);
-            this.GTextBoxCategoryDescripation.TabIndex = 7;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -147,29 +99,6 @@
             this.label4.Size = new System.Drawing.Size(122, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Category Description";
-            // 
-            // GTextBoxCategoryName
-            // 
-            this.GTextBoxCategoryName.Animated = true;
-            this.GTextBoxCategoryName.BorderRadius = 8;
-            this.GTextBoxCategoryName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxCategoryName.DefaultText = "";
-            this.GTextBoxCategoryName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxCategoryName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxCategoryName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxCategoryName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxCategoryName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.GTextBoxCategoryName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxCategoryName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxCategoryName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxCategoryName.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxCategoryName.IconLeft")));
-            this.GTextBoxCategoryName.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.GTextBoxCategoryName.Location = new System.Drawing.Point(32, 116);
-            this.GTextBoxCategoryName.Name = "GTextBoxCategoryName";
-            this.GTextBoxCategoryName.PlaceholderText = "e.g. Festivals";
-            this.GTextBoxCategoryName.SelectedText = "";
-            this.GTextBoxCategoryName.Size = new System.Drawing.Size(424, 45);
-            this.GTextBoxCategoryName.TabIndex = 7;
             // 
             // label3
             // 
@@ -208,28 +137,6 @@
             this.GGPanelDataGridViewEvents.Size = new System.Drawing.Size(1350, 569);
             this.GGPanelDataGridViewEvents.TabIndex = 8;
             // 
-            // GTextBoxSearchTheCategory
-            // 
-            this.GTextBoxSearchTheCategory.BorderRadius = 8;
-            this.GTextBoxSearchTheCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GTextBoxSearchTheCategory.DefaultText = "";
-            this.GTextBoxSearchTheCategory.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GTextBoxSearchTheCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GTextBoxSearchTheCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheCategory.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GTextBoxSearchTheCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheCategory.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GTextBoxSearchTheCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GTextBoxSearchTheCategory.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheCategory.IconLeft")));
-            this.GTextBoxSearchTheCategory.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.GTextBoxSearchTheCategory.Location = new System.Drawing.Point(29, 39);
-            this.GTextBoxSearchTheCategory.Name = "GTextBoxSearchTheCategory";
-            this.GTextBoxSearchTheCategory.PlaceholderText = "Search by Name Category ....";
-            this.GTextBoxSearchTheCategory.SelectedText = "";
-            this.GTextBoxSearchTheCategory.Size = new System.Drawing.Size(502, 39);
-            this.GTextBoxSearchTheCategory.TabIndex = 3;
-            this.GTextBoxSearchTheCategory.TextChanged += new System.EventHandler(this.GTextBoxSearchTheCategory_TextChanged);
-            // 
             // GDataGridViewCategoriesInformation
             // 
             this.GDataGridViewCategoriesInformation.AllowUserToAddRows = false;
@@ -256,7 +163,7 @@
             this.CategoryName,
             this.CountEventForCategory,
             this.DescriptionCategory});
-            this.GDataGridViewCategoriesInformation.ContextMenuStrip = this.GContextMenuStripCategory;
+            this.GDataGridViewCategoriesInformation.ContextMenuStrip = this.ContextMenuStripCategory;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -334,61 +241,136 @@
             this.DescriptionCategory.Name = "DescriptionCategory";
             this.DescriptionCategory.ReadOnly = true;
             // 
-            // GContextMenuStripCategory
+            // GTextBoxSearchTheCategory
             // 
-            this.GContextMenuStripCategory.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GContextMenuStripCategory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1,
-            this.toolStripSeparator1,
-            this.EditCategoryToolStripMenuItem,
-            this.deleteCategoryToolStripMenuItem});
-            this.GContextMenuStripCategory.Name = "GContextMenuStripEvents";
-            this.GContextMenuStripCategory.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripCategory.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripCategory.RenderStyle.ColorTable = null;
-            this.GContextMenuStripCategory.RenderStyle.RoundedEdges = true;
-            this.GContextMenuStripCategory.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.GContextMenuStripCategory.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.GContextMenuStripCategory.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.GContextMenuStripCategory.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.GContextMenuStripCategory.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.GContextMenuStripCategory.Size = new System.Drawing.Size(163, 74);
+            this.GTextBoxSearchTheCategory.BorderRadius = 8;
+            this.GTextBoxSearchTheCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxSearchTheCategory.DefaultText = "";
+            this.GTextBoxSearchTheCategory.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxSearchTheCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxSearchTheCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheCategory.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxSearchTheCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheCategory.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxSearchTheCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxSearchTheCategory.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxSearchTheCategory.IconLeft")));
+            this.GTextBoxSearchTheCategory.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.GTextBoxSearchTheCategory.Location = new System.Drawing.Point(29, 39);
+            this.GTextBoxSearchTheCategory.Name = "GTextBoxSearchTheCategory";
+            this.GTextBoxSearchTheCategory.PlaceholderText = "Search by Name Category ....";
+            this.GTextBoxSearchTheCategory.SelectedText = "";
+            this.GTextBoxSearchTheCategory.Size = new System.Drawing.Size(502, 39);
+            this.GTextBoxSearchTheCategory.TabIndex = 3;
+            this.GTextBoxSearchTheCategory.TextChanged += new System.EventHandler(this.GTextBoxSearchTheCategory_TextChanged);
             // 
-            // toolStripTextBox1
+            // GGButtonAddNewCategory
             // 
-            this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toolStripTextBox1.Enabled = false;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.ReadOnly = true;
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 18);
-            this.toolStripTextBox1.Text = "Main Operation";
-            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.GGButtonAddNewCategory.Animated = true;
+            this.GGButtonAddNewCategory.AnimatedGIF = true;
+            this.GGButtonAddNewCategory.BorderRadius = 5;
+            this.GGButtonAddNewCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonAddNewCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GGButtonAddNewCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonAddNewCategory.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GGButtonAddNewCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GGButtonAddNewCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonAddNewCategory.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(99)))));
+            this.GGButtonAddNewCategory.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GGButtonAddNewCategory.ForeColor = System.Drawing.Color.White;
+            this.GGButtonAddNewCategory.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonAddNewCategory.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(65)))), ((int)(((byte)(81)))));
+            this.GGButtonAddNewCategory.HoverState.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
+            this.GGButtonAddNewCategory.Image = global::EETMS_Presentation.Properties.Resources.Add_Icon_EETMS;
+            this.GGButtonAddNewCategory.ImageOffset = new System.Drawing.Point(-2, 0);
+            this.GGButtonAddNewCategory.Location = new System.Drawing.Point(1106, 116);
+            this.GGButtonAddNewCategory.Name = "GGButtonAddNewCategory";
+            this.GGButtonAddNewCategory.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(41)))), ((int)(((byte)(55)))));
+            this.GGButtonAddNewCategory.Size = new System.Drawing.Size(206, 47);
+            this.GGButtonAddNewCategory.TabIndex = 3;
+            this.GGButtonAddNewCategory.Text = "Add New Category";
+            this.GGButtonAddNewCategory.Click += new System.EventHandler(this.GGButtonAddNewCategory_Click);
             // 
-            // toolStripSeparator1
+            // GTextBoxCategoryDescripation
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
+            this.GTextBoxCategoryDescripation.Animated = true;
+            this.GTextBoxCategoryDescripation.BorderRadius = 8;
+            this.GTextBoxCategoryDescripation.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxCategoryDescripation.DefaultText = "";
+            this.GTextBoxCategoryDescripation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxCategoryDescripation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxCategoryDescripation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxCategoryDescripation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxCategoryDescripation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.GTextBoxCategoryDescripation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxCategoryDescripation.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxCategoryDescripation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxCategoryDescripation.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxCategoryDescripation.IconLeft")));
+            this.GTextBoxCategoryDescripation.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.GTextBoxCategoryDescripation.Location = new System.Drawing.Point(500, 116);
+            this.GTextBoxCategoryDescripation.Name = "GTextBoxCategoryDescripation";
+            this.GTextBoxCategoryDescripation.PlaceholderText = "Brief description of event types in this category...";
+            this.GTextBoxCategoryDescripation.SelectedText = "";
+            this.GTextBoxCategoryDescripation.Size = new System.Drawing.Size(569, 45);
+            this.GTextBoxCategoryDescripation.TabIndex = 7;
             // 
-            // EditCategoryToolStripMenuItem
+            // GTextBoxCategoryName
             // 
-            this.EditCategoryToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.EditCategoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditCategoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.EditCategoryToolStripMenuItem.Name = "EditCategoryToolStripMenuItem";
-            this.EditCategoryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.EditCategoryToolStripMenuItem.Text = "Edit Category";
-            this.EditCategoryToolStripMenuItem.Click += new System.EventHandler(this.EditCategoryToolStripMenuItem_Click);
+            this.GTextBoxCategoryName.Animated = true;
+            this.GTextBoxCategoryName.BorderRadius = 8;
+            this.GTextBoxCategoryName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GTextBoxCategoryName.DefaultText = "";
+            this.GTextBoxCategoryName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.GTextBoxCategoryName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.GTextBoxCategoryName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxCategoryName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.GTextBoxCategoryName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.GTextBoxCategoryName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxCategoryName.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GTextBoxCategoryName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.GTextBoxCategoryName.IconLeft = ((System.Drawing.Image)(resources.GetObject("GTextBoxCategoryName.IconLeft")));
+            this.GTextBoxCategoryName.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.GTextBoxCategoryName.Location = new System.Drawing.Point(32, 116);
+            this.GTextBoxCategoryName.Name = "GTextBoxCategoryName";
+            this.GTextBoxCategoryName.PlaceholderText = "e.g. Festivals";
+            this.GTextBoxCategoryName.SelectedText = "";
+            this.GTextBoxCategoryName.Size = new System.Drawing.Size(424, 45);
+            this.GTextBoxCategoryName.TabIndex = 7;
             // 
-            // deleteCategoryToolStripMenuItem
+            // ContextMenuStripCategory
             // 
-            this.deleteCategoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteCategoryToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
-            this.deleteCategoryToolStripMenuItem.Name = "deleteCategoryToolStripMenuItem";
-            this.deleteCategoryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.deleteCategoryToolStripMenuItem.Text = "Delete Category";
-            this.deleteCategoryToolStripMenuItem.Click += new System.EventHandler(this.deleteCategoryToolStripMenuItem_Click);
+            this.ContextMenuStripCategory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editEventToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.deleteEventToolStripMenuItem1});
+            this.ContextMenuStripCategory.Name = "contextMenuStrip1";
+            this.ContextMenuStripCategory.Size = new System.Drawing.Size(205, 108);
+            // 
+            // editEventToolStripMenuItem
+            // 
+            this.editEventToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEventToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.editEventToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editEventToolStripMenuItem.Image")));
+            this.editEventToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editEventToolStripMenuItem.Name = "editEventToolStripMenuItem";
+            this.editEventToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
+            this.editEventToolStripMenuItem.Text = "Edit Category";
+            this.editEventToolStripMenuItem.Click += new System.EventHandler(this.editEventToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(201, 6);
+            // 
+            // deleteEventToolStripMenuItem1
+            // 
+            this.deleteEventToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold);
+            this.deleteEventToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(83)))), ((int)(((byte)(227)))));
+            this.deleteEventToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteEventToolStripMenuItem1.Image")));
+            this.deleteEventToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteEventToolStripMenuItem1.Name = "deleteEventToolStripMenuItem1";
+            this.deleteEventToolStripMenuItem1.Size = new System.Drawing.Size(204, 38);
+            this.deleteEventToolStripMenuItem1.Text = "Delete Category";
+            this.deleteEventToolStripMenuItem1.Click += new System.EventHandler(this.deleteEventToolStripMenuItem1_Click);
             // 
             // UC_Category
             // 
@@ -406,8 +388,7 @@
             this.GGPanelAuickAddCategory.PerformLayout();
             this.GGPanelDataGridViewEvents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewCategoriesInformation)).EndInit();
-            this.GContextMenuStripCategory.ResumeLayout(false);
-            this.GContextMenuStripCategory.PerformLayout();
+            this.ContextMenuStripCategory.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,14 +407,13 @@
         private Guna.UI2.WinForms.Guna2GradientPanel GGPanelDataGridViewEvents;
         private Guna.UI2.WinForms.Guna2TextBox GTextBoxSearchTheCategory;
         private Guna.UI2.WinForms.Guna2DataGridView GDataGridViewCategoriesInformation;
-        private Guna.UI2.WinForms.Guna2ContextMenuStrip GContextMenuStripCategory;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem EditCategoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteCategoryToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountEventForCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionCategory;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStripCategory;
+        private System.Windows.Forms.ToolStripMenuItem editEventToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem deleteEventToolStripMenuItem1;
     }
 }

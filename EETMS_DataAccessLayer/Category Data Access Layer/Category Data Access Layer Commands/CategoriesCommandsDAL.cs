@@ -169,7 +169,7 @@ namespace EETMS_DataAccessLayer
             }
             catch (Exception ex)
             {
-                throw;
+                return RowAffecive;
             }
 
             return RowAffecive;

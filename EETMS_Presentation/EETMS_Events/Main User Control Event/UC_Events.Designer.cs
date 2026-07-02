@@ -48,7 +48,7 @@
             this.DurationEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discripation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusEvent_Pending_InProgress_Completed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GContextMenuStripEvents = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ContextMenuStripEvents = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editEventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteEventToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,7 +85,7 @@
             this.GCombvoBoxStatusCustomFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GGPanelDataGridViewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).BeginInit();
-            this.GContextMenuStripEvents.SuspendLayout();
+            this.ContextMenuStripEvents.SuspendLayout();
             this.PanelHeaderEvents.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -161,7 +161,7 @@
             this.DurationEvent,
             this.Discripation,
             this.StatusEvent_Pending_InProgress_Completed});
-            this.GDataGridViewEventsInformation.ContextMenuStrip = this.GContextMenuStripEvents;
+            this.GDataGridViewEventsInformation.ContextMenuStrip = this.ContextMenuStripEvents;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,15 +283,15 @@
             this.StatusEvent_Pending_InProgress_Completed.Name = "StatusEvent_Pending_InProgress_Completed";
             this.StatusEvent_Pending_InProgress_Completed.ReadOnly = true;
             // 
-            // GContextMenuStripEvents
+            // ContextMenuStripEvents
             // 
-            this.GContextMenuStripEvents.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextMenuStripEvents.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editEventToolStripMenuItem,
             this.toolStripSeparator2,
             this.deleteEventToolStripMenuItem1});
-            this.GContextMenuStripEvents.Name = "contextMenuStrip1";
-            this.GContextMenuStripEvents.Size = new System.Drawing.Size(197, 108);
-            this.GContextMenuStripEvents.Opening += new System.ComponentModel.CancelEventHandler(this.GContextMenuStripEvents_Opening);
+            this.ContextMenuStripEvents.Name = "contextMenuStrip1";
+            this.ContextMenuStripEvents.Size = new System.Drawing.Size(197, 108);
+            this.ContextMenuStripEvents.Opening += new System.ComponentModel.CancelEventHandler(this.GContextMenuStripEvents_Opening);
             // 
             // editEventToolStripMenuItem
             // 
@@ -874,7 +874,7 @@
             this.Load += new System.EventHandler(this.USEvents_Load);
             this.GGPanelDataGridViewEvents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GDataGridViewEventsInformation)).EndInit();
-            this.GContextMenuStripEvents.ResumeLayout(false);
+            this.ContextMenuStripEvents.ResumeLayout(false);
             this.PanelHeaderEvents.ResumeLayout(false);
             this.PanelHeaderEvents.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
@@ -939,7 +939,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DurationEvent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discripation;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusEvent_Pending_InProgress_Completed;
-        private System.Windows.Forms.ContextMenuStrip GContextMenuStripEvents;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStripEvents;
         private System.Windows.Forms.ToolStripMenuItem editEventToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem deleteEventToolStripMenuItem1;

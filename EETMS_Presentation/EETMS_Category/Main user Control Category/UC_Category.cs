@@ -85,39 +85,41 @@ namespace EETMS_Presentation.EETMS_Category
             else
                 _CategoryInfo.CategoryName = GTextBoxCategoryName.Text;
 
-
             _CategoryInfo.DescripationCategory = GTextBoxCategoryDescripation.Text;
 
 
             if (!_CheckTheTextBoxFiledOrNot())
-                if (!CategoriesBL.IsCategoryExistsBy(GTextBoxCategoryName.Text))
-                    if (CategoriesBL.SaveInformationCategory(_CategoryInfo))
-                        if (_CategoryInfo.EnMode == CategoryDTO._EnModeCategory._kAADD_NEW_CATEGORY)
-                        {
-                            IDCategory = _CategoryInfo.CategoryID;
-                            clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category Addedd Successfully", "Note of Add new Category", MessageDialogButtons.OK, MessageDialogIcon.Information);
-                        }
-                        else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category Updated Successfully", "Note of Update Category", MessageDialogButtons.OK, MessageDialogIcon.Information);
-                    else
+            {
+                if (_ModeCategory == _EnModeCategory._ADD_NEW_CATEGORY)
+                {
+                    if (CategoriesBL.IsCategoryExistsBy(GTextBoxCategoryName.Text))
                     {
-                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Add/Update Faild", "Note For Add /Update Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
                         _ClearTheTextBoxies();
+                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Connot Be Added This Category Becouse The Category Already Exsits.", "Note For Add New Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
                         return;
                     }
-                else
-                {
-                    _ClearTheTextBoxies();
-                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Connot Be Added This Category Becouse The Category Already Exsits.", "Note For Add New Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
-                    return;
                 }
+            }
             else
             {
-
                 clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Must Fill The Category Name To Be Add", "Note Add New Category ", MessageDialogButtons.OK, MessageDialogIcon.Error);
                 return;
 
             }
 
+            if (CategoriesBL.SaveInformationCategory(_CategoryInfo))
+                if (_CategoryInfo.EnMode == CategoryDTO._EnModeCategory._kAADD_NEW_CATEGORY)
+                {
+                    IDCategory = _CategoryInfo.CategoryID;
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category Addedd Successfully", "Note of Add new Category", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                }
+                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category Updated Successfully", "Note of Update Category", MessageDialogButtons.OK, MessageDialogIcon.Information);
+            else
+            {
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Add/Update Faild", "Note For Add /Update Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                _ClearTheTextBoxies();
+                return;
+            }
 
             _InitalSettingUpdateMode();
             _IntialSettingsAfterLoadTheSection();
@@ -144,7 +146,7 @@ namespace EETMS_Presentation.EETMS_Category
                 GGButtonAddNewCategory.Text = "Add New Category";
                 _CategoryInfo = new CategoryDTO();
                 _CategoryInfo.EnMode = CategoryDTO._EnModeCategory._kAADD_NEW_CATEGORY;
-
+                IDCategory = -1;
                 return;
             }
 
@@ -236,27 +238,22 @@ namespace EETMS_Presentation.EETMS_Category
         private void USCategory_Click(object sender, EventArgs e)
            => _ResetAllSettingAfterClickTheUSCategory();
 
-        private void EditCategoryToolStripMenuItem_Click(object sender, EventArgs e)
-            => _LoadAllInformationCategoryAfterLoadTheSectionUpdateMode();
-
         private void _DeleteTheCategoryByID()
         {
 
-            if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure To Be Delete This Category ??", "Note For Delete The Category", MessageDialogButtons.OK, MessageDialogIcon.Question))
+            if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure To Be Delete This Category ??", "Note For Delete The Category", MessageDialogButtons.OKCancel, MessageDialogIcon.Question))
             {
                 if (CategoriesBL.DeleteTheCategoryBy(_GetTheIDCategoryAfterSelectedDGV()))
                     clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category deleted Successfully ", "note For Delete Category", MessageDialogButtons.OK, MessageDialogIcon.Information);
-                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category deleted Faild ", "note For Delete Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category Connot deleted Becouse The Category Referance Events", "note For Delete Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
+
             }
             else
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category Connot deleted Becouse The Category Referance Events", "note For Delete Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Category deleted Faild ", "note For Delete Category", MessageDialogButtons.OK, MessageDialogIcon.Error);
 
             _IntialSettingsAfterLoadTheSection();
             _ResetAllSettingAfterClickTheUSCategory();
         }
-
-        private void deleteCategoryToolStripMenuItem_Click(object sender, EventArgs e)
-            => _DeleteTheCategoryByID();
 
         private void _LoadAllInformationCategoriesInTheDataGridViewAfterSearchTextBox()
         {
@@ -289,6 +286,14 @@ namespace EETMS_Presentation.EETMS_Category
             _LoadAllInformationCategoriesInTheDataGridViewAfterSearchTextBox();
         }
 
+        private void editEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _LoadAllInformationCategoryAfterLoadTheSectionUpdateMode();
+        }
 
+        private void deleteEventToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            _DeleteTheCategoryByID();
+        }
     }
 }

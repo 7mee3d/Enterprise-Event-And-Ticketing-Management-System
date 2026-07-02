@@ -63,6 +63,16 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_Icon_EETMS {
+            get {
+                object obj = ResourceManager.GetObject("Add_Icon_EETMS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Add_Image_Icon_EETMS {
             get {
                 object obj = ResourceManager.GetObject("Add_Image_Icon_EETMS", resourceCulture);
