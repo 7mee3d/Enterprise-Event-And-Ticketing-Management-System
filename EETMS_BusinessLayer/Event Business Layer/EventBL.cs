@@ -101,7 +101,7 @@ namespace EETMS_BusinessLayer
             switch (eventFilterDTO.TypeMainFilterEvent)
             {
 
-                case "Status Event":
+                case "Event Progress":
                     return _GetAllEventsAccordingTheStatusBy(eventFilterDTO.TypeSubFilterEvent);
                 case "Category":
                     return _GetAllInformatioNEventCategoryAccordingBy(eventFilterDTO.TypeSubFilterEvent);

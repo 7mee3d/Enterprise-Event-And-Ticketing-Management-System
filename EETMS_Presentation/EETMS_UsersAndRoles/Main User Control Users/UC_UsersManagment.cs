@@ -119,13 +119,15 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
 
         private async void _USUsersManagmentAndRoles_Load(object sender, EventArgs e)
         {
-            await _InitalSettingTheUserManagmentCountsUsers();
+
 
             GComboBoxMainTypeFilter.Items.Clear();
 
             GComboBoxMainTypeFilter.Items.Add("Status");
             GComboBoxMainTypeFilter.Items.Add("Roles");
             GComboBoxMainTypeFilter.Items.Add("Last Login For Day");
+
+            await _InitalSettingTheUserManagmentCountsUsers();
         }
 
         private void _GGButtonAddNewUser_Click(object sender, EventArgs e)

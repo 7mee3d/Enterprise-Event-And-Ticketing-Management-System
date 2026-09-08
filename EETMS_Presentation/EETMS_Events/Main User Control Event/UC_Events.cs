@@ -23,8 +23,9 @@ namespace EETMS_Presentation.EETMS_Events
 
         private enum _EnChoiseMainFilter
         {
+            
             kNONE = 0,
-            kSTATUS_EVENT = 1,
+            kEVENT_PROGRESS = 1,
             kCATEGORY_TYPE_EVENT = 2,
             kCAPACITY_UNSAGE_EVENT = 3,
             kLOCATION_EVENT = 4,
@@ -320,7 +321,7 @@ namespace EETMS_Presentation.EETMS_Events
 
             GSubComboBoxTypeTheFilter.Visible = true;
 
-            if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnChoiseMainFilter.kSTATUS_EVENT))
+            if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnChoiseMainFilter.kEVENT_PROGRESS))
                 _LoadAllInformationTypeStatus(GSubComboBoxTypeTheFilter);
             else if (GComboBoxMainTypeFilter.SelectedIndex == Convert.ToInt16(_EnChoiseMainFilter.kCATEGORY_TYPE_EVENT))
                 _LoadAllInformationCategoryNameToComboBox(GSubComboBoxTypeTheFilter);
