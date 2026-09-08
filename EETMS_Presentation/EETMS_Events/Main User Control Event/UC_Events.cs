@@ -23,7 +23,7 @@ namespace EETMS_Presentation.EETMS_Events
 
         private enum _EnChoiseMainFilter
         {
-            
+
             kNONE = 0,
             kEVENT_PROGRESS = 1,
             kCATEGORY_TYPE_EVENT = 2,
@@ -47,9 +47,18 @@ namespace EETMS_Presentation.EETMS_Events
                 EndDateTimeEvent.ToString() == "1/1/0001 12:00:00 AM")
                 return "Unknown";
 
-            if (DateTime.Now > EndDateTimeEvent) return "Completed";
+            DateTime CurrentDateTime = new DateTime(
+                DateTime.Now.Year,
+                DateTime.Now.Month,
+                DateTime.Now.Day,
+                DateTime.Now.Hour,
+                DateTime.Now.Minute,
+                0
+            );
 
-            if (StartDateTimeEvent > DateTime.Now) return "Pending";
+            if (CurrentDateTime > EndDateTimeEvent) return "Completed";
+
+            if (StartDateTimeEvent > CurrentDateTime) return "Pending";
 
 
             return "In Progress";
