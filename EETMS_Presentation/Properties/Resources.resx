@@ -136,9 +136,6 @@
   <data name="Map_icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Map_icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edit_Customer_Icon_EETMS_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit_Customer_Icon_EETMS_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Role_users_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Role_users_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,6 +150,9 @@
   </data>
   <data name="Fingerprint_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fingerprint_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Check_Choise_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Check_Choise_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Edit_Role_icon_EETMS_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_Role_icon_EETMS_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,11 +169,14 @@
   <data name="Trending_Up_Green_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Trending_Up_Green_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Save_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_Icon_EETMS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Manage_White_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Manage_White_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Error_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Error_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ticket_Blue_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ticket_Blue_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Quantity_Gray_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Quantity_Gray_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,9 +205,6 @@
   <data name="Person_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Person_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Remove_image_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Remove_image_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Total_users_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Total_users_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -213,6 +213,9 @@
   </data>
   <data name="Add_Blue_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add_Blue_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Card_Information_Person_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Card_Information_Person_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Description_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Description_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +229,8 @@
   <data name="eye hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye hide1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Person_Email_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Person_Email_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Pepole_Group_Orange_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pepole_Group_Orange_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Arrow_Left_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Arrow_Left_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,14 +238,11 @@
   <data name="Check_White_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Check_White_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Check_Choise_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Check_Choise_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Remove_image_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Remove_image_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Star_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Star_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Delete_User_Icon_EETMS_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete_User_Icon_EETMS_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search_Person_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_Person_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,20 +256,23 @@
   <data name="Warning_Red_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Warning_Red_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Save_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save_Icon_EETMS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete_User_Icon_EETMS_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete_User_Icon_EETMS_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Block_Red_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Block_Red_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fully_Booked_Calender_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fully_Booked_Calender_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Error_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Error_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Active_Users_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Active_Users_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Active_Unactive_Icon_EETMS_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Active_Unactive_Icon_EETMS_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Card_Information_Person_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Card_Information_Person_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fully_Booked_Calender_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fully_Booked_Calender_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Edit_User_Icon_EETMS_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_User_Icon_EETMS_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,14 +292,14 @@
   <data name="Category_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Category_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Edit_Customer_Icon_EETMS_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit_Customer_Icon_EETMS_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Person_Email_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Person_Email_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Warning_Brown_icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Warning_Brown_icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ticket_Blue_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ticket_Blue_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Active_Users_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Active_Users_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,7 +307,7 @@
   <data name="eye show gif Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye show gif Image1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pepole_Group_Orange_Icon_EETMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pepole_Group_Orange_Icon_EETMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ticket_Rotated_Icon_EETMS_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ticket_Rotated_Icon_EETMS_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

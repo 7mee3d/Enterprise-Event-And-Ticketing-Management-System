@@ -42,7 +42,7 @@ namespace EETMS_DataAccessLayer
                                     INSERT INTO Emails ( EmailAddress , CusotmerID ) 
                                     VALUES (@EmailAddress, @NEW_CUSTOMER_ID) ;
 
-                                    INSERT INTO Phones( PhoneNumber , CusotmerID ) 
+                                    INSERT INTO Phones( PhoneNumber , CustomerID ) 
                                     VALUES (@PhoneNumber, @NEW_CUSTOMER_ID ) ;
 
 

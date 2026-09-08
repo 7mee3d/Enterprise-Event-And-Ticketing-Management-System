@@ -260,6 +260,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Ticket_Rotated_Icon_EETMS_32.png" />
     <None Include="Resources\Pepole_Group_Orange_Icon_EETMS.png" />
     <None Include="Resources\Event_Purple_Icon_EETMS.png" />
     <None Include="Resources\Ticket_Blue_Icon_EETMS.png" />

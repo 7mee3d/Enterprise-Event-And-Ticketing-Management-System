@@ -74,13 +74,18 @@ namespace EETMS_Presentation
                     break;
 
                 case UserDTO.EnStatusLoginUser._kFAILD_LOGIN:
-                    await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "Username or Password is incorrect", Color.Red); break;
+                    await _AniMessageLoginScreen(
+                        lblShowMessageInLoginScreen,
+                        "Username or Password is incorrect",
+                        Color.Red);
+                    break;
 
                 case UserDTO.EnStatusLoginUser._kBLOCKED_USER:
                     await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "User is blocked", Color.Red); break;
 
                 case UserDTO.EnStatusLoginUser._kUSER_NOT_FOUND:
                     await _AniMessageLoginScreen(lblShowMessageInLoginScreen, "User not found", Color.Red); break;
+
             }
         }
 

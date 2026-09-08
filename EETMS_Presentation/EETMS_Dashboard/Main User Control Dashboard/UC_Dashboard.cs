@@ -12,8 +12,6 @@ namespace EETMS_Presentation.EETMS_Dashboard
 {
     public partial class UC_Dashboard : UserControl
     {
-
-
         public UC_Dashboard()
         {
             InitializeComponent();
@@ -37,7 +35,6 @@ namespace EETMS_Presentation.EETMS_Dashboard
                     Convert.ToInt32(DR_TicketsByCategory["CountTicketForCategory"])
                 );
             }
-
 
             GChartTicketByCategory.Datasets.Add(DataSet);
 
@@ -89,12 +86,12 @@ namespace EETMS_Presentation.EETMS_Dashboard
             GChartsTotalRevenueForMonth.Update();
         }
 
-        private void USDashboard_Load(object sender, EventArgs e)
+        private async void USDashboard_Load(object sender, EventArgs e)
         {
             _LoadTheStatisticsTicketsByCategoryInCharts();
             _LoadAllYearsToComboBoxAndInitalSettingTheComboBox();
             _LoadTheDataToChartsTotalRevenueForMonth();
-            _InitalSettingAfterLoadTheDashboardAsync();
+            await _InitalSettingAfterLoadTheDashboardAsync();
         }
 
         private void GComboBoxYearsPayments_SelectionChangeCommitted(object sender, EventArgs e)
@@ -103,11 +100,16 @@ namespace EETMS_Presentation.EETMS_Dashboard
         private async Task _InitalSettingAfterLoadTheDashboardAsync()
         {
 
-            clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheTotalRevenueBL(), lblTotalRevenue, 1, true);
-            clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheSoldTickets(), lblTicketSold, 2);
-            clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheTotalActiveEvents(), lblActiveEvents, 5);
-            clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheTotalCustomers(), lblTotalCustomers, 2);
+            Task animationTotalRevenue =
+                clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheTotalRevenueBL(), lblTotalRevenue, NumberHowToBeDelay: 1, true);
+            Task animationSoldTickets =
+                clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheSoldTickets(), lblTicketSold, NumberHowToBeDelay: 2);
+            Task animationTotalActiveEvents =
+                clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheTotalActiveEvents(), lblActiveEvents, NumberHowToBeDelay: 5);
+            Task animationTotalCustomers =
+                clsEETMS_SettingPresentation._AnimationLables(DashboardBL.GetTheTotalCustomers(), lblTotalCustomers, NumberHowToBeDelay: 2);
 
+            await Task.WhenAll(animationTotalRevenue, animationSoldTickets, animationTotalActiveEvents, animationTotalCustomers);
 
         }
 

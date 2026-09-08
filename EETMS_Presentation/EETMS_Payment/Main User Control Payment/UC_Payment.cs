@@ -7,6 +7,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Resources;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -31,6 +32,7 @@ namespace EETMS_Presentation.EETMS_Payment
         public UC_Payment()
         {
             InitializeComponent();
+
             _IsCheckButtonFilter = false;
             ERequestTheOpenAddPaymentBooking = null;
         }
@@ -106,22 +108,29 @@ namespace EETMS_Presentation.EETMS_Payment
 
         }
 
-        private void _LoadAllInformationPaymentToDGV()
+        private async Task _LoadAllInformationPaymentToDGV()
         {
             DataTable Payments_DT = PaymentsBL.GetAllInformationPayments();
 
-            clsEETMS_SettingPresentation._AnimationLables(PaymentsBL.GetTheTotalRevenue(), lblTotalRevenue, clsEETMS_Constants.kNUMBER_DELEAY_ANIMATION_PAYMENT, true);
+            Task animationLabel = clsEETMS_SettingPresentation._AnimationLables(
+                PaymentsBL.GetTheTotalRevenue(),
+                lblTotalRevenue,
+                clsEETMS_Constants.kNUMBER_DELEAY_ANIMATION_PAYMENT,
+                true);
 
             _LoadAllInformationPayments(Payments_DT);
+
+            await animationLabel;
 
             GDataGridViewPaymentInformation.ClearSelection();
         }
 
-        private void USPayment_Load(object sender, EventArgs e)
+        private async void USPayment_Load(object sender, EventArgs e)
         {
-            _LoadAllInformationPaymentToDGV();
-
+            Task LoadInfoPaymentsInDGV = _LoadAllInformationPaymentToDGV();
             GDateTimePickerFromDatePayment.MaxDate = DateTime.Today.Date;
+
+            await LoadInfoPaymentsInDGV;
         }
 
         private void GTextBoxSearchTheCategory_TextChanged(object sender, EventArgs e)
@@ -149,7 +158,7 @@ namespace EETMS_Presentation.EETMS_Payment
         private void GGButtonPaymentBooking_Click(object sender, EventArgs e)
            => ERequestTheOpenAddPaymentBooking?.Invoke(this, EventArgs.Empty);
 
-        private void _InitalSettingTheComboBoxies()
+        private async Task _InitalSettingTheComboBoxies()
         {
 
             GDataGridViewPaymentInformation.Rows.Clear();
@@ -168,10 +177,10 @@ namespace EETMS_Presentation.EETMS_Payment
             GGSubPanelFilteringByPaymentDate.Visible = false;
             GGSubPanelGeneralFilter.Visible = false;
 
-            _LoadAllInformationPaymentToDGV();
+            await _LoadAllInformationPaymentToDGV();
         }
 
-        private void _ActiveTheFilter()
+        private async Task _ActiveTheFilter()
         {
 
             if (_IsCheckButtonFilter)
@@ -182,7 +191,7 @@ namespace EETMS_Presentation.EETMS_Payment
                 _IsCheckButtonFilter = false;
                 GGButtonFilter.Text = "Filter";
 
-                _InitalSettingTheComboBoxies();
+                await _InitalSettingTheComboBoxies();
             }
             else
             {
@@ -197,8 +206,8 @@ namespace EETMS_Presentation.EETMS_Payment
 
         }
 
-        private void GGButtonFilter_Click(object sender, EventArgs e)
-            => _ActiveTheFilter();
+        private async void GGButtonFilter_Click(object sender, EventArgs e)
+            => await _ActiveTheFilter();
 
         private void _LoadAllInformationPaymentStatusToComboBox()
         {

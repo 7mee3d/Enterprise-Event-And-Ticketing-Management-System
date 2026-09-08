@@ -58,7 +58,8 @@ namespace EETMS_BusinessLayer
 
             InfoUser.LastLoginUser = DateTime.Now;
 
-            bool isValidAccountUser = (IsUserExsitsByEmail(UsernameOrEmail, Password) || IsUserExsitsByUsername(UsernameOrEmail, Password));
+            bool isValidAccountUser = (IsUserExsitsByEmail(UsernameOrEmail, Password) ||
+                IsUserExsitsByUsername(UsernameOrEmail, Password));
 
             if (isValidAccountUser)
             {

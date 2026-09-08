@@ -180,9 +180,21 @@ namespace EETMS_Presentation.EETMS_Customers
             if (CustomerBL.Save(_CustomerInformation))
             {
                 if (_EnMode == _EnModeCustomer._kADD_NEW_CUSTOMER)
-                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, $"The Customer ID [{_CustomerInformation.CusotmerID}] Added Sccuessfully", "Note Of Add New Customer", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                        _G2MD, 
+                        $"The Customer ID [{_CustomerInformation.CusotmerID}] Added Sccuessfully",
+                        "Note Of Add New Customer", 
+                        MessageDialogButtons.OK,
+                        MessageDialogIcon.Information
+                        );
 
-                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, $"The Customer ID [{_CustomerInformation.CusotmerID}] Updated Sccuessfully", "Note Of Add Update Customer", MessageDialogButtons.OK, MessageDialogIcon.Information);
+                else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD, 
+                    $"The Customer ID [{_CustomerInformation.CusotmerID}] Updated Sccuessfully",
+                    "Note Of Add Update Customer",
+                    MessageDialogButtons.OK,
+                    MessageDialogIcon.Information
+                    );
             }
 
             GButtonAddNewCustomer.Text = "Update Customer";
@@ -237,7 +249,12 @@ namespace EETMS_Presentation.EETMS_Customers
             if (_CheckTheAllTextBoxiesAllFilledOrNot(_AllInformationCustomerInList))
                 _AddOrUpdateInformationCustomer();
             else
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Please Fill All Text Boxies Customer To Be Added / Update .. ", "Note The Add / Update Information Customer ", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD, 
+                    "Please Fill All Text Boxies Customer To Be Added / Update .. ",
+                    "Note The Add / Update Information Customer ", 
+                    MessageDialogButtons.OK,
+                    MessageDialogIcon.Error);
 
 
 

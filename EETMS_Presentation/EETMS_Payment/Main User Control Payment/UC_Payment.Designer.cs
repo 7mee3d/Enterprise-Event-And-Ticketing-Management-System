@@ -1,4 +1,6 @@
-﻿namespace EETMS_Presentation.EETMS_Payment
+﻿using System.Threading.Tasks;
+
+namespace EETMS_Presentation.EETMS_Payment
 {
     partial class UC_Payment
     {
@@ -26,7 +28,7 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private async Task InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Payment));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();

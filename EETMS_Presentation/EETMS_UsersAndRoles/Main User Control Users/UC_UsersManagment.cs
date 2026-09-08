@@ -8,6 +8,7 @@ using Guna.UI2.WinForms;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Roles
@@ -36,16 +37,21 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             Convert.ToInt32(GDataGridViewUsersInformation.SelectedRows[clsEETMS_Constants.kZERO].Cells[clsEETMS_Constants.kZERO].Value) :
             clsEETMS_Constants.kNEGATIVE_ONE);
 
-        private void _InitalSettingTheUserManagmentCountsUsers()
+        private async Task _InitalSettingTheUserManagmentCountsUsers()
         {
             GDataGridViewUsersInformation.Rows.Clear();
 
-            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTotalUsers(), lblTotalUsers, clsEETMS_Constants.kMAX_NUMBER_DELAY_USER_US, false);
-            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheAvtiveAdmin(), lblTotalActiveAdmin, clsEETMS_Constants.kMAX_NUMBER_DELAY_USER_US, false);
-            clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheBlockedUser(), lblTotalBlockedAccountsUser, clsEETMS_Constants.kMAX_NUMBER_DELAY_USER_US, false);
+            Task animationTotalUsers =
+                clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTotalUsers(), lblTotalUsers, clsEETMS_Constants.kMAX_NUMBER_DELAY_USER_US, false);
+            Task animationActiveAdmins =
+                clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheAvtiveAdmin(), lblTotalActiveAdmin, clsEETMS_Constants.kMAX_NUMBER_DELAY_USER_US, false);
+            Task animationTotalBlockedUsers =
+                clsEETMS_SettingPresentation._AnimationLables(UserBL.GetTheBlockedUser(), lblTotalBlockedAccountsUser, clsEETMS_Constants.kMAX_NUMBER_DELAY_USER_US, false);
 
             _LoadAllInformationUsersToTheDGV();
             GDataGridViewUsersInformation.ClearSelection();
+
+            await Task.WhenAll(animationTotalUsers, animationActiveAdmins, animationTotalBlockedUsers);
 
         }
 
@@ -111,9 +117,10 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             _LoadAllDataToTheDataGridViewUsers(DT_AllInformationUser);
         }
 
-        private void _USUsersManagmentAndRoles_Load(object sender, EventArgs e)
+        private async void _USUsersManagmentAndRoles_Load(object sender, EventArgs e)
         {
-            _InitalSettingTheUserManagmentCountsUsers();
+            await _InitalSettingTheUserManagmentCountsUsers();
+
             GComboBoxMainTypeFilter.Items.Clear();
 
             GComboBoxMainTypeFilter.Items.Add("Status");
@@ -124,7 +131,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         private void _GGButtonAddNewUser_Click(object sender, EventArgs e)
             => ERequestToOpenTheAddNewUserUS?.Invoke(this, _GetTheIDUserAfterSelectionUserFromDGV());
 
-        private void _ActiveAndInactiveTheUser()
+        private async Task _ActiveAndInactiveTheUser()
         {
 
             string TextMessage = clsEETMS_Constants.kEMPTY_STRING;
@@ -161,7 +168,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                 {
                     mUser.enMode = UserDTO.EnModeUser._kUPDATE_INFORMATION_USER;
 
-                    if (mUser.NumberAttempts == 0 && mUser.IsActiveAccount )
+                    if (mUser.NumberAttempts == 0 && mUser.IsActiveAccount)
                     {
                         mUser.NumberAttempts = 3;
                         IsActiveOrAttempts = true;
@@ -191,7 +198,7 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
                             else TextMessage = "The User is Inactive Successfully";
                         }
 
-                        _InitalSettingTheUserManagmentCountsUsers();
+                        await _InitalSettingTheUserManagmentCountsUsers();
 
                     }
                     else
@@ -375,10 +382,10 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
         private void GSubComboBoxTypeTheFilter_SelectionChangeCommitted(object sender, EventArgs e)
             => _FillTheInformationFilter();
 
-        private void changeActiveToolStripMenuItem_Click(object sender, EventArgs e)
-            => _ActiveAndInactiveTheUser();
+        private async void changeActiveToolStripMenuItem_Click(object sender, EventArgs e)
+            => await _ActiveAndInactiveTheUser();
 
-        private void deleteEventToolStripMenuItem1_Click(object sender, EventArgs e)
+        private async void deleteEventToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             int UserID = _GetTheIDUserAfterSelectionUserFromDGV();
 
@@ -386,17 +393,40 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             {
 
 
-                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are you sure to be delete This User ..?? ", "Note For the delete user", MessageDialogButtons.YesNo, MessageDialogIcon.Question))
+                if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD,
+                    "Are you sure to be delete This User ..?? ",
+                    "Note For the delete user",
+                    MessageDialogButtons.YesNo,
+                    MessageDialogIcon.Question))
+
                     if (UserBL.DeleteTheUserBy(_GetTheIDUserAfterSelectionUserFromDGV()))
                     {
-                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The User is Deleted Successfully", "Note For Delete The User", MessageDialogButtons.YesNo, MessageDialogIcon.Information);
-                        _InitalSettingTheUserManagmentCountsUsers();
+                        clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                            _G2MD,
+                            "The User is Deleted Successfully",
+                            "Note For Delete The User",
+                            MessageDialogButtons.YesNo,
+                            MessageDialogIcon.Information);
+
+                        await _InitalSettingTheUserManagmentCountsUsers();
                     }
-                    else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The User is Deleted Faild", "Note For Delete The User", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                    else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                        _G2MD,
+                        "The User is Deleted Faild",
+                        "Note For Delete The User",
+                        MessageDialogButtons.OK,
+                        MessageDialogIcon.Error);
 
             }
             else
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "You Must Selected The User From List To Be Delete.", "Important Note ...", MessageDialogButtons.OK, MessageDialogIcon.Warning);
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD,
+                    "You Must Selected The User From List To Be Delete.",
+                    "Important Note ...",
+                    MessageDialogButtons.OK,
+                    MessageDialogIcon.Warning);
+
 
         }
 
@@ -407,7 +437,12 @@ namespace EETMS_Presentation.EETMS_UsersAndRoles.Main_User_Control_Users_And_Rol
             if (UserID != clsEETMS_Constants.kNEGATIVE_ONE)
                 ERequestToOpenTheAddNewUserUS?.Invoke(this, UserID);
             else
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "You Must Selected The User From List To Be Updated information.", "Important Note ...", MessageDialogButtons.OK, MessageDialogIcon.Warning);
+                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                    _G2MD,
+                    "You Must Selected The User From List To Be Updated information.",
+                    "Important Note ...",
+                    MessageDialogButtons.OK,
+                    MessageDialogIcon.Warning);
         }
     }
 }

@@ -210,7 +210,6 @@
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.Height = 67;
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.GDataGridViewEventsInformation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.GDataGridViewEventsInformation.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GDataGridViewEventsInformation_CellFormatting);
             // 
             // EventID
             // 

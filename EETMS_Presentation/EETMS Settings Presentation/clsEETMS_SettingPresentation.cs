@@ -9,7 +9,11 @@ namespace EETMS_Presentation.EETMS_Settings
     public sealed class clsEETMS_SettingPresentation
     {
 
-        public static async Task _AnimationLables(double ResultNumber, Label LableToBeAni, int NumberHowToBeDelay = 5, bool IsTheLableMoney = false)
+        public static async Task _AnimationLables(
+            double ResultNumber,
+            Label LableToBeAni,
+            int NumberHowToBeDelay = 5,
+            bool IsTheLableMoney = false)
         {
 
             int Steps = 100;

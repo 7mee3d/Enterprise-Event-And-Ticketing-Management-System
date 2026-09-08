@@ -4,6 +4,7 @@ using EETMS_Presentation.EETMS_Settings;
 using Guna.UI2.WinForms;
 using System;
 using System.Data;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -59,46 +60,23 @@ namespace EETMS_Presentation.EETMS_Customers
 
         }
 
-        private void _InitalSettingAfterLoadingTheCustomerUS()
+        private async Task _InitalSettingAfterLoadingTheCustomerUS()
         {
 
             GDataGridViewCustomerInformation.Rows.Clear();
             _LoadAllInformationCustomerToDataGridView();
             GDataGridViewCustomerInformation.ClearSelection();
-            clsEETMS_SettingPresentation._AnimationLables(_GetTotalCustomer(), lblTotalCustomer, 4, false);
+            Task animationCustomerSection = clsEETMS_SettingPresentation._AnimationLables(
+                _GetTotalCustomer(),
+                lblTotalCustomer,
+               NumberHowToBeDelay: 4,
+                false);
 
-
+            await animationCustomerSection;
         }
 
-        private void USCustomers_Load(object sender, EventArgs e)
-            => _InitalSettingAfterLoadingTheCustomerUS();
-
-        private void DeleteCustomerlStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void updateCustomerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            int CustomerID = _GetTheIDCustomerAfterSelectedInDataGridView();
-
-
-            if (CustomerID != clsEETMS_Constants.kNEGATIVE_ONE)
-                RequestOpenTheAddNewCustomer?.Invoke(this, CustomerID);
-            else
-            {
-
-                clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
-                      _G2MD,
-                       "You Must Selected The Customer From List To Be Updated information.",
-                       "Important Note ...",
-                     MessageDialogButtons.YesNo,
-                      MessageDialogIcon.Warning
-                      );
-            }
-        }
+        private async void USCustomers_Load(object sender, EventArgs e)
+            => await _InitalSettingAfterLoadingTheCustomerUS();
 
         private void GTextBoxSearchTheEvent_TextChanged(object sender, EventArgs e)
         {
@@ -130,9 +108,6 @@ namespace EETMS_Presentation.EETMS_Customers
             }
         }
 
-        private void GGButtonAddNewCustomer_Click(object sender, EventArgs e)
-         => RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
-
         private void GGButtonAddNewCustomer_Click_1(object sender, EventArgs e)
          => RequestOpenTheAddNewCustomer?.Invoke(this, _GetTheIDCustomerAfterSelectedInDataGridView());
 
@@ -156,7 +131,7 @@ namespace EETMS_Presentation.EETMS_Customers
             }
         }
 
-        private void deleteCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void deleteCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int CustomerID = _GetTheIDCustomerAfterSelectedInDataGridView();
 
@@ -169,7 +144,7 @@ namespace EETMS_Presentation.EETMS_Customers
                         clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Customer is Deleteed Sccuessfully", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Information);
                     else clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Customer is Delete Failed", "Note For Delete Customer operation", MessageDialogButtons.YesNo, MessageDialogIcon.Warning);
 
-                    _InitalSettingAfterLoadingTheCustomerUS();
+                    await _InitalSettingAfterLoadingTheCustomerUS();
                 }
             }
             else

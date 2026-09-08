@@ -623,6 +623,16 @@ namespace EETMS_Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ticket_Rotated_Icon_EETMS_32 {
+            get {
+                object obj = ResourceManager.GetObject("Ticket_Rotated_Icon_EETMS_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Total_users_Icon_EETMS {
             get {
                 object obj = ResourceManager.GetObject("Total_users_Icon_EETMS", resourceCulture);

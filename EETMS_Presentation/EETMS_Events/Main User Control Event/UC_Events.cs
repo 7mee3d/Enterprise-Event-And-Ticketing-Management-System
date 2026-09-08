@@ -8,8 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Management.Instrumentation;
-using System.Security.Policy;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EETMS_Presentation.EETMS_Events
@@ -43,7 +42,9 @@ namespace EETMS_Presentation.EETMS_Events
 
         private string _GetTheEventStatusBy(DateTime StartDateTimeEvent, DateTime EndDateTimeEvent)
         {
-            if (StartDateTimeEvent.ToString() == "1/1/0001 12:00:00 AM" || EndDateTimeEvent.ToString() == "1/1/0001 12:00:00 AM") return "Unknown";
+            if (StartDateTimeEvent.ToString() == "1/1/0001 12:00:00 AM" ||
+                EndDateTimeEvent.ToString() == "1/1/0001 12:00:00 AM")
+                return "Unknown";
 
             if (DateTime.Now > EndDateTimeEvent) return "Completed";
 
@@ -86,7 +87,8 @@ namespace EETMS_Presentation.EETMS_Events
                      DR_Event["CountryName"] + " , " + DR_Event["Street"],
                      DR_Event["Duration"],
                      DR_Event["Discripation"],
-                     _GetTheEventStatusBy(Convert.ToDateTime(DR_Event["DateTimeEvent"]), Convert.ToDateTime(!string.IsNullOrWhiteSpace(DR_Event["EndDateTimeEvent"].ToString()) ? DR_Event["EndDateTimeEvent"] : null))
+                     _GetTheEventStatusBy(Convert.ToDateTime(DR_Event["DateTimeEvent"]),
+                     Convert.ToDateTime(!string.IsNullOrWhiteSpace(DR_Event["EndDateTimeEvent"].ToString()) ? DR_Event["EndDateTimeEvent"] : null))
 
 
                 );
@@ -168,21 +170,27 @@ namespace EETMS_Presentation.EETMS_Events
         private int _GetTheCountOfEvents()
             => _EventDT.Rows.Count;
 
-        private void _InitalSettingAfterLoadTheUSEvents()
+        private async Task _InitalSettingAfterLoadTheUSEvents()
         {
             GDataGridViewEventsInformation.Rows.Clear();
             _LoadAndFillDataGridViewONAllInformationEvent();
             GDataGridViewEventsInformation.ClearSelection();
 
-            clsEETMS_SettingPresentation._AnimationLables(_GetTheCountOfEvents(), lblTotalEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
-            clsEETMS_SettingPresentation._AnimationLables(_GetCountTheLiveEvents(), lblTotalLiveEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
-            clsEETMS_SettingPresentation._AnimationLables(_GetCountTheFullyBookedEvents(), lblTotalFullyBookedEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
-            clsEETMS_SettingPresentation._AnimationLables(_GetCountTheDraftEvents(), lblNumberDraftsEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
+            Task animationTotalEvents =
+                clsEETMS_SettingPresentation._AnimationLables(_GetTheCountOfEvents(), lblTotalEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
+            Task animationTotalLiveEvents =
+                clsEETMS_SettingPresentation._AnimationLables(_GetCountTheLiveEvents(), lblTotalLiveEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
+            Task animationTotalFullyEvents =
+                clsEETMS_SettingPresentation._AnimationLables(_GetCountTheFullyBookedEvents(), lblTotalFullyBookedEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
+            Task animationTotalDraftEvents =
+                clsEETMS_SettingPresentation._AnimationLables(_GetCountTheDraftEvents(), lblNumberDraftsEvents, clsEETMS_Constants.kMAX_NUMBER_DELAY_EVENT_US, false);
+
+            await Task.WhenAll(animationTotalEvents, animationTotalLiveEvents, animationTotalFullyEvents, animationTotalDraftEvents);
 
         }
 
-        private void USEvents_Load(object sender, EventArgs e)
-           => _InitalSettingAfterLoadTheUSEvents();
+        private async void USEvents_Load(object sender, EventArgs e)
+           => await _InitalSettingAfterLoadTheUSEvents();
 
         private void GGButtonCreateNewEvent_Click(object sender, EventArgs e)
            => RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
@@ -466,29 +474,41 @@ namespace EETMS_Presentation.EETMS_Events
         private void editEventToolStripMenuItem_Click(object sender, EventArgs e)
           => RequestOpenCreateNewEventUS?.Invoke(this, _GetTheEventID());
 
-        private void deleteEventToolStripMenuItem1_Click(object sender, EventArgs e)
+        private async void deleteEventToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Are You Sure To Delete This Event ?", "Note For Delete Event", MessageDialogButtons.YesNo, MessageDialogIcon.Information))
+            if (clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                _G2MD,
+                "Are You Sure To Delete This Event ?",
+                "Note For Delete Event",
+                MessageDialogButtons.YesNo,
+                MessageDialogIcon.Information))
+
                 if (EventBL.DeleteTheEvent(_GetTheEventID()))
                 {
-                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "The Event Is Deleted Successfully", "Note For Delete Event", MessageDialogButtons.OK, MessageDialogIcon.Information);
-                    _InitalSettingAfterLoadTheUSEvents();
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                        _G2MD,
+                        "The Event Is Deleted Successfully",
+                        "Note For Delete Event",
+                        MessageDialogButtons.OK,
+                        MessageDialogIcon.Information);
+
+                    await _InitalSettingAfterLoadTheUSEvents();
                 }
                 else
                 {
-                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(_G2MD, "Connot Delete This Event Because The Event Selled Tickets", "Note For Delete Event", MessageDialogButtons.OK, MessageDialogIcon.Error);
+                    clsEETMS_SettingPresentation.ShowTheMessageBoxUseTheMessageDialog(
+                        _G2MD,
+                        "Connot Delete This Event Because The Event Selled Tickets"
+                        , "Note For Delete Event",
+                        MessageDialogButtons.OK,
+                        MessageDialogIcon.Error);
                     return;
                 }
         }
 
-        private void GDataGridViewEventsInformation_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-
-        }
-
         private void GContextMenuStripEvents_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (_GetTheEventID() == -1)
+            if (_GetTheEventID() == clsEETMS_Constants.kNEGATIVE_ONE)
             {
                 deleteEventToolStripMenuItem1.Enabled = false;
                 editEventToolStripMenuItem.Enabled = false;
