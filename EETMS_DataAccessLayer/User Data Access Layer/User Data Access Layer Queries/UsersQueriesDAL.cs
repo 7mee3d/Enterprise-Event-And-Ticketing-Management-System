@@ -745,15 +745,15 @@ namespace EETMS_DataAccessLayer
                                     INNER JOIN Roles RO 
                                     ON RO.RoleID = US.RoleID 
 
-                                    WHERE  (
+                                    WHERE  ( (
 
                                                 CASE 
-                                    		    	WHEN US.ActiveAccount = 1 THEN 'Active'
+                                    		    	WHEN US.ActiveAccount = 1 AND  NumberAttempts > 0 THEN 'Active'
                                     		    	ELSE 'Inactive' 
                                     		    END 
 
 
-                                    		) = @TypeFilterUserStatus
+                                    		) =  @TypeFilterUserStatus )
 
                                     
                         ";
