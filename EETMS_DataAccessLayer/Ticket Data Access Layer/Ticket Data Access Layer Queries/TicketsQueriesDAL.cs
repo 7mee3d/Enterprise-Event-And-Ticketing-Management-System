@@ -32,12 +32,24 @@ namespace EETMS_DataAccessLayer
 
                 string Query = @"
                                         
-                                       SELECT 
-                                                 E.EventID ,
-                                                 E.EventName 
+                                     SELECT 
+                                                 E.EventID,
+                                                 E.EventName
 
                                      FROM [Events] E
-                                     WHERE GETDATE() < E.EndDateTimeEvent
+                                                WHERE
+                                                    GETDATE() < 
+                                                    CASE
+                                                        WHEN E.EndTimeMeridiem = 'PM'
+                                                             AND DATEPART(HOUR, E.EndDateTimeEvent) < 12
+                                                            THEN DATEADD(HOUR, 12, E.EndDateTimeEvent)
+                                                
+                                                        WHEN E.EndTimeMeridiem = 'AM'
+                                                             AND DATEPART(HOUR, E.EndDateTimeEvent) = 12
+                                                            THEN DATEADD(HOUR, -12, E.EndDateTimeEvent)
+                                                
+                                                        ELSE E.EndDateTimeEvent
+                                                    END;
                                 ";
 
                 using (SqlCommand command = new SqlCommand(Query, connection))
