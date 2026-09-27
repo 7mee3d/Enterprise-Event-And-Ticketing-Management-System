@@ -13,6 +13,8 @@
 
 </div>
 
+[![🎥 Project Video](https://img.shields.io/badge/🎥%20Project%20Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/NWJUM7LQivI)
+
 ---
 
 # 📖 OVERVIEW
