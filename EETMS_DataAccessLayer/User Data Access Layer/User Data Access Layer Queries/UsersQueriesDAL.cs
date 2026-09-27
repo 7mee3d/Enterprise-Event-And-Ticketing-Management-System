@@ -529,7 +529,7 @@ namespace EETMS_DataAccessLayer
 
                 string Query = @"
 
-                                                 SELECT 
+	                                            SELECT 
 		                                                ISNULL (COUNT(US.UserID) , 0 )  AS [TotalActiveAdmin]
 
                                                 FROM Users US
@@ -537,7 +537,7 @@ namespace EETMS_DataAccessLayer
                                                 INNER JOIN Roles RO
                                                 ON RO.RoleID = US.RoleID 
 
-                                                WHERE US.ActiveAccount = 1 AND RO.RoleID = 1 
+                                                WHERE US.ActiveAccount = 1 AND RO.RoleID = 1 AND NumberAttempts > 0 
 
                         ";
 
@@ -579,7 +579,7 @@ namespace EETMS_DataAccessLayer
 
                                                  FROM Users US
 
-                                                 WHERE US.ActiveAccount = 0 
+                                                 WHERE US.ActiveAccount = 0 OR NumberAttempts = 0 
 
                         ";
 
