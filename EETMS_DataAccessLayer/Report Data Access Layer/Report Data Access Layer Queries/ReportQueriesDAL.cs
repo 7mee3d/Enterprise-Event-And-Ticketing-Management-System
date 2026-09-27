@@ -323,23 +323,26 @@ namespace EETMS_DataAccessLayer
 
                     string Query = @"
 
-
-
-                         
-
-                                     SELECT
-						                        E.EventName,
-						                        ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity
-
-                                                FROM Events E
-                                                LEFT JOIN TicketTypes TT
-                                                ON E.EventID = TT.EventID
-
-                                     WHERE GETDATE() < E.EndDateTimeEvent
-
-                                     GROUP BY
-                                     				E.EventName,
-                                                    E.MaxCapacity
+                                                  SELECT 
+                                                    E.EventName, 
+                                                    ISNULL(E.MaxCapacity - SUM(TT.Quantity - TT.Available), E.MaxCapacity) AS RemainingCapacity
+                                                FROM Events E 
+                                                LEFT JOIN TicketTypes TT 
+                                                    ON E.EventID = TT.EventID 
+                                                WHERE
+                                                    GETDATE() <
+                                                    CASE
+                                                        WHEN E.EndTimeMeridiem = 'PM' AND DATEPART(HOUR, E.EndDateTimeEvent) < 12
+                                                            THEN DATEADD(HOUR, 12, E.EndDateTimeEvent)
+                                                
+                                                        WHEN E.EndTimeMeridiem = 'AM' AND DATEPART(HOUR, E.EndDateTimeEvent) = 12
+                                                            THEN DATEADD(HOUR, -12, E.EndDateTimeEvent)
+                                                
+                                                        ELSE E.EndDateTimeEvent
+                                                    END
+                                                GROUP BY 
+                                                    E.EventName, 
+                                                    E.MaxCapacity;
                                      	
 
                                 ";
