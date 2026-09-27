@@ -43,8 +43,8 @@ namespace EETMS_Presentation.EETMS_Events
 
         private string _GetTheEventStatusBy(DateTime StartDateTimeEvent, DateTime EndDateTimeEvent)
         {
-            if (StartDateTimeEvent.ToString() == "1/1/0001 12:00:00 AM" ||
-                EndDateTimeEvent.ToString() == "1/1/0001 12:00:00 AM")
+            if (StartDateTimeEvent == DateTime.MinValue ||
+                EndDateTimeEvent == DateTime.MinValue)
                 return "Unknown";
 
             DateTime CurrentDateTime = new DateTime(
@@ -56,10 +56,11 @@ namespace EETMS_Presentation.EETMS_Events
                 0
             );
 
-            if (CurrentDateTime > EndDateTimeEvent) return "Completed";
+            if (CurrentDateTime >= EndDateTimeEvent)
+                return "Completed";
 
-            if (StartDateTimeEvent > CurrentDateTime) return "Pending";
-
+            if (CurrentDateTime < StartDateTimeEvent)
+                return "Pending";
 
             return "In Progress";
         }
@@ -68,7 +69,6 @@ namespace EETMS_Presentation.EETMS_Events
         {
             GDataGridViewEventsInformation.Rows.Clear();
 
-
             foreach (DataRow DR_Event in DT_EventsInformation.Rows)
             {
                 DateTime start = Convert.ToDateTime(DR_Event["DateTimeEvent"]);
@@ -76,45 +76,73 @@ namespace EETMS_Presentation.EETMS_Events
                 string startDate =
                     $"{start:dd/MM/yyyy HH:mm} {DR_Event["StartTimeMeridiem"]}";
 
+                DateTime StartDateTimeEvent = start;
+
+                if (DR_Event["StartTimeMeridiem"].ToString() == "PM" &&
+                    StartDateTimeEvent.Hour < 12)
+                {
+                    StartDateTimeEvent = StartDateTimeEvent.AddHours(12);
+                }
+                else if (DR_Event["StartTimeMeridiem"].ToString() == "AM" &&
+                         StartDateTimeEvent.Hour == 12)
+                {
+                    StartDateTimeEvent = StartDateTimeEvent.AddHours(-12);
+                }
+
                 string endDate = "Unknown";
+                DateTime EndDateTimeEvent = DateTime.MinValue;
 
                 if (!string.IsNullOrWhiteSpace(DR_Event["EndDateTimeEvent"].ToString()))
                 {
-                    DateTime end = Convert.ToDateTime(DR_Event["EndDateTimeEvent"]);
+                    DateTime end =
+                        Convert.ToDateTime(DR_Event["EndDateTimeEvent"]);
+
+                    EndDateTimeEvent = end;
+
+                    if (DR_Event["EndTimeMeridiem"].ToString() == "PM" &&
+                        EndDateTimeEvent.Hour < 12)
+                    {
+                        EndDateTimeEvent = EndDateTimeEvent.AddHours(12);
+                    }
+                    else if (DR_Event["EndTimeMeridiem"].ToString() == "AM" &&
+                             EndDateTimeEvent.Hour == 12)
+                    {
+                        EndDateTimeEvent = EndDateTimeEvent.AddHours(-12);
+                    }
 
                     endDate =
                         $"{end:dd/MM/yyyy HH:mm} {DR_Event["EndTimeMeridiem"]}";
                 }
 
                 int CurrentRow = GDataGridViewEventsInformation.Rows.Add(
-
-                     DR_Event["EventID"],
-                     DR_Event["EventName"],
-                     DR_Event["CategoryName"],
-                     startDate,
-                     endDate,
-                     DR_Event["SoldTickets"] + " / " + DR_Event["MaxCapacity"],
-                     DR_Event["CountryName"] + " , " + DR_Event["Street"],
-                     DR_Event["Duration"],
-                     DR_Event["Discripation"],
-                     _GetTheEventStatusBy(Convert.ToDateTime(DR_Event["DateTimeEvent"]),
-                     Convert.ToDateTime(!string.IsNullOrWhiteSpace(DR_Event["EndDateTimeEvent"].ToString()) ? DR_Event["EndDateTimeEvent"] : null))
-
-
+                    DR_Event["EventID"],
+                    DR_Event["EventName"],
+                    DR_Event["CategoryName"],
+                    startDate,
+                    endDate,
+                    DR_Event["SoldTickets"] + " / " + DR_Event["MaxCapacity"],
+                    DR_Event["CountryName"] + " , " + DR_Event["Street"],
+                    DR_Event["Duration"],
+                    DR_Event["Discripation"],
+                    _GetTheEventStatusBy(
+                        StartDateTimeEvent,
+                        EndDateTimeEvent
+                    )
                 );
 
+                DataGridViewRow DGVR =
+                    GDataGridViewEventsInformation.Rows[CurrentRow];
 
-
-                DataGridViewRow DGVR = GDataGridViewEventsInformation.Rows[CurrentRow];
                 DataGridViewCell DGVC = DGVR.Cells[9];
 
                 if (DGVC.Value.ToString() == "In Progress")
                     DGVC.Style.ForeColor = Color.FromArgb(59, 130, 246);
                 else if (DGVC.Value.ToString() == "Pending")
                     DGVC.Style.ForeColor = Color.FromArgb(245, 158, 11);
-                else if (DGVC.Value.ToString() == "Completed") DGVC.Style.ForeColor = Color.FromArgb(34, 197, 94);
-                else DGVC.Style.ForeColor = Color.Red;
-
+                else if (DGVC.Value.ToString() == "Completed")
+                    DGVC.Style.ForeColor = Color.FromArgb(34, 197, 94);
+                else
+                    DGVC.Style.ForeColor = Color.Red;
             }
         }
 

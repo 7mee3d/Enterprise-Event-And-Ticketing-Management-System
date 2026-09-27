@@ -83,7 +83,37 @@ namespace EETMS_Presentation.EETMS_Events
 
         private bool _HandleCompletedEventContraints()
         {
-            if (DateTime.Now > _InformationEvent.EndDateTimeEvent)
+            if (_InformationEvent == null)
+                return true;
+
+            DateTime CurrentDateTime = DateTime.Now;
+
+            DateTime StartDateTime = _InformationEvent.DateTimeEvent.Value;
+            DateTime EndDateTime = _InformationEvent.EndDateTimeEvent.Value;
+
+            if (_InformationEvent.StartTimeMeridiem == "PM" &&
+                StartDateTime.Hour != 12)
+            {
+                StartDateTime = StartDateTime.AddHours(12);
+            }
+            else if (_InformationEvent.StartTimeMeridiem == "AM" &&
+                     StartDateTime.Hour == 12)
+            {
+                StartDateTime = StartDateTime.AddHours(-12);
+            }
+
+            if (_InformationEvent.EndTimeMeridiem == "PM" &&
+                EndDateTime.Hour != 12)
+            {
+                EndDateTime = EndDateTime.AddHours(12);
+            }
+            else if (_InformationEvent.EndTimeMeridiem == "AM" &&
+                     EndDateTime.Hour == 12)
+            {
+                EndDateTime = EndDateTime.AddHours(-12);
+            }
+
+            if (CurrentDateTime >= StartDateTime)
             {
                 GGButtonWarningMessageWhenTheEventComplete.Visible = true;
                 GButtonCreateEvent.Enabled = false;
@@ -106,12 +136,10 @@ namespace EETMS_Presentation.EETMS_Events
                 GComboBoxEndZone.Enabled = false;
 
                 return false;
-
             }
 
             return true;
         }
-
         private void _LoadAllInformationEvent()
         {
 

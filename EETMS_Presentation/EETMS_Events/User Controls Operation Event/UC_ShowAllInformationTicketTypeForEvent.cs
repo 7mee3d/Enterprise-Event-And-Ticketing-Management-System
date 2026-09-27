@@ -77,20 +77,35 @@ namespace EETMS_Presentation.EETMS_Events
         private bool _HandleCompletedEventContraints()
         {
             EventDTO AllInformationEvent = EventBL.FindTheEventBy(_EventID);
-            if (AllInformationEvent == null) return false;
 
-            if (DateTime.Now > AllInformationEvent.EndDateTimeEvent && _DT_AllTicketsEvent.Rows.Count == 3)
-            {
-                GGButtonWarningFullTheTicketTypeEvent.Visible = true;
-                GGButtonAddTicketType.Visible = false;
-                GGButtonWarningFullTheTicketTypeEvent.Text = "*You cannot add a Ticket Type because all types already exist , And Tickets cannot be added or modified because this event has been completed.";
+            if (AllInformationEvent == null)
                 return false;
+
+            DateTime CurrentDateTime = DateTime.Now;
+
+            DateTime EndDateTime = AllInformationEvent.EndDateTimeEvent.Value;
+
+            if (AllInformationEvent.EndTimeMeridiem == "PM" &&
+                EndDateTime.Hour != 12)
+            {
+                EndDateTime = EndDateTime.AddHours(12);
             }
-            else if (DateTime.Now > AllInformationEvent.EndDateTimeEvent)
+            else if (AllInformationEvent.EndTimeMeridiem == "AM" &&
+                     EndDateTime.Hour == 12)
+            {
+                EndDateTime = EndDateTime.AddHours(-12);
+            }
+
+            if (CurrentDateTime >= EndDateTime)
             {
                 GGButtonWarningFullTheTicketTypeEvent.Visible = true;
                 GGButtonAddTicketType.Visible = false;
-                GGButtonWarningFullTheTicketTypeEvent.Text = "*Tickets cannot be added or modified because this event has been completed.";
+
+                GGButtonWarningFullTheTicketTypeEvent.Text =
+                    _DT_AllTicketsEvent.Rows.Count == 3
+                    ? "*You cannot add a Ticket Type because all types already exist, And Tickets cannot be added or modified because this event has been completed."
+                    : "*Tickets cannot be added or modified because this event has been completed.";
+
                 return false;
             }
 
